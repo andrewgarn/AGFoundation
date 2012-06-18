@@ -1,0 +1,2068 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>UIDevice(AGCategory) Category Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">AGFoundation.atom </a></h1>
+				<a id="developerHome" href="../index.html">Andrew Garn</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">UIDevice(AGCategory) Category Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/batteryLevel">&nbsp;&nbsp;&nbsp;&nbsp;+ batteryLevel</option>
+	
+	<option value="//api/name/batteryState">&nbsp;&nbsp;&nbsp;&nbsp;+ batteryState</option>
+	
+	<option value="//api/name/busFrequency">&nbsp;&nbsp;&nbsp;&nbsp;+ busFrequency</option>
+	
+	<option value="//api/name/canSendMail">&nbsp;&nbsp;&nbsp;&nbsp;+ canSendMail</option>
+	
+	<option value="//api/name/canSendText">&nbsp;&nbsp;&nbsp;&nbsp;+ canSendText</option>
+	
+	<option value="//api/name/cpuFrequency">&nbsp;&nbsp;&nbsp;&nbsp;+ cpuFrequency</option>
+	
+	<option value="//api/name/deviceCarrier">&nbsp;&nbsp;&nbsp;&nbsp;+ deviceCarrier</option>
+	
+	<option value="//api/name/deviceFamily">&nbsp;&nbsp;&nbsp;&nbsp;+ deviceFamily</option>
+	
+	<option value="//api/name/deviceModel">&nbsp;&nbsp;&nbsp;&nbsp;+ deviceModel</option>
+	
+	<option value="//api/name/deviceName">&nbsp;&nbsp;&nbsp;&nbsp;+ deviceName</option>
+	
+	<option value="//api/name/freeDiskSpace">&nbsp;&nbsp;&nbsp;&nbsp;+ freeDiskSpace</option>
+	
+	<option value="//api/name/hasFrontCamera">&nbsp;&nbsp;&nbsp;&nbsp;+ hasFrontCamera</option>
+	
+	<option value="//api/name/hasRearCamera">&nbsp;&nbsp;&nbsp;&nbsp;+ hasRearCamera</option>
+	
+	<option value="//api/name/hasRetinaDisplay">&nbsp;&nbsp;&nbsp;&nbsp;+ hasRetinaDisplay</option>
+	
+	<option value="//api/name/idiom">&nbsp;&nbsp;&nbsp;&nbsp;+ idiom</option>
+	
+	<option value="//api/name/isASimulator">&nbsp;&nbsp;&nbsp;&nbsp;+ isASimulator</option>
+	
+	<option value="//api/name/isAniPad">&nbsp;&nbsp;&nbsp;&nbsp;+ isAniPad</option>
+	
+	<option value="//api/name/isAniPhone">&nbsp;&nbsp;&nbsp;&nbsp;+ isAniPhone</option>
+	
+	<option value="//api/name/isAniPodTouch">&nbsp;&nbsp;&nbsp;&nbsp;+ isAniPodTouch</option>
+	
+	<option value="//api/name/isJailbroken">&nbsp;&nbsp;&nbsp;&nbsp;+ isJailbroken</option>
+	
+	<option value="//api/name/jailbrokenState">&nbsp;&nbsp;&nbsp;&nbsp;+ jailbrokenState</option>
+	
+	<option value="//api/name/maxSocketBufferSize">&nbsp;&nbsp;&nbsp;&nbsp;+ maxSocketBufferSize</option>
+	
+	<option value="//api/name/processorCount">&nbsp;&nbsp;&nbsp;&nbsp;+ processorCount</option>
+	
+	<option value="//api/name/supportsMultitasking">&nbsp;&nbsp;&nbsp;&nbsp;+ supportsMultitasking</option>
+	
+	<option value="//api/name/systemName">&nbsp;&nbsp;&nbsp;&nbsp;+ systemName</option>
+	
+	<option value="//api/name/systemVersion">&nbsp;&nbsp;&nbsp;&nbsp;+ systemVersion</option>
+	
+	<option value="//api/name/totalDiskSpace">&nbsp;&nbsp;&nbsp;&nbsp;+ totalDiskSpace</option>
+	
+	<option value="//api/name/totalMemory">&nbsp;&nbsp;&nbsp;&nbsp;+ totalMemory</option>
+	
+	<option value="//api/name/uniqueDeviceIdentifier">&nbsp;&nbsp;&nbsp;&nbsp;+ uniqueDeviceIdentifier</option>
+	
+	<option value="//api/name/uniqueGlobalDeviceIdentifier">&nbsp;&nbsp;&nbsp;&nbsp;+ uniqueGlobalDeviceIdentifier</option>
+	
+	<option value="//api/name/userInterfaceIdiomIsPad">&nbsp;&nbsp;&nbsp;&nbsp;+ userInterfaceIdiomIsPad</option>
+	
+	<option value="//api/name/userInterfaceIdiomIsPhone">&nbsp;&nbsp;&nbsp;&nbsp;+ userInterfaceIdiomIsPhone</option>
+	
+	<option value="//api/name/userMemory">&nbsp;&nbsp;&nbsp;&nbsp;+ userMemory</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Identifying the Device and Operating System">Identifying the Device and Operating System</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Querying the Device Family">Querying the Device Family</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Determining the Available Hardware Features">Determining the Available Hardware Features</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Determining the Available Software Features">Determining the Available Software Features</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Determining the Device User Interface">Determining the Device User Interface</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Generating a Unique Device Identifier">Generating a Unique Device Identifier</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Determining Device State">Determining Device State</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/batteryLevel">batteryLevel</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/batteryState">batteryState</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/busFrequency">busFrequency</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canSendMail">canSendMail</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canSendText">canSendText</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cpuFrequency">cpuFrequency</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deviceCarrier">deviceCarrier</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deviceFamily">deviceFamily</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deviceModel">deviceModel</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deviceName">deviceName</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/freeDiskSpace">freeDiskSpace</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasFrontCamera">hasFrontCamera</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasRearCamera">hasRearCamera</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasRetinaDisplay">hasRetinaDisplay</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/idiom">idiom</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isASimulator">isASimulator</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isAniPad">isAniPad</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isAniPhone">isAniPhone</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isAniPodTouch">isAniPodTouch</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isJailbroken">isJailbroken</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/jailbrokenState">jailbrokenState</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/maxSocketBufferSize">maxSocketBufferSize</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/processorCount">processorCount</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/supportsMultitasking">supportsMultitasking</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/systemName">systemName</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/systemVersion">systemVersion</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/totalDiskSpace">totalDiskSpace</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/totalMemory">totalMemory</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/uniqueDeviceIdentifier">uniqueDeviceIdentifier</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/uniqueGlobalDeviceIdentifier">uniqueGlobalDeviceIdentifier</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userInterfaceIdiomIsPad">userInterfaceIdiomIsPad</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userInterfaceIdiomIsPhone">userInterfaceIdiomIsPhone</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userMemory">userMemory</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="UIDevice(AGCategory) Category Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">UIDevice(AGCategory) Category Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">UIDevice+AGCategory.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A collection of category extensions for <code>UIDevice</code></p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Identifying the Device and Operating System" name="task_Identifying the Device and Operating System"></a>
+						<h3 class="subsubtitle task-title">Identifying the Device and Operating System</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deviceName">+&nbsp;deviceName</a></code>
+		<span class="tooltip"><p>Returns the name identifying the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deviceModel">+&nbsp;deviceModel</a></code>
+		<span class="tooltip"><p>Returns the model of the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deviceFamily">+&nbsp;deviceFamily</a></code>
+		<span class="tooltip"><p>Returns the family of the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deviceCarrier">+&nbsp;deviceCarrier</a></code>
+		<span class="tooltip"><p>Returns the network carrier in use by the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/systemName">+&nbsp;systemName</a></code>
+		<span class="tooltip"><p>Returns the name of the operating system running on the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/systemVersion">+&nbsp;systemVersion</a></code>
+		<span class="tooltip"><p>Returns the current version of the operating system.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Querying the Device Family" name="task_Querying the Device Family"></a>
+						<h3 class="subsubtitle task-title">Querying the Device Family</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isAniPhone">+&nbsp;isAniPhone</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the device is an iPhone.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isAniPodTouch">+&nbsp;isAniPodTouch</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the device is an iPod touch.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isAniPad">+&nbsp;isAniPad</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the device is an iPad.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isASimulator">+&nbsp;isASimulator</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the device is an iOS Simulator.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Determining the Available Hardware Features" name="task_Determining the Available Hardware Features"></a>
+						<h3 class="subsubtitle task-title">Determining the Available Hardware Features</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasRetinaDisplay">+&nbsp;hasRetinaDisplay</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the device has a retina display.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasFrontCamera">+&nbsp;hasFrontCamera</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the device has a front camera.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasRearCamera">+&nbsp;hasRearCamera</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the device has a back camera.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Determining the Available Software Features" name="task_Determining the Available Software Features"></a>
+						<h3 class="subsubtitle task-title">Determining the Available Software Features</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/canSendMail">+&nbsp;canSendMail</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the device is able to send email.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/canSendText">+&nbsp;canSendText</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the device is able to send text messages.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/supportsMultitasking">+&nbsp;supportsMultitasking</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether multitasking is supported on the current device.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Determining the Device User Interface" name="task_Determining the Device User Interface"></a>
+						<h3 class="subsubtitle task-title">Determining the Device User Interface</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/idiom">+&nbsp;idiom</a></code>
+		<span class="tooltip"><p>Returns the style of interface in use on the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userInterfaceIdiomIsPhone">+&nbsp;userInterfaceIdiomIsPhone</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the interface in use is designed for the iPhone and iPod touch.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userInterfaceIdiomIsPad">+&nbsp;userInterfaceIdiomIsPad</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the interface in use is designed for the iPad.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Generating a Unique Device Identifier" name="task_Generating a Unique Device Identifier"></a>
+						<h3 class="subsubtitle task-title">Generating a Unique Device Identifier</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/uniqueDeviceIdentifier">+&nbsp;uniqueDeviceIdentifier</a></code>
+		<span class="tooltip"><p>Returns an alphanumeric string unique to the current device and application.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/uniqueGlobalDeviceIdentifier">+&nbsp;uniqueGlobalDeviceIdentifier</a></code>
+		<span class="tooltip"><p>Returns an alphanumeric string unique to the current device.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Determining Device State" name="task_Determining Device State"></a>
+						<h3 class="subsubtitle task-title">Determining Device State</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/batteryLevel">+&nbsp;batteryLevel</a></code>
+		<span class="tooltip"><p>Returns the battery charge level for the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/batteryState">+&nbsp;batteryState</a></code>
+		<span class="tooltip"><p>Returns a string representation of the current battery state.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isJailbroken">+&nbsp;isJailbroken</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the device is jailbroken.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/jailbrokenState">+&nbsp;jailbrokenState</a></code>
+		<span class="tooltip"><p>Returns a string representation of the current jailbroken state.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cpuFrequency">+&nbsp;cpuFrequency</a></code>
+		<span class="tooltip"><p>Returns the current cpu frequency of the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/busFrequency">+&nbsp;busFrequency</a></code>
+		<span class="tooltip"><p>Returns the current bus frequency of the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/totalMemory">+&nbsp;totalMemory</a></code>
+		<span class="tooltip"><p>Returns the total memory of the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userMemory">+&nbsp;userMemory</a></code>
+		<span class="tooltip"><p>Returns the non kernel memory of the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/maxSocketBufferSize">+&nbsp;maxSocketBufferSize</a></code>
+		<span class="tooltip"><p>Returns the max socket buffer size of the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/processorCount">+&nbsp;processorCount</a></code>
+		<span class="tooltip"><p>Returns the number of device number of processors.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/totalDiskSpace">+&nbsp;totalDiskSpace</a></code>
+		<span class="tooltip"><p>Returns the total amount of disk space of the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/freeDiskSpace">+&nbsp;freeDiskSpace</a></code>
+		<span class="tooltip"><p>Returns the free amount of disk space of the device.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/batteryLevel" title="batteryLevel"></a>
+	<h3 class="subsubtitle method-title">batteryLevel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the battery charge level for the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGFloat)batteryLevel</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The battery charge level for the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Battery level ranges from 0.0 (fully discharged) to 1.0 (100% charged).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/batteryState" title="batteryState"></a>
+	<h3 class="subsubtitle method-title">batteryState</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representation of the current battery state.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)batteryState</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string representation of the current battery state.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/busFrequency" title="busFrequency"></a>
+	<h3 class="subsubtitle method-title">busFrequency</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current bus frequency of the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)busFrequency</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The current bus frequency of the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/canSendMail" title="canSendMail"></a>
+	<h3 class="subsubtitle method-title">canSendMail</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the device is able to send email.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)canSendMail</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the device is configured for sending email or NO if it is not.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/canSendText" title="canSendText"></a>
+	<h3 class="subsubtitle method-title">canSendText</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the device is able to send text messages.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)canSendText</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the device can send text messages or NO if it cannot.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cpuFrequency" title="cpuFrequency"></a>
+	<h3 class="subsubtitle method-title">cpuFrequency</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current cpu frequency of the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)cpuFrequency</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The current cpu frequency of the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deviceCarrier" title="deviceCarrier"></a>
+	<h3 class="subsubtitle method-title">deviceCarrier</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the network carrier in use by the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)deviceCarrier</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The network carrier in use by the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Possible examples of carrier strings are @”O2-UK” and @”AT&amp;T”.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deviceFamily" title="deviceFamily"></a>
+	<h3 class="subsubtitle method-title">deviceFamily</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the family of the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)deviceFamily</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The family name identifying the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Possible examples of family strings are @”iPhone” and @”iPod touch”.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deviceModel" title="deviceModel"></a>
+	<h3 class="subsubtitle method-title">deviceModel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the model of the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)deviceModel</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The model name identifying the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Possible examples of model strings are @”iPhone 4S” and @”iPad 2 WiFi”.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deviceName" title="deviceName"></a>
+	<h3 class="subsubtitle method-title">deviceName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the name identifying the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)deviceName</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The name identifying the device</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The value of this property is an arbitrary alphanumeric string that is associated with the device as an identifier. For example, you can find the name of an iOS device in the General > About settings.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/freeDiskSpace" title="freeDiskSpace"></a>
+	<h3 class="subsubtitle method-title">freeDiskSpace</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the free amount of disk space of the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSNumber *)freeDiskSpace</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The free amount of disk space of the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasFrontCamera" title="hasFrontCamera"></a>
+	<h3 class="subsubtitle method-title">hasFrontCamera</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the device has a front camera.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)hasFrontCamera</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the device has a front camera, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasRearCamera" title="hasRearCamera"></a>
+	<h3 class="subsubtitle method-title">hasRearCamera</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the device has a back camera.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)hasRearCamera</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the device has a back camera, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasRetinaDisplay" title="hasRetinaDisplay"></a>
+	<h3 class="subsubtitle method-title">hasRetinaDisplay</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the device has a retina display.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)hasRetinaDisplay</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the device has a retina display, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/idiom" title="idiom"></a>
+	<h3 class="subsubtitle method-title">idiom</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the style of interface in use on the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (UIUserInterfaceIdiom)idiom</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The style of interface in use on the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isASimulator" title="isASimulator"></a>
+	<h3 class="subsubtitle method-title">isASimulator</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the device is an iOS Simulator.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isASimulator</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the device is an iOS Simulator, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isAniPad" title="isAniPad"></a>
+	<h3 class="subsubtitle method-title">isAniPad</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the device is an iPad.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isAniPad</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the device is an iPad, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isAniPhone" title="isAniPhone"></a>
+	<h3 class="subsubtitle method-title">isAniPhone</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the device is an iPhone.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isAniPhone</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the device is an iPhone, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isAniPodTouch" title="isAniPodTouch"></a>
+	<h3 class="subsubtitle method-title">isAniPodTouch</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the device is an iPod touch.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isAniPodTouch</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the device is an iPod touch, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isJailbroken" title="isJailbroken"></a>
+	<h3 class="subsubtitle method-title">isJailbroken</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the device is jailbroken.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isJailbroken</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the device is jailbroken, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/jailbrokenState" title="jailbrokenState"></a>
+	<h3 class="subsubtitle method-title">jailbrokenState</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representation of the current jailbroken state.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)jailbrokenState</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string representation of the current jailbroken state.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/maxSocketBufferSize" title="maxSocketBufferSize"></a>
+	<h3 class="subsubtitle method-title">maxSocketBufferSize</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the max socket buffer size of the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)maxSocketBufferSize</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The max socket buffer size of the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/processorCount" title="processorCount"></a>
+	<h3 class="subsubtitle method-title">processorCount</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the number of device number of processors.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)processorCount</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The number of device number of processors.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/supportsMultitasking" title="supportsMultitasking"></a>
+	<h3 class="subsubtitle method-title">supportsMultitasking</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether multitasking is supported on the current device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)supportsMultitasking</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the device supports multitasking, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/systemName" title="systemName"></a>
+	<h3 class="subsubtitle method-title">systemName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the name of the operating system running on the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)systemName</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The name of the operating system running on the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A possible example of an operating system string is @&ldquo;iPhone OS&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/systemVersion" title="systemVersion"></a>
+	<h3 class="subsubtitle method-title">systemVersion</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current version of the operating system.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)systemVersion</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The current version of the operating system.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Possible examples of version strings are @”3.2” and @”5.1.1”.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/totalDiskSpace" title="totalDiskSpace"></a>
+	<h3 class="subsubtitle method-title">totalDiskSpace</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the total amount of disk space of the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSNumber *)totalDiskSpace</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The total amount of disk space of the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/totalMemory" title="totalMemory"></a>
+	<h3 class="subsubtitle method-title">totalMemory</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the total memory of the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)totalMemory</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The total memory of the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/uniqueDeviceIdentifier" title="uniqueDeviceIdentifier"></a>
+	<h3 class="subsubtitle method-title">uniqueDeviceIdentifier</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an alphanumeric string unique to the current device and application.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)uniqueDeviceIdentifier</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An alphanumeric string unique to the current device and application.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/uniqueGlobalDeviceIdentifier" title="uniqueGlobalDeviceIdentifier"></a>
+	<h3 class="subsubtitle method-title">uniqueGlobalDeviceIdentifier</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an alphanumeric string unique to the current device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)uniqueGlobalDeviceIdentifier</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An alphanumeric string unique to the current device.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userInterfaceIdiomIsPad" title="userInterfaceIdiomIsPad"></a>
+	<h3 class="subsubtitle method-title">userInterfaceIdiomIsPad</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the interface in use is designed for the iPad.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)userInterfaceIdiomIsPad</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the interface in use is designed for the iPad, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userInterfaceIdiomIsPhone" title="userInterfaceIdiomIsPhone"></a>
+	<h3 class="subsubtitle method-title">userInterfaceIdiomIsPhone</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the interface in use is designed for the iPhone and iPod touch.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)userInterfaceIdiomIsPhone</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the interface in use is designed for the iPhone and iPod touch, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userMemory" title="userMemory"></a>
+	<h3 class="subsubtitle method-title">userMemory</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the non kernel memory of the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)userMemory</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The non kernel memory of the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-06-18)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

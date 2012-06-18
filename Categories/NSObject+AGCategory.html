@@ -1,0 +1,1767 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>NSObject(AGCategory) Category Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">AGFoundation.atom </a></h1>
+				<a id="developerHome" href="../index.html">Andrew Garn</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">NSObject(AGCategory) Category Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/associateCopyOfValue:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;+ associateCopyOfValue:withKey:</option>
+	
+	<option value="//api/name/associateValue:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;+ associateValue:withKey:</option>
+	
+	<option value="//api/name/associatedValueForKey:">&nbsp;&nbsp;&nbsp;&nbsp;+ associatedValueForKey:</option>
+	
+	<option value="//api/name/autoDescribe:">&nbsp;&nbsp;&nbsp;&nbsp;+ autoDescribe:</option>
+	
+	<option value="//api/name/autoDescribe:classType:">&nbsp;&nbsp;&nbsp;&nbsp;+ autoDescribe:classType:</option>
+	
+	<option value="//api/name/forceDateOrNil:">&nbsp;&nbsp;&nbsp;&nbsp;+ forceDateOrNil:</option>
+	
+	<option value="//api/name/forceNumberOrNil:">&nbsp;&nbsp;&nbsp;&nbsp;+ forceNumberOrNil:</option>
+	
+	<option value="//api/name/forceStringOrNil:">&nbsp;&nbsp;&nbsp;&nbsp;+ forceStringOrNil:</option>
+	
+	<option value="//api/name/removeAllAssociatedObjects">&nbsp;&nbsp;&nbsp;&nbsp;+ removeAllAssociatedObjects</option>
+	
+	<option value="//api/name/weaklyAssociateValue:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;+ weaklyAssociateValue:withKey:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/associateCopyOfValue:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;- associateCopyOfValue:withKey:</option>
+	
+	<option value="//api/name/associateValue:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;- associateValue:withKey:</option>
+	
+	<option value="//api/name/associatedValueForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- associatedValueForKey:</option>
+	
+	<option value="//api/name/automaticDescription">&nbsp;&nbsp;&nbsp;&nbsp;- automaticDescription</option>
+	
+	<option value="//api/name/isNotEmpty">&nbsp;&nbsp;&nbsp;&nbsp;- isNotEmpty</option>
+	
+	<option value="//api/name/isNotEqual:">&nbsp;&nbsp;&nbsp;&nbsp;- isNotEqual:</option>
+	
+	<option value="//api/name/isNotKindOfClass:">&nbsp;&nbsp;&nbsp;&nbsp;- isNotKindOfClass:</option>
+	
+	<option value="//api/name/performBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- performBlock:</option>
+	
+	<option value="//api/name/performBlock:afterDelay:">&nbsp;&nbsp;&nbsp;&nbsp;- performBlock:afterDelay:</option>
+	
+	<option value="//api/name/performSelector:afterDelay:">&nbsp;&nbsp;&nbsp;&nbsp;- performSelector:afterDelay:</option>
+	
+	<option value="//api/name/removeAllAssociatedObjects">&nbsp;&nbsp;&nbsp;&nbsp;- removeAllAssociatedObjects</option>
+	
+	<option value="//api/name/weaklyAssociateValue:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;- weaklyAssociateValue:withKey:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Force Type or nil">Force Type or nil</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Comparison">Comparison</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Perform Block">Perform Block</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Perform Selector">Perform Selector</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Description">Description</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Associated Objects">Associated Objects</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associateCopyOfValue:withKey:">associateCopyOfValue:withKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associateValue:withKey:">associateValue:withKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associatedValueForKey:">associatedValueForKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/autoDescribe:">autoDescribe:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/autoDescribe:classType:">autoDescribe:classType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/forceDateOrNil:">forceDateOrNil:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/forceNumberOrNil:">forceNumberOrNil:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/forceStringOrNil:">forceStringOrNil:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAllAssociatedObjects">removeAllAssociatedObjects</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/weaklyAssociateValue:withKey:">weaklyAssociateValue:withKey:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associateCopyOfValue:withKey:">associateCopyOfValue:withKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associateValue:withKey:">associateValue:withKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associatedValueForKey:">associatedValueForKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/automaticDescription">automaticDescription</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNotEmpty">isNotEmpty</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNotEqual:">isNotEqual:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNotKindOfClass:">isNotKindOfClass:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performBlock:">performBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performBlock:afterDelay:">performBlock:afterDelay:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performSelector:afterDelay:">performSelector:afterDelay:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAllAssociatedObjects">removeAllAssociatedObjects</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/weaklyAssociateValue:withKey:">weaklyAssociateValue:withKey:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="NSObject(AGCategory) Category Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">NSObject(AGCategory) Category Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">NSObject+AGCategory.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A collection of category extensions for <code>NSObject</code></p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Force Type or nil" name="task_Force Type or nil"></a>
+						<h3 class="subsubtitle task-title">Force Type or nil</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/forceDateOrNil:">+&nbsp;forceDateOrNil:</a></code>
+		<span class="tooltip"><p>Forces a given object to the <code>NSDate</code> class or nil.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/forceStringOrNil:">+&nbsp;forceStringOrNil:</a></code>
+		<span class="tooltip"><p>Forces a given object to the <code>NSString</code> class or nil.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/forceNumberOrNil:">+&nbsp;forceNumberOrNil:</a></code>
+		<span class="tooltip"><p>Forces a given object to the <code>NSNumber</code> class or nil.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Comparison" name="task_Comparison"></a>
+						<h3 class="subsubtitle task-title">Comparison</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isNotEmpty">&ndash;&nbsp;isNotEmpty</a></code>
+		<span class="tooltip"><p>Returns a Boolean value that indicates whether the receiver is not empty.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isNotEqual:">&ndash;&nbsp;isNotEqual:</a></code>
+		<span class="tooltip"><p>Returns a Boolean value that indicates whether the receiver and a given object are not equal.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isNotKindOfClass:">&ndash;&nbsp;isNotKindOfClass:</a></code>
+		<span class="tooltip"><p>Returns a Boolean value that indicates whether the receiver is not an instance of given class and not an instance of any class that inherits from that class.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Perform Block" name="task_Perform Block"></a>
+						<h3 class="subsubtitle task-title">Perform Block</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/performBlock:">&ndash;&nbsp;performBlock:</a></code>
+		<span class="tooltip"><p>The block to perform.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/performBlock:afterDelay:">&ndash;&nbsp;performBlock:afterDelay:</a></code>
+		<span class="tooltip"><p>The block to perform.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Perform Selector" name="task_Perform Selector"></a>
+						<h3 class="subsubtitle task-title">Perform Selector</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/performSelector:afterDelay:">&ndash;&nbsp;performSelector:afterDelay:</a></code>
+		<span class="tooltip"><p>Invokes a method of the receiver on the current thread using the default mode after a delay.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Description" name="task_Description"></a>
+						<h3 class="subsubtitle task-title">Description</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/automaticDescription">&ndash;&nbsp;automaticDescription</a></code>
+		<span class="tooltip"><p>Returns an automatic description of the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/autoDescribe:classType:">+&nbsp;autoDescribe:classType:</a></code>
+		<span class="tooltip"><p>Returns an automatic description of the given object.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/autoDescribe:">+&nbsp;autoDescribe:</a></code>
+		<span class="tooltip"><p>Returns an automatic description of the given object.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Associated Objects" name="task_Associated Objects"></a>
+						<h3 class="subsubtitle task-title">Associated Objects</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/associateValue:withKey:">&ndash;&nbsp;associateValue:withKey:</a></code>
+		<span class="tooltip"><p>Strongly associates an object with the reciever.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/associateValue:withKey:">+&nbsp;associateValue:withKey:</a></code>
+		<span class="tooltip"><p>Strongly associates an object with the receiving class.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/associateCopyOfValue:withKey:">&ndash;&nbsp;associateCopyOfValue:withKey:</a></code>
+		<span class="tooltip"><p>Associates a copy of an object with the reciever.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/associateCopyOfValue:withKey:">+&nbsp;associateCopyOfValue:withKey:</a></code>
+		<span class="tooltip"><p>Associates a copy of an object with the receiving class.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/weaklyAssociateValue:withKey:">&ndash;&nbsp;weaklyAssociateValue:withKey:</a></code>
+		<span class="tooltip"><p>Weakly associates an object with the reciever.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/weaklyAssociateValue:withKey:">+&nbsp;weaklyAssociateValue:withKey:</a></code>
+		<span class="tooltip"><p>Weakly associates an object with the receiving class.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/associatedValueForKey:">&ndash;&nbsp;associatedValueForKey:</a></code>
+		<span class="tooltip"><p>Returns the associated value for a key on the reciever.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/associatedValueForKey:">+&nbsp;associatedValueForKey:</a></code>
+		<span class="tooltip"><p>Returns the associated value for a key on the receiving class.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeAllAssociatedObjects">&ndash;&nbsp;removeAllAssociatedObjects</a></code>
+		<span class="tooltip"><p>Returns the reciever to a clean state by removing all
+associated objects, releasing them if necessary.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeAllAssociatedObjects">+&nbsp;removeAllAssociatedObjects</a></code>
+		<span class="tooltip"><p>Returns the recieving class to a clean state by removing
+all associated objects, releasing them if necessary.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/associateCopyOfValue:withKey:" title="associateCopyOfValue:withKey:"></a>
+	<h3 class="subsubtitle method-title">associateCopyOfValue:withKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Associates a copy of an object with the receiving class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)associateCopyOfValue:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>Any object, pointer, or value.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>A unique key pointer.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Code from the BlocksKit project by Zachary Waldowski. 2012. MIT License: <a href="https://github.com/zwaldowski/BlocksKit">https://github.com/zwaldowski/BlocksKit</a></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/associateCopyOfValue:withKey:">&ndash; associateCopyOfValue:withKey:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/associateValue:withKey:" title="associateValue:withKey:"></a>
+	<h3 class="subsubtitle method-title">associateValue:withKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Strongly associates an object with the receiving class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)associateValue:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>Any object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>A unique key pointer.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Code from the BlocksKit project by Zachary Waldowski. 2012. MIT License: <a href="https://github.com/zwaldowski/BlocksKit">https://github.com/zwaldowski/BlocksKit</a></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/associateValue:withKey:">&ndash; associateValue:withKey:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/associatedValueForKey:" title="associatedValueForKey:"></a>
+	<h3 class="subsubtitle method-title">associatedValueForKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the associated value for a key on the receiving class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)associatedValueForKey:(const char *)<em>key</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>A unique key pointer.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The object associated with the key, or <code>nil</code> if not found.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Code from the BlocksKit project by Zachary Waldowski. 2012. MIT License: <a href="https://github.com/zwaldowski/BlocksKit">https://github.com/zwaldowski/BlocksKit</a></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/associatedValueForKey:">&ndash; associatedValueForKey:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/autoDescribe:" title="autoDescribe:"></a>
+	<h3 class="subsubtitle method-title">autoDescribe:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an automatic description of the given object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)autoDescribe:(id)<em>instance</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>instance</em></dt>
+			<dd><p>An instance of a class</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An automatic description of the instance object provided.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Code from StackOverflow answer by Kendall Helmstetter Geln: <a href="http://stackoverflow.com/questions/2299841/objective-c-introspection-reflection">http://stackoverflow.com/questions/2299841/objective-c-introspection-reflection</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/autoDescribe:classType:" title="autoDescribe:classType:"></a>
+	<h3 class="subsubtitle method-title">autoDescribe:classType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an automatic description of the given object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)autoDescribe:(id)<em>instance</em> classType:(Class)<em>classType</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>instance</em></dt>
+			<dd><p>An instance of a class</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>classType</em></dt>
+			<dd><p>A class type</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An automatic description of the instance object provided.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Code from StackOverflow answer by Kendall Helmstetter Geln: <a href="http://stackoverflow.com/questions/2299841/objective-c-introspection-reflection">http://stackoverflow.com/questions/2299841/objective-c-introspection-reflection</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/forceDateOrNil:" title="forceDateOrNil:"></a>
+	<h3 class="subsubtitle method-title">forceDateOrNil:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Forces a given object to the <code>NSDate</code> class or nil.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDate *)forceDateOrNil:(id)<em>anObject</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>anObject</em></dt>
+			<dd><p>The object to be checked.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns the given object if its an <code>NSDate</code>, otherwise nil.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/forceNumberOrNil:" title="forceNumberOrNil:"></a>
+	<h3 class="subsubtitle method-title">forceNumberOrNil:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Forces a given object to the <code>NSNumber</code> class or nil.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSNumber *)forceNumberOrNil:(id)<em>anObject</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>anObject</em></dt>
+			<dd><p>The object to be checked.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns the given object if its an <code>NSNumber</code>, otherwise nil.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/forceStringOrNil:" title="forceStringOrNil:"></a>
+	<h3 class="subsubtitle method-title">forceStringOrNil:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Forces a given object to the <code>NSString</code> class or nil.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)forceStringOrNil:(id)<em>anObject</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>anObject</em></dt>
+			<dd><p>The object to be checked.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns the given object if its an <code>NSString</code>, a string representation of the object, or nil if the object cannot be converted to a string.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeAllAssociatedObjects" title="removeAllAssociatedObjects"></a>
+	<h3 class="subsubtitle method-title">removeAllAssociatedObjects</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the recieving class to a clean state by removing
+all associated objects, releasing them if necessary.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)removeAllAssociatedObjects</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Code from the BlocksKit project by Zachary Waldowski. 2012. MIT License: <a href="https://github.com/zwaldowski/BlocksKit">https://github.com/zwaldowski/BlocksKit</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/weaklyAssociateValue:withKey:" title="weaklyAssociateValue:withKey:"></a>
+	<h3 class="subsubtitle method-title">weaklyAssociateValue:withKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Weakly associates an object with the receiving class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)weaklyAssociateValue:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>Any object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>A unique key pointer.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Code from the BlocksKit project by Zachary Waldowski. 2012. MIT License: <a href="https://github.com/zwaldowski/BlocksKit">https://github.com/zwaldowski/BlocksKit</a></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/weaklyAssociateValue:withKey:">&ndash; weaklyAssociateValue:withKey:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/associateCopyOfValue:withKey:" title="associateCopyOfValue:withKey:"></a>
+	<h3 class="subsubtitle method-title">associateCopyOfValue:withKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Associates a copy of an object with the reciever.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)associateCopyOfValue:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>Any object, pointer, or value.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>A unique key pointer.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The associated value is copied as if it were a property
+synthesized with <code>nonatomic</code> and <code>copy</code>.</p>
+
+<p>Using copied association is recommended for a block or
+otherwise <code>NSCopying</code>-compliant instances like NSString.</p>
+
+<p>Code from the BlocksKit project by Zachary Waldowski. 2012. MIT License: <a href="https://github.com/zwaldowski/BlocksKit">https://github.com/zwaldowski/BlocksKit</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/associateValue:withKey:" title="associateValue:withKey:"></a>
+	<h3 class="subsubtitle method-title">associateValue:withKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Strongly associates an object with the reciever.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)associateValue:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>Any object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>A unique key pointer.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The associated value is retained as if it were a property
+synthesized with <code>nonatomic</code> and <code>retain</code>.</p>
+
+<p>Using retained association is strongly recommended for most
+Objective-C object derivative of NSObject, particularly
+when it is subject to being externally released or is in an
+<code>NSAutoreleasePool</code>.</p>
+
+<p>Code from the BlocksKit project by Zachary Waldowski. 2012. MIT License: <a href="https://github.com/zwaldowski/BlocksKit">https://github.com/zwaldowski/BlocksKit</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/associatedValueForKey:" title="associatedValueForKey:"></a>
+	<h3 class="subsubtitle method-title">associatedValueForKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the associated value for a key on the reciever.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)associatedValueForKey:(const char *)<em>key</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>A unique key pointer.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The object associated with the key, or <code>nil</code> if not found.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Code from the BlocksKit project by Zachary Waldowski. 2012. MIT License: <a href="https://github.com/zwaldowski/BlocksKit">https://github.com/zwaldowski/BlocksKit</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/automaticDescription" title="automaticDescription"></a>
+	<h3 class="subsubtitle method-title">automaticDescription</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an automatic description of the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)automaticDescription</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An automatic description of the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isNotEmpty" title="isNotEmpty"></a>
+	<h3 class="subsubtitle method-title">isNotEmpty</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a Boolean value that indicates whether the receiver is not empty.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isNotEmpty</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the receiver is not empty, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The method first checks that the receiver is not <code>[NSNull null]</code>, then if the receiver responds to <code>length</code> its length is greater than zero and finally the method checks that if the receiver responds to <code>count</code> it has a count greater than zero.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isNotEqual:" title="isNotEqual:"></a>
+	<h3 class="subsubtitle method-title">isNotEqual:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a Boolean value that indicates whether the receiver and a given object are not equal.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isNotEqual:(id)<em>anObject</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>anObject</em></dt>
+			<dd><p>The object to be compared to the receiver.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the receiver and anObject are not equal, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Invokes <code>isEqual:</code> as part of its implementation</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isNotKindOfClass:" title="isNotKindOfClass:"></a>
+	<h3 class="subsubtitle method-title">isNotKindOfClass:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a Boolean value that indicates whether the receiver is not an instance of given class and not an instance of any class that inherits from that class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isNotKindOfClass:(Class)<em>aClass</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aClass</em></dt>
+			<dd><p>A class object representing the Objective-C class to be tested.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the receiver is not an instance of aClass and not an instance of any class that inherits from aClass, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Invokes <code>isKindOfClass:</code> as part of its implementation</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/performBlock:" title="performBlock:"></a>
+	<h3 class="subsubtitle method-title">performBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The block to perform.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)performBlock:(AGVoidBlock)<em>aBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aBlock</em></dt>
+			<dd><p>The block to perform.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/performBlock:afterDelay:" title="performBlock:afterDelay:"></a>
+	<h3 class="subsubtitle method-title">performBlock:afterDelay:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The block to perform.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)performBlock:(AGVoidBlock)<em>aBlock</em> afterDelay:(NSTimeInterval)<em>delay</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aBlock</em></dt>
+			<dd><p>The block to perform.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delay</em></dt>
+			<dd><p>The minimum time before which the message is sent. Specifying a delay of 0 does not necessarily cause the selector to be performed immediately. The selector is still queued on the thread’s run loop and performed as soon as possible.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/performSelector:afterDelay:" title="performSelector:afterDelay:"></a>
+	<h3 class="subsubtitle method-title">performSelector:afterDelay:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Invokes a method of the receiver on the current thread using the default mode after a delay.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)performSelector:(SEL)<em>aSelector</em> afterDelay:(NSTimeInterval)<em>delay</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aSelector</em></dt>
+			<dd><p>A selector that identifies the method to invoke. The method should not have a significant return value and should take a single argument of type id, or no arguments.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delay</em></dt>
+			<dd><p>The minimum time before which the message is sent. Specifying a delay of 0 does not necessarily cause the selector to be performed immediately. The selector is still queued on the thread’s run loop and performed as soon as possible.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeAllAssociatedObjects" title="removeAllAssociatedObjects"></a>
+	<h3 class="subsubtitle method-title">removeAllAssociatedObjects</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the reciever to a clean state by removing all
+associated objects, releasing them if necessary.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeAllAssociatedObjects</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Code from the BlocksKit project by Zachary Waldowski. 2012. MIT License: <a href="https://github.com/zwaldowski/BlocksKit">https://github.com/zwaldowski/BlocksKit</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/weaklyAssociateValue:withKey:" title="weaklyAssociateValue:withKey:"></a>
+	<h3 class="subsubtitle method-title">weaklyAssociateValue:withKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Weakly associates an object with the reciever.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)weaklyAssociateValue:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>Any object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>A unique key pointer.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A weak association will cause the pointer to be set to zero
+or nil upon the disappearance of what it references;
+in other words, the associated object is not kept alive.</p>
+
+<p>Code from the BlocksKit project by Zachary Waldowski. 2012. MIT License: <a href="https://github.com/zwaldowski/BlocksKit">https://github.com/zwaldowski/BlocksKit</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-06-18)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,1050 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>UIApplication(AGCategory) Category Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">AGFoundation.atom </a></h1>
+				<a id="developerHome" href="../index.html">Andrew Garn</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">UIApplication(AGCategory) Category Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/hideNetworkActivityIndicator">&nbsp;&nbsp;&nbsp;&nbsp;+ hideNetworkActivityIndicator</option>
+	
+	<option value="//api/name/hideNetworkActivityIndicatorNow">&nbsp;&nbsp;&nbsp;&nbsp;+ hideNetworkActivityIndicatorNow</option>
+	
+	<option value="//api/name/interfaceOrientationIsSupported:">&nbsp;&nbsp;&nbsp;&nbsp;+ interfaceOrientationIsSupported:</option>
+	
+	<option value="//api/name/isBeingDebugged">&nbsp;&nbsp;&nbsp;&nbsp;+ isBeingDebugged</option>
+	
+	<option value="//api/name/isNotBeingDebugged">&nbsp;&nbsp;&nbsp;&nbsp;+ isNotBeingDebugged</option>
+	
+	<option value="//api/name/isPirated">&nbsp;&nbsp;&nbsp;&nbsp;+ isPirated</option>
+	
+	<option value="//api/name/logApplicationDidFinishLaunchingWithOptions:">&nbsp;&nbsp;&nbsp;&nbsp;+ logApplicationDidFinishLaunchingWithOptions:</option>
+	
+	<option value="//api/name/logMemoryUsage">&nbsp;&nbsp;&nbsp;&nbsp;+ logMemoryUsage</option>
+	
+	<option value="//api/name/observeNavigationControllerStack">&nbsp;&nbsp;&nbsp;&nbsp;+ observeNavigationControllerStack</option>
+	
+	<option value="//api/name/scheduledLocalNotifications">&nbsp;&nbsp;&nbsp;&nbsp;+ scheduledLocalNotifications</option>
+	
+	<option value="//api/name/scheduledLocalNotificationsSortedAscending:">&nbsp;&nbsp;&nbsp;&nbsp;+ scheduledLocalNotificationsSortedAscending:</option>
+	
+	<option value="//api/name/showNetworkActivityIndicator">&nbsp;&nbsp;&nbsp;&nbsp;+ showNetworkActivityIndicator</option>
+	
+	<option value="//api/name/stringFromInterfaceOrientation:">&nbsp;&nbsp;&nbsp;&nbsp;+ stringFromInterfaceOrientation:</option>
+	
+	<option value="//api/name/takeScreenshot">&nbsp;&nbsp;&nbsp;&nbsp;+ takeScreenshot</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Debugging">Debugging</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Detecting Piracy">Detecting Piracy</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Console Logging">Console Logging</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Screenshot">Screenshot</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Interface Orientation">Interface Orientation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Local Notifications">Local Notifications</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Network Activity Indication">Network Activity Indication</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hideNetworkActivityIndicator">hideNetworkActivityIndicator</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hideNetworkActivityIndicatorNow">hideNetworkActivityIndicatorNow</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/interfaceOrientationIsSupported:">interfaceOrientationIsSupported:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isBeingDebugged">isBeingDebugged</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNotBeingDebugged">isNotBeingDebugged</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isPirated">isPirated</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logApplicationDidFinishLaunchingWithOptions:">logApplicationDidFinishLaunchingWithOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logMemoryUsage">logMemoryUsage</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/observeNavigationControllerStack">observeNavigationControllerStack</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/scheduledLocalNotifications">scheduledLocalNotifications</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/scheduledLocalNotificationsSortedAscending:">scheduledLocalNotificationsSortedAscending:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showNetworkActivityIndicator">showNetworkActivityIndicator</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringFromInterfaceOrientation:">stringFromInterfaceOrientation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/takeScreenshot">takeScreenshot</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="UIApplication(AGCategory) Category Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">UIApplication(AGCategory) Category Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">UIApplication+AGCategory.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A collection of category extensions for <code>UIApplication</code></p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Debugging" name="task_Debugging"></a>
+						<h3 class="subsubtitle task-title">Debugging</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isBeingDebugged">+&nbsp;isBeingDebugged</a></code>
+		<span class="tooltip"><p>Indicates whether the application is currently being run under the debugger</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isNotBeingDebugged">+&nbsp;isNotBeingDebugged</a></code>
+		<span class="tooltip"><p>Indicates whether the application is currently not being run under the debugger</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Detecting Piracy" name="task_Detecting Piracy"></a>
+						<h3 class="subsubtitle task-title">Detecting Piracy</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isPirated">+&nbsp;isPirated</a></code>
+		<span class="tooltip"><p>Indicates whether the application has been pirated</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Console Logging" name="task_Console Logging"></a>
+						<h3 class="subsubtitle task-title">Console Logging</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/logMemoryUsage">+&nbsp;logMemoryUsage</a></code>
+		<span class="tooltip"><p>Logs the memory currently in use.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/logApplicationDidFinishLaunchingWithOptions:">+&nbsp;logApplicationDidFinishLaunchingWithOptions:</a></code>
+		<span class="tooltip"><p>Logs the application launch to the console along with basic device information.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/observeNavigationControllerStack">+&nbsp;observeNavigationControllerStack</a></code>
+		<span class="tooltip"><p>Adds an observer to <code>NSNotificationCenter</code> to log to the console when the navigation controllers stack changes.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Screenshot" name="task_Screenshot"></a>
+						<h3 class="subsubtitle task-title">Screenshot</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/takeScreenshot">+&nbsp;takeScreenshot</a></code>
+		<span class="tooltip"><p>Captures an image representation of the application&rsquo;s window and saves it to the camera roll.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Interface Orientation" name="task_Interface Orientation"></a>
+						<h3 class="subsubtitle task-title">Interface Orientation</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stringFromInterfaceOrientation:">+&nbsp;stringFromInterfaceOrientation:</a></code>
+		<span class="tooltip"><p>Returns a string representation of a given interface orientation.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/interfaceOrientationIsSupported:">+&nbsp;interfaceOrientationIsSupported:</a></code>
+		<span class="tooltip"><p>Returns a boolean to indicate whether a device orientation is supported in the application&rsquo;s information property list.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Local Notifications" name="task_Local Notifications"></a>
+						<h3 class="subsubtitle task-title">Local Notifications</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/scheduledLocalNotifications">+&nbsp;scheduledLocalNotifications</a></code>
+		<span class="tooltip"><p>Returns an array of scheduled local notifications.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/scheduledLocalNotificationsSortedAscending:">+&nbsp;scheduledLocalNotificationsSortedAscending:</a></code>
+		<span class="tooltip"><p>Returns an array of scheduled local notifications with the specified ordering.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Network Activity Indication" name="task_Network Activity Indication"></a>
+						<h3 class="subsubtitle task-title">Network Activity Indication</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showNetworkActivityIndicator">+&nbsp;showNetworkActivityIndicator</a></code>
+		<span class="tooltip"><p>Increments the number of network activity requests. If this number was zero before incrementing, this will start animating the network activity indicator.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hideNetworkActivityIndicator">+&nbsp;hideNetworkActivityIndicator</a></code>
+		<span class="tooltip"><p>Decrements the number of network activity requests. If this number becomes zero after incrementing, this will stop animating the network activity indicator.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hideNetworkActivityIndicatorNow">+&nbsp;hideNetworkActivityIndicatorNow</a></code>
+		<span class="tooltip"><p>Stops the network activity indicator from animating and sets the number of network activity requests to zero.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/hideNetworkActivityIndicator" title="hideNetworkActivityIndicator"></a>
+	<h3 class="subsubtitle method-title">hideNetworkActivityIndicator</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Decrements the number of network activity requests. If this number becomes zero after incrementing, this will stop animating the network activity indicator.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)hideNetworkActivityIndicator</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hideNetworkActivityIndicatorNow" title="hideNetworkActivityIndicatorNow"></a>
+	<h3 class="subsubtitle method-title">hideNetworkActivityIndicatorNow</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Stops the network activity indicator from animating and sets the number of network activity requests to zero.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)hideNetworkActivityIndicatorNow</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/interfaceOrientationIsSupported:" title="interfaceOrientationIsSupported:"></a>
+	<h3 class="subsubtitle method-title">interfaceOrientationIsSupported:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean to indicate whether a device orientation is supported in the application&rsquo;s information property list.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)interfaceOrientationIsSupported:(UIInterfaceOrientation)<em>interfaceOrientation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>interfaceOrientation</em></dt>
+			<dd><p>An orientation of the application&rsquo;s user interface.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the application&rsquo;s information property list allows the interfaceOrientation, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isBeingDebugged" title="isBeingDebugged"></a>
+	<h3 class="subsubtitle method-title">isBeingDebugged</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates whether the application is currently being run under the debugger</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isBeingDebugged</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the application is being run under the debugger, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isNotBeingDebugged" title="isNotBeingDebugged"></a>
+	<h3 class="subsubtitle method-title">isNotBeingDebugged</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates whether the application is currently not being run under the debugger</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isNotBeingDebugged</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the application is not being run under the debugger, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isPirated" title="isPirated"></a>
+	<h3 class="subsubtitle method-title">isPirated</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates whether the application has been pirated</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isPirated</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the application has been pirated, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/logApplicationDidFinishLaunchingWithOptions:" title="logApplicationDidFinishLaunchingWithOptions:"></a>
+	<h3 class="subsubtitle method-title">logApplicationDidFinishLaunchingWithOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Logs the application launch to the console along with basic device information.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)logApplicationDidFinishLaunchingWithOptions:(NSDictionary *)<em>launchOptions</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>launchOptions</em></dt>
+			<dd><p>A dictionary indicating the reason the application was launched (if any). The contents of this dictionary may be empty in situations where the user launched the application directly.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/logMemoryUsage" title="logMemoryUsage"></a>
+	<h3 class="subsubtitle method-title">logMemoryUsage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Logs the memory currently in use.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)logMemoryUsage</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/observeNavigationControllerStack" title="observeNavigationControllerStack"></a>
+	<h3 class="subsubtitle method-title">observeNavigationControllerStack</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds an observer to <code>NSNotificationCenter</code> to log to the console when the navigation controllers stack changes.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)observeNavigationControllerStack</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/scheduledLocalNotifications" title="scheduledLocalNotifications"></a>
+	<h3 class="subsubtitle method-title">scheduledLocalNotifications</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an array of scheduled local notifications.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)scheduledLocalNotifications</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array of scheduled local notifications.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/scheduledLocalNotificationsSortedAscending:" title="scheduledLocalNotificationsSortedAscending:"></a>
+	<h3 class="subsubtitle method-title">scheduledLocalNotificationsSortedAscending:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an array of scheduled local notifications with the specified ordering.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)scheduledLocalNotificationsSortedAscending:(BOOL)<em>ascending</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ascending</em></dt>
+			<dd><p>A boolean to indicate whether the array should be sorted in ascending or not.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array of scheduled local notifications with the specified ordering.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showNetworkActivityIndicator" title="showNetworkActivityIndicator"></a>
+	<h3 class="subsubtitle method-title">showNetworkActivityIndicator</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Increments the number of network activity requests. If this number was zero before incrementing, this will start animating the network activity indicator.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)showNetworkActivityIndicator</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stringFromInterfaceOrientation:" title="stringFromInterfaceOrientation:"></a>
+	<h3 class="subsubtitle method-title">stringFromInterfaceOrientation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representation of a given interface orientation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)stringFromInterfaceOrientation:(UIInterfaceOrientation)<em>interfaceOrientation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>interfaceOrientation</em></dt>
+			<dd><p>An orientation of the application&rsquo;s user interface.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string representation of interfaceOrientation.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/takeScreenshot" title="takeScreenshot"></a>
+	<h3 class="subsubtitle method-title">takeScreenshot</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Captures an image representation of the application&rsquo;s window and saves it to the camera roll.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)takeScreenshot</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-06-18)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

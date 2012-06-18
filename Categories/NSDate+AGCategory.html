@@ -1,0 +1,1536 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>NSDate(AGCategory) Category Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">AGFoundation.atom </a></h1>
+				<a id="developerHome" href="../index.html">Andrew Garn</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">NSDate(AGCategory) Category Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/autoupdatingCurrentCalendar">&nbsp;&nbsp;&nbsp;&nbsp;+ autoupdatingCurrentCalendar</option>
+	
+	<option value="//api/name/currentCalendar">&nbsp;&nbsp;&nbsp;&nbsp;+ currentCalendar</option>
+	
+	<option value="//api/name/dateFormatter">&nbsp;&nbsp;&nbsp;&nbsp;+ dateFormatter</option>
+	
+	<option value="//api/name/dateFormatterWithdateFormat:">&nbsp;&nbsp;&nbsp;&nbsp;+ dateFormatterWithdateFormat:</option>
+	
+	<option value="//api/name/suffixArray">&nbsp;&nbsp;&nbsp;&nbsp;+ suffixArray</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/dateString">&nbsp;&nbsp;&nbsp;&nbsp;- dateString</option>
+	
+	<option value="//api/name/dateTimeString">&nbsp;&nbsp;&nbsp;&nbsp;- dateTimeString</option>
+	
+	<option value="//api/name/day">&nbsp;&nbsp;&nbsp;&nbsp;- day</option>
+	
+	<option value="//api/name/dayString">&nbsp;&nbsp;&nbsp;&nbsp;- dayString</option>
+	
+	<option value="//api/name/dayWithSuffixString">&nbsp;&nbsp;&nbsp;&nbsp;- dayWithSuffixString</option>
+	
+	<option value="//api/name/hour">&nbsp;&nbsp;&nbsp;&nbsp;- hour</option>
+	
+	<option value="//api/name/hourString">&nbsp;&nbsp;&nbsp;&nbsp;- hourString</option>
+	
+	<option value="//api/name/minute">&nbsp;&nbsp;&nbsp;&nbsp;- minute</option>
+	
+	<option value="//api/name/minuteString">&nbsp;&nbsp;&nbsp;&nbsp;- minuteString</option>
+	
+	<option value="//api/name/month">&nbsp;&nbsp;&nbsp;&nbsp;- month</option>
+	
+	<option value="//api/name/monthString">&nbsp;&nbsp;&nbsp;&nbsp;- monthString</option>
+	
+	<option value="//api/name/relativeDateTimeString">&nbsp;&nbsp;&nbsp;&nbsp;- relativeDateTimeString</option>
+	
+	<option value="//api/name/second">&nbsp;&nbsp;&nbsp;&nbsp;- second</option>
+	
+	<option value="//api/name/secondString">&nbsp;&nbsp;&nbsp;&nbsp;- secondString</option>
+	
+	<option value="//api/name/suffixForDay">&nbsp;&nbsp;&nbsp;&nbsp;- suffixForDay</option>
+	
+	<option value="//api/name/timeString">&nbsp;&nbsp;&nbsp;&nbsp;- timeString</option>
+	
+	<option value="//api/name/year">&nbsp;&nbsp;&nbsp;&nbsp;- year</option>
+	
+	<option value="//api/name/yearString">&nbsp;&nbsp;&nbsp;&nbsp;- yearString</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting Information About an NSDate Object">Getting Information About an NSDate Object</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting String Representation of an NSDate Object">Getting String Representation of an NSDate Object</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Suffix">Suffix</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Thread Safe NSCalendar">Thread Safe NSCalendar</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Thread Safe NSDateFormatter">Thread Safe NSDateFormatter</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/autoupdatingCurrentCalendar">autoupdatingCurrentCalendar</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentCalendar">currentCalendar</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateFormatter">dateFormatter</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateFormatterWithdateFormat:">dateFormatterWithdateFormat:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/suffixArray">suffixArray</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateString">dateString</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateTimeString">dateTimeString</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/day">day</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dayString">dayString</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dayWithSuffixString">dayWithSuffixString</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hour">hour</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hourString">hourString</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/minute">minute</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/minuteString">minuteString</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/month">month</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/monthString">monthString</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/relativeDateTimeString">relativeDateTimeString</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/second">second</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/secondString">secondString</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/suffixForDay">suffixForDay</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/timeString">timeString</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/year">year</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/yearString">yearString</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="NSDate(AGCategory) Category Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">NSDate(AGCategory) Category Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">NSDate+AGCategory.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A collection of category extensions for <code>NSDate</code></p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Getting Information About an NSDate Object" name="task_Getting Information About an NSDate Object"></a>
+						<h3 class="subsubtitle task-title">Getting Information About an NSDate Object</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/yearString">&ndash;&nbsp;yearString</a></code>
+		<span class="tooltip"><p>Returns a string representing the number of <a href="#//api/name/year">year</a> units for the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/monthString">&ndash;&nbsp;monthString</a></code>
+		<span class="tooltip"><p>Returns a string representing the number of <a href="#//api/name/month">month</a> units for the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dayString">&ndash;&nbsp;dayString</a></code>
+		<span class="tooltip"><p>Returns a string representing the number of <a href="#//api/name/day">day</a> units for the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dayWithSuffixString">&ndash;&nbsp;dayWithSuffixString</a></code>
+		<span class="tooltip"><p>Returns a string representing the number of <a href="#//api/name/day">day</a> units for the receiver including its suffix.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hourString">&ndash;&nbsp;hourString</a></code>
+		<span class="tooltip"><p>Returns a string representing the number of <a href="#//api/name/hour">hour</a> units for the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/minuteString">&ndash;&nbsp;minuteString</a></code>
+		<span class="tooltip"><p>Returns a string representing the number of <a href="#//api/name/minute">minute</a> units for the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/secondString">&ndash;&nbsp;secondString</a></code>
+		<span class="tooltip"><p>Returns a string representing the number of <a href="#//api/name/second">second</a> units for the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/year">&ndash;&nbsp;year</a></code>
+		<span class="tooltip"><p>Returns the number of year units for the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/month">&ndash;&nbsp;month</a></code>
+		<span class="tooltip"><p>Returns the number of month units for the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/day">&ndash;&nbsp;day</a></code>
+		<span class="tooltip"><p>Returns the number of day units for the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hour">&ndash;&nbsp;hour</a></code>
+		<span class="tooltip"><p>Returns the number of hour units for the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/minute">&ndash;&nbsp;minute</a></code>
+		<span class="tooltip"><p>Returns the number of minute units for the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/second">&ndash;&nbsp;second</a></code>
+		<span class="tooltip"><p>Returns the number of second units for the receiver.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Getting String Representation of an NSDate Object" name="task_Getting String Representation of an NSDate Object"></a>
+						<h3 class="subsubtitle task-title">Getting String Representation of an NSDate Object</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dateString">&ndash;&nbsp;dateString</a></code>
+		<span class="tooltip"><p>Returns a formatted date string from the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/timeString">&ndash;&nbsp;timeString</a></code>
+		<span class="tooltip"><p>Returns a formatted time string from the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dateTimeString">&ndash;&nbsp;dateTimeString</a></code>
+		<span class="tooltip"><p>Returns a formatted date time string from the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/relativeDateTimeString">&ndash;&nbsp;relativeDateTimeString</a></code>
+		<span class="tooltip"><p>Returns a formatted date time string from the receiver relative to the current date.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Suffix" name="task_Suffix"></a>
+						<h3 class="subsubtitle task-title">Suffix</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/suffixArray">+&nbsp;suffixArray</a></code>
+		<span class="tooltip"><p>Returns an array of date <a href="#//api/name/day">day</a> suffix strings.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/suffixForDay">&ndash;&nbsp;suffixForDay</a></code>
+		<span class="tooltip"><p>Returns the suffix for the <a href="#//api/name/day">day</a> represented by the receiver.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Thread Safe NSCalendar" name="task_Thread Safe NSCalendar"></a>
+						<h3 class="subsubtitle task-title">Thread Safe NSCalendar</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentCalendar">+&nbsp;currentCalendar</a></code>
+		<span class="tooltip"><p>Returns a thread safe logical calendar for the current user.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/autoupdatingCurrentCalendar">+&nbsp;autoupdatingCurrentCalendar</a></code>
+		<span class="tooltip"><p>Returns a thread safe autoupdating logical calendar for the current user.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Thread Safe NSDateFormatter" name="task_Thread Safe NSDateFormatter"></a>
+						<h3 class="subsubtitle task-title">Thread Safe NSDateFormatter</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dateFormatter">+&nbsp;dateFormatter</a></code>
+		<span class="tooltip"><p>Returns a thread safe date formatter.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dateFormatterWithdateFormat:">+&nbsp;dateFormatterWithdateFormat:</a></code>
+		<span class="tooltip"><p>Returns a thread safe date formatter with the specified date format set.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/autoupdatingCurrentCalendar" title="autoupdatingCurrentCalendar"></a>
+	<h3 class="subsubtitle method-title">autoupdatingCurrentCalendar</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a thread safe autoupdating logical calendar for the current user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSCalendar *)autoupdatingCurrentCalendar</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A thread safe autoupdating logical calendar for the current user.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The method returns a thread safe <code>NSCalendar</code> by making use of thread dictionary storage to return a seperate cached instance for each thread.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/currentCalendar" title="currentCalendar"></a>
+	<h3 class="subsubtitle method-title">currentCalendar</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a thread safe logical calendar for the current user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSCalendar *)currentCalendar</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A thread safe logical calendar for the current user.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The method returns a thread safe <code>NSCalendar</code> by making use of thread dictionary storage to return a seperate cached instance for each thread.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dateFormatter" title="dateFormatter"></a>
+	<h3 class="subsubtitle method-title">dateFormatter</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a thread safe date formatter.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDateFormatter *)dateFormatter</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A thread safe date formatter.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The method returns a thread safe <code>NSDateFormatter</code> by making use of thread dictionary storage to return a seperate cached instance for each thread.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dateFormatterWithdateFormat:" title="dateFormatterWithdateFormat:"></a>
+	<h3 class="subsubtitle method-title">dateFormatterWithdateFormat:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a thread safe date formatter with the specified date format set.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDateFormatter *)dateFormatterWithdateFormat:(NSString *)<em>dateFormat</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dateFormat</em></dt>
+			<dd><p>The date format for the receiver.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A thread safe date formatter with the specified date format set.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The method returns a thread safe <code>NSDateFormatter</code> by making use of thread dictionary storage to return a seperate cached instance for each thread.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/suffixArray" title="suffixArray"></a>
+	<h3 class="subsubtitle method-title">suffixArray</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an array of date <a href="#//api/name/day">day</a> suffix strings.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)suffixArray</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array of date <a href="#//api/name/day">day</a> suffix strings.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/dateString" title="dateString"></a>
+	<h3 class="subsubtitle method-title">dateString</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a formatted date string from the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)dateString</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A formatted date string from the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dateTimeString" title="dateTimeString"></a>
+	<h3 class="subsubtitle method-title">dateTimeString</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a formatted date time string from the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)dateTimeString</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A formatted date time string from the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/day" title="day"></a>
+	<h3 class="subsubtitle method-title">day</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the number of day units for the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)day</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The number of day units for the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dayString" title="dayString"></a>
+	<h3 class="subsubtitle method-title">dayString</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representing the number of <a href="#//api/name/day">day</a> units for the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)dayString</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string representing the number of <a href="#//api/name/day">day</a> units for the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dayWithSuffixString" title="dayWithSuffixString"></a>
+	<h3 class="subsubtitle method-title">dayWithSuffixString</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representing the number of <a href="#//api/name/day">day</a> units for the receiver including its suffix.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)dayWithSuffixString</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string representing the number of <a href="#//api/name/day">day</a> units for the receiver including its suffix.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hour" title="hour"></a>
+	<h3 class="subsubtitle method-title">hour</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the number of hour units for the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)hour</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The number of hour units for the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hourString" title="hourString"></a>
+	<h3 class="subsubtitle method-title">hourString</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representing the number of <a href="#//api/name/hour">hour</a> units for the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)hourString</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string representing the number of <a href="#//api/name/hour">hour</a> units for the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/minute" title="minute"></a>
+	<h3 class="subsubtitle method-title">minute</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the number of minute units for the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)minute</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The number of minute units for the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/minuteString" title="minuteString"></a>
+	<h3 class="subsubtitle method-title">minuteString</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representing the number of <a href="#//api/name/minute">minute</a> units for the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)minuteString</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string representing the number of <a href="#//api/name/minute">minute</a> units for the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/month" title="month"></a>
+	<h3 class="subsubtitle method-title">month</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the number of month units for the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)month</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The number of month units for the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/monthString" title="monthString"></a>
+	<h3 class="subsubtitle method-title">monthString</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representing the number of <a href="#//api/name/month">month</a> units for the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)monthString</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string representing the number of <a href="#//api/name/month">month</a> units for the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/relativeDateTimeString" title="relativeDateTimeString"></a>
+	<h3 class="subsubtitle method-title">relativeDateTimeString</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a formatted date time string from the receiver relative to the current date.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)relativeDateTimeString</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A formatted date time string from the receiver relative to the current date.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/second" title="second"></a>
+	<h3 class="subsubtitle method-title">second</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the number of second units for the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)second</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The number of second units for the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/secondString" title="secondString"></a>
+	<h3 class="subsubtitle method-title">secondString</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representing the number of <a href="#//api/name/second">second</a> units for the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)secondString</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string representing the number of <a href="#//api/name/second">second</a> units for the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/suffixForDay" title="suffixForDay"></a>
+	<h3 class="subsubtitle method-title">suffixForDay</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the suffix for the <a href="#//api/name/day">day</a> represented by the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)suffixForDay</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The suffix for the <a href="#//api/name/day">day</a> represented by the receiver, or an empty string if not found.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/timeString" title="timeString"></a>
+	<h3 class="subsubtitle method-title">timeString</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a formatted time string from the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)timeString</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A formatted time string from the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/year" title="year"></a>
+	<h3 class="subsubtitle method-title">year</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the number of year units for the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)year</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The number of year units for the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/yearString" title="yearString"></a>
+	<h3 class="subsubtitle method-title">yearString</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representing the number of <a href="#//api/name/year">year</a> units for the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)yearString</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string representing the number of <a href="#//api/name/year">year</a> units for the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-06-18)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
