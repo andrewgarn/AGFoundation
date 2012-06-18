@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'AGFoundation' target in the 'AGFoundation' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

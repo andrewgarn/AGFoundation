@@ -1,0 +1,1100 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		784857571589E31E00013DD9 /* Framework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 784857581589E31E00013DD9 /* Build configuration list for PBXAggregateTarget "Framework" */;
+			buildPhases = (
+				784857611589E79E00013DD9 /* ShellScript */,
+			);
+			dependencies = (
+				784857631589E7A300013DD9 /* PBXTargetDependency */,
+			);
+			name = Framework;
+			productName = Framework;
+		};
+		7848575B1589E32500013DD9 /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 7848575C1589E32500013DD9 /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				7848575F1589E33300013DD9 /* ShellScript */,
+			);
+			dependencies = (
+				78AFF7BD158BB9E200CBC25F /* PBXTargetDependency */,
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		784856471589D50A00013DD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784856461589D50A00013DD9 /* Foundation.framework */; };
+		7848565A1589DAA000013DD9 /* Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 784856591589DAA000013DD9 /* Prefix.pch */; };
+		784856DC1589DAB200013DD9 /* AGFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848565B1589DAB200013DD9 /* AGFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		784856DD1589DAB200013DD9 /* AGSoundEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848565F1589DAB200013DD9 /* AGSoundEffect.h */; };
+		784856DE1589DAB200013DD9 /* AGSoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856601589DAB200013DD9 /* AGSoundEffect.m */; };
+		784856DF1589DAB200013DD9 /* LocationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856661589DAB200013DD9 /* LocationManager.h */; };
+		784856E01589DAB200013DD9 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856671589DAB200013DD9 /* LocationManager.m */; };
+		784856E11589DAB200013DD9 /* NSArray+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848566A1589DAB200013DD9 /* NSArray+AGCategory.h */; };
+		784856E21589DAB200013DD9 /* NSArray+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7848566B1589DAB200013DD9 /* NSArray+AGCategory.m */; };
+		784856E31589DAB200013DD9 /* NSBundle+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848566C1589DAB200013DD9 /* NSBundle+AGCategory.h */; };
+		784856E41589DAB200013DD9 /* NSBundle+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7848566D1589DAB200013DD9 /* NSBundle+AGCategory.m */; };
+		784856E51589DAB200013DD9 /* NSDate+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848566E1589DAB200013DD9 /* NSDate+AGCategory.h */; };
+		784856E61589DAB200013DD9 /* NSDate+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7848566F1589DAB200013DD9 /* NSDate+AGCategory.m */; };
+		784856E71589DAB200013DD9 /* NSDictionary+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856701589DAB200013DD9 /* NSDictionary+AGCategory.h */; };
+		784856E81589DAB200013DD9 /* NSDictionary+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856711589DAB200013DD9 /* NSDictionary+AGCategory.m */; };
+		784856E91589DAB200013DD9 /* NSFileManager+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856721589DAB200013DD9 /* NSFileManager+AGCategory.h */; };
+		784856EA1589DAB200013DD9 /* NSFileManager+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856731589DAB200013DD9 /* NSFileManager+AGCategory.m */; };
+		784856EB1589DAB200013DD9 /* NSMutableArray+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856741589DAB200013DD9 /* NSMutableArray+AGCategory.h */; };
+		784856EC1589DAB200013DD9 /* NSMutableArray+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856751589DAB200013DD9 /* NSMutableArray+AGCategory.m */; };
+		784856ED1589DAB200013DD9 /* NSMutableDictionary+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856761589DAB200013DD9 /* NSMutableDictionary+AGCategory.h */; };
+		784856EE1589DAB200013DD9 /* NSMutableDictionary+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856771589DAB200013DD9 /* NSMutableDictionary+AGCategory.m */; };
+		784856EF1589DAB200013DD9 /* NSNotificationCenter+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856781589DAB200013DD9 /* NSNotificationCenter+AGCategory.h */; };
+		784856F01589DAB200013DD9 /* NSNotificationCenter+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856791589DAB200013DD9 /* NSNotificationCenter+AGCategory.m */; };
+		784856F11589DAB200013DD9 /* NSNumber+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848567A1589DAB200013DD9 /* NSNumber+AGCategory.h */; };
+		784856F21589DAB200013DD9 /* NSNumber+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7848567B1589DAB200013DD9 /* NSNumber+AGCategory.m */; };
+		784856F31589DAB200013DD9 /* NSObject+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848567C1589DAB200013DD9 /* NSObject+AGCategory.h */; };
+		784856F41589DAB200013DD9 /* NSObject+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7848567D1589DAB200013DD9 /* NSObject+AGCategory.m */; };
+		784856F51589DAB200013DD9 /* NSString+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848567E1589DAB200013DD9 /* NSString+AGCategory.h */; };
+		784856F61589DAB200013DD9 /* NSString+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7848567F1589DAB200013DD9 /* NSString+AGCategory.m */; };
+		784856F71589DAB200013DD9 /* NSTimer+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856801589DAB200013DD9 /* NSTimer+AGCategory.h */; };
+		784856F81589DAB200013DD9 /* NSTimer+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856811589DAB200013DD9 /* NSTimer+AGCategory.m */; };
+		784856F91589DAB200013DD9 /* NSURL+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856821589DAB200013DD9 /* NSURL+AGCategory.h */; };
+		784856FA1589DAB200013DD9 /* NSURL+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856831589DAB200013DD9 /* NSURL+AGCategory.m */; };
+		784856FB1589DAB200013DD9 /* NSUserDefaults+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856841589DAB200013DD9 /* NSUserDefaults+AGCategory.h */; };
+		784856FC1589DAB200013DD9 /* NSUserDefaults+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856851589DAB200013DD9 /* NSUserDefaults+AGCategory.m */; };
+		784856FD1589DAB200013DD9 /* AGBlockOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856871589DAB200013DD9 /* AGBlockOperation.h */; };
+		784856FE1589DAB200013DD9 /* AGBlockOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856881589DAB200013DD9 /* AGBlockOperation.m */; };
+		784856FF1589DAB200013DD9 /* UserDefaultsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848568A1589DAB200013DD9 /* UserDefaultsManager.h */; };
+		784857001589DAB200013DD9 /* UserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7848568B1589DAB200013DD9 /* UserDefaultsManager.m */; };
+		784857011589DAB200013DD9 /* AGCommonMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848568D1589DAB200013DD9 /* AGCommonMacros.h */; };
+		784857021589DAB200013DD9 /* AGDebugging.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848568E1589DAB200013DD9 /* AGDebugging.h */; };
+		784857031589DAB200013DD9 /* AGDebuggingMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848568F1589DAB200013DD9 /* AGDebuggingMacros.h */; };
+		784857041589DAB200013DD9 /* AGPreprocessorMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856901589DAB200013DD9 /* AGPreprocessorMacros.h */; };
+		784857051589DAB200013DD9 /* AGSynthesizeSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856911589DAB200013DD9 /* AGSynthesizeSingleton.h */; };
+		784857081589DAB200013DD9 /* MKMapView+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856961589DAB200013DD9 /* MKMapView+AGCategory.h */; };
+		784857091589DAB200013DD9 /* MKMapView+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856971589DAB200013DD9 /* MKMapView+AGCategory.m */; };
+		7848570A1589DAB200013DD9 /* AGMailComposeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848569D1589DAB200013DD9 /* AGMailComposeViewController.h */; };
+		7848570B1589DAB200013DD9 /* AGMailComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7848569E1589DAB200013DD9 /* AGMailComposeViewController.m */; };
+		7848570C1589DAB200013DD9 /* AGMessageComposeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848569F1589DAB200013DD9 /* AGMessageComposeViewController.h */; };
+		7848570D1589DAB200013DD9 /* AGMessageComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856A01589DAB200013DD9 /* AGMessageComposeViewController.m */; };
+		7848570E1589DAB200013DD9 /* SKProduct+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856A41589DAB200013DD9 /* SKProduct+AGCategory.h */; };
+		7848570F1589DAB200013DD9 /* SKProduct+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856A51589DAB200013DD9 /* SKProduct+AGCategory.m */; };
+		784857101589DAB200013DD9 /* PurchaseManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856A81589DAB200013DD9 /* PurchaseManager.h */; };
+		784857111589DAB200013DD9 /* PurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856A91589DAB200013DD9 /* PurchaseManager.m */; };
+		784857121589DAB200013DD9 /* UIAlertView+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856B01589DAB200013DD9 /* UIAlertView+AGCategory.h */; };
+		784857131589DAB200013DD9 /* UIAlertView+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856B11589DAB200013DD9 /* UIAlertView+AGCategory.m */; };
+		784857141589DAB200013DD9 /* UIApplication+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856B21589DAB200013DD9 /* UIApplication+AGCategory.h */; };
+		784857151589DAB200013DD9 /* UIApplication+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856B31589DAB200013DD9 /* UIApplication+AGCategory.m */; };
+		784857161589DAB200013DD9 /* UIBarButtonItem+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856B41589DAB200013DD9 /* UIBarButtonItem+AGCategory.h */; };
+		784857171589DAB200013DD9 /* UIBarButtonItem+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856B51589DAB200013DD9 /* UIBarButtonItem+AGCategory.m */; };
+		784857181589DAB200013DD9 /* UIButton+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856B61589DAB200013DD9 /* UIButton+AGCategory.h */; };
+		784857191589DAB200013DD9 /* UIButton+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856B71589DAB200013DD9 /* UIButton+AGCategory.m */; };
+		7848571A1589DAB200013DD9 /* UIColor+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856B81589DAB200013DD9 /* UIColor+AGCategory.h */; };
+		7848571B1589DAB200013DD9 /* UIColor+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856B91589DAB200013DD9 /* UIColor+AGCategory.m */; };
+		7848571C1589DAB200013DD9 /* UIControl+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856BA1589DAB200013DD9 /* UIControl+AGCategory.h */; };
+		7848571D1589DAB200013DD9 /* UIControl+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856BB1589DAB200013DD9 /* UIControl+AGCategory.m */; };
+		7848571E1589DAB200013DD9 /* UIDevice+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856BC1589DAB200013DD9 /* UIDevice+AGCategory.h */; };
+		7848571F1589DAB200013DD9 /* UIDevice+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856BD1589DAB200013DD9 /* UIDevice+AGCategory.m */; };
+		784857201589DAB200013DD9 /* UIFont+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856BE1589DAB200013DD9 /* UIFont+AGCategory.h */; };
+		784857211589DAB200013DD9 /* UIFont+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856BF1589DAB200013DD9 /* UIFont+AGCategory.m */; };
+		784857221589DAB200013DD9 /* UIGestureRecognizer+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856C01589DAB200013DD9 /* UIGestureRecognizer+AGCategory.h */; };
+		784857231589DAB200013DD9 /* UIGestureRecognizer+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856C11589DAB200013DD9 /* UIGestureRecognizer+AGCategory.m */; };
+		784857241589DAB200013DD9 /* UIImage+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856C21589DAB200013DD9 /* UIImage+AGCategory.h */; };
+		784857251589DAB200013DD9 /* UIImage+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856C31589DAB200013DD9 /* UIImage+AGCategory.m */; };
+		784857261589DAB200013DD9 /* UIImageView+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856C41589DAB200013DD9 /* UIImageView+AGCategory.h */; };
+		784857271589DAB200013DD9 /* UIImageView+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856C51589DAB200013DD9 /* UIImageView+AGCategory.m */; };
+		784857281589DAB200013DD9 /* UINavigationBar+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856C61589DAB200013DD9 /* UINavigationBar+AGCategory.h */; };
+		784857291589DAB200013DD9 /* UINavigationBar+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856C71589DAB200013DD9 /* UINavigationBar+AGCategory.m */; };
+		7848572A1589DAB200013DD9 /* UINavigationController+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856C81589DAB200013DD9 /* UINavigationController+AGCategory.h */; };
+		7848572B1589DAB200013DD9 /* UINavigationController+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856C91589DAB200013DD9 /* UINavigationController+AGCategory.m */; };
+		7848572C1589DAB200013DD9 /* UIScreen+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856CA1589DAB200013DD9 /* UIScreen+AGCategory.h */; };
+		7848572D1589DAB200013DD9 /* UIScreen+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856CB1589DAB200013DD9 /* UIScreen+AGCategory.m */; };
+		7848572E1589DAB200013DD9 /* UIView+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856CC1589DAB200013DD9 /* UIView+AGCategory.h */; };
+		7848572F1589DAB200013DD9 /* UIView+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856CD1589DAB200013DD9 /* UIView+AGCategory.m */; };
+		784857301589DAB200013DD9 /* AGActionSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856CF1589DAB200013DD9 /* AGActionSheet.h */; };
+		784857311589DAB200013DD9 /* AGActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856D01589DAB200013DD9 /* AGActionSheet.m */; };
+		784857321589DAB200013DD9 /* AGActivityIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856D11589DAB200013DD9 /* AGActivityIndicator.h */; };
+		784857331589DAB200013DD9 /* AGActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856D21589DAB200013DD9 /* AGActivityIndicator.m */; };
+		784857341589DAB200013DD9 /* AGAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856D31589DAB200013DD9 /* AGAlertView.h */; };
+		784857351589DAB200013DD9 /* AGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856D41589DAB200013DD9 /* AGAlertView.m */; };
+		784857361589DAB200013DD9 /* AGImagePickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856D51589DAB200013DD9 /* AGImagePickerController.h */; };
+		784857371589DAB200013DD9 /* AGImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856D61589DAB200013DD9 /* AGImagePickerController.m */; };
+		784857381589DAB200013DD9 /* AGViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856D71589DAB200013DD9 /* AGViewController.h */; };
+		784857391589DAB200013DD9 /* AGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856D81589DAB200013DD9 /* AGViewController.m */; };
+		7848573A1589DAB200013DD9 /* LocalNotificationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856DA1589DAB200013DD9 /* LocalNotificationManager.h */; };
+		7848573B1589DAB200013DD9 /* LocalNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856DB1589DAB200013DD9 /* LocalNotificationManager.m */; };
+		784857401589DB0600013DD9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7848573F1589DB0600013DD9 /* CoreLocation.framework */; };
+		784857421589DB0C00013DD9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784857411589DB0C00013DD9 /* MapKit.framework */; };
+		784857441589DB1100013DD9 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784857431589DB1100013DD9 /* MessageUI.framework */; };
+		784857461589DB1700013DD9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784857451589DB1700013DD9 /* StoreKit.framework */; };
+		784857481589DB1D00013DD9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784857471589DB1D00013DD9 /* SystemConfiguration.framework */; };
+		7848574A1589DB2200013DD9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784857491589DB2200013DD9 /* UIKit.framework */; };
+		7848574F1589DBEE00013DD9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7848574E1589DBEE00013DD9 /* AudioToolbox.framework */; };
+		7848579A158B330500013DD9 /* AVAudioPlayer+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 78485798158B330500013DD9 /* AVAudioPlayer+AGCategory.h */; };
+		7848579B158B330500013DD9 /* AVAudioPlayer+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78485799158B330500013DD9 /* AVAudioPlayer+AGCategory.m */; };
+		7848579D158B333400013DD9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7848579C158B333400013DD9 /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		784857621589E7A300013DD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7848563A1589D50900013DD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 784856421589D50A00013DD9;
+			remoteInfo = AGFoundation;
+		};
+		78AFF7BC158BB9E200CBC25F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7848563A1589D50900013DD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 784856421589D50A00013DD9;
+			remoteInfo = AGFoundation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		784856431589D50A00013DD9 /* libAGFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAGFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		784856461589D50A00013DD9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		784856591589DAA000013DD9 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		7848565B1589DAB200013DD9 /* AGFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGFoundation.h; sourceTree = "<group>"; };
+		7848565F1589DAB200013DD9 /* AGSoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSoundEffect.h; sourceTree = "<group>"; };
+		784856601589DAB200013DD9 /* AGSoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSoundEffect.m; sourceTree = "<group>"; };
+		784856661589DAB200013DD9 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		784856671589DAB200013DD9 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		7848566A1589DAB200013DD9 /* NSArray+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AGCategory.h"; sourceTree = "<group>"; };
+		7848566B1589DAB200013DD9 /* NSArray+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AGCategory.m"; sourceTree = "<group>"; };
+		7848566C1589DAB200013DD9 /* NSBundle+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+AGCategory.h"; sourceTree = "<group>"; };
+		7848566D1589DAB200013DD9 /* NSBundle+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+AGCategory.m"; sourceTree = "<group>"; };
+		7848566E1589DAB200013DD9 /* NSDate+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+AGCategory.h"; sourceTree = "<group>"; };
+		7848566F1589DAB200013DD9 /* NSDate+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+AGCategory.m"; sourceTree = "<group>"; };
+		784856701589DAB200013DD9 /* NSDictionary+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+AGCategory.h"; sourceTree = "<group>"; };
+		784856711589DAB200013DD9 /* NSDictionary+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+AGCategory.m"; sourceTree = "<group>"; };
+		784856721589DAB200013DD9 /* NSFileManager+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+AGCategory.h"; sourceTree = "<group>"; };
+		784856731589DAB200013DD9 /* NSFileManager+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+AGCategory.m"; sourceTree = "<group>"; };
+		784856741589DAB200013DD9 /* NSMutableArray+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+AGCategory.h"; sourceTree = "<group>"; };
+		784856751589DAB200013DD9 /* NSMutableArray+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+AGCategory.m"; sourceTree = "<group>"; };
+		784856761589DAB200013DD9 /* NSMutableDictionary+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+AGCategory.h"; sourceTree = "<group>"; };
+		784856771589DAB200013DD9 /* NSMutableDictionary+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+AGCategory.m"; sourceTree = "<group>"; };
+		784856781589DAB200013DD9 /* NSNotificationCenter+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+AGCategory.h"; sourceTree = "<group>"; };
+		784856791589DAB200013DD9 /* NSNotificationCenter+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+AGCategory.m"; sourceTree = "<group>"; };
+		7848567A1589DAB200013DD9 /* NSNumber+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+AGCategory.h"; sourceTree = "<group>"; };
+		7848567B1589DAB200013DD9 /* NSNumber+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+AGCategory.m"; sourceTree = "<group>"; };
+		7848567C1589DAB200013DD9 /* NSObject+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AGCategory.h"; sourceTree = "<group>"; };
+		7848567D1589DAB200013DD9 /* NSObject+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AGCategory.m"; sourceTree = "<group>"; };
+		7848567E1589DAB200013DD9 /* NSString+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AGCategory.h"; sourceTree = "<group>"; };
+		7848567F1589DAB200013DD9 /* NSString+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AGCategory.m"; sourceTree = "<group>"; };
+		784856801589DAB200013DD9 /* NSTimer+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+AGCategory.h"; sourceTree = "<group>"; };
+		784856811589DAB200013DD9 /* NSTimer+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+AGCategory.m"; sourceTree = "<group>"; };
+		784856821589DAB200013DD9 /* NSURL+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+AGCategory.h"; sourceTree = "<group>"; };
+		784856831589DAB200013DD9 /* NSURL+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+AGCategory.m"; sourceTree = "<group>"; };
+		784856841589DAB200013DD9 /* NSUserDefaults+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+AGCategory.h"; sourceTree = "<group>"; };
+		784856851589DAB200013DD9 /* NSUserDefaults+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+AGCategory.m"; sourceTree = "<group>"; };
+		784856871589DAB200013DD9 /* AGBlockOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGBlockOperation.h; sourceTree = "<group>"; };
+		784856881589DAB200013DD9 /* AGBlockOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGBlockOperation.m; sourceTree = "<group>"; };
+		7848568A1589DAB200013DD9 /* UserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsManager.h; sourceTree = "<group>"; };
+		7848568B1589DAB200013DD9 /* UserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsManager.m; sourceTree = "<group>"; };
+		7848568D1589DAB200013DD9 /* AGCommonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGCommonMacros.h; sourceTree = "<group>"; };
+		7848568E1589DAB200013DD9 /* AGDebugging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGDebugging.h; sourceTree = "<group>"; };
+		7848568F1589DAB200013DD9 /* AGDebuggingMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGDebuggingMacros.h; sourceTree = "<group>"; };
+		784856901589DAB200013DD9 /* AGPreprocessorMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGPreprocessorMacros.h; sourceTree = "<group>"; };
+		784856911589DAB200013DD9 /* AGSynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSynthesizeSingleton.h; sourceTree = "<group>"; };
+		784856961589DAB200013DD9 /* MKMapView+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+AGCategory.h"; sourceTree = "<group>"; };
+		784856971589DAB200013DD9 /* MKMapView+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+AGCategory.m"; sourceTree = "<group>"; };
+		7848569D1589DAB200013DD9 /* AGMailComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGMailComposeViewController.h; sourceTree = "<group>"; };
+		7848569E1589DAB200013DD9 /* AGMailComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGMailComposeViewController.m; sourceTree = "<group>"; };
+		7848569F1589DAB200013DD9 /* AGMessageComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGMessageComposeViewController.h; sourceTree = "<group>"; };
+		784856A01589DAB200013DD9 /* AGMessageComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGMessageComposeViewController.m; sourceTree = "<group>"; };
+		784856A41589DAB200013DD9 /* SKProduct+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+AGCategory.h"; sourceTree = "<group>"; };
+		784856A51589DAB200013DD9 /* SKProduct+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+AGCategory.m"; sourceTree = "<group>"; };
+		784856A81589DAB200013DD9 /* PurchaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseManager.h; sourceTree = "<group>"; };
+		784856A91589DAB200013DD9 /* PurchaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseManager.m; sourceTree = "<group>"; };
+		784856B01589DAB200013DD9 /* UIAlertView+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+AGCategory.h"; sourceTree = "<group>"; };
+		784856B11589DAB200013DD9 /* UIAlertView+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+AGCategory.m"; sourceTree = "<group>"; };
+		784856B21589DAB200013DD9 /* UIApplication+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+AGCategory.h"; sourceTree = "<group>"; };
+		784856B31589DAB200013DD9 /* UIApplication+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+AGCategory.m"; sourceTree = "<group>"; };
+		784856B41589DAB200013DD9 /* UIBarButtonItem+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+AGCategory.h"; sourceTree = "<group>"; };
+		784856B51589DAB200013DD9 /* UIBarButtonItem+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+AGCategory.m"; sourceTree = "<group>"; };
+		784856B61589DAB200013DD9 /* UIButton+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AGCategory.h"; sourceTree = "<group>"; };
+		784856B71589DAB200013DD9 /* UIButton+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AGCategory.m"; sourceTree = "<group>"; };
+		784856B81589DAB200013DD9 /* UIColor+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AGCategory.h"; sourceTree = "<group>"; };
+		784856B91589DAB200013DD9 /* UIColor+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AGCategory.m"; sourceTree = "<group>"; };
+		784856BA1589DAB200013DD9 /* UIControl+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+AGCategory.h"; sourceTree = "<group>"; };
+		784856BB1589DAB200013DD9 /* UIControl+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+AGCategory.m"; sourceTree = "<group>"; };
+		784856BC1589DAB200013DD9 /* UIDevice+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+AGCategory.h"; sourceTree = "<group>"; };
+		784856BD1589DAB200013DD9 /* UIDevice+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+AGCategory.m"; sourceTree = "<group>"; };
+		784856BE1589DAB200013DD9 /* UIFont+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+AGCategory.h"; sourceTree = "<group>"; };
+		784856BF1589DAB200013DD9 /* UIFont+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+AGCategory.m"; sourceTree = "<group>"; };
+		784856C01589DAB200013DD9 /* UIGestureRecognizer+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+AGCategory.h"; sourceTree = "<group>"; };
+		784856C11589DAB200013DD9 /* UIGestureRecognizer+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+AGCategory.m"; sourceTree = "<group>"; };
+		784856C21589DAB200013DD9 /* UIImage+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AGCategory.h"; sourceTree = "<group>"; };
+		784856C31589DAB200013DD9 /* UIImage+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AGCategory.m"; sourceTree = "<group>"; };
+		784856C41589DAB200013DD9 /* UIImageView+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AGCategory.h"; sourceTree = "<group>"; };
+		784856C51589DAB200013DD9 /* UIImageView+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AGCategory.m"; sourceTree = "<group>"; };
+		784856C61589DAB200013DD9 /* UINavigationBar+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+AGCategory.h"; sourceTree = "<group>"; };
+		784856C71589DAB200013DD9 /* UINavigationBar+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+AGCategory.m"; sourceTree = "<group>"; };
+		784856C81589DAB200013DD9 /* UINavigationController+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+AGCategory.h"; sourceTree = "<group>"; };
+		784856C91589DAB200013DD9 /* UINavigationController+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+AGCategory.m"; sourceTree = "<group>"; };
+		784856CA1589DAB200013DD9 /* UIScreen+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+AGCategory.h"; sourceTree = "<group>"; };
+		784856CB1589DAB200013DD9 /* UIScreen+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+AGCategory.m"; sourceTree = "<group>"; };
+		784856CC1589DAB200013DD9 /* UIView+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AGCategory.h"; sourceTree = "<group>"; };
+		784856CD1589DAB200013DD9 /* UIView+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AGCategory.m"; sourceTree = "<group>"; };
+		784856CF1589DAB200013DD9 /* AGActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGActionSheet.h; sourceTree = "<group>"; };
+		784856D01589DAB200013DD9 /* AGActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGActionSheet.m; sourceTree = "<group>"; };
+		784856D11589DAB200013DD9 /* AGActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGActivityIndicator.h; sourceTree = "<group>"; };
+		784856D21589DAB200013DD9 /* AGActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGActivityIndicator.m; sourceTree = "<group>"; };
+		784856D31589DAB200013DD9 /* AGAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGAlertView.h; sourceTree = "<group>"; };
+		784856D41589DAB200013DD9 /* AGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGAlertView.m; sourceTree = "<group>"; };
+		784856D51589DAB200013DD9 /* AGImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGImagePickerController.h; sourceTree = "<group>"; };
+		784856D61589DAB200013DD9 /* AGImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGImagePickerController.m; sourceTree = "<group>"; };
+		784856D71589DAB200013DD9 /* AGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGViewController.h; sourceTree = "<group>"; };
+		784856D81589DAB200013DD9 /* AGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGViewController.m; sourceTree = "<group>"; };
+		784856DA1589DAB200013DD9 /* LocalNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalNotificationManager.h; sourceTree = "<group>"; };
+		784856DB1589DAB200013DD9 /* LocalNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationManager.m; sourceTree = "<group>"; };
+		7848573F1589DB0600013DD9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		784857411589DB0C00013DD9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		784857431589DB1100013DD9 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		784857451589DB1700013DD9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		784857471589DB1D00013DD9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		784857491589DB2200013DD9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7848574E1589DBEE00013DD9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		78485798158B330500013DD9 /* AVAudioPlayer+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVAudioPlayer+AGCategory.h"; sourceTree = "<group>"; };
+		78485799158B330500013DD9 /* AVAudioPlayer+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVAudioPlayer+AGCategory.m"; sourceTree = "<group>"; };
+		7848579C158B333400013DD9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		784856401589D50A00013DD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7848579D158B333400013DD9 /* AVFoundation.framework in Frameworks */,
+				7848574F1589DBEE00013DD9 /* AudioToolbox.framework in Frameworks */,
+				7848574A1589DB2200013DD9 /* UIKit.framework in Frameworks */,
+				784857481589DB1D00013DD9 /* SystemConfiguration.framework in Frameworks */,
+				784857461589DB1700013DD9 /* StoreKit.framework in Frameworks */,
+				784857441589DB1100013DD9 /* MessageUI.framework in Frameworks */,
+				784857421589DB0C00013DD9 /* MapKit.framework in Frameworks */,
+				784857401589DB0600013DD9 /* CoreLocation.framework in Frameworks */,
+				784856471589D50A00013DD9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		784856381589D50900013DD9 = {
+			isa = PBXGroup;
+			children = (
+				784856571589DA8800013DD9 /* AGFoundation */,
+				784856581589DA8F00013DD9 /* Supporting Files */,
+				784856451589D50A00013DD9 /* Frameworks */,
+				784856441589D50A00013DD9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		784856441589D50A00013DD9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				784856431589D50A00013DD9 /* libAGFoundation.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		784856451589D50A00013DD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7848579C158B333400013DD9 /* AVFoundation.framework */,
+				7848574E1589DBEE00013DD9 /* AudioToolbox.framework */,
+				7848573F1589DB0600013DD9 /* CoreLocation.framework */,
+				784856461589D50A00013DD9 /* Foundation.framework */,
+				784857411589DB0C00013DD9 /* MapKit.framework */,
+				784857431589DB1100013DD9 /* MessageUI.framework */,
+				784857451589DB1700013DD9 /* StoreKit.framework */,
+				784857471589DB1D00013DD9 /* SystemConfiguration.framework */,
+				784857491589DB2200013DD9 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		784856571589DA8800013DD9 /* AGFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				7848565B1589DAB200013DD9 /* AGFoundation.h */,
+				7848565C1589DAB200013DD9 /* AudioToolbox */,
+				78485794158B32D800013DD9 /* AVFoundation */,
+				784856621589DAB200013DD9 /* CoreLocation */,
+				784856681589DAB200013DD9 /* Foundation */,
+				7848568C1589DAB200013DD9 /* Macros */,
+				784856921589DAB200013DD9 /* MapKit */,
+				7848569A1589DAB200013DD9 /* MessageUI */,
+				784856A21589DAB200013DD9 /* StoreKit */,
+				784856AA1589DAB200013DD9 /* SystemConfiguration */,
+				784856AE1589DAB200013DD9 /* UIKit */,
+			);
+			name = AGFoundation;
+			sourceTree = "<group>";
+		};
+		784856581589DA8F00013DD9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				784856591589DAA000013DD9 /* Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7848565C1589DAB200013DD9 /* AudioToolbox */ = {
+			isa = PBXGroup;
+			children = (
+				7848565D1589DAB200013DD9 /* Categories */,
+				7848565E1589DAB200013DD9 /* Extensions */,
+				784856611589DAB200013DD9 /* Singletons */,
+			);
+			path = AudioToolbox;
+			sourceTree = "<group>";
+		};
+		7848565D1589DAB200013DD9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		7848565E1589DAB200013DD9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7848565F1589DAB200013DD9 /* AGSoundEffect.h */,
+				784856601589DAB200013DD9 /* AGSoundEffect.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		784856611589DAB200013DD9 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
+		784856621589DAB200013DD9 /* CoreLocation */ = {
+			isa = PBXGroup;
+			children = (
+				784856631589DAB200013DD9 /* Categories */,
+				784856641589DAB200013DD9 /* Extensions */,
+				784856651589DAB200013DD9 /* Singletons */,
+			);
+			path = CoreLocation;
+			sourceTree = "<group>";
+		};
+		784856631589DAB200013DD9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		784856641589DAB200013DD9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		784856651589DAB200013DD9 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				784856661589DAB200013DD9 /* LocationManager.h */,
+				784856671589DAB200013DD9 /* LocationManager.m */,
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
+		784856681589DAB200013DD9 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				784856691589DAB200013DD9 /* Categories */,
+				784856861589DAB200013DD9 /* Extensions */,
+				784856891589DAB200013DD9 /* Singletons */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		784856691589DAB200013DD9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				7848566A1589DAB200013DD9 /* NSArray+AGCategory.h */,
+				7848566B1589DAB200013DD9 /* NSArray+AGCategory.m */,
+				7848566C1589DAB200013DD9 /* NSBundle+AGCategory.h */,
+				7848566D1589DAB200013DD9 /* NSBundle+AGCategory.m */,
+				7848566E1589DAB200013DD9 /* NSDate+AGCategory.h */,
+				7848566F1589DAB200013DD9 /* NSDate+AGCategory.m */,
+				784856701589DAB200013DD9 /* NSDictionary+AGCategory.h */,
+				784856711589DAB200013DD9 /* NSDictionary+AGCategory.m */,
+				784856721589DAB200013DD9 /* NSFileManager+AGCategory.h */,
+				784856731589DAB200013DD9 /* NSFileManager+AGCategory.m */,
+				784856741589DAB200013DD9 /* NSMutableArray+AGCategory.h */,
+				784856751589DAB200013DD9 /* NSMutableArray+AGCategory.m */,
+				784856761589DAB200013DD9 /* NSMutableDictionary+AGCategory.h */,
+				784856771589DAB200013DD9 /* NSMutableDictionary+AGCategory.m */,
+				784856781589DAB200013DD9 /* NSNotificationCenter+AGCategory.h */,
+				784856791589DAB200013DD9 /* NSNotificationCenter+AGCategory.m */,
+				7848567A1589DAB200013DD9 /* NSNumber+AGCategory.h */,
+				7848567B1589DAB200013DD9 /* NSNumber+AGCategory.m */,
+				7848567C1589DAB200013DD9 /* NSObject+AGCategory.h */,
+				7848567D1589DAB200013DD9 /* NSObject+AGCategory.m */,
+				7848567E1589DAB200013DD9 /* NSString+AGCategory.h */,
+				7848567F1589DAB200013DD9 /* NSString+AGCategory.m */,
+				784856801589DAB200013DD9 /* NSTimer+AGCategory.h */,
+				784856811589DAB200013DD9 /* NSTimer+AGCategory.m */,
+				784856821589DAB200013DD9 /* NSURL+AGCategory.h */,
+				784856831589DAB200013DD9 /* NSURL+AGCategory.m */,
+				784856841589DAB200013DD9 /* NSUserDefaults+AGCategory.h */,
+				784856851589DAB200013DD9 /* NSUserDefaults+AGCategory.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		784856861589DAB200013DD9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				784856871589DAB200013DD9 /* AGBlockOperation.h */,
+				784856881589DAB200013DD9 /* AGBlockOperation.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		784856891589DAB200013DD9 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				7848568A1589DAB200013DD9 /* UserDefaultsManager.h */,
+				7848568B1589DAB200013DD9 /* UserDefaultsManager.m */,
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
+		7848568C1589DAB200013DD9 /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+				7848568D1589DAB200013DD9 /* AGCommonMacros.h */,
+				7848568E1589DAB200013DD9 /* AGDebugging.h */,
+				7848568F1589DAB200013DD9 /* AGDebuggingMacros.h */,
+				784856901589DAB200013DD9 /* AGPreprocessorMacros.h */,
+				784856911589DAB200013DD9 /* AGSynthesizeSingleton.h */,
+			);
+			path = Macros;
+			sourceTree = "<group>";
+		};
+		784856921589DAB200013DD9 /* MapKit */ = {
+			isa = PBXGroup;
+			children = (
+				784856931589DAB200013DD9 /* Categories */,
+				784856981589DAB200013DD9 /* Extensions */,
+				784856991589DAB200013DD9 /* Singletons */,
+			);
+			path = MapKit;
+			sourceTree = "<group>";
+		};
+		784856931589DAB200013DD9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				784856961589DAB200013DD9 /* MKMapView+AGCategory.h */,
+				784856971589DAB200013DD9 /* MKMapView+AGCategory.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		784856981589DAB200013DD9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		784856991589DAB200013DD9 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
+		7848569A1589DAB200013DD9 /* MessageUI */ = {
+			isa = PBXGroup;
+			children = (
+				7848569B1589DAB200013DD9 /* Categories */,
+				7848569C1589DAB200013DD9 /* Extensions */,
+				784856A11589DAB200013DD9 /* Singletons */,
+			);
+			path = MessageUI;
+			sourceTree = "<group>";
+		};
+		7848569B1589DAB200013DD9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		7848569C1589DAB200013DD9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7848569D1589DAB200013DD9 /* AGMailComposeViewController.h */,
+				7848569E1589DAB200013DD9 /* AGMailComposeViewController.m */,
+				7848569F1589DAB200013DD9 /* AGMessageComposeViewController.h */,
+				784856A01589DAB200013DD9 /* AGMessageComposeViewController.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		784856A11589DAB200013DD9 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
+		784856A21589DAB200013DD9 /* StoreKit */ = {
+			isa = PBXGroup;
+			children = (
+				784856A31589DAB200013DD9 /* Categories */,
+				784856A61589DAB200013DD9 /* Extensions */,
+				784856A71589DAB200013DD9 /* Singletons */,
+			);
+			path = StoreKit;
+			sourceTree = "<group>";
+		};
+		784856A31589DAB200013DD9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				784856A41589DAB200013DD9 /* SKProduct+AGCategory.h */,
+				784856A51589DAB200013DD9 /* SKProduct+AGCategory.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		784856A61589DAB200013DD9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		784856A71589DAB200013DD9 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				784856A81589DAB200013DD9 /* PurchaseManager.h */,
+				784856A91589DAB200013DD9 /* PurchaseManager.m */,
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
+		784856AA1589DAB200013DD9 /* SystemConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				784856AB1589DAB200013DD9 /* Categories */,
+				784856AC1589DAB200013DD9 /* Extensions */,
+				784856AD1589DAB200013DD9 /* Singletons */,
+			);
+			path = SystemConfiguration;
+			sourceTree = "<group>";
+		};
+		784856AB1589DAB200013DD9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		784856AC1589DAB200013DD9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		784856AD1589DAB200013DD9 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
+		784856AE1589DAB200013DD9 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				784856AF1589DAB200013DD9 /* Categories */,
+				784856CE1589DAB200013DD9 /* Extensions */,
+				784856D91589DAB200013DD9 /* Singletons */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		784856AF1589DAB200013DD9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				784856B01589DAB200013DD9 /* UIAlertView+AGCategory.h */,
+				784856B11589DAB200013DD9 /* UIAlertView+AGCategory.m */,
+				784856B21589DAB200013DD9 /* UIApplication+AGCategory.h */,
+				784856B31589DAB200013DD9 /* UIApplication+AGCategory.m */,
+				784856B41589DAB200013DD9 /* UIBarButtonItem+AGCategory.h */,
+				784856B51589DAB200013DD9 /* UIBarButtonItem+AGCategory.m */,
+				784856B61589DAB200013DD9 /* UIButton+AGCategory.h */,
+				784856B71589DAB200013DD9 /* UIButton+AGCategory.m */,
+				784856B81589DAB200013DD9 /* UIColor+AGCategory.h */,
+				784856B91589DAB200013DD9 /* UIColor+AGCategory.m */,
+				784856BA1589DAB200013DD9 /* UIControl+AGCategory.h */,
+				784856BB1589DAB200013DD9 /* UIControl+AGCategory.m */,
+				784856BC1589DAB200013DD9 /* UIDevice+AGCategory.h */,
+				784856BD1589DAB200013DD9 /* UIDevice+AGCategory.m */,
+				784856BE1589DAB200013DD9 /* UIFont+AGCategory.h */,
+				784856BF1589DAB200013DD9 /* UIFont+AGCategory.m */,
+				784856C01589DAB200013DD9 /* UIGestureRecognizer+AGCategory.h */,
+				784856C11589DAB200013DD9 /* UIGestureRecognizer+AGCategory.m */,
+				784856C21589DAB200013DD9 /* UIImage+AGCategory.h */,
+				784856C31589DAB200013DD9 /* UIImage+AGCategory.m */,
+				784856C41589DAB200013DD9 /* UIImageView+AGCategory.h */,
+				784856C51589DAB200013DD9 /* UIImageView+AGCategory.m */,
+				784856C61589DAB200013DD9 /* UINavigationBar+AGCategory.h */,
+				784856C71589DAB200013DD9 /* UINavigationBar+AGCategory.m */,
+				784856C81589DAB200013DD9 /* UINavigationController+AGCategory.h */,
+				784856C91589DAB200013DD9 /* UINavigationController+AGCategory.m */,
+				784856CA1589DAB200013DD9 /* UIScreen+AGCategory.h */,
+				784856CB1589DAB200013DD9 /* UIScreen+AGCategory.m */,
+				784856CC1589DAB200013DD9 /* UIView+AGCategory.h */,
+				784856CD1589DAB200013DD9 /* UIView+AGCategory.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		784856CE1589DAB200013DD9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				784856CF1589DAB200013DD9 /* AGActionSheet.h */,
+				784856D01589DAB200013DD9 /* AGActionSheet.m */,
+				784856D11589DAB200013DD9 /* AGActivityIndicator.h */,
+				784856D21589DAB200013DD9 /* AGActivityIndicator.m */,
+				784856D31589DAB200013DD9 /* AGAlertView.h */,
+				784856D41589DAB200013DD9 /* AGAlertView.m */,
+				784856D51589DAB200013DD9 /* AGImagePickerController.h */,
+				784856D61589DAB200013DD9 /* AGImagePickerController.m */,
+				784856D71589DAB200013DD9 /* AGViewController.h */,
+				784856D81589DAB200013DD9 /* AGViewController.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		784856D91589DAB200013DD9 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				784856DA1589DAB200013DD9 /* LocalNotificationManager.h */,
+				784856DB1589DAB200013DD9 /* LocalNotificationManager.m */,
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
+		78485794158B32D800013DD9 /* AVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				78485795158B32D900013DD9 /* Categories */,
+				78485796158B32D900013DD9 /* Extensions */,
+				78485797158B32D900013DD9 /* Singletons */,
+			);
+			path = AVFoundation;
+			sourceTree = "<group>";
+		};
+		78485795158B32D900013DD9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				78485798158B330500013DD9 /* AVAudioPlayer+AGCategory.h */,
+				78485799158B330500013DD9 /* AVAudioPlayer+AGCategory.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		78485796158B32D900013DD9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		78485797158B32D900013DD9 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		784856411589D50A00013DD9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7848565A1589DAA000013DD9 /* Prefix.pch in Headers */,
+				784856DC1589DAB200013DD9 /* AGFoundation.h in Headers */,
+				784856DD1589DAB200013DD9 /* AGSoundEffect.h in Headers */,
+				784856DF1589DAB200013DD9 /* LocationManager.h in Headers */,
+				784856E11589DAB200013DD9 /* NSArray+AGCategory.h in Headers */,
+				784856E31589DAB200013DD9 /* NSBundle+AGCategory.h in Headers */,
+				784856E51589DAB200013DD9 /* NSDate+AGCategory.h in Headers */,
+				784856E71589DAB200013DD9 /* NSDictionary+AGCategory.h in Headers */,
+				784856E91589DAB200013DD9 /* NSFileManager+AGCategory.h in Headers */,
+				784856EB1589DAB200013DD9 /* NSMutableArray+AGCategory.h in Headers */,
+				784856ED1589DAB200013DD9 /* NSMutableDictionary+AGCategory.h in Headers */,
+				784856EF1589DAB200013DD9 /* NSNotificationCenter+AGCategory.h in Headers */,
+				784856F11589DAB200013DD9 /* NSNumber+AGCategory.h in Headers */,
+				784856F31589DAB200013DD9 /* NSObject+AGCategory.h in Headers */,
+				784856F51589DAB200013DD9 /* NSString+AGCategory.h in Headers */,
+				784856F71589DAB200013DD9 /* NSTimer+AGCategory.h in Headers */,
+				784856F91589DAB200013DD9 /* NSURL+AGCategory.h in Headers */,
+				784856FB1589DAB200013DD9 /* NSUserDefaults+AGCategory.h in Headers */,
+				784856FD1589DAB200013DD9 /* AGBlockOperation.h in Headers */,
+				784856FF1589DAB200013DD9 /* UserDefaultsManager.h in Headers */,
+				784857011589DAB200013DD9 /* AGCommonMacros.h in Headers */,
+				784857021589DAB200013DD9 /* AGDebugging.h in Headers */,
+				784857031589DAB200013DD9 /* AGDebuggingMacros.h in Headers */,
+				784857041589DAB200013DD9 /* AGPreprocessorMacros.h in Headers */,
+				784857051589DAB200013DD9 /* AGSynthesizeSingleton.h in Headers */,
+				784857081589DAB200013DD9 /* MKMapView+AGCategory.h in Headers */,
+				7848570A1589DAB200013DD9 /* AGMailComposeViewController.h in Headers */,
+				7848570C1589DAB200013DD9 /* AGMessageComposeViewController.h in Headers */,
+				7848570E1589DAB200013DD9 /* SKProduct+AGCategory.h in Headers */,
+				784857101589DAB200013DD9 /* PurchaseManager.h in Headers */,
+				784857121589DAB200013DD9 /* UIAlertView+AGCategory.h in Headers */,
+				784857141589DAB200013DD9 /* UIApplication+AGCategory.h in Headers */,
+				784857161589DAB200013DD9 /* UIBarButtonItem+AGCategory.h in Headers */,
+				784857181589DAB200013DD9 /* UIButton+AGCategory.h in Headers */,
+				7848571A1589DAB200013DD9 /* UIColor+AGCategory.h in Headers */,
+				7848571C1589DAB200013DD9 /* UIControl+AGCategory.h in Headers */,
+				7848571E1589DAB200013DD9 /* UIDevice+AGCategory.h in Headers */,
+				784857201589DAB200013DD9 /* UIFont+AGCategory.h in Headers */,
+				784857221589DAB200013DD9 /* UIGestureRecognizer+AGCategory.h in Headers */,
+				784857241589DAB200013DD9 /* UIImage+AGCategory.h in Headers */,
+				784857261589DAB200013DD9 /* UIImageView+AGCategory.h in Headers */,
+				784857281589DAB200013DD9 /* UINavigationBar+AGCategory.h in Headers */,
+				7848572A1589DAB200013DD9 /* UINavigationController+AGCategory.h in Headers */,
+				7848572C1589DAB200013DD9 /* UIScreen+AGCategory.h in Headers */,
+				7848572E1589DAB200013DD9 /* UIView+AGCategory.h in Headers */,
+				784857301589DAB200013DD9 /* AGActionSheet.h in Headers */,
+				784857321589DAB200013DD9 /* AGActivityIndicator.h in Headers */,
+				784857341589DAB200013DD9 /* AGAlertView.h in Headers */,
+				784857361589DAB200013DD9 /* AGImagePickerController.h in Headers */,
+				784857381589DAB200013DD9 /* AGViewController.h in Headers */,
+				7848573A1589DAB200013DD9 /* LocalNotificationManager.h in Headers */,
+				7848579A158B330500013DD9 /* AVAudioPlayer+AGCategory.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		784856421589D50A00013DD9 /* AGFoundation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 784856501589D50A00013DD9 /* Build configuration list for PBXNativeTarget "AGFoundation" */;
+			buildPhases = (
+				7848563F1589D50A00013DD9 /* Sources */,
+				784856401589D50A00013DD9 /* Frameworks */,
+				784856411589D50A00013DD9 /* Headers */,
+				784857601589E79200013DD9 /* Prepare Framework */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AGFoundation;
+			productName = AGFoundation;
+			productReference = 784856431589D50A00013DD9 /* libAGFoundation.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7848563A1589D50900013DD9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Imano;
+			};
+			buildConfigurationList = 7848563D1589D50900013DD9 /* Build configuration list for PBXProject "AGFoundation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 784856381589D50900013DD9;
+			productRefGroup = 784856441589D50A00013DD9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				784856421589D50A00013DD9 /* AGFoundation */,
+				784857571589E31E00013DD9 /* Framework */,
+				7848575B1589E32500013DD9 /* Documentation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7848575F1589E33300013DD9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/appledoc \\\n--project-name \"AGFoundation.atom\" \\\n--project-company \"Andrew Garn\" \\\n--company-id \"com.agnomical\" \\\n--docset-atom-filename \"AGFoundation.atom\" \\\n--docset-feed-url \"http://github.com/andrewgarn/AGFoundation.atom/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"http://github.com/andrewgarn/AGFoundation.atom/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"http://github.com/andrewgarn/AGFoundation.atom/\" \\\n--output \"~/Documents/Documentation/Agnomical\" \\\n--publish-docset \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--ignore \"LocationManager.h\" \\\n--ignore \"PurchaseManager.h\" \\\n--ignore \"UserDefaultsManager.h\" \\\n--ignore \"LocalNotificationManager.h\" \\\n--ignore \"AGPreprocessorMacros.h\" \\\n--index-desc \"README.md\" \\\n\"${PROJECT_DIR}\"";
+		};
+		784857601589E79200013DD9 /* Prepare Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Prepare Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n\n# Link the \"Current\" version to \"A\"\n/bin/ln -sfh A \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/Current\"\n/bin/ln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Headers\"\n/bin/ln -sfh \"Versions/Current/${PRODUCT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/${PRODUCT_NAME}\"\n\n# The -a ensures that the headers maintain the source modification date so that we don't constantly\n# cause propagating rebuilds of files that import these headers.\n/bin/cp -a \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n";
+		};
+		784857611589E79E00013DD9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset +u\n# Avoid recursively calling this script.\nif [[ $SF_MASTER_SCRIPT_RUNNING ]]\nthen\nexit 0\nfi\nset -u\nexport SF_MASTER_SCRIPT_RUNNING=1\n\nSF_TARGET_NAME=\"Agnomical\"\nSF_EXECUTABLE_PATH=\"lib${SF_TARGET_NAME}.a\"\nSF_WRAPPER_NAME=\"${SF_TARGET_NAME}.framework\"\n\n# The following conditionals come from\n# https://github.com/kstenerud/iOS-Universal-Framework\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nSF_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nSF_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SF_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nSF_OTHER_PLATFORM=iphonesimulator\nelse\nSF_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$SF_SDK_PLATFORM$ ]]\nthen\nSF_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${SF_OTHER_PLATFORM}\"\nelse\necho \"Could not find platform name from build products directory: $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n# Build the other platform.\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${SF_OTHER_PLATFORM}${SF_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\" SYMROOT=\"${SYMROOT}\" $ACTION\n\n# Smash the two static libraries into one fat binary and store it in the .framework\nlipo -create \"${BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" -output \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\"\n\n# Copy the binary to the other architecture folder to have a complete framework in both.\ncp -a \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7848563F1589D50A00013DD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				784856DE1589DAB200013DD9 /* AGSoundEffect.m in Sources */,
+				784856E01589DAB200013DD9 /* LocationManager.m in Sources */,
+				784856E21589DAB200013DD9 /* NSArray+AGCategory.m in Sources */,
+				784856E41589DAB200013DD9 /* NSBundle+AGCategory.m in Sources */,
+				784856E61589DAB200013DD9 /* NSDate+AGCategory.m in Sources */,
+				784856E81589DAB200013DD9 /* NSDictionary+AGCategory.m in Sources */,
+				784856EA1589DAB200013DD9 /* NSFileManager+AGCategory.m in Sources */,
+				784856EC1589DAB200013DD9 /* NSMutableArray+AGCategory.m in Sources */,
+				784856EE1589DAB200013DD9 /* NSMutableDictionary+AGCategory.m in Sources */,
+				784856F01589DAB200013DD9 /* NSNotificationCenter+AGCategory.m in Sources */,
+				784856F21589DAB200013DD9 /* NSNumber+AGCategory.m in Sources */,
+				784856F41589DAB200013DD9 /* NSObject+AGCategory.m in Sources */,
+				784856F61589DAB200013DD9 /* NSString+AGCategory.m in Sources */,
+				784856F81589DAB200013DD9 /* NSTimer+AGCategory.m in Sources */,
+				784856FA1589DAB200013DD9 /* NSURL+AGCategory.m in Sources */,
+				784856FC1589DAB200013DD9 /* NSUserDefaults+AGCategory.m in Sources */,
+				784856FE1589DAB200013DD9 /* AGBlockOperation.m in Sources */,
+				784857001589DAB200013DD9 /* UserDefaultsManager.m in Sources */,
+				784857091589DAB200013DD9 /* MKMapView+AGCategory.m in Sources */,
+				7848570B1589DAB200013DD9 /* AGMailComposeViewController.m in Sources */,
+				7848570D1589DAB200013DD9 /* AGMessageComposeViewController.m in Sources */,
+				7848570F1589DAB200013DD9 /* SKProduct+AGCategory.m in Sources */,
+				784857111589DAB200013DD9 /* PurchaseManager.m in Sources */,
+				784857131589DAB200013DD9 /* UIAlertView+AGCategory.m in Sources */,
+				784857151589DAB200013DD9 /* UIApplication+AGCategory.m in Sources */,
+				784857171589DAB200013DD9 /* UIBarButtonItem+AGCategory.m in Sources */,
+				784857191589DAB200013DD9 /* UIButton+AGCategory.m in Sources */,
+				7848571B1589DAB200013DD9 /* UIColor+AGCategory.m in Sources */,
+				7848571D1589DAB200013DD9 /* UIControl+AGCategory.m in Sources */,
+				7848571F1589DAB200013DD9 /* UIDevice+AGCategory.m in Sources */,
+				784857211589DAB200013DD9 /* UIFont+AGCategory.m in Sources */,
+				784857231589DAB200013DD9 /* UIGestureRecognizer+AGCategory.m in Sources */,
+				784857251589DAB200013DD9 /* UIImage+AGCategory.m in Sources */,
+				784857271589DAB200013DD9 /* UIImageView+AGCategory.m in Sources */,
+				784857291589DAB200013DD9 /* UINavigationBar+AGCategory.m in Sources */,
+				7848572B1589DAB200013DD9 /* UINavigationController+AGCategory.m in Sources */,
+				7848572D1589DAB200013DD9 /* UIScreen+AGCategory.m in Sources */,
+				7848572F1589DAB200013DD9 /* UIView+AGCategory.m in Sources */,
+				784857311589DAB200013DD9 /* AGActionSheet.m in Sources */,
+				784857331589DAB200013DD9 /* AGActivityIndicator.m in Sources */,
+				784857351589DAB200013DD9 /* AGAlertView.m in Sources */,
+				784857371589DAB200013DD9 /* AGImagePickerController.m in Sources */,
+				784857391589DAB200013DD9 /* AGViewController.m in Sources */,
+				7848573B1589DAB200013DD9 /* LocalNotificationManager.m in Sources */,
+				7848579B158B330500013DD9 /* AVAudioPlayer+AGCategory.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		784857631589E7A300013DD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 784856421589D50A00013DD9 /* AGFoundation */;
+			targetProxy = 784857621589E7A300013DD9 /* PBXContainerItemProxy */;
+		};
+		78AFF7BD158BB9E200CBC25F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 784856421589D50A00013DD9 /* AGFoundation */;
+			targetProxy = 78AFF7BC158BB9E200CBC25F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7848564E1589D50A00013DD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7848564F1589D50A00013DD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		784856511589D50A00013DD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/AGFoundation.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Prefix.pch;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = Headers;
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
+			};
+			name = Debug;
+		};
+		784856521589D50A00013DD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/AGFoundation.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Prefix.pch;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = Headers;
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
+			};
+			name = Release;
+		};
+		784857591589E31E00013DD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7848575A1589E31E00013DD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7848575D1589E32500013DD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7848575E1589E32500013DD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7848563D1589D50900013DD9 /* Build configuration list for PBXProject "AGFoundation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7848564E1589D50A00013DD9 /* Debug */,
+				7848564F1589D50A00013DD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		784856501589D50A00013DD9 /* Build configuration list for PBXNativeTarget "AGFoundation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				784856511589D50A00013DD9 /* Debug */,
+				784856521589D50A00013DD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		784857581589E31E00013DD9 /* Build configuration list for PBXAggregateTarget "Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				784857591589E31E00013DD9 /* Debug */,
+				7848575A1589E31E00013DD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7848575C1589E32500013DD9 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7848575D1589E32500013DD9 /* Debug */,
+				7848575E1589E32500013DD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7848563A1589D50900013DD9 /* Project object */;
+}
