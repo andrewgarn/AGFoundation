@@ -50,12 +50,18 @@
 	
 	<option value="//api/name/dateFormatterWithdateFormat:">&nbsp;&nbsp;&nbsp;&nbsp;+ dateFormatterWithdateFormat:</option>
 	
+	<option value="//api/name/daysPassedSinceDate:">&nbsp;&nbsp;&nbsp;&nbsp;+ daysPassedSinceDate:</option>
+	
+	<option value="//api/name/gregorianCalendar">&nbsp;&nbsp;&nbsp;&nbsp;+ gregorianCalendar</option>
+	
 	<option value="//api/name/suffixArray">&nbsp;&nbsp;&nbsp;&nbsp;+ suffixArray</option>
 	
 	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/dateAtMidnight">&nbsp;&nbsp;&nbsp;&nbsp;- dateAtMidnight</option>
 	
 	<option value="//api/name/dateString">&nbsp;&nbsp;&nbsp;&nbsp;- dateString</option>
 	
@@ -111,7 +117,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting Information About an NSDate Object">Getting Information About an NSDate Object</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting String Representation of an NSDate Object">Getting String Representation of an NSDate Object</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Representing Dates as Strings">Representing Dates as Strings</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Modifying Dates">Modifying Dates</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting Time Intervals">Getting Time Intervals</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Suffix">Suffix</a></span></li>
 	
@@ -137,6 +147,10 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateFormatterWithdateFormat:">dateFormatterWithdateFormat:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/daysPassedSinceDate:">daysPassedSinceDate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gregorianCalendar">gregorianCalendar</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/suffixArray">suffixArray</a></span></li>
 	
 </ul></li>
@@ -144,6 +158,8 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateAtMidnight">dateAtMidnight</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateString">dateString</a></span></li>
 	
@@ -326,8 +342,8 @@
 						</ul>
 						
 						
-						<a title="Getting String Representation of an NSDate Object" name="task_Getting String Representation of an NSDate Object"></a>
-						<h3 class="subsubtitle task-title">Getting String Representation of an NSDate Object</h3>
+						<a title="Representing Dates as Strings" name="task_Representing Dates as Strings"></a>
+						<h3 class="subsubtitle task-title">Representing Dates as Strings</h3>
 
 						<ul class="task-list">
 							<li>
@@ -362,6 +378,36 @@
 						</ul>
 						
 						
+						<a title="Modifying Dates" name="task_Modifying Dates"></a>
+						<h3 class="subsubtitle task-title">Modifying Dates</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dateAtMidnight">&ndash;&nbsp;dateAtMidnight</a></code>
+		<span class="tooltip"><p>Returns a copy of the receiver with the time set to midnight.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Getting Time Intervals" name="task_Getting Time Intervals"></a>
+						<h3 class="subsubtitle task-title">Getting Time Intervals</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/daysPassedSinceDate:">+&nbsp;daysPassedSinceDate:</a></code>
+		<span class="tooltip"><p>Returns the number of full days between the current date and another given date.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
 						<a title="Suffix" name="task_Suffix"></a>
 						<h3 class="subsubtitle task-title">Suffix</h3>
 
@@ -389,6 +435,13 @@
 
 						<ul class="task-list">
 							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/gregorianCalendar">+&nbsp;gregorianCalendar</a></code>
+		<span class="tooltip"><p>Returns a thread safe gregorian calendar for the current user.</p></span>
+	</span>
+	
+	
+</li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/currentCalendar">+&nbsp;currentCalendar</a></code>
 		<span class="tooltip"><p>Returns a thread safe logical calendar for the current user.</p></span>
@@ -514,7 +567,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The method returns a thread safe <code>NSCalendar</code> by making use of thread dictionary storage to return a seperate cached instance for each thread.</p>
+		<p>The method returns a thread safe logical <code>NSCalendar</code> by making use of thread dictionary storage to return a seperate cached instance for each thread.</p>
 	</div>
 	
 	
@@ -634,6 +687,103 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/daysPassedSinceDate:" title="daysPassedSinceDate:"></a>
+	<h3 class="subsubtitle method-title">daysPassedSinceDate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the number of full days between the current date and another given date.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSInteger)daysPassedSinceDate:(NSDate *)<em>anotherDate</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>anotherDate</em></dt>
+			<dd><p>The date with which to compare to the current date.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The number of full days between the current date and anotherDate. If the current date is earlier than anotherDate, the return value is negative.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/gregorianCalendar" title="gregorianCalendar"></a>
+	<h3 class="subsubtitle method-title">gregorianCalendar</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a thread safe gregorian calendar for the current user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSCalendar *)gregorianCalendar</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A thread safe gregorian calendar for the current user.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The method returns a thread safe gregorian <code>NSCalendar</code> by making use of thread dictionary storage to return a seperate cached instance for each thread.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/suffixArray" title="suffixArray"></a>
 	<h3 class="subsubtitle method-title">suffixArray</h3>
 	
@@ -681,6 +831,47 @@
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/dateAtMidnight" title="dateAtMidnight"></a>
+	<h3 class="subsubtitle method-title">dateAtMidnight</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a copy of the receiver with the time set to midnight.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDate *)dateAtMidnight</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A copy of the receiver with the time set to midnight.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/dateString" title="dateString"></a>
@@ -1433,7 +1624,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-06-18)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-06-27)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
