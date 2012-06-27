@@ -112,27 +112,127 @@
 
 #pragma mark - Frame
 
-- (float)x
+- (CGPoint)origin
+{
+    return self.frame.origin;
+}
+
+- (void)setOrigin:(CGPoint)newOrigin
+{
+    CGRect frame = self.frame;
+    frame.origin = newOrigin;
+    self.frame = frame;
+}
+
+- (CGFloat)x
 {
     return self.frame.origin.x;
 }
 
-- (float)y
-{
-    return self.frame.origin.y; 
-}
-
-- (void)setX:(float)newX
+- (void)setX:(CGFloat)newX
 {
     CGRect frame = self.frame;
     frame.origin.x = newX;
     self.frame = frame;
 }
 
-- (void)setY:(float)newY
+- (CGFloat)y
+{
+    return self.frame.origin.y; 
+}
+
+- (void)setY:(CGFloat)newY
 {
     CGRect frame = self.frame;
     frame.origin.y = newY;
+    self.frame = frame;
+}
+
+#pragma mark -
+
+- (CGFloat)minX
+{
+    return CGRectGetMinX(self.frame);
+}
+
+- (void)setMinX:(CGFloat)minX
+{
+    CGRect frame = self.frame;
+    frame.origin.x = minX;
+    self.frame = frame;
+}
+
+- (CGFloat)midX
+{
+    return CGRectGetMidX(self.frame);
+}
+
+- (void)setMidX:(CGFloat)midX
+{
+    CGRect frame = self.frame;
+    frame.origin.x = midX - (frame.size.width / 2);
+    self.frame = frame;
+}
+
+- (CGFloat)maxX
+{
+    return CGRectGetMaxX(self.frame);
+}
+
+- (void)setMaxX:(CGFloat)maxX
+{
+    CGRect frame = self.frame;
+    frame.origin.x = maxX - frame.size.width;
+    self.frame = frame;
+}
+
+- (CGFloat)minY
+{
+    return CGRectGetMinY(self.frame);
+}
+
+- (void)setMinY:(CGFloat)minY
+{
+    CGRect frame = self.frame;
+    frame.origin.y = minY;
+    self.frame = frame;
+}
+
+- (CGFloat)midY
+{
+    return CGRectGetMidY(self.frame);
+}
+
+- (void)setMidY:(CGFloat)midY
+{
+    CGRect frame = self.frame;
+    frame.origin.y = midY - (frame.size.height / 2);
+    self.frame = frame;
+}
+
+- (CGFloat)maxY
+{
+    return CGRectGetMaxY(self.frame);
+}
+
+- (void)setMaxY:(CGFloat)maxY
+{
+    CGRect frame = self.frame;
+    frame.origin.y = maxY - frame.size.height;
+    self.frame = frame;
+}
+
+#pragma mark -
+
+- (CGSize)size
+{
+    return self.frame.size;
+}
+
+- (void)setSize:(CGSize)newSize
+{
+    CGRect frame = self.frame;
+    frame.size = newSize;
     self.frame = frame;
 }
 
@@ -141,16 +241,16 @@
     return self.frame.size.width;
 }
 
-- (float)height
-{
-    return self.frame.size.height;
-}
-
 - (void)setWidth:(float)newWidth
 {
     CGRect frame = self.frame;
     frame.size.width = newWidth;
     self.frame = frame;
+}
+
+- (float)height
+{
+    return self.frame.size.height;
 }
 
 - (void)setHeight:(float)newHeight

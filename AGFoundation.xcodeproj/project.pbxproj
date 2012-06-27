@@ -140,6 +140,10 @@
 		7848579A158B330500013DD9 /* AVAudioPlayer+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 78485798158B330500013DD9 /* AVAudioPlayer+AGCategory.h */; };
 		7848579B158B330500013DD9 /* AVAudioPlayer+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78485799158B330500013DD9 /* AVAudioPlayer+AGCategory.m */; };
 		7848579D158B333400013DD9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7848579C158B333400013DD9 /* AVFoundation.framework */; };
+		78B28E8615973C2E0025213A /* UITableView+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B28E8415973C2E0025213A /* UITableView+AGCategory.h */; };
+		78B28E8715973C2E0025213A /* UITableView+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B28E8515973C2E0025213A /* UITableView+AGCategory.m */; };
+		78B28E8B15976CDE0025213A /* UIScrollView+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B28E8915976CDE0025213A /* UIScrollView+AGCategory.h */; };
+		78B28E8C15976CDE0025213A /* UIScrollView+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B28E8A15976CDE0025213A /* UIScrollView+AGCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -267,6 +271,10 @@
 		78485798158B330500013DD9 /* AVAudioPlayer+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVAudioPlayer+AGCategory.h"; sourceTree = "<group>"; };
 		78485799158B330500013DD9 /* AVAudioPlayer+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVAudioPlayer+AGCategory.m"; sourceTree = "<group>"; };
 		7848579C158B333400013DD9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		78B28E8415973C2E0025213A /* UITableView+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+AGCategory.h"; sourceTree = "<group>"; };
+		78B28E8515973C2E0025213A /* UITableView+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+AGCategory.m"; sourceTree = "<group>"; };
+		78B28E8915976CDE0025213A /* UIScrollView+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+AGCategory.h"; sourceTree = "<group>"; };
+		78B28E8A15976CDE0025213A /* UIScrollView+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+AGCategory.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -667,6 +675,10 @@
 				784856CB1589DAB200013DD9 /* UIScreen+AGCategory.m */,
 				784856CC1589DAB200013DD9 /* UIView+AGCategory.h */,
 				784856CD1589DAB200013DD9 /* UIView+AGCategory.m */,
+				78B28E8415973C2E0025213A /* UITableView+AGCategory.h */,
+				78B28E8515973C2E0025213A /* UITableView+AGCategory.m */,
+				78B28E8915976CDE0025213A /* UIScrollView+AGCategory.h */,
+				78B28E8A15976CDE0025213A /* UIScrollView+AGCategory.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -789,6 +801,8 @@
 				784857381589DAB200013DD9 /* AGViewController.h in Headers */,
 				7848573A1589DAB200013DD9 /* LocalNotificationManager.h in Headers */,
 				7848579A158B330500013DD9 /* AVAudioPlayer+AGCategory.h in Headers */,
+				78B28E8615973C2E0025213A /* UITableView+AGCategory.h in Headers */,
+				78B28E8B15976CDE0025213A /* UIScrollView+AGCategory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -820,7 +834,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = Imano;
+				ORGANIZATIONNAME = "Andrew Garn";
 			};
 			buildConfigurationList = 7848563D1589D50900013DD9 /* Build configuration list for PBXProject "AGFoundation" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -934,6 +948,8 @@
 				784857391589DAB200013DD9 /* AGViewController.m in Sources */,
 				7848573B1589DAB200013DD9 /* LocalNotificationManager.m in Sources */,
 				7848579B158B330500013DD9 /* AVAudioPlayer+AGCategory.m in Sources */,
+				78B28E8715973C2E0025213A /* UITableView+AGCategory.m in Sources */,
+				78B28E8C15976CDE0025213A /* UIScrollView+AGCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

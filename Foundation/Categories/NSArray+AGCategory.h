@@ -26,6 +26,24 @@
 */
 - (id)randomObject;
 
+/** Returns the object located at index, or nil if the index is beyond the end of the array
+ @param index An index within the bounds of the array.
+ @return The object located at index, or nil.
+*/
+- (id)safeObjectAtIndex:(NSUInteger)index;
+
+/**-------------------------------------------------------------------------------------
+ @name Sorting Content
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Returns a copy of the receiving array sorted with the specified key and ordering.
+ @param key The property key to use when performing a comparison.
+ @param ascending `YES` if the receiver specifies sorting in ascending order, otherwise `NO`.
+ @return A copy of the receiving array sorted with the specified key and ordering.
+*/ 
+- (NSArray *)sortedArrayUsingSortDescriptorKey:(NSString *)key ascending:(BOOL)ascending;
+
 /**-------------------------------------------------------------------------------------
  @name Rearranging Content
  ---------------------------------------------------------------------------------------

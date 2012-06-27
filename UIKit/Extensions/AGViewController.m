@@ -7,6 +7,7 @@
 //
 
 #import "AGViewController.h"
+#import "UIApplication+AGCategory.h"
 
 @implementation AGViewController
 
@@ -14,7 +15,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return [UIApplication interfaceOrientationIsSupported:interfaceOrientation];
 }
 
 @end

@@ -66,48 +66,54 @@
 - (CGRect)boundsForOrientation:(UIInterfaceOrientation)orientation;
 
 /**-------------------------------------------------------------------------------------
- @name Configuring the Bounds and Frame Rectangles
+ @name Configuring Position
  ---------------------------------------------------------------------------------------
 */
 
-/** Returns the x origin position for the receiver.
- @return The x origin position for the receiver
-*/ 
-- (float)x;
+/** Shortcut for the receiver's frame.origin property. */ 
+@property (nonatomic) CGPoint origin;
 
-/** Returns the y origin position for the receiver.
- @return The y origin position for the receiver
-*/
-- (float)y;
+/** Shortcut for the receiver's frame.origin.x property. */
+@property (nonatomic) CGFloat x;
 
-/** Specifies the receiver’s x origin position.
-@param newX A new x origin for the receiver.
-*/
-- (void)setX:(float)newX;
+/** Shortcut for the receiver's frame.origin.y property. */
+@property (nonatomic) CGFloat y;
 
-/** Specifies the receiver’s y origin position.
- @param newY A new y origin for the receiver.
+/**-------------------------------------------------------------------------------------
+ @name Configuring Size
+ ---------------------------------------------------------------------------------------
 */
-- (void)setY:(float)newY;
 
-/** Returns the width value for the receiver.
- @return The width value for the receiver.
-*/
-- (float)width;
+/** Shortcut for the receiver's frame.size property. */ 
+@property (nonatomic) CGSize size;
 
-/** Returns the height value for the receiver.
- @return The height value for the receiver.
-*/
-- (float)height;
+/** Shortcut for the receiver's frame.size.width property. */
+@property (nonatomic) CGFloat width;
 
-/** Specifies the receiver’s width.
- @param newWidth A new width value for the receiver.
-*/
-- (void)setWidth:(float)newWidth;
+/** Shortcut for the receiver's frame.size.height property. */
+@property (nonatomic) CGFloat height;
 
-/** Specifies the receiver’s height.
- @param newHeight A new height value for the receiver.
+/**-------------------------------------------------------------------------------------
+ @name Configuring Min, Mid, and Max Values
+ ---------------------------------------------------------------------------------------
 */
-- (void)setHeight:(float)newHeight;
+
+/** Shortcut for the receiver's frame.origin.x property. */
+@property (nonatomic) CGFloat minX;
+
+/** Shortcut for the receiver's frame.origin.x + (frame.size.width / 2) value. */
+@property (nonatomic) CGFloat midX;
+
+/** Shortcut for the receiver's frame.origin.x + frame.size.width value. */
+@property (nonatomic) CGFloat maxX;
+
+/** Shortcut for the receiver's frame.origin.y property. */
+@property (nonatomic) CGFloat minY;
+
+/** Shortcut for the receiver's frame.origin.y + (frame.size.height / 2) value. */
+@property (nonatomic) CGFloat midY;
+
+/** Shortcut for the receiver's frame.origin.y + frame.size.height value. */
+@property (nonatomic) CGFloat maxY;
 
 @end

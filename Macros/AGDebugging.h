@@ -7,10 +7,7 @@
 //
 
 #import "FlurryAnalytics.h"
-
-#import "GTMObjC2Runtime.h"
-#import "GTMStackTrace.h"
-#import "GTMDefines.h"
+#import "UIDevice+AGCategory.h"
 
 /*
     Uncaught exception handler
@@ -34,11 +31,9 @@ void uncaughtExceptionHandler(NSException *exception)
     
     @try 
     {
-        NSString *test = [exception callStackSymbols];
-        NSString *fullBacktrace = GTMStackTraceFromException(exception);
         NSMutableString *backtrace = [NSMutableString stringWithUTF8String:""];
-        NSArray *backtraceArray = [fullBacktrace componentsSeparatedByString:@"\n"];
-        
+        NSArray *backtraceArray = [exception callStackSymbols];
+
         for (id entry in backtraceArray) 
         {
             NSRange testRange = [entry rangeOfString:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"]];
@@ -55,17 +50,17 @@ void uncaughtExceptionHandler(NSException *exception)
             }
         }
         
-        NSString *platform = [UIDevice deviceName];
+        NSString *deviceModel = [UIDevice deviceModel];
         NSString *version = [[UIDevice currentDevice] systemVersion];
         if ([backtrace length] == 0) backtrace = [NSMutableString stringWithFormat:@"No backtrace found"];
-        NSString *message = [NSString stringWithFormat:@"Device: %@. OS: %@. Backtrace:%@", platform, version, backtrace];
+        NSString *message = [NSString stringWithFormat:@"Device: %@. OS: %@. Backtrace:%@", deviceModel, version, backtrace];
         [FlurryAnalytics logError:errorName message:message exception:exception];
     }
     @catch (NSException *newException) 
     {
-        NSString *platform = [UIDevice deviceName];
+        NSString *deviceModel = [UIDevice deviceModel];
         NSString *version = [[UIDevice currentDevice] systemVersion];
-        NSString *message = [NSString stringWithFormat:@"Device: %@. OS: %@. [Backtrace Failed]", platform, version];
+        NSString *message = [NSString stringWithFormat:@"Device: %@. OS: %@. [Backtrace Failed]", deviceModel, version];
         [FlurryAnalytics logError:errorName message:message exception:exception];
     }
 }

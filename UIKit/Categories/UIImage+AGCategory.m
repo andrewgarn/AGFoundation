@@ -19,6 +19,50 @@
     return newImage;
 }
 
+- (UIImage *)scaledAndCroppedToSize:(CGSize)newSize
+{
+    return [self scaledAndCroppedToSize:newSize withScale:0.0f];  // using 0.0f forces to use native scaling.
+}
+
+- (UIImage *)scaledAndCroppedToAbsoluteSize:(CGSize)newSize
+{
+    return [self scaledAndCroppedToSize:newSize withScale:1.0f];
+}
+
+- (UIImage *)scaledAndCroppedToSize:(CGSize)newSize withScale:(CGFloat)scale
+{
+    CGFloat scaleFactor, scaledWidth, scaledHeight;
+    CGPoint thumbnailPoint = CGPointMake(0.0, 0.0);
+    
+    if (CGSizeEqualToSize(self.size, newSize) == NO) 
+    {
+        CGFloat widthFactor = newSize.width / self.size.width;
+        CGFloat heightFactor = newSize.height / self.size.height;
+        
+        if (widthFactor > heightFactor) 
+            scaleFactor = widthFactor;  // scale to fit height
+        else
+            scaleFactor = heightFactor; // scale to fit width
+        
+        scaledWidth  = self.size.width * scaleFactor;
+        scaledHeight = self.size.height * scaleFactor;
+        
+        // center the image
+        if (widthFactor > heightFactor)
+            thumbnailPoint.y = (newSize.height - scaledHeight) * 0.5; 
+        else 
+            if (widthFactor < heightFactor)
+                thumbnailPoint.x = (newSize.width - scaledWidth) * 0.5;
+    }       
+    
+    UIGraphicsBeginImageContextWithOptions(newSize, 1.0f, scale);
+    [self drawInRect:CGRectMake(thumbnailPoint.x, thumbnailPoint.y, scaledWidth, scaledHeight)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
 - (UIImage *)scaledToWidth:(CGFloat)newWidth
 {
     return [self scaledToSize:CGSizeMake(newWidth, (self.size.height * (newWidth / self.size.width)))];
@@ -31,11 +75,11 @@
 
 #pragma mark -
 
-- (UIImage *)cropToSquare
+- (UIImage *)croppedToSquare
 {
 	CGSize imageSize = self.size;
 	CGFloat shortestSide = fminf(imageSize.width, imageSize.height);
-	return [self scaledToSize:CGSizeMake(shortestSide, shortestSide)];
+	return [self scaledAndCroppedToSize:CGSizeMake(shortestSide, shortestSide)];
 }
 
 #pragma mark -

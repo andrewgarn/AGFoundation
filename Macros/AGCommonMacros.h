@@ -34,5 +34,7 @@
 /**
  *	UIAlert macro definitions.
 */
-#define ALERT(message) {UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Info" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];[alert show];[alert release];}
-#define ALERT_TITLE(title, message) {UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];[alert show];[alert release];}
+#define DEFAULT_ALERT_TITLE [NSString stringWithFormat:@"%@", APP_NAME]
+#define DEFAULT_ALERT_CANCEL_BUTTON_TITLE @"OK"
+#define ALERT(message) {UIAlertView *alert = [[UIAlertView alloc] initWithTitle:DEFAULT_ALERT_TITLE message:message delegate:self cancelButtonTitle:DEFAULT_ALERT_CANCEL_BUTTON_TITLE otherButtonTitles:nil];[alert show];}
+#define ALERT_TITLE(title, message) {UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:DEFAULT_ALERT_CANCEL_BUTTON_TITLE otherButtonTitles:nil];[alert show];}

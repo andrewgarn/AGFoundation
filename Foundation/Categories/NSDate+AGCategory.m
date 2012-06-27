@@ -182,6 +182,30 @@
 
 #pragma mark -
 
+- (NSDate *)dateAtMidnight
+{
+    NSCalendar *gregorianCalendar = [NSDate gregorianCalendar];
+    NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+    
+    NSDateComponents *comps = [gregorianCalendar components:unitFlags fromDate:self];
+	NSDate *dateAtMidnight = [gregorianCalendar dateFromComponents:comps];
+	return dateAtMidnight;
+}
+
+#pragma mark -
+
++ (NSInteger)daysPassedSinceDate:(NSDate *)anotherDate;
+{
+    NSCalendar *gregorianCalendar = [NSDate gregorianCalendar];
+    NSUInteger unitFlags = NSDayCalendarUnit;
+    
+    NSDateComponents *components = [gregorianCalendar components:unitFlags fromDate:anotherDate toDate:[NSDate date] options:0];
+    NSInteger days = [components day];
+    return days;
+}
+
+#pragma mark -
+
 + (NSString *)suffixString
 {
     static dispatch_once_t token;
@@ -217,6 +241,18 @@
 }
 
 #pragma mark - Private Methods
+
++ (NSCalendar *)gregorianCalendar
+{
+    NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
+	NSCalendar *gregorianCalendar = [threadDictionary objectForKey:@"AGCategoryGregorianCalendar"];
+    if (gregorianCalendar == nil)
+	{
+		gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+		[threadDictionary setObject:gregorianCalendar forKey:@"AGCategoryGregorianCalendar"];
+	}
+    return gregorianCalendar;
+}
 
 + (NSCalendar *)currentCalendar
 {

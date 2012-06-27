@@ -26,6 +26,21 @@
 	return nil;
 }
 
+- (id)safeObjectAtIndex:(NSUInteger)index
+{
+    if (index < [self count])
+    {
+        return [self objectAtIndex:index];
+    }
+    return nil;
+}
+
+- (NSArray *)sortedArrayUsingSortDescriptorKey:(NSString *)key ascending:(BOOL)ascending
+{
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:key ascending:ascending];
+    return [self sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+}
+
 - (NSArray *)reversedArray 
 {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];

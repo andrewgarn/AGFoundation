@@ -17,9 +17,10 @@
  ---------------------------------------------------------------------------------------
 */
 
-/** Returns a Boolean value that indicates whether the receiver is blank.
+/** Returns a Boolean value that indicates whether the receiver is not blank.
  
- The receiver is considered blank its length is zero after removing whitespace
+ The receiver is considered blank if its length is zero after removing whitespace.
+ @return `YES` if the receiver is considered not blank, otherwise `NO`.
 */ 
 - (BOOL)isNotBlank;
 

@@ -82,7 +82,7 @@
 - (NSInteger)second;
 
 /**-------------------------------------------------------------------------------------
- @name Getting String Representation of an NSDate Object
+ @name Representing Dates as Strings
  ---------------------------------------------------------------------------------------
 */ 
 
@@ -107,6 +107,27 @@
 - (NSString *)relativeDateTimeString;
 
 /**-------------------------------------------------------------------------------------
+ @name Modifying Dates
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Returns a copy of the receiver with the time set to midnight.
+ @return A copy of the receiver with the time set to midnight.
+*/
+- (NSDate *)dateAtMidnight;
+
+/**-------------------------------------------------------------------------------------
+ @name Getting Time Intervals
+ ---------------------------------------------------------------------------------------
+*/ 
+
+/** Returns the number of full days between the current date and another given date.
+ @param anotherDate The date with which to compare to the current date.
+ @return The number of full days between the current date and anotherDate. If the current date is earlier than anotherDate, the return value is negative.
+*/ 
++ (NSInteger)daysPassedSinceDate:(NSDate *)anotherDate;
+
+/**-------------------------------------------------------------------------------------
  @name Suffix
  ---------------------------------------------------------------------------------------
 */ 
@@ -126,16 +147,23 @@
  ---------------------------------------------------------------------------------------
 */ 
 
+/** Returns a thread safe gregorian calendar for the current user.
+ 
+ The method returns a thread safe gregorian `NSCalendar` by making use of thread dictionary storage to return a seperate cached instance for each thread.  
+ @return A thread safe gregorian calendar for the current user.
+ */ 
++ (NSCalendar *)gregorianCalendar;
+
 /** Returns a thread safe logical calendar for the current user.
  
- The method returns a thread safe `NSCalendar` by making use of thread dictionary storage to return a seperate cached instance for each thread.  
+ The method returns a thread safe logical `NSCalendar` by making use of thread dictionary storage to return a seperate cached instance for each thread.  
  @return A thread safe logical calendar for the current user.
 */ 
 + (NSCalendar *)currentCalendar;
 
 /** Returns a thread safe autoupdating logical calendar for the current user.
  
- The method returns a thread safe `NSCalendar` by making use of thread dictionary storage to return a seperate cached instance for each thread. 
+ The method returns a thread safe `NSCalendar` by making use of thread dictionary storage to return a seperate cached instance for each thread.
  @return A thread safe autoupdating logical calendar for the current user.
 */ 
 + (NSCalendar *)autoupdatingCurrentCalendar;
