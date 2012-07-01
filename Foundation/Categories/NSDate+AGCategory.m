@@ -5,6 +5,25 @@
 //  Created by Andrew Garn on 24/04/2012.
 //  Copyright (c) 2012 Andrew Garn. All rights reserved.
 //
+//  Redistribution and use in source and binary forms, with or without
+//  modification, are permitted provided that the following conditions are met:
+//
+//  1. Redistributions of source code must retain the above copyright notice, this
+//  list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//  this list of conditions and the following disclaimer in the documentation
+//  and/or other materials provided with the distribution.
+//
+//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+//  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+//  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+//  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+//  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+//  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+//  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+//  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+//  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "NSDate+AGCategory.h"
 
@@ -99,8 +118,6 @@
 - (NSString *)dateString
 {    
     NSDateFormatter *dateFormatter = [NSDate dateFormatterWithdateFormat:@" MMMM yyyy"];
-    [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-    
     return [[self dayWithSuffixString] stringByAppendingString:[dateFormatter stringFromDate:self]];
 }
 
@@ -113,71 +130,7 @@
 - (NSString *)dateTimeString
 {
     NSDateFormatter *dateFormatter = [NSDate dateFormatterWithdateFormat:@" MMMM yyyy HH:mm"];
-    [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-    
     return [[self dayWithSuffixString] stringByAppendingString:[dateFormatter stringFromDate:self]];
-}
-
-- (NSString *)relativeDateTimeString
-{
-    // Initialize the formatter.
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateStyle:NSDateFormatterShortStyle];
-    [formatter setTimeStyle:NSDateFormatterNoStyle];
-    
-    // Initialize the calendar and flags.
-    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit | NSWeekdayCalendarUnit;
-    NSCalendar *calendar = [NSDate currentCalendar];
-    
-    // Create reference date for supplied date.
-    NSDateComponents *comps = [calendar components:unitFlags fromDate:self];
-    [comps setHour:0];
-    [comps setMinute:0];
-    [comps setSecond:0];
-    NSDate *suppliedDate = [calendar dateFromComponents:comps];
-    
-    // Iterate through the eight days (tomorrow, today, and the last six).
-    int i;
-    for (i = -1; i < 7; i++)
-    {
-        // Initialize reference date.
-        comps = [calendar components:unitFlags fromDate:[NSDate date]];
-        [comps setHour:0];
-        [comps setMinute:0];
-        [comps setSecond:0];
-        [comps setDay:[comps day] - i];
-        NSDate *referenceDate = [calendar dateFromComponents:comps];
-        // Get week day (starts at 1).
-        int weekday = [[calendar components:unitFlags fromDate:referenceDate] weekday] - 1;
-        
-        if ([suppliedDate compare:referenceDate] == NSOrderedSame && i == -1)
-        {
-            // Tomorrow
-            return @"Tomorrow";
-        }
-        else if ([suppliedDate compare:referenceDate] == NSOrderedSame && i == 0)
-        {
-            // Today's time (like iPhone Mail)
-            [formatter setDateStyle:NSDateFormatterNoStyle];
-            [formatter setTimeStyle:NSDateFormatterShortStyle];
-            return [formatter stringFromDate:self];
-        }
-        else if ([suppliedDate compare:referenceDate] == NSOrderedSame && i == 1)
-        {
-            // Today
-            return @"Yesterday";
-        }
-        else if ([suppliedDate compare:referenceDate] == NSOrderedSame)
-        {
-            // Day of the week
-            NSString *day = [[formatter weekdaySymbols] objectAtIndex:weekday];
-            return day;
-        }
-    }
-    
-    // It's not in those eight days.
-    NSString *defaultDate = [formatter stringFromDate:self];
-    return defaultDate;
 }
 
 #pragma mark -
@@ -187,8 +140,8 @@
     NSCalendar *gregorianCalendar = [NSDate gregorianCalendar];
     NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
     
-    NSDateComponents *comps = [gregorianCalendar components:unitFlags fromDate:self];
-	NSDate *dateAtMidnight = [gregorianCalendar dateFromComponents:comps];
+    NSDateComponents *components = [gregorianCalendar components:unitFlags fromDate:self];
+	NSDate *dateAtMidnight = [gregorianCalendar dateFromComponents:components];
 	return dateAtMidnight;
 }
 
@@ -327,6 +280,7 @@
 	{
 		dateFormatter = [[NSDateFormatter alloc] init];
 		[dateFormatter setCalendar:[self autoupdatingCurrentCalendar]];
+        [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
 		[threadDictionary setObject:dateFormatter forKey:threadDictionaryKey];
 	}
     

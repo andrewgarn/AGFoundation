@@ -5,10 +5,31 @@
 //  Created by Andrew Garn on 03/05/2012.
 //  Copyright (c) 2012 Andrew Garn. All rights reserved.
 //
+//  Redistribution and use in source and binary forms, with or without
+//  modification, are permitted provided that the following conditions are met:
+//
+//  1. Redistributions of source code must retain the above copyright notice, this
+//  list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//  this list of conditions and the following disclaimer in the documentation
+//  and/or other materials provided with the distribution.
+//
+//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+//  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+//  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+//  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+//  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+//  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+//  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+//  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+//  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "UIApplication+AGCategory.h"
+#import "NSNumber+AGCategory.h"
 #import "UIDevice+AGCategory.h"
 #import "UIScreen+AGCategory.h"
+#import "NSDate+AGCategory.h"
 
 #include <mach/machine/vm_types.h>
 #include <mach/mach_host.h>
@@ -16,6 +37,7 @@
 #include <sys/sysctl.h>
 #include <sys/types.h>
 #include <sys/cdefs.h>
+#include <mach/mach.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <unistd.h>
@@ -67,44 +89,40 @@
 	return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"SignerIdentity"] != nil;
 }
 
++ (BOOL)isNotPirated
+{
+    return ![UIApplication isPirated];
+}
+
 #pragma mark -
+
++ (NSNumber *)usedMemory
+{
+    struct task_basic_info info;
+    mach_msg_type_number_t size = sizeof(info);
+    kern_return_t kerr = task_info(mach_task_self(), TASK_BASIC_INFO, (task_info_t)&info, &size);
+    vm_size_t vmsize = (kerr == KERN_SUCCESS) ? info.resident_size : 0; // size in bytes
+    return [NSNumber numberWithLong:vmsize];
+}
 
 + (void)logMemoryUsage
 {
-    static natural_t initialUsed = 0xFFFFFFFF;
-    static natural_t previousUsed = 0xFFFFFFFF;
+    static long previousMemoryUsage = 0;
+    long currentMemoryUsage = [[self usedMemory] longValue];
+    long memoryUsageDifference = currentMemoryUsage - previousMemoryUsage;
     
-    mach_port_t host_port = mach_host_self();
-    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
-    vm_size_t pagesize;
-    vm_statistics_data_t vm_stat;
-    
-    host_page_size(host_port, &pagesize);
-    
-    if (host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size) != KERN_SUCCESS)
+    if (memoryUsageDifference > 100000 || memoryUsageDifference < -100000)
     {
-        NSLog(@"Failed to fetch vm statistics");
+        previousMemoryUsage = currentMemoryUsage;        
+        NSString *currentMemoryUsageString = [[NSNumber numberWithLong:currentMemoryUsage] formattedBytes];
+        NSString *memoryUsageDifferenceString = [[NSNumber numberWithLong:memoryUsageDifference] formattedBytes];
+        NSString *freeMemoryString = [[UIDevice freeMemory] formattedBytes];
+        NSLog(@"Memory used %@ (+%@), free %@", currentMemoryUsageString, memoryUsageDifferenceString, freeMemoryString);
     }
-    
-    natural_t memUsed = (vm_stat.active_count + vm_stat.inactive_count + vm_stat.wire_count) * pagesize;
-    natural_t memFree = vm_stat.free_count * pagesize;
-    natural_t memTotal = memUsed + memFree;
-    
-    if (initialUsed == 0xFFFFFFFF)
-    {
-        initialUsed = memUsed;
-    }
-    if (previousUsed == 0xFFFFFFFF)
-    {
-        previousUsed = memUsed;
-    }
-    NSLog(@"Memory usage (KB): app %d, delta %d, used %u/%u",
-          ((int)memUsed - (int)initialUsed) / 1024,
-          ((int)memUsed - (int)previousUsed) / 1024,
-          memUsed / 1024,
-          memTotal / 1024);
-    previousUsed = memUsed;
 }
+
+static NSDate *applicationDidFinishLaunchingDate;
+static NSDate *applicationDidEnterBackgroundDate;
 
 + (void)logApplicationDidFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -113,6 +131,47 @@
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"], 
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"],
           [UIDevice deviceModel], [UIDevice systemVersion]);
+    
+    applicationDidFinishLaunchingDate = [NSDate date];
+}
+
++ (void)logApplicationDidEnterBackground
+{
+    NSLog(@"\n\n**** application: '%@ %@ (%@)' applicationDidEnterBackground: ****\n\n",
+          [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"],
+          [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
+          [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]);
+    
+    applicationDidEnterBackgroundDate = [NSDate date];
+}
+
++ (void)logApplicationWillEnterForeground
+{
+    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:applicationDidEnterBackgroundDate];
+    NSDateFormatter *dateFormatter = [NSDate dateFormatterWithdateFormat:@"EE d MMM 'at' hh:mma"];
+    
+    NSLog(@"\n\n**** application: '%@ %@ (%@)' willEnterForeground: ****\n**** applicationLaunchDate: %@ timeSinceBackground: %.0f sec ****\n\n",
+          [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"],
+          [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
+          [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"],
+          [dateFormatter stringFromDate:applicationDidFinishLaunchingDate],
+          timeInterval);
+}
+
++ (void)logApplicationWillResignActive
+{
+    NSLog(@"\n\n**** application: '%@ %@ (%@)' willResignActive: ****\n\n",
+          [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"],
+          [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
+          [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]);
+}
+
++ (void)logApplicationDidBecomeActive
+{
+    NSLog(@"\n\n**** application: '%@ %@ (%@)' didBecomeActive: ****\n\n",
+          [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"],
+          [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
+          [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]);
 }
 
 #pragma mark -

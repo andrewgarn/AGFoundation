@@ -5,6 +5,25 @@
 //  Created by Andrew Garn on 19/04/2012.
 //  Copyright (c) 2012 Andrew Garn. All rights reserved.
 //
+//  Redistribution and use in source and binary forms, with or without
+//  modification, are permitted provided that the following conditions are met:
+//
+//  1. Redistributions of source code must retain the above copyright notice, this
+//  list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//  this list of conditions and the following disclaimer in the documentation
+//  and/or other materials provided with the distribution.
+//
+//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+//  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+//  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+//  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+//  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+//  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+//  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+//  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+//  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <UIKit/UIKit.h>
 
@@ -79,7 +98,7 @@
 + (BOOL)isAniPad;
 
 /** Returns a boolean value that indicates whether the device is an iOS Simulator.
- @return YES if the device is an iOS Simulator, otherwise NO.
+ @return `YES` if the device is an iOS Simulator, otherwise `NO`.
 */ 
 + (BOOL)isASimulator;
 
@@ -89,19 +108,29 @@
 */
 
 /** Returns a boolean value that indicates whether the device has a retina display.
- @return YES if the device has a retina display, otherwise NO.
+ @return `YES` if the device has a retina display, otherwise `NO`.
 */ 
 + (BOOL)hasRetinaDisplay;
 
 /** Returns a boolean value that indicates whether the device has a front camera.
- @return YES if the device has a front camera, otherwise NO.
+ @return `YES` if the device has a front camera, otherwise `NO`.
 */ 
 + (BOOL)hasFrontCamera;
 
 /** Returns a boolean value that indicates whether the device has a back camera.
- @return YES if the device has a back camera, otherwise NO.
+ @return `YES` if the device has a back camera, otherwise `NO`.
 */ 
 + (BOOL)hasRearCamera;
+
+/** Returns a boolean value that indicates whether the device has a front flash.
+ @return `YES` if the device has a front flash, otherwise `NO`.
+*/
++ (BOOL)hasFrontFlash;
+
+/** Returns a boolean value that indicates whether the device has a back flash.
+ @return `YES` if the device has a back flash, otherwise `NO`.
+*/
++ (BOOL)hasRearFlash;
 
 /**-------------------------------------------------------------------------------------
  @name Determining the Available Software Features
@@ -109,17 +138,17 @@
 */
 
 /** Returns a boolean value that indicates whether the device is able to send email.
- @return YES if the device is configured for sending email or NO if it is not. 
+ @return `YES` if the device is configured for sending email, otherwise `NO`. 
 */ 
 + (BOOL)canSendMail;
 
 /** Returns a boolean value that indicates whether the device is able to send text messages.
- @return YES if the device can send text messages or NO if it cannot. 
+ @return `YES` if the device can send text messages, otherwise `NO`. 
 */ 
 + (BOOL)canSendText;
 
 /** Returns a boolean value that indicates whether multitasking is supported on the current device.
- @return YES if the device supports multitasking, otherwise NO.
+ @return `YES` if the device supports multitasking, otherwise `NO`.
 */ 
 + (BOOL)supportsMultitasking;
 
@@ -134,12 +163,12 @@
 + (UIUserInterfaceIdiom)idiom;
 
 /** Returns a boolean value that indicates whether the interface in use is designed for the iPhone and iPod touch.
- @return YES if the interface in use is designed for the iPhone and iPod touch, otherwise NO.
+ @return `YES` if the interface in use is designed for the iPhone and iPod touch, otherwise `NO`.
 */ 
 + (BOOL)userInterfaceIdiomIsPhone;
 
 /** Returns a boolean value that indicates whether the interface in use is designed for the iPad.
- @return YES if the interface in use is designed for the iPad, otherwise NO.
+ @return `YES` if the interface in use is designed for the iPad, otherwise `NO`.
 */ 
 + (BOOL)userInterfaceIdiomIsPad;
 
@@ -224,5 +253,10 @@
  @return The free amount of disk space of the device.
 */ 
 + (NSNumber *)freeDiskSpace;
+
+/** Returns the currently available free memory of the device.
+ @return The currently available free memory of the device. (mb)
+*/
++ (NSNumber *)freeMemory;
 
 @end

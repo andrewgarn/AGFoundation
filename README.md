@@ -8,12 +8,13 @@ AGFoundation is collection of category and class extensions for iOS frameworks i
 - CoreLocation
 - Foundation
 - MapKit
+- Macros
 - MessageUI
 - StoreKit
 - System Configuration
 - UIKit
 
-Using AGFoundation in one of your projects? Please get in touch with a link to the app and let me know about it.
+Using AGFoundation in one of your projects? Please get in touch with a link to the app and let me know.
 
 Usage
 -----
@@ -27,9 +28,7 @@ Documentation can be [browsed online](http://andrewgarn.github.com/AGFoundation/
 License
 -------
 
-Code is covered by the modified BSD license unless otherwise stated.<br/>
-Attribution is not required but always appreciated.
-
+Code is covered by the modified BSD license unless otherwise stated.
 
 
 

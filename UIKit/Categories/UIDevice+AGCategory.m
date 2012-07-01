@@ -5,6 +5,25 @@
 //  Created by Andrew Garn on 19/04/2012.
 //  Copyright (c) 2012 Andrew Garn. All rights reserved.
 //
+//  Redistribution and use in source and binary forms, with or without
+//  modification, are permitted provided that the following conditions are met:
+//
+//  1. Redistributions of source code must retain the above copyright notice, this
+//  list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//  this list of conditions and the following disclaimer in the documentation
+//  and/or other materials provided with the distribution.
+//
+//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+//  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+//  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+//  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+//  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+//  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+//  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+//  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+//  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "UIDevice+AGCategory.h"
 #import "NSString+AGCategory.h"
@@ -12,12 +31,18 @@
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <CoreTelephony/CTCarrier.h>
 
+#import <CoreLocation/CoreLocation.h>
+#import <CoreMotion/CoreMotion.h>
+
+#import <MobileCoreServices/MobileCoreServices.h>
+
 #include <sys/utsname.h>
 #include <sys/types.h>
 #include <sys/sysctl.h>
 #include <sys/socket.h>
 #include <net/if.h>
 #include <net/if_dl.h>
+#include <mach/mach.h>
 
 @interface UIDevice (AGCategory_Private)
 + (NSString *)getSysInfoByName:(char *)typeSpecifier;
@@ -182,6 +207,22 @@
     return NO;
 }
 
++ (BOOL)hasCompass
+{
+    return [CLLocationManager headingAvailable];
+}
+
++ (BOOL)hasGyroscope
+{
+    static dispatch_once_t token;
+	static CMMotionManager *motionManager;
+    
+	dispatch_once(&token, ^{
+		motionManager = [[CMMotionManager alloc] init];
+	});
+    return [motionManager isGyroAvailable];
+}
+
 + (BOOL)hasFrontCamera
 {
     return [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront];
@@ -190,6 +231,25 @@
 + (BOOL)hasRearCamera
 {
     return [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear];
+}
+
++ (BOOL)hasFrontFlash
+{
+    return [UIImagePickerController isFlashAvailableForCameraDevice:UIImagePickerControllerCameraDeviceFront];
+}
+
++ (BOOL)hasRearFlash
+{
+    return [UIImagePickerController isFlashAvailableForCameraDevice:UIImagePickerControllerCameraDeviceRear];
+}
+
++ (BOOL)canRecordVideo
+{
+    NSArray *mediaType = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+    if ([mediaType containsObject:(NSString *)kUTTypeMovie])
+        return YES;
+	
+    return NO;
 }
 
 #pragma mark -
@@ -376,6 +436,19 @@
 {
     NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
     return [attributes objectForKey:NSFileSystemFreeSize];
+}
+
++ (NSNumber *)freeMemory
+{
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t pagesize;
+    vm_statistics_data_t vm_stat;
+    
+    host_page_size(host_port, &pagesize);
+    (void) host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    vm_size_t vmsize = vm_stat.free_count * pagesize;
+    return [NSNumber numberWithLong:(vmsize / 1024 / 1024)];
 }
 
 + (NSString *)macAddress
