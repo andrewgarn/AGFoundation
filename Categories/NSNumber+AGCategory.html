@@ -49,6 +49,8 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
+	<option value="//api/name/formattedBytes">&nbsp;&nbsp;&nbsp;&nbsp;- formattedBytes</option>
+	
 	<option value="//api/name/stringWithNumberStyle:">&nbsp;&nbsp;&nbsp;&nbsp;- stringWithNumberStyle:</option>
 	
 	
@@ -67,6 +69,10 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_String Conversion">String Conversion</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Byte Conversion">Byte Conversion</a></span></li>
+	
 </ul></li>
 
 
@@ -84,6 +90,8 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formattedBytes">formattedBytes</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringWithNumberStyle:">stringWithNumberStyle:</a></span></li>
 	
@@ -133,14 +141,14 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						
-						
+						<a title="String Conversion" name="task_String Conversion"></a>
+						<h3 class="subsubtitle task-title">String Conversion</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/numberFromString:">+&nbsp;numberFromString:</a></code>
-		<span class="tooltip"><p>Returns an NSNumber object created by parsing a given string using NSNumberFormatterDecimalStyle</p></span>
+		<span class="tooltip"><p>Returns an <code>NSNumber</code> object created by parsing a given string using <code>NSNumberFormatterDecimalStyle</code></p></span>
 	</span>
 	
 	
@@ -148,6 +156,21 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/stringWithNumberStyle:">&ndash;&nbsp;stringWithNumberStyle:</a></code>
 		<span class="tooltip"><p>Returns an NSNumber object created by parsing a given string using the supplied style</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Byte Conversion" name="task_Byte Conversion"></a>
+						<h3 class="subsubtitle task-title">Byte Conversion</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formattedBytes">&ndash;&nbsp;formattedBytes</a></code>
+		<span class="tooltip"><p>Returns an <code>NSString</code> description of the byte value represented by the receiver.</p></span>
 	</span>
 	
 	
@@ -173,7 +196,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns an NSNumber object created by parsing a given string using NSNumberFormatterDecimalStyle</p>
+		<p>Returns an <code>NSNumber</code> object created by parsing a given string using <code>NSNumberFormatterDecimalStyle</code></p>
 	</div>		
 	
     
@@ -187,7 +210,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>string</em></dt>
-			<dd><p>An NSString object that is parsed to generate the returned number object.</p></dd>
+			<dd><p>An <code>NSString</code> object that is parsed to generate the returned number object.</p></dd>
 		</dl>
 		
 	</div>
@@ -196,7 +219,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An NSNumber object created by parsing string using the NSNumberFormatterDecimalStyle.</p>
+		<p>An <code>NSNumber</code> object created by parsing string using the <code>NSNumberFormatterDecimalStyle</code>.</p>
 	</div>
 	
 	
@@ -224,6 +247,47 @@
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/formattedBytes" title="formattedBytes"></a>
+	<h3 class="subsubtitle method-title">formattedBytes</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an <code>NSString</code> description of the byte value represented by the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)formattedBytes</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSString</code> description of the byte value represented by the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSNumber+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/stringWithNumberStyle:" title="stringWithNumberStyle:"></a>
@@ -289,7 +353,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-06-27)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-07-02)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

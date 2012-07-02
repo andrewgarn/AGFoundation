@@ -40,6 +40,13 @@
 	
 	
 	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/imageWithContentsOfBundleFileNamed:">&nbsp;&nbsp;&nbsp;&nbsp;+ imageWithContentsOfBundleFileNamed:</option>
+	
+	<option value="//api/name/imageWithContentsOfDocumentFileNamed:">&nbsp;&nbsp;&nbsp;&nbsp;+ imageWithContentsOfDocumentFileNamed:</option>
+	
+	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
@@ -78,6 +85,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Cropping">Cropping</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Retrieval">Retrieval</a></span></li>
+	
 </ul></li>
 
 
@@ -85,6 +94,14 @@
 
 
 
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageWithContentsOfBundleFileNamed:">imageWithContentsOfBundleFileNamed:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageWithContentsOfDocumentFileNamed:">imageWithContentsOfDocumentFileNamed:</a></span></li>
+	
+</ul></li>
 
 
 
@@ -214,6 +231,28 @@
 </li>
 						</ul>
 						
+						
+						<a title="Retrieval" name="task_Retrieval"></a>
+						<h3 class="subsubtitle task-title">Retrieval</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/imageWithContentsOfBundleFileNamed:">+&nbsp;imageWithContentsOfBundleFileNamed:</a></code>
+		<span class="tooltip"><p>Creates and returns an image object by loading the image data associated with the specified filename in the main bundle.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/imageWithContentsOfDocumentFileNamed:">+&nbsp;imageWithContentsOfDocumentFileNamed:</a></code>
+		<span class="tooltip"><p>Creates and returns an image object by loading the image data associated with the specified filename in the documents folder.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
 					</div>
 					
 					
@@ -221,6 +260,124 @@
 					
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/imageWithContentsOfBundleFileNamed:" title="imageWithContentsOfBundleFileNamed:"></a>
+	<h3 class="subsubtitle method-title">imageWithContentsOfBundleFileNamed:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns an image object by loading the image data associated with the specified filename in the main bundle.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (UIImage *)imageWithContentsOfBundleFileNamed:(NSString *)<em>filename</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filename</em></dt>
+			<dd><p>The name of the file, including extension.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new image object for the specified file, or nil if the method could not initialize the image from the specified file.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method does not cache the image object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIImage+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/imageWithContentsOfDocumentFileNamed:" title="imageWithContentsOfDocumentFileNamed:"></a>
+	<h3 class="subsubtitle method-title">imageWithContentsOfDocumentFileNamed:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns an image object by loading the image data associated with the specified filename in the documents folder.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (UIImage *)imageWithContentsOfDocumentFileNamed:(NSString *)<em>filename</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filename</em></dt>
+			<dd><p>The name of the file, including extension.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new image object for the specified file, or nil if the method could not initialize the image from the specified file.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method does not cache the image object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIImage+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 					
@@ -598,7 +755,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-06-27)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-07-02)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

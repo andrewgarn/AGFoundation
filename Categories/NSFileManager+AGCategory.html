@@ -56,11 +56,17 @@
 	
 	<option value="//api/name/contentsOfDocumentDirectory">&nbsp;&nbsp;&nbsp;&nbsp;+ contentsOfDocumentDirectory</option>
 	
+	<option value="//api/name/contentsOfLibraryDirectory">&nbsp;&nbsp;&nbsp;&nbsp;+ contentsOfLibraryDirectory</option>
+	
 	<option value="//api/name/contentsOfTemporaryDirectory">&nbsp;&nbsp;&nbsp;&nbsp;+ contentsOfTemporaryDirectory</option>
 	
 	<option value="//api/name/documentPath">&nbsp;&nbsp;&nbsp;&nbsp;+ documentPath</option>
 	
 	<option value="//api/name/documentPathForFile:">&nbsp;&nbsp;&nbsp;&nbsp;+ documentPathForFile:</option>
+	
+	<option value="//api/name/libraryPath">&nbsp;&nbsp;&nbsp;&nbsp;+ libraryPath</option>
+	
+	<option value="//api/name/libraryPathForFile:">&nbsp;&nbsp;&nbsp;&nbsp;+ libraryPathForFile:</option>
 	
 	<option value="//api/name/temporaryPath">&nbsp;&nbsp;&nbsp;&nbsp;+ temporaryPath</option>
 	
@@ -112,11 +118,17 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/contentsOfDocumentDirectory">contentsOfDocumentDirectory</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/contentsOfLibraryDirectory">contentsOfLibraryDirectory</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/contentsOfTemporaryDirectory">contentsOfTemporaryDirectory</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentPath">documentPath</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentPathForFile:">documentPathForFile:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/libraryPath">libraryPath</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/libraryPathForFile:">libraryPathForFile:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/temporaryPath">temporaryPath</a></span></li>
 	
@@ -184,7 +196,14 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/documentPath">+&nbsp;documentPath</a></code>
-		<span class="tooltip"><p>Returns the path to the application&rsquo;s documenbt directory.</p></span>
+		<span class="tooltip"><p>Returns the path to the application&rsquo;s document directory.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/libraryPath">+&nbsp;libraryPath</a></code>
+		<span class="tooltip"><p>Returns the path to the application&rsquo;s library directory.</p></span>
 	</span>
 	
 	
@@ -206,6 +225,13 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/documentPathForFile:">+&nbsp;documentPathForFile:</a></code>
 		<span class="tooltip"><p>Returns the document path for the specified filename.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/libraryPathForFile:">+&nbsp;libraryPathForFile:</a></code>
+		<span class="tooltip"><p>Returns the library path for the specified filename.</p></span>
 	</span>
 	
 	
@@ -256,6 +282,13 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/contentsOfDocumentDirectory">+&nbsp;contentsOfDocumentDirectory</a></code>
 		<span class="tooltip"><p>Performs a shallow search of the document directory and returns the paths of any contained items.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/contentsOfLibraryDirectory">+&nbsp;contentsOfLibraryDirectory</a></code>
+		<span class="tooltip"><p>Performs a shallow search of the library directory and returns the paths of any contained items.</p></span>
 	</span>
 	
 	
@@ -619,6 +652,47 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/contentsOfLibraryDirectory" title="contentsOfLibraryDirectory"></a>
+	<h3 class="subsubtitle method-title">contentsOfLibraryDirectory</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Performs a shallow search of the library directory and returns the paths of any contained items.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)contentsOfLibraryDirectory</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array of <code>NSString</code> objects, each of which identifies a file, directory, or symbolic link contained in path. Returns an empty array if the directory has no contents. If an error occurs, this method returns nil.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFileManager+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/contentsOfTemporaryDirectory" title="contentsOfTemporaryDirectory"></a>
 	<h3 class="subsubtitle method-title">contentsOfTemporaryDirectory</h3>
 	
@@ -666,7 +740,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the path to the application&rsquo;s documenbt directory.</p>
+		<p>Returns the path to the application&rsquo;s document directory.</p>
 	</div>		
 	
     
@@ -736,6 +810,103 @@
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>The document path for the specified filename.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFileManager+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/libraryPath" title="libraryPath"></a>
+	<h3 class="subsubtitle method-title">libraryPath</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the path to the application&rsquo;s library directory.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)libraryPath</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The path to the application&rsquo;s library directory.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The return value is cached the first time the method is called.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFileManager+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/libraryPathForFile:" title="libraryPathForFile:"></a>
+	<h3 class="subsubtitle method-title">libraryPathForFile:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the library path for the specified filename.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)libraryPathForFile:(NSString *)<em>filename</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filename</em></dt>
+			<dd><p>The name of the resource, including extension.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The library path for the specified filename.</p>
 	</div>
 	
 	
@@ -868,7 +1039,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-06-27)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-07-02)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

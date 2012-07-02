@@ -52,6 +52,8 @@
 	
 	<option value="//api/name/isNotBeingDebugged">&nbsp;&nbsp;&nbsp;&nbsp;+ isNotBeingDebugged</option>
 	
+	<option value="//api/name/isNotPirated">&nbsp;&nbsp;&nbsp;&nbsp;+ isNotPirated</option>
+	
 	<option value="//api/name/isPirated">&nbsp;&nbsp;&nbsp;&nbsp;+ isPirated</option>
 	
 	<option value="//api/name/logApplicationDidFinishLaunchingWithOptions:">&nbsp;&nbsp;&nbsp;&nbsp;+ logApplicationDidFinishLaunchingWithOptions:</option>
@@ -69,6 +71,8 @@
 	<option value="//api/name/stringFromInterfaceOrientation:">&nbsp;&nbsp;&nbsp;&nbsp;+ stringFromInterfaceOrientation:</option>
 	
 	<option value="//api/name/takeScreenshot">&nbsp;&nbsp;&nbsp;&nbsp;+ takeScreenshot</option>
+	
+	<option value="//api/name/usedMemory">&nbsp;&nbsp;&nbsp;&nbsp;+ usedMemory</option>
 	
 	
 	
@@ -122,6 +126,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNotBeingDebugged">isNotBeingDebugged</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNotPirated">isNotPirated</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isPirated">isPirated</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logApplicationDidFinishLaunchingWithOptions:">logApplicationDidFinishLaunchingWithOptions:</a></span></li>
@@ -139,6 +145,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringFromInterfaceOrientation:">stringFromInterfaceOrientation:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/takeScreenshot">takeScreenshot</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/usedMemory">usedMemory</a></span></li>
 	
 </ul></li>
 
@@ -217,7 +225,14 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/isPirated">+&nbsp;isPirated</a></code>
-		<span class="tooltip"><p>Indicates whether the application has been pirated</p></span>
+		<span class="tooltip"><p>Indicates whether the application has been pirated.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isNotPirated">+&nbsp;isNotPirated</a></code>
+		<span class="tooltip"><p>Indicates whether the application has not been pirated.</p></span>
 	</span>
 	
 	
@@ -231,8 +246,15 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
+		<code><a href="#//api/name/usedMemory">+&nbsp;usedMemory</a></code>
+		<span class="tooltip"><p>Returns the application&rsquo;s memory usage.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/logMemoryUsage">+&nbsp;logMemoryUsage</a></code>
-		<span class="tooltip"><p>Logs the memory currently in use.</p></span>
+		<span class="tooltip"><p>Logs the application&rsquo;s memory usage to the console.</p></span>
 	</span>
 	
 	
@@ -496,7 +518,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>YES if the application is being run under the debugger, otherwise NO.</p>
+		<p><code>YES</code> if the application is being run under the debugger, otherwise <code>NO</code>.</p>
 	</div>
 	
 	
@@ -537,7 +559,48 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>YES if the application is not being run under the debugger, otherwise NO.</p>
+		<p><code>YES</code> if the application is not being run under the debugger, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isNotPirated" title="isNotPirated"></a>
+	<h3 class="subsubtitle method-title">isNotPirated</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates whether the application has not been pirated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isNotPirated</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the application has not been pirated, otherwise <code>NO</code>.</p>
 	</div>
 	
 	
@@ -565,7 +628,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Indicates whether the application has been pirated</p>
+		<p>Indicates whether the application has been pirated.</p>
 	</div>		
 	
     
@@ -578,7 +641,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>YES if the application has been pirated, otherwise NO.</p>
+		<p><code>YES</code> if the application has been pirated, otherwise <code>NO</code>.</p>
 	</div>
 	
 	
@@ -652,7 +715,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Logs the memory currently in use.</p>
+		<p>Logs the application&rsquo;s memory usage to the console.</p>
 	</div>		
 	
     
@@ -932,6 +995,47 @@
 	
 </div>
 						
+						<div class="section-method">
+	<a name="//api/name/usedMemory" title="usedMemory"></a>
+	<h3 class="subsubtitle method-title">usedMemory</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the application&rsquo;s memory usage.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSNumber *)usedMemory</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The application&rsquo;s memory usage in megabytes.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
 					</div>
 					
 					
@@ -947,7 +1051,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-06-27)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-07-02)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

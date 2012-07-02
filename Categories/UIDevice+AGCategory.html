@@ -64,9 +64,15 @@
 	
 	<option value="//api/name/freeDiskSpace">&nbsp;&nbsp;&nbsp;&nbsp;+ freeDiskSpace</option>
 	
+	<option value="//api/name/freeMemory">&nbsp;&nbsp;&nbsp;&nbsp;+ freeMemory</option>
+	
 	<option value="//api/name/hasFrontCamera">&nbsp;&nbsp;&nbsp;&nbsp;+ hasFrontCamera</option>
 	
+	<option value="//api/name/hasFrontFlash">&nbsp;&nbsp;&nbsp;&nbsp;+ hasFrontFlash</option>
+	
 	<option value="//api/name/hasRearCamera">&nbsp;&nbsp;&nbsp;&nbsp;+ hasRearCamera</option>
+	
+	<option value="//api/name/hasRearFlash">&nbsp;&nbsp;&nbsp;&nbsp;+ hasRearFlash</option>
 	
 	<option value="//api/name/hasRetinaDisplay">&nbsp;&nbsp;&nbsp;&nbsp;+ hasRetinaDisplay</option>
 	
@@ -172,9 +178,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/freeDiskSpace">freeDiskSpace</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/freeMemory">freeMemory</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasFrontCamera">hasFrontCamera</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasFrontFlash">hasFrontFlash</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasRearCamera">hasRearCamera</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasRearFlash">hasRearFlash</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasRetinaDisplay">hasRetinaDisplay</a></span></li>
 	
@@ -375,6 +387,20 @@
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasFrontFlash">+&nbsp;hasFrontFlash</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the device has a front flash.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasRearFlash">+&nbsp;hasRearFlash</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the device has a back flash.</p></span>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -547,6 +573,13 @@
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/freeMemory">+&nbsp;freeMemory</a></code>
+		<span class="tooltip"><p>Returns the currently available free memory of the device.</p></span>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -710,7 +743,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>YES if the device is configured for sending email or NO if it is not.</p>
+		<p><code>YES</code> if the device is configured for sending email, otherwise <code>NO</code>.</p>
 	</div>
 	
 	
@@ -751,7 +784,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>YES if the device can send text messages or NO if it cannot.</p>
+		<p><code>YES</code> if the device can send text messages, otherwise <code>NO</code>.</p>
 	</div>
 	
 	
@@ -1039,6 +1072,47 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/freeMemory" title="freeMemory"></a>
+	<h3 class="subsubtitle method-title">freeMemory</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the currently available free memory of the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSNumber *)freeMemory</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The currently available free memory of the device. (mb)</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/hasFrontCamera" title="hasFrontCamera"></a>
 	<h3 class="subsubtitle method-title">hasFrontCamera</h3>
 	
@@ -1058,7 +1132,48 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>YES if the device has a front camera, otherwise NO.</p>
+		<p><code>YES</code> if the device has a front camera, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasFrontFlash" title="hasFrontFlash"></a>
+	<h3 class="subsubtitle method-title">hasFrontFlash</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the device has a front flash.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)hasFrontFlash</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the device has a front flash, otherwise <code>NO</code>.</p>
 	</div>
 	
 	
@@ -1099,7 +1214,48 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>YES if the device has a back camera, otherwise NO.</p>
+		<p><code>YES</code> if the device has a back camera, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasRearFlash" title="hasRearFlash"></a>
+	<h3 class="subsubtitle method-title">hasRearFlash</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the device has a back flash.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)hasRearFlash</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the device has a back flash, otherwise <code>NO</code>.</p>
 	</div>
 	
 	
@@ -1140,7 +1296,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>YES if the device has a retina display, otherwise NO.</p>
+		<p><code>YES</code> if the device has a retina display, otherwise <code>NO</code>.</p>
 	</div>
 	
 	
@@ -1222,7 +1378,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>YES if the device is an iOS Simulator, otherwise NO.</p>
+		<p><code>YES</code> if the device is an iOS Simulator, otherwise <code>NO</code>.</p>
 	</div>
 	
 	
@@ -1550,7 +1706,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>YES if the device supports multitasking, otherwise NO.</p>
+		<p><code>YES</code> if the device supports multitasking, otherwise <code>NO</code>.</p>
 	</div>
 	
 	
@@ -1847,7 +2003,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>YES if the interface in use is designed for the iPad, otherwise NO.</p>
+		<p><code>YES</code> if the interface in use is designed for the iPad, otherwise <code>NO</code>.</p>
 	</div>
 	
 	
@@ -1888,7 +2044,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>YES if the interface in use is designed for the iPhone and iPod touch, otherwise NO.</p>
+		<p><code>YES</code> if the interface in use is designed for the iPhone and iPod touch, otherwise <code>NO</code>.</p>
 	</div>
 	
 	
@@ -1965,7 +2121,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-06-27)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-07-02)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

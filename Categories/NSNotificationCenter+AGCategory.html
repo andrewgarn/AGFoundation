@@ -42,6 +42,8 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
+	<option value="//api/name/addUniqueObserver:selector:name:">&nbsp;&nbsp;&nbsp;&nbsp;+ addUniqueObserver:selector:name:</option>
+	
 	<option value="//api/name/addUniqueObserver:selector:name:object:">&nbsp;&nbsp;&nbsp;&nbsp;+ addUniqueObserver:selector:name:object:</option>
 	
 	<option value="//api/name/postNotificationOnMainThread:">&nbsp;&nbsp;&nbsp;&nbsp;+ postNotificationOnMainThread:</option>
@@ -75,6 +77,8 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addUniqueObserver:selector:name:">addUniqueObserver:selector:name:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addUniqueObserver:selector:name:object:">addUniqueObserver:selector:name:object:</a></span></li>
 	
@@ -143,6 +147,13 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/addUniqueObserver:selector:name:">+&nbsp;addUniqueObserver:selector:name:</a></code>
+		<span class="tooltip"><p>Adds a unique entry to the receiver’s dispatch table with an observer, a notification selector and notification name.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/postNotificationOnMainThread:">+&nbsp;postNotificationOnMainThread:</a></code>
 		<span class="tooltip"><p>Posts a given notification on the main thread to the receiver.</p></span>
 	</span>
@@ -171,6 +182,63 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/addUniqueObserver:selector:name:" title="addUniqueObserver:selector:name:"></a>
+	<h3 class="subsubtitle method-title">addUniqueObserver:selector:name:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds a unique entry to the receiver’s dispatch table with an observer, a notification selector and notification name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)addUniqueObserver:(id)<em>observer</em> selector:(SEL)<em>selector</em> name:(NSString *)<em>notificationName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>observer</em></dt>
+			<dd><p>Object registering as an observer. This value must not be nil.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>selector</em></dt>
+			<dd><p>that specifies the message the receiver sends notificationObserver to notify it of the notification posting. The method specified by notificationSelector must have one and only one argument (an instance of NSNotification).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>notificationName</em></dt>
+			<dd><p>The name of the notification for which to register the observer; that is, only notifications with this name are delivered to the observer. If you pass nil, the notification center doesn’t use a notification’s name to decide whether to deliver it to the observer.
+If you pass nil, the notification center doesn’t use a notification’s sender to decide whether to deliver it to the observer.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSNotificationCenter+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/addUniqueObserver:selector:name:object:" title="addUniqueObserver:selector:name:object:"></a>
 	<h3 class="subsubtitle method-title">addUniqueObserver:selector:name:object:</h3>
 	
@@ -182,7 +250,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)addUniqueObserver:(id)<em>notificationObserver</em> selector:(SEL)<em>notificationSelector</em> name:(NSString *)<em>notificationName</em> object:(id)<em>notificationSender</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)addUniqueObserver:(id)<em>observer</em> selector:(SEL)<em>selector</em> name:(NSString *)<em>notificationName</em> object:(id)<em>sender</em></code></div>
 
     
 	
@@ -190,12 +258,12 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>notificationObserver</em></dt>
+			<dt><em>observer</em></dt>
 			<dd><p>Object registering as an observer. This value must not be nil.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>notificationSelector</em></dt>
+			<dt><em>selector</em></dt>
 			<dd><p>that specifies the message the receiver sends notificationObserver to notify it of the notification posting. The method specified by notificationSelector must have one and only one argument (an instance of NSNotification).</p></dd>
 		</dl>
 		
@@ -205,7 +273,7 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>notificationSender</em></dt>
+			<dt><em>sender</em></dt>
 			<dd><p>The object whose notifications the observer wants to receive; that is, only notifications sent by this sender are delivered to the observer.
 If you pass nil, the notification center doesn’t use a notification’s sender to decide whether to deliver it to the observer.</p></dd>
 		</dl>
@@ -364,7 +432,7 @@ If you pass nil, the notification center doesn’t use a notification’s sender
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-06-27)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-07-02)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
