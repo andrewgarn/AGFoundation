@@ -26,7 +26,6 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "NSURL+AGCategory.h"
-#import "NSObject+AGCategory.h"
 #include <sys/xattr.h>
 
 @implementation NSURL (AGCategory)

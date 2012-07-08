@@ -1,5 +1,5 @@
 //
-//  AGDebugging.h
+//  AGExceptionHandling.h
 //  AGFoundation
 //
 //  Created by Andrew Garn on 19/04/2012.

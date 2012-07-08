@@ -112,6 +112,25 @@
 */ 
 + (BOOL)hasRetinaDisplay;
 
+/** Returns a boolean value that indicates whether the device has a compass.
+ 
+ This method requires the CoreLocation framework, if the framework is not found, the method returns `NO`.
+ @return `YES` if the device has a compass, otherwise `NO`.
+*/
++ (BOOL)hasCompass;
+
+/** Returns a boolean value that indicates whether the device has a gyroscrope.
+ 
+ This method requires the CoreMotion framework, if the framework is not found, the method returns `NO`.
+ @return `YES` if the device has a gyroscrope, otherwise `NO`.
+*/
++ (BOOL)hasGyroscope;
+
+/** Returns a boolean value that indicates whether the device has a camera.
+ @return `YES` if the device has a camera, otherwise `NO`.
+*/
++ (BOOL)hasCamera;
+
 /** Returns a boolean value that indicates whether the device has a front camera.
  @return `YES` if the device has a front camera, otherwise `NO`.
 */ 
@@ -160,7 +179,7 @@
 /** Returns the style of interface in use on the device.
  @return The style of interface in use on the device.
 */ 
-+ (UIUserInterfaceIdiom)idiom;
++ (UIUserInterfaceIdiom)userInterfaceIdiom;
 
 /** Returns a boolean value that indicates whether the interface in use is designed for the iPhone and iPod touch.
  @return `YES` if the interface in use is designed for the iPhone and iPod touch, otherwise `NO`.
@@ -255,7 +274,7 @@
 + (NSNumber *)freeDiskSpace;
 
 /** Returns the currently available free memory of the device.
- @return The currently available free memory of the device. (mb)
+ @return The currently available free memory of the device in bytes.
 */
 + (NSNumber *)freeMemory;
 

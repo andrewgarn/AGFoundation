@@ -26,11 +26,6 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "NSNumber+AGCategory.h"
-#import "NSObject+AGCategory.h"
-
-@interface NSNumber (AGCategory_Private)
-+ (NSNumberFormatter *)numberFormatter;
-@end
 
 #pragma mark -
 
@@ -50,21 +45,25 @@
 
 - (NSString *)formattedBytes
 {
-    float bytes = [self longValue];
+    static dispatch_once_t token;
+	static NSArray *unitArray;
+    
+	dispatch_once(&token, ^{
+		unitArray = [NSArray arrayWithObjects:@"Bytes", @"KB", @"MB", @"GB", @"TB", @"PB", @"EB", @"ZB", @"YB", @"BB", nil];
+	});
+    
+    float bytes = [self longLongValue];
 	NSUInteger unit = 0;
 
-	while(bytes > 1024 && unit < 4) {
+    while(bytes > 1024 && unit < [unitArray count]) {
 		bytes = bytes / 1024.0;
 		unit++;
 	}
-        
-	NSString *unitString = [[NSArray arrayWithObjects:@"KB", @"MB", @"GB", @"TB", @"PB", nil] objectAtIndex:unit];
-    
-	if(unit == 0) {
-		return [NSString stringWithFormat:@"%d %@", (int)bytes, unitString];
-	} else {
-		return [NSString stringWithFormat:@"%.2f %@", (float)bytes, unitString];
-	}
+            
+	if(unit == 0)
+		return [NSString stringWithFormat:@"%d %@", (int)bytes, [unitArray objectAtIndex:unit]];
+    else
+		return [NSString stringWithFormat:@"%.2f %@", (float)bytes, [unitArray objectAtIndex:unit]];
 }
 
 #pragma mark - Private

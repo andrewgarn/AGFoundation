@@ -34,8 +34,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		781081B5159DDAF60012DD00 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781081B4159DDAF60012DD00 /* CoreMotion.framework */; };
-		781081BC159DDD8D0012DD00 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781081BB159DDD8D0012DD00 /* MobileCoreServices.framework */; };
+		783B172C15A594EB00160C03 /* AGTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 783B172A15A594EB00160C03 /* AGTimer.h */; };
+		783B172D15A594EB00160C03 /* AGTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 783B172B15A594EB00160C03 /* AGTimer.m */; };
 		784856471589D50A00013DD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784856461589D50A00013DD9 /* Foundation.framework */; };
 		7848565A1589DAA000013DD9 /* Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 784856591589DAA000013DD9 /* Prefix.pch */; };
 		784856DC1589DAB200013DD9 /* AGFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848565B1589DAB200013DD9 /* AGFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -65,8 +65,6 @@
 		784856F41589DAB200013DD9 /* NSObject+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7848567D1589DAB200013DD9 /* NSObject+AGCategory.m */; };
 		784856F51589DAB200013DD9 /* NSString+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848567E1589DAB200013DD9 /* NSString+AGCategory.h */; };
 		784856F61589DAB200013DD9 /* NSString+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7848567F1589DAB200013DD9 /* NSString+AGCategory.m */; };
-		784856F71589DAB200013DD9 /* NSTimer+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856801589DAB200013DD9 /* NSTimer+AGCategory.h */; };
-		784856F81589DAB200013DD9 /* NSTimer+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856811589DAB200013DD9 /* NSTimer+AGCategory.m */; };
 		784856F91589DAB200013DD9 /* NSURL+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856821589DAB200013DD9 /* NSURL+AGCategory.h */; };
 		784856FA1589DAB200013DD9 /* NSURL+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856831589DAB200013DD9 /* NSURL+AGCategory.m */; };
 		784856FB1589DAB200013DD9 /* NSUserDefaults+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856841589DAB200013DD9 /* NSUserDefaults+AGCategory.h */; };
@@ -76,7 +74,7 @@
 		784856FF1589DAB200013DD9 /* UserDefaultsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848568A1589DAB200013DD9 /* UserDefaultsManager.h */; };
 		784857001589DAB200013DD9 /* UserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7848568B1589DAB200013DD9 /* UserDefaultsManager.m */; };
 		784857011589DAB200013DD9 /* AGCommonMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848568D1589DAB200013DD9 /* AGCommonMacros.h */; };
-		784857021589DAB200013DD9 /* AGDebugging.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848568E1589DAB200013DD9 /* AGDebugging.h */; };
+		784857021589DAB200013DD9 /* AGExceptionHandling.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848568E1589DAB200013DD9 /* AGExceptionHandling.h */; };
 		784857031589DAB200013DD9 /* AGDebuggingMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848568F1589DAB200013DD9 /* AGDebuggingMacros.h */; };
 		784857041589DAB200013DD9 /* AGPreprocessorMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856901589DAB200013DD9 /* AGPreprocessorMacros.h */; };
 		784857051589DAB200013DD9 /* AGSynthesizeSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856911589DAB200013DD9 /* AGSynthesizeSingleton.h */; };
@@ -146,6 +144,7 @@
 		78B28E8715973C2E0025213A /* UITableView+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B28E8515973C2E0025213A /* UITableView+AGCategory.m */; };
 		78B28E8B15976CDE0025213A /* UIScrollView+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B28E8915976CDE0025213A /* UIScrollView+AGCategory.h */; };
 		78B28E8C15976CDE0025213A /* UIScrollView+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B28E8A15976CDE0025213A /* UIScrollView+AGCategory.m */; };
+		78CE47E215A4714000C647D9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CE47E115A4714000C647D9 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,8 +165,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		781081B4159DDAF60012DD00 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		781081BB159DDD8D0012DD00 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		783B172A15A594EB00160C03 /* AGTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTimer.h; sourceTree = "<group>"; };
+		783B172B15A594EB00160C03 /* AGTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTimer.m; sourceTree = "<group>"; };
 		784856431589D50A00013DD9 /* libAGFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAGFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		784856461589D50A00013DD9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		784856591589DAA000013DD9 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
@@ -198,8 +197,6 @@
 		7848567D1589DAB200013DD9 /* NSObject+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AGCategory.m"; sourceTree = "<group>"; };
 		7848567E1589DAB200013DD9 /* NSString+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AGCategory.h"; sourceTree = "<group>"; };
 		7848567F1589DAB200013DD9 /* NSString+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AGCategory.m"; sourceTree = "<group>"; };
-		784856801589DAB200013DD9 /* NSTimer+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+AGCategory.h"; sourceTree = "<group>"; };
-		784856811589DAB200013DD9 /* NSTimer+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+AGCategory.m"; sourceTree = "<group>"; };
 		784856821589DAB200013DD9 /* NSURL+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+AGCategory.h"; sourceTree = "<group>"; };
 		784856831589DAB200013DD9 /* NSURL+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+AGCategory.m"; sourceTree = "<group>"; };
 		784856841589DAB200013DD9 /* NSUserDefaults+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+AGCategory.h"; sourceTree = "<group>"; };
@@ -209,7 +206,7 @@
 		7848568A1589DAB200013DD9 /* UserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsManager.h; sourceTree = "<group>"; };
 		7848568B1589DAB200013DD9 /* UserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsManager.m; sourceTree = "<group>"; };
 		7848568D1589DAB200013DD9 /* AGCommonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGCommonMacros.h; sourceTree = "<group>"; };
-		7848568E1589DAB200013DD9 /* AGDebugging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGDebugging.h; sourceTree = "<group>"; };
+		7848568E1589DAB200013DD9 /* AGExceptionHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGExceptionHandling.h; sourceTree = "<group>"; };
 		7848568F1589DAB200013DD9 /* AGDebuggingMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGDebuggingMacros.h; sourceTree = "<group>"; };
 		784856901589DAB200013DD9 /* AGPreprocessorMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGPreprocessorMacros.h; sourceTree = "<group>"; };
 		784856911589DAB200013DD9 /* AGSynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSynthesizeSingleton.h; sourceTree = "<group>"; };
@@ -279,6 +276,7 @@
 		78B28E8515973C2E0025213A /* UITableView+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+AGCategory.m"; sourceTree = "<group>"; };
 		78B28E8915976CDE0025213A /* UIScrollView+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+AGCategory.h"; sourceTree = "<group>"; };
 		78B28E8A15976CDE0025213A /* UIScrollView+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+AGCategory.m"; sourceTree = "<group>"; };
+		78CE47E115A4714000C647D9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,8 +284,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				781081BC159DDD8D0012DD00 /* MobileCoreServices.framework in Frameworks */,
-				781081B5159DDAF60012DD00 /* CoreMotion.framework in Frameworks */,
+				78CE47E215A4714000C647D9 /* MobileCoreServices.framework in Frameworks */,
 				7848579D158B333400013DD9 /* AVFoundation.framework in Frameworks */,
 				7848574F1589DBEE00013DD9 /* AudioToolbox.framework in Frameworks */,
 				7848574A1589DB2200013DD9 /* UIKit.framework in Frameworks */,
@@ -327,11 +324,10 @@
 				7848574E1589DBEE00013DD9 /* AudioToolbox.framework */,
 				7848579C158B333400013DD9 /* AVFoundation.framework */,
 				7848573F1589DB0600013DD9 /* CoreLocation.framework */,
-				781081B4159DDAF60012DD00 /* CoreMotion.framework */,
 				784856461589D50A00013DD9 /* Foundation.framework */,
 				784857411589DB0C00013DD9 /* MapKit.framework */,
 				784857431589DB1100013DD9 /* MessageUI.framework */,
-				781081BB159DDD8D0012DD00 /* MobileCoreServices.framework */,
+				78CE47E115A4714000C647D9 /* MobileCoreServices.framework */,
 				784857451589DB1700013DD9 /* StoreKit.framework */,
 				784857471589DB1D00013DD9 /* SystemConfiguration.framework */,
 				784857491589DB2200013DD9 /* UIKit.framework */,
@@ -466,8 +462,6 @@
 				7848567D1589DAB200013DD9 /* NSObject+AGCategory.m */,
 				7848567E1589DAB200013DD9 /* NSString+AGCategory.h */,
 				7848567F1589DAB200013DD9 /* NSString+AGCategory.m */,
-				784856801589DAB200013DD9 /* NSTimer+AGCategory.h */,
-				784856811589DAB200013DD9 /* NSTimer+AGCategory.m */,
 				784856821589DAB200013DD9 /* NSURL+AGCategory.h */,
 				784856831589DAB200013DD9 /* NSURL+AGCategory.m */,
 				784856841589DAB200013DD9 /* NSUserDefaults+AGCategory.h */,
@@ -481,6 +475,8 @@
 			children = (
 				784856871589DAB200013DD9 /* AGBlockOperation.h */,
 				784856881589DAB200013DD9 /* AGBlockOperation.m */,
+				783B172A15A594EB00160C03 /* AGTimer.h */,
+				783B172B15A594EB00160C03 /* AGTimer.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -498,8 +494,8 @@
 			isa = PBXGroup;
 			children = (
 				7848568D1589DAB200013DD9 /* AGCommonMacros.h */,
-				7848568E1589DAB200013DD9 /* AGDebugging.h */,
 				7848568F1589DAB200013DD9 /* AGDebuggingMacros.h */,
+				7848568E1589DAB200013DD9 /* AGExceptionHandling.h */,
 				784856901589DAB200013DD9 /* AGPreprocessorMacros.h */,
 				784856911589DAB200013DD9 /* AGSynthesizeSingleton.h */,
 			);
@@ -772,13 +768,12 @@
 				784856F11589DAB200013DD9 /* NSNumber+AGCategory.h in Headers */,
 				784856F31589DAB200013DD9 /* NSObject+AGCategory.h in Headers */,
 				784856F51589DAB200013DD9 /* NSString+AGCategory.h in Headers */,
-				784856F71589DAB200013DD9 /* NSTimer+AGCategory.h in Headers */,
 				784856F91589DAB200013DD9 /* NSURL+AGCategory.h in Headers */,
 				784856FB1589DAB200013DD9 /* NSUserDefaults+AGCategory.h in Headers */,
 				784856FD1589DAB200013DD9 /* AGBlockOperation.h in Headers */,
 				784856FF1589DAB200013DD9 /* UserDefaultsManager.h in Headers */,
 				784857011589DAB200013DD9 /* AGCommonMacros.h in Headers */,
-				784857021589DAB200013DD9 /* AGDebugging.h in Headers */,
+				784857021589DAB200013DD9 /* AGExceptionHandling.h in Headers */,
 				784857031589DAB200013DD9 /* AGDebuggingMacros.h in Headers */,
 				784857041589DAB200013DD9 /* AGPreprocessorMacros.h in Headers */,
 				784857051589DAB200013DD9 /* AGSynthesizeSingleton.h in Headers */,
@@ -811,6 +806,7 @@
 				7848579A158B330500013DD9 /* AVAudioPlayer+AGCategory.h in Headers */,
 				78B28E8615973C2E0025213A /* UITableView+AGCategory.h in Headers */,
 				78B28E8B15976CDE0025213A /* UIScrollView+AGCategory.h in Headers */,
+				783B172C15A594EB00160C03 /* AGTimer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -875,7 +871,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/appledoc \\\n--project-name \"AGFoundation.atom\" \\\n--project-company \"Andrew Garn\" \\\n--company-id \"com.agnomical\" \\\n--docset-atom-filename \"AGFoundation.atom\" \\\n--docset-feed-url \"http://github.com/andrewgarn/AGFoundation.atom/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"http://github.com/andrewgarn/AGFoundation.atom/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"http://github.com/andrewgarn/AGFoundation.atom/\" \\\n--output \"~/Documents/Documentation/Agnomical\" \\\n--publish-docset \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--ignore \"LocationManager.h\" \\\n--ignore \"PurchaseManager.h\" \\\n--ignore \"UserDefaultsManager.h\" \\\n--ignore \"LocalNotificationManager.h\" \\\n--ignore \"AGPreprocessorMacros.h\" \\\n--index-desc \"README.md\" \\\n\"${PROJECT_DIR}\"";
+			shellScript = "/usr/local/bin/appledoc \\\n--project-name \"AGFoundation.atom\" \\\n--project-company \"Andrew Garn\" \\\n--company-id \"com.agnomical\" \\\n--docset-atom-filename \"AGFoundation.atom\" \\\n--docset-feed-url \"http://github.com/andrewgarn/AGFoundation.atom/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"http://github.com/andrewgarn/AGFoundation.atom/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"http://github.com/andrewgarn/AGFoundation.atom/\" \\\n--output \"~/Documents/Documentation/AGFoundation\" \\\n--publish-docset \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--ignore \"LocationManager.h\" \\\n--ignore \"PurchaseManager.h\" \\\n--ignore \"UserDefaultsManager.h\" \\\n--ignore \"LocalNotificationManager.h\" \\\n--ignore \"AGPreprocessorMacros.h\" \\\n--index-desc \"README.md\" \\\n\"${PROJECT_DIR}\"";
 		};
 		784857601589E79200013DD9 /* Prepare Framework */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -924,7 +920,6 @@
 				784856F21589DAB200013DD9 /* NSNumber+AGCategory.m in Sources */,
 				784856F41589DAB200013DD9 /* NSObject+AGCategory.m in Sources */,
 				784856F61589DAB200013DD9 /* NSString+AGCategory.m in Sources */,
-				784856F81589DAB200013DD9 /* NSTimer+AGCategory.m in Sources */,
 				784856FA1589DAB200013DD9 /* NSURL+AGCategory.m in Sources */,
 				784856FC1589DAB200013DD9 /* NSUserDefaults+AGCategory.m in Sources */,
 				784856FE1589DAB200013DD9 /* AGBlockOperation.m in Sources */,
@@ -958,6 +953,7 @@
 				7848579B158B330500013DD9 /* AVAudioPlayer+AGCategory.m in Sources */,
 				78B28E8715973C2E0025213A /* UITableView+AGCategory.m in Sources */,
 				78B28E8C15976CDE0025213A /* UIScrollView+AGCategory.m in Sources */,
+				783B172D15A594EB00160C03 /* AGTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1030,6 +1026,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = Headers;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
 			};
@@ -1046,6 +1043,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = Headers;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
 			};

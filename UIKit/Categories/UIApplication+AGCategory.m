@@ -28,8 +28,6 @@
 #import "UIApplication+AGCategory.h"
 #import "NSNumber+AGCategory.h"
 #import "UIDevice+AGCategory.h"
-#import "UIScreen+AGCategory.h"
-#import "NSDate+AGCategory.h"
 
 #include <mach/machine/vm_types.h>
 #include <mach/mach_host.h>
@@ -111,18 +109,25 @@
     long currentMemoryUsage = [[self usedMemory] longValue];
     long memoryUsageDifference = currentMemoryUsage - previousMemoryUsage;
     
-    if (memoryUsageDifference > 100000 || memoryUsageDifference < -100000)
+    if (memoryUsageDifference > 1024 || memoryUsageDifference < -1024)
     {
-        previousMemoryUsage = currentMemoryUsage;        
         NSString *currentMemoryUsageString = [[NSNumber numberWithLong:currentMemoryUsage] formattedBytes];
         NSString *memoryUsageDifferenceString = [[NSNumber numberWithLong:memoryUsageDifference] formattedBytes];
         NSString *freeMemoryString = [[UIDevice freeMemory] formattedBytes];
-        NSLog(@"Memory used %@ (+%@), free %@", currentMemoryUsageString, memoryUsageDifferenceString, freeMemoryString);
+        if (previousMemoryUsage == 0)
+            NSLog(@"Memory used %@, free %@", currentMemoryUsageString, freeMemoryString);
+        else
+        {
+            NSString *plusString = (memoryUsageDifference > 0) ? @"+" : @"";
+            NSLog(@"Memory used %@ (%@%@), free %@", currentMemoryUsageString, plusString, memoryUsageDifferenceString, freeMemoryString);
+        }
+        previousMemoryUsage = currentMemoryUsage;
     }
 }
 
 static NSDate *applicationDidFinishLaunchingDate;
 static NSDate *applicationDidEnterBackgroundDate;
+static NSDateFormatter *applicationDidFinishLaunchingDateFormatter;
 
 + (void)logApplicationDidFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -148,13 +153,16 @@ static NSDate *applicationDidEnterBackgroundDate;
 + (void)logApplicationWillEnterForeground
 {
     NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:applicationDidEnterBackgroundDate];
-    NSDateFormatter *dateFormatter = [NSDate dateFormatterWithdateFormat:@"EE d MMM 'at' hh:mma"];
+    if (!applicationDidFinishLaunchingDateFormatter) {
+        applicationDidFinishLaunchingDateFormatter = [[NSDateFormatter alloc] init];
+        [applicationDidFinishLaunchingDateFormatter setDateFormat:@"EEEE d MMMM 'at' hh:mm a"];
+    }
     
-    NSLog(@"\n\n**** application: '%@ %@ (%@)' willEnterForeground: ****\n**** applicationLaunchDate: %@ timeSinceBackground: %.0f sec ****\n\n",
+    NSLog(@"\n\n**** application: '%@ %@ (%@)' willEnterForeground: ****\n**** applicationDidFinishLaunching: %@ timeSinceDidEnterBackground: %.0f sec ****\n\n",
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"],
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"],
-          [dateFormatter stringFromDate:applicationDidFinishLaunchingDate],
+          [applicationDidFinishLaunchingDateFormatter stringFromDate:applicationDidFinishLaunchingDate],
           timeInterval);
 }
 
@@ -200,32 +208,6 @@ static NSDate *applicationDidEnterBackgroundDate;
 
 #pragma mark -
 
-+ (void)takeScreenshot
-{
-    UIImage *image = [UIScreen screenshot];
-    if (NSClassFromString(@"ALAssetsLibrary"))
-    {
-        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-        [library writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)[image imageOrientation] completionBlock:^(NSURL *assetURL, NSError *error)
-         {
-             if (error) 
-             {
-                 // TODO: error handling
-             } 
-             else 
-             {
-                 // TODO: success handling
-             }
-         }];
-    }
-    else 
-    {
-        UIImageWriteToSavedPhotosAlbum(image, nil, NULL, nil);
-    } 
-}
-
-#pragma mark -
-
 + (NSString *)stringFromInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     switch (interfaceOrientation)
@@ -240,13 +222,19 @@ static NSDate *applicationDidEnterBackgroundDate;
 
 + (BOOL)interfaceOrientationIsSupported:(UIInterfaceOrientation)interfaceOrientation
 {
-    NSString *infoDictKey = @"UISupportedInterfaceOrientations";
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
-        infoDictKey = @"UISupportedInterfaceOrientations~ipad";
-        
-    NSArray *supportedOrientations = [[NSBundle mainBundle] objectForInfoDictionaryKey:infoDictKey];
-    NSString *interfaceOrientationString = [UIApplication stringFromInterfaceOrientation:interfaceOrientation];
+    static dispatch_once_t token;
+	static NSArray *supportedOrientations;
     
+	dispatch_once(&token, ^{
+        
+        NSString *infoDictKey = @"UISupportedInterfaceOrientations";
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+            infoDictKey = @"UISupportedInterfaceOrientations~ipad";
+        
+        supportedOrientations = [[NSBundle mainBundle] objectForInfoDictionaryKey:infoDictKey];
+	});
+    
+    NSString *interfaceOrientationString = [UIApplication stringFromInterfaceOrientation:interfaceOrientation];
     if ([supportedOrientations indexOfObject:interfaceOrientationString] != NSNotFound)
     {
         return YES;

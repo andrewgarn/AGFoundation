@@ -71,4 +71,19 @@
     return array;
 }
 
+- (NSArray *)shuffledArray
+{
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
+    NSMutableArray *mutableCopy = [self mutableCopy];
+    while ([self count] > 0)
+    {
+        NSUInteger index = arc4random() % [mutableCopy count];
+        id objectToMove = [mutableCopy objectAtIndex:index];
+        
+        [array addObject:objectToMove];
+        [mutableCopy removeObjectAtIndex:index];
+    }
+    return array;
+}
+
 @end

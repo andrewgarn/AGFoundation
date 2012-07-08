@@ -35,9 +35,9 @@
  ---------------------------------------------------------------------------------------
 */
 
-/** Returns an NSNumber object created by parsing a given string using NSNumberFormatterDecimalStyle
- @param string An NSString object that is parsed to generate the returned number object.
- @return An NSNumber object created by parsing string using the NSNumberFormatterDecimalStyle.
+/** Returns an `NSNumber` object created by parsing a given string using `NSNumberFormatterDecimalStyle`
+ @param string An `NSString` object that is parsed to generate the returned number object.
+ @return An `NSNumber` object created by parsing string using the `NSNumberFormatterDecimalStyle`.
 */
 + (NSNumber *)numberFromString:(NSString *)string;
 
@@ -52,6 +52,9 @@
  ---------------------------------------------------------------------------------------
 */
 
+/** Returns an `NSString` description of the byte value represented by the receiver.
+ @return An `NSString` description of the byte value represented by the receiver.
+*/
 - (NSString *)formattedBytes;
 
 

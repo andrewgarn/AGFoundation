@@ -93,7 +93,7 @@
 /** Creates and returns an image object by loading the image data associated with the specified filename in the main bundle.
  
  This method does not cache the image object.
- @param name The name of the file, including extension.
+ @param filename The name of the file, including extension.
  @return A new image object for the specified file, or nil if the method could not initialize the image from the specified file.
 */ 
 + (UIImage *)imageWithContentsOfBundleFileNamed:(NSString *)filename;
@@ -101,7 +101,7 @@
 /** Creates and returns an image object by loading the image data associated with the specified filename in the documents folder.
  
  This method does not cache the image object.
- @param name The name of the file, including extension.
+ @param filename The name of the file, including extension.
  @return A new image object for the specified file, or nil if the method could not initialize the image from the specified file.
  */ 
 + (UIImage *)imageWithContentsOfDocumentFileNamed:(NSString *)filename;

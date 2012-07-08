@@ -32,8 +32,6 @@ static char kNSObjectBlockKey;
 
 @implementation NSObject (AGCategory)
 
-//ivar_getName
-
 #pragma mark -
 
 + (NSDate *)forceDateOrNil:(id)anObject

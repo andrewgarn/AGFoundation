@@ -26,7 +26,6 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "NSDictionary+AGCategory.h"
-#import "NSObject+AGCategory.h"
 
 @implementation NSDictionary (AGCategory)
 

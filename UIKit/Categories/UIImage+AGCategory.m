@@ -50,7 +50,7 @@
 
 - (UIImage *)scaledAndCroppedToSize:(CGSize)newSize withScale:(CGFloat)scale
 {
-    CGFloat scaleFactor, scaledWidth, scaledHeight;
+    CGFloat scaleFactor, scaledWidth = newSize.width, scaledHeight = newSize.height;
     CGPoint thumbnailPoint = CGPointMake(0.0, 0.0);
     
     if (CGSizeEqualToSize(self.size, newSize) == NO) 

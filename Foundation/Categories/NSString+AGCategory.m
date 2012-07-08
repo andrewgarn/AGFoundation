@@ -26,6 +26,7 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "NSString+AGCategory.h"
+#import "NSURL+AGCategory.h"
 
 #include <CommonCrypto/CommonDigest.h>
 #include <CommonCrypto/CommonHMAC.h>
@@ -181,22 +182,24 @@
     return YES;
 }
 
-/*
-- (NSArray *)phoneNumberArray
+#pragma mark -
+
++ (NSString *)UUIDString
 {
-    NSDataDetector *phoneDetector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypePhoneNumber error:nil]; 
-    NSArray *phoneMatches = [phoneDetector matchesInString:self options:0 range:NSMakeRange(0, [self length])];
-    
-    for (NSTextCheckingResult *match in phoneMatches) 
-    {
-        if ([match resultType] == NSTextCheckingTypePhoneNumber) 
-        {
-            NSString *matchingStringPhone = [match description];
-        }
-    } 
-    return phoneMatches;
+    CFUUIDRef uuid = CFUUIDCreate(kCFAllocatorDefault);
+    NSString *uuidStr = (__bridge_transfer NSString *)CFUUIDCreateString(kCFAllocatorDefault, uuid);
+    CFRelease(uuid);
+    return uuidStr;
 }
-*/ 
+
+#pragma mark -
+
+- (BOOL)addSkipBackupAttribute
+{
+    NSURL *fileURL = [NSURL fileURLWithPath:self];
+    if (fileURL) return [fileURL addSkipBackupAttribute];
+    return NO;
+}
 
 #pragma mark -
 

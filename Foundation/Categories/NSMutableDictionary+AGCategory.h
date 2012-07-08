@@ -75,4 +75,11 @@
 */
 - (void)setInteger:(BOOL)value forKey:(id)key;
 
+/** 
+ Safely adds a given key-value pair to the dictionary.
+ @param anObject The value for key.
+ @param aKey The key for value. 
+*/ 
+- (void)safelySetObject:(id)anObject forKey:(id)aKey;
+
 @end

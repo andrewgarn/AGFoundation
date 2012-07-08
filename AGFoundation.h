@@ -25,6 +25,9 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#ifndef _AGFOUNDATION_
+#define _AGFOUNDATION_
+
 #pragma mark Audio ToolBox
 
 #import "AGSoundEffect.h"
@@ -94,7 +97,9 @@
 #pragma mark - Macros
 
 #import "AGCommonMacros.h"
-#import "AGDebugging.h"
 #import "AGDebuggingMacros.h"
+#import "AGExceptionHandling.h"
 #import "AGPreprocessorMacros.h"
 #import "AGSynthesizeSingleton.h"
+
+#endif /* _AGFOUNDATION_ */

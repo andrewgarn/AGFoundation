@@ -69,9 +69,14 @@
  ---------------------------------------------------------------------------------------
  */ 
 
-/** Returns the receiver array with the object order reversed
- @return The receiver array with the order reversed
+/** Returns the receiver array with the object order reversed.
+ @return The receiver array with the order reversed.
 */
 - (NSMutableArray *)reverse;
+
+/** Returns the receiver array with the object order randomised.
+ @return The receiver array with the order randomised.
+*/
+- (NSMutableArray *)shuffle;
 
 @end

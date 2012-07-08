@@ -142,6 +142,26 @@
 - (BOOL)isValidEmailAddress;
 
 /**-------------------------------------------------------------------------------------
+ @name Generating a Unique Identifier
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Returns a universally unique identifier string object.
+ @return A universally unique identifier string object.
+*/
++ (NSString *)UUIDString;
+
+/**-------------------------------------------------------------------------------------
+ @name File Backup Prevention
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Attempts to construct an NSURL from the receiver and apply the "do not backup" attribute to it.
+ @return `YES` if the operation was successful, otherwise `NO`.
+*/
+- (BOOL)addSkipBackupAttribute;
+
+/**-------------------------------------------------------------------------------------
  @name Cryptographic Hashing
  ---------------------------------------------------------------------------------------
 */ 

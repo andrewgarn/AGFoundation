@@ -31,13 +31,21 @@
 @interface NSNotificationCenter (AGCategory)
 
 /** Adds a unique entry to the receiver’s dispatch table with an observer, a notification selector and optional criteria: notification name and sender.
- @param notificationObserver Object registering as an observer. This value must not be nil.
- @param notificationSelector that specifies the message the receiver sends notificationObserver to notify it of the notification posting. The method specified by notificationSelector must have one and only one argument (an instance of NSNotification).
+ @param observer Object registering as an observer. This value must not be nil.
+ @param selector that specifies the message the receiver sends notificationObserver to notify it of the notification posting. The method specified by notificationSelector must have one and only one argument (an instance of NSNotification).
  @param notificationName The name of the notification for which to register the observer; that is, only notifications with this name are delivered to the observer. If you pass nil, the notification center doesn’t use a notification’s name to decide whether to deliver it to the observer.
- @param notificationSender The object whose notifications the observer wants to receive; that is, only notifications sent by this sender are delivered to the observer.
+ @param sender The object whose notifications the observer wants to receive; that is, only notifications sent by this sender are delivered to the observer.
  If you pass nil, the notification center doesn’t use a notification’s sender to decide whether to deliver it to the observer.
 */
-+ (void)addUniqueObserver:(id)notificationObserver selector:(SEL)notificationSelector name:(NSString *)notificationName object:(id)notificationSender;
++ (void)addUniqueObserver:(id)observer selector:(SEL)selector name:(NSString *)notificationName object:(id)sender;
+
+/** Adds a unique entry to the receiver’s dispatch table with an observer, a notification selector and notification name.
+ @param observer Object registering as an observer. This value must not be nil.
+ @param selector that specifies the message the receiver sends notificationObserver to notify it of the notification posting. The method specified by notificationSelector must have one and only one argument (an instance of NSNotification).
+ @param notificationName The name of the notification for which to register the observer; that is, only notifications with this name are delivered to the observer. If you pass nil, the notification center doesn’t use a notification’s name to decide whether to deliver it to the observer.
+ If you pass nil, the notification center doesn’t use a notification’s sender to decide whether to deliver it to the observer.
+*/
++ (void)addUniqueObserver:(id)observer selector:(SEL)selector name:(NSString *)notificationName;
 
 /** Posts a given notification on the main thread to the receiver.
  @param notification The notification to post. This value must not be nil.

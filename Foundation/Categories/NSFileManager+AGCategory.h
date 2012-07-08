@@ -132,4 +132,19 @@
  */
 + (NSArray *)contentsOfTemporaryDirectory;
 
+/**-------------------------------------------------------------------------------------
+ @name Deleting Items
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Removes the file or directory at the specified path asynchronously.
+ @param path A path string indicating the file or directory to remove. If the path specifies a directory, the contents of that directory are recursively removed. You may specify nil for this parameter.
+*/
++ (void)removeItemAtPath:(NSString *)path;
+
+/** Removes the file or directory at the specified URL asynchronously.
+ @param URL A file URL specifying the file or directory to remove. If the URL specifies a directory, the contents of that directory are recursively removed. You may specify nil for this parameter.
+*/
++ (void)removeItemAtURL:(NSURL *)URL;
+
 @end

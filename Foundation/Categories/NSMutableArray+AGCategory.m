@@ -72,4 +72,19 @@
     return self;
 }
 
+- (NSMutableArray *)shuffle
+{
+    int i = 0;
+    int j = [self count] - 1;
+    
+    while (i<j)
+    {
+        NSUInteger randomIndex = arc4random_uniform([self count] - 1);
+        [self exchangeObjectAtIndex:randomIndex withObjectAtIndex:i];
+        i++;
+        j--;
+    }
+    return self;
+}
+
 @end

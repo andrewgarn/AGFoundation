@@ -36,8 +36,6 @@
     [self setObject:[NSNumber numberWithBool:value] forKey:key];
 }
 
-#pragma mark -
-
 - (void)setInt:(BOOL)value forKey:(id)key
 {
     [self setObject:[NSNumber numberWithInt:value] forKey:key];
@@ -56,6 +54,12 @@
 - (void)setInteger:(BOOL)value forKey:(id)key
 {
     [self setObject:[NSNumber numberWithInteger:value] forKey:key];
+}
+
+- (void)safelySetObject:(id)anObject forKey:(id)aKey
+{
+    if (anObject && aKey)
+        [self setObject:anObject forKey:aKey];
 }
 
 @end

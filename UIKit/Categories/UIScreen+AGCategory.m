@@ -101,11 +101,17 @@
 
 + (CGRect)pixelBounds
 {
-    CGFloat scale = [[UIScreen mainScreen] scale];
-    CGRect bounds = [[UIScreen mainScreen] bounds];
-    bounds.size.width = bounds.size.width * scale;
-    bounds.size.height = bounds.size.height;
-    return bounds;
+    static dispatch_once_t token;
+	static CGRect pixelBounds;
+    
+	dispatch_once(&token, ^{
+        CGFloat scale = [[UIScreen mainScreen] scale];
+        CGRect bounds = [[UIScreen mainScreen] bounds];
+        bounds.size.width = bounds.size.width * scale;
+        bounds.size.height = bounds.size.height;
+        pixelBounds = bounds;
+	});
+    return pixelBounds;
 }
 
 #pragma mark -

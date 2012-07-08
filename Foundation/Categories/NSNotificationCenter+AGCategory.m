@@ -29,10 +29,15 @@
 
 @implementation NSNotificationCenter (AGCategory)
 
-+ (void)addUniqueObserver:(id)observer selector:(SEL)selector name:(NSString *)name object:(id)object
++ (void)addUniqueObserver:(id)observer selector:(SEL)selector name:(NSString *)notificationName object:(id)sender
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:observer name:name object:object];
-    [[NSNotificationCenter defaultCenter] addObserver:observer selector:selector name:name object:object];
+    [[NSNotificationCenter defaultCenter] removeObserver:observer name:notificationName object:sender];
+    [[NSNotificationCenter defaultCenter] addObserver:observer selector:selector name:notificationName object:sender];
+}
+
++ (void)addUniqueObserver:(id)observer selector:(SEL)selector name:(NSString *)notificationName
+{
+    [NSNotificationCenter addUniqueObserver:observer selector:selector name:notificationName object:nil];
 }
 
 + (void)postNotificationOnMainThread:(NSNotification *)notification

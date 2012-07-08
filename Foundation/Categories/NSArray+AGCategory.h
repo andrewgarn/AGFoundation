@@ -73,4 +73,9 @@
 */
 - (NSArray *)reversedArray;
 
+/** Returns a new array with the object order randomised
+ @return A new array with the receiver's objects in random order.
+*/
+- (NSArray *)shuffledArray;
+
 @end

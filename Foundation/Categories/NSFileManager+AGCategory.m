@@ -26,6 +26,7 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "NSFileManager+AGCategory.h"
+#import "NSString+AGCategory.h"
 
 @implementation NSFileManager (AGCategory)
 
@@ -148,6 +149,30 @@
 + (NSArray *)contentsOfTemporaryDirectory
 {
     return [self contentsOfDirectoryAtPath:[self temporaryPath]];
+}
+
+#pragma mark -
+
++ (void)removeItemAtPath:(NSString *)path
+{
+	NSString *temporaryPath = [[self temporaryPath] stringByAppendingPathComponent:[NSString UUIDString]];
+    if ([[NSFileManager defaultManager] moveItemAtPath:path toPath:temporaryPath error:NULL])
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+            NSError *error = nil;
+            BOOL fileRemoved = [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
+            if (fileRemoved == NO)
+                NSLog(@"ERROR removing item at path: %@ [%@]", path, error);
+        });
+    }
+}
+
++ (void)removeItemAtURL:(NSURL *)URL
+{
+    if ([URL isFileURL])
+        [NSFileManager removeItemAtPath:[URL path]];
+    else
+        NSLog(@"ERROR: Supplied URL is not a file URL: %@", URL);
 }
 
 @end

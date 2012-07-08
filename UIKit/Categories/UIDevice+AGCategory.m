@@ -28,14 +28,6 @@
 #import "UIDevice+AGCategory.h"
 #import "NSString+AGCategory.h"
 
-#import <CoreTelephony/CTTelephonyNetworkInfo.h>
-#import <CoreTelephony/CTCarrier.h>
-
-#import <CoreLocation/CoreLocation.h>
-#import <CoreMotion/CoreMotion.h>
-
-#import <MobileCoreServices/MobileCoreServices.h>
-
 #include <sys/utsname.h>
 #include <sys/types.h>
 #include <sys/sysctl.h>
@@ -43,6 +35,10 @@
 #include <net/if.h>
 #include <net/if_dl.h>
 #include <mach/mach.h>
+
+#ifndef kUTTypeMovie
+#define kUTTypeMovie @"public.movie"
+#endif
 
 @interface UIDevice (AGCategory_Private)
 + (NSString *)getSysInfoByName:(char *)typeSpecifier;
@@ -63,193 +59,293 @@
 
 + (NSString *)deviceModel
 {
-    NSString *platform = [self platform];
+    static dispatch_once_t token;
+	static NSString *deviceModel;
     
-    /* iPhone */
-    if ([platform isEqualToString:@"iPhone1,1"])    return @"iPhone";
-    if ([platform isEqualToString:@"iPhone1,2"])    return @"iPhone 3G";
-    if ([platform hasPrefix:@"iPhone2"])            return @"iPhone 3GS";
-    if ([platform isEqualToString:@"iPhone3,1"])    return @"iPhone 4 GSM";
-    if ([platform isEqualToString:@"iPhone3,3"])    return @"iPhone 4 CDMA";
-    if ([platform hasPrefix:@"iPhone4"])            return @"iPhone 4S";
-    
-    /* iPod Touch */
-    if ([platform hasPrefix:@"iPod1"])              return @"iPod 1G";
-    if ([platform hasPrefix:@"iPod2"])              return @"iPod 2G";
-    if ([platform hasPrefix:@"iPod3"])              return @"iPod 3G";
-    if ([platform hasPrefix:@"iPod4"])              return @"iPod 4G";
-    
-    /* iPad */
-    if ([platform isEqualToString:@"iPad1,1"])      return @"iPad WiFi";
-    if ([platform isEqualToString:@"iPad2,1"])      return @"iPad 2 WiFi";
-    if ([platform isEqualToString:@"iPad2,2"])      return @"iPad 2 GSM";
-    if ([platform isEqualToString:@"iPad2,3"])      return @"iPad 2 CDMAV";
-    if ([platform isEqualToString:@"iPad2,4"])      return @"iPad 2 CDMAS";
-    if ([platform isEqualToString:@"iPad3,1"])      return @"iPad 3 Wi-Fi";
-    if ([platform isEqualToString:@"iPad3,2"])      return @"iPad 3 GSM";
-    if ([platform isEqualToString:@"iPad3,3"])      return @"iPad 3 CDMA";
-    
-    /* Simulator */
-    if ([UIDevice isASimulator])
-    {
-        if ([[UIScreen mainScreen] bounds].size.width < 768)
+	dispatch_once(&token, ^{
+        
+        /* Get Platform */
+        NSString *platform = [self platform];
+        
+        /* iPhone */
+        if ([platform isEqualToString:@"iPhone1,1"])         deviceModel = @"iPhone";
+        else if ([platform isEqualToString:@"iPhone1,2"])    deviceModel = @"iPhone 3G";
+        else if ([platform hasPrefix:@"iPhone2"])            deviceModel = @"iPhone 3GS";
+        else if ([platform isEqualToString:@"iPhone3,1"])    deviceModel = @"iPhone 4 GSM";
+        else if ([platform isEqualToString:@"iPhone3,3"])    deviceModel = @"iPhone 4 CDMA";
+        else if ([platform hasPrefix:@"iPhone4"])            deviceModel = @"iPhone 4S";
+        
+        /* iPod Touch */
+        else if ([platform hasPrefix:@"iPod1"])              deviceModel = @"iPod 1G";
+        else if ([platform hasPrefix:@"iPod2"])              deviceModel = @"iPod 2G";
+        else if ([platform hasPrefix:@"iPod3"])              deviceModel = @"iPod 3G";
+        else if ([platform hasPrefix:@"iPod4"])              deviceModel = @"iPod 4G";
+        
+        /* iPad */
+        else if ([platform isEqualToString:@"iPad1,1"])      deviceModel = @"iPad WiFi";
+        else if ([platform isEqualToString:@"iPad2,1"])      deviceModel = @"iPad 2 WiFi";
+        else if ([platform isEqualToString:@"iPad2,2"])      deviceModel = @"iPad 2 GSM";
+        else if ([platform isEqualToString:@"iPad2,3"])      deviceModel = @"iPad 2 CDMAV";
+        else if ([platform isEqualToString:@"iPad2,4"])      deviceModel = @"iPad 2 CDMAS";
+        else if ([platform isEqualToString:@"iPad3,1"])      deviceModel = @"iPad 3 Wi-Fi";
+        else if ([platform isEqualToString:@"iPad3,2"])      deviceModel = @"iPad 3 GSM";
+        else if ([platform isEqualToString:@"iPad3,3"])      deviceModel = @"iPad 3 CDMA";
+        
+        /* Simulator */
+        else if ([UIDevice isASimulator])
         {
-            if ([UIDevice hasRetinaDisplay])
-                return @"iPhone Simulator (Retina)";
+            if ([[UIScreen mainScreen] bounds].size.width < 768)
+            {
+                if ([UIDevice hasRetinaDisplay])
+                    deviceModel = @"iPhone Simulator (Retina)";
+                else
+                    deviceModel = @"iPhone Simulator";
+            }
             else
-                return @"iPhone Simulator";
+            {
+                if ([UIDevice hasRetinaDisplay])
+                    deviceModel = @"iPad Simulator (Retina)";
+                else
+                    deviceModel = @"iPad Simulator";
+            }
         }
-        else 
-        {
-            if ([UIDevice hasRetinaDisplay])
-                return @"iPad Simulator (Retina)";
-            else
-                return @"iPad Simulator";
-        }
-    }
-    
-    /* Unknown */
-    return platform;
+        
+        /* Unknown */
+        else deviceModel = platform;
+        
+	});
+    return deviceModel;
 }
 
 + (NSString *)deviceFamily
 {
-    if ([UIDevice isAniPhone])
-        return @"iPhone";
+    static dispatch_once_t token;
+	static NSString *deviceFamily;
     
-    if ([UIDevice isAniPodTouch])
-        return @"iPod touch";
-    
-    if ([UIDevice isAniPad])
-        return @"iPad";
-    
-    if ([UIDevice isASimulator])
-        return @"Simulator";
-    
-    return @"Unknown";
+	dispatch_once(&token, ^{
+        if ([UIDevice isAniPhone])
+             deviceFamily = @"iPhone";
+        else if ([UIDevice isAniPodTouch])
+            deviceFamily = @"iPod touch";
+        else if ([UIDevice isAniPad])
+            deviceFamily = @"iPad";
+        else if ([UIDevice isASimulator])
+            deviceFamily = @"Simulator";
+        else
+            deviceFamily = [[UIDevice currentDevice] model];
+	});
+    return deviceFamily;
 }
 
 + (NSString *)deviceCarrier
 {
-    CTTelephonyNetworkInfo *phoneInfo = [[CTTelephonyNetworkInfo alloc] init];
-    CTCarrier *phoneCarrier = [phoneInfo subscriberCellularProvider];
-    NSString *carrierName = [phoneCarrier carrierName];
+    id networkInfo = nil;
+    id cellularProvider = nil;
+    NSString *carrierName = nil;
     
-    if (carrierName)
-        return carrierName;
+    Class telephonyNetworkInfoClass = NSClassFromString(@"CTTelephonyNetworkInfo");
+    Class carrierClass = NSClassFromString(@"CTCarrier.h");
     
-    return @"None";
+    if (!telephonyNetworkInfoClass)
+        NSLog(@"[UIDevice deviceCarrier] - You must #import <CoreTelephony/CTTelephonyNetworkInfo.h>!");
+    
+    if (!carrierClass)
+        NSLog(@"[UIDevice deviceCarrier] - You must #import <CoreTelephony/CTCarrier.h>!");
+    
+    if (telephonyNetworkInfoClass && carrierClass)
+    {
+        networkInfo = [[telephonyNetworkInfoClass alloc] init];
+        cellularProvider = [networkInfo performSelector:@selector(subscriberCellularProvider)];
+        carrierName = [cellularProvider performSelector:@selector(carrierName)];
+    }
+    
+    return carrierName;
 }
 
 #pragma mark - System Info
 
 + (NSString *)systemName
 {
-    return [[UIDevice currentDevice] systemName];
+    static dispatch_once_t token;
+	static NSString *systemName;
+    
+	dispatch_once(&token, ^{
+        systemName = [[UIDevice currentDevice] systemName];
+	});
+    return systemName;
 }
 
 + (NSString *)systemVersion
 {
-    return [[UIDevice currentDevice] systemVersion];
+    static dispatch_once_t token;
+	static NSString *systemVersion;
+    
+	dispatch_once(&token, ^{
+        systemVersion = [[UIDevice currentDevice] systemVersion];
+	});
+    return systemVersion;
 }
 
 #pragma mark -
 
 + (BOOL)isAniPhone
 {
-	NSRange textRange = [[self platform] rangeOfString:@"iPhone"];
-	if(textRange.location != NSNotFound)
-		return YES;
+    static dispatch_once_t token;
+	static BOOL isAniPhone = NO;
     
-	return NO;
+	dispatch_once(&token, ^{
+        NSRange textRange = [[self platform] rangeOfString:@"iPhone"];
+        if(textRange.location != NSNotFound)
+            isAniPhone = YES;
+    });
+	return isAniPhone;
 }
 
 + (BOOL)isAniPodTouch
 {
-	NSRange textRange = [[self platform] rangeOfString: @"iPod"];
-	if(textRange.location != NSNotFound)
-		return YES;
+    static dispatch_once_t token;
+	static BOOL isAniPodTouch = NO;
     
-	return NO;
+	dispatch_once(&token, ^{
+        NSRange textRange = [[self platform] rangeOfString: @"iPod"];
+        if(textRange.location != NSNotFound)
+            isAniPodTouch = YES;
+    });
+	return isAniPodTouch;
 }
 
 + (BOOL)isAniPad
 {
-	NSRange textRange = [[self platform] rangeOfString:@"iPad"];
-	if(textRange.location != NSNotFound)
-		return YES;
+    static dispatch_once_t token;
+	static BOOL isAniPad = NO;
     
-	return NO;
+	dispatch_once(&token, ^{
+        NSRange textRange = [[self platform] rangeOfString:@"iPad"];
+        if(textRange.location != NSNotFound)
+            isAniPad = YES;
+    });
+	return isAniPad;
 }
 
 + (BOOL)isASimulator
 {
-	NSRange textRange = [[self platform] rangeOfString:@"i386"];
-	if(textRange.location != NSNotFound)
-		return YES;
+    static dispatch_once_t token;
+	static BOOL isASimulator = NO;
     
-    NSRange textRange2 = [[self platform] rangeOfString:@"x86_64"];
-	if(textRange2.location != NSNotFound)
-		return YES;
-    
-	return NO;
+	dispatch_once(&token, ^{
+        NSRange textRange = [[self platform] rangeOfString:@"i386"];
+        NSRange textRange2 = [[self platform] rangeOfString:@"x86_64"];
+        if (textRange.location != NSNotFound || textRange2.location != NSNotFound)
+            isASimulator = YES;
+    });
+    return isASimulator;
 }
 
 #pragma mark -
 
 + (BOOL)hasRetinaDisplay
 {
-    if ([UIScreen instancesRespondToSelector:@selector(scale)]) 
-    {
-        if ([[UIScreen mainScreen] scale] == 2.0) 
-            return YES;
-    }
-    return NO;
+    static dispatch_once_t token;
+	static BOOL hasRetinaDisplay = NO;
+    
+	dispatch_once(&token, ^{
+        if ([UIScreen instancesRespondToSelector:@selector(scale)])
+            if ([[UIScreen mainScreen] scale] == 2.0)
+                hasRetinaDisplay = YES;
+    });
+    return hasRetinaDisplay;
 }
 
 + (BOOL)hasCompass
 {
-    return [CLLocationManager headingAvailable];
+    static dispatch_once_t token;
+	static BOOL headingAvailable = NO;
+    
+	dispatch_once(&token, ^{
+        Class class = NSClassFromString(@"CLLocationManager");
+        if (class != nil) headingAvailable = (BOOL)[class performSelector:@selector(headingAvailable)];
+	});
+    return headingAvailable;
 }
 
 + (BOOL)hasGyroscope
 {
     static dispatch_once_t token;
-	static CMMotionManager *motionManager;
+	static BOOL isGyroAvailable = NO;
     
 	dispatch_once(&token, ^{
-		motionManager = [[CMMotionManager alloc] init];
+        Class class = NSClassFromString(@"CMMotionManager");
+        if (class != nil) isGyroAvailable = (BOOL)[[[class alloc] init] performSelector:@selector(isGyroAvailable)];
 	});
-    return [motionManager isGyroAvailable];
+    return isGyroAvailable;
+}
+
++ (BOOL)hasCamera
+{
+    static dispatch_once_t token;
+	static BOOL hasCamera = NO;
+    
+	dispatch_once(&token, ^{
+        hasCamera = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
+	});
+    return hasCamera;
 }
 
 + (BOOL)hasFrontCamera
 {
-    return [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront];
+    static dispatch_once_t token;
+	static BOOL hasFrontCamera = NO;
+    
+	dispatch_once(&token, ^{
+        hasFrontCamera = [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront];
+	});
+    return hasFrontCamera;
 }
 
 + (BOOL)hasRearCamera
 {
-    return [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear];
+    static dispatch_once_t token;
+	static BOOL hasRearCamera = NO;
+    
+	dispatch_once(&token, ^{
+        hasRearCamera = [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear];
+	});
+    return hasRearCamera;
 }
 
 + (BOOL)hasFrontFlash
 {
-    return [UIImagePickerController isFlashAvailableForCameraDevice:UIImagePickerControllerCameraDeviceFront];
+    static dispatch_once_t token;
+	static BOOL hasFrontFlash = NO;
+    
+	dispatch_once(&token, ^{
+        hasFrontFlash = [UIImagePickerController isFlashAvailableForCameraDevice:UIImagePickerControllerCameraDeviceFront];
+	});
+    return hasFrontFlash;
 }
 
 + (BOOL)hasRearFlash
 {
-    return [UIImagePickerController isFlashAvailableForCameraDevice:UIImagePickerControllerCameraDeviceRear];
+    static dispatch_once_t token;
+	static BOOL hasRearFlash = NO;
+    
+	dispatch_once(&token, ^{
+        hasRearFlash = [UIImagePickerController isFlashAvailableForCameraDevice:UIImagePickerControllerCameraDeviceRear];
+	});
+    return hasRearFlash;
 }
 
 + (BOOL)canRecordVideo
 {
-    NSArray *mediaType = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
-    if ([mediaType containsObject:(NSString *)kUTTypeMovie])
-        return YES;
-	
-    return NO;
+    static dispatch_once_t token;
+	static BOOL canRecordVideo = NO;
+    
+	dispatch_once(&token, ^{
+        NSArray *mediaType = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+        if ([mediaType containsObject:(NSString *)kUTTypeMovie])
+            canRecordVideo = YES;
+	});
+    return canRecordVideo;
 }
 
 #pragma mark -
@@ -257,70 +353,89 @@
 + (BOOL)canSendMail
 {
     Class class = NSClassFromString(@"MFMailComposeViewController");
-    if (class)
-    {
-        if ([(id)class canSendMail])
-        {
-            return YES;
-        }
-    }
+    if (class) return [(id)class canSendMail];
     return NO;
 }
 
 + (BOOL)canSendText
 {
     Class class = NSClassFromString(@"MFMessageComposeViewController");
-    if (class)
-    {
-        if ([(id)class canSendText])
-        {
-            return YES;
-        }
-    }
+    if (class) return [(id)class canSendText];
     return NO;
 }
 
 + (BOOL)supportsMultitasking
 {
-    return [[UIDevice currentDevice] isMultitaskingSupported];
+    static dispatch_once_t token;
+	static BOOL isMultitaskingSupported = NO;
+    
+	dispatch_once(&token, ^{
+        isMultitaskingSupported = [[UIDevice currentDevice] isMultitaskingSupported];
+	});
+    return isMultitaskingSupported;
 }
 
 #pragma mark -
 
-+ (UIUserInterfaceIdiom)idiom
++ (UIUserInterfaceIdiom)userInterfaceIdiom
 {
-    return [[UIDevice currentDevice] userInterfaceIdiom];
+    static dispatch_once_t token;
+	static UIUserInterfaceIdiom userInterfaceIdiom;
+    
+	dispatch_once(&token, ^{
+        userInterfaceIdiom = [[UIDevice currentDevice] userInterfaceIdiom];
+	});
+    return userInterfaceIdiom;
 }
 
 + (BOOL)userInterfaceIdiomIsPhone
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-        return YES;
+    static dispatch_once_t token;
+	static BOOL userInterfaceIdiomIsPhone = NO;
     
-    return NO;
+	dispatch_once(&token, ^{
+        if ([UIDevice userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+            userInterfaceIdiomIsPhone = YES;
+	});
+    return userInterfaceIdiomIsPhone;
 }
 
 + (BOOL)userInterfaceIdiomIsPad
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
-        return YES;
+    static dispatch_once_t token;
+	static BOOL userInterfaceIdiomIsPad = NO;
     
-    return NO;
+	dispatch_once(&token, ^{
+        if ([UIDevice userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+            userInterfaceIdiomIsPad = YES;
+	});
+    return userInterfaceIdiomIsPad;
 }
 
 #pragma mark -
 
 + (NSString *)uniqueDeviceIdentifier
 {
-    NSString *macAddress = [UIDevice macAddress];
-    NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
-    NSString *uniqueDeviceIdentifier = [macAddress HMACWithSecret:bundleIdentifier];
+    static dispatch_once_t token;
+	static NSString *uniqueDeviceIdentifier;
+    
+	dispatch_once(&token, ^{
+        NSString *macAddress = [UIDevice macAddress];
+        NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
+        uniqueDeviceIdentifier = [macAddress HMACWithSecret:bundleIdentifier];
+	});
     return uniqueDeviceIdentifier;
 }
 
 + (NSString *)uniqueGlobalDeviceIdentifier
 {
-    return [[UIDevice macAddress] SHA1Hash];    
+    static dispatch_once_t token;
+	static NSString *uniqueGlobalDeviceIdentifier;
+    
+	dispatch_once(&token, ^{
+        uniqueGlobalDeviceIdentifier = [[UIDevice macAddress] SHA1Hash];
+	});
+    return uniqueGlobalDeviceIdentifier;
 }
 
 #pragma mark -
@@ -370,24 +485,35 @@
 
 + (BOOL)isJailbroken 
 {
-	NSString *cydiaPath = @"/Applications/Cydia.app";
-	NSString *aptPath = @"/private/var/lib/apt/";
+    static dispatch_once_t token;
+	static BOOL isJailbroken = NO;
     
-	if ([[NSFileManager defaultManager] fileExistsAtPath:cydiaPath]) 
-        return YES;
-    
-    if ([[NSFileManager defaultManager] fileExistsAtPath:aptPath]) 
-        return YES;
-    
-	return NO;
+	dispatch_once(&token, ^{
+        NSString *cydiaPath = @"/Applications/Cydia.app";
+        NSString *aptPath = @"/private/var/lib/apt/";
+        
+        if ([[NSFileManager defaultManager] fileExistsAtPath:cydiaPath])
+            isJailbroken = YES;
+        else if ([[NSFileManager defaultManager] fileExistsAtPath:aptPath])
+            isJailbroken = YES;
+    });
+    return isJailbroken;
 }
 
 + (NSString *)jailbrokenState
 {
-    if ([UIDevice isJailbroken])
-        return @"Jailbroken";
+    static dispatch_once_t token;
+	static NSString *jailbrokenState;
     
-    return @"Not Jailbroken";
+	dispatch_once(&token, ^{
+        
+        if ([UIDevice isJailbroken])
+            jailbrokenState = @"Jailbroken";
+        else
+            jailbrokenState = @"Not Jailbroken";
+        
+    });
+    return jailbrokenState;
 }
 
 #pragma mark -
@@ -448,7 +574,7 @@
     host_page_size(host_port, &pagesize);
     (void) host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
     vm_size_t vmsize = vm_stat.free_count * pagesize;
-    return [NSNumber numberWithLong:(vmsize / 1024 / 1024)];
+    return [NSNumber numberWithLong:vmsize];
 }
 
 + (NSString *)macAddress
@@ -524,12 +650,24 @@
 
 + (NSString *)platform
 {
-	return [UIDevice getSysInfoByName:"hw.machine"];
+    static dispatch_once_t token;
+	static NSString *platform;
+    
+	dispatch_once(&token, ^{
+        platform = [UIDevice getSysInfoByName:"hw.machine"];
+    });
+    return platform;
 }
 
 + (NSString *)model
 {
-    return [UIDevice getSysInfoByName:"hw.model"];
+    static dispatch_once_t token;
+	static NSString *model;
+    
+	dispatch_once(&token, ^{
+        model = [UIDevice getSysInfoByName:"hw.model"];
+    });
+    return model;
 }
 
 @end

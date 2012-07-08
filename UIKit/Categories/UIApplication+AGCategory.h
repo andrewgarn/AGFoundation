@@ -26,7 +26,6 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <UIKit/UIKit.h>
-#import <AssetsLibrary/AssetsLibrary.h>
 
 /** A collection of category extensions for `UIApplication` */
 @interface UIApplication (AGCategory)
@@ -79,16 +78,13 @@
 */ 
 + (void)logApplicationDidFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
 
++ (void)logApplicationDidEnterBackground;
++ (void)logApplicationWillEnterForeground;
++ (void)logApplicationWillResignActive;
++ (void)logApplicationDidBecomeActive;
+
 /** Adds an observer to `NSNotificationCenter` to log to the console when the navigation controllers stack changes. */ 
 + (void)observeNavigationControllerStack;
-
-/**-------------------------------------------------------------------------------------
- @name Screenshot
- ---------------------------------------------------------------------------------------
-*/
-
-/** Captures an image representation of the application's window and saves it to the camera roll. */ 
-+ (void)takeScreenshot;
 
 /**-------------------------------------------------------------------------------------
  @name Interface Orientation

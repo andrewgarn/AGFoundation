@@ -1,8 +1,8 @@
 //
-//  NSTimer+AGCategory.m
+//  AGTimer.m
 //  AGFoundation
 //
-//  Created by Andrew Garn on 10/06/2012.
+//  Created by Andrew Garn on 05/07/2012.
 //  Copyright (c) 2012 Andrew Garn. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -25,34 +25,26 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "NSTimer+AGCategory.h"
+#import "AGTimer.h"
 #import "NSObject+AGCategory.h"
 
-static char kNSTimerBlockKey;
+@interface AGTimer ()
+@property (nonatomic, copy) AGTimerBlock timerBlock;
+@end
 
-@implementation NSTimer (AGCategory)
+@implementation AGTimer
+@synthesize timerBlock = _timerBlock;
 
-+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)seconds repeats:(BOOL)repeats targetBlock:(AGTimerBlock)block
++ (AGTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)seconds repeats:(BOOL)repeats targetBlock:(AGTimerBlock)block
 {
-    return [NSTimer scheduledTimerWithTimeInterval:seconds userInfo:nil repeats:repeats targetBlock:block];
+    return [AGTimer scheduledTimerWithTimeInterval:seconds userInfo:nil repeats:repeats targetBlock:block];
 }
 
-+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)seconds userInfo:(id)userInfo repeats:(BOOL)repeats targetBlock:(AGTimerBlock)block
++ (AGTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)seconds userInfo:(id)userInfo repeats:(BOOL)repeats targetBlock:(AGTimerBlock)block
 {
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:seconds target:self selector:@selector(_timerFired:) userInfo:userInfo repeats:repeats];
-    [timer associateCopyOfValue:block withKey:&kNSTimerBlockKey];
-    return timer;
-}
-
-+ (NSTimer *)timerWithTimeInterval:(NSTimeInterval)seconds repeats:(BOOL)repeats targetBlock:(AGTimerBlock)block
-{
-    return [NSTimer timerWithTimeInterval:seconds userInfo:nil repeats:repeats targetBlock:block];
-}
-
-+ (NSTimer *)timerWithTimeInterval:(NSTimeInterval)seconds userInfo:(id)userInfo repeats:(BOOL)repeats targetBlock:(AGTimerBlock)block
-{
-    NSTimer *timer = [NSTimer timerWithTimeInterval:seconds target:self selector:@selector(_timerFired:) userInfo:userInfo repeats:repeats];
-    [timer associateCopyOfValue:block withKey:&kNSTimerBlockKey];
+    NSDate *fireDate = [NSDate dateWithTimeIntervalSinceNow:seconds];
+    AGTimer *timer = [[AGTimer alloc] initWithFireDate:fireDate interval:seconds target:self selector:@selector(_timerFired:) userInfo:userInfo repeats:repeats];
+    [timer setTimerBlock:block];
     return timer;
 }
 
@@ -60,8 +52,7 @@ static char kNSTimerBlockKey;
 
 - (void)_timerFired:(NSTimer *)timer
 {
-    AGTimerBlock block = [self associatedValueForKey:&kNSTimerBlockKey];
-    if (block) block (self);
+    if (_timerBlock) _timerBlock(self);
 }
 
 @end

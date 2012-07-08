@@ -33,134 +33,134 @@
 
 + (BOOL)boolForKey:(NSString *)defaultName
 {
-	return [[NSUserDefaults standardUserDefaults] boolForKey:defaultName];
+	return [[NSUserDefaults staticUserDefaults] boolForKey:defaultName];
 }
 
 + (float)floatForKey:(NSString *)defaultName
 {
-	return [[NSUserDefaults standardUserDefaults] floatForKey:defaultName];
+	return [[NSUserDefaults staticUserDefaults] floatForKey:defaultName];
 }
 
 + (double)doubleForKey:(NSString *)defaultName
 {
-	return [[NSUserDefaults standardUserDefaults] doubleForKey:defaultName];
+	return [[NSUserDefaults staticUserDefaults] doubleForKey:defaultName];
 }
 
 + (NSInteger)integerForKey:(NSString *)defaultName
 {
-	return [[NSUserDefaults standardUserDefaults] integerForKey:defaultName];
+	return [[NSUserDefaults staticUserDefaults] integerForKey:defaultName];
 }
 
 #pragma mark -
 
 + (id)objectForKey:(NSString *)defaultName
 {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:defaultName];
+    return [[NSUserDefaults staticUserDefaults] objectForKey:defaultName];
 }
 
 + (NSURL *)URLForKey:(NSString *)defaultName;
 {
-    return [[NSUserDefaults standardUserDefaults] URLForKey:defaultName];
+    return [[NSUserDefaults staticUserDefaults] URLForKey:defaultName];
 }
 
 + (NSData *)dataForKey:(NSString *)defaultName
 {
-	return [[NSUserDefaults standardUserDefaults] dataForKey:defaultName];
+	return [[NSUserDefaults staticUserDefaults] dataForKey:defaultName];
 }
 
 + (NSArray *)arrayForKey:(NSString *)defaultName
 {
-	return [[NSUserDefaults standardUserDefaults] arrayForKey:defaultName];
+	return [[NSUserDefaults staticUserDefaults] arrayForKey:defaultName];
 }
 
 + (NSString *)stringForKey:(NSString *)defaultName;
 {
-    return [[NSUserDefaults standardUserDefaults] stringForKey:defaultName];
+    return [[NSUserDefaults staticUserDefaults] stringForKey:defaultName];
 }
 
 + (NSArray *)stringArrayForKey:(NSString *)defaultName;
 {
-    return [[NSUserDefaults standardUserDefaults] stringArrayForKey:defaultName];
+    return [[NSUserDefaults staticUserDefaults] stringArrayForKey:defaultName];
 }
 
 + (NSDictionary *)dictionaryForKey:(NSString *)defaultName
 {
-	return [[NSUserDefaults standardUserDefaults] dictionaryForKey:defaultName];
+	return [[NSUserDefaults staticUserDefaults] dictionaryForKey:defaultName];
 }
 
 #pragma mark -
 
 + (void)setBool:(BOOL)value forKey:(NSString *)defaultName
 {
-    [[NSUserDefaults standardUserDefaults] setBool:value forKey:defaultName];
-    [[NSUserDefaults standardUserDefaults] synchronizeQueued];
+    [[NSUserDefaults staticUserDefaults] setBool:value forKey:defaultName];
+    [[NSUserDefaults staticUserDefaults] synchronizeQueued];
 }
 
 + (void)setFloat:(float)value forKey:(NSString *)defaultName
 {
-    [[NSUserDefaults standardUserDefaults] setFloat:value forKey:defaultName];
-    [[NSUserDefaults standardUserDefaults] synchronizeQueued];
+    [[NSUserDefaults staticUserDefaults] setFloat:value forKey:defaultName];
+    [[NSUserDefaults staticUserDefaults] synchronizeQueued];
 }
 
 + (void)setDouble:(double)value forKey:(NSString *)defaultName
 {
-    [[NSUserDefaults standardUserDefaults] setDouble:value forKey:defaultName];
-    [[NSUserDefaults standardUserDefaults] synchronizeQueued];
+    [[NSUserDefaults staticUserDefaults] setDouble:value forKey:defaultName];
+    [[NSUserDefaults staticUserDefaults] synchronizeQueued];
 }
 
 + (void)setInteger:(NSInteger)value forKey:(NSString *)defaultName
 {
-    [[NSUserDefaults standardUserDefaults] setInteger:value forKey:defaultName];
-    [[NSUserDefaults standardUserDefaults] synchronizeQueued];
+    [[NSUserDefaults staticUserDefaults] setInteger:value forKey:defaultName];
+    [[NSUserDefaults staticUserDefaults] synchronizeQueued];
 }
 
 + (void)setObject:(id)object forKey:(NSString *)defaultName
 {
-    [[NSUserDefaults standardUserDefaults] setObject:object forKey:defaultName];
-    [[NSUserDefaults standardUserDefaults] synchronizeQueued];
+    [[NSUserDefaults staticUserDefaults] setObject:object forKey:defaultName];
+    [[NSUserDefaults staticUserDefaults] synchronizeQueued];
 }
 
 + (void)setURL:(NSURL *)url forKey:(NSString *)defaultName
 {
-    [[NSUserDefaults standardUserDefaults] setURL:url forKey:defaultName];
-    [[NSUserDefaults standardUserDefaults] synchronizeQueued];
+    [[NSUserDefaults staticUserDefaults] setURL:url forKey:defaultName];
+    [[NSUserDefaults staticUserDefaults] synchronizeQueued];
 }
 
 + (void)setData:(NSData *)data forKey:(NSString *)defaultName
 {
-    [[NSUserDefaults standardUserDefaults] setObject:data forKey:defaultName];
-    [[NSUserDefaults standardUserDefaults] synchronizeQueued];
+    [[NSUserDefaults staticUserDefaults] setObject:data forKey:defaultName];
+    [[NSUserDefaults staticUserDefaults] synchronizeQueued];
 }
 
 + (void)setArray:(NSArray *)array forKey:(NSString *)defaultName
 {
-    [[NSUserDefaults standardUserDefaults] setObject:array forKey:defaultName];
-    [[NSUserDefaults standardUserDefaults] synchronizeQueued];
+    [[NSUserDefaults staticUserDefaults] setObject:array forKey:defaultName];
+    [[NSUserDefaults staticUserDefaults] synchronizeQueued];
 }
 
 + (void)setString:(NSString *)string forKey:(NSString *)defaultName
 {
-    [[NSUserDefaults standardUserDefaults] setObject:string forKey:defaultName];
-    [[NSUserDefaults standardUserDefaults] synchronizeQueued];
+    [[NSUserDefaults staticUserDefaults] setObject:string forKey:defaultName];
+    [[NSUserDefaults staticUserDefaults] synchronizeQueued];
 }
 
 + (void)setStringArray:(NSArray *)stringArray forKey:(NSString *)defaultName
 {
-    [[NSUserDefaults standardUserDefaults] setObject:stringArray forKey:defaultName];
-    [[NSUserDefaults standardUserDefaults] synchronizeQueued];
+    [[NSUserDefaults staticUserDefaults] setObject:stringArray forKey:defaultName];
+    [[NSUserDefaults staticUserDefaults] synchronizeQueued];
 }
 
 + (void)setDictionary:(NSDictionary *)dictionary forKey:(NSString *)defaultName
 {
-    [[NSUserDefaults standardUserDefaults] setObject:dictionary forKey:defaultName];
-    [[NSUserDefaults standardUserDefaults] synchronizeQueued];
+    [[NSUserDefaults staticUserDefaults] setObject:dictionary forKey:defaultName];
+    [[NSUserDefaults staticUserDefaults] synchronizeQueued];
 }
 
 #pragma mark - UIColor
 
 + (UIColor *)colorForKey:(NSString *)defaultName
 {
-    return [[NSUserDefaults standardUserDefaults] colorForKey:defaultName];
+    return [[NSUserDefaults staticUserDefaults] colorForKey:defaultName];
 }
 
 - (UIColor *)colorForKey:(NSString *)defaultName 
@@ -175,8 +175,8 @@
 
 + (void)setColor:(UIColor *)value forKey:(NSString *)defaultName
 {
-    [[NSUserDefaults standardUserDefaults] setColor:value forKey:defaultName];
-    [[NSUserDefaults standardUserDefaults] synchronizeQueued];
+    [[NSUserDefaults staticUserDefaults] setColor:value forKey:defaultName];
+    [[NSUserDefaults staticUserDefaults] synchronizeQueued];
 }
 
 - (void)setColor:(UIColor *)value forKey:(NSString *)defaultName
@@ -189,7 +189,7 @@
 
 + (NSRange)rangeForKey:(NSString *)defaultName
 {
-    return [[NSUserDefaults standardUserDefaults] rangeForKey:defaultName];
+    return [[NSUserDefaults staticUserDefaults] rangeForKey:defaultName];
 }
 
 - (NSRange)rangeForKey:(NSString *)defaultName
@@ -203,8 +203,8 @@
 
 + (void)setRange:(NSRange)value forKey:(NSString *)defaultName
 {
-    [[NSUserDefaults standardUserDefaults] setRange:value forKey:defaultName];
-    [[NSUserDefaults standardUserDefaults] synchronizeQueued];
+    [[NSUserDefaults staticUserDefaults] setRange:value forKey:defaultName];
+    [[NSUserDefaults staticUserDefaults] synchronizeQueued];
 }
 
 - (void)setRange:(NSRange)value forKey:(NSString *)defaultName
@@ -216,7 +216,7 @@
 
 + (CGPoint)pointForKey:(NSString *)defaultName
 {
-    return [[NSUserDefaults standardUserDefaults] pointForKey:defaultName];
+    return [[NSUserDefaults staticUserDefaults] pointForKey:defaultName];
 }
 
 - (CGPoint)pointForKey:(NSString *)defaultName
@@ -230,8 +230,8 @@
 
 + (void)setPoint:(CGPoint)value forKey:(NSString *)defaultName
 {
-    [[NSUserDefaults standardUserDefaults] setPoint:value forKey:defaultName];
-    [[NSUserDefaults standardUserDefaults] synchronizeQueued];
+    [[NSUserDefaults staticUserDefaults] setPoint:value forKey:defaultName];
+    [[NSUserDefaults staticUserDefaults] synchronizeQueued];
 }
 
 - (void)setPoint:(CGPoint)value forKey:(NSString *)defaultName
@@ -243,7 +243,7 @@
 
 + (CGSize)sizeForKey:(NSString *)defaultName
 {
-    return [[NSUserDefaults standardUserDefaults] sizeForKey:defaultName];
+    return [[NSUserDefaults staticUserDefaults] sizeForKey:defaultName];
 }
 
 - (CGSize)sizeForKey:(NSString *)defaultName
@@ -257,8 +257,8 @@
 
 + (void)setSize:(CGSize)value forKey:(NSString *)defaultName
 {
-    [[NSUserDefaults standardUserDefaults] setSize:value forKey:defaultName];
-    [[NSUserDefaults standardUserDefaults] synchronizeQueued];
+    [[NSUserDefaults staticUserDefaults] setSize:value forKey:defaultName];
+    [[NSUserDefaults staticUserDefaults] synchronizeQueued];
 }
 
 - (void)setSize:(CGSize)value forKey:(NSString *)defaultName
@@ -270,7 +270,7 @@
 
 + (CGRect)rectForKey:(NSString *)defaultName
 {
-    return [[NSUserDefaults standardUserDefaults] rectForKey:defaultName];
+    return [[NSUserDefaults staticUserDefaults] rectForKey:defaultName];
 }
 
 - (CGRect)rectForKey:(NSString *)defaultName
@@ -284,8 +284,8 @@
 
 + (void)setRect:(CGRect)value forKey:(NSString *)defaultName
 {
-    [[NSUserDefaults standardUserDefaults] setRect:value forKey:defaultName];
-    [[NSUserDefaults standardUserDefaults] synchronizeQueued];
+    [[NSUserDefaults staticUserDefaults] setRect:value forKey:defaultName];
+    [[NSUserDefaults staticUserDefaults] synchronizeQueued];
 }
 
 - (void)setRect:(CGRect)value forKey:(NSString *)defaultName
@@ -295,10 +295,23 @@
 
 #pragma mark -
 
++ (NSUserDefaults *)staticUserDefaults
+{
+    static dispatch_once_t token;
+	static NSUserDefaults *userDefaults;
+    
+	dispatch_once(&token, ^{
+		userDefaults = [NSUserDefaults standardUserDefaults];
+	});
+	return userDefaults;
+}
+
+#pragma mark -
+
 + (void)synchronizeQueued
 {
     NSLog(@"+ (void)synchronizeQueued");
-    [[NSUserDefaults standardUserDefaults] synchronizeQueued]; 
+    [[NSUserDefaults staticUserDefaults] synchronizeQueued];
 }
 
 - (void)synchronizeQueued
