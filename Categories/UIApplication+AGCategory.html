@@ -56,7 +56,15 @@
 	
 	<option value="//api/name/isPirated">&nbsp;&nbsp;&nbsp;&nbsp;+ isPirated</option>
 	
+	<option value="//api/name/logApplicationDidBecomeActive">&nbsp;&nbsp;&nbsp;&nbsp;+ logApplicationDidBecomeActive</option>
+	
+	<option value="//api/name/logApplicationDidEnterBackground">&nbsp;&nbsp;&nbsp;&nbsp;+ logApplicationDidEnterBackground</option>
+	
 	<option value="//api/name/logApplicationDidFinishLaunchingWithOptions:">&nbsp;&nbsp;&nbsp;&nbsp;+ logApplicationDidFinishLaunchingWithOptions:</option>
+	
+	<option value="//api/name/logApplicationWillEnterForeground">&nbsp;&nbsp;&nbsp;&nbsp;+ logApplicationWillEnterForeground</option>
+	
+	<option value="//api/name/logApplicationWillResignActive">&nbsp;&nbsp;&nbsp;&nbsp;+ logApplicationWillResignActive</option>
 	
 	<option value="//api/name/logMemoryUsage">&nbsp;&nbsp;&nbsp;&nbsp;+ logMemoryUsage</option>
 	
@@ -69,8 +77,6 @@
 	<option value="//api/name/showNetworkActivityIndicator">&nbsp;&nbsp;&nbsp;&nbsp;+ showNetworkActivityIndicator</option>
 	
 	<option value="//api/name/stringFromInterfaceOrientation:">&nbsp;&nbsp;&nbsp;&nbsp;+ stringFromInterfaceOrientation:</option>
-	
-	<option value="//api/name/takeScreenshot">&nbsp;&nbsp;&nbsp;&nbsp;+ takeScreenshot</option>
 	
 	<option value="//api/name/usedMemory">&nbsp;&nbsp;&nbsp;&nbsp;+ usedMemory</option>
 	
@@ -97,8 +103,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Detecting Piracy">Detecting Piracy</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Console Logging">Console Logging</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Screenshot">Screenshot</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Interface Orientation">Interface Orientation</a></span></li>
 	
@@ -130,7 +134,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isPirated">isPirated</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logApplicationDidBecomeActive">logApplicationDidBecomeActive</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logApplicationDidEnterBackground">logApplicationDidEnterBackground</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logApplicationDidFinishLaunchingWithOptions:">logApplicationDidFinishLaunchingWithOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logApplicationWillEnterForeground">logApplicationWillEnterForeground</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logApplicationWillResignActive">logApplicationWillResignActive</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logMemoryUsage">logMemoryUsage</a></span></li>
 	
@@ -143,8 +155,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showNetworkActivityIndicator">showNetworkActivityIndicator</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringFromInterfaceOrientation:">stringFromInterfaceOrientation:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/takeScreenshot">takeScreenshot</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/usedMemory">usedMemory</a></span></li>
 	
@@ -267,23 +277,36 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/observeNavigationControllerStack">+&nbsp;observeNavigationControllerStack</a></code>
-		<span class="tooltip"><p>Adds an observer to <code>NSNotificationCenter</code> to log to the console when the navigation controllers stack changes.</p></span>
+		<code><a href="#//api/name/logApplicationDidEnterBackground">+&nbsp;logApplicationDidEnterBackground</a></code>
+		<span class="tooltip"><p>Logs the application entering the background to the console along with basic device information.</p></span>
 	</span>
 	
 	
-</li>
-						</ul>
-						
-						
-						<a title="Screenshot" name="task_Screenshot"></a>
-						<h3 class="subsubtitle task-title">Screenshot</h3>
-
-						<ul class="task-list">
-							<li>
+</li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/takeScreenshot">+&nbsp;takeScreenshot</a></code>
-		<span class="tooltip"><p>Captures an image representation of the application&rsquo;s window and saves it to the camera roll.</p></span>
+		<code><a href="#//api/name/logApplicationWillEnterForeground">+&nbsp;logApplicationWillEnterForeground</a></code>
+		<span class="tooltip"><p>Logs the application entering the foreground to the console along with basic device information.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/logApplicationWillResignActive">+&nbsp;logApplicationWillResignActive</a></code>
+		<span class="tooltip"><p>Logs the application resigning active to the console along with basic device information.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/logApplicationDidBecomeActive">+&nbsp;logApplicationDidBecomeActive</a></code>
+		<span class="tooltip"><p>Logs the application becoming active to the console along with basic device information.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/observeNavigationControllerStack">+&nbsp;observeNavigationControllerStack</a></code>
+		<span class="tooltip"><p>Adds an observer to <code>NSNotificationCenter</code> to log to the console when the navigation controllers stack changes.</p></span>
 	</span>
 	
 	
@@ -663,6 +686,78 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/logApplicationDidBecomeActive" title="logApplicationDidBecomeActive"></a>
+	<h3 class="subsubtitle method-title">logApplicationDidBecomeActive</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Logs the application becoming active to the console along with basic device information.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)logApplicationDidBecomeActive</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/logApplicationDidEnterBackground" title="logApplicationDidEnterBackground"></a>
+	<h3 class="subsubtitle method-title">logApplicationDidEnterBackground</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Logs the application entering the background to the console along with basic device information.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)logApplicationDidEnterBackground</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/logApplicationDidFinishLaunchingWithOptions:" title="logApplicationDidFinishLaunchingWithOptions:"></a>
 	<h3 class="subsubtitle method-title">logApplicationDidFinishLaunchingWithOptions:</h3>
 	
@@ -687,6 +782,78 @@
 		</dl>
 		
 	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/logApplicationWillEnterForeground" title="logApplicationWillEnterForeground"></a>
+	<h3 class="subsubtitle method-title">logApplicationWillEnterForeground</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Logs the application entering the foreground to the console along with basic device information.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)logApplicationWillEnterForeground</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/logApplicationWillResignActive" title="logApplicationWillResignActive"></a>
+	<h3 class="subsubtitle method-title">logApplicationWillResignActive</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Logs the application resigning active to the console along with basic device information.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)logApplicationWillResignActive</code></div>
+
+    
 	
 	
 	
@@ -960,42 +1127,6 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/takeScreenshot" title="takeScreenshot"></a>
-	<h3 class="subsubtitle method-title">takeScreenshot</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Captures an image representation of the application&rsquo;s window and saves it to the camera roll.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (void)takeScreenshot</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/usedMemory" title="usedMemory"></a>
 	<h3 class="subsubtitle method-title">usedMemory</h3>
 	
@@ -1051,7 +1182,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-07-02)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-07-08)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

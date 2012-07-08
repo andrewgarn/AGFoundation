@@ -68,6 +68,10 @@
 	
 	<option value="//api/name/libraryPathForFile:">&nbsp;&nbsp;&nbsp;&nbsp;+ libraryPathForFile:</option>
 	
+	<option value="//api/name/removeItemAtPath:">&nbsp;&nbsp;&nbsp;&nbsp;+ removeItemAtPath:</option>
+	
+	<option value="//api/name/removeItemAtURL:">&nbsp;&nbsp;&nbsp;&nbsp;+ removeItemAtURL:</option>
+	
 	<option value="//api/name/temporaryPath">&nbsp;&nbsp;&nbsp;&nbsp;+ temporaryPath</option>
 	
 	<option value="//api/name/temporaryPathForFile:">&nbsp;&nbsp;&nbsp;&nbsp;+ temporaryPathForFile:</option>
@@ -93,6 +97,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting Paths">Getting Paths</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting Contents">Getting Contents</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Deleting Items">Deleting Items</a></span></li>
 	
 </ul></li>
 
@@ -129,6 +135,10 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/libraryPath">libraryPath</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/libraryPathForFile:">libraryPathForFile:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeItemAtPath:">removeItemAtPath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeItemAtURL:">removeItemAtURL:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/temporaryPath">temporaryPath</a></span></li>
 	
@@ -296,6 +306,28 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/contentsOfTemporaryDirectory">+&nbsp;contentsOfTemporaryDirectory</a></code>
 		<span class="tooltip"><p>Performs a shallow search of the temporary directory and returns the paths of any contained items.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Deleting Items" name="task_Deleting Items"></a>
+						<h3 class="subsubtitle task-title">Deleting Items</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeItemAtPath:">+&nbsp;removeItemAtPath:</a></code>
+		<span class="tooltip"><p>Removes the file or directory at the specified path asynchronously.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeItemAtURL:">+&nbsp;removeItemAtURL:</a></code>
+		<span class="tooltip"><p>Removes the file or directory at the specified URL asynchronously.</p></span>
 	</span>
 	
 	
@@ -928,6 +960,98 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/removeItemAtPath:" title="removeItemAtPath:"></a>
+	<h3 class="subsubtitle method-title">removeItemAtPath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the file or directory at the specified path asynchronously.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)removeItemAtPath:(NSString *)<em>path</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>A path string indicating the file or directory to remove. If the path specifies a directory, the contents of that directory are recursively removed. You may specify nil for this parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFileManager+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeItemAtURL:" title="removeItemAtURL:"></a>
+	<h3 class="subsubtitle method-title">removeItemAtURL:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the file or directory at the specified URL asynchronously.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)removeItemAtURL:(NSURL *)<em>URL</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>URL</em></dt>
+			<dd><p>A file URL specifying the file or directory to remove. If the URL specifies a directory, the contents of that directory are recursively removed. You may specify nil for this parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSFileManager+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/temporaryPath" title="temporaryPath"></a>
 	<h3 class="subsubtitle method-title">temporaryPath</h3>
 	
@@ -1039,7 +1163,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-07-02)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-07-08)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

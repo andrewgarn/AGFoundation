@@ -66,17 +66,21 @@
 	
 	<option value="//api/name/freeMemory">&nbsp;&nbsp;&nbsp;&nbsp;+ freeMemory</option>
 	
+	<option value="//api/name/hasCamera">&nbsp;&nbsp;&nbsp;&nbsp;+ hasCamera</option>
+	
+	<option value="//api/name/hasCompass">&nbsp;&nbsp;&nbsp;&nbsp;+ hasCompass</option>
+	
 	<option value="//api/name/hasFrontCamera">&nbsp;&nbsp;&nbsp;&nbsp;+ hasFrontCamera</option>
 	
 	<option value="//api/name/hasFrontFlash">&nbsp;&nbsp;&nbsp;&nbsp;+ hasFrontFlash</option>
+	
+	<option value="//api/name/hasGyroscope">&nbsp;&nbsp;&nbsp;&nbsp;+ hasGyroscope</option>
 	
 	<option value="//api/name/hasRearCamera">&nbsp;&nbsp;&nbsp;&nbsp;+ hasRearCamera</option>
 	
 	<option value="//api/name/hasRearFlash">&nbsp;&nbsp;&nbsp;&nbsp;+ hasRearFlash</option>
 	
 	<option value="//api/name/hasRetinaDisplay">&nbsp;&nbsp;&nbsp;&nbsp;+ hasRetinaDisplay</option>
-	
-	<option value="//api/name/idiom">&nbsp;&nbsp;&nbsp;&nbsp;+ idiom</option>
 	
 	<option value="//api/name/isASimulator">&nbsp;&nbsp;&nbsp;&nbsp;+ isASimulator</option>
 	
@@ -107,6 +111,8 @@
 	<option value="//api/name/uniqueDeviceIdentifier">&nbsp;&nbsp;&nbsp;&nbsp;+ uniqueDeviceIdentifier</option>
 	
 	<option value="//api/name/uniqueGlobalDeviceIdentifier">&nbsp;&nbsp;&nbsp;&nbsp;+ uniqueGlobalDeviceIdentifier</option>
+	
+	<option value="//api/name/userInterfaceIdiom">&nbsp;&nbsp;&nbsp;&nbsp;+ userInterfaceIdiom</option>
 	
 	<option value="//api/name/userInterfaceIdiomIsPad">&nbsp;&nbsp;&nbsp;&nbsp;+ userInterfaceIdiomIsPad</option>
 	
@@ -180,17 +186,21 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/freeMemory">freeMemory</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasCamera">hasCamera</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasCompass">hasCompass</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasFrontCamera">hasFrontCamera</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasFrontFlash">hasFrontFlash</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasGyroscope">hasGyroscope</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasRearCamera">hasRearCamera</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasRearFlash">hasRearFlash</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasRetinaDisplay">hasRetinaDisplay</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/idiom">idiom</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isASimulator">isASimulator</a></span></li>
 	
@@ -221,6 +231,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/uniqueDeviceIdentifier">uniqueDeviceIdentifier</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/uniqueGlobalDeviceIdentifier">uniqueGlobalDeviceIdentifier</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userInterfaceIdiom">userInterfaceIdiom</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userInterfaceIdiomIsPad">userInterfaceIdiomIsPad</a></span></li>
 	
@@ -375,6 +387,27 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/hasCompass">+&nbsp;hasCompass</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the device has a compass.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasGyroscope">+&nbsp;hasGyroscope</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the device has a gyroscrope.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasCamera">+&nbsp;hasCamera</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the device has a camera.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/hasFrontCamera">+&nbsp;hasFrontCamera</a></code>
 		<span class="tooltip"><p>Returns a boolean value that indicates whether the device has a front camera.</p></span>
 	</span>
@@ -440,7 +473,7 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/idiom">+&nbsp;idiom</a></code>
+		<code><a href="#//api/name/userInterfaceIdiom">+&nbsp;userInterfaceIdiom</a></code>
 		<span class="tooltip"><p>Returns the style of interface in use on the device.</p></span>
 	</span>
 	
@@ -1091,12 +1124,99 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The currently available free memory of the device. (mb)</p>
+		<p>The currently available free memory of the device in bytes.</p>
 	</div>
 	
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasCamera" title="hasCamera"></a>
+	<h3 class="subsubtitle method-title">hasCamera</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the device has a camera.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)hasCamera</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the device has a camera, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasCompass" title="hasCompass"></a>
+	<h3 class="subsubtitle method-title">hasCompass</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the device has a compass.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)hasCompass</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the device has a compass, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method requires the CoreLocation framework, if the framework is not found, the method returns <code>NO</code>.</p>
+	</div>
 	
 	
 	
@@ -1179,6 +1299,52 @@
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasGyroscope" title="hasGyroscope"></a>
+	<h3 class="subsubtitle method-title">hasGyroscope</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the device has a gyroscrope.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)hasGyroscope</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the device has a gyroscrope, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method requires the CoreMotion framework, if the framework is not found, the method returns <code>NO</code>.</p>
+	</div>
 	
 	
 	
@@ -1297,47 +1463,6 @@
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p><code>YES</code> if the device has a retina display, otherwise <code>NO</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/idiom" title="idiom"></a>
-	<h3 class="subsubtitle method-title">idiom</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns the style of interface in use on the device.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (UIUserInterfaceIdiom)idiom</code></div>
-
-    
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The style of interface in use on the device.</p>
 	</div>
 	
 	
@@ -1984,6 +2109,47 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/userInterfaceIdiom" title="userInterfaceIdiom"></a>
+	<h3 class="subsubtitle method-title">userInterfaceIdiom</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the style of interface in use on the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (UIUserInterfaceIdiom)userInterfaceIdiom</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The style of interface in use on the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/userInterfaceIdiomIsPad" title="userInterfaceIdiomIsPad"></a>
 	<h3 class="subsubtitle method-title">userInterfaceIdiomIsPad</h3>
 	
@@ -2121,7 +2287,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-07-02)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-07-08)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
