@@ -42,6 +42,7 @@
 */
 #define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
 #define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
+#define CLAMP(n, min, max) ((n < min) ? min : (n > max) ? max : n)
 
 /**
  *	UIColor and related macro definitions.

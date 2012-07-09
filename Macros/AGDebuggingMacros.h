@@ -69,3 +69,6 @@
 #   define ULog(...)
 #endif
 #endif
+
+/** CLog uses fprintf to log to the console without a timestamp or process information */
+#define CLog(FORMAT, ...) fprintf(stderr, "%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
