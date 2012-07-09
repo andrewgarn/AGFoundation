@@ -155,12 +155,12 @@
 
 + (void)removeItemAtPath:(NSString *)path
 {
-	NSString *temporaryPath = [[self temporaryPath] stringByAppendingPathComponent:[NSString UUIDString]];
+	NSString *temporaryPath = [[self temporaryPath] stringByAppendingPathComponent:[NSString UUIDStringCreate]];
     if ([[NSFileManager defaultManager] moveItemAtPath:path toPath:temporaryPath error:NULL])
     {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
             NSError *error = nil;
-            BOOL fileRemoved = [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
+            BOOL fileRemoved = [[NSFileManager defaultManager] removeItemAtPath:temporaryPath error:&error];
             if (fileRemoved == NO)
                 NSLog(@"ERROR removing item at path: %@ [%@]", path, error);
         });
