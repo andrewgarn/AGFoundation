@@ -58,6 +58,9 @@ static char kNSObjectBlockKey;
     if ([anObject isKindOfClass:[NSNumber class]])
         return (NSNumber *)anObject;
     
+    if ([anObject respondsToSelector:@selector(doubleValue)])
+        return [NSNumber numberWithDouble:[anObject doubleValue]];
+    
     return nil;
 }
 

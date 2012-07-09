@@ -78,9 +78,16 @@
 */ 
 + (void)logApplicationDidFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
 
+/** Logs the application entering the background to the console along with basic device information. */ 
 + (void)logApplicationDidEnterBackground;
+
+/** Logs the application entering the foreground to the console along with basic device information. */ 
 + (void)logApplicationWillEnterForeground;
+
+/** Logs the application resigning active to the console along with basic device information. */ 
 + (void)logApplicationWillResignActive;
+
+/** Logs the application becoming active to the console along with basic device information. */ 
 + (void)logApplicationDidBecomeActive;
 
 /** Adds an observer to `NSNotificationCenter` to log to the console when the navigation controllers stack changes. */ 

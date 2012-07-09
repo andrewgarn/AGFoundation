@@ -27,6 +27,7 @@
 
 #import <Foundation/Foundation.h>
 
+/** An `NSTimer` subclass with block support. */
 @interface AGTimer : NSTimer
 typedef void (^AGTimerBlock)(AGTimer *timer);
 

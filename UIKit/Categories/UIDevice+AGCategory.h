@@ -35,13 +35,6 @@
  ---------------------------------------------------------------------------------------
 */
 
-/** Returns the name identifying the device.
- 
- The value of this property is an arbitrary alphanumeric string that is associated with the device as an identifier. For example, you can find the name of an iOS device in the General > About settings.
- @return The name identifying the device
-*/ 
-+ (NSString *)deviceName;
-
 /** Returns the model of the device.
  
  Possible examples of model strings are @”iPhone 4S” and @”iPad 2 WiFi”.

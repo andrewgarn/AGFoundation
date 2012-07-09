@@ -141,6 +141,18 @@
 */ 
 + (NSInteger)daysPassedSinceDate:(NSDate *)anotherDate;
 
+/** Returns a bool indicating if the receiver is before the given date.
+ @param anotherDate The date with which to compare the receiver.
+ @return `YES` if the receiver is before the given date, otherwise `NO`.
+*/ 
+- (BOOL)isBefore:(NSDate *)anotherDate;
+
+/** Returns a bool indicating if the receiver is after the given date.
+ @param anotherDate The date with which to compare the receiver.
+ @return `YES` if the receiver is after the given date, otherwise `NO`.
+*/ 
+- (BOOL)isAfter:(NSDate *)anotherDate;
+
 /**-------------------------------------------------------------------------------------
  @name Suffix
  ---------------------------------------------------------------------------------------
@@ -187,19 +199,12 @@
  ---------------------------------------------------------------------------------------
 */ 
 
-/** Returns a thread safe date formatter.
- 
- The method returns a thread safe `NSDateFormatter` by making use of thread dictionary storage to return a seperate cached instance for each thread.  
- @return A thread safe date formatter.
-*/ 
-+ (NSDateFormatter *)dateFormatter;
-
 /** Returns a thread safe date formatter with the specified date format set.
  
  The method returns a thread safe `NSDateFormatter` by making use of thread dictionary storage to return a seperate cached instance for each thread.  
  @param dateFormat The date format for the receiver.
  @return A thread safe date formatter with the specified date format set.
 */ 
-+ (NSDateFormatter *)dateFormatterWithdateFormat:(NSString *)dateFormat;
++ (NSDateFormatter *)dateFormatterWithDateFormat:(NSString *)dateFormat;
 
 @end

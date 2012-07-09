@@ -38,23 +38,17 @@
 
 - (NSString *)yearString
 {
-    NSDateFormatter *dateFormatter = [NSDate dateFormatter];
-    [dateFormatter setDateFormat:@"yyyy"];
-    return [dateFormatter stringFromDate:self];
+    return [[NSDate dateFormatterWithDateFormat:@"yyyy"] stringFromDate:self];
 }
 
 - (NSString *)monthString
 {
-    NSDateFormatter *dateFormatter = [NSDate dateFormatter];
-    [dateFormatter setDateFormat:@"MMMM"];
-    return [dateFormatter stringFromDate:self];
+    return [[NSDate dateFormatterWithDateFormat:@"MMMM"] stringFromDate:self];
 }
 
 - (NSString *)dayString
 {
-    NSDateFormatter *dateFormatter = [NSDate dateFormatter];
-    [dateFormatter setDateFormat:@"d"];
-    return [dateFormatter stringFromDate:self];
+    return [[NSDate dateFormatterWithDateFormat:@"d"] stringFromDate:self];
 }
 
 - (NSString *)dayWithSuffixString
@@ -64,23 +58,17 @@
 
 - (NSString *)hourString
 {
-    NSDateFormatter *dateFormatter = [NSDate dateFormatter];
-    [dateFormatter setDateFormat:@"HH"];
-    return [dateFormatter stringFromDate:self];
+    return [[NSDate dateFormatterWithDateFormat:@"HH"] stringFromDate:self];
 }
 
 - (NSString *)minuteString
 {
-    NSDateFormatter *dateFormatter = [NSDate dateFormatter];
-    [dateFormatter setDateFormat:@"mm"];
-    return [dateFormatter stringFromDate:self];
+    return [[NSDate dateFormatterWithDateFormat:@"mm"] stringFromDate:self];
 }
 
 - (NSString *)secondString
 {
-    NSDateFormatter *dateFormatter = [NSDate dateFormatter];
-    [dateFormatter setDateFormat:@"ss"];
-    return [dateFormatter stringFromDate:self];
+    return [[NSDate dateFormatterWithDateFormat:@"ss"] stringFromDate:self];
 }
 
 - (NSInteger)year
@@ -117,19 +105,19 @@
 
 - (NSString *)dateString
 {    
-    NSDateFormatter *dateFormatter = [NSDate dateFormatterWithdateFormat:@" MMMM yyyy"];
+    NSDateFormatter *dateFormatter = [NSDate dateFormatterWithDateFormat:@" MMMM yyyy"];
     return [[self dayWithSuffixString] stringByAppendingString:[dateFormatter stringFromDate:self]];
 }
 
 - (NSString *)timeString
 {
-    NSDateFormatter *formatter = [NSDate dateFormatterWithdateFormat:@"HH:mm"];
+    NSDateFormatter *formatter = [NSDate dateFormatterWithDateFormat:@"HH:mm"];
     return [formatter stringFromDate:self];
 }
 
 - (NSString *)dateTimeString
 {
-    NSDateFormatter *dateFormatter = [NSDate dateFormatterWithdateFormat:@" MMMM yyyy HH:mm"];
+    NSDateFormatter *dateFormatter = [NSDate dateFormatterWithDateFormat:@" MMMM yyyy HH:mm"];
     return [[self dayWithSuffixString] stringByAppendingString:[dateFormatter stringFromDate:self]];
 }
 
@@ -155,6 +143,16 @@
     NSDateComponents *components = [gregorianCalendar components:unitFlags fromDate:anotherDate toDate:[NSDate date] options:0];
     NSInteger days = [components day];
     return days;
+}
+
+- (BOOL)isBefore:(NSDate *)anotherDate
+{
+    return [self timeIntervalSinceDate:anotherDate] < 0;
+}
+
+- (BOOL)isAfter:(NSDate *)anotherDate
+{
+    return [self timeIntervalSinceDate:anotherDate] > 0;
 }
 
 #pragma mark -
@@ -183,7 +181,7 @@
 
 - (NSString *)suffixForDay
 {
-    NSDateFormatter *dateFormatter = [NSDate dateFormatterWithdateFormat:@"d"];
+    NSDateFormatter *dateFormatter = [NSDate dateFormatterWithDateFormat:@"d"];
     [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
     int day = [[dateFormatter stringFromDate:self] intValue];   
     
@@ -193,16 +191,18 @@
     return @"";
 }
 
-#pragma mark - Private Methods
+#pragma mark -
 
 + (NSCalendar *)gregorianCalendar
 {
     NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
-	NSCalendar *gregorianCalendar = [threadDictionary objectForKey:@"AGCategoryGregorianCalendar"];
+    NSString *threadDictionaryKey = @"NSDateAGCategoryGregorianCalendar";
+
+	NSCalendar *gregorianCalendar = [threadDictionary objectForKey:threadDictionaryKey];
     if (gregorianCalendar == nil)
 	{
 		gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-		[threadDictionary setObject:gregorianCalendar forKey:@"AGCategoryGregorianCalendar"];
+		[threadDictionary setObject:gregorianCalendar forKey:threadDictionaryKey];
 	}
     return gregorianCalendar;
 }
@@ -210,11 +210,13 @@
 + (NSCalendar *)currentCalendar
 {
 	NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
-	NSCalendar *currentCalendar = [threadDictionary objectForKey:@"AGCategoryCurrentCalendar"];
+    NSString *threadDictionaryKey = @"NSDateAGCategoryCurrentCalendar";
+
+	NSCalendar *currentCalendar = [threadDictionary objectForKey:threadDictionaryKey];
 	if (currentCalendar == nil)
 	{
 		currentCalendar = [NSCalendar currentCalendar];
-		[threadDictionary setObject:currentCalendar forKey:@"AGCategoryCurrentCalendar"];
+		[threadDictionary setObject:currentCalendar forKey:threadDictionaryKey];
 	}
     
     // Reset the timeZone that the calendar uses.
@@ -231,11 +233,13 @@
 + (NSCalendar *)autoupdatingCurrentCalendar
 {
 	NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
-	NSCalendar *currentCalendar = [threadDictionary objectForKey:@"AGCategoryAutoUpdatingCurrentCalendar"];
+    NSString *threadDictionaryKey = @"NSDateAGCategoryAutoUpdatingCurrentCalendar";
+
+	NSCalendar *currentCalendar = [threadDictionary objectForKey:threadDictionaryKey];
 	if (currentCalendar == nil)
 	{
 		currentCalendar = [NSCalendar autoupdatingCurrentCalendar];
-		[threadDictionary setObject:currentCalendar forKey:@"AGCategoryAutoUpdatingCurrentCalendar"];
+		[threadDictionary setObject:currentCalendar forKey:threadDictionaryKey];
 	}
     
     // Reset the timeZone that the calendar uses.
@@ -249,32 +253,11 @@
 	return currentCalendar;
 }
 
-+ (NSDateFormatter *)dateFormatter
-{
-	NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
-	NSDateFormatter *dateFormatter = [threadDictionary objectForKey:@"AGCategoryDateFormatter"];
-	if (dateFormatter == nil)
-	{
-		dateFormatter = [[NSDateFormatter alloc] init];
-		[dateFormatter setCalendar:[self autoupdatingCurrentCalendar]];
-		[threadDictionary setObject:dateFormatter forKey:@"AGCategoryDateFormatter"];
-	}
-	
-	// Reset the timeZone that the dateFormatter uses.
-    if (![[dateFormatter timeZone] isEqual:[NSTimeZone localTimeZone]])
-        [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
-    
-    // Reset the locale that the dateFormatter uses.
-    if (![[dateFormatter locale] isEqual:[NSLocale autoupdatingCurrentLocale]])
-        [dateFormatter setLocale:[NSLocale autoupdatingCurrentLocale]];
-    	
-	return dateFormatter;
-}
-
-+ (NSDateFormatter *)dateFormatterWithdateFormat:(NSString *)dateFormat
++ (NSDateFormatter *)dateFormatterWithDateFormat:(NSString *)dateFormat
 {
     NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
-    NSString *threadDictionaryKey = [NSString stringWithFormat:@"AGCategoryDateFormatter-%@", dateFormat];
+    NSString *threadDictionaryKey = [NSString stringWithFormat:@"NSDateAGCategoryDateFormatter-%@", dateFormat];
+    
 	NSDateFormatter *dateFormatter = [threadDictionary objectForKey:threadDictionaryKey];
 	if (dateFormatter == nil)
 	{

@@ -127,7 +127,6 @@
 
 static NSDate *applicationDidFinishLaunchingDate;
 static NSDate *applicationDidEnterBackgroundDate;
-static NSDateFormatter *applicationDidFinishLaunchingDateFormatter;
 
 + (void)logApplicationDidFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -153,16 +152,11 @@ static NSDateFormatter *applicationDidFinishLaunchingDateFormatter;
 + (void)logApplicationWillEnterForeground
 {
     NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:applicationDidEnterBackgroundDate];
-    if (!applicationDidFinishLaunchingDateFormatter) {
-        applicationDidFinishLaunchingDateFormatter = [[NSDateFormatter alloc] init];
-        [applicationDidFinishLaunchingDateFormatter setDateFormat:@"EEEE d MMMM 'at' hh:mm a"];
-    }
-    
     NSLog(@"\n\n**** application: '%@ %@ (%@)' willEnterForeground: ****\n**** applicationDidFinishLaunching: %@ timeSinceDidEnterBackground: %.0f sec ****\n\n",
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"],
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"],
-          [applicationDidFinishLaunchingDateFormatter stringFromDate:applicationDidFinishLaunchingDate],
+          [[self _dateFormatterWithDateFormat:@"EEEE d MMMM 'at' hh:mm a"] stringFromDate:applicationDidFinishLaunchingDate],
           timeInterval);
 }
 
@@ -251,7 +245,8 @@ static NSDateFormatter *applicationDidFinishLaunchingDateFormatter;
 
 + (NSArray *)scheduledLocalNotificationsSortedAscending:(BOOL)ascending
 {
-    NSArray *sortDescriptors = [NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"fireDate" ascending:ascending]];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"fireDate" ascending:ascending];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     return [[UIApplication scheduledLocalNotifications] sortedArrayUsingDescriptors:sortDescriptors];
 }
 
@@ -277,6 +272,37 @@ static NSInteger AGNetworkActivityIndicatorCount = 0;
 {
     AGNetworkActivityIndicatorCount = 0;
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+}
+
+#pragma mark - Private / Internal
+
++ (NSDateFormatter *)_dateFormatterWithDateFormat:(NSString *)dateFormat
+{
+    NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
+    NSString *threadDictionaryKey = [NSString stringWithFormat:@"UIApplicationAGCategoryDateFormatter-%@", dateFormat];
+    
+	NSDateFormatter *dateFormatter = [threadDictionary objectForKey:threadDictionaryKey];
+	if (dateFormatter == nil)
+	{
+		dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+        [dateFormatter setCalendar:[NSCalendar autoupdatingCurrentCalendar]];
+		[threadDictionary setObject:dateFormatter forKey:threadDictionaryKey];
+	}
+    
+    // Ensure the dateformatter is using the correct format.
+    if (![[dateFormatter dateFormat] isEqualToString:dateFormat])
+        [dateFormatter setDateFormat:dateFormat];
+	
+	// Reset the timeZone that the dateFormatter uses.
+    if (![[dateFormatter timeZone] isEqual:[NSTimeZone localTimeZone]])
+        [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
+    
+    // Reset the locale that the dateFormatter uses.
+    if (![[dateFormatter locale] isEqual:[NSLocale autoupdatingCurrentLocale]])
+        [dateFormatter setLocale:[NSLocale autoupdatingCurrentLocale]];
+    
+	return dateFormatter;
 }
 
 @end

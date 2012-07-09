@@ -52,11 +52,6 @@
 
 #pragma mark - Device Info
 
-+ (NSString *)deviceName
-{
-    return [[UIDevice currentDevice] name];
-}
-
 + (NSString *)deviceModel
 {
     static dispatch_once_t token;

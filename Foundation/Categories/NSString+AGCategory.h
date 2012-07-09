@@ -149,7 +149,7 @@
 /** Returns a universally unique identifier string object.
  @return A universally unique identifier string object.
 */
-+ (NSString *)UUIDString;
++ (NSString *)UUIDStringCreate;
 
 /**-------------------------------------------------------------------------------------
  @name File Backup Prevention

@@ -170,7 +170,13 @@
 
 - (BOOL)isValidEmailAddress
 {
-    NSString *regexPattern = @"^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$";
+    static dispatch_once_t token;
+	static NSString *regexPattern;
+    
+	dispatch_once(&token, ^{
+		regexPattern = @"^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$";
+	});
+    
     NSRegularExpression *regularExpression = [[NSRegularExpression alloc] initWithPattern:regexPattern options:NSRegularExpressionCaseInsensitive error:nil];
     
     NSRange range = NSMakeRange(0, [self length]);
@@ -184,7 +190,7 @@
 
 #pragma mark -
 
-+ (NSString *)UUIDString
++ (NSString *)UUIDStringCreate
 {
     CFUUIDRef uuid = CFUUIDCreate(kCFAllocatorDefault);
     NSString *uuidStr = (__bridge_transfer NSString *)CFUUIDCreateString(kCFAllocatorDefault, uuid);

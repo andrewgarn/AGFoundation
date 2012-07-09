@@ -1,8 +1,8 @@
 //
-//  SKProduct+AGCategory.m
+//  AGConstants.h
 //  AGFoundation
 //
-//  Created by Andrew Garn on 10/06/2012.
+//  Created by Andrew Garn on 09/07/2012.
 //  Copyright (c) 2012 Andrew Garn. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -25,36 +25,3 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "SKProduct+AGCategory.h"
-
-@implementation SKProduct (AGCategory)
-
-#pragma mark -
-
-- (NSString *)localizedPrice
-{
-    NSNumberFormatter *numberFormatter = [SKProduct _numberFormatter];    
-    [numberFormatter setLocale:self.priceLocale];
-    
-    return [numberFormatter stringFromNumber:self.price];
-}
-
-#pragma mark - Private
-
-+ (NSNumberFormatter *)_numberFormatter
-{
-	NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
-    NSString *threadDictionaryKey = @"SKProductAGCategoryNumberFormatter";
-    
-	NSNumberFormatter *numberFormatter = [threadDictionary objectForKey:threadDictionaryKey];
-	if (numberFormatter == nil)
-	{
-		numberFormatter = [[NSNumberFormatter alloc] init];
-        [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-        [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
-		[threadDictionary setObject:numberFormatter forKey:threadDictionaryKey];
-	}
-	return numberFormatter;
-}
-
-@end

@@ -71,7 +71,8 @@
 + (NSNumberFormatter *)numberFormatterWithNumberStyle:(NSNumberFormatterStyle)style
 {
 	NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
-    NSString *threadDictionaryKey = [NSString stringWithFormat:@"AGCategoryNumberFormatter-%i", style];
+    NSString *threadDictionaryKey = [NSString stringWithFormat:@"NSNumberAGCategoryNumberFormatter-%i", style];
+    
 	NSNumberFormatter *numberFormatter = [threadDictionary objectForKey:threadDictionaryKey];
 	if (numberFormatter == nil)
 	{

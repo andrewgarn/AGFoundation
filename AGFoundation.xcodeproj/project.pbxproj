@@ -145,6 +145,8 @@
 		78B28E8B15976CDE0025213A /* UIScrollView+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B28E8915976CDE0025213A /* UIScrollView+AGCategory.h */; };
 		78B28E8C15976CDE0025213A /* UIScrollView+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B28E8A15976CDE0025213A /* UIScrollView+AGCategory.m */; };
 		78CE47E215A4714000C647D9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CE47E115A4714000C647D9 /* MobileCoreServices.framework */; };
+		78DCC9FA15AACD0700EC2274 /* AGConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 78DCC9F815AACD0700EC2274 /* AGConstants.h */; };
+		78DCC9FB15AACD0700EC2274 /* AGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DCC9F915AACD0700EC2274 /* AGConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -277,6 +279,8 @@
 		78B28E8915976CDE0025213A /* UIScrollView+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+AGCategory.h"; sourceTree = "<group>"; };
 		78B28E8A15976CDE0025213A /* UIScrollView+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+AGCategory.m"; sourceTree = "<group>"; };
 		78CE47E115A4714000C647D9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		78DCC9F815AACD0700EC2274 /* AGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGConstants.h; path = Constants/AGConstants.h; sourceTree = "<group>"; };
+		78DCC9F915AACD0700EC2274 /* AGConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGConstants.m; path = Constants/AGConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +345,7 @@
 				7848565B1589DAB200013DD9 /* AGFoundation.h */,
 				7848565C1589DAB200013DD9 /* AudioToolbox */,
 				78485794158B32D800013DD9 /* AVFoundation */,
+				78DCC9F615AACCB400EC2274 /* Constants */,
 				784856621589DAB200013DD9 /* CoreLocation */,
 				784856681589DAB200013DD9 /* Foundation */,
 				7848568C1589DAB200013DD9 /* Macros */,
@@ -746,6 +751,15 @@
 			path = Singletons;
 			sourceTree = "<group>";
 		};
+		78DCC9F615AACCB400EC2274 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				78DCC9F815AACD0700EC2274 /* AGConstants.h */,
+				78DCC9F915AACD0700EC2274 /* AGConstants.m */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -807,6 +821,7 @@
 				78B28E8615973C2E0025213A /* UITableView+AGCategory.h in Headers */,
 				78B28E8B15976CDE0025213A /* UIScrollView+AGCategory.h in Headers */,
 				783B172C15A594EB00160C03 /* AGTimer.h in Headers */,
+				78DCC9FA15AACD0700EC2274 /* AGConstants.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -954,6 +969,7 @@
 				78B28E8715973C2E0025213A /* UITableView+AGCategory.m in Sources */,
 				78B28E8C15976CDE0025213A /* UIScrollView+AGCategory.m in Sources */,
 				783B172D15A594EB00160C03 /* AGTimer.m in Sources */,
+				78DCC9FB15AACD0700EC2274 /* AGConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
