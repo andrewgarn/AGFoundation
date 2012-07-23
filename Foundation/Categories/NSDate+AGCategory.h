@@ -141,6 +141,11 @@
 */ 
 + (NSInteger)daysPassedSinceDate:(NSDate *)anotherDate;
 
+/** Returns a string with the relative time difference between the receiver and the current date.
+ @return A string with the relative time difference between the receiver and the current date.
+*/
+- (NSString *)timeDifferenceSinceNowString;
+
 /** Returns a bool indicating if the receiver is before the given date.
  @param anotherDate The date with which to compare the receiver.
  @return `YES` if the receiver is before the given date, otherwise `NO`.

@@ -28,6 +28,7 @@
 #import "UIApplication+AGCategory.h"
 #import "NSNumber+AGCategory.h"
 #import "UIDevice+AGCategory.h"
+#import "NSDate+AGCategory.h"
 
 #include <mach/machine/vm_types.h>
 #include <mach/mach_host.h>
@@ -151,13 +152,12 @@ static NSDate *applicationDidEnterBackgroundDate;
 
 + (void)logApplicationWillEnterForeground
 {
-    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:applicationDidEnterBackgroundDate];
-    NSLog(@"\n\n**** application: '%@ %@ (%@)' willEnterForeground: ****\n**** applicationDidFinishLaunching: %@ timeSinceDidEnterBackground: %.0f sec ****\n\n",
+    NSLog(@"\n\n**** application: '%@ %@ (%@)' willEnterForeground: ****\n**** applicationDidFinishLaunching: %@ applicationDidEnterBackground: %@ ****\n\n",
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"],
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"],
-          [[self _dateFormatterWithDateFormat:@"EEEE d MMMM 'at' hh:mm a"] stringFromDate:applicationDidFinishLaunchingDate],
-          timeInterval);
+          [applicationDidFinishLaunchingDate timeDifferenceSinceNowString],
+          [applicationDidEnterBackgroundDate timeDifferenceSinceNowString]);
 }
 
 + (void)logApplicationWillResignActive
@@ -272,37 +272,6 @@ static NSInteger AGNetworkActivityIndicatorCount = 0;
 {
     AGNetworkActivityIndicatorCount = 0;
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-}
-
-#pragma mark - Private / Internal
-
-+ (NSDateFormatter *)_dateFormatterWithDateFormat:(NSString *)dateFormat
-{
-    NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
-    NSString *threadDictionaryKey = [NSString stringWithFormat:@"UIApplicationAGCategoryDateFormatter-%@", dateFormat];
-    
-	NSDateFormatter *dateFormatter = [threadDictionary objectForKey:threadDictionaryKey];
-	if (dateFormatter == nil)
-	{
-		dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-        [dateFormatter setCalendar:[NSCalendar autoupdatingCurrentCalendar]];
-		[threadDictionary setObject:dateFormatter forKey:threadDictionaryKey];
-	}
-    
-    // Ensure the dateformatter is using the correct format.
-    if (![[dateFormatter dateFormat] isEqualToString:dateFormat])
-        [dateFormatter setDateFormat:dateFormat];
-	
-	// Reset the timeZone that the dateFormatter uses.
-    if (![[dateFormatter timeZone] isEqual:[NSTimeZone localTimeZone]])
-        [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
-    
-    // Reset the locale that the dateFormatter uses.
-    if (![[dateFormatter locale] isEqual:[NSLocale autoupdatingCurrentLocale]])
-        [dateFormatter setLocale:[NSLocale autoupdatingCurrentLocale]];
-    
-	return dateFormatter;
 }
 
 @end

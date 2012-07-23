@@ -27,11 +27,6 @@
 
 #import "NSDate+AGCategory.h"
 
-@interface NSDate (AGCategory_Private)
-+ (NSCalendar *)currentCalendar;
-+ (NSDateFormatter *)dateFormatter;
-@end
-
 #pragma mark -
 
 @implementation NSDate (AGCategory)
@@ -134,6 +129,65 @@
 }
 
 #pragma mark -
+
+- (NSString *)timeDifferenceSinceNowString
+{
+    NSCalendar *currentCalendar = [NSDate currentCalendar];
+    NSTimeInterval timeInterval = [self timeIntervalSinceNow];
+    NSString *tense = timeInterval < 0 ? @"ago" : @"later";
+    NSDate *nowDate = [NSDate date];
+    
+    NSInteger seconds = [[currentCalendar components:NSSecondCalendarUnit fromDate:self toDate:nowDate options:0] second];
+    if (seconds < 60)
+    {
+        if (seconds == 1)
+            return [NSString stringWithFormat:@"%d second %@", seconds, tense];
+        else
+            return [NSString stringWithFormat:@"%d seconds %@", seconds, tense];
+    }
+    
+    NSInteger minutes = [[currentCalendar components:NSMinuteCalendarUnit fromDate:self toDate:nowDate options:0] minute];
+    if (minutes < 120)
+    {
+        if (minutes == 1)
+            return [NSString stringWithFormat:@"%d minute %@", minutes, tense];
+        else
+            return [NSString stringWithFormat:@"%d minutes %@", minutes, tense];
+    }
+    
+    NSInteger hours = [[currentCalendar components:NSHourCalendarUnit fromDate:self toDate:nowDate options:0] hour];
+    if (hours < 24)
+    {
+        if (hours == 1)
+            return [NSString stringWithFormat:@"%d hour %@", hours, tense];
+        else
+            return [NSString stringWithFormat:@"%d hours %@", hours, tense];
+    }
+    
+    NSInteger days = [[currentCalendar components:NSDayCalendarUnit fromDate:self toDate:nowDate options:0] day];
+    if (days < 30)
+    {
+        if (days == 1)
+            return [NSString stringWithFormat:@"%d day %@", days, tense];
+        else
+            return [NSString stringWithFormat:@"%d days %@", days, tense];
+    }
+    
+    NSInteger months = [[currentCalendar components:NSMonthCalendarUnit fromDate:self toDate:nowDate options:0] month];
+    if (months < 120)
+    {
+        if (months == 1)
+            return [NSString stringWithFormat:@"%d month %@", months, tense];
+        else
+            return [NSString stringWithFormat:@"%d months %@", months, tense];
+    }
+    
+    NSInteger years = [[currentCalendar components:NSYearCalendarUnit fromDate:self toDate:nowDate options:0] year];
+    if (years == 1)
+        return [NSString stringWithFormat:@"%d year %@", years, tense];
+    else
+        return [NSString stringWithFormat:@"%d years %@", years, tense];
+}
 
 + (NSInteger)daysPassedSinceDate:(NSDate *)anotherDate;
 {
