@@ -158,12 +158,34 @@
 
 - (CGFloat)heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width
 {
-    return [self heightWithFont:font constrainedToWidth:width lineBreakMode:UILineBreakModeWordWrap];
+    return [self heightWithFont:font constrainedToWidth:width min:0];
 }
 
-- (CGFloat)heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width lineBreakMode:(UILineBreakMode)lineBreakMode 
+- (CGFloat)heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width min:(CGFloat)minHeight
 {
-    return [self sizeWithFont:font constrainedToSize:CGSizeMake(width, CGFLOAT_MAX) lineBreakMode:lineBreakMode].height;
+    return [self heightWithFont:font constrainedToWidth:width lineBreakMode:UILineBreakModeWordWrap min:minHeight];
+}
+
+- (CGFloat)heightWithFont:(UIFont *)font constrainedToSize:(CGSize)size min:(CGFloat)minHeight
+{
+    return [self heightWithFont:font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap min:minHeight];
+}
+
+- (CGFloat)heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width lineBreakMode:(UILineBreakMode)lineBreakMode
+{
+    return [self heightWithFont:font constrainedToWidth:width lineBreakMode:lineBreakMode min:0];
+}
+
+- (CGFloat)heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width lineBreakMode:(UILineBreakMode)lineBreakMode min:(CGFloat)minHeight
+{
+    CGSize constraint = CGSizeMake(width, CGFLOAT_MAX);
+    return [self heightWithFont:font constrainedToSize:constraint lineBreakMode:lineBreakMode min:minHeight];
+}
+
+- (CGFloat)heightWithFont:(UIFont *)font constrainedToSize:(CGSize)size lineBreakMode:(UILineBreakMode)lineBreakMode min:(CGFloat)minHeight
+{
+    CGFloat height = [self sizeWithFont:font constrainedToSize:size lineBreakMode:lineBreakMode].height;
+    return ((height < minHeight) ? minHeight : (height > size.height) ? size.height : height);
 }
 
 #pragma mark -

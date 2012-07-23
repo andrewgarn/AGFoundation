@@ -126,10 +126,45 @@
 /** Returns the height of the string if it were rendered and constrained to the specified width.
  @param font The font to use for computing the string size.
  @param width The maximum acceptable width for the string. This value is used to calculate where line breaks and wrapping would occur.
+ @param minHeight The minimum height the method should return.
+ @return The height of the resulting string’s bounding box.
+*/
+- (CGFloat)heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width min:(CGFloat)minHeight;
+
+/** Returns the height of the string if it were rendered and constrained to the specified width.
+ @param font The font to use for computing the string size.
+ @param size The maximum acceptable size for the string. This value is used to calculate where line breaks and wrapping would occur.
+ @param minHeight The minimum height the method should return.
+ @param maxHeight The maximum height the method should return.
+ @return The height of the resulting string’s bounding box.
+*/
+- (CGFloat)heightWithFont:(UIFont *)font constrainedToSize:(CGSize)size min:(CGFloat)minHeight;
+
+/** Returns the height of the string if it were rendered and constrained to the specified width.
+ @param font The font to use for computing the string size.
+ @param width The maximum acceptable width for the string. This value is used to calculate where line breaks and wrapping would occur.
  @param lineBreakMode The line break options for computing the size of the string.
  @return The height of the resulting string’s bounding box.
 */ 
 - (CGFloat)heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width lineBreakMode:(UILineBreakMode)lineBreakMode;
+
+/** Returns the height of the string if it were rendered and constrained to the specified width.
+ @param font The font to use for computing the string size.
+ @param width The maximum acceptable width for the string. This value is used to calculate where line breaks and wrapping would occur.
+ @param lineBreakMode The line break options for computing the size of the string.
+ @param minHeight The minimum height the method should return.
+ @return The height of the resulting string’s bounding box.
+*/
+- (CGFloat)heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width lineBreakMode:(UILineBreakMode)lineBreakMode min:(CGFloat)minHeight;
+
+/** Returns the height of the string if it were rendered and constrained to the specified width.
+ @param font The font to use for computing the string size.
+ @param size The maximum acceptable size for the string. This value is used to calculate where line breaks and wrapping would occur.
+ @param lineBreakMode The line break options for computing the size of the string.
+ @param minHeight The minimum height the method should return.
+ @return The height of the resulting string’s bounding box.
+*/
+- (CGFloat)heightWithFont:(UIFont *)font constrainedToSize:(CGSize)size lineBreakMode:(UILineBreakMode)lineBreakMode min:(CGFloat)minHeight;
 
 /**-------------------------------------------------------------------------------------
  @name User Input Validation
@@ -164,32 +199,32 @@
 /**-------------------------------------------------------------------------------------
  @name Cryptographic Hashing
  ---------------------------------------------------------------------------------------
-*/ 
+*/
 
 /** Returns the MD5 hash of the receiver.
  @return The MD5 hash of the receiver.
-*/ 
+*/
 - (NSString *)MD5Hash;
 
 /** Returns the SHA1 hash of the receiver.
  @return The SHA1 hash of the receiver.
-*/ 
+*/
 - (NSString *)SHA1Hash;
 
 /** Returns the SHA256 hash of the receiver.
  @return The SHA256 hash of the receiver.
-*/ 
+*/
 - (NSString *)SHA256Hash;
 
 /** Returns the SHA512 hash of the receiver.
  @return The SHA512 hash of the receiver.
-*/ 
+*/
 - (NSString *)SHA512Hash;
 
 /** Returns a Hash-based Message Authentication Code (HMAC) of the receiver.
  @param secret An `NSString` object to use in conjunction with the receiver to generate the HMAC.
  @return The hash-based message authentication code of the receiver.
-*/ 
+*/
 - (NSString *)HMACWithSecret:(NSString *)secret;
 
 @end

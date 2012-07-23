@@ -140,6 +140,8 @@
 		7848579A158B330500013DD9 /* AVAudioPlayer+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 78485798158B330500013DD9 /* AVAudioPlayer+AGCategory.h */; };
 		7848579B158B330500013DD9 /* AVAudioPlayer+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78485799158B330500013DD9 /* AVAudioPlayer+AGCategory.m */; };
 		7848579D158B333400013DD9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7848579C158B333400013DD9 /* AVFoundation.framework */; };
+		78673EAF15BD4A5900583298 /* NSData+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 78673EAD15BD4A5900583298 /* NSData+AGCategory.h */; };
+		78673EB015BD4A5900583298 /* NSData+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78673EAE15BD4A5900583298 /* NSData+AGCategory.m */; };
 		78B28E8615973C2E0025213A /* UITableView+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B28E8415973C2E0025213A /* UITableView+AGCategory.h */; };
 		78B28E8715973C2E0025213A /* UITableView+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B28E8515973C2E0025213A /* UITableView+AGCategory.m */; };
 		78B28E8B15976CDE0025213A /* UIScrollView+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B28E8915976CDE0025213A /* UIScrollView+AGCategory.h */; };
@@ -274,6 +276,8 @@
 		78485798158B330500013DD9 /* AVAudioPlayer+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVAudioPlayer+AGCategory.h"; sourceTree = "<group>"; };
 		78485799158B330500013DD9 /* AVAudioPlayer+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVAudioPlayer+AGCategory.m"; sourceTree = "<group>"; };
 		7848579C158B333400013DD9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		78673EAD15BD4A5900583298 /* NSData+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AGCategory.h"; sourceTree = "<group>"; };
+		78673EAE15BD4A5900583298 /* NSData+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AGCategory.m"; sourceTree = "<group>"; };
 		78B28E8415973C2E0025213A /* UITableView+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+AGCategory.h"; sourceTree = "<group>"; };
 		78B28E8515973C2E0025213A /* UITableView+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+AGCategory.m"; sourceTree = "<group>"; };
 		78B28E8915976CDE0025213A /* UIScrollView+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+AGCategory.h"; sourceTree = "<group>"; };
@@ -449,6 +453,8 @@
 				7848566B1589DAB200013DD9 /* NSArray+AGCategory.m */,
 				7848566C1589DAB200013DD9 /* NSBundle+AGCategory.h */,
 				7848566D1589DAB200013DD9 /* NSBundle+AGCategory.m */,
+				78673EAD15BD4A5900583298 /* NSData+AGCategory.h */,
+				78673EAE15BD4A5900583298 /* NSData+AGCategory.m */,
 				7848566E1589DAB200013DD9 /* NSDate+AGCategory.h */,
 				7848566F1589DAB200013DD9 /* NSDate+AGCategory.m */,
 				784856701589DAB200013DD9 /* NSDictionary+AGCategory.h */,
@@ -822,6 +828,7 @@
 				78B28E8B15976CDE0025213A /* UIScrollView+AGCategory.h in Headers */,
 				783B172C15A594EB00160C03 /* AGTimer.h in Headers */,
 				78DCC9FA15AACD0700EC2274 /* AGConstants.h in Headers */,
+				78673EAF15BD4A5900583298 /* NSData+AGCategory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -970,6 +977,7 @@
 				78B28E8C15976CDE0025213A /* UIScrollView+AGCategory.m in Sources */,
 				783B172D15A594EB00160C03 /* AGTimer.m in Sources */,
 				78DCC9FB15AACD0700EC2274 /* AGConstants.m in Sources */,
+				78673EB015BD4A5900583298 /* NSData+AGCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
