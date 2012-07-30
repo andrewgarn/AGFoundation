@@ -29,7 +29,9 @@
 
 @implementation NSMutableArray (AGCategory)
 
-- (void) enqueue:(id)anObject 
+#pragma mark - Queueing and Dequeuing
+
+- (void)enqueue:(id)anObject 
 {
     [self addObject:anObject];
 }
@@ -46,6 +48,8 @@
     return headObject;
 }
 
+#pragma mark - Pushing and Popping
+
 - (void)push:(id)anObject
 {
 	[self addObject:anObject];
@@ -57,6 +61,8 @@
 	[self removeLastObject];
 	return result;
 }
+
+#pragma mark - Rearranging
 
 - (NSMutableArray *)reverse
 {    

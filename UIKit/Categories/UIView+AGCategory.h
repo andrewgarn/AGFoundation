@@ -69,6 +69,17 @@
 - (void)removeFromSuperviewAnimated;
 
 /**-------------------------------------------------------------------------------------
+ @name Removing Subviews
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Removes all the receiver's subviews from their superview and window */
+- (void)removeAllSubviews;
+
+/** Removes all the receiver's subviews from their superview and window with animation */
+- (void)removeAllSubviewsAnimated;
+
+/**-------------------------------------------------------------------------------------
  @name Bounds for Orientation
  ---------------------------------------------------------------------------------------
 */

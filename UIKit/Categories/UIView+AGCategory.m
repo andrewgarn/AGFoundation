@@ -103,10 +103,25 @@
     [UIView animateWithDuration:0.3 animations:^{
         [self.layer setOpacity:0];
     }
-                     completion:^ (BOOL finished) {
-                         self.layer.opacity = originalOpacity;
-                         [self removeFromSuperview];
-                     }];
+    completion:^ (BOOL finished) {
+        self.layer.opacity = originalOpacity;
+        [self removeFromSuperview];
+    }];
+}
+
+#pragma mark -
+
+- (void)removeAllSubviews
+{
+    [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+}
+
+- (void)removeAllSubviewsAnimated
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [UIView commitAnimations];
 }
 
 #pragma mark - Bounds

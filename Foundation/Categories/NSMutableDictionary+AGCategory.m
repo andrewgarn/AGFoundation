@@ -56,6 +56,8 @@
     [self setObject:[NSNumber numberWithInteger:value] forKey:key];
 }
 
+#pragma mark -
+
 - (void)safelySetObject:(id)anObject forKey:(id)aKey
 {
     if (anObject && aKey)

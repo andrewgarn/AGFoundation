@@ -316,7 +316,7 @@
 	if (dateFormatter == nil)
 	{
 		dateFormatter = [[NSDateFormatter alloc] init];
-		[dateFormatter setCalendar:[self autoupdatingCurrentCalendar]];
+		[dateFormatter setCalendar:[self gregorianCalendar]];
         [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
 		[threadDictionary setObject:dateFormatter forKey:threadDictionaryKey];
 	}

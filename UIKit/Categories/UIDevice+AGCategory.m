@@ -40,12 +40,6 @@
 #define kUTTypeMovie @"public.movie"
 #endif
 
-@interface UIDevice (AGCategory_Private)
-+ (NSString *)getSysInfoByName:(char *)typeSpecifier;
-+ (NSUInteger)getSysInfo:(uint)typeSpecifier;
-+ (NSString *)platform;
-@end
-
 #pragma mark -
 
 @implementation UIDevice (AGCategory)
@@ -66,25 +60,25 @@
         if ([platform isEqualToString:@"iPhone1,1"])         deviceModel = @"iPhone";
         else if ([platform isEqualToString:@"iPhone1,2"])    deviceModel = @"iPhone 3G";
         else if ([platform hasPrefix:@"iPhone2"])            deviceModel = @"iPhone 3GS";
-        else if ([platform isEqualToString:@"iPhone3,1"])    deviceModel = @"iPhone 4 GSM";
-        else if ([platform isEqualToString:@"iPhone3,3"])    deviceModel = @"iPhone 4 CDMA";
+        else if ([platform isEqualToString:@"iPhone3,1"])    deviceModel = @"iPhone 4 (GSM)";
+        else if ([platform isEqualToString:@"iPhone3,3"])    deviceModel = @"iPhone 4 (CDMA)";
         else if ([platform hasPrefix:@"iPhone4"])            deviceModel = @"iPhone 4S";
         
         /* iPod Touch */
-        else if ([platform hasPrefix:@"iPod1"])              deviceModel = @"iPod 1G";
-        else if ([platform hasPrefix:@"iPod2"])              deviceModel = @"iPod 2G";
-        else if ([platform hasPrefix:@"iPod3"])              deviceModel = @"iPod 3G";
-        else if ([platform hasPrefix:@"iPod4"])              deviceModel = @"iPod 4G";
+        else if ([platform hasPrefix:@"iPod1"])              deviceModel = @"iPod touch 1G";
+        else if ([platform hasPrefix:@"iPod2"])              deviceModel = @"iPod touch 2G";
+        else if ([platform hasPrefix:@"iPod3"])              deviceModel = @"iPod touch 3G";
+        else if ([platform hasPrefix:@"iPod4"])              deviceModel = @"iPod touch 4G";
         
         /* iPad */
-        else if ([platform isEqualToString:@"iPad1,1"])      deviceModel = @"iPad WiFi";
-        else if ([platform isEqualToString:@"iPad2,1"])      deviceModel = @"iPad 2 WiFi";
-        else if ([platform isEqualToString:@"iPad2,2"])      deviceModel = @"iPad 2 GSM";
-        else if ([platform isEqualToString:@"iPad2,3"])      deviceModel = @"iPad 2 CDMAV";
-        else if ([platform isEqualToString:@"iPad2,4"])      deviceModel = @"iPad 2 CDMAS";
+        else if ([platform isEqualToString:@"iPad1,1"])      deviceModel = @"iPad Wi-Fi";
+        else if ([platform isEqualToString:@"iPad2,1"])      deviceModel = @"iPad 2 Wi-Fi";
+        else if ([platform isEqualToString:@"iPad2,2"])      deviceModel = @"iPad 2 Wi-Fi + 3G (GSM)";
+        else if ([platform isEqualToString:@"iPad2,3"])      deviceModel = @"iPad 2 Wi-Fi + 3G (CDMA)";
+        else if ([platform isEqualToString:@"iPad2,4"])      deviceModel = @"iPad 2 Wi-Fi";
         else if ([platform isEqualToString:@"iPad3,1"])      deviceModel = @"iPad 3 Wi-Fi";
-        else if ([platform isEqualToString:@"iPad3,2"])      deviceModel = @"iPad 3 GSM";
-        else if ([platform isEqualToString:@"iPad3,3"])      deviceModel = @"iPad 3 CDMA";
+        else if ([platform isEqualToString:@"iPad3,2"])      deviceModel = @"iPad 3 Wi-Fi + 4G (CDMA)";
+        else if ([platform isEqualToString:@"iPad3,3"])      deviceModel = @"iPad 3 Wi-Fi + 4G (GSM+CDMA)";
         
         /* Simulator */
         else if ([UIDevice isASimulator])
