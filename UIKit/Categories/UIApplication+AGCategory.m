@@ -274,4 +274,36 @@ static NSInteger AGNetworkActivityIndicatorCount = 0;
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
+#pragma mark -
+
++ (void)resignFirstResponder
+{
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+}
+
+#pragma mark -
+
++ (BOOL)canOpenAppStore
+{
+    return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"itms-apps:"]];
+}
+
++ (BOOL)openAppStoreWithAppId:(NSString *)appId
+{
+    NSString *stringURL = @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=";
+    return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", stringURL, appId]]];
+}
+
++ (BOOL)openAppStoreToGiftAppWithAppId:(NSString *)appId
+{
+    NSString *stringURL = [NSString stringWithFormat:@"itms-appss://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/giftSongsWizard?gift=1&salableAdamId=%@&productType=C&pricingParameter=STDQ&mt=8&ign-mscache=1", appId];
+    return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:stringURL]];
+}
+
++ (BOOL)openAppStoreToReviewAppWithAppId:(NSString *)appId
+{
+    NSString *stringURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=";
+    return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", stringURL, appId]]];
+}
+
 @end

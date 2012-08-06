@@ -140,4 +140,40 @@
 /** Stops the network activity indicator from animating and sets the number of network activity requests to zero. */ 
 + (void)hideNetworkActivityIndicatorNow;
 
+/**-------------------------------------------------------------------------------------
+ @name First Responder
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Notifies the all receiver's that they have been asked to relinquish their status as first responder in their window. */
++ (void)resignFirstResponder;
+
+/**-------------------------------------------------------------------------------------
+ @name URL Scheme Handling
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Returns whether the App Store application can be opened.
+ @return YES if the application can be opened, otherwise NO.
+*/
++ (BOOL)canOpenAppStore;
+
+/** Opens the App Store to view the application with the specified identifier.
+ @param appId The application identifier to open the App Store with.
+ @return YES if the App Store was successfully opened, otherwise NO.
+*/
++ (BOOL)openAppStoreWithAppId:(NSString *)appId;
+
+/** Opens the App Store to gift the application with the specified identifier.
+ @param appId The application identifier to open the App Store with.
+ @return YES if the App Store was successfully opened, otherwise NO.
+*/
++ (BOOL)openAppStoreToGiftAppWithAppId:(NSString *)appId;
+
+/** Opens the App Store to review the application with the specified identifier.
+ @param appId The application identifier to open the App Store with.
+ @return YES if the App Store was successfully opened, otherwise NO.
+*/
++ (BOOL)openAppStoreToReviewAppWithAppId:(NSString *)appId;
+
 @end
