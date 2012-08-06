@@ -34,6 +34,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		49BE15FE15C7C70500882C57 /* URLSchemeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 49BE15FC15C7C70500882C57 /* URLSchemeManager.h */; };
+		49BE15FF15C7C70500882C57 /* URLSchemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BE15FD15C7C70500882C57 /* URLSchemeManager.m */; };
 		783B172C15A594EB00160C03 /* AGTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 783B172A15A594EB00160C03 /* AGTimer.h */; };
 		783B172D15A594EB00160C03 /* AGTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 783B172B15A594EB00160C03 /* AGTimer.m */; };
 		784856471589D50A00013DD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784856461589D50A00013DD9 /* Foundation.framework */; };
@@ -170,6 +172,8 @@
 
 /* Begin PBXFileReference section */
 		496C19A215C2F4D400A0ADF8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		49BE15FC15C7C70500882C57 /* URLSchemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLSchemeManager.h; sourceTree = "<group>"; };
+		49BE15FD15C7C70500882C57 /* URLSchemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLSchemeManager.m; sourceTree = "<group>"; };
 		783B172A15A594EB00160C03 /* AGTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTimer.h; sourceTree = "<group>"; };
 		783B172B15A594EB00160C03 /* AGTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTimer.m; sourceTree = "<group>"; };
 		784856431589D50A00013DD9 /* libAGFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAGFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -722,6 +726,8 @@
 			children = (
 				784856DA1589DAB200013DD9 /* LocalNotificationManager.h */,
 				784856DB1589DAB200013DD9 /* LocalNotificationManager.m */,
+				49BE15FC15C7C70500882C57 /* URLSchemeManager.h */,
+				49BE15FD15C7C70500882C57 /* URLSchemeManager.m */,
 			);
 			path = Singletons;
 			sourceTree = "<group>";
@@ -831,6 +837,7 @@
 				783B172C15A594EB00160C03 /* AGTimer.h in Headers */,
 				78DCC9FA15AACD0700EC2274 /* AGConstants.h in Headers */,
 				78673EAF15BD4A5900583298 /* NSData+AGCategory.h in Headers */,
+				49BE15FE15C7C70500882C57 /* URLSchemeManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -895,7 +902,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/appledoc \\\n--project-name \"AGFoundation.atom\" \\\n--project-company \"Andrew Garn\" \\\n--company-id \"com.agnomical\" \\\n--docset-atom-filename \"AGFoundation.atom\" \\\n--docset-feed-url \"http://github.com/andrewgarn/AGFoundation.atom/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"http://github.com/andrewgarn/AGFoundation.atom/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"http://github.com/andrewgarn/AGFoundation.atom/\" \\\n--output \"~/Documents/Documentation/AGFoundation\" \\\n--publish-docset \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--ignore \"LocationManager.h\" \\\n--ignore \"PurchaseManager.h\" \\\n--ignore \"UserDefaultsManager.h\" \\\n--ignore \"LocalNotificationManager.h\" \\\n--ignore \"AGPreprocessorMacros.h\" \\\n--index-desc \"README.md\" \\\n\"${PROJECT_DIR}\"";
+			shellScript = "/usr/bin/appledoc \\\n--project-name \"AGFoundation.atom\" \\\n--project-company \"Andrew Garn\" \\\n--company-id \"com.agnomical\" \\\n--docset-atom-filename \"AGFoundation.atom\" \\\n--docset-feed-url \"http://github.com/andrewgarn/AGFoundation.atom/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"http://github.com/andrewgarn/AGFoundation.atom/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"http://github.com/andrewgarn/AGFoundation.atom/\" \\\n--output \"~/Documents/Documentation/AGFoundation\" \\\n--publish-docset \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--ignore \"LocationManager.h\" \\\n--ignore \"PurchaseManager.h\" \\\n--ignore \"UserDefaultsManager.h\" \\\n--ignore \"LocalNotificationManager.h\" \\\n--ignore \"AGPreprocessorMacros.h\" \\\n--index-desc \"README.md\" \\\n\"${PROJECT_DIR}\"";
 		};
 		784857601589E79200013DD9 /* Prepare Framework */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -980,6 +987,7 @@
 				783B172D15A594EB00160C03 /* AGTimer.m in Sources */,
 				78DCC9FB15AACD0700EC2274 /* AGConstants.m in Sources */,
 				78673EB015BD4A5900583298 /* NSData+AGCategory.m in Sources */,
+				49BE15FF15C7C70500882C57 /* URLSchemeManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

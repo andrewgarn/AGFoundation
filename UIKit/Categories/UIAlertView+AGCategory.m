@@ -40,7 +40,13 @@
 
 + (void)showWithMessage:(NSString *)message
 {
-    NSString *displayName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+    static dispatch_once_t onceToken;
+	static NSString *displayName;
+    
+	dispatch_once(&onceToken, ^{
+        displayName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+	});
+    
     [UIAlertView showWithTitle:displayName message:message];
 }
  

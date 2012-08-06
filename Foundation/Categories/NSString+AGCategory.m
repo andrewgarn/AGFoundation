@@ -89,7 +89,7 @@
 
 - (NSString *)reversedString
 {
-    int stringLength = [self length];
+    NSUInteger stringLength = [self length];
     NSMutableString *reversedString = [NSMutableString stringWithCapacity:stringLength];     
     while (stringLength > 0)
     {

@@ -135,7 +135,6 @@
  @param font The font to use for computing the string size.
  @param size The maximum acceptable size for the string. This value is used to calculate where line breaks and wrapping would occur.
  @param minHeight The minimum height the method should return.
- @param maxHeight The maximum height the method should return.
  @return The height of the resulting string’s bounding box.
 */
 - (CGFloat)heightWithFont:(UIFont *)font constrainedToSize:(CGSize)size min:(CGFloat)minHeight;

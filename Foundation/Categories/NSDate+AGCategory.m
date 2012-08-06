@@ -236,7 +236,6 @@
 - (NSString *)suffixForDay
 {
     NSDateFormatter *dateFormatter = [NSDate dateFormatterWithDateFormat:@"d"];
-    [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
     int day = [[dateFormatter stringFromDate:self] intValue];   
     
     if ([[NSDate suffixArray] count] > day)
