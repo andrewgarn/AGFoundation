@@ -41,4 +41,9 @@
 */ 
 + (void)showWithMessage:(NSString *)message;
 
+/** Convenience method for displaying an error alert view.
+ @param error An error object.
+*/
++ (void)showWithError:(NSError *)error;
+
 @end

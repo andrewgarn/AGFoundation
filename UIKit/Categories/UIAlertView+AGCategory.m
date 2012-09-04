@@ -34,7 +34,7 @@
     UIAlertView *alertView = [[UIAlertView alloc] init];
     [alertView setTitle:title];
     [alertView setMessage:message];
-    [alertView addButtonWithTitle:@"Okay"];
+    [alertView addButtonWithTitle:NSLocalizedString(@"Okay", @"")];
     [alertView show];
 }
 
@@ -48,6 +48,15 @@
 	});
     
     [UIAlertView showWithTitle:displayName message:message];
+}
+
++ (void)showWithError:(NSError *)error
+{
+    UIAlertView *alertView = [[UIAlertView alloc] init];
+    [alertView setTitle:[error localizedDescription]];
+    [alertView setMessage:[error localizedRecoverySuggestion]];
+    [alertView addButtonWithTitle:NSLocalizedString(@"Okay", @"")];
+    [alertView show];
 }
  
 @end
