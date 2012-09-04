@@ -67,22 +67,6 @@ typedef void (^AGVoidBlock)(void);
 */
 - (BOOL)isNotEmpty;
 
-/** Returns a Boolean value that indicates whether the receiver and a given object are not equal.
- 
- Invokes `isEqual:` as part of its implementation
- @param anObject The object to be compared to the receiver.
- @return `YES` if the receiver and anObject are not equal, otherwise `NO`.
-*/
-- (BOOL)isNotEqual:(id)anObject;
-
-/** Returns a Boolean value that indicates whether the receiver is not an instance of given class and not an instance of any class that inherits from that class.
- 
- Invokes `isKindOfClass:` as part of its implementation
- @param aClass A class object representing the Objective-C class to be tested.
- @return `YES` if the receiver is not an instance of aClass and not an instance of any class that inherits from aClass, otherwise `NO`.
-*/
-- (BOOL)isNotKindOfClass:(Class)aClass;
-
 /**-------------------------------------------------------------------------------------
  @name Perform Block
  ---------------------------------------------------------------------------------------

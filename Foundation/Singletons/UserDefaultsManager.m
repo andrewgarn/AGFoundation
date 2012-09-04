@@ -28,7 +28,6 @@
 #import "UserDefaultsManager.h"
 
 @implementation UserDefaultsManager
-@synthesize userDefaults = _userDefaults;
 
 #pragma mark - Object Lifecycle
 
@@ -38,9 +37,6 @@
     {
         if([NSUbiquitousKeyValueStore defaultStore])
         {
-            // Save a local reference to NSUserDefaults
-            _userDefaults = [NSUserDefaults standardUserDefaults];
-            
             // Add NSUbiquitousKeyValueStoreDidChangeExternally observer
             if(NSClassFromString(@"NSUbiquitousKeyValueStore"))
             {

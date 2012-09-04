@@ -36,18 +36,12 @@
  ---------------------------------------------------------------------------------------
 */
 
-/** Returns a Boolean value that indicates whether the receiver is not blank.
+/** Returns a Boolean value that indicates whether the receiver is not empty.
  
- The receiver is considered blank if its length is zero after removing whitespace.
- @return `YES` if the receiver is considered not blank, otherwise `NO`.
+ The receiver is considered empty if its length is zero after removing whitespace.
+ @return `YES` if the receiver is considered not empty, otherwise `NO`.
 */ 
-- (BOOL)isNotBlank;
-
-/** Returns a boolean value that indicates whether a given string is not equal to the receiver.
- @param aString The string with which to compare the receiver.
- @return `YES` if aString is not equivalent to the receiver, otherwise `NO`.
-*/ 
-- (BOOL)isNotEqualToString:(NSString *)aString;
+- (BOOL)isNotEmpty;
 
 /**-------------------------------------------------------------------------------------
  @name Finding Characters and Substrings
@@ -166,14 +160,19 @@
 - (CGFloat)heightWithFont:(UIFont *)font constrainedToSize:(CGSize)size lineBreakMode:(UILineBreakMode)lineBreakMode min:(CGFloat)minHeight;
 
 /**-------------------------------------------------------------------------------------
- @name User Input Validation
+ @name Validation
  ---------------------------------------------------------------------------------------
 */ 
 
-/** Returns a Boolean value that indicates whether the receiver is a valid email address
+/** Returns a Boolean value that indicates whether the receiver is a valid email address.
  @return `YES` if the receiver is a valid email address, otherwise `NO`.
 */ 
 - (BOOL)isValidEmailAddress;
+
+/** Returns a Boolean value that indicates whether the receiver is a valid alphanumeric.
+ @return `YES` if the receiver is a alphanumeric, otherwise `NO`.
+*/
+- (BOOL)isAlphaNumeric;
 
 /**-------------------------------------------------------------------------------------
  @name Generating a Unique Identifier

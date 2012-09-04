@@ -139,11 +139,6 @@
 
 #pragma mark -
 
-- (BOOL)isEmpty
-{
-    return ![self isNotEmpty];
-}
-
 - (BOOL)isNotEmpty
 {
 	return [self count] == 0 ? YES : NO;

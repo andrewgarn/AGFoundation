@@ -116,12 +116,6 @@
 */ 
 
 /**
- Returns a boolean value that indicates whether the receiver is empty.
- @return `YES` if the receiver is empty, otherwise `NO`.
-*/
-- (BOOL)isEmpty;
-
-/**
  Returns a boolean value that indicates whether the receiver is not empty.
  @return `YES` if the receiver is not empty, otherwise `NO`.
 */

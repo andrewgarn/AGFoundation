@@ -80,16 +80,6 @@ static char kNSObjectBlockKey;
     return YES;
 }
 
-- (BOOL)isNotEqual:(id)anObject
-{
-    return ![self isEqual:anObject];
-}
-
-- (BOOL)isNotKindOfClass:(Class)aClass
-{
-    return ![self isKindOfClass:aClass];
-}
-
 #pragma mark -
 
 - (void)performBlock:(AGVoidBlock)aBlock

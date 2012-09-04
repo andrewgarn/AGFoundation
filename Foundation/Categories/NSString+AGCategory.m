@@ -41,17 +41,9 @@
 
 @implementation NSString (AGCategory)
 
-- (BOOL)isNotBlank
+- (BOOL)isNotEmpty
 {
     if ([[self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""])
-        return NO;
-    
-    return YES;
-}
-
-- (BOOL)isNotEqualToString:(NSString *)aString
-{
-    if ([self isEqualToString:aString])
         return NO;
     
     return YES;
@@ -192,14 +184,14 @@
 
 - (BOOL)isValidEmailAddress
 {
-    static dispatch_once_t token;
-	static NSString *regexPattern;
+    static dispatch_once_t onceToken;
+	static NSRegularExpression *regularExpression;
     
-	dispatch_once(&token, ^{
-		regexPattern = @"^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$";
+	dispatch_once(&onceToken, ^{
+		NSString *regexPattern = @"^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$";
+        NSRegularExpressionOptions options = NSRegularExpressionCaseInsensitive;
+        regularExpression = [[NSRegularExpression alloc] initWithPattern:regexPattern options:options error:nil];
 	});
-    
-    NSRegularExpression *regularExpression = [[NSRegularExpression alloc] initWithPattern:regexPattern options:NSRegularExpressionCaseInsensitive error:nil];
     
     NSRange range = NSMakeRange(0, [self length]);
     NSUInteger regexMatches = [regularExpression numberOfMatchesInString:self options:0 range:range];
@@ -208,6 +200,18 @@
         return NO;
     
     return YES;
+}
+
+- (BOOL)isAlphaNumeric
+{
+    static dispatch_once_t onceToken;
+	static NSCharacterSet *unwantedCharacters;
+    
+	dispatch_once(&onceToken, ^{
+		unwantedCharacters = [[NSCharacterSet alphanumericCharacterSet] invertedSet];
+	});
+    
+    return ([self rangeOfCharacterFromSet:unwantedCharacters].location == NSNotFound);
 }
 
 #pragma mark -

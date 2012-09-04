@@ -38,10 +38,6 @@ extern NSString * const AGUserDefaultsDidChangeNotification;
     
 }
 
-#pragma mark - Properties
-
-@property (nonatomic, strong) NSUserDefaults *userDefaults;
-
 #pragma mark - Singleton
 SYNTHESIZE_SINGLETON_FOR_INTERFACE(UserDefaultsManager, sharedManager);
 
