@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>UIFont(AGCategory) Category Reference</title>
+		<title>NSData(AGCategory) Category Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">UIFont(AGCategory) Category Reference</h1>
+				<h1 class="hideInXcode">NSData(AGCategory) Category Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -40,11 +40,17 @@
 	
 	
 	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/fontsByFamilyName">&nbsp;&nbsp;&nbsp;&nbsp;+ fontsByFamilyName</option>
 	
 	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/MD5Hash">&nbsp;&nbsp;&nbsp;&nbsp;- MD5Hash</option>
+	
+	<option value="//api/name/SHA1Hash">&nbsp;&nbsp;&nbsp;&nbsp;- SHA1Hash</option>
+	
+	<option value="//api/name/SHA256Hash">&nbsp;&nbsp;&nbsp;&nbsp;- SHA256Hash</option>
+	
+	<option value="//api/name/SHA512Hash">&nbsp;&nbsp;&nbsp;&nbsp;- SHA512Hash</option>
 	
 	
 	
@@ -62,28 +68,36 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
-</ul></li>
-
-
-
-
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fontsByFamilyName">fontsByFamilyName</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Cryptographic Hashing">Cryptographic Hashing</a></span></li>
 	
 </ul></li>
 
 
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/MD5Hash">MD5Hash</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/SHA1Hash">SHA1Hash</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/SHA256Hash">SHA256Hash</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/SHA512Hash">SHA512Hash</a></span></li>
+	
+</ul></li>
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="UIFont(AGCategory) Category Reference" name="top"></a>
+				<a title="NSData(AGCategory) Category Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -92,7 +106,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">UIFont(AGCategory) Category Reference</h1>
+						<h1 class="title title-header">NSData(AGCategory) Category Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -100,7 +114,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">UIFont+AGCategory.h</td>
+	<td class="specification-value">NSData+AGCategory.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -110,7 +124,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A collection of category extensions for <code>UIFont</code></p>
+						<p>A collection of category extensions for <code>NSData</code></p>
 					</div>
 					
 					
@@ -122,14 +136,35 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
+						<a title="Cryptographic Hashing" name="task_Cryptographic Hashing"></a>
 						
-						
-
+<h3 class="subsubtitle task-title">Cryptographic Hashing</h3>
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/fontsByFamilyName">+&nbsp;fontsByFamilyName</a></code>
-		<span class="tooltip"><p>Returns a dictionary representation of the fonts currently installed on the device.</p></span>
+		<code><a href="#//api/name/MD5Hash">&ndash;&nbsp;MD5Hash</a></code>
+		<span class="tooltip"><p>Returns the MD5 hash of the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/SHA1Hash">&ndash;&nbsp;SHA1Hash</a></code>
+		<span class="tooltip"><p>Returns the SHA1 hash of the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/SHA256Hash">&ndash;&nbsp;SHA256Hash</a></code>
+		<span class="tooltip"><p>Returns the SHA256 hash of the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/SHA512Hash">&ndash;&nbsp;SHA512Hash</a></code>
+		<span class="tooltip"><p>Returns the SHA512 hash of the receiver.</p></span>
 	</span>
 	
 	
@@ -144,23 +179,25 @@
 					
 					
 					
+					
+					
 					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/fontsByFamilyName" title="fontsByFamilyName"></a>
-	<h3 class="subsubtitle method-title">fontsByFamilyName</h3>
+	<a name="//api/name/MD5Hash" title="MD5Hash"></a>
+	<h3 class="subsubtitle method-title">MD5Hash</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a dictionary representation of the fonts currently installed on the device.</p>
+		<p>Returns the MD5 hash of the receiver.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)fontsByFamilyName</code></div>
+	<div class="method-subsection method-declaration"><code>- (NSString *)MD5Hash</code></div>
 
     
 	
@@ -168,17 +205,12 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A dictionary representation of the fonts currently installed on the device</p>
+		<p>The MD5 hash of the receiver.</p>
 	</div>
 	
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Includes code from a blog post by Nick Forge: <a href="http://forgecode.net/2010/08/uifont-name-grabber/">http://forgecode.net/2010/08/uifont-name-grabber/</a></p>
-	</div>
 	
 	
 	
@@ -188,15 +220,136 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">UIFont+AGCategory.h</code><br />
+		<code class="declared-in-ref">NSData+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/SHA1Hash" title="SHA1Hash"></a>
+	<h3 class="subsubtitle method-title">SHA1Hash</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the SHA1 hash of the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)SHA1Hash</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The SHA1 hash of the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSData+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/SHA256Hash" title="SHA256Hash"></a>
+	<h3 class="subsubtitle method-title">SHA256Hash</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the SHA256 hash of the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)SHA256Hash</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The SHA256 hash of the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSData+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/SHA512Hash" title="SHA512Hash"></a>
+	<h3 class="subsubtitle method-title">SHA512Hash</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the SHA512 hash of the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)SHA512Hash</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The SHA512 hash of the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSData+AGCategory.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 					</div>
-					
-					
 					
 					
 				</div>

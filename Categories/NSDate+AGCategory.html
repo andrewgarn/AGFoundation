@@ -46,9 +46,7 @@
 	
 	<option value="//api/name/currentCalendar">&nbsp;&nbsp;&nbsp;&nbsp;+ currentCalendar</option>
 	
-	<option value="//api/name/dateFormatter">&nbsp;&nbsp;&nbsp;&nbsp;+ dateFormatter</option>
-	
-	<option value="//api/name/dateFormatterWithdateFormat:">&nbsp;&nbsp;&nbsp;&nbsp;+ dateFormatterWithdateFormat:</option>
+	<option value="//api/name/dateFormatterWithDateFormat:">&nbsp;&nbsp;&nbsp;&nbsp;+ dateFormatterWithDateFormat:</option>
 	
 	<option value="//api/name/daysPassedSinceDate:">&nbsp;&nbsp;&nbsp;&nbsp;+ daysPassedSinceDate:</option>
 	
@@ -77,6 +75,10 @@
 	
 	<option value="//api/name/hourString">&nbsp;&nbsp;&nbsp;&nbsp;- hourString</option>
 	
+	<option value="//api/name/isAfter:">&nbsp;&nbsp;&nbsp;&nbsp;- isAfter:</option>
+	
+	<option value="//api/name/isBefore:">&nbsp;&nbsp;&nbsp;&nbsp;- isBefore:</option>
+	
 	<option value="//api/name/minute">&nbsp;&nbsp;&nbsp;&nbsp;- minute</option>
 	
 	<option value="//api/name/minuteString">&nbsp;&nbsp;&nbsp;&nbsp;- minuteString</option>
@@ -90,6 +92,8 @@
 	<option value="//api/name/secondString">&nbsp;&nbsp;&nbsp;&nbsp;- secondString</option>
 	
 	<option value="//api/name/suffixForDay">&nbsp;&nbsp;&nbsp;&nbsp;- suffixForDay</option>
+	
+	<option value="//api/name/timeDifferenceSinceNowString">&nbsp;&nbsp;&nbsp;&nbsp;- timeDifferenceSinceNowString</option>
 	
 	<option value="//api/name/timeString">&nbsp;&nbsp;&nbsp;&nbsp;- timeString</option>
 	
@@ -141,9 +145,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentCalendar">currentCalendar</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateFormatter">dateFormatter</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateFormatterWithdateFormat:">dateFormatterWithdateFormat:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateFormatterWithDateFormat:">dateFormatterWithDateFormat:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/daysPassedSinceDate:">daysPassedSinceDate:</a></span></li>
 	
@@ -173,6 +175,10 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hourString">hourString</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isAfter:">isAfter:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isBefore:">isBefore:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/minute">minute</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/minuteString">minuteString</a></span></li>
@@ -186,6 +192,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/secondString">secondString</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/suffixForDay">suffixForDay</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/timeDifferenceSinceNowString">timeDifferenceSinceNowString</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/timeString">timeString</a></span></li>
 	
@@ -393,6 +401,27 @@
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/timeDifferenceSinceNowString">&ndash;&nbsp;timeDifferenceSinceNowString</a></code>
+		<span class="tooltip"><p>Returns a string with the relative time difference between the receiver and the current date.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isBefore:">&ndash;&nbsp;isBefore:</a></code>
+		<span class="tooltip"><p>Returns a bool indicating if the receiver is before the given date.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isAfter:">&ndash;&nbsp;isAfter:</a></code>
+		<span class="tooltip"><p>Returns a bool indicating if the receiver is after the given date.</p></span>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -454,14 +483,7 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/dateFormatter">+&nbsp;dateFormatter</a></code>
-		<span class="tooltip"><p>Returns a thread safe date formatter.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/dateFormatterWithdateFormat:">+&nbsp;dateFormatterWithdateFormat:</a></code>
+		<code><a href="#//api/name/dateFormatterWithDateFormat:">+&nbsp;dateFormatterWithDateFormat:</a></code>
 		<span class="tooltip"><p>Returns a thread safe date formatter with the specified date format set.</p></span>
 	</span>
 	
@@ -574,54 +596,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/dateFormatter" title="dateFormatter"></a>
-	<h3 class="subsubtitle method-title">dateFormatter</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns a thread safe date formatter.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (NSDateFormatter *)dateFormatter</code></div>
-
-    
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A thread safe date formatter.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The method returns a thread safe <code>NSDateFormatter</code> by making use of thread dictionary storage to return a seperate cached instance for each thread.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/dateFormatterWithdateFormat:" title="dateFormatterWithdateFormat:"></a>
-	<h3 class="subsubtitle method-title">dateFormatterWithdateFormat:</h3>
+	<a name="//api/name/dateFormatterWithDateFormat:" title="dateFormatterWithDateFormat:"></a>
+	<h3 class="subsubtitle method-title">dateFormatterWithDateFormat:</h3>
 	
 	
 	
@@ -631,7 +607,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSDateFormatter *)dateFormatterWithdateFormat:(NSString *)<em>dateFormat</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSDateFormatter *)dateFormatterWithDateFormat:(NSString *)<em>dateFormat</em></code></div>
 
     
 	
@@ -1150,6 +1126,108 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/isAfter:" title="isAfter:"></a>
+	<h3 class="subsubtitle method-title">isAfter:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a bool indicating if the receiver is after the given date.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isAfter:(NSDate *)<em>anotherDate</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>anotherDate</em></dt>
+			<dd><p>The date with which to compare the receiver.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the receiver is after the given date, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isBefore:" title="isBefore:"></a>
+	<h3 class="subsubtitle method-title">isBefore:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a bool indicating if the receiver is before the given date.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isBefore:(NSDate *)<em>anotherDate</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>anotherDate</em></dt>
+			<dd><p>The date with which to compare the receiver.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the receiver is before the given date, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/minute" title="minute"></a>
 	<h3 class="subsubtitle method-title">minute</h3>
 	
@@ -1437,6 +1515,47 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/timeDifferenceSinceNowString" title="timeDifferenceSinceNowString"></a>
+	<h3 class="subsubtitle method-title">timeDifferenceSinceNowString</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string with the relative time difference between the receiver and the current date.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)timeDifferenceSinceNowString</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string with the relative time difference between the receiver and the current date.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/timeString" title="timeString"></a>
 	<h3 class="subsubtitle method-title">timeString</h3>
 	
@@ -1572,7 +1691,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-07-08)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-09-04)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

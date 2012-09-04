@@ -79,6 +79,10 @@
 	
 	<option value="//api/name/logViewHierarchy">&nbsp;&nbsp;&nbsp;&nbsp;- logViewHierarchy</option>
 	
+	<option value="//api/name/removeAllSubviews">&nbsp;&nbsp;&nbsp;&nbsp;- removeAllSubviews</option>
+	
+	<option value="//api/name/removeAllSubviewsAnimated">&nbsp;&nbsp;&nbsp;&nbsp;- removeAllSubviewsAnimated</option>
+	
 	<option value="//api/name/removeFromSuperviewAnimated">&nbsp;&nbsp;&nbsp;&nbsp;- removeFromSuperviewAnimated</option>
 	
 	<option value="//api/name/setRoundedCornersWithRadius:width:color:">&nbsp;&nbsp;&nbsp;&nbsp;- setRoundedCornersWithRadius:width:color:</option>
@@ -106,6 +110,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Hierarchy Logging">Hierarchy Logging</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Animating Views">Animating Views</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Removing Subviews">Removing Subviews</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Bounds for Orientation">Bounds for Orientation</a></span></li>
 	
@@ -162,6 +168,10 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/image">image</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logViewHierarchy">logViewHierarchy</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAllSubviews">removeAllSubviews</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAllSubviewsAnimated">removeAllSubviewsAnimated</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeFromSuperviewAnimated">removeFromSuperviewAnimated</a></span></li>
 	
@@ -266,6 +276,28 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/removeFromSuperviewAnimated">&ndash;&nbsp;removeFromSuperviewAnimated</a></code>
 		<span class="tooltip"><p>Unlinks the receiver from its superview and its window, and removes it from the responder chain with animation.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Removing Subviews" name="task_Removing Subviews"></a>
+						<h3 class="subsubtitle task-title">Removing Subviews</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeAllSubviews">&ndash;&nbsp;removeAllSubviews</a></code>
+		<span class="tooltip"><p>Removes all the receiver&rsquo;s subviews from their superview and window</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeAllSubviewsAnimated">&ndash;&nbsp;removeAllSubviewsAnimated</a></code>
+		<span class="tooltip"><p>Removes all the receiver&rsquo;s subviews from their superview and window with animation</p></span>
 	</span>
 	
 	
@@ -1024,6 +1056,78 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/removeAllSubviews" title="removeAllSubviews"></a>
+	<h3 class="subsubtitle method-title">removeAllSubviews</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes all the receiver&rsquo;s subviews from their superview and window</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeAllSubviews</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeAllSubviewsAnimated" title="removeAllSubviewsAnimated"></a>
+	<h3 class="subsubtitle method-title">removeAllSubviewsAnimated</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes all the receiver&rsquo;s subviews from their superview and window with animation</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeAllSubviewsAnimated</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/removeFromSuperviewAnimated" title="removeFromSuperviewAnimated"></a>
 	<h3 class="subsubtitle method-title">removeFromSuperviewAnimated</h3>
 	
@@ -1128,7 +1232,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-07-08)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-09-04)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

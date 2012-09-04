@@ -42,7 +42,7 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/UUIDString">&nbsp;&nbsp;&nbsp;&nbsp;+ UUIDString</option>
+	<option value="//api/name/UUIDStringCreate">&nbsp;&nbsp;&nbsp;&nbsp;+ UUIDStringCreate</option>
 	
 	
 	
@@ -63,13 +63,21 @@
 	
 	<option value="//api/name/containsString:">&nbsp;&nbsp;&nbsp;&nbsp;- containsString:</option>
 	
+	<option value="//api/name/heightWithFont:constrainedToSize:lineBreakMode:min:">&nbsp;&nbsp;&nbsp;&nbsp;- heightWithFont:constrainedToSize:lineBreakMode:min:</option>
+	
+	<option value="//api/name/heightWithFont:constrainedToSize:min:">&nbsp;&nbsp;&nbsp;&nbsp;- heightWithFont:constrainedToSize:min:</option>
+	
 	<option value="//api/name/heightWithFont:constrainedToWidth:">&nbsp;&nbsp;&nbsp;&nbsp;- heightWithFont:constrainedToWidth:</option>
 	
 	<option value="//api/name/heightWithFont:constrainedToWidth:lineBreakMode:">&nbsp;&nbsp;&nbsp;&nbsp;- heightWithFont:constrainedToWidth:lineBreakMode:</option>
 	
-	<option value="//api/name/isNotBlank">&nbsp;&nbsp;&nbsp;&nbsp;- isNotBlank</option>
+	<option value="//api/name/heightWithFont:constrainedToWidth:lineBreakMode:min:">&nbsp;&nbsp;&nbsp;&nbsp;- heightWithFont:constrainedToWidth:lineBreakMode:min:</option>
 	
-	<option value="//api/name/isNotEqualToString:">&nbsp;&nbsp;&nbsp;&nbsp;- isNotEqualToString:</option>
+	<option value="//api/name/heightWithFont:constrainedToWidth:min:">&nbsp;&nbsp;&nbsp;&nbsp;- heightWithFont:constrainedToWidth:min:</option>
+	
+	<option value="//api/name/isAlphaNumeric">&nbsp;&nbsp;&nbsp;&nbsp;- isAlphaNumeric</option>
+	
+	<option value="//api/name/isNotEmpty">&nbsp;&nbsp;&nbsp;&nbsp;- isNotEmpty</option>
 	
 	<option value="//api/name/isValidEmailAddress">&nbsp;&nbsp;&nbsp;&nbsp;- isValidEmailAddress</option>
 	
@@ -115,7 +123,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Text Height">Text Height</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_User Input Validation">User Input Validation</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Validation">Validation</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Generating a Unique Identifier">Generating a Unique Identifier</a></span></li>
 	
@@ -133,7 +141,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/UUIDString">UUIDString</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/UUIDStringCreate">UUIDStringCreate</a></span></li>
 	
 </ul></li>
 
@@ -155,13 +163,21 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/containsString:">containsString:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/heightWithFont:constrainedToSize:lineBreakMode:min:">heightWithFont:constrainedToSize:lineBreakMode:min:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/heightWithFont:constrainedToSize:min:">heightWithFont:constrainedToSize:min:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/heightWithFont:constrainedToWidth:">heightWithFont:constrainedToWidth:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/heightWithFont:constrainedToWidth:lineBreakMode:">heightWithFont:constrainedToWidth:lineBreakMode:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNotBlank">isNotBlank</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/heightWithFont:constrainedToWidth:lineBreakMode:min:">heightWithFont:constrainedToWidth:lineBreakMode:min:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNotEqualToString:">isNotEqualToString:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/heightWithFont:constrainedToWidth:min:">heightWithFont:constrainedToWidth:min:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isAlphaNumeric">isAlphaNumeric</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNotEmpty">isNotEmpty</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isValidEmailAddress">isValidEmailAddress</a></span></li>
 	
@@ -231,15 +247,8 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/isNotBlank">&ndash;&nbsp;isNotBlank</a></code>
-		<span class="tooltip"><p>Returns a Boolean value that indicates whether the receiver is not blank.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/isNotEqualToString:">&ndash;&nbsp;isNotEqualToString:</a></code>
-		<span class="tooltip"><p>Returns a boolean value that indicates whether a given string is not equal to the receiver.</p></span>
+		<code><a href="#//api/name/isNotEmpty">&ndash;&nbsp;isNotEmpty</a></code>
+		<span class="tooltip"><p>Returns a Boolean value that indicates whether the receiver is not empty.</p></span>
 	</span>
 	
 	
@@ -348,7 +357,35 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/heightWithFont:constrainedToWidth:min:">&ndash;&nbsp;heightWithFont:constrainedToWidth:min:</a></code>
+		<span class="tooltip"><p>Returns the height of the string if it were rendered and constrained to the specified width.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/heightWithFont:constrainedToSize:min:">&ndash;&nbsp;heightWithFont:constrainedToSize:min:</a></code>
+		<span class="tooltip"><p>Returns the height of the string if it were rendered and constrained to the specified width.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/heightWithFont:constrainedToWidth:lineBreakMode:">&ndash;&nbsp;heightWithFont:constrainedToWidth:lineBreakMode:</a></code>
+		<span class="tooltip"><p>Returns the height of the string if it were rendered and constrained to the specified width.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/heightWithFont:constrainedToWidth:lineBreakMode:min:">&ndash;&nbsp;heightWithFont:constrainedToWidth:lineBreakMode:min:</a></code>
+		<span class="tooltip"><p>Returns the height of the string if it were rendered and constrained to the specified width.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/heightWithFont:constrainedToSize:lineBreakMode:min:">&ndash;&nbsp;heightWithFont:constrainedToSize:lineBreakMode:min:</a></code>
 		<span class="tooltip"><p>Returns the height of the string if it were rendered and constrained to the specified width.</p></span>
 	</span>
 	
@@ -357,14 +394,21 @@
 						</ul>
 						
 						
-						<a title="User Input Validation" name="task_User Input Validation"></a>
-						<h3 class="subsubtitle task-title">User Input Validation</h3>
+						<a title="Validation" name="task_Validation"></a>
+						<h3 class="subsubtitle task-title">Validation</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/isValidEmailAddress">&ndash;&nbsp;isValidEmailAddress</a></code>
-		<span class="tooltip"><p>Returns a Boolean value that indicates whether the receiver is a valid email address</p></span>
+		<span class="tooltip"><p>Returns a Boolean value that indicates whether the receiver is a valid email address.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isAlphaNumeric">&ndash;&nbsp;isAlphaNumeric</a></code>
+		<span class="tooltip"><p>Returns a Boolean value that indicates whether the receiver is a valid alphanumeric.</p></span>
 	</span>
 	
 	
@@ -378,7 +422,7 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/UUIDString">+&nbsp;UUIDString</a></code>
+		<code><a href="#//api/name/UUIDStringCreate">+&nbsp;UUIDStringCreate</a></code>
 		<span class="tooltip"><p>Returns a universally unique identifier string object.</p></span>
 	</span>
 	
@@ -457,8 +501,8 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/UUIDString" title="UUIDString"></a>
-	<h3 class="subsubtitle method-title">UUIDString</h3>
+	<a name="//api/name/UUIDStringCreate" title="UUIDStringCreate"></a>
+	<h3 class="subsubtitle method-title">UUIDStringCreate</h3>
 	
 	
 	
@@ -468,7 +512,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSString *)UUIDString</code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSString *)UUIDStringCreate</code></div>
 
     
 	
@@ -813,6 +857,133 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/heightWithFont:constrainedToSize:lineBreakMode:min:" title="heightWithFont:constrainedToSize:lineBreakMode:min:"></a>
+	<h3 class="subsubtitle method-title">heightWithFont:constrainedToSize:lineBreakMode:min:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the height of the string if it were rendered and constrained to the specified width.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (CGFloat)heightWithFont:(UIFont *)<em>font</em> constrainedToSize:(CGSize)<em>size</em> lineBreakMode:(UILineBreakMode)<em>lineBreakMode</em> min:(CGFloat)<em>minHeight</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>font</em></dt>
+			<dd><p>The font to use for computing the string size.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>size</em></dt>
+			<dd><p>The maximum acceptable size for the string. This value is used to calculate where line breaks and wrapping would occur.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>lineBreakMode</em></dt>
+			<dd><p>The line break options for computing the size of the string.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>minHeight</em></dt>
+			<dd><p>The minimum height the method should return.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The height of the resulting string’s bounding box.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/heightWithFont:constrainedToSize:min:" title="heightWithFont:constrainedToSize:min:"></a>
+	<h3 class="subsubtitle method-title">heightWithFont:constrainedToSize:min:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the height of the string if it were rendered and constrained to the specified width.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (CGFloat)heightWithFont:(UIFont *)<em>font</em> constrainedToSize:(CGSize)<em>size</em> min:(CGFloat)<em>minHeight</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>font</em></dt>
+			<dd><p>The font to use for computing the string size.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>size</em></dt>
+			<dd><p>The maximum acceptable size for the string. This value is used to calculate where line breaks and wrapping would occur.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>minHeight</em></dt>
+			<dd><p>The minimum height the method should return.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The height of the resulting string’s bounding box.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/heightWithFont:constrainedToWidth:" title="heightWithFont:constrainedToWidth:"></a>
 	<h3 class="subsubtitle method-title">heightWithFont:constrainedToWidth:</h3>
 	
@@ -930,36 +1101,56 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/isNotBlank" title="isNotBlank"></a>
-	<h3 class="subsubtitle method-title">isNotBlank</h3>
+	<a name="//api/name/heightWithFont:constrainedToWidth:lineBreakMode:min:" title="heightWithFont:constrainedToWidth:lineBreakMode:min:"></a>
+	<h3 class="subsubtitle method-title">heightWithFont:constrainedToWidth:lineBreakMode:min:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a Boolean value that indicates whether the receiver is not blank.</p>
+		<p>Returns the height of the string if it were rendered and constrained to the specified width.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (BOOL)isNotBlank</code></div>
+	<div class="method-subsection method-declaration"><code>- (CGFloat)heightWithFont:(UIFont *)<em>font</em> constrainedToWidth:(CGFloat)<em>width</em> lineBreakMode:(UILineBreakMode)<em>lineBreakMode</em> min:(CGFloat)<em>minHeight</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>font</em></dt>
+			<dd><p>The font to use for computing the string size.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>width</em></dt>
+			<dd><p>The maximum acceptable width for the string. This value is used to calculate where line breaks and wrapping would occur.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>lineBreakMode</em></dt>
+			<dd><p>The line break options for computing the size of the string.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>minHeight</em></dt>
+			<dd><p>The minimum height the method should return.</p></dd>
+		</dl>
+		
+	</div>
 	
 	
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p><code>YES</code> if the receiver is considered not blank, otherwise <code>NO</code>.</p>
+		<p>The height of the resulting string’s bounding box.</p>
 	</div>
 	
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The receiver is considered blank if its length is zero after removing whitespace.</p>
-	</div>
 	
 	
 	
@@ -976,18 +1167,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/isNotEqualToString:" title="isNotEqualToString:"></a>
-	<h3 class="subsubtitle method-title">isNotEqualToString:</h3>
+	<a name="//api/name/heightWithFont:constrainedToWidth:min:" title="heightWithFont:constrainedToWidth:min:"></a>
+	<h3 class="subsubtitle method-title">heightWithFont:constrainedToWidth:min:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a boolean value that indicates whether a given string is not equal to the receiver.</p>
+		<p>Returns the height of the string if it were rendered and constrained to the specified width.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (BOOL)isNotEqualToString:(NSString *)<em>aString</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (CGFloat)heightWithFont:(UIFont *)<em>font</em> constrainedToWidth:(CGFloat)<em>width</em> min:(CGFloat)<em>minHeight</em></code></div>
 
     
 	
@@ -995,8 +1186,18 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>aString</em></dt>
-			<dd><p>The string with which to compare the receiver.</p></dd>
+			<dt><em>font</em></dt>
+			<dd><p>The font to use for computing the string size.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>width</em></dt>
+			<dd><p>The maximum acceptable width for the string. This value is used to calculate where line breaks and wrapping would occur.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>minHeight</em></dt>
+			<dd><p>The minimum height the method should return.</p></dd>
 		</dl>
 		
 	</div>
@@ -1005,12 +1206,99 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p><code>YES</code> if aString is not equivalent to the receiver, otherwise <code>NO</code>.</p>
+		<p>The height of the resulting string’s bounding box.</p>
 	</div>
 	
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isAlphaNumeric" title="isAlphaNumeric"></a>
+	<h3 class="subsubtitle method-title">isAlphaNumeric</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a Boolean value that indicates whether the receiver is a valid alphanumeric.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isAlphaNumeric</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the receiver is a alphanumeric, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isNotEmpty" title="isNotEmpty"></a>
+	<h3 class="subsubtitle method-title">isNotEmpty</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a Boolean value that indicates whether the receiver is not empty.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isNotEmpty</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the receiver is considered not empty, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The receiver is considered empty if its length is zero after removing whitespace.</p>
+	</div>
 	
 	
 	
@@ -1033,7 +1321,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a Boolean value that indicates whether the receiver is a valid email address</p>
+		<p>Returns a Boolean value that indicates whether the receiver is a valid email address.</p>
 	</div>		
 	
     
@@ -1377,7 +1665,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-07-08)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-09-04)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

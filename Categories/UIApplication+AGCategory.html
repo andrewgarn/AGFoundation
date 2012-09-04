@@ -42,6 +42,8 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
+	<option value="//api/name/canOpenAppStore">&nbsp;&nbsp;&nbsp;&nbsp;+ canOpenAppStore</option>
+	
 	<option value="//api/name/hideNetworkActivityIndicator">&nbsp;&nbsp;&nbsp;&nbsp;+ hideNetworkActivityIndicator</option>
 	
 	<option value="//api/name/hideNetworkActivityIndicatorNow">&nbsp;&nbsp;&nbsp;&nbsp;+ hideNetworkActivityIndicatorNow</option>
@@ -69,6 +71,14 @@
 	<option value="//api/name/logMemoryUsage">&nbsp;&nbsp;&nbsp;&nbsp;+ logMemoryUsage</option>
 	
 	<option value="//api/name/observeNavigationControllerStack">&nbsp;&nbsp;&nbsp;&nbsp;+ observeNavigationControllerStack</option>
+	
+	<option value="//api/name/openAppStoreToGiftAppWithAppId:">&nbsp;&nbsp;&nbsp;&nbsp;+ openAppStoreToGiftAppWithAppId:</option>
+	
+	<option value="//api/name/openAppStoreToReviewAppWithAppId:">&nbsp;&nbsp;&nbsp;&nbsp;+ openAppStoreToReviewAppWithAppId:</option>
+	
+	<option value="//api/name/openAppStoreWithAppId:">&nbsp;&nbsp;&nbsp;&nbsp;+ openAppStoreWithAppId:</option>
+	
+	<option value="//api/name/resignFirstResponder">&nbsp;&nbsp;&nbsp;&nbsp;+ resignFirstResponder</option>
 	
 	<option value="//api/name/scheduledLocalNotifications">&nbsp;&nbsp;&nbsp;&nbsp;+ scheduledLocalNotifications</option>
 	
@@ -110,6 +120,10 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Network Activity Indication">Network Activity Indication</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_First Responder">First Responder</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_URL Scheme Handling">URL Scheme Handling</a></span></li>
+	
 </ul></li>
 
 
@@ -119,6 +133,8 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canOpenAppStore">canOpenAppStore</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hideNetworkActivityIndicator">hideNetworkActivityIndicator</a></span></li>
 	
@@ -147,6 +163,14 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logMemoryUsage">logMemoryUsage</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/observeNavigationControllerStack">observeNavigationControllerStack</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openAppStoreToGiftAppWithAppId:">openAppStoreToGiftAppWithAppId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openAppStoreToReviewAppWithAppId:">openAppStoreToReviewAppWithAppId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openAppStoreWithAppId:">openAppStoreWithAppId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resignFirstResponder">resignFirstResponder</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/scheduledLocalNotifications">scheduledLocalNotifications</a></span></li>
 	
@@ -386,6 +410,57 @@
 </li>
 						</ul>
 						
+						
+						<a title="First Responder" name="task_First Responder"></a>
+						<h3 class="subsubtitle task-title">First Responder</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/resignFirstResponder">+&nbsp;resignFirstResponder</a></code>
+		<span class="tooltip"><p>Notifies the all receiver&rsquo;s that they have been asked to relinquish their status as first responder in their window.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="URL Scheme Handling" name="task_URL Scheme Handling"></a>
+						<h3 class="subsubtitle task-title">URL Scheme Handling</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/canOpenAppStore">+&nbsp;canOpenAppStore</a></code>
+		<span class="tooltip"><p>Returns whether the App Store application can be opened.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openAppStoreWithAppId:">+&nbsp;openAppStoreWithAppId:</a></code>
+		<span class="tooltip"><p>Opens the App Store to view the application with the specified identifier.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openAppStoreToGiftAppWithAppId:">+&nbsp;openAppStoreToGiftAppWithAppId:</a></code>
+		<span class="tooltip"><p>Opens the App Store to gift the application with the specified identifier.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openAppStoreToReviewAppWithAppId:">+&nbsp;openAppStoreToReviewAppWithAppId:</a></code>
+		<span class="tooltip"><p>Opens the App Store to review the application with the specified identifier.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
 					</div>
 					
 					
@@ -397,6 +472,47 @@
 					<div class="section section-methods">
 						<a title="Class Methods" name="class_methods"></a>
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/canOpenAppStore" title="canOpenAppStore"></a>
+	<h3 class="subsubtitle method-title">canOpenAppStore</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns whether the App Store application can be opened.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)canOpenAppStore</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the application can be opened, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/hideNetworkActivityIndicator" title="hideNetworkActivityIndicator"></a>
@@ -948,6 +1064,195 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/openAppStoreToGiftAppWithAppId:" title="openAppStoreToGiftAppWithAppId:"></a>
+	<h3 class="subsubtitle method-title">openAppStoreToGiftAppWithAppId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opens the App Store to gift the application with the specified identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)openAppStoreToGiftAppWithAppId:(NSString *)<em>appId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>appId</em></dt>
+			<dd><p>The application identifier to open the App Store with.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the App Store was successfully opened, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/openAppStoreToReviewAppWithAppId:" title="openAppStoreToReviewAppWithAppId:"></a>
+	<h3 class="subsubtitle method-title">openAppStoreToReviewAppWithAppId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opens the App Store to review the application with the specified identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)openAppStoreToReviewAppWithAppId:(NSString *)<em>appId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>appId</em></dt>
+			<dd><p>The application identifier to open the App Store with.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the App Store was successfully opened, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/openAppStoreWithAppId:" title="openAppStoreWithAppId:"></a>
+	<h3 class="subsubtitle method-title">openAppStoreWithAppId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opens the App Store to view the application with the specified identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)openAppStoreWithAppId:(NSString *)<em>appId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>appId</em></dt>
+			<dd><p>The application identifier to open the App Store with.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the App Store was successfully opened, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/resignFirstResponder" title="resignFirstResponder"></a>
+	<h3 class="subsubtitle method-title">resignFirstResponder</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Notifies the all receiver&rsquo;s that they have been asked to relinquish their status as first responder in their window.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)resignFirstResponder</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/scheduledLocalNotifications" title="scheduledLocalNotifications"></a>
 	<h3 class="subsubtitle method-title">scheduledLocalNotifications</h3>
 	
@@ -1182,7 +1487,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-07-08)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-09-04)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

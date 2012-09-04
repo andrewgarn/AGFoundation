@@ -1,0 +1,1254 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>URLSchemeManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">AGFoundation.atom </a></h1>
+				<a id="developerHome" href="../index.html">Andrew Garn</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">URLSchemeManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/canOpenAppStore">&nbsp;&nbsp;&nbsp;&nbsp;+ canOpenAppStore</option>
+	
+	<option value="//api/name/canOpenApplicationWithScheme:">&nbsp;&nbsp;&nbsp;&nbsp;+ canOpenApplicationWithScheme:</option>
+	
+	<option value="//api/name/canOpenFacebook">&nbsp;&nbsp;&nbsp;&nbsp;+ canOpenFacebook</option>
+	
+	<option value="//api/name/canOpenGoogleChrome">&nbsp;&nbsp;&nbsp;&nbsp;+ canOpenGoogleChrome</option>
+	
+	<option value="//api/name/canOpenSafari">&nbsp;&nbsp;&nbsp;&nbsp;+ canOpenSafari</option>
+	
+	<option value="//api/name/canOpenTweetbot">&nbsp;&nbsp;&nbsp;&nbsp;+ canOpenTweetbot</option>
+	
+	<option value="//api/name/canOpenTwitter">&nbsp;&nbsp;&nbsp;&nbsp;+ canOpenTwitter</option>
+	
+	<option value="//api/name/openAppStoreToGiftAppWithAppId:">&nbsp;&nbsp;&nbsp;&nbsp;+ openAppStoreToGiftAppWithAppId:</option>
+	
+	<option value="//api/name/openAppStoreToReviewAppWithAppId:">&nbsp;&nbsp;&nbsp;&nbsp;+ openAppStoreToReviewAppWithAppId:</option>
+	
+	<option value="//api/name/openAppStoreWithAppId:">&nbsp;&nbsp;&nbsp;&nbsp;+ openAppStoreWithAppId:</option>
+	
+	<option value="//api/name/openApplicationWithScheme:">&nbsp;&nbsp;&nbsp;&nbsp;+ openApplicationWithScheme:</option>
+	
+	<option value="//api/name/openApplicationWithScheme:appId:">&nbsp;&nbsp;&nbsp;&nbsp;+ openApplicationWithScheme:appId:</option>
+	
+	<option value="//api/name/openFacebook">&nbsp;&nbsp;&nbsp;&nbsp;+ openFacebook</option>
+	
+	<option value="//api/name/openGoogleChromeWithURL:">&nbsp;&nbsp;&nbsp;&nbsp;+ openGoogleChromeWithURL:</option>
+	
+	<option value="//api/name/openSafariWithURL:">&nbsp;&nbsp;&nbsp;&nbsp;+ openSafariWithURL:</option>
+	
+	<option value="//api/name/openTweetbot">&nbsp;&nbsp;&nbsp;&nbsp;+ openTweetbot</option>
+	
+	<option value="//api/name/openTwitter">&nbsp;&nbsp;&nbsp;&nbsp;+ openTwitter</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Apple">Apple</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Third Party">Third Party</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Generic">Generic</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canOpenAppStore">canOpenAppStore</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canOpenApplicationWithScheme:">canOpenApplicationWithScheme:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canOpenFacebook">canOpenFacebook</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canOpenGoogleChrome">canOpenGoogleChrome</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canOpenSafari">canOpenSafari</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canOpenTweetbot">canOpenTweetbot</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canOpenTwitter">canOpenTwitter</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openAppStoreToGiftAppWithAppId:">openAppStoreToGiftAppWithAppId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openAppStoreToReviewAppWithAppId:">openAppStoreToReviewAppWithAppId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openAppStoreWithAppId:">openAppStoreWithAppId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openApplicationWithScheme:">openApplicationWithScheme:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openApplicationWithScheme:appId:">openApplicationWithScheme:appId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openFacebook">openFacebook</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openGoogleChromeWithURL:">openGoogleChromeWithURL:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openSafariWithURL:">openSafariWithURL:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openTweetbot">openTweetbot</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openTwitter">openTwitter</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="URLSchemeManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">URLSchemeManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">URLSchemeManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A class to detect and launch other applications using custom URL schemes.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Apple" name="task_Apple"></a>
+						<h3 class="subsubtitle task-title">Apple</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/canOpenAppStore">+&nbsp;canOpenAppStore</a></code>
+		<span class="tooltip"><p>Returns whether the App Store application can be opened.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openAppStoreWithAppId:">+&nbsp;openAppStoreWithAppId:</a></code>
+		<span class="tooltip"><p>Opens the App Store to view the application with the specified identifier.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openAppStoreToGiftAppWithAppId:">+&nbsp;openAppStoreToGiftAppWithAppId:</a></code>
+		<span class="tooltip"><p>Opens the App Store to gift the application with the specified identifier.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openAppStoreToReviewAppWithAppId:">+&nbsp;openAppStoreToReviewAppWithAppId:</a></code>
+		<span class="tooltip"><p>Opens the App Store to review the application with the specified identifier.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/canOpenSafari">+&nbsp;canOpenSafari</a></code>
+		<span class="tooltip"><p>Returns whether the Safari application can be opened.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openSafariWithURL:">+&nbsp;openSafariWithURL:</a></code>
+		<span class="tooltip"><p>Opens the Safari application with the specified URL.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Third Party" name="task_Third Party"></a>
+						<h3 class="subsubtitle task-title">Third Party</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/canOpenFacebook">+&nbsp;canOpenFacebook</a></code>
+		<span class="tooltip"><p>Returns whether the Facebook application can be opened.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openFacebook">+&nbsp;openFacebook</a></code>
+		<span class="tooltip"><p>Opens the Facebook application, or if unavailable opens the App Store to download it.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/canOpenGoogleChrome">+&nbsp;canOpenGoogleChrome</a></code>
+		<span class="tooltip"><p>Returns whether the Google Chrome application can be opened.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openGoogleChromeWithURL:">+&nbsp;openGoogleChromeWithURL:</a></code>
+		<span class="tooltip"><p>Opens the Google Chrome application with the specified URL, or if unavailable opens the App Store to download it.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/canOpenTweetbot">+&nbsp;canOpenTweetbot</a></code>
+		<span class="tooltip"><p>Returns whether the Tweetbot application can be opened.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openTweetbot">+&nbsp;openTweetbot</a></code>
+		<span class="tooltip"><p>Opens the Tweetbot application, or if unavailable opens the App Store to download it.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/canOpenTwitter">+&nbsp;canOpenTwitter</a></code>
+		<span class="tooltip"><p>Returns whether the Twitter application can be opened.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openTwitter">+&nbsp;openTwitter</a></code>
+		<span class="tooltip"><p>Opens the Twitter application, or if unavailable opens the App Store to download it.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Generic" name="task_Generic"></a>
+						<h3 class="subsubtitle task-title">Generic</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/canOpenApplicationWithScheme:">+&nbsp;canOpenApplicationWithScheme:</a></code>
+		<span class="tooltip"><p>Returns whether the specified scheme can be used to open an application.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openApplicationWithScheme:appId:">+&nbsp;openApplicationWithScheme:appId:</a></code>
+		<span class="tooltip"><p>Opens an application with the specified scheme, or if unavailable opens the App Store to view the application with the specified identifier.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openApplicationWithScheme:">+&nbsp;openApplicationWithScheme:</a></code>
+		<span class="tooltip"><p>Opens an application with the specified scheme.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/canOpenAppStore" title="canOpenAppStore"></a>
+	<h3 class="subsubtitle method-title">canOpenAppStore</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns whether the App Store application can be opened.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)canOpenAppStore</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the application can be opened, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">URLSchemeManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/canOpenApplicationWithScheme:" title="canOpenApplicationWithScheme:"></a>
+	<h3 class="subsubtitle method-title">canOpenApplicationWithScheme:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns whether the specified scheme can be used to open an application.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)canOpenApplicationWithScheme:(NSString *)<em>applicationScheme</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>applicationScheme</em></dt>
+			<dd><p>The application scheme to attempt to open</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the application scheme is available, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">URLSchemeManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/canOpenFacebook" title="canOpenFacebook"></a>
+	<h3 class="subsubtitle method-title">canOpenFacebook</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns whether the Facebook application can be opened.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)canOpenFacebook</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the application is available, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">URLSchemeManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/canOpenGoogleChrome" title="canOpenGoogleChrome"></a>
+	<h3 class="subsubtitle method-title">canOpenGoogleChrome</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns whether the Google Chrome application can be opened.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)canOpenGoogleChrome</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the application is available, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">URLSchemeManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/canOpenSafari" title="canOpenSafari"></a>
+	<h3 class="subsubtitle method-title">canOpenSafari</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns whether the Safari application can be opened.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)canOpenSafari</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the application is available, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">URLSchemeManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/canOpenTweetbot" title="canOpenTweetbot"></a>
+	<h3 class="subsubtitle method-title">canOpenTweetbot</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns whether the Tweetbot application can be opened.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)canOpenTweetbot</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the application is available, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">URLSchemeManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/canOpenTwitter" title="canOpenTwitter"></a>
+	<h3 class="subsubtitle method-title">canOpenTwitter</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns whether the Twitter application can be opened.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)canOpenTwitter</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the application is available, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">URLSchemeManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/openAppStoreToGiftAppWithAppId:" title="openAppStoreToGiftAppWithAppId:"></a>
+	<h3 class="subsubtitle method-title">openAppStoreToGiftAppWithAppId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opens the App Store to gift the application with the specified identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)openAppStoreToGiftAppWithAppId:(NSString *)<em>appId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>appId</em></dt>
+			<dd><p>The application identifier to open the App Store with.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the App Store was successfully opened, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">URLSchemeManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/openAppStoreToReviewAppWithAppId:" title="openAppStoreToReviewAppWithAppId:"></a>
+	<h3 class="subsubtitle method-title">openAppStoreToReviewAppWithAppId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opens the App Store to review the application with the specified identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)openAppStoreToReviewAppWithAppId:(NSString *)<em>appId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>appId</em></dt>
+			<dd><p>The application identifier to open the App Store with.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the App Store was successfully opened, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">URLSchemeManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/openAppStoreWithAppId:" title="openAppStoreWithAppId:"></a>
+	<h3 class="subsubtitle method-title">openAppStoreWithAppId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opens the App Store to view the application with the specified identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)openAppStoreWithAppId:(NSString *)<em>appId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>appId</em></dt>
+			<dd><p>The application identifier to open the App Store with.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the App Store was successfully opened, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">URLSchemeManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/openApplicationWithScheme:" title="openApplicationWithScheme:"></a>
+	<h3 class="subsubtitle method-title">openApplicationWithScheme:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opens an application with the specified scheme.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)openApplicationWithScheme:(NSString *)<em>applicationScheme</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>applicationScheme</em></dt>
+			<dd><p>The application scheme to attempt to open</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if an application was successfully opened, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">URLSchemeManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/openApplicationWithScheme:appId:" title="openApplicationWithScheme:appId:"></a>
+	<h3 class="subsubtitle method-title">openApplicationWithScheme:appId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opens an application with the specified scheme, or if unavailable opens the App Store to view the application with the specified identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)openApplicationWithScheme:(NSString *)<em>applicationScheme</em> appId:(NSString *)<em>appId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>applicationScheme</em></dt>
+			<dd><p>The application scheme to attempt to open</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>appId</em></dt>
+			<dd><p>The application identifier to open the App Store with.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if an application was successfully opened, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">URLSchemeManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/openFacebook" title="openFacebook"></a>
+	<h3 class="subsubtitle method-title">openFacebook</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opens the Facebook application, or if unavailable opens the App Store to download it.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)openFacebook</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if an application was successfully opened, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">URLSchemeManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/openGoogleChromeWithURL:" title="openGoogleChromeWithURL:"></a>
+	<h3 class="subsubtitle method-title">openGoogleChromeWithURL:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opens the Google Chrome application with the specified URL, or if unavailable opens the App Store to download it.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)openGoogleChromeWithURL:(NSURL *)<em>url</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>url</em></dt>
+			<dd><p>The URL to open inside the Google Chrome application.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if an application was successfully opened, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Includes code from documentation by Google: <a href="https://developers.google.com/chrome/mobile/docs/ios-links">https://developers.google.com/chrome/mobile/docs/ios-links</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">URLSchemeManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/openSafariWithURL:" title="openSafariWithURL:"></a>
+	<h3 class="subsubtitle method-title">openSafariWithURL:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opens the Safari application with the specified URL.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)openSafariWithURL:(NSURL *)<em>url</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>url</em></dt>
+			<dd><p>The URL to open inside the Safari application.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if an application was successfully opened, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">URLSchemeManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/openTweetbot" title="openTweetbot"></a>
+	<h3 class="subsubtitle method-title">openTweetbot</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opens the Tweetbot application, or if unavailable opens the App Store to download it.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)openTweetbot</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if an application was successfully opened, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">URLSchemeManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/openTwitter" title="openTwitter"></a>
+	<h3 class="subsubtitle method-title">openTwitter</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opens the Twitter application, or if unavailable opens the App Store to download it.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)openTwitter</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if an application was successfully opened, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">URLSchemeManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-09-04)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

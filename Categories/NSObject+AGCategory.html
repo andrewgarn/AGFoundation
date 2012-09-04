@@ -77,10 +77,6 @@
 	
 	<option value="//api/name/isNotEmpty">&nbsp;&nbsp;&nbsp;&nbsp;- isNotEmpty</option>
 	
-	<option value="//api/name/isNotEqual:">&nbsp;&nbsp;&nbsp;&nbsp;- isNotEqual:</option>
-	
-	<option value="//api/name/isNotKindOfClass:">&nbsp;&nbsp;&nbsp;&nbsp;- isNotKindOfClass:</option>
-	
 	<option value="//api/name/performBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- performBlock:</option>
 	
 	<option value="//api/name/performBlock:afterDelay:">&nbsp;&nbsp;&nbsp;&nbsp;- performBlock:afterDelay:</option>
@@ -164,10 +160,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/automaticDescription">automaticDescription</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNotEmpty">isNotEmpty</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNotEqual:">isNotEqual:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNotKindOfClass:">isNotKindOfClass:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performBlock:">performBlock:</a></span></li>
 	
@@ -262,20 +254,6 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/isNotEmpty">&ndash;&nbsp;isNotEmpty</a></code>
 		<span class="tooltip"><p>Returns a Boolean value that indicates whether the receiver is not empty.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/isNotEqual:">&ndash;&nbsp;isNotEqual:</a></code>
-		<span class="tooltip"><p>Returns a Boolean value that indicates whether the receiver and a given object are not equal.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/isNotKindOfClass:">&ndash;&nbsp;isNotKindOfClass:</a></code>
-		<span class="tooltip"><p>Returns a Boolean value that indicates whether the receiver is not an instance of given class and not an instance of any class that inherits from that class.</p></span>
 	</span>
 	
 	
@@ -1290,118 +1268,6 @@ when it is subject to being externally released or is in an
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/isNotEqual:" title="isNotEqual:"></a>
-	<h3 class="subsubtitle method-title">isNotEqual:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns a Boolean value that indicates whether the receiver and a given object are not equal.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (BOOL)isNotEqual:(id)<em>anObject</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>anObject</em></dt>
-			<dd><p>The object to be compared to the receiver.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p><code>YES</code> if the receiver and anObject are not equal, otherwise <code>NO</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Invokes <code>isEqual:</code> as part of its implementation</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/isNotKindOfClass:" title="isNotKindOfClass:"></a>
-	<h3 class="subsubtitle method-title">isNotKindOfClass:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns a Boolean value that indicates whether the receiver is not an instance of given class and not an instance of any class that inherits from that class.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (BOOL)isNotKindOfClass:(Class)<em>aClass</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>aClass</em></dt>
-			<dd><p>A class object representing the Objective-C class to be tested.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p><code>YES</code> if the receiver is not an instance of aClass and not an instance of any class that inherits from aClass, otherwise <code>NO</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Invokes <code>isKindOfClass:</code> as part of its implementation</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/performBlock:" title="performBlock:"></a>
 	<h3 class="subsubtitle method-title">performBlock:</h3>
 	
@@ -1664,7 +1530,7 @@ in other words, the associated object is not kept alive.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-07-08)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-09-04)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
