@@ -27,7 +27,10 @@
 
 #import <UIKit/UIKit.h>
 
-/** An `UIViewController` subclass */
+/** A `UIViewController` subclass */
 @interface AGViewController : UIViewController
+{
+    
+}
 
 @end

@@ -216,16 +216,12 @@ static NSDate *applicationDidEnterBackgroundDate;
 
 + (BOOL)interfaceOrientationIsSupported:(UIInterfaceOrientation)interfaceOrientation
 {
-    static dispatch_once_t token;
+    static dispatch_once_t onceToken;
 	static NSArray *supportedOrientations;
     
-	dispatch_once(&token, ^{
-        
-        NSString *infoDictKey = @"UISupportedInterfaceOrientations";
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
-            infoDictKey = @"UISupportedInterfaceOrientations~ipad";
-        
-        supportedOrientations = [[NSBundle mainBundle] objectForInfoDictionaryKey:infoDictKey];
+	dispatch_once(&onceToken, ^{
+        NSString *infoDictionaryKey = @"UISupportedInterfaceOrientations";
+        supportedOrientations = [[NSBundle mainBundle] objectForInfoDictionaryKey:infoDictionaryKey];
 	});
     
     NSString *interfaceOrientationString = [UIApplication stringFromInterfaceOrientation:interfaceOrientation];

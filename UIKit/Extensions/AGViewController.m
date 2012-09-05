@@ -32,10 +32,9 @@
 
 #pragma mark - View Lifecycle
 
-- (void)viewDidUnload
+- (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [super viewDidUnload];
 }
 
 #pragma mark - Rotation
