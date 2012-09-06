@@ -14,7 +14,7 @@
 				784857611589E79E00013DD9 /* ShellScript */,
 			);
 			dependencies = (
-				784857631589E7A300013DD9 /* PBXTargetDependency */,
+				49A996F415F7D40800DBD6E4 /* PBXTargetDependency */,
 			);
 			name = Framework;
 			productName = Framework;
@@ -38,6 +38,7 @@
 		49A996DE15F6CD4000DBD6E4 /* AGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A996DC15F6CD4000DBD6E4 /* AGTableViewController.m */; };
 		49BE15FE15C7C70500882C57 /* URLSchemeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 49BE15FC15C7C70500882C57 /* URLSchemeManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49BE15FF15C7C70500882C57 /* URLSchemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BE15FD15C7C70500882C57 /* URLSchemeManager.m */; };
+		49F0EE9315F7458900E11468 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F0EE9215F7458900E11468 /* CoreFoundation.framework */; };
 		783B172C15A594EB00160C03 /* AGTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 783B172A15A594EB00160C03 /* AGTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		783B172D15A594EB00160C03 /* AGTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 783B172B15A594EB00160C03 /* AGTimer.m */; };
 		784856471589D50A00013DD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784856461589D50A00013DD9 /* Foundation.framework */; };
@@ -116,8 +117,6 @@
 		784857271589DAB200013DD9 /* UIImageView+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856C51589DAB200013DD9 /* UIImageView+AGCategory.m */; };
 		784857281589DAB200013DD9 /* UINavigationBar+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856C61589DAB200013DD9 /* UINavigationBar+AGCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		784857291589DAB200013DD9 /* UINavigationBar+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856C71589DAB200013DD9 /* UINavigationBar+AGCategory.m */; };
-		7848572A1589DAB200013DD9 /* UINavigationController+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856C81589DAB200013DD9 /* UINavigationController+AGCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7848572B1589DAB200013DD9 /* UINavigationController+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856C91589DAB200013DD9 /* UINavigationController+AGCategory.m */; };
 		7848572C1589DAB200013DD9 /* UIScreen+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856CA1589DAB200013DD9 /* UIScreen+AGCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7848572D1589DAB200013DD9 /* UIScreen+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856CB1589DAB200013DD9 /* UIScreen+AGCategory.m */; };
 		7848572E1589DAB200013DD9 /* UIView+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856CC1589DAB200013DD9 /* UIView+AGCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -156,7 +155,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		784857621589E7A300013DD9 /* PBXContainerItemProxy */ = {
+		49A996F315F7D40800DBD6E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7848563A1589D50900013DD9 /* Project object */;
 			proxyType = 1;
@@ -178,6 +177,7 @@
 		49A996DC15F6CD4000DBD6E4 /* AGTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTableViewController.m; sourceTree = "<group>"; };
 		49BE15FC15C7C70500882C57 /* URLSchemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLSchemeManager.h; sourceTree = "<group>"; };
 		49BE15FD15C7C70500882C57 /* URLSchemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLSchemeManager.m; sourceTree = "<group>"; };
+		49F0EE9215F7458900E11468 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		783B172A15A594EB00160C03 /* AGTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTimer.h; sourceTree = "<group>"; };
 		783B172B15A594EB00160C03 /* AGTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTimer.m; sourceTree = "<group>"; };
 		784856431589D50A00013DD9 /* libAGFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAGFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,8 +257,6 @@
 		784856C51589DAB200013DD9 /* UIImageView+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AGCategory.m"; sourceTree = "<group>"; };
 		784856C61589DAB200013DD9 /* UINavigationBar+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+AGCategory.h"; sourceTree = "<group>"; };
 		784856C71589DAB200013DD9 /* UINavigationBar+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+AGCategory.m"; sourceTree = "<group>"; };
-		784856C81589DAB200013DD9 /* UINavigationController+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+AGCategory.h"; sourceTree = "<group>"; };
-		784856C91589DAB200013DD9 /* UINavigationController+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+AGCategory.m"; sourceTree = "<group>"; };
 		784856CA1589DAB200013DD9 /* UIScreen+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+AGCategory.h"; sourceTree = "<group>"; };
 		784856CB1589DAB200013DD9 /* UIScreen+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+AGCategory.m"; sourceTree = "<group>"; };
 		784856CC1589DAB200013DD9 /* UIView+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AGCategory.h"; sourceTree = "<group>"; };
@@ -301,6 +299,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F0EE9315F7458900E11468 /* CoreFoundation.framework in Frameworks */,
 				78CE47E215A4714000C647D9 /* MobileCoreServices.framework in Frameworks */,
 				7848579D158B333400013DD9 /* AVFoundation.framework in Frameworks */,
 				7848574F1589DBEE00013DD9 /* AudioToolbox.framework in Frameworks */,
@@ -338,6 +337,7 @@
 		784856451589D50A00013DD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49F0EE9215F7458900E11468 /* CoreFoundation.framework */,
 				7848574E1589DBEE00013DD9 /* AudioToolbox.framework */,
 				7848579C158B333400013DD9 /* AVFoundation.framework */,
 				7848573F1589DB0600013DD9 /* CoreLocation.framework */,
@@ -694,8 +694,6 @@
 				784856C51589DAB200013DD9 /* UIImageView+AGCategory.m */,
 				784856C61589DAB200013DD9 /* UINavigationBar+AGCategory.h */,
 				784856C71589DAB200013DD9 /* UINavigationBar+AGCategory.m */,
-				784856C81589DAB200013DD9 /* UINavigationController+AGCategory.h */,
-				784856C91589DAB200013DD9 /* UINavigationController+AGCategory.m */,
 				784856CA1589DAB200013DD9 /* UIScreen+AGCategory.h */,
 				784856CB1589DAB200013DD9 /* UIScreen+AGCategory.m */,
 				784856CC1589DAB200013DD9 /* UIView+AGCategory.h */,
@@ -719,10 +717,10 @@
 				784856D41589DAB200013DD9 /* AGAlertView.m */,
 				784856D51589DAB200013DD9 /* AGImagePickerController.h */,
 				784856D61589DAB200013DD9 /* AGImagePickerController.m */,
-				784856D71589DAB200013DD9 /* AGViewController.h */,
-				784856D81589DAB200013DD9 /* AGViewController.m */,
 				49A996DB15F6CD4000DBD6E4 /* AGTableViewController.h */,
 				49A996DC15F6CD4000DBD6E4 /* AGTableViewController.m */,
+				784856D71589DAB200013DD9 /* AGViewController.h */,
+				784856D81589DAB200013DD9 /* AGViewController.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -828,7 +826,6 @@
 				784857241589DAB200013DD9 /* UIImage+AGCategory.h in Headers */,
 				784857261589DAB200013DD9 /* UIImageView+AGCategory.h in Headers */,
 				784857281589DAB200013DD9 /* UINavigationBar+AGCategory.h in Headers */,
-				7848572A1589DAB200013DD9 /* UINavigationController+AGCategory.h in Headers */,
 				7848572C1589DAB200013DD9 /* UIScreen+AGCategory.h in Headers */,
 				7848572E1589DAB200013DD9 /* UIView+AGCategory.h in Headers */,
 				784857301589DAB200013DD9 /* AGActionSheet.h in Headers */,
@@ -979,7 +976,6 @@
 				784857251589DAB200013DD9 /* UIImage+AGCategory.m in Sources */,
 				784857271589DAB200013DD9 /* UIImageView+AGCategory.m in Sources */,
 				784857291589DAB200013DD9 /* UINavigationBar+AGCategory.m in Sources */,
-				7848572B1589DAB200013DD9 /* UINavigationController+AGCategory.m in Sources */,
 				7848572D1589DAB200013DD9 /* UIScreen+AGCategory.m in Sources */,
 				7848572F1589DAB200013DD9 /* UIView+AGCategory.m in Sources */,
 				784857311589DAB200013DD9 /* AGActionSheet.m in Sources */,
@@ -1002,10 +998,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		784857631589E7A300013DD9 /* PBXTargetDependency */ = {
+		49A996F415F7D40800DBD6E4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 784856421589D50A00013DD9 /* AGFoundation */;
-			targetProxy = 784857621589E7A300013DD9 /* PBXContainerItemProxy */;
+			targetProxy = 49A996F315F7D40800DBD6E4 /* PBXContainerItemProxy */;
 		};
 		78AFF7BD158BB9E200CBC25F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1060,6 +1056,7 @@
 		784856511589D50A00013DD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/AGFoundation.dst;
@@ -1071,12 +1068,14 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
+				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Debug;
 		};
 		784856521589D50A00013DD9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/AGFoundation.dst;
@@ -1088,20 +1087,25 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
+				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Release;
 		};
 		784857591589E31E00013DD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Debug;
 		};
 		7848575A1589E31E00013DD9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Release;
 		};
@@ -1109,6 +1113,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = armv7;
 			};
 			name = Debug;
 		};
@@ -1116,6 +1121,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = armv7;
 			};
 			name = Release;
 		};
