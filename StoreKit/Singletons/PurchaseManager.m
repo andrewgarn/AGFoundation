@@ -27,9 +27,14 @@
 
 #import "PurchaseManager.h"
 
+@interface PurchaseManager ()
+@property (nonatomic, copy) AGPurchaseManagerProductRequestResponseBlock productRequestResponseBlock;
+@end
+
+#pragma mark -
+
 @implementation PurchaseManager
-@synthesize productIdentifierSet = _productIdentifierSet;
-@synthesize productArray = _productArray;
+@synthesize productRequestResponseBlock = _productRequestResponseBlock;
 
 #pragma mark -
 
@@ -44,35 +49,36 @@
 
 #pragma mark -
 
-- (void)requestProducts
++ (void)requestProductsWithIdentifiers:(NSSet *)identifiers responseBlock:(AGPurchaseManagerProductRequestResponseBlock)block
 {
-	_productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:_productIdentifierSet];
+    [[PurchaseManager sharedManager] setProductRequestResponseBlock:block];
+    [[PurchaseManager sharedManager] requestProductsWithIdentifiers:identifiers];
+}
+
+#pragma mark -
+
+- (void)requestProductsWithIdentifiers:(NSSet *)productIdentifiers
+{
+	_productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers];
     [_productsRequest setDelegate:self];
     [_productsRequest start];
 }
 
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response 
 {
-    _productArray = response.products;
-    _successfullyRetrievedProducts = YES;
+    if (_productRequestResponseBlock)
+    {
+        _productRequestResponseBlock(response.products, response.invalidProductIdentifiers);
+    }
 }
 
 #pragma mark -
 
-+ (NSArray *)products
++ (BOOL)canMakePayments
 {
-    return [[PurchaseManager sharedManager] productArray];
-}
-
-+ (SKProduct *)productWithIdentifier:(NSString *)identifier
-{
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"identifier == '%@'", identifier];
-    NSArray *filteredArray = [[PurchaseManager products] filteredArrayUsingPredicate:predicate];
-    if ([filteredArray count] > 0)
-    {
-        return [filteredArray objectAtIndex:0];
-    }
-    return nil;
+    Class class = NSClassFromString(@"SKPaymentQueue");
+    if (class) return [(id)class canMakePayments];
+    return NO;
 }
             
 #pragma mark - Singleton

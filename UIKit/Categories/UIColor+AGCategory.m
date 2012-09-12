@@ -29,7 +29,7 @@
 
 @implementation UIColor (AGCategory)
 
-#pragma mark - Construction
+#pragma mark -
 
 + (UIColor *)randomColor 
 {

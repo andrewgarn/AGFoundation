@@ -27,20 +27,17 @@
 
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
-
 #import "AGSynthesizeSingleton.h"
+
+typedef void (^AGPurchaseManagerProductRequestResponseBlock)(NSArray *products, NSArray *invalidIdentifiers);
 
 @interface PurchaseManager : NSObject <SKProductsRequestDelegate>
 {
     SKProductsRequest *_productsRequest;
-    BOOL _successfullyRetrievedProducts;
 }
 
-@property (nonatomic, strong) NSSet *productIdentifierSet;
-@property (nonatomic, strong) NSArray *productArray;
-
-+ (NSArray *)products;
-+ (SKProduct *)productWithIdentifier:(NSString *)identifier;
++ (void)requestProductsWithIdentifiers:(NSSet *)identifiers responseBlock:(AGPurchaseManagerProductRequestResponseBlock)block;
++ (BOOL)canMakePayments;
 
 #pragma mark - Singleton
 SYNTHESIZE_SINGLETON_FOR_INTERFACE(PurchaseManager, sharedManager);
