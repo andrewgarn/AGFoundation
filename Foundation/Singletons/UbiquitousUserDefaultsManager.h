@@ -1,5 +1,5 @@
 //
-//  UserDefaultsManager.h
+//  UbiquitousUserDefaultsManager.h
 //  AGFoundation
 //
 //  Created by Andrew Garn on 24/05/2012.
@@ -25,20 +25,26 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-/* Modified from original source code from MKiCloudSync by Mugunth Kumar */
-/* Original license available at: https://github.com/MugunthKumar/MKiCloudSync */
-
 #import <Foundation/Foundation.h>
 #import "AGSynthesizeSingleton.h"
 
-extern NSString * const AGUserDefaultsDidChangeNotification;
+extern NSString * const AGUserDefaultsDidChangeExternallyNotification;
 
-@interface UserDefaultsManager : NSObject
+/** A singleton class to synchronise values between NSUserDefaults and NSUbiquitousKeyValueStore */
+@interface UbiquitousUserDefaultsManager : NSObject
 {
     
 }
 
-#pragma mark - Singleton
-SYNTHESIZE_SINGLETON_FOR_INTERFACE(UserDefaultsManager, sharedManager);
+/** Sets the keys to sync between NSUserDefaults and NSUbiquitousKeyValueStore.
+ @param ubiquitousKeys The set of keys to sync between NSUserDefaults and NSUbiquitousKeyValueStore.
+*/
+- (void)setUbiquitousKeys:(NSSet *)ubiquitousKeys;
+
+/** Start the process of syncing NSUserDefaults and NSUbiquitousKeyValueStore and notifying changes to NSUserDefaults. */
+- (BOOL)start;
+
+/** Returns the shared UbiquitousUserDefaultsManager instance. */
+- (UbiquitousUserDefaultsManager *)sharedManager;
 
 @end

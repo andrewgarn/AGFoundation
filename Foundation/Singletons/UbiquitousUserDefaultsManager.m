@@ -1,5 +1,5 @@
 //
-//  UserDefaultsManager.m
+//  UbiquitousUserDefaultsManager.m
 //  AGFoundation
 //
 //  Created by Andrew Garn on 24/05/2012.
@@ -25,44 +25,47 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "UserDefaultsManager.h"
+#import "UbiquitousUserDefaultsManager.h"
+NSString * const AGUserDefaultsDidChangeExternallyNotification = @"AGUserDefaultsDidChangeExternallyNotification";
 
-@implementation UserDefaultsManager
+@interface UbiquitousUserDefaultsManager ()
+@property (nonatomic, strong) NSSet *ubiquitousKeys;
+@end
 
-#pragma mark - Object Lifecycle
+#pragma mark -
 
-- (id)init
+@implementation UbiquitousUserDefaultsManager
+@synthesize ubiquitousKeys = _ubiquitousKeys;
+
+#pragma mark -
+
+- (BOOL)start
 {
-    if ((self = [super init]))
+    NSAssert(_ubiquitousKeys != nil, @"Missing ubiquitousKeys");
+    
+    if(NSClassFromString(@"NSUbiquitousKeyValueStore"))
     {
         if([NSUbiquitousKeyValueStore defaultStore])
         {
-            // Add NSUbiquitousKeyValueStoreDidChangeExternally observer
-            if(NSClassFromString(@"NSUbiquitousKeyValueStore"))
-            {
-                if([NSUbiquitousKeyValueStore defaultStore])
-                {
-                    [[NSNotificationCenter defaultCenter] addObserver:self 
-                                                             selector:@selector(keyValueStoreDidChangeExternally:) 
-                                                                 name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification 
-                                                               object:nil];
-                }
-            }
-            
-            // Add NSUserDefaultsDidChange notification observer.
-            [[NSNotificationCenter defaultCenter] addObserver:self 
-                                                     selector:@selector(userDefaultsDidChange:) 
-                                                         name:NSUserDefaultsDidChangeNotification                                                 
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(keyValueStoreDidChangeExternally:)
+                                                         name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification
                                                        object:nil];
+            
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(userDefaultsDidChange:)
+                                                         name:NSUserDefaultsDidChangeNotification
+                                                       object:nil];
+            return YES;
         }
     }
-    return self;
+    return NO;
 }
 
-#pragma mark - NSUbiquitousKeyValueStore Notifications
+#pragma mark - NSUbiquitousKeyValueStore
 
 - (void)keyValueStoreDidChangeExternally:(NSNotification *)notification
-{
+{    
     // Grab the key value store from iCloud
     NSUbiquitousKeyValueStore *keyValueStore = [NSUbiquitousKeyValueStore defaultStore];
     NSDictionary *dictionary = [keyValueStore dictionaryRepresentation];
@@ -71,8 +74,10 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NSUserDefaultsDidChangeNotification object:nil];
     
     // Update the local NSUserDefaults using the iCloud data.
-    [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        [[NSUserDefaults standardUserDefaults] setObject:obj forKey:key];
+    [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
+    {
+        if ([_ubiquitousKeys containsObject:key])
+            [[NSUserDefaults standardUserDefaults] setObject:obj forKey:key];
     }];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
@@ -82,30 +87,37 @@
                                                  name:NSUserDefaultsDidChangeNotification                                                    
                                                object:nil];
     
-    // Notify observers that NSUserDefaults has been updated
-    [[NSNotificationCenter defaultCenter] postNotificationName:AGUserDefaultsDidChangeNotification object:nil userInfo:nil];
+    // Notify observers that NSUserDefaults has been updated externally.
+    [[NSNotificationCenter defaultCenter] postNotificationName:AGUserDefaultsDidChangeExternallyNotification object:nil userInfo:nil];
 }
+
+#pragma mark - NSUserDefaults
 
 - (void)userDefaultsDidChange:(NSNotification *)notification
 {
-    if(NSClassFromString(@"NSUbiquitousKeyValueStore"))
+    if([NSUbiquitousKeyValueStore defaultStore])
     {
-        if([NSUbiquitousKeyValueStore defaultStore])
+        // Update the iCloud key value store using NSUserDefault data
+        NSDictionary *dictionary = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
+        [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
         {
-            // Update the iCloud key value store using NSUserDefault data
-            NSDictionary *dictionary = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
-            [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+            if ([_ubiquitousKeys containsObject:key])
                 [[NSUbiquitousKeyValueStore defaultStore] setObject:obj forKey:key];
-            }];
-            [[NSUbiquitousKeyValueStore defaultStore] synchronize];
-        }
+        }];
+        [[NSUbiquitousKeyValueStore defaultStore] synchronize];
     }
 }
 
-//#pragma mark - Constants
-NSString * const AGUserDefaultsDidChangeNotification = @"AGUserDefaultsDidChangeNotification";
-
 #pragma mark - Singleton
-SYNTHESIZE_SINGLETON_FOR_IMPLEMENTATION(UserDefaultsManager, sharedManager);
+
+__strong static UbiquitousUserDefaultsManager *__sharedManager = nil;
+- (UbiquitousUserDefaultsManager *)sharedManager
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        __sharedManager = [[UbiquitousUserDefaultsManager alloc] init];
+    });
+    return __sharedManager; 
+}
 
 @end
