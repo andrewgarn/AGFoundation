@@ -91,5 +91,17 @@
     return NO;
 }
 
+#pragma mark -
+
+- (void)deselectSelectedRow
+{
+    [self deselectSelectedRowAnimated:YES];
+}
+
+- (void)deselectSelectedRowAnimated:(BOOL)animated
+{
+    NSIndexPath *indexPath = [self indexPathForSelectedRow];
+    [self deselectRowAtIndexPath:indexPath animated:animated];
+}
 
 @end

@@ -81,4 +81,17 @@
 */
 - (BOOL)scrollToRow:(NSInteger)row inSection:(NSInteger)section atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated;
 
+/**-------------------------------------------------------------------------------------
+ @name Managing Selections
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Deselects the currently selected row */
+- (void)deselectSelectedRow;
+
+/** Deselects the currently selected row, with an option to animate the deselection.
+ @param animated `YES` if you want to animate the deselection and `NO` if the change should be immediate.
+*/
+- (void)deselectSelectedRowAnimated:(BOOL)animated;
+
 @end
