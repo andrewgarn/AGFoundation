@@ -159,6 +159,16 @@
 */ 
 + (BOOL)canSendText;
 
+/** Returns a boolean value that indicates whether the device is able to send tweets.
+ @return `YES` if the device can send tweets, otherwise `NO`.
+*/
++ (BOOL)canSendTweet;
+
+/** Returns a boolean value that indicates whether the device is able to make purchases.
+ @return `YES` if the device can make purchases, otherwise `NO`.
+*/
++ (BOOL)canMakePayments;
+
 /** Returns a boolean value that indicates whether multitasking is supported on the current device.
  @return `YES` if the device supports multitasking, otherwise `NO`.
 */ 

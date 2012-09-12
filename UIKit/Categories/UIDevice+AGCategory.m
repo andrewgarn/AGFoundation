@@ -133,7 +133,7 @@
     NSString *carrierName = nil;
     
     Class telephonyNetworkInfoClass = NSClassFromString(@"CTTelephonyNetworkInfo");
-    Class carrierClass = NSClassFromString(@"CTCarrier.h");
+    Class carrierClass = NSClassFromString(@"CTCarrier");
     
     if (!telephonyNetworkInfoClass)
         NSLog(@"[UIDevice deviceCarrier] - You must #import <CoreTelephony/CTTelephonyNetworkInfo.h>!");
@@ -196,7 +196,7 @@
 	static BOOL isAniPodTouch = NO;
     
 	dispatch_once(&token, ^{
-        NSRange textRange = [[self platform] rangeOfString: @"iPod"];
+        NSRange textRange = [[self platform] rangeOfString:@"iPod"];
         if(textRange.location != NSNotFound)
             isAniPodTouch = YES;
     });
@@ -353,6 +353,20 @@
     return NO;
 }
 
++ (BOOL)canSendTweet
+{
+    Class class = NSClassFromString(@"TWTweetComposeViewController");
+    if (class) return [(id)class canSendTweet];
+    return NO;
+}
+
++ (BOOL)canMakePayments
+{
+    Class class = NSClassFromString(@"SKPaymentQueue");
+    if (class) return [(id)class canMakePayments];
+    return NO;
+}
+
 + (BOOL)supportsMultitasking
 {
     static dispatch_once_t token;
@@ -446,23 +460,23 @@
     switch (batteryState)
     {
         case UIDeviceBatteryStateUnknown:
-            batteryStateString = @"Unknown";
+            batteryStateString = NSLocalizedString(@"Unknown", @"");
             break;
             
         case UIDeviceBatteryStateUnplugged:
-            batteryStateString = @"Unplugged";
+            batteryStateString = NSLocalizedString(@"Unplugged", @"");
             break;
             
         case UIDeviceBatteryStateCharging:
-            batteryStateString = @"Charging";
+            batteryStateString = NSLocalizedString(@"Charging", @"");
             break;
             
         case UIDeviceBatteryStateFull:
-            batteryStateString = @"Full";
+            batteryStateString = NSLocalizedString(@"Full", @"");
             break;
             
         default:
-            batteryStateString = @"Unknown";
+            batteryStateString = NSLocalizedString(@"Unknown", @"");
             break;
     }
     
