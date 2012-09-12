@@ -27,18 +27,15 @@
 
 #import <CoreLocation/CoreLocation.h>
 #import <Foundation/Foundation.h>
-
 #import "AGSynthesizeSingleton.h"
+
+typedef void (^AGLocationManagerDidUpdateToLocationBlock)(CLLocationManager *manager, CLLocation *newLocation, CLLocation *oldLocation);
+typedef void (^AGLocationManagerDidFailWithErrorBlock)(CLLocationManager *manager, NSError *error);
 
 @interface LocationManager : NSObject <CLLocationManagerDelegate>
 {
     
 }
-
-#pragma mark - Properties
-
-@property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, strong) CLLocation *latestLocation;
 
 #pragma mark - Start/Stop Updating Location
 
@@ -49,6 +46,16 @@
 #pragma mark - Location Accuracy
 
 + (void)setDesiredAccuracy:(CLLocationAccuracy)desiredAccuracy;
+
+#pragma mark - Distance
+
++ (double)distanceTo:(CLLocation *)location;
++ (double)distanceTo:(double)latitude longitude:(double)longitude;
+
+#pragma mark - Blocks
+
++ (void)setDidUpdateLocationBlock:(AGLocationManagerDidUpdateToLocationBlock)block;
++ (void)setDidFailBlock:(AGLocationManagerDidFailWithErrorBlock)block;
 
 #pragma mark - Singleton
 SYNTHESIZE_SINGLETON_FOR_INTERFACE(LocationManager, sharedManager);

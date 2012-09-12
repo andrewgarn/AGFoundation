@@ -27,9 +27,18 @@
 
 #import "LocationManager.h"
 
+@interface LocationManager ()
+@property (nonatomic, copy) AGLocationManagerDidUpdateToLocationBlock didUpdateToLocationBlock;
+@property (nonatomic, copy) AGLocationManagerDidFailWithErrorBlock didFailWithErrorBlock;
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) CLLocation *latestLocation;
+@end
+
+#pragma mark -
+
 @implementation LocationManager
-@synthesize locationManager = _locationManager;
-@synthesize latestLocation = _latestLocation;
+@synthesize didUpdateToLocationBlock = _didUpdateToLocationBlock, didFailWithErrorBlock = _didFailWithErrorBlock;
+@synthesize locationManager = _locationManager, latestLocation = _latestLocation;
 
 #pragma mark - Object Lifecycle
 
@@ -54,14 +63,20 @@
 
 + (void)startUpdatingLocation
 {
-    CLLocationManager *locationManager = [[LocationManager sharedManager] locationManager];
-    [locationManager startUpdatingLocation];
+    [[[LocationManager sharedManager] locationManager] startUpdatingLocation];
 }
 
 + (void)stopUpdatingLocation
 {
+    [[[LocationManager sharedManager] locationManager] stopUpdatingLocation];
+}
+
+#pragma mark - Desired Accuracy
+
++ (void)setDesiredAccuracy:(CLLocationAccuracy)desiredAccuracy
+{
     CLLocationManager *locationManager = [[LocationManager sharedManager] locationManager];
-    [locationManager stopUpdatingLocation];
+    [locationManager setDesiredAccuracy:desiredAccuracy];
 }
 
 #pragma mark - Distance
@@ -76,23 +91,27 @@
     return (double)NSIntegerMax;
 }
 
-+ (double)distanceTo:(NSNumber *)latitude longitude:(NSNumber *)longitude
++ (double)distanceTo:(double)latitude longitude:(double)longitude
 {
     CLLocation *latestLocation = [[LocationManager sharedManager] latestLocation];
     if (latestLocation)
     {
-        CLLocation *location = [[CLLocation alloc] initWithLatitude:[latitude floatValue] longitude:[longitude floatValue]];
+        CLLocation *location = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
         return [latestLocation distanceFromLocation:location];
     }
     return (double)NSIntegerMax;
 }
 
-#pragma mark - Desired Accuracy
+#pragma mark - Blocks
 
-+ (void)setDesiredAccuracy:(CLLocationAccuracy)desiredAccuracy
++ (void)setDidUpdateLocationBlock:(AGLocationManagerDidUpdateToLocationBlock)block
 {
-    CLLocationManager *locationManager = [[LocationManager sharedManager] locationManager];
-    [locationManager setDesiredAccuracy:desiredAccuracy];
+    [[LocationManager sharedManager] setDidUpdateToLocationBlock:block];
+}
+
++ (void)setDidFailBlock:(AGLocationManagerDidFailWithErrorBlock)block
+{
+    [[LocationManager sharedManager] setDidFailWithErrorBlock:block];
 }
 
 #pragma mark - CLLocationManagerDelegate (Location Events)
@@ -100,11 +119,17 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     _latestLocation = newLocation;
+    
+    if (_didUpdateToLocationBlock != nil)
+        _didUpdateToLocationBlock(manager, newLocation, oldLocation);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     _latestLocation = nil;
+    
+    if (_didFailWithErrorBlock)
+        _didFailWithErrorBlock(manager, error);
 }
 
 #pragma mark - CLLocationManagerDelegate (Heading Events)
@@ -117,28 +142,6 @@
 - (BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager
 {
     return NO;
-}
-
-#pragma mark - CLLocationManagerDelegate (Region Events)
-
-- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
-{
-    
-}
-
-- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region
-{
-    
-}
-
-- (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error
-{
-    
-}
-
-- (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region
-{
-    
 }
 
 #pragma mark - CLLocationManagerDelegate (Authorization Changes)

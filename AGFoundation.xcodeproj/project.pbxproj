@@ -76,8 +76,8 @@
 		784856FC1589DAB200013DD9 /* NSUserDefaults+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856851589DAB200013DD9 /* NSUserDefaults+AGCategory.m */; };
 		784856FD1589DAB200013DD9 /* AGBlockOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 784856871589DAB200013DD9 /* AGBlockOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		784856FE1589DAB200013DD9 /* AGBlockOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856881589DAB200013DD9 /* AGBlockOperation.m */; };
-		784856FF1589DAB200013DD9 /* UserDefaultsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848568A1589DAB200013DD9 /* UserDefaultsManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		784857001589DAB200013DD9 /* UserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7848568B1589DAB200013DD9 /* UserDefaultsManager.m */; };
+		784856FF1589DAB200013DD9 /* UbiquitousUserDefaultsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848568A1589DAB200013DD9 /* UbiquitousUserDefaultsManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		784857001589DAB200013DD9 /* UbiquitousUserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7848568B1589DAB200013DD9 /* UbiquitousUserDefaultsManager.m */; };
 		784857011589DAB200013DD9 /* AGCommonMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848568D1589DAB200013DD9 /* AGCommonMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		784857021589DAB200013DD9 /* AGExceptionHandling.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848568E1589DAB200013DD9 /* AGExceptionHandling.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		784857031589DAB200013DD9 /* AGDebuggingMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 7848568F1589DAB200013DD9 /* AGDebuggingMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -216,8 +216,8 @@
 		784856851589DAB200013DD9 /* NSUserDefaults+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+AGCategory.m"; sourceTree = "<group>"; };
 		784856871589DAB200013DD9 /* AGBlockOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGBlockOperation.h; sourceTree = "<group>"; };
 		784856881589DAB200013DD9 /* AGBlockOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGBlockOperation.m; sourceTree = "<group>"; };
-		7848568A1589DAB200013DD9 /* UserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsManager.h; sourceTree = "<group>"; };
-		7848568B1589DAB200013DD9 /* UserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsManager.m; sourceTree = "<group>"; };
+		7848568A1589DAB200013DD9 /* UbiquitousUserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UbiquitousUserDefaultsManager.h; sourceTree = "<group>"; };
+		7848568B1589DAB200013DD9 /* UbiquitousUserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UbiquitousUserDefaultsManager.m; sourceTree = "<group>"; };
 		7848568D1589DAB200013DD9 /* AGCommonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGCommonMacros.h; sourceTree = "<group>"; };
 		7848568E1589DAB200013DD9 /* AGExceptionHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGExceptionHandling.h; sourceTree = "<group>"; };
 		7848568F1589DAB200013DD9 /* AGDebuggingMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGDebuggingMacros.h; sourceTree = "<group>"; };
@@ -505,8 +505,8 @@
 		784856891589DAB200013DD9 /* Singletons */ = {
 			isa = PBXGroup;
 			children = (
-				7848568A1589DAB200013DD9 /* UserDefaultsManager.h */,
-				7848568B1589DAB200013DD9 /* UserDefaultsManager.m */,
+				7848568A1589DAB200013DD9 /* UbiquitousUserDefaultsManager.h */,
+				7848568B1589DAB200013DD9 /* UbiquitousUserDefaultsManager.m */,
 			);
 			path = Singletons;
 			sourceTree = "<group>";
@@ -803,7 +803,7 @@
 				784856F91589DAB200013DD9 /* NSURL+AGCategory.h in Headers */,
 				784856FB1589DAB200013DD9 /* NSUserDefaults+AGCategory.h in Headers */,
 				784856FD1589DAB200013DD9 /* AGBlockOperation.h in Headers */,
-				784856FF1589DAB200013DD9 /* UserDefaultsManager.h in Headers */,
+				784856FF1589DAB200013DD9 /* UbiquitousUserDefaultsManager.h in Headers */,
 				784857011589DAB200013DD9 /* AGCommonMacros.h in Headers */,
 				784857021589DAB200013DD9 /* AGExceptionHandling.h in Headers */,
 				784857031589DAB200013DD9 /* AGDebuggingMacros.h in Headers */,
@@ -958,7 +958,7 @@
 				784856FA1589DAB200013DD9 /* NSURL+AGCategory.m in Sources */,
 				784856FC1589DAB200013DD9 /* NSUserDefaults+AGCategory.m in Sources */,
 				784856FE1589DAB200013DD9 /* AGBlockOperation.m in Sources */,
-				784857001589DAB200013DD9 /* UserDefaultsManager.m in Sources */,
+				784857001589DAB200013DD9 /* UbiquitousUserDefaultsManager.m in Sources */,
 				784857091589DAB200013DD9 /* MKMapView+AGCategory.m in Sources */,
 				7848570B1589DAB200013DD9 /* AGMailComposeViewController.m in Sources */,
 				7848570D1589DAB200013DD9 /* AGMessageComposeViewController.m in Sources */,
