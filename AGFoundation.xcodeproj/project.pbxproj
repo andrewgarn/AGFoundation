@@ -337,18 +337,18 @@
 		784856451589D50A00013DD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				49F0EE9215F7458900E11468 /* CoreFoundation.framework */,
 				7848574E1589DBEE00013DD9 /* AudioToolbox.framework */,
 				7848579C158B333400013DD9 /* AVFoundation.framework */,
+				49F0EE9215F7458900E11468 /* CoreFoundation.framework */,
 				7848573F1589DB0600013DD9 /* CoreLocation.framework */,
 				784856461589D50A00013DD9 /* Foundation.framework */,
 				784857411589DB0C00013DD9 /* MapKit.framework */,
 				784857431589DB1100013DD9 /* MessageUI.framework */,
 				78CE47E115A4714000C647D9 /* MobileCoreServices.framework */,
+				496C19A215C2F4D400A0ADF8 /* SenTestingKit.framework */,
 				784857451589DB1700013DD9 /* StoreKit.framework */,
 				784857471589DB1D00013DD9 /* SystemConfiguration.framework */,
 				784857491589DB2200013DD9 /* UIKit.framework */,
-				496C19A215C2F4D400A0ADF8 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1068,7 +1068,7 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv7, armv7s";
 			};
 			name = Debug;
 		};
@@ -1087,7 +1087,7 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv7, armv7s";
 			};
 			name = Release;
 		};
@@ -1096,7 +1096,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv7, armv7s";
 			};
 			name = Debug;
 		};
@@ -1105,7 +1105,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv7, armv7s";
 			};
 			name = Release;
 		};
@@ -1113,7 +1113,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7, armv7s";
 			};
 			name = Debug;
 		};
@@ -1121,7 +1121,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7, armv7s";
 			};
 			name = Release;
 		};
