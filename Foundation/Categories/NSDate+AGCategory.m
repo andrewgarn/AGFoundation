@@ -128,11 +128,19 @@
 	return dateAtMidnight;
 }
 
+- (NSDate *)dateByAddingDays:(int)days
+{
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setDay:days];
+    
+    return [[NSDate gregorianCalendar] dateByAddingComponents:components toDate:self options:0];
+}
+
 #pragma mark -
 
 - (NSString *)timeDifferenceSinceNowString
 {
-    NSCalendar *currentCalendar = [NSDate currentCalendar];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
     NSTimeInterval timeInterval = [self timeIntervalSinceNow];
     NSString *tense = timeInterval < 0 ? @"ago" : @"later";
     NSDate *nowDate = [NSDate date];
@@ -244,7 +252,7 @@
     return @"";
 }
 
-#pragma mark -
+#pragma mark - NSCalendar
 
 + (NSCalendar *)gregorianCalendar
 {
@@ -260,29 +268,6 @@
     return gregorianCalendar;
 }
 
-+ (NSCalendar *)currentCalendar
-{
-	NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
-    NSString *threadDictionaryKey = @"NSDateAGCategoryCurrentCalendar";
-
-	NSCalendar *currentCalendar = [threadDictionary objectForKey:threadDictionaryKey];
-	if (currentCalendar == nil)
-	{
-		currentCalendar = [NSCalendar currentCalendar];
-		[threadDictionary setObject:currentCalendar forKey:threadDictionaryKey];
-	}
-    
-    // Reset the timeZone that the calendar uses.
-    if (![[currentCalendar timeZone] isEqual:[NSTimeZone localTimeZone]])
-        [currentCalendar setTimeZone:[NSTimeZone localTimeZone]];
-    
-    // Reset the locale that the calendar uses.
-    if (![[currentCalendar locale] isEqual:[NSLocale currentLocale]])
-        [currentCalendar setLocale:[NSLocale currentLocale]];
-    
-	return currentCalendar;
-}
-
 + (NSCalendar *)autoupdatingCurrentCalendar
 {
 	NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
@@ -293,23 +278,58 @@
 	{
 		currentCalendar = [NSCalendar autoupdatingCurrentCalendar];
 		[threadDictionary setObject:currentCalendar forKey:threadDictionaryKey];
-	}
-    
-    // Reset the timeZone that the calendar uses.
-    if (![[currentCalendar timeZone] isEqual:[NSTimeZone localTimeZone]])
-        [currentCalendar setTimeZone:[NSTimeZone localTimeZone]];
-    
-    // Reset the locale that the calendar uses.
-    if (![[currentCalendar locale] isEqual:[NSLocale autoupdatingCurrentLocale]])
-        [currentCalendar setLocale:[NSLocale autoupdatingCurrentLocale]];
-    
+	} 
 	return currentCalendar;
 }
 
-+ (NSDateFormatter *)dateFormatterWithDateFormat:(NSString *)dateFormat
+#pragma mark - NSLocale
+
++ (NSLocale *)localeWithLocaleIdentifier:(NSString *)string
 {
     NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
-    NSString *threadDictionaryKey = [NSString stringWithFormat:@"NSDateAGCategoryDateFormatter-%@", dateFormat];
+    NSString *threadDictionaryKey = [NSString stringWithFormat:@"NSDateAGCategoryLocale-%@", string];
+    
+    NSLocale *locale = [threadDictionary objectForKey:threadDictionaryKey];
+    if (locale == nil)
+    {
+        locale = [[NSLocale alloc] initWithLocaleIdentifier:string];
+		[threadDictionary setObject:locale forKey:threadDictionaryKey];
+    }
+    
+    return locale;
+}
+
++ (NSLocale *)autoupdatingCurrentLocale
+{
+    NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
+    NSString *threadDictionaryKey = @"NSDateAGCategoryAutoUpdatingCurrentLocale";
+    
+	NSLocale *currentLocale = [threadDictionary objectForKey:threadDictionaryKey];
+	if (currentLocale == nil)
+	{
+		currentLocale = [NSLocale autoupdatingCurrentLocale];
+		[threadDictionary setObject:currentLocale forKey:threadDictionaryKey];
+	}
+    
+    return currentLocale;
+}
+
+#pragma mark - NSDateFormatter
+
++ (NSDateFormatter *)dateFormatterWithDateFormat:(NSString *)dateFormat
+{
+    return [NSDate dateFormatterWithDateFormat:dateFormat locale:[NSDate autoupdatingCurrentLocale]];
+}
+
++ (NSDateFormatter *)dateFormatterWithDateFormat:(NSString *)dateFormat withLocaleIdentifier:(NSString *)localeIdentifier
+{
+    return [NSDate dateFormatterWithDateFormat:dateFormat locale:[NSDate localeWithLocaleIdentifier:localeIdentifier]];
+}
+
++ (NSDateFormatter *)dateFormatterWithDateFormat:(NSString *)dateFormat locale:(NSLocale *)locale
+{
+    NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
+    NSMutableString *threadDictionaryKey = [NSString stringWithFormat:@"NSDateAGCategoryDateFormatter_%@_%@", dateFormat, locale.localeIdentifier];
     
 	NSDateFormatter *dateFormatter = [threadDictionary objectForKey:threadDictionaryKey];
 	if (dateFormatter == nil)
@@ -320,17 +340,11 @@
 		[threadDictionary setObject:dateFormatter forKey:threadDictionaryKey];
 	}
     
-    // Ensure the dateformatter is using the correct format.
-    if (![[dateFormatter dateFormat] isEqualToString:dateFormat])
+    if (![[dateFormatter dateFormat] isEqualToString:dateFormat] && dateFormat)
         [dateFormatter setDateFormat:dateFormat];
-	
-	// Reset the timeZone that the dateFormatter uses.
-    if (![[dateFormatter timeZone] isEqual:[NSTimeZone localTimeZone]])
-        [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
     
-    // Reset the locale that the dateFormatter uses.
-    if (![[dateFormatter locale] isEqual:[NSLocale autoupdatingCurrentLocale]])
-        [dateFormatter setLocale:[NSLocale autoupdatingCurrentLocale]];
+    if (![[dateFormatter locale] isEqual:locale] && locale)
+        [dateFormatter setLocale:locale];
     
 	return dateFormatter;
 }

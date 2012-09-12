@@ -182,15 +182,8 @@
  
  The method returns a thread safe gregorian `NSCalendar` by making use of thread dictionary storage to return a seperate cached instance for each thread.  
  @return A thread safe gregorian calendar for the current user.
- */ 
-+ (NSCalendar *)gregorianCalendar;
-
-/** Returns a thread safe logical calendar for the current user.
- 
- The method returns a thread safe logical `NSCalendar` by making use of thread dictionary storage to return a seperate cached instance for each thread.  
- @return A thread safe logical calendar for the current user.
 */ 
-+ (NSCalendar *)currentCalendar;
++ (NSCalendar *)gregorianCalendar;
 
 /** Returns a thread safe autoupdating logical calendar for the current user.
  
@@ -198,6 +191,26 @@
  @return A thread safe autoupdating logical calendar for the current user.
 */ 
 + (NSCalendar *)autoupdatingCurrentCalendar;
+
+/**-------------------------------------------------------------------------------------
+ @name Thread Safe NSLocale
+ ---------------------------------------------------------------------------------------
+ */
+
+/** Returns a thread safe locale with the given locale identifier.
+ 
+ The method returns a thread safe `NSLocale` by making use of thread dictionary storage to return a seperate cached instance for each thread.
+ @param string The identifier for the new locale.
+ @return A thread safe locale with the given locale identifier.
+*/
++ (NSLocale *)localeWithLocaleIdentifier:(NSString *)string;
+
+/** Returns a thread safe autoupdating logical locale for the current user.
+ 
+ The method returns a thread safe `NSLocale` by making use of thread dictionary storage to return a seperate cached instance for each thread.
+ @return A thread safe autoupdating logical locale for the current user.
+*/
++ (NSLocale *)autoupdatingCurrentLocale;
 
 /**-------------------------------------------------------------------------------------
  @name Thread Safe NSDateFormatter
@@ -211,5 +224,14 @@
  @return A thread safe date formatter with the specified date format set.
 */ 
 + (NSDateFormatter *)dateFormatterWithDateFormat:(NSString *)dateFormat;
+
+/** Returns a thread safe date formatter with the specified date format set.
+ 
+ The method returns a thread safe `NSDateFormatter` by making use of thread dictionary storage to return a seperate cached instance for each thread.
+ @param dateFormat The date format for the receiver.
+ @param localeIdentifier The identifier for the new locale.
+ @return A thread safe date formatter with the specified date format and locale set.
+*/
++ (NSDateFormatter *)dateFormatterWithDateFormat:(NSString *)dateFormat withLocaleIdentifier:(NSString *)localeIdentifier;
 
 @end
