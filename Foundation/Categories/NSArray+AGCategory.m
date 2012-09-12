@@ -54,11 +54,77 @@
     return nil;
 }
 
+#pragma mark -
+
+- (BOOL)boolAtIndex:(NSUInteger)index
+{
+    if (index < [self count])
+    {
+        id object = [self objectAtIndex:index];
+        
+        if ([object respondsToSelector:@selector(boolValue)])
+            return [object boolValue];        
+    }
+    return NO;
+}
+
+- (int)intAtIndex:(NSUInteger)index
+{
+    if (index < [self count])
+    {
+        id object = [self objectAtIndex:index];
+        
+        if ([object respondsToSelector:@selector(intValue)])
+            return [object intValue];
+    }
+    return 0;
+}
+
+- (NSInteger)integerAtIndex:(NSUInteger)index
+{
+    if (index < [self count])
+    {
+        id object = [self objectAtIndex:index];
+        
+        if ([object respondsToSelector:@selector(integerValue)])
+            return [object integerValue];
+    }
+    return 0;
+}
+
+- (float)floatAtIndex:(NSUInteger)index
+{
+    if (index < [self count])
+    {
+        id object = [self objectAtIndex:index];
+        
+        if ([object respondsToSelector:@selector(floatValue)])
+            return [object floatValue];
+    }
+    return 0.0f;
+}
+
+- (double)doubleAtIndex:(NSUInteger)index
+{
+    if (index < [self count])
+    {
+        id object = [self objectAtIndex:index];
+        
+        if ([object respondsToSelector:@selector(doubleValue)])
+            return [object doubleValue];
+    }
+    return 0.0f;
+}
+
+#pragma mark -
+
 - (NSArray *)sortedArrayUsingSortDescriptorKey:(NSString *)key ascending:(BOOL)ascending
 {
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:key ascending:ascending];
     return [self sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
 }
+
+#pragma mark -
 
 - (NSArray *)reversedArray 
 {

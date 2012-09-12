@@ -51,6 +51,36 @@
 */
 - (id)safeObjectAtIndex:(NSUInteger)index;
 
+/** Returns the bool value of the object located at the given index.
+ @param index An index within the bounds of the array.
+ @return The bool value of the object at the given index, or NO if the object cannot be converted into a bool. 
+*/
+- (BOOL)boolAtIndex:(NSUInteger)index;
+
+/** Returns the int value of the object located at the given index
+ @param index An index within the bounds of the array.
+ @return The int value of the object at the given index, or zero if the object cannot be converted into an int.
+*/
+- (int)intAtIndex:(NSUInteger)index;
+
+/** Returns the integer value of the object located at the given index
+ @param index An index within the bounds of the array.
+ @return The integer value of the object at the given index, or zero if the object cannot be converted into an integer.
+*/
+- (NSInteger)integerAtIndex:(NSUInteger)index;
+
+/** Returns the float value of the object located at the given index
+ @param index An index within the bounds of the array.
+ @return The float value of the object at the given index, or zero if the object cannot be converted into an float.
+*/
+- (float)floatAtIndex:(NSUInteger)index;
+
+/** Returns the double value of the object located at the given index
+ @param index An index within the bounds of the array.
+ @return The double value of the object at the given index, or zero if the object cannot be converted into an double.
+*/
+- (double)doubleAtIndex:(NSUInteger)index;
+
 /**-------------------------------------------------------------------------------------
  @name Sorting Content
  ---------------------------------------------------------------------------------------
