@@ -63,6 +63,8 @@
         else if ([platform isEqualToString:@"iPhone3,1"])    deviceModel = @"iPhone 4 (GSM)";
         else if ([platform isEqualToString:@"iPhone3,3"])    deviceModel = @"iPhone 4 (CDMA)";
         else if ([platform hasPrefix:@"iPhone4"])            deviceModel = @"iPhone 4S";
+        else if ([platform isEqualToString:@"iPhone5,1"])    deviceModel = @"iPhone 5 (GSM)";
+        else if ([platform isEqualToString:@"iPhone5,2"])    deviceModel = @"iPhone 5 (GSM+CDMA)";
         
         /* iPod Touch */
         else if ([platform hasPrefix:@"iPod1"])              deviceModel = @"iPod touch 1G";
