@@ -28,29 +28,29 @@
 #import "UIBarButtonItem+AGCategory.h"
 #import "NSObject+AGCategory.h"
 
-static char kUIBarButtonItemBlockKey;
+static char UIBarButtonItemAGCategoryBlockKey;
 
 @implementation UIBarButtonItem (AGCategory)
 
-+ (UIBarButtonItem *)barButtonWithSystemItem:(UIBarButtonSystemItem)systemItem block:(UIBarButtonItemSenderBlock)block
+- (id)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem block:(UIBarButtonItemSenderBlock)block
 {
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem target:self action:@selector(_barButtonPressed:)];
-    [item associateCopyOfValue:block withKey:&kUIBarButtonItemBlockKey];
-    return item;
+    self = [self initWithBarButtonSystemItem:systemItem target:self action:@selector(AGCategoryBarButtonItemPressed:)];
+    [self associateCopyOfValue:block withKey:&UIBarButtonItemAGCategoryBlockKey];
+    return self;
 }
 
-+ (UIBarButtonItem *)barButtonWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style block:(UIBarButtonItemSenderBlock)block
+- (id)initWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style block:(UIBarButtonItemSenderBlock)block
 {
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:image style:style target:self action:@selector(_barButtonPressed:)];
-    [item associateCopyOfValue:block withKey:&kUIBarButtonItemBlockKey];
-    return item;
+    self = [self initWithImage:image style:style target:self action:@selector(AGCategoryBarButtonItemPressed:)];
+	[self associateCopyOfValue:block withKey:&UIBarButtonItemAGCategoryBlockKey];
+	return self;
 }
 
-+ (UIBarButtonItem *)barButtonWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style block:(UIBarButtonItemSenderBlock)block
+- (id)initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style block:(UIBarButtonItemSenderBlock)block;
 {
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:title style:style target:self action:@selector(_barButtonPressed:)];
-    [item associateCopyOfValue:block withKey:&kUIBarButtonItemBlockKey];
-    return item;
+    self = [self initWithTitle:title style:style target:self action:@selector(AGCategoryBarButtonItemPressed:)];
+	[self associateCopyOfValue:block withKey:&UIBarButtonItemAGCategoryBlockKey];
+	return self;
 }
 
 + (UIBarButtonItem *)customButtonWithImage:(UIImage *)image highlightedImage:(UIImage *)highlightedImage block:(UIBarButtonItemSenderBlock)block
@@ -58,19 +58,18 @@ static char kUIBarButtonItemBlockKey;
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:image forState:UIControlStateNormal];
     [button setImage:highlightedImage forState:UIControlStateHighlighted];
-    [button addTarget:self action:@selector(_barButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(AGCategoryBarButtonItemPressed:) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
-    [self associateCopyOfValue:block withKey:&kUIBarButtonItemBlockKey];
-    
+    [self associateCopyOfValue:block withKey:&UIBarButtonItemAGCategoryBlockKey];
     return item;
 }
 
 #pragma mark -
 
-- (void)_barButtonPressed:(UIBarButtonItem *)sender
+- (void)AGCategoryBarButtonItemPressed:(UIBarButtonItem *)sender
 {
-    UIBarButtonItemSenderBlock block = [self associatedValueForKey:&kUIBarButtonItemBlockKey];
+    UIBarButtonItemSenderBlock block = [self associatedValueForKey:&UIBarButtonItemAGCategoryBlockKey];
     if (block) block (self);
 }
 
