@@ -53,11 +53,4 @@
 */ 
 + (void)postNotificationOnMainThread:(NSNotification *)notification;
 
-/** Posts a given notification on the main thread to the receiver and can optionally wait until done.
- @param notification The notification to post. This value must not be nil.
- @param wait A Boolean that specifies whether the current thread blocks until after the specified selector is performed on the receiver on the specified thread. Specify `YES` to block this thread; otherwise, specify `NO` to have this method return immediately.
- @exception NSException An exception is raised if notification is nil.
- */ 
-+ (void)postNotificationOnMainThread:(NSNotification *)notification waitUntilDone:(BOOL)wait;
-
 @end

@@ -1,6 +1,9 @@
 //
-//  Prefix header for all source files of the 'AGFoundation' target in the 'AGFoundation' project
+//  UIStoryboard+AGCategory.m
 //  AGFoundation
+//
+//  Created by Andrew Garn on 13/09/2012.
+//  Copyright (c) 2012 Andrew Garn. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -22,7 +25,20 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#ifdef __OBJC__
-    #import "AGCommonMacros.h"
-    #import "AGPreprocessorMacros.h"
-#endif
+#import "UIStoryboard+AGCategory.h"
+
+@implementation UIStoryboard (AGCategory)
+
++ (UIStoryboard *)mainStoryboard
+{
+    static dispatch_once_t onceToken;
+	static UIStoryboard *mainStoryboard = nil;
+    
+	dispatch_once(&onceToken, ^{
+        NSString *storyboardName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"UIMainStoryboardFile"];
+        mainStoryboard = [UIStoryboard storyboardWithName:storyboardName bundle:[NSBundle mainBundle]];
+	});
+    return mainStoryboard;
+}
+
+@end

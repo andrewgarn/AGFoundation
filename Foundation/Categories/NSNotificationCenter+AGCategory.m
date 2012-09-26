@@ -42,12 +42,9 @@
 
 + (void)postNotificationOnMainThread:(NSNotification *)notification
 {
-    [NSNotificationCenter postNotificationOnMainThread:notification waitUntilDone:NO];
-}
-
-+ (void)postNotificationOnMainThread:(NSNotification *)notification waitUntilDone:(BOOL)wait
-{
-    [[NSNotificationCenter defaultCenter] performSelectorOnMainThread:@selector(postNotification:) withObject:notification waitUntilDone:wait];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotification:notification];
+    });
 }
 
 @end

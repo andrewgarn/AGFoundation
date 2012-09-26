@@ -68,22 +68,6 @@ typedef void (^AGVoidBlock)(void);
 - (BOOL)isNotEmpty;
 
 /**-------------------------------------------------------------------------------------
- @name Perform Block
- ---------------------------------------------------------------------------------------
-*/ 
-
-/** 
- @param aBlock The block to perform.
-*/
-- (void)performBlock:(AGVoidBlock)aBlock;
-
-/**
- @param aBlock The block to perform.
- @param delay The minimum time before which the message is sent. Specifying a delay of 0 does not necessarily cause the selector to be performed immediately. The selector is still queued on the thread’s run loop and performed as soon as possible.
-*/
-- (void)performBlock:(AGVoidBlock)aBlock afterDelay:(NSTimeInterval)delay;
-
-/**-------------------------------------------------------------------------------------
  @name Perform Selector
  ---------------------------------------------------------------------------------------
  */ 

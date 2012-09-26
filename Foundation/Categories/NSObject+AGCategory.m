@@ -28,8 +28,6 @@
 #import "NSObject+AGCategory.h"
 #import <objc/runtime.h>
 
-static char kNSObjectBlockKey;
-
 @implementation NSObject (AGCategory)
 
 #pragma mark -
@@ -81,24 +79,6 @@ static char kNSObjectBlockKey;
 }
 
 #pragma mark -
-
-- (void)performBlock:(AGVoidBlock)aBlock
-{
-    [self associateCopyOfValue:aBlock withKey:&kNSObjectBlockKey];
-    [self performSelector:@selector(_callBlock)];
-}
-
-- (void)performBlock:(AGVoidBlock)aBlock afterDelay:(NSTimeInterval)delay
-{
-    [self associateCopyOfValue:aBlock withKey:&kNSObjectBlockKey];
-    [self performSelector:@selector(_callBlock) withObject:nil afterDelay:delay];
-}
-
-- (void)_callBlock
-{
-    AGVoidBlock block = [self associatedValueForKey:&kNSObjectBlockKey];
-    if (block) block ();
-}
 
 - (void)performSelector:(SEL)aSelector afterDelay:(NSTimeInterval)delay
 {

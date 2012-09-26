@@ -27,7 +27,7 @@
 
 /**
 	TestFlight is a service that facilitates adhoc distribution to clients and collection of usage and crash data.
-	This macro enables the TestFlightSDK to receive NSLog, DLog and ALog's from your application when TESTFLIGHT is set.
+	This macro enables the TestFlightSDK to receive NSLog, DLog and ALog from your application when TESTFLIGHT is defined.
 	Reference: https://testflightapp.com/sdk/doc
 */
 #ifdef TESTFLIGHT

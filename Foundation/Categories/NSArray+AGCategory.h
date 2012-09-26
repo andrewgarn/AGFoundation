@@ -49,7 +49,7 @@
  @param index An index within the bounds of the array.
  @return The object located at index, or nil.
 */
-- (id)safeObjectAtIndex:(NSUInteger)index;
+- (id)objectOrNilAtIndex:(NSUInteger)index;
 
 /** Returns the bool value of the object located at the given index.
  @param index An index within the bounds of the array.

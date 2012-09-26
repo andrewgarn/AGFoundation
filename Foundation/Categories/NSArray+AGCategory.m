@@ -45,7 +45,7 @@
 	return nil;
 }
 
-- (id)safeObjectAtIndex:(NSUInteger)index
+- (id)objectOrNilAtIndex:(NSUInteger)index
 {
     if (index < [self count])
     {
