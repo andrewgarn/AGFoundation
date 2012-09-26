@@ -39,6 +39,8 @@
 		49BE15FE15C7C70500882C57 /* URLSchemeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 49BE15FC15C7C70500882C57 /* URLSchemeManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49BE15FF15C7C70500882C57 /* URLSchemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BE15FD15C7C70500882C57 /* URLSchemeManager.m */; };
 		49F0EE9315F7458900E11468 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F0EE9215F7458900E11468 /* CoreFoundation.framework */; };
+		49FF6BB816020F6A0052D7AD /* UIStoryboard+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 49FF6BB616020F690052D7AD /* UIStoryboard+AGCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49FF6BB916020F6A0052D7AD /* UIStoryboard+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FF6BB716020F690052D7AD /* UIStoryboard+AGCategory.m */; };
 		783B172C15A594EB00160C03 /* AGTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 783B172A15A594EB00160C03 /* AGTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		783B172D15A594EB00160C03 /* AGTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 783B172B15A594EB00160C03 /* AGTimer.m */; };
 		784856471589D50A00013DD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784856461589D50A00013DD9 /* Foundation.framework */; };
@@ -178,6 +180,8 @@
 		49BE15FC15C7C70500882C57 /* URLSchemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLSchemeManager.h; sourceTree = "<group>"; };
 		49BE15FD15C7C70500882C57 /* URLSchemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLSchemeManager.m; sourceTree = "<group>"; };
 		49F0EE9215F7458900E11468 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		49FF6BB616020F690052D7AD /* UIStoryboard+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+AGCategory.h"; sourceTree = "<group>"; };
+		49FF6BB716020F690052D7AD /* UIStoryboard+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+AGCategory.m"; sourceTree = "<group>"; };
 		783B172A15A594EB00160C03 /* AGTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTimer.h; sourceTree = "<group>"; };
 		783B172B15A594EB00160C03 /* AGTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTimer.m; sourceTree = "<group>"; };
 		784856431589D50A00013DD9 /* libAGFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAGFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -702,6 +706,8 @@
 				78B28E8515973C2E0025213A /* UITableView+AGCategory.m */,
 				78B28E8915976CDE0025213A /* UIScrollView+AGCategory.h */,
 				78B28E8A15976CDE0025213A /* UIScrollView+AGCategory.m */,
+				49FF6BB616020F690052D7AD /* UIStoryboard+AGCategory.h */,
+				49FF6BB716020F690052D7AD /* UIStoryboard+AGCategory.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -842,6 +848,7 @@
 				78673EAF15BD4A5900583298 /* NSData+AGCategory.h in Headers */,
 				49BE15FE15C7C70500882C57 /* URLSchemeManager.h in Headers */,
 				49A996DD15F6CD4000DBD6E4 /* AGTableViewController.h in Headers */,
+				49FF6BB816020F6A0052D7AD /* UIStoryboard+AGCategory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -992,6 +999,7 @@
 				78673EB015BD4A5900583298 /* NSData+AGCategory.m in Sources */,
 				49BE15FF15C7C70500882C57 /* URLSchemeManager.m in Sources */,
 				49A996DE15F6CD4000DBD6E4 /* AGTableViewController.m in Sources */,
+				49FF6BB916020F6A0052D7AD /* UIStoryboard+AGCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1068,7 +1076,6 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
-				VALID_ARCHS = "armv7, armv7s";
 			};
 			name = Debug;
 		};
@@ -1087,25 +1094,30 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
-				VALID_ARCHS = "armv7, armv7s";
 			};
 			name = Release;
 		};
 		784857591589E31E00013DD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					i386,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "armv7, armv7s";
+				VALID_ARCHS = "armv7, armv7s, i386";
 			};
 			name = Debug;
 		};
 		7848575A1589E31E00013DD9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					i386,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "armv7, armv7s";
+				VALID_ARCHS = "armv7, armv7s, i386";
 			};
 			name = Release;
 		};

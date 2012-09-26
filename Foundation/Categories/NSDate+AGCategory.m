@@ -138,14 +138,39 @@
 
 #pragma mark -
 
+- (BOOL)isToday
+{
+    NSCalendar *gregorianCalendar = [NSDate gregorianCalendar];
+    NSUInteger unitFlags = NSYearCalendarUnit| NSMonthCalendarUnit | NSDayCalendarUnit;
+    
+    NSDateComponents *components1 = [gregorianCalendar components:unitFlags fromDate:self];
+	NSDateComponents *components2 = [gregorianCalendar components:unitFlags fromDate:[NSDate date]];
+    
+	return ((components1.year == components2.year)
+            && (components1.month == components2.month)
+            && (components1.day == components2.day));
+}
+
+- (BOOL)isBefore:(NSDate *)anotherDate
+{
+    return [self timeIntervalSinceDate:anotherDate] < 0;
+}
+
+- (BOOL)isAfter:(NSDate *)anotherDate
+{
+    return [self timeIntervalSinceDate:anotherDate] > 0;
+}
+
+#pragma mark -
+
 - (NSString *)timeDifferenceSinceNowString
 {
-    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSCalendar *gregorianCalendar = [NSDate gregorianCalendar];
     NSTimeInterval timeInterval = [self timeIntervalSinceNow];
     NSString *tense = timeInterval < 0 ? @"ago" : @"later";
     NSDate *nowDate = [NSDate date];
     
-    NSInteger seconds = [[currentCalendar components:NSSecondCalendarUnit fromDate:self toDate:nowDate options:0] second];
+    NSInteger seconds = [[gregorianCalendar components:NSSecondCalendarUnit fromDate:self toDate:nowDate options:0] second];
     if (seconds < 60)
     {
         if (seconds == 1)
@@ -154,7 +179,7 @@
             return [NSString stringWithFormat:@"%d seconds %@", seconds, tense];
     }
     
-    NSInteger minutes = [[currentCalendar components:NSMinuteCalendarUnit fromDate:self toDate:nowDate options:0] minute];
+    NSInteger minutes = [[gregorianCalendar components:NSMinuteCalendarUnit fromDate:self toDate:nowDate options:0] minute];
     if (minutes < 120)
     {
         if (minutes == 1)
@@ -163,7 +188,7 @@
             return [NSString stringWithFormat:@"%d minutes %@", minutes, tense];
     }
     
-    NSInteger hours = [[currentCalendar components:NSHourCalendarUnit fromDate:self toDate:nowDate options:0] hour];
+    NSInteger hours = [[gregorianCalendar components:NSHourCalendarUnit fromDate:self toDate:nowDate options:0] hour];
     if (hours < 24)
     {
         if (hours == 1)
@@ -172,7 +197,7 @@
             return [NSString stringWithFormat:@"%d hours %@", hours, tense];
     }
     
-    NSInteger days = [[currentCalendar components:NSDayCalendarUnit fromDate:self toDate:nowDate options:0] day];
+    NSInteger days = [[gregorianCalendar components:NSDayCalendarUnit fromDate:self toDate:nowDate options:0] day];
     if (days < 30)
     {
         if (days == 1)
@@ -181,7 +206,7 @@
             return [NSString stringWithFormat:@"%d days %@", days, tense];
     }
     
-    NSInteger months = [[currentCalendar components:NSMonthCalendarUnit fromDate:self toDate:nowDate options:0] month];
+    NSInteger months = [[gregorianCalendar components:NSMonthCalendarUnit fromDate:self toDate:nowDate options:0] month];
     if (months < 120)
     {
         if (months == 1)
@@ -190,7 +215,7 @@
             return [NSString stringWithFormat:@"%d months %@", months, tense];
     }
     
-    NSInteger years = [[currentCalendar components:NSYearCalendarUnit fromDate:self toDate:nowDate options:0] year];
+    NSInteger years = [[gregorianCalendar components:NSYearCalendarUnit fromDate:self toDate:nowDate options:0] year];
     if (years == 1)
         return [NSString stringWithFormat:@"%d year %@", years, tense];
     else
@@ -205,16 +230,6 @@
     NSDateComponents *components = [gregorianCalendar components:unitFlags fromDate:anotherDate toDate:[NSDate date] options:0];
     NSInteger days = [components day];
     return days;
-}
-
-- (BOOL)isBefore:(NSDate *)anotherDate
-{
-    return [self timeIntervalSinceDate:anotherDate] < 0;
-}
-
-- (BOOL)isAfter:(NSDate *)anotherDate
-{
-    return [self timeIntervalSinceDate:anotherDate] > 0;
 }
 
 #pragma mark -

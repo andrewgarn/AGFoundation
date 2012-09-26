@@ -131,6 +131,28 @@
 - (NSDate *)dateAtMidnight;
 
 /**-------------------------------------------------------------------------------------
+ @name Comparing Dates
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Returns a bool indicating if the receiver is today's date.
+ @return `YES` if the receiver is today's date, otherwise `NO`.
+*/
+- (BOOL)isToday;
+
+/** Returns a bool indicating if the receiver is before the given date.
+ @param anotherDate The date with which to compare the receiver.
+ @return `YES` if the receiver is before the given date, otherwise `NO`.
+ */
+- (BOOL)isBefore:(NSDate *)anotherDate;
+
+/** Returns a bool indicating if the receiver is after the given date.
+ @param anotherDate The date with which to compare the receiver.
+ @return `YES` if the receiver is after the given date, otherwise `NO`.
+ */
+- (BOOL)isAfter:(NSDate *)anotherDate;
+
+/**-------------------------------------------------------------------------------------
  @name Getting Time Intervals
  ---------------------------------------------------------------------------------------
 */ 
@@ -145,18 +167,6 @@
  @return A string with the relative time difference between the receiver and the current date.
 */
 - (NSString *)timeDifferenceSinceNowString;
-
-/** Returns a bool indicating if the receiver is before the given date.
- @param anotherDate The date with which to compare the receiver.
- @return `YES` if the receiver is before the given date, otherwise `NO`.
-*/ 
-- (BOOL)isBefore:(NSDate *)anotherDate;
-
-/** Returns a bool indicating if the receiver is after the given date.
- @param anotherDate The date with which to compare the receiver.
- @return `YES` if the receiver is after the given date, otherwise `NO`.
-*/ 
-- (BOOL)isAfter:(NSDate *)anotherDate;
 
 /**-------------------------------------------------------------------------------------
  @name Suffix

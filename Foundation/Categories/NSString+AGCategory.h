@@ -54,6 +54,13 @@
 */ 
 - (BOOL)containsString:(NSString *)aString;
 
+/** Returns a string object containing the characters of the receiver that lie between the first occurrences of the supplied strings
+ @param firstString The first string to look for within the receiver.
+ @param secondString The second string to look for within the receiver.
+ @return A string object containing the characters of the receiver that lie between the first occurrences of the supplied strings, or nil if one or both are not found.
+*/
+- (NSString *)stringBetweenString:(NSString *)firstString andString:(NSString *)secondString;
+
 /** Returns an array of ranges where the supplied string were found within the receiver.
  @param aString The string to search for within the receiver.
  @return An array of `NSRange` structs, each of which identifies an instance of the string contained within the receiver. If the string is not found an empty array is returned.

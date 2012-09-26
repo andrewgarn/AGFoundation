@@ -59,6 +59,24 @@
     return NO;
 }
 
+- (NSString *)stringBetweenString:(NSString *)firstString andString:(NSString *)secondString
+{
+    NSRange startRange = [self rangeOfString:firstString];
+    if (startRange.location != NSNotFound)
+    {
+        NSRange targetRange;
+        targetRange.location = startRange.location + startRange.length;
+        targetRange.length = [self length] - targetRange.location;
+        NSRange endRange = [self rangeOfString:secondString options:0 range:targetRange];
+        if (endRange.location != NSNotFound)
+        {
+            targetRange.length = endRange.location - targetRange.location;
+            return [self substringWithRange:targetRange];
+        }
+    }
+    return nil;
+}
+
 - (NSArray *)rangesOfString:(NSString *)aString
 {
     NSMutableArray *rangeArray = [[NSMutableArray alloc] init];
