@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -44,6 +44,10 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
+	<option value="//api/name/deselectSelectedRow">&nbsp;&nbsp;&nbsp;&nbsp;- deselectSelectedRow</option>
+	
+	<option value="//api/name/deselectSelectedRowAnimated:">&nbsp;&nbsp;&nbsp;&nbsp;- deselectSelectedRowAnimated:</option>
+	
 	<option value="//api/name/scrollToFirstRow">&nbsp;&nbsp;&nbsp;&nbsp;- scrollToFirstRow</option>
 	
 	<option value="//api/name/scrollToFirstRowAnimated:">&nbsp;&nbsp;&nbsp;&nbsp;- scrollToFirstRowAnimated:</option>
@@ -76,6 +80,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Scrolling the Table View">Scrolling the Table View</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Managing Selections">Managing Selections</a></span></li>
+	
 </ul></li>
 
 
@@ -87,6 +93,10 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deselectSelectedRow">deselectSelectedRow</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deselectSelectedRowAnimated:">deselectSelectedRowAnimated:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/scrollToFirstRow">scrollToFirstRow</a></span></li>
 	
@@ -149,8 +159,8 @@
 						
 						
 						<a title="Scrolling the Table View" name="task_Scrolling the Table View"></a>
-						
-<h3 class="subsubtitle task-title">Scrolling the Table View</h3>
+						<h3 class="subsubtitle task-title">Scrolling the Table View</h3>
+
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
@@ -204,6 +214,28 @@
 </li>
 						</ul>
 						
+						
+						<a title="Managing Selections" name="task_Managing Selections"></a>
+						<h3 class="subsubtitle task-title">Managing Selections</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deselectSelectedRow">&ndash;&nbsp;deselectSelectedRow</a></code>
+		<span class="tooltip"><p>Deselects the currently selected row</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deselectSelectedRowAnimated:">&ndash;&nbsp;deselectSelectedRowAnimated:</a></code>
+		<span class="tooltip"><p>Deselects the currently selected row, with an option to animate the deselection.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
 					</div>
 					
 					
@@ -217,6 +249,88 @@
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/deselectSelectedRow" title="deselectSelectedRow"></a>
+	<h3 class="subsubtitle method-title">deselectSelectedRow</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Deselects the currently selected row</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)deselectSelectedRow</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UITableView+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deselectSelectedRowAnimated:" title="deselectSelectedRowAnimated:"></a>
+	<h3 class="subsubtitle method-title">deselectSelectedRowAnimated:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Deselects the currently selected row, with an option to animate the deselection.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)deselectSelectedRowAnimated:(BOOL)<em>animated</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>animated</em></dt>
+			<dd><p><code>YES</code> if you want to animate the deselection and <code>NO</code> if the change should be immediate.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UITableView+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/scrollToFirstRow" title="scrollToFirstRow"></a>
@@ -593,9 +707,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-09-04)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-09-26)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
 					</div>
 				</div>

@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -48,9 +48,13 @@
 	
 	<option value="//api/name/busFrequency">&nbsp;&nbsp;&nbsp;&nbsp;+ busFrequency</option>
 	
+	<option value="//api/name/canMakePayments">&nbsp;&nbsp;&nbsp;&nbsp;+ canMakePayments</option>
+	
 	<option value="//api/name/canSendMail">&nbsp;&nbsp;&nbsp;&nbsp;+ canSendMail</option>
 	
 	<option value="//api/name/canSendText">&nbsp;&nbsp;&nbsp;&nbsp;+ canSendText</option>
+	
+	<option value="//api/name/canSendTweet">&nbsp;&nbsp;&nbsp;&nbsp;+ canSendTweet</option>
 	
 	<option value="//api/name/cpuFrequency">&nbsp;&nbsp;&nbsp;&nbsp;+ cpuFrequency</option>
 	
@@ -166,9 +170,13 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/busFrequency">busFrequency</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canMakePayments">canMakePayments</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canSendMail">canSendMail</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canSendText">canSendText</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canSendTweet">canSendTweet</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cpuFrequency">cpuFrequency</a></span></li>
 	
@@ -442,6 +450,20 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/canSendText">+&nbsp;canSendText</a></code>
 		<span class="tooltip"><p>Returns a boolean value that indicates whether the device is able to send text messages.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/canSendTweet">+&nbsp;canSendTweet</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the device is able to send tweets.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/canMakePayments">+&nbsp;canMakePayments</a></code>
+		<span class="tooltip"><p>Returns a boolean value that indicates whether the device is able to make purchases.</p></span>
 	</span>
 	
 	
@@ -746,6 +768,47 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/canMakePayments" title="canMakePayments"></a>
+	<h3 class="subsubtitle method-title">canMakePayments</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the device is able to make purchases.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)canMakePayments</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the device can make purchases, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/canSendMail" title="canSendMail"></a>
 	<h3 class="subsubtitle method-title">canSendMail</h3>
 	
@@ -807,6 +870,47 @@
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p><code>YES</code> if the device can send text messages, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIDevice+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/canSendTweet" title="canSendTweet"></a>
+	<h3 class="subsubtitle method-title">canSendTweet</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value that indicates whether the device is able to send tweets.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)canSendTweet</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the device can send tweets, otherwise <code>NO</code>.</p>
 	</div>
 	
 	
@@ -2230,9 +2334,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-09-04)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-09-26)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
 					</div>
 				</div>

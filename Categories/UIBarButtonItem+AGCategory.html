@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -42,15 +42,18 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/barButtonWithImage:style:block:">&nbsp;&nbsp;&nbsp;&nbsp;+ barButtonWithImage:style:block:</option>
-	
-	<option value="//api/name/barButtonWithSystemItem:block:">&nbsp;&nbsp;&nbsp;&nbsp;+ barButtonWithSystemItem:block:</option>
-	
-	<option value="//api/name/barButtonWithTitle:style:block:">&nbsp;&nbsp;&nbsp;&nbsp;+ barButtonWithTitle:style:block:</option>
-	
 	<option value="//api/name/customButtonWithImage:highlightedImage:block:">&nbsp;&nbsp;&nbsp;&nbsp;+ customButtonWithImage:highlightedImage:block:</option>
 	
 	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/initWithBarButtonSystemItem:block:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithBarButtonSystemItem:block:</option>
+	
+	<option value="//api/name/initWithImage:style:block:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithImage:style:block:</option>
+	
+	<option value="//api/name/initWithTitle:style:block:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithTitle:style:block:</option>
 	
 	
 	
@@ -80,17 +83,21 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/barButtonWithImage:style:block:">barButtonWithImage:style:block:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/barButtonWithSystemItem:block:">barButtonWithSystemItem:block:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/barButtonWithTitle:style:block:">barButtonWithTitle:style:block:</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/customButtonWithImage:highlightedImage:block:">customButtonWithImage:highlightedImage:block:</a></span></li>
 	
 </ul></li>
 
 
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithBarButtonSystemItem:block:">initWithBarButtonSystemItem:block:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithImage:style:block:">initWithImage:style:block:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithTitle:style:block:">initWithTitle:style:block:</a></span></li>
+	
+</ul></li>
 
 
 			</ul>
@@ -142,21 +149,21 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/barButtonWithSystemItem:block:">+&nbsp;barButtonWithSystemItem:block:</a></code>
+		<code><a href="#//api/name/initWithBarButtonSystemItem:block:">&ndash;&nbsp;initWithBarButtonSystemItem:block:</a></code>
 		<span class="tooltip"><p>Creates and returns a new bar button using specified system item.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/barButtonWithImage:style:block:">+&nbsp;barButtonWithImage:style:block:</a></code>
+		<code><a href="#//api/name/initWithImage:style:block:">&ndash;&nbsp;initWithImage:style:block:</a></code>
 		<span class="tooltip"><p>Creates and returns a new bar button using the specified image.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/barButtonWithTitle:style:block:">+&nbsp;barButtonWithTitle:style:block:</a></code>
+		<code><a href="#//api/name/initWithTitle:style:block:">&ndash;&nbsp;initWithTitle:style:block:</a></code>
 		<span class="tooltip"><p>Creates and returns a new bar button using the specified title and other properties.</p></span>
 	</span>
 	
@@ -182,184 +189,6 @@
 					<div class="section section-methods">
 						<a title="Class Methods" name="class_methods"></a>
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/barButtonWithImage:style:block:" title="barButtonWithImage:style:block:"></a>
-	<h3 class="subsubtitle method-title">barButtonWithImage:style:block:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Creates and returns a new bar button using the specified image.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (UIBarButtonItem *)barButtonWithImage:(UIImage *)<em>image</em> style:(UIBarButtonItemStyle)<em>style</em> block:(UIBarButtonItemSenderBlock)<em>block</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>image</em></dt>
-			<dd><p>The item’s image. If nil an image is not displayed.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>style</em></dt>
-			<dd><p>The style of the item.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>block</em></dt>
-			<dd><p>The block object called when the bar button is pressed.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Newly initialized bar button item with the specified properties.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">UIBarButtonItem+AGCategory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/barButtonWithSystemItem:block:" title="barButtonWithSystemItem:block:"></a>
-	<h3 class="subsubtitle method-title">barButtonWithSystemItem:block:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Creates and returns a new bar button using specified system item.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (UIBarButtonItem *)barButtonWithSystemItem:(UIBarButtonSystemItem)<em>systemItem</em> block:(UIBarButtonItemSenderBlock)<em>block</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>systemItem</em></dt>
-			<dd><p>The system item to use as the bar button image.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>block</em></dt>
-			<dd><p>The block object called when the bar button is pressed.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Newly initialized bar button item with the specified properties.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">UIBarButtonItem+AGCategory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/barButtonWithTitle:style:block:" title="barButtonWithTitle:style:block:"></a>
-	<h3 class="subsubtitle method-title">barButtonWithTitle:style:block:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Creates and returns a new bar button using the specified title and other properties.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (UIBarButtonItem *)barButtonWithTitle:(NSString *)<em>title</em> style:(UIBarButtonItemStyle)<em>style</em> block:(UIBarButtonItemSenderBlock)<em>block</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>title</em></dt>
-			<dd><p>The item’s title. If nil a title is not displayed.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>style</em></dt>
-			<dd><p>The style of the item.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>block</em></dt>
-			<dd><p>The block object called when the bar button is pressed.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Newly initialized bar button item with the specified properties.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">UIBarButtonItem+AGCategory.h</code><br />
-	</div>				
-	
-	
-</div>
 						
 						<div class="section-method">
 	<a name="//api/name/customButtonWithImage:highlightedImage:block:" title="customButtonWithImage:highlightedImage:block:"></a>
@@ -426,6 +255,190 @@
 					
 					
 					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithBarButtonSystemItem:block:" title="initWithBarButtonSystemItem:block:"></a>
+	<h3 class="subsubtitle method-title">initWithBarButtonSystemItem:block:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a new bar button using specified system item.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithBarButtonSystemItem:(UIBarButtonSystemItem)<em>systemItem</em> block:(UIBarButtonItemSenderBlock)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>systemItem</em></dt>
+			<dd><p>The system item to use as the bar button image.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>The block object called when the bar button is pressed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Newly initialized bar button item with the specified properties.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIBarButtonItem+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithImage:style:block:" title="initWithImage:style:block:"></a>
+	<h3 class="subsubtitle method-title">initWithImage:style:block:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a new bar button using the specified image.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithImage:(UIImage *)<em>image</em> style:(UIBarButtonItemStyle)<em>style</em> block:(UIBarButtonItemSenderBlock)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>image</em></dt>
+			<dd><p>The item’s image. If nil an image is not displayed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>style</em></dt>
+			<dd><p>The style of the item.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>The block object called when the bar button is pressed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Newly initialized bar button item with the specified properties.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIBarButtonItem+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithTitle:style:block:" title="initWithTitle:style:block:"></a>
+	<h3 class="subsubtitle method-title">initWithTitle:style:block:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a new bar button using the specified title and other properties.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithTitle:(NSString *)<em>title</em> style:(UIBarButtonItemStyle)<em>style</em> block:(UIBarButtonItemSenderBlock)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>title</em></dt>
+			<dd><p>The item’s title. If nil a title is not displayed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>style</em></dt>
+			<dd><p>The style of the item.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>The block object called when the bar button is pressed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Newly initialized bar button item with the specified properties.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIBarButtonItem+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
 					
 				</div>
 				<div class="main-navigation navigation-bottom">
@@ -437,9 +450,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-09-04)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-09-26)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
 					</div>
 				</div>

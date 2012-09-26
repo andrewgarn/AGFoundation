@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -44,13 +44,17 @@
 	
 	<option value="//api/name/autoupdatingCurrentCalendar">&nbsp;&nbsp;&nbsp;&nbsp;+ autoupdatingCurrentCalendar</option>
 	
-	<option value="//api/name/currentCalendar">&nbsp;&nbsp;&nbsp;&nbsp;+ currentCalendar</option>
+	<option value="//api/name/autoupdatingCurrentLocale">&nbsp;&nbsp;&nbsp;&nbsp;+ autoupdatingCurrentLocale</option>
 	
 	<option value="//api/name/dateFormatterWithDateFormat:">&nbsp;&nbsp;&nbsp;&nbsp;+ dateFormatterWithDateFormat:</option>
+	
+	<option value="//api/name/dateFormatterWithDateFormat:withLocaleIdentifier:">&nbsp;&nbsp;&nbsp;&nbsp;+ dateFormatterWithDateFormat:withLocaleIdentifier:</option>
 	
 	<option value="//api/name/daysPassedSinceDate:">&nbsp;&nbsp;&nbsp;&nbsp;+ daysPassedSinceDate:</option>
 	
 	<option value="//api/name/gregorianCalendar">&nbsp;&nbsp;&nbsp;&nbsp;+ gregorianCalendar</option>
+	
+	<option value="//api/name/localeWithLocaleIdentifier:">&nbsp;&nbsp;&nbsp;&nbsp;+ localeWithLocaleIdentifier:</option>
 	
 	<option value="//api/name/suffixArray">&nbsp;&nbsp;&nbsp;&nbsp;+ suffixArray</option>
 	
@@ -78,6 +82,8 @@
 	<option value="//api/name/isAfter:">&nbsp;&nbsp;&nbsp;&nbsp;- isAfter:</option>
 	
 	<option value="//api/name/isBefore:">&nbsp;&nbsp;&nbsp;&nbsp;- isBefore:</option>
+	
+	<option value="//api/name/isToday">&nbsp;&nbsp;&nbsp;&nbsp;- isToday</option>
 	
 	<option value="//api/name/minute">&nbsp;&nbsp;&nbsp;&nbsp;- minute</option>
 	
@@ -123,11 +129,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Modifying Dates">Modifying Dates</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Comparing Dates">Comparing Dates</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting Time Intervals">Getting Time Intervals</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Suffix">Suffix</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Thread Safe NSCalendar">Thread Safe NSCalendar</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Thread Safe NSLocale">Thread Safe NSLocale</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Thread Safe NSDateFormatter">Thread Safe NSDateFormatter</a></span></li>
 	
@@ -143,13 +153,17 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/autoupdatingCurrentCalendar">autoupdatingCurrentCalendar</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentCalendar">currentCalendar</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/autoupdatingCurrentLocale">autoupdatingCurrentLocale</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateFormatterWithDateFormat:">dateFormatterWithDateFormat:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateFormatterWithDateFormat:withLocaleIdentifier:">dateFormatterWithDateFormat:withLocaleIdentifier:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/daysPassedSinceDate:">daysPassedSinceDate:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gregorianCalendar">gregorianCalendar</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localeWithLocaleIdentifier:">localeWithLocaleIdentifier:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/suffixArray">suffixArray</a></span></li>
 	
@@ -178,6 +192,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isAfter:">isAfter:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isBefore:">isBefore:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isToday">isToday</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/minute">minute</a></span></li>
 	
@@ -390,6 +406,35 @@
 						</ul>
 						
 						
+						<a title="Comparing Dates" name="task_Comparing Dates"></a>
+						<h3 class="subsubtitle task-title">Comparing Dates</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isToday">&ndash;&nbsp;isToday</a></code>
+		<span class="tooltip"><p>Returns a bool indicating if the receiver is today&rsquo;s date.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isBefore:">&ndash;&nbsp;isBefore:</a></code>
+		<span class="tooltip"><p>Returns a bool indicating if the receiver is before the given date.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isAfter:">&ndash;&nbsp;isAfter:</a></code>
+		<span class="tooltip"><p>Returns a bool indicating if the receiver is after the given date.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
 						<a title="Getting Time Intervals" name="task_Getting Time Intervals"></a>
 						<h3 class="subsubtitle task-title">Getting Time Intervals</h3>
 
@@ -405,20 +450,6 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/timeDifferenceSinceNowString">&ndash;&nbsp;timeDifferenceSinceNowString</a></code>
 		<span class="tooltip"><p>Returns a string with the relative time difference between the receiver and the current date.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/isBefore:">&ndash;&nbsp;isBefore:</a></code>
-		<span class="tooltip"><p>Returns a bool indicating if the receiver is before the given date.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/isAfter:">&ndash;&nbsp;isAfter:</a></code>
-		<span class="tooltip"><p>Returns a bool indicating if the receiver is after the given date.</p></span>
 	</span>
 	
 	
@@ -461,15 +492,30 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/currentCalendar">+&nbsp;currentCalendar</a></code>
-		<span class="tooltip"><p>Returns a thread safe logical calendar for the current user.</p></span>
+		<code><a href="#//api/name/autoupdatingCurrentCalendar">+&nbsp;autoupdatingCurrentCalendar</a></code>
+		<span class="tooltip"><p>Returns a thread safe autoupdating logical calendar for the current user.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Thread Safe NSLocale" name="task_Thread Safe NSLocale"></a>
+						<h3 class="subsubtitle task-title">Thread Safe NSLocale</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/localeWithLocaleIdentifier:">+&nbsp;localeWithLocaleIdentifier:</a></code>
+		<span class="tooltip"><p>Returns a thread safe locale with the given locale identifier.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/autoupdatingCurrentCalendar">+&nbsp;autoupdatingCurrentCalendar</a></code>
-		<span class="tooltip"><p>Returns a thread safe autoupdating logical calendar for the current user.</p></span>
+		<code><a href="#//api/name/autoupdatingCurrentLocale">+&nbsp;autoupdatingCurrentLocale</a></code>
+		<span class="tooltip"><p>Returns a thread safe autoupdating logical locale for the current user.</p></span>
 	</span>
 	
 	
@@ -484,6 +530,13 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/dateFormatterWithDateFormat:">+&nbsp;dateFormatterWithDateFormat:</a></code>
+		<span class="tooltip"><p>Returns a thread safe date formatter with the specified date format set.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dateFormatterWithDateFormat:withLocaleIdentifier:">+&nbsp;dateFormatterWithDateFormat:withLocaleIdentifier:</a></code>
 		<span class="tooltip"><p>Returns a thread safe date formatter with the specified date format set.</p></span>
 	</span>
 	
@@ -550,18 +603,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/currentCalendar" title="currentCalendar"></a>
-	<h3 class="subsubtitle method-title">currentCalendar</h3>
+	<a name="//api/name/autoupdatingCurrentLocale" title="autoupdatingCurrentLocale"></a>
+	<h3 class="subsubtitle method-title">autoupdatingCurrentLocale</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a thread safe logical calendar for the current user.</p>
+		<p>Returns a thread safe autoupdating logical locale for the current user.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSCalendar *)currentCalendar</code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSLocale *)autoupdatingCurrentLocale</code></div>
 
     
 	
@@ -569,7 +622,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A thread safe logical calendar for the current user.</p>
+		<p>A thread safe autoupdating logical locale for the current user.</p>
 	</div>
 	
 	
@@ -578,7 +631,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The method returns a thread safe logical <code>NSCalendar</code> by making use of thread dictionary storage to return a seperate cached instance for each thread.</p>
+		<p>The method returns a thread safe <code>NSLocale</code> by making use of thread dictionary storage to return a seperate cached instance for each thread.</p>
 	</div>
 	
 	
@@ -626,6 +679,67 @@
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>A thread safe date formatter with the specified date format set.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The method returns a thread safe <code>NSDateFormatter</code> by making use of thread dictionary storage to return a seperate cached instance for each thread.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dateFormatterWithDateFormat:withLocaleIdentifier:" title="dateFormatterWithDateFormat:withLocaleIdentifier:"></a>
+	<h3 class="subsubtitle method-title">dateFormatterWithDateFormat:withLocaleIdentifier:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a thread safe date formatter with the specified date format set.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDateFormatter *)dateFormatterWithDateFormat:(NSString *)<em>dateFormat</em> withLocaleIdentifier:(NSString *)<em>localeIdentifier</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dateFormat</em></dt>
+			<dd><p>The date format for the receiver.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>localeIdentifier</em></dt>
+			<dd><p>The identifier for the new locale.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A thread safe date formatter with the specified date format and locale set.</p>
 	</div>
 	
 	
@@ -732,6 +846,62 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>The method returns a thread safe gregorian <code>NSCalendar</code> by making use of thread dictionary storage to return a seperate cached instance for each thread.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/localeWithLocaleIdentifier:" title="localeWithLocaleIdentifier:"></a>
+	<h3 class="subsubtitle method-title">localeWithLocaleIdentifier:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a thread safe locale with the given locale identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSLocale *)localeWithLocaleIdentifier:(NSString *)<em>string</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>string</em></dt>
+			<dd><p>The identifier for the new locale.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A thread safe locale with the given locale identifier.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The method returns a thread safe <code>NSLocale</code> by making use of thread dictionary storage to return a seperate cached instance for each thread.</p>
 	</div>
 	
 	
@@ -1228,6 +1398,47 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/isToday" title="isToday"></a>
+	<h3 class="subsubtitle method-title">isToday</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a bool indicating if the receiver is today&rsquo;s date.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isToday</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the receiver is today&rsquo;s date, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/minute" title="minute"></a>
 	<h3 class="subsubtitle method-title">minute</h3>
 	
@@ -1691,9 +1902,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-09-04)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-09-26)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
 					</div>
 				</div>
