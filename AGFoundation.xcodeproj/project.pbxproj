@@ -38,6 +38,8 @@
 		49A996DE15F6CD4000DBD6E4 /* AGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A996DC15F6CD4000DBD6E4 /* AGTableViewController.m */; };
 		49BE15FE15C7C70500882C57 /* URLSchemeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 49BE15FC15C7C70500882C57 /* URLSchemeManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49BE15FF15C7C70500882C57 /* URLSchemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BE15FD15C7C70500882C57 /* URLSchemeManager.m */; };
+		49EA833C1615CE7100A98089 /* UIStoryboardSegue+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 49EA833A1615CE7100A98089 /* UIStoryboardSegue+AGCategory.h */; };
+		49EA833D1615CE7100A98089 /* UIStoryboardSegue+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EA833B1615CE7100A98089 /* UIStoryboardSegue+AGCategory.m */; };
 		49F0EE9315F7458900E11468 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F0EE9215F7458900E11468 /* CoreFoundation.framework */; };
 		49FF6BB816020F6A0052D7AD /* UIStoryboard+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 49FF6BB616020F690052D7AD /* UIStoryboard+AGCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49FF6BB916020F6A0052D7AD /* UIStoryboard+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FF6BB716020F690052D7AD /* UIStoryboard+AGCategory.m */; };
@@ -179,6 +181,8 @@
 		49A996DC15F6CD4000DBD6E4 /* AGTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTableViewController.m; sourceTree = "<group>"; };
 		49BE15FC15C7C70500882C57 /* URLSchemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLSchemeManager.h; sourceTree = "<group>"; };
 		49BE15FD15C7C70500882C57 /* URLSchemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLSchemeManager.m; sourceTree = "<group>"; };
+		49EA833A1615CE7100A98089 /* UIStoryboardSegue+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboardSegue+AGCategory.h"; sourceTree = "<group>"; };
+		49EA833B1615CE7100A98089 /* UIStoryboardSegue+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboardSegue+AGCategory.m"; sourceTree = "<group>"; };
 		49F0EE9215F7458900E11468 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		49FF6BB616020F690052D7AD /* UIStoryboard+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+AGCategory.h"; sourceTree = "<group>"; };
 		49FF6BB716020F690052D7AD /* UIStoryboard+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+AGCategory.m"; sourceTree = "<group>"; };
@@ -708,6 +712,8 @@
 				78B28E8A15976CDE0025213A /* UIScrollView+AGCategory.m */,
 				49FF6BB616020F690052D7AD /* UIStoryboard+AGCategory.h */,
 				49FF6BB716020F690052D7AD /* UIStoryboard+AGCategory.m */,
+				49EA833A1615CE7100A98089 /* UIStoryboardSegue+AGCategory.h */,
+				49EA833B1615CE7100A98089 /* UIStoryboardSegue+AGCategory.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -849,6 +855,7 @@
 				49BE15FE15C7C70500882C57 /* URLSchemeManager.h in Headers */,
 				49A996DD15F6CD4000DBD6E4 /* AGTableViewController.h in Headers */,
 				49FF6BB816020F6A0052D7AD /* UIStoryboard+AGCategory.h in Headers */,
+				49EA833C1615CE7100A98089 /* UIStoryboardSegue+AGCategory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1000,6 +1007,7 @@
 				49BE15FF15C7C70500882C57 /* URLSchemeManager.m in Sources */,
 				49A996DE15F6CD4000DBD6E4 /* AGTableViewController.m in Sources */,
 				49FF6BB916020F6A0052D7AD /* UIStoryboard+AGCategory.m in Sources */,
+				49EA833D1615CE7100A98089 /* UIStoryboardSegue+AGCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

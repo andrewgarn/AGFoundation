@@ -27,34 +27,33 @@
 
 #import "AGActionSheet.h"
 
-@interface AGActionSheet ()
+@interface AGActionSheet () <UIActionSheetDelegate>
 @property (nonatomic, strong) NSMutableArray *blockArray;
 @end
 
 @implementation AGActionSheet
 @synthesize blockArray = _blockArray;
 
-#pragma mark -
+#pragma mark - Creating Action Sheets
 
-- (AGActionSheet *)initWithTitle:(NSString *)title
+- (AGActionSheet *)init
 {
-    if ((self = [super initWithTitle:title delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil]))
+    if ((self = [super init]))
     {
-        //
+        _blockArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-#pragma mark -
+#pragma mark - Configuring Buttons
 
 - (NSInteger)addButtonWithTitle:(NSString *)title block:(AGActionSheetBlock)block;
 {
     if (block)
-        [_blockArray addObject:[block copy]];
-    else 
-        [_blockArray addObject:[NSNull null]];
+        [self.blockArray addObject:[block copy]];
+    else
+        [self.blockArray addObject:[NSNull null]];
     
-    [self setDelegate:self];
     return [self addButtonWithTitle:title];
 }
 
@@ -70,7 +69,7 @@
 {
     NSInteger buttonIndex = [self addButtonWithTitle:title block:nil];
     
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && block)
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
         [self setCancelButtonIndex:buttonIndex];
     
     return buttonIndex;
@@ -81,40 +80,46 @@
     return [self addCancelButtonWithTitle:title block:nil];
 }
 
-#pragma mark -
+#pragma mark - Presenting the Action Sheet
 
-- (NSMutableArray *)blockArray
+- (void)showFromTabBar:(UITabBar *)view
 {
-    if (!_blockArray)
-    {
-        _blockArray = [[NSMutableArray alloc] init];
-    }
-    return _blockArray;
+    [self setDelegate:self];
+    [super showFromTabBar:view];
 }
 
-- (void)setBlockArray:(NSMutableArray *)blockArray
+- (void)showFromToolbar:(UIToolbar *)view
 {
-    _blockArray = blockArray;
+    [self setDelegate:self];
+    [super showFromToolbar:view];
 }
 
-#pragma mark -
-
-- (void)setDelegate:(id<UIActionSheetDelegate>)delegate
+- (void)showInView:(UIView *)view
 {
-    NSAssert(delegate != self, @"Delegate must not be set for blocks to function");
+    [self setDelegate:self];
+    [super showInView:view];
+}
+
+- (void)showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated
+{
+    [self setDelegate:self];
+    [super showFromBarButtonItem:item animated:animated];
+}
+
+- (void)showFromRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated
+{
+    [self setDelegate:self];
+    [super showFromRect:rect inView:view animated:animated];
 }
 
 #pragma mark - UIActionSheetDelegate
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex 
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex >= 0 && buttonIndex < [_blockArray count]) 
+    if (buttonIndex >= 0 && buttonIndex < [self.blockArray count])
     {
-        id object = [_blockArray objectAtIndex:buttonIndex];
-        if (![object isEqual:[NSNull null]]) 
-        {
-            ((void (^)())object)();
-        }
+        AGActionSheetBlock block = [self.blockArray objectAtIndex:buttonIndex];
+        if (![block isEqual:[NSNull null]]) block();
     }
 }
 
