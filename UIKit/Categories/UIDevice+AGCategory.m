@@ -71,6 +71,7 @@
         else if ([platform hasPrefix:@"iPod2"])              deviceModel = @"iPod touch 2G";
         else if ([platform hasPrefix:@"iPod3"])              deviceModel = @"iPod touch 3G";
         else if ([platform hasPrefix:@"iPod4"])              deviceModel = @"iPod touch 4G";
+        else if ([platform hasPrefix:@"iPod5"])              deviceModel = @"iPod touch 5G";
         
         /* iPad */
         else if ([platform isEqualToString:@"iPad1,1"])      deviceModel = @"iPad Wi-Fi";
@@ -130,10 +131,7 @@
 
 + (NSString *)deviceCarrier
 {
-    id networkInfo = nil;
-    id cellularProvider = nil;
     NSString *carrierName = nil;
-    
     Class telephonyNetworkInfoClass = NSClassFromString(@"CTTelephonyNetworkInfo");
     Class carrierClass = NSClassFromString(@"CTCarrier");
     
@@ -145,8 +143,8 @@
     
     if (telephonyNetworkInfoClass && carrierClass)
     {
-        networkInfo = [[telephonyNetworkInfoClass alloc] init];
-        cellularProvider = [networkInfo performSelector:@selector(subscriberCellularProvider)];
+        id networkInfo = [[telephonyNetworkInfoClass alloc] init];
+        id cellularProvider = [networkInfo performSelector:@selector(subscriberCellularProvider)];
         carrierName = [cellularProvider performSelector:@selector(carrierName)];
     }
     
