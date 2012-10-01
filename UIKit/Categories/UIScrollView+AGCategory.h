@@ -32,20 +32,20 @@
 
 /** Scroll to the top of the receiver's content view with animation.
 */
-- (void)scrollToTop;
+- (void)scrollToTop_AG;
 
 /** Scroll to the top of the receiver's content view. 
  @param animated `YES` if you want to animate the change in position, `NO` if it should be immediate.
  */ 
-- (void)scrollToTopAnimated:(BOOL)animated;
+- (void)scrollToTopAnimated_AG:(BOOL)animated;
 
 /** Scroll to the bottom of the receiver's content view with animation.
 */
-- (void)scrollToBottom;
+- (void)scrollToBottom_AG;
 
 /** Scroll to the bottom of the receiver's content view.
  @param animated `YES` if you want to animate the change in position, `NO` if it should be immediate.
  */
-- (void)scrollToBottomAnimated:(BOOL)animated;
+- (void)scrollToBottomAnimated_AG:(BOOL)animated;
 
 @end

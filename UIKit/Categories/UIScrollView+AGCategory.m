@@ -31,22 +31,22 @@
 
 #pragma mark -
 
-- (void)scrollToTop
+- (void)scrollToTop_AG
 {
-    [self scrollToTopAnimated:YES];
+    [self scrollToTopAnimated_AG:YES];
 }
 
-- (void)scrollToTopAnimated:(BOOL)animated
+- (void)scrollToTopAnimated_AG:(BOOL)animated
 {
     [self setContentOffset:CGPointMake(0, 0) animated:animated];
 }
 
-- (void)scrollToBottom
+- (void)scrollToBottom_AG
 {
-    [self scrollToBottomAnimated:YES];
+    [self scrollToBottomAnimated_AG:YES];
 }
 
-- (void)scrollToBottomAnimated:(BOOL)animated
+- (void)scrollToBottomAnimated_AG:(BOOL)animated
 {
     [self setContentOffset:CGPointMake(0, (self.contentSize.height - self.frame.size.height)) animated:animated];
 }

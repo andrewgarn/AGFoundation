@@ -31,6 +31,8 @@
 @property (nonatomic, strong) NSMutableArray *blockArray;
 @end
 
+#pragma mark -
+
 @implementation AGAlertView
 @synthesize blockArray = _blockArray;
 

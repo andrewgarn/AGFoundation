@@ -31,8 +31,9 @@
 @property (nonatomic, copy) AGImagePickerControllerCompletionBlock didFinishBlock;
 @end
 
+#pragma mark -
+
 @implementation AGImagePickerController
-@synthesize didFinishBlock = _didFinishBlock;
 
 #pragma mark -
 

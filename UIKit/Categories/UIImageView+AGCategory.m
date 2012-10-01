@@ -29,7 +29,7 @@
 
 @implementation UIImageView (AGCategory)
 
-+ (UIImageView *)imageViewWithImageNamed:(NSString *)imageName
++ (UIImageView *)imageViewWithImageNamed_AG:(NSString *)imageName
 {
     return [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]]; 
 }

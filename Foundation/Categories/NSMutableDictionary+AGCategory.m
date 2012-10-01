@@ -31,34 +31,34 @@
 
 #pragma mark -
 
-- (void)setBool:(BOOL)value forKey:(id)key
+- (void)setBool_AG:(BOOL)value forKey:(id)key
 {
     [self setObject:[NSNumber numberWithBool:value] forKey:key];
 }
 
-- (void)setInt:(BOOL)value forKey:(id)key
+- (void)setInt_AG:(BOOL)value forKey:(id)key
 {
     [self setObject:[NSNumber numberWithInt:value] forKey:key];
 }
 
-- (void)setFloat:(BOOL)value forKey:(id)key
+- (void)setFloat_AG:(BOOL)value forKey:(id)key
 {
     [self setObject:[NSNumber numberWithFloat:value] forKey:key];
 }
 
-- (void)setDouble:(BOOL)value forKey:(id)key
+- (void)setDouble_AG:(BOOL)value forKey:(id)key
 {
     [self setObject:[NSNumber numberWithDouble:value] forKey:key];
 }
 
-- (void)setInteger:(BOOL)value forKey:(id)key
+- (void)setInteger_AG:(BOOL)value forKey:(id)key
 {
     [self setObject:[NSNumber numberWithInteger:value] forKey:key];
 }
 
 #pragma mark -
 
-- (void)safelySetObject:(id)anObject forKey:(id)aKey
+- (void)setObject_AG:(id)anObject forKey:(id)aKey
 {
     if (anObject && aKey)
         [self setObject:anObject forKey:aKey];

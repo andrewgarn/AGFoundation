@@ -49,7 +49,7 @@
 /* Source: How do I determine if I'm being run under the debugger? */
 /* http://developer.apple.com/library/mac/#qa/qa1361/_index.html */
 
-+ (BOOL)isBeingDebugged
++ (BOOL)isBeingDebugged_AG
 {
     // Returns true if the current process is being debugged (either 
     // running under the debugger or has a debugger attached post facto).
@@ -78,24 +78,24 @@
     return ( (info.kp_proc.p_flag & P_TRACED) != 0 );
 }
 
-+ (BOOL)isNotBeingDebugged
++ (BOOL)isNotBeingDebugged_AG
 {
-    return ![UIApplication isBeingDebugged];
+    return ![UIApplication isBeingDebugged_AG];
 }
 
-+ (BOOL)isPirated
++ (BOOL)isPirated_AG
 {
 	return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"SignerIdentity"] != nil;
 }
 
-+ (BOOL)isNotPirated
++ (BOOL)isNotPirated_AG
 {
-    return ![UIApplication isPirated];
+    return ![UIApplication isPirated_AG];
 }
 
 #pragma mark -
 
-+ (NSNumber *)usedMemory
++ (NSNumber *)usedMemory_AG
 {
     struct task_basic_info info;
     mach_msg_type_number_t size = sizeof(info);
@@ -104,17 +104,17 @@
     return [NSNumber numberWithLong:vmsize];
 }
 
-+ (void)logMemoryUsage
++ (void)logMemoryUsage_AG
 {
     static long previousMemoryUsage = 0;
-    long currentMemoryUsage = [[self usedMemory] longValue];
+    long currentMemoryUsage = [[self usedMemory_AG] longValue];
     long memoryUsageDifference = currentMemoryUsage - previousMemoryUsage;
     
     if (memoryUsageDifference > 1024 || memoryUsageDifference < -1024)
     {
-        NSString *currentMemoryUsageString = [[NSNumber numberWithLong:currentMemoryUsage] formattedBytes];
-        NSString *memoryUsageDifferenceString = [[NSNumber numberWithLong:memoryUsageDifference] formattedBytes];
-        NSString *freeMemoryString = [[UIDevice freeMemory] formattedBytes];
+        NSString *currentMemoryUsageString = [[NSNumber numberWithLong:currentMemoryUsage] formattedBytes_AG];
+        NSString *memoryUsageDifferenceString = [[NSNumber numberWithLong:memoryUsageDifference] formattedBytes_AG];
+        NSString *freeMemoryString = [[UIDevice freeMemory_AG] formattedBytes_AG];
         if (previousMemoryUsage == 0)
             NSLog(@"Memory used %@, free %@", currentMemoryUsageString, freeMemoryString);
         else
@@ -126,41 +126,41 @@
     }
 }
 
-static NSDate *applicationDidFinishLaunchingDate;
-static NSDate *applicationDidEnterBackgroundDate;
+static NSDate *AGApplicationDidFinishLaunchingDate;
+static NSDate *AGApplicationDidEnterBackgroundDate;
 
-+ (void)logApplicationDidFinishLaunchingWithOptions:(NSDictionary *)launchOptions
++ (void)logApplicationDidFinishLaunchingWithOptions_AG:(NSDictionary *)launchOptions
 {
     NSLog(@"\n\n**** application:didFinishLaunching: '%@ %@ (%@)' withOptions: ****\n**** applicationLaunchDevice: %@ withSystemVersion: %@ ****\n\n", 
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"], 
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"], 
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"],
-          [UIDevice deviceModel], [UIDevice systemVersion]);
+          [UIDevice deviceModel_AG], [UIDevice systemVersion_AG]);
     
-    applicationDidFinishLaunchingDate = [NSDate date];
+    AGApplicationDidFinishLaunchingDate = [NSDate date];
 }
 
-+ (void)logApplicationDidEnterBackground
++ (void)logApplicationDidEnterBackground_AG
 {
     NSLog(@"\n\n**** application: '%@ %@ (%@)' applicationDidEnterBackground: ****\n\n",
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"],
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]);
     
-    applicationDidEnterBackgroundDate = [NSDate date];
+    AGApplicationDidEnterBackgroundDate = [NSDate date];
 }
 
-+ (void)logApplicationWillEnterForeground
++ (void)logApplicationWillEnterForeground_AG
 {
     NSLog(@"\n\n**** application: '%@ %@ (%@)' willEnterForeground: ****\n**** applicationDidFinishLaunching: %@ applicationDidEnterBackground: %@ ****\n\n",
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"],
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"],
-          [applicationDidFinishLaunchingDate timeDifferenceSinceNowString],
-          [applicationDidEnterBackgroundDate timeDifferenceSinceNowString]);
+          [AGApplicationDidFinishLaunchingDate timeDifferenceSinceNowString_AG],
+          [AGApplicationDidEnterBackgroundDate timeDifferenceSinceNowString_AG]);
 }
 
-+ (void)logApplicationWillResignActive
++ (void)logApplicationWillResignActive_AG
 {
     NSLog(@"\n\n**** application: '%@ %@ (%@)' willResignActive: ****\n\n",
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"],
@@ -168,7 +168,7 @@ static NSDate *applicationDidEnterBackgroundDate;
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]);
 }
 
-+ (void)logApplicationDidBecomeActive
++ (void)logApplicationDidBecomeActive_AG
 {
     NSLog(@"\n\n**** application: '%@ %@ (%@)' didBecomeActive: ****\n\n",
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"],
@@ -178,18 +178,18 @@ static NSDate *applicationDidEnterBackgroundDate;
 
 #pragma mark -
 
-+ (void)observeNavigationControllerStack
++ (void)observeNavigationControllerStack_AG
 {
     UIApplication *application = [UIApplication sharedApplication];
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     
-    SEL selector = @selector(navigationControllerStackDidChange:);
+    SEL selector = @selector(navigationControllerStackDidChange_AG:);
     NSString *notificationName = @"UINavigationControllerDidShowViewControllerNotification";
     
     [notificationCenter addObserver:application selector:selector name:notificationName object:nil];
 }
 
-- (void)navigationControllerStackDidChange:(NSNotification *)notification 
+- (void)navigationControllerStackDidChange_AG:(NSNotification *)notification
 {
     NSDictionary *userInfo = [notification userInfo];
     UIViewController *fromViewController = [userInfo objectForKey:@"UINavigationControllerLastVisibleViewController"];
@@ -202,7 +202,7 @@ static NSDate *applicationDidEnterBackgroundDate;
 
 #pragma mark -
 
-+ (NSString *)stringFromInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
++ (NSString *)stringFromInterfaceOrientation_AG:(UIInterfaceOrientation)interfaceOrientation
 {
     switch (interfaceOrientation)
     {
@@ -214,7 +214,7 @@ static NSDate *applicationDidEnterBackgroundDate;
 	return [NSString stringWithFormat:@"Unhandled Orientation: %i", interfaceOrientation];
 }
 
-+ (BOOL)interfaceOrientationIsSupported:(UIInterfaceOrientation)interfaceOrientation
++ (BOOL)interfaceOrientationIsSupported_AG:(UIInterfaceOrientation)interfaceOrientation
 {
     static dispatch_once_t onceToken;
 	static NSArray *supportedOrientations;
@@ -224,7 +224,7 @@ static NSDate *applicationDidEnterBackgroundDate;
         supportedOrientations = [[NSBundle mainBundle] objectForInfoDictionaryKey:infoDictionaryKey];
 	});
     
-    NSString *interfaceOrientationString = [UIApplication stringFromInterfaceOrientation:interfaceOrientation];
+    NSString *interfaceOrientationString = [UIApplication stringFromInterfaceOrientation_AG:interfaceOrientation];
     if ([supportedOrientations indexOfObject:interfaceOrientationString] != NSNotFound)
     {
         return YES;
@@ -234,37 +234,35 @@ static NSDate *applicationDidEnterBackgroundDate;
 
 #pragma mark -
 
-+ (NSArray *)scheduledLocalNotifications
++ (NSArray *)scheduledLocalNotifications_AG
 {
     return [[UIApplication sharedApplication] scheduledLocalNotifications];
 }
 
-+ (NSArray *)scheduledLocalNotificationsSortedAscending:(BOOL)ascending
++ (NSArray *)scheduledLocalNotificationsSortedAscending_AG:(BOOL)ascending
 {
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"fireDate" ascending:ascending];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-    return [[UIApplication scheduledLocalNotifications] sortedArrayUsingDescriptors:sortDescriptors];
+    return [[UIApplication scheduledLocalNotifications_AG] sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 #pragma mark -
 
 static NSInteger AGNetworkActivityIndicatorCount = 0;
 
-+ (void)showNetworkActivityIndicator
++ (void)showNetworkActivityIndicator_AG
 {
     AGNetworkActivityIndicatorCount++;
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
 
-+ (void)hideNetworkActivityIndicator
++ (void)hideNetworkActivityIndicator_AG
 {
     AGNetworkActivityIndicatorCount--;
-    
-    if (AGNetworkActivityIndicatorCount <= 0)
-        [UIApplication hideNetworkActivityIndicatorNow];
+    if (AGNetworkActivityIndicatorCount <= 0) [UIApplication hideNetworkActivityIndicatorNow_AG];
 }
 
-+ (void)hideNetworkActivityIndicatorNow
++ (void)hideNetworkActivityIndicatorNow_AG
 {
     AGNetworkActivityIndicatorCount = 0;
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
@@ -272,31 +270,31 @@ static NSInteger AGNetworkActivityIndicatorCount = 0;
 
 #pragma mark -
 
-+ (void)resignFirstResponder
++ (void)resignFirstResponder_AG
 {
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
 }
 
 #pragma mark -
 
-+ (BOOL)canOpenAppStore
++ (BOOL)canOpenAppStore_AG
 {
     return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"itms-apps:"]];
 }
 
-+ (BOOL)openAppStoreWithAppId:(NSString *)appId
++ (BOOL)openAppStoreWithAppId_AG:(NSString *)appId
 {
     NSString *stringURL = @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=";
     return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", stringURL, appId]]];
 }
 
-+ (BOOL)openAppStoreToGiftAppWithAppId:(NSString *)appId
++ (BOOL)openAppStoreToGiftAppWithAppId_AG:(NSString *)appId
 {
     NSString *stringURL = [NSString stringWithFormat:@"itms-appss://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/giftSongsWizard?gift=1&salableAdamId=%@&productType=C&pricingParameter=STDQ&mt=8&ign-mscache=1", appId];
     return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:stringURL]];
 }
 
-+ (BOOL)openAppStoreToReviewAppWithAppId:(NSString *)appId
++ (BOOL)openAppStoreToReviewAppWithAppId_AG:(NSString *)appId
 {
     NSString *stringURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=";
     return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", stringURL, appId]]];

@@ -29,8 +29,5 @@
 
 /** A `UIViewController` subclass */
 @interface AGViewController : UIViewController
-{
-    
-}
 
 @end

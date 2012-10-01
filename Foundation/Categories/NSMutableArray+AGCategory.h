@@ -39,13 +39,13 @@
  Adds the specified object to the end of the receiver array.
  @param anObject The object to add to the end of the receiver array.
 */ 
-- (void)enqueue:(id)anObject;
+- (void)enqueueObject_AG:(id)anObject;
 
 /**
  Removes the first object from the receiver array and returns it.
  @return The object removed from the receiver array, or nil if the array is empty.
 */ 
-- (id)dequeue;
+- (id)dequeueObject_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Pushing and Popping Stack Items
@@ -56,13 +56,13 @@
  Adds the specified object to the end of the receiver array.
  @param anObject The object to add to the end of the receiver array.
 */ 
-- (void)push:(id)anObject;
+- (void)pushObject_AG:(id)anObject;
 
 /**
  Removes the last object from the receiver array and returns it.
  @return The object removed from the receiver array, or nil if the array is empty.
 */ 
-- (id)pop;
+- (id)popObject_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Rearranging Content
@@ -72,11 +72,11 @@
 /** Returns the receiver array with the object order reversed.
  @return The receiver array with the order reversed.
 */
-- (NSMutableArray *)reverse;
+- (NSMutableArray *)reverse_AG;
 
 /** Returns the receiver array with the object order randomised.
  @return The receiver array with the order randomised.
 */
-- (NSMutableArray *)shuffle;
+- (NSMutableArray *)shuffle_AG;
 
 @end

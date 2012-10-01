@@ -29,7 +29,7 @@
 
 @implementation UIAlertView (AGCategory)
 
-+ (void)showWithTitle:(NSString *)title message:(NSString *)message
++ (void)showWithTitle_AG:(NSString *)title message:(NSString *)message
 {
     UIAlertView *alertView = [[UIAlertView alloc] init];
     [alertView setTitle:title];
@@ -38,7 +38,7 @@
     [alertView show];
 }
 
-+ (void)showWithMessage:(NSString *)message
++ (void)showWithMessage_AG:(NSString *)message
 {
     static dispatch_once_t onceToken;
 	static NSString *displayName;
@@ -47,10 +47,10 @@
         displayName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
 	});
     
-    [UIAlertView showWithTitle:displayName message:message];
+    [UIAlertView showWithTitle_AG:displayName message:message];
 }
 
-+ (void)showWithError:(NSError *)error
++ (void)showWithError_AG:(NSError *)error
 {
     UIAlertView *alertView = [[UIAlertView alloc] init];
     [alertView setTitle:[error localizedDescription]];

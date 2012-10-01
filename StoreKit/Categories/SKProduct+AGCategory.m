@@ -31,9 +31,9 @@
 
 #pragma mark -
 
-- (NSString *)localizedPrice
+- (NSString *)localizedPrice_AG
 {
-    NSNumberFormatter *numberFormatter = [SKProduct _numberFormatter];    
+    NSNumberFormatter *numberFormatter = [SKProduct productNumberFormatter_AG];    
     [numberFormatter setLocale:self.priceLocale];
     
     return [numberFormatter stringFromNumber:self.price];
@@ -41,7 +41,7 @@
 
 #pragma mark - Private
 
-+ (NSNumberFormatter *)_numberFormatter
++ (NSNumberFormatter *)productNumberFormatter_AG
 {
 	NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
     NSString *threadDictionaryKey = @"SKProductAGCategoryNumberFormatter";

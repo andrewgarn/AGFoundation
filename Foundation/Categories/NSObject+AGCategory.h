@@ -41,19 +41,19 @@ typedef void (^AGVoidBlock)(void);
  @param anObject The object to be checked.
  @return Returns the given object if its an `NSDate`, otherwise nil.
 */
-+ (NSDate *)forceDateOrNil:(id)anObject;
++ (NSDate *)forceDateOrNil_AG:(id)anObject;
 
 /** Forces a given object to the `NSString` class or nil.
  @param anObject The object to be checked.
  @return Returns the given object if its an `NSString`, a string representation of the object, or nil if the object cannot be converted to a string.
 */
-+ (NSString *)forceStringOrNil:(id)anObject;
++ (NSString *)forceStringOrNil_AG:(id)anObject;
 
 /** Forces a given object to the `NSNumber` class or nil.
  @param anObject The object to be checked.
  @return Returns the given object if its an `NSNumber`, otherwise nil.
 */
-+ (NSNumber *)forceNumberOrNil:(id)anObject;
++ (NSNumber *)forceNumberOrNil_AG:(id)anObject;
 
 /**-------------------------------------------------------------------------------------
  @name Comparison
@@ -65,7 +65,7 @@ typedef void (^AGVoidBlock)(void);
  The method first checks that the receiver is not `[NSNull null]`, then if the receiver responds to `length` its length is greater than zero and finally the method checks that if the receiver responds to `count` it has a count greater than zero.
  @return `YES` if the receiver is not empty, otherwise `NO`.
 */
-- (BOOL)isNotEmpty;
+- (BOOL)isNotEmpty_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Perform Selector
@@ -76,34 +76,7 @@ typedef void (^AGVoidBlock)(void);
  @param aSelector A selector that identifies the method to invoke. The method should not have a significant return value and should take a single argument of type id, or no arguments.
  @param delay The minimum time before which the message is sent. Specifying a delay of 0 does not necessarily cause the selector to be performed immediately. The selector is still queued on the thread’s run loop and performed as soon as possible.
  */
-- (void)performSelector:(SEL)aSelector afterDelay:(NSTimeInterval)delay;
-
-/**-------------------------------------------------------------------------------------
- @name Description
- ---------------------------------------------------------------------------------------
-*/ 
-
-/** Returns an automatic description of the receiver.
- @return An automatic description of the receiver.
- */
-- (NSString *)automaticDescription;
-
-/** Returns an automatic description of the given object.
- 
- Code from StackOverflow answer by Kendall Helmstetter Geln: http://stackoverflow.com/questions/2299841/objective-c-introspection-reflection
- @param instance An instance of a class
- @param classType A class type
- @return An automatic description of the instance object provided.
-*/
-+ (NSString *)autoDescribe:(id)instance classType:(Class)classType;
-
-/** Returns an automatic description of the given object.
- 
- Code from StackOverflow answer by Kendall Helmstetter Geln: http://stackoverflow.com/questions/2299841/objective-c-introspection-reflection
- @param instance An instance of a class
- @return An automatic description of the instance object provided.
-*/
-+ (NSString *)autoDescribe:(id)instance;
+- (void)performSelector_AG:(SEL)aSelector afterDelay:(NSTimeInterval)delay;
 
 /**-------------------------------------------------------------------------------------
  @name Associated Objects
@@ -125,16 +98,16 @@ typedef void (^AGVoidBlock)(void);
  @param value Any object.
  @param key A unique key pointer.
 */
-- (void)associateValue:(id)value withKey:(const char *)key;
+- (void)associateValue_AG:(id)value withKey:(const char *)key;
 
 /** Strongly associates an object with the receiving class.
  
  Code from the BlocksKit project by Zachary Waldowski. 2012. MIT License: https://github.com/zwaldowski/BlocksKit
  @param value Any object.
  @param key A unique key pointer.
- @see associateValue:withKey:
+ @see associateValue_AG:withKey:
 */
-+ (void)associateValue:(id)value withKey:(const char *)key;
++ (void)associateValue_AG:(id)value withKey:(const char *)key;
 
 /** Associates a copy of an object with the reciever.
  
@@ -149,16 +122,16 @@ typedef void (^AGVoidBlock)(void);
  @param value Any object, pointer, or value.
  @param key A unique key pointer.
 */
-- (void)associateCopyOfValue:(id)value withKey:(const char *)key;
+- (void)associateCopyOfValue_AG:(id)value withKey:(const char *)key;
 
 /** Associates a copy of an object with the receiving class.
  
  Code from the BlocksKit project by Zachary Waldowski. 2012. MIT License: https://github.com/zwaldowski/BlocksKit
  @param value Any object, pointer, or value.
  @param key A unique key pointer.
- @see associateCopyOfValue:withKey:
+ @see associateCopyOfValue_AG:withKey:
 */
-+ (void)associateCopyOfValue:(id)value withKey:(const char *)key;
++ (void)associateCopyOfValue_AG:(id)value withKey:(const char *)key;
 
 /** Weakly associates an object with the reciever.
  
@@ -170,16 +143,16 @@ typedef void (^AGVoidBlock)(void);
  @param value Any object.
  @param key A unique key pointer.
 */
-- (void)weaklyAssociateValue:(id)value withKey:(const char *)key;
+- (void)weaklyAssociateValue_AG:(id)value withKey:(const char *)key;
 
 /** Weakly associates an object with the receiving class.
  
  Code from the BlocksKit project by Zachary Waldowski. 2012. MIT License: https://github.com/zwaldowski/BlocksKit
  @param value Any object.
  @param key A unique key pointer.
- @see weaklyAssociateValue:withKey:
+ @see weaklyAssociateValue_AG:withKey:
 */
-+ (void)weaklyAssociateValue:(id)value withKey:(const char *)key;
++ (void)weaklyAssociateValue_AG:(id)value withKey:(const char *)key;
 
 /** Returns the associated value for a key on the reciever.
  
@@ -187,29 +160,29 @@ typedef void (^AGVoidBlock)(void);
  @param key A unique key pointer.
  @return The object associated with the key, or `nil` if not found.
 */
-- (id)associatedValueForKey:(const char *)key;
+- (id)associatedValueForKey_AG:(const char *)key;
 
 /** Returns the associated value for a key on the receiving class.
  
  Code from the BlocksKit project by Zachary Waldowski. 2012. MIT License: https://github.com/zwaldowski/BlocksKit
  @param key A unique key pointer.
  @return The object associated with the key, or `nil` if not found.
- @see associatedValueForKey:
+ @see associatedValueForKey_AG:
 */
-+ (id)associatedValueForKey:(const char *)key;
++ (id)associatedValueForKey_AG:(const char *)key;
 
 /** Returns the reciever to a clean state by removing all
  associated objects, releasing them if necessary.
 
  Code from the BlocksKit project by Zachary Waldowski. 2012. MIT License: https://github.com/zwaldowski/BlocksKit
 */
-- (void)removeAllAssociatedObjects;
+- (void)removeAllAssociatedObjects_AG;
 
 /** Returns the recieving class to a clean state by removing
  all associated objects, releasing them if necessary.
 
  Code from the BlocksKit project by Zachary Waldowski. 2012. MIT License: https://github.com/zwaldowski/BlocksKit
 */
-+ (void)removeAllAssociatedObjects;
++ (void)removeAllAssociatedObjects_AG;
 
 @end

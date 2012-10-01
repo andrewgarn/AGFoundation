@@ -34,7 +34,6 @@
 #pragma mark -
 
 @implementation PurchaseManager
-@synthesize productRequestResponseBlock = _productRequestResponseBlock;
 
 #pragma mark -
 

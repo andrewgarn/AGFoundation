@@ -32,7 +32,7 @@
 
 @implementation NSData (AGCategory)
 
-- (NSString *)MD5Hash
+- (NSString *)MD5Hash_AG
 {
     NSData *data = self;
     uint8_t digest[CC_MD5_DIGEST_LENGTH];
@@ -48,7 +48,7 @@
     return output;
 }
 
-- (NSString *)SHA1Hash
+- (NSString *)SHA1Hash_AG
 {
     NSData *data = self;
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
@@ -64,7 +64,7 @@
     return output;
 }
 
-- (NSString *)SHA256Hash
+- (NSString *)SHA256Hash_AG
 {
     NSData *data = self;
     uint8_t digest[CC_SHA256_DIGEST_LENGTH];
@@ -80,7 +80,7 @@
     return output;
 }
 
-- (NSString *)SHA512Hash
+- (NSString *)SHA512Hash_AG
 {
     NSData *data = self;
     uint8_t digest[CC_SHA512_DIGEST_LENGTH];

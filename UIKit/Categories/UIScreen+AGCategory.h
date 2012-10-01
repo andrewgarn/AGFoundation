@@ -38,7 +38,7 @@
 /** Returns a image representation of the application's window. 
  @return An image representation of the application's window.
 */ 
-+ (UIImage *)screenshot;
++ (UIImage *)imageRepresentation_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Pixel Dimensions
@@ -48,12 +48,12 @@
 /** Returns the pixel width of the main screen.
  @return The pixel width of the main screen.
 */ 
-+ (CGFloat)pixelWidth;
++ (CGFloat)pixelWidth_AG;
 
 /** Returns the pixel height of the main screen.
  @return The pixel height of the main screen.
 */  
-+ (CGFloat)pixelHeight;
++ (CGFloat)pixelHeight_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Point Dimensions
@@ -63,12 +63,12 @@
 /** Returns the point width of the main screen.
  @return The point width of the main screen.
 */
-+ (CGFloat)pointWidth;
++ (CGFloat)pointWidth_AG;
 
 /** Returns the point height of the main screen.
  @return The point height of the main screen.
 */
-+ (CGFloat)pointHeight;
++ (CGFloat)pointHeight_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Bounds for Orientation
@@ -78,12 +78,12 @@
 /** Returns the bounds rectangle of the receiver adjusted for the current status bar orientation. 
  @return The bounds rectangle of the receiver adjusted for the current status bar orientation.
 */ 
-- (CGRect)currentBounds;
+- (CGRect)currentBounds_AG;
 
 /** Returns the bounds rectangle of the receiver adjusted for orientation. 
  @param orientation The interface orientation to use.
  @return The bounds rectangle of the receiver adjusted for orientation.
 */ 
-- (CGRect)boundsForOrientation:(UIInterfaceOrientation)orientation;
+- (CGRect)boundsForOrientation_AG:(UIInterfaceOrientation)orientation;
 
 @end

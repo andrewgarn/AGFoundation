@@ -31,10 +31,10 @@
 /*
     Uncaught exception handler
 */ 
-void uncaughtExceptionHandler(NSException *exception)
+void uncaughtExceptionHandler_AG(NSException *exception)
 {
     // Firstly log the error to the console.
-    ALog(@"ERROR: %@", [exception description]);
+    NSLog(@"Uncaught Exception: %@", [exception description]);
     
     // Decide on error name
     NSString *errorName = @"Uncaught Exception";
@@ -69,17 +69,17 @@ void uncaughtExceptionHandler(NSException *exception)
             }
         }
         
-        NSString *deviceModel = [UIDevice deviceModel];
-        NSString *version = [[UIDevice currentDevice] systemVersion];
-        if ([backtrace length] == 0) backtrace = [NSMutableString stringWithFormat:@"No backtrace found"];
-        NSString *message = [NSString stringWithFormat:@"Device: %@. OS: %@. Backtrace:%@", deviceModel, version, backtrace];
+        NSString *deviceModel = [UIDevice deviceModel_AG];
+        NSString *systemVersion = [UIDevice systemVersion_AG];
+        if ([backtrace length] == 0) backtrace = [NSMutableString stringWithFormat:@" No backtrace found"];
+        NSString *message = [NSString stringWithFormat:@"Device: %@. OS: %@. Backtrace:%@", deviceModel, systemVersion, backtrace];
         [FlurryAnalytics logError:errorName message:message exception:exception];
     }
     @catch (NSException *newException) 
     {
-        NSString *deviceModel = [UIDevice deviceModel];
-        NSString *version = [[UIDevice currentDevice] systemVersion];
-        NSString *message = [NSString stringWithFormat:@"Device: %@. OS: %@. [Backtrace Failed]", deviceModel, version];
+        NSString *deviceModel = [UIDevice deviceModel_AG];
+        NSString *systemVersion = [UIDevice systemVersion_AG];
+        NSString *message = [NSString stringWithFormat:@"Device: %@. OS: %@. [Backtrace Failed]", deviceModel, systemVersion];
         [FlurryAnalytics logError:errorName message:message exception:exception];
     }
 }
@@ -87,8 +87,8 @@ void uncaughtExceptionHandler(NSException *exception)
 /*
     SignalHandler
 */ 
-void SignalHandler(int sig)
+void signalHandler_AG(int sig)
 {
     // Save application data here
-    ALog(@"%i", sig);
+    NSLog(@"SignalHandler: %i", sig);
 }

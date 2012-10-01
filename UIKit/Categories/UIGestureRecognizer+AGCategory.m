@@ -28,29 +28,29 @@
 #import "UIGestureRecognizer+AGCategory.h"
 #import "NSObject+AGCategory.h"
 
-static char kUIGestureRecognizerBlockKey;
+static char AGCategoryGestureRecognizerBlockKey;
 
 @implementation UIGestureRecognizer (AGCategory)
 
 #pragma mark -
 
-- (void)addTargetBlock:(UIGestureRecognizerSenderBlock)block
+- (void)addTargetBlock_AG:(UIGestureRecognizerSenderBlock)block
 {
-    [self associateCopyOfValue:block withKey:&kUIGestureRecognizerBlockKey];
-    [self addTarget:self action:@selector(_gestureRecognized:)];
+    [self associateCopyOfValue_AG:block withKey:&AGCategoryGestureRecognizerBlockKey];
+    [self addTarget:self action:@selector(AGCategoryGestureRecognizerRecognized:)];
 }
 
-- (void)removeTargetBlock
+- (void)removeTargetBlock_AG
 {
-    [self associateCopyOfValue:nil withKey:&kUIGestureRecognizerBlockKey];
-    [self removeTarget:self action:@selector(_gestureRecognized:)]; 
+    [self associateCopyOfValue_AG:nil withKey:&AGCategoryGestureRecognizerBlockKey];
+    [self removeTarget:self action:@selector(AGCategoryGestureRecognizerRecognized:)]; 
 }
 
 #pragma mark -
      
-- (void)_gestureRecognized:(UIBarButtonItem *)sender
+- (void)AGCategoryGestureRecognizerRecognized:(UIBarButtonItem *)sender
 {
-    UIGestureRecognizerSenderBlock block = [self associatedValueForKey:&kUIGestureRecognizerBlockKey];
+    UIGestureRecognizerSenderBlock block = [self associatedValueForKey_AG:&AGCategoryGestureRecognizerBlockKey];
     if (block) block (self);
 }
 

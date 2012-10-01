@@ -29,8 +29,5 @@
 
 /** A `UITableViewController` subclass */
 @interface AGTableViewController : UITableViewController
-{
-    
-}
 
 @end

@@ -35,6 +35,6 @@
  Includes code from a blog post by Nick Forge: http://forgecode.net/2010/08/uifont-name-grabber/
  @return A dictionary representation of the fonts currently installed on the device
 */ 
-+ (NSDictionary *)fontsByFamilyName;
++ (NSDictionary *)fontsByFamilyName_AG;
 
 @end

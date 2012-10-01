@@ -39,47 +39,47 @@
  Adds a given key-value pair to the dictionary.
  @param value The boolean you wish to add to the dictionary
  @param key The key for value. The key must not be nil.
- @see [NSDictionary(AGCategory) boolForKey:]
+ @see [NSDictionary(AGCategory) boolForKey_AG:]
 */
-- (void)setBool:(BOOL)value forKey:(id)key;
+- (void)setBool_AG:(BOOL)value forKey:(id)key;
 
 /**
  Adds a given key-value pair to the dictionary.
  @param value The int you wish to add to the dictionary
  @param key The key for value. The key must not be nil.
- @see [NSDictionary(AGCategory) intForKey:]
+ @see [NSDictionary(AGCategory) intForKey_AG:]
 */
-- (void)setInt:(BOOL)value forKey:(id)key;
+- (void)setInt_AG:(BOOL)value forKey:(id)key;
 
 /**
  Adds a given key-value pair to the dictionary.
  @param value The float you wish to add to the dictionary
  @param key The key for value. The key must not be nil.
- @see [NSDictionary(AGCategory) floatForKey:]
+ @see [NSDictionary(AGCategory) floatForKey_AG:]
 */
-- (void)setFloat:(BOOL)value forKey:(id)key;
+- (void)setFloat_AG:(BOOL)value forKey:(id)key;
 
 /**
  Adds a given key-value pair to the dictionary.
  @param value The double you wish to add to the dictionary
  @param key The key for value. The key must not be nil.
- @see [NSDictionary(AGCategory) doubleForKey:]
+ @see [NSDictionary(AGCategory) doubleForKey_AG:]
 */
-- (void)setDouble:(BOOL)value forKey:(id)key;
+- (void)setDouble_AG:(BOOL)value forKey:(id)key;
 
 /**
  Adds a given key-value pair to the dictionary.
  @param value The integer you wish to add to the dictionary
  @param key The key for value. The key must not be nil.
- @see [NSDictionary(AGCategory) integerForKey:]
+ @see [NSDictionary(AGCategory) integerForKey_AG:]
 */
-- (void)setInteger:(BOOL)value forKey:(id)key;
+- (void)setInteger_AG:(BOOL)value forKey:(id)key;
 
 /** 
  Safely adds a given key-value pair to the dictionary.
  @param anObject The value for key.
  @param aKey The key for value. 
-*/ 
-- (void)safelySetObject:(id)anObject forKey:(id)aKey;
+*/
+- (void)setObject_AG:(id)anObject forKey:(id)aKey;
 
 @end

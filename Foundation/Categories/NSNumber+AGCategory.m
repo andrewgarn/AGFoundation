@@ -31,19 +31,19 @@
 
 @implementation NSNumber (AGCategory)
 
-+ (NSNumber *)numberFromString:(NSString *)string
++ (NSNumber *)numberFromString_AG:(NSString *)string
 {
-    NSNumberFormatter *numberFormatter = [NSNumber numberFormatterWithNumberStyle:NSNumberFormatterDecimalStyle];
+    NSNumberFormatter *numberFormatter = [NSNumber numberFormatterWithNumberStyle_AG:NSNumberFormatterDecimalStyle];
     return [numberFormatter numberFromString:string];
 }
 
-- (NSString *)stringWithNumberStyle:(NSNumberFormatterStyle)style
+- (NSString *)stringWithNumberStyle_AG:(NSNumberFormatterStyle)style
 {
-    NSNumberFormatter *numberFormatter = [NSNumber numberFormatterWithNumberStyle:style];
+    NSNumberFormatter *numberFormatter = [NSNumber numberFormatterWithNumberStyle_AG:style];
     return [numberFormatter stringFromNumber:self];
 }
 
-- (NSString *)formattedBytes
+- (NSString *)formattedBytes_AG
 {
     static dispatch_once_t token;
 	static NSArray *unitArray;
@@ -68,7 +68,7 @@
 
 #pragma mark - Private
 
-+ (NSNumberFormatter *)numberFormatterWithNumberStyle:(NSNumberFormatterStyle)style
++ (NSNumberFormatter *)numberFormatterWithNumberStyle_AG:(NSNumberFormatterStyle)style
 {
 	NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
     NSString *threadDictionaryKey = [NSString stringWithFormat:@"NSNumberAGCategoryNumberFormatter-%i", style];

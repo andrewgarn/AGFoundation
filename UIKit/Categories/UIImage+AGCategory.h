@@ -40,13 +40,13 @@
  @param newSize The size to scale the image to.
  @return The receiver scaled to the specified size.
 */ 
-- (UIImage *)scaledToSize:(CGSize)newSize;
+- (UIImage *)scaledToSize_AG:(CGSize)newSize;
 
 /** Returns the receiver scaled then cropped to the specified size.
  @param newSize The size to scale then crop the image to.
  @return The receiver scaled then cropped to the specified size.
  */ 
-- (UIImage *)scaledAndCroppedToSize:(CGSize)newSize;
+- (UIImage *)scaledAndCroppedToSize_AG:(CGSize)newSize;
 
 /** Returns the receiver scaled then cropped to the specified size.
  
@@ -54,26 +54,26 @@
  @param newSize The size to scale then crop the image to.
  @return The receiver scaled then cropped to the specified size.
  */ 
-- (UIImage *)scaledAndCroppedToAbsoluteSize:(CGSize)newSize;
+- (UIImage *)scaledAndCroppedToAbsoluteSize_AG:(CGSize)newSize;
 
 /** Returns the receiver scaled then cropped to the specified size with the specified HiDPI scale.
  @param newSize The size to scale and then crop the image to.
  @param scale The HiDPI scale to use when scaling the image.
  @return The receiver scaled then cropped to the specified size.
 */ 
-- (UIImage *)scaledAndCroppedToSize:(CGSize)newSize withScale:(CGFloat)scale;
+- (UIImage *)scaledAndCroppedToSize_AG:(CGSize)newSize withScale:(CGFloat)scale;
 
 /** Returns the receiver scaled to the specified width.
  @param newWidth The width to scale the image to.
  @return The receiver scaled to the specified width.
 */ 
-- (UIImage *)scaledToWidth:(CGFloat)newWidth;
+- (UIImage *)scaledToWidth_AG:(CGFloat)newWidth;
 
 /** Returns the receiver scaled to the specified height.
  @param newHeight The height to scale the image to.
  @return The receiver scaled to the specified height.
 */ 
-- (UIImage *)scaledToHeight:(CGFloat)newHeight;
+- (UIImage *)scaledToHeight_AG:(CGFloat)newHeight;
 
 /**-------------------------------------------------------------------------------------
  @name Cropping
@@ -83,7 +83,7 @@
 /** Returns the receiver cropped into a square format.
  @return The receiver cropped into a square format.
 */ 
-- (UIImage *)croppedToSquare;
+- (UIImage *)croppedToSquare_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Retrieval
@@ -96,7 +96,7 @@
  @param filename The name of the file, including extension.
  @return A new image object for the specified file, or nil if the method could not initialize the image from the specified file.
 */ 
-+ (UIImage *)imageWithContentsOfBundleFileNamed:(NSString *)filename;
++ (UIImage *)imageWithContentsOfBundleFileNamed_AG:(NSString *)filename;
 
 /** Creates and returns an image object by loading the image data associated with the specified filename in the documents folder.
  
@@ -104,7 +104,6 @@
  @param filename The name of the file, including extension.
  @return A new image object for the specified file, or nil if the method could not initialize the image from the specified file.
  */ 
-+ (UIImage *)imageWithContentsOfDocumentFileNamed:(NSString *)filename;
-
++ (UIImage *)imageWithContentsOfDocumentFileNamed_AG:(NSString *)filename;
 
 @end

@@ -39,24 +39,24 @@
  Returns the value associated with the CFBundleName key in the receiver's information property list.
  @return The value associated with CFBundleName key in the receiver's property list (Info.plist).
 */
-+ (NSString *)bundleName;
++ (NSString *)bundleName_AG;
 
 /**
  Returns the value associated with the CFBundleDisplayName key in the receiver's information property list.
  @return The value associated with CFBundleDisplayName key in the receiver's property list (Info.plist).
 */
-+ (NSString *)bundleDisplayName;
++ (NSString *)bundleDisplayName_AG;
 
 /**
  Returns the value associated with the CFBundleVersion key in the receiver's information property list.
  @return The value associated with CFBundleVersion key in the receiver's property list (Info.plist).
  */
-+ (NSString *)bundleVersion;
++ (NSString *)bundleVersion_AG;
 
 /**
  Returns the value associated with the CFBundleShortVersionString key in the receiver's information property list.
  @return The value associated with CFBundleShortVersionString key in the receiver's property list (Info.plist).
  */
-+ (NSString *)bundleShortVersionString;
++ (NSString *)bundleShortVersionString_AG;
 
 @end

@@ -29,7 +29,7 @@
 
 @implementation UIFont (AGCategory)
 
-+ (NSDictionary *)fontsByFamilyName
++ (NSDictionary *)fontsByFamilyName_AG
 {
     NSMutableDictionary *fontsByFamilyName = [NSMutableDictionary dictionary];
     NSMutableString *fontsString = [NSMutableString string];

@@ -31,7 +31,7 @@
 
 #pragma mark -
 
-+ (UIColor *)randomColor 
++ (UIColor *)randomColor_AG 
 {
     CGFloat red =  (CGFloat)random() / (CGFloat)RAND_MAX;
     CGFloat blue = (CGFloat)random() / (CGFloat)RAND_MAX;
@@ -47,64 +47,64 @@
  *	Reference: http://iphonedevelopment.blogspot.co.uk/2008/10/little-color-in-your-life.html
  */ 
 
-+ (UIColor *)indigoColor
++ (UIColor *)indigoColor_AG
 {
     return [UIColor colorWithRed:0.294f green:0.0f blue:0.509f alpha:1.0];
 }
 
-+ (UIColor *)tealColor
++ (UIColor *)tealColor_AG
 {
     return [UIColor colorWithRed:0.0f green:0.5f blue:0.5f alpha:1.0];
 }
 
-+ (UIColor *)violetColor
++ (UIColor *)violetColor_AG
 {
     return [UIColor colorWithRed:0.498f green:0.0f blue:1.0f alpha:1.0];
 }
 
-+ (UIColor *)vividVioletColor
++ (UIColor *)vividVioletColor_AG
 {
     return [UIColor colorWithRed:0.506f green:0.0f blue:1.0f alpha:1.0];
 }
 
-+ (UIColor *)darkVioletColor
++ (UIColor *)darkVioletColor_AG
 {
     return [UIColor colorWithRed:0.58f green:0.0f blue:0.827f alpha:1.0];
 }
 
-+ (UIColor *)amberColor
++ (UIColor *)amberColor_AG
 {
     return [UIColor colorWithRed:1.0f green:0.75f blue:0.0f alpha:1.0];
 }
 
-+ (UIColor *)darkAmberColor
++ (UIColor *)darkAmberColor_AG
 {
     return [UIColor colorWithRed:1.0f green:0.494f blue:0.0f alpha:1.0];
 }
 
-+ (UIColor *)lemonColor
++ (UIColor *)lemonColor_AG
 {
     return [UIColor colorWithRed:1.0f green:0.914f blue:0.0627f alpha:1.0];
 }
 
-+ (UIColor *)roseColor
++ (UIColor *)roseColor_AG
 {
     return [UIColor colorWithRed:1.0f green:0.0f blue:0.5f alpha:1.0];
 }
 
-+ (UIColor *)rubyColor
++ (UIColor *)rubyColor_AG
 {
     return [UIColor colorWithRed:0.8784f green:0.06667f blue:0.3725f alpha:1.0];
 }
 
-+ (UIColor *)fireEngineRed
++ (UIColor *)fireEngineRed_AG
 {
     return [UIColor colorWithRed:0.8078f green:0.0863f blue:0.1255f alpha:1.0];
 }
 
-#pragma mark - Components
+#pragma mark - Colour Components
 
-- (CGFloat)red 
+- (CGFloat)redComponent_AG 
 {
 	CGColorRef color = self.CGColor;
 	if (CGColorSpaceGetModel(CGColorGetColorSpace(color)) != kCGColorSpaceModelRGB)
@@ -115,7 +115,7 @@
 	return components[0];
 }
 
-- (CGFloat)green 
+- (CGFloat)greenComponent_AG 
 {
 	CGColorRef color = self.CGColor;
 	if (CGColorSpaceGetModel(CGColorGetColorSpace(color)) != kCGColorSpaceModelRGB) 
@@ -127,7 +127,7 @@
 }
 
 
-- (CGFloat)blue 
+- (CGFloat)blueComponent_AG 
 {
 	CGColorRef color = self.CGColor;
 	if (CGColorSpaceGetModel(CGColorGetColorSpace(color)) != kCGColorSpaceModelRGB) 
@@ -138,7 +138,7 @@
 	return components[2];
 }
 
-- (CGFloat)alpha 
+- (CGFloat)alphaComponent_AG 
 {
 	return CGColorGetAlpha(self.CGColor);
 }

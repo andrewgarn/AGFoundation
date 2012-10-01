@@ -31,8 +31,9 @@
 @property (nonatomic, copy) AGMessageComposerCompletionBlock didFinishBlock;
 @end
 
+#pragma mark -
+
 @implementation AGMessageComposeViewController
-@synthesize didFinishBlock = _didFinishBlock;
 
 #pragma mark -
 

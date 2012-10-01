@@ -29,7 +29,7 @@
 
 @implementation UIImage (AGCategory)
 
-- (UIImage *)scaledToSize:(CGSize)newSize
+- (UIImage *)scaledToSize_AG:(CGSize)newSize
 {
     UIGraphicsBeginImageContextWithOptions(newSize, 1.0f, 0.0f);
     [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
@@ -38,17 +38,17 @@
     return newImage;
 }
 
-- (UIImage *)scaledAndCroppedToSize:(CGSize)newSize
+- (UIImage *)scaledAndCroppedToSize_AG:(CGSize)newSize
 {
-    return [self scaledAndCroppedToSize:newSize withScale:0.0f];  // using 0.0f forces to use native scaling.
+    return [self scaledAndCroppedToSize_AG:newSize withScale:0.0f];  // using 0.0f forces to use native scaling.
 }
 
-- (UIImage *)scaledAndCroppedToAbsoluteSize:(CGSize)newSize
+- (UIImage *)scaledAndCroppedToAbsoluteSize_AG:(CGSize)newSize
 {
-    return [self scaledAndCroppedToSize:newSize withScale:1.0f];
+    return [self scaledAndCroppedToSize_AG:newSize withScale:1.0f];
 }
 
-- (UIImage *)scaledAndCroppedToSize:(CGSize)newSize withScale:(CGFloat)scale
+- (UIImage *)scaledAndCroppedToSize_AG:(CGSize)newSize withScale:(CGFloat)scale
 {
     CGFloat scaleFactor, scaledWidth = newSize.width, scaledHeight = newSize.height;
     CGPoint thumbnailPoint = CGPointMake(0.0, 0.0);
@@ -82,34 +82,34 @@
     return newImage;
 }
 
-- (UIImage *)scaledToWidth:(CGFloat)newWidth
+- (UIImage *)scaledToWidth_AG:(CGFloat)newWidth
 {
-    return [self scaledToSize:CGSizeMake(newWidth, (self.size.height * (newWidth / self.size.width)))];
+    return [self scaledToSize_AG:CGSizeMake(newWidth, (self.size.height * (newWidth / self.size.width)))];
 }
 
-- (UIImage *)scaledToHeight:(CGFloat)newHeight
+- (UIImage *)scaledToHeight_AG:(CGFloat)newHeight
 {
-    return [self scaledToSize:CGSizeMake((self.size.width * (newHeight / self.size.height)), newHeight)];
+    return [self scaledToSize_AG:CGSizeMake((self.size.width * (newHeight / self.size.height)), newHeight)];
 }
 
 #pragma mark -
 
-- (UIImage *)croppedToSquare
+- (UIImage *)croppedToSquare_AG
 {
 	CGSize imageSize = self.size;
 	CGFloat shortestSide = fminf(imageSize.width, imageSize.height);
-	return [self scaledAndCroppedToSize:CGSizeMake(shortestSide, shortestSide)];
+	return [self scaledAndCroppedToSize_AG:CGSizeMake(shortestSide, shortestSide)];
 }
 
 #pragma mark -
 
-+ (UIImage *)imageWithContentsOfBundleFileNamed:(NSString *)filename
++ (UIImage *)imageWithContentsOfBundleFileNamed_AG:(NSString *)filename
 {
     NSString *path = [[NSBundle mainBundle] pathForResource:filename ofType:nil];
     return [UIImage imageWithContentsOfFile:path];
 }
 
-+ (UIImage *)imageWithContentsOfDocumentFileNamed:(NSString *)filename
++ (UIImage *)imageWithContentsOfDocumentFileNamed_AG:(NSString *)filename
 {
     static dispatch_once_t token;
 	static NSString *documentPath;
@@ -120,13 +120,6 @@
     
     NSString *path = [documentPath stringByAppendingPathComponent:filename];
     return [UIImage imageWithContentsOfFile:path];
-}
-
-#pragma mark -
-
-- (void)writeToSavedPhotosAlbum
-{
-    UIImageWriteToSavedPhotosAlbum(self, nil, NULL, nil);
 }
 
 @end

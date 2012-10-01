@@ -29,7 +29,7 @@
 
 @implementation NSDictionary (AGCategory)
 
-- (BOOL)boolForKey:(id)aKey
+- (BOOL)boolForKey_AG:(id)aKey
 {
     id object = [self objectForKey:aKey];
     
@@ -39,7 +39,7 @@
     return NO;
 }
 
-- (int)intForKey:(id)aKey
+- (int)intForKey_AG:(id)aKey
 {
     id object = [self objectForKey:aKey];
     
@@ -49,7 +49,7 @@
     return 0;
 }
 
-- (float)floatForKey:(id)aKey
+- (float)floatForKey_AG:(id)aKey
 {
     id object = [self objectForKey:aKey];
     
@@ -59,7 +59,7 @@
     return 0;
 }
 
-- (double)doubleForKey:(id)aKey
+- (double)doubleForKey_AG:(id)aKey
 {
     id object = [self objectForKey:aKey];
     
@@ -69,7 +69,7 @@
     return 0;
 }
 
-- (NSInteger)integerForKey:(id)aKey
+- (NSInteger)integerForKey_AG:(id)aKey
 {
     id object = [self objectForKey:aKey];
     
@@ -81,7 +81,7 @@
 
 #pragma mark -
 
-- (NSDate *)dateForKey:(id)aKey
+- (NSDate *)dateForKey_AG:(id)aKey
 {
     id object = [self objectForKey:aKey];
     
@@ -91,7 +91,7 @@
     return nil;
 }
 
-- (NSString *)stringForKey:(id)aKey
+- (NSString *)stringForKey_AG:(id)aKey
 {
     id object = [self objectForKey:aKey];
     
@@ -104,7 +104,7 @@
     return nil;
 }
 
-- (NSNumber *)numberForKey:(id)aKey
+- (NSNumber *)numberForKey_AG:(id)aKey
 {
     id object = [self objectForKey:aKey];
     
@@ -117,7 +117,7 @@
     return nil;
 }
 
-- (NSArray *)arrayForKey:(id)aKey
+- (NSArray *)arrayForKey_AG:(id)aKey
 {
     id object = [self objectForKey:aKey];
     
@@ -127,7 +127,7 @@
     return nil;
 }
 
-- (NSDictionary *)dictionaryForKey:(id)aKey
+- (NSDictionary *)dictionaryForKey_AG:(id)aKey
 {
     id object = [self objectForKey:aKey];
     
@@ -139,17 +139,17 @@
 
 #pragma mark -
 
-- (BOOL)isNotEmpty
+- (BOOL)isNotEmpty_AG
 {
 	return [self count] == 0 ? YES : NO;
 }
 
-- (BOOL)containsObjectForKey:(id)aKey 
+- (BOOL)containsObjectForKey_AG:(id)aKey 
 {
 	return [[self allKeys] containsObject:aKey];
 }
 
-- (NSArray *)allKeysSorted
+- (NSArray *)allKeysSorted_AG
 {
     return [[self allKeys] sortedArrayUsingSelector:@selector(compare:)];
 }

@@ -34,16 +34,16 @@
  @param title The string that appears in the receiver’s title bar.
  @param message Descriptive text that provides more details than the title.
 */ 
-+ (void)showWithTitle:(NSString *)title message:(NSString *)message;
++ (void)showWithTitle_AG:(NSString *)title message:(NSString *)message;
 
 /** Convenience method for displaying an alert view.
  @param message Descriptive text that provides more details than the title.
 */ 
-+ (void)showWithMessage:(NSString *)message;
++ (void)showWithMessage_AG:(NSString *)message;
 
 /** Convenience method for displaying an error alert view.
  @param error An error object.
 */
-+ (void)showWithError:(NSError *)error;
++ (void)showWithError_AG:(NSError *)error;
 
 @end

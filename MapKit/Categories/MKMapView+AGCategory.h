@@ -37,6 +37,6 @@
  @param zoomLevel The zoom level to set the map to.
  @param animated Specify YES to animate modifying the map view, or NO to modify it immediately.
 */ 
-- (void)setCenterCoordinate:(CLLocationCoordinate2D)centerCoordinate zoomLevel:(NSUInteger)zoomLevel animated:(BOOL)animated;
+- (void)setCenterCoordinate_AG:(CLLocationCoordinate2D)centerCoordinate zoomLevel:(NSUInteger)zoomLevel animated:(BOOL)animated;
 
 @end

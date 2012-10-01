@@ -37,7 +37,7 @@
  @param sender The object whose notifications the observer wants to receive; that is, only notifications sent by this sender are delivered to the observer.
  If you pass nil, the notification center doesn’t use a notification’s sender to decide whether to deliver it to the observer.
 */
-+ (void)addUniqueObserver:(id)observer selector:(SEL)selector name:(NSString *)notificationName object:(id)sender;
++ (void)addUniqueObserver_AG:(id)observer selector:(SEL)selector name:(NSString *)notificationName object:(id)sender;
 
 /** Adds a unique entry to the receiver’s dispatch table with an observer, a notification selector and notification name.
  @param observer Object registering as an observer. This value must not be nil.
@@ -45,12 +45,12 @@
  @param notificationName The name of the notification for which to register the observer; that is, only notifications with this name are delivered to the observer. If you pass nil, the notification center doesn’t use a notification’s name to decide whether to deliver it to the observer.
  If you pass nil, the notification center doesn’t use a notification’s sender to decide whether to deliver it to the observer.
 */
-+ (void)addUniqueObserver:(id)observer selector:(SEL)selector name:(NSString *)notificationName;
++ (void)addUniqueObserver_AG:(id)observer selector:(SEL)selector name:(NSString *)notificationName;
 
 /** Posts a given notification on the main thread to the receiver.
  @param notification The notification to post. This value must not be nil.
  @exception NSException An exception is raised if notification is nil.
 */ 
-+ (void)postNotificationOnMainThread:(NSNotification *)notification;
++ (void)postNotificationOnMainThread_AG:(NSNotification *)notification;
 
 @end

@@ -33,6 +33,6 @@
 /** Returns the destination view controller for the segue, or the top view controller if the destination is a navigation controller.
  @return The destination view controller for the segue.
 */
-- (UIViewController *)destinationTopViewController;
+- (UIViewController *)destinationViewController_AG;
 
 @end

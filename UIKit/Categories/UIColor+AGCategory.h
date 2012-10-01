@@ -38,7 +38,7 @@
 /** Returns a random UIColor.
 @return The random UIColor color object.
 */ 
-+ (UIColor *)randomColor;
++ (UIColor *)randomColor_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Creating a UIColor with Preset Component Values
@@ -48,57 +48,57 @@
 /** Returns a color object whose RGB values are 0.294, 0.0, and 0.509f and whose alpha value is 1.0.
  @return The UIColor object.
 */ 
-+ (UIColor *)indigoColor;
++ (UIColor *)indigoColor_AG;
 
 /** Returns a color object whose RGB values are 0.0, 0.5, and 0.5 and whose alpha value is 1.0.
  @return The UIColor object.
 */ 
-+ (UIColor *)tealColor;
++ (UIColor *)tealColor_AG;
 
 /** Returns a color object whose RGB values are 0.498, 0.0, and 1.0 and whose alpha value is 1.0.
  @return The UIColor object.
 */ 
-+ (UIColor *)violetColor;
++ (UIColor *)violetColor_AG;
 
 /** Returns a color object whose RGB values are 0.506, 0.0, and 1.0 and whose alpha value is 1.0.
  @return The UIColor object.
 */ 
-+ (UIColor *)vividVioletColor;
++ (UIColor *)vividVioletColor_AG;
 
 /** Returns a color object whose RGB values are 0.58, 0.0, and 0.827 and whose alpha value is 1.0.
  @return The UIColor object.
 */ 
-+ (UIColor *)darkVioletColor;
++ (UIColor *)darkVioletColor_AG;
 
 /** Returns a color object whose RGB values are 1.0, 0.75, and 0.0 and whose alpha value is 1.0.
  @return The UIColor object.
 */ 
-+ (UIColor *)amberColor;
++ (UIColor *)amberColor_AG;
 
 /** Returns a color object whose RGB values are 1.0, 0.494, and 0.0 and whose alpha value is 1.0.
  @return The UIColor object.
 */ 
-+ (UIColor *)darkAmberColor;
++ (UIColor *)darkAmberColor_AG;
 
 /** Returns a color object whose RGB values are 1.0, 0.914, and 0.0627 and whose alpha value is 1.0.
  @return The UIColor object.
 */ 
-+ (UIColor *)lemonColor;
++ (UIColor *)lemonColor_AG;
 
 /** Returns a color object whose RGB values are 1.0, 0.0, and 0.5 and whose alpha value is 1.0.
  @return The UIColor object.
 */ 
-+ (UIColor *)roseColor;
++ (UIColor *)roseColor_AG;
 
 /** Returns a color object whose RGB values are 0.8784, 0.06667, and 0.3725 and whose alpha value is 1.0.
  @return The UIColor object.
 */ 
-+ (UIColor *)rubyColor;
++ (UIColor *)rubyColor_AG;
 
 /** Returns a color object whose RGB values are 0.8078, 0.0863, and 0.1255 and whose alpha value is 1.0.
  @return The UIColor object.
 */ 
-+ (UIColor *)fireEngineRed;
++ (UIColor *)fireEngineRed_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Color Components
@@ -106,15 +106,15 @@
 */ 
 
 /** Returns the red component of the receiver */ 
-- (CGFloat)red;
+- (CGFloat)redComponent_AG;
 
 /** Returns the green component of the receiver */ 
-- (CGFloat)green; 
+- (CGFloat)greenComponent_AG; 
 
 /** Returns the blue component of the receiver */ 
-- (CGFloat)blue;
+- (CGFloat)blueComponent_AG;
 
 /** Returns the alpha component of the receiver */ 
-- (CGFloat)alpha;
+- (CGFloat)alphaComponent_AG;
 
 @end

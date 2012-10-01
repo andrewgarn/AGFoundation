@@ -31,8 +31,9 @@
 @property (nonatomic, strong) NSMutableArray *blockArray;
 @end
 
+#pragma mark -
+
 @implementation AGActionSheet
-@synthesize blockArray = _blockArray;
 
 #pragma mark - Creating Action Sheets
 

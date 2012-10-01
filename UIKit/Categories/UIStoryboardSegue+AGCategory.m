@@ -10,7 +10,7 @@
 
 @implementation UIStoryboardSegue (AGCategory)
 
-- (UIViewController *)destinationTopViewController
+- (UIViewController *)destinationViewController_AG
 {
     id destinationViewController = self.destinationViewController;
     if ([destinationViewController isKindOfClass:[UINavigationController class]])

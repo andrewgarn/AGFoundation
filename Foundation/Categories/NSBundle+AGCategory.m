@@ -29,22 +29,22 @@
 
 @implementation NSBundle (AGCategory)
 
-+ (NSString *)bundleName
++ (NSString *)bundleName_AG
 {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
 }
 
-+ (NSString *)bundleDisplayName
++ (NSString *)bundleDisplayName_AG
 {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
 }
 
-+ (NSString *)bundleVersion
++ (NSString *)bundleVersion_AG
 {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
 }
 
-+ (NSString *)bundleShortVersionString
++ (NSString *)bundleShortVersionString_AG
 {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
 }

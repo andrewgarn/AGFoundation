@@ -29,7 +29,7 @@
 
 @implementation AGSoundEffect
 
-#pragma mark - Object Lifecycle
+#pragma mark -
 
 - (AGSoundEffect *)initWithSoundNamed:(NSString *)filename
 {

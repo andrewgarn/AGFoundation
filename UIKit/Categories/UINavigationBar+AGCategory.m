@@ -29,12 +29,12 @@
 
 @implementation UINavigationBar (AGCategory)
 
-- (void)addDropShadow
+- (void)addDropShadow_AG
 {
-    [self addDropShadowWithOffset:CGSizeMake(0, 3) radius:1.0 color:[UIColor darkGrayColor] opacity:1.0];
+    [self addDropShadowWithOffset_AG:CGSizeMake(0, 3) radius:1.0 color:[UIColor darkGrayColor] opacity:1.0];
 }
 
-- (void)addDropShadowWithOffset:(CGSize)offset radius:(CGFloat)radius color:(UIColor *)color opacity:(CGFloat)opacity
+- (void)addDropShadowWithOffset_AG:(CGSize)offset radius:(CGFloat)radius color:(UIColor *)color opacity:(CGFloat)opacity
 {
     // Creating shadow path for better performance
     CGMutablePathRef path = CGPathCreateMutable();

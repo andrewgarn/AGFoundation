@@ -37,9 +37,9 @@
 */
 
 /** Adds a default drop shadow to the receiver.
-@see addDropShadowWithOffset:radius:color:opacity:
+@see addDropShadowWithOffset_AG:radius:color:opacity:
 */ 
-- (void)addDropShadow;
+- (void)addDropShadow_AG;
 
 /** Adds a drop shadow to the receiver with the specified parameters.
  @param offset Specifies the offset of the receiver’s shadow.
@@ -47,6 +47,6 @@
  @param color Specifies the color of the receiver’s shadow.
  @param opacity Specifies the opacity of the receiver’s shadow.
 */ 
-- (void)addDropShadowWithOffset:(CGSize)offset radius:(CGFloat)radius color:(UIColor *)color opacity:(CGFloat)opacity;
+- (void)addDropShadowWithOffset_AG:(CGSize)offset radius:(CGFloat)radius color:(UIColor *)color opacity:(CGFloat)opacity;
 
 @end

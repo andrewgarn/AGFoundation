@@ -32,10 +32,7 @@
 typedef void (^AGLocationManagerDidUpdateToLocationBlock)(CLLocationManager *manager, CLLocation *newLocation, CLLocation *oldLocation);
 typedef void (^AGLocationManagerDidFailWithErrorBlock)(CLLocationManager *manager, NSError *error);
 
-@interface LocationManager : NSObject <CLLocationManagerDelegate>
-{
-    
-}
+@interface LocationManager : NSObject
 
 #pragma mark - Start/Stop Updating Location
 
