@@ -38,7 +38,7 @@
 /** Creates a UIImage object representing the receiver.
  @return A UIImage object representing the receiver.
 */ 
-- (UIImage *)image;
+- (UIImage *)imageRepresentation_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Style Attributes
@@ -50,7 +50,7 @@
  @param width The width of the image border
  @param color The color of the image border. Optional.
 */ 
-- (void)setRoundedCornersWithRadius:(CGFloat)radius width:(CGFloat)width color:(UIColor *)color;
+- (void)setRoundedCornersWithRadius_AG:(CGFloat)radius width:(CGFloat)width color:(UIColor *)color;
 
 /**-------------------------------------------------------------------------------------
  @name Hierarchy Logging
@@ -58,7 +58,7 @@
 */
 
 /** Recursively log the receiver and its subviews. */ 
-- (void)logViewHierarchy;
+- (void)logViewHierarchy_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Animating Views
@@ -66,7 +66,7 @@
 */
 
 /** Unlinks the receiver from its superview and its window, and removes it from the responder chain with animation. */ 
-- (void)removeFromSuperviewAnimated;
+- (void)removeFromSuperviewAnimated_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Removing Subviews
@@ -74,10 +74,10 @@
 */
 
 /** Removes all the receiver's subviews from their superview and window */
-- (void)removeAllSubviews;
+- (void)removeAllSubviews_AG;
 
 /** Removes all the receiver's subviews from their superview and window with animation */
-- (void)removeAllSubviewsAnimated;
+- (void)removeAllSubviewsAnimated_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Bounds for Orientation
@@ -87,13 +87,13 @@
 /** Returns the bounds rectangle of the receiver adjusted for the current status bar orientation. 
  @return The bounds rectangle of the receiver adjusted for the current status bar orientation.
  */ 
-- (CGRect)currentBounds;
+- (CGRect)currentBounds_AG;
 
 /** Returns the bounds rectangle of the receiver adjusted for orientation. 
  @param orientation The interface orientation to use.
  @return The bounds rectangle of the receiver adjusted for orientation.
 */ 
-- (CGRect)boundsForOrientation:(UIInterfaceOrientation)orientation;
+- (CGRect)boundsForOrientation_AG:(UIInterfaceOrientation)orientation;
 
 /**-------------------------------------------------------------------------------------
  @name Configuring Position
@@ -101,13 +101,13 @@
 */
 
 /** Shortcut for the receiver's frame.origin property. */ 
-@property (nonatomic) CGPoint origin;
+@property (nonatomic) CGPoint origin_AG;
 
 /** Shortcut for the receiver's frame.origin.x property. */
-@property (nonatomic) CGFloat x;
+@property (nonatomic) CGFloat x_AG;
 
 /** Shortcut for the receiver's frame.origin.y property. */
-@property (nonatomic) CGFloat y;
+@property (nonatomic) CGFloat y_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Configuring Size
@@ -115,13 +115,13 @@
 */
 
 /** Shortcut for the receiver's frame.size property. */ 
-@property (nonatomic) CGSize size;
+@property (nonatomic) CGSize size_AG;
 
 /** Shortcut for the receiver's frame.size.width property. */
-@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat width_AG;
 
 /** Shortcut for the receiver's frame.size.height property. */
-@property (nonatomic) CGFloat height;
+@property (nonatomic) CGFloat height_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Configuring Min, Mid, and Max Values
@@ -129,21 +129,21 @@
 */
 
 /** Shortcut for the receiver's frame.origin.x property. */
-@property (nonatomic) CGFloat minX;
+@property (nonatomic) CGFloat minX_AG;
 
 /** Shortcut for the receiver's frame.origin.x + (frame.size.width / 2) value. */
-@property (nonatomic) CGFloat midX;
+@property (nonatomic) CGFloat midX_AG;
 
 /** Shortcut for the receiver's frame.origin.x + frame.size.width value. */
-@property (nonatomic) CGFloat maxX;
+@property (nonatomic) CGFloat maxX_AG;
 
 /** Shortcut for the receiver's frame.origin.y property. */
-@property (nonatomic) CGFloat minY;
+@property (nonatomic) CGFloat minY_AG;
 
 /** Shortcut for the receiver's frame.origin.y + (frame.size.height / 2) value. */
-@property (nonatomic) CGFloat midY;
+@property (nonatomic) CGFloat midY_AG;
 
 /** Shortcut for the receiver's frame.origin.y + frame.size.height value. */
-@property (nonatomic) CGFloat maxY;
+@property (nonatomic) CGFloat maxY_AG;
 
 @end

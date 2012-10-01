@@ -38,21 +38,21 @@
 /** Returns the MD5 hash of the receiver.
  @return The MD5 hash of the receiver.
  */
-- (NSString *)MD5Hash;
+- (NSString *)MD5Hash_AG;
 
 /** Returns the SHA1 hash of the receiver.
  @return The SHA1 hash of the receiver.
  */
-- (NSString *)SHA1Hash;
+- (NSString *)SHA1Hash_AG;
 
 /** Returns the SHA256 hash of the receiver.
  @return The SHA256 hash of the receiver.
  */
-- (NSString *)SHA256Hash;
+- (NSString *)SHA256Hash_AG;
 
 /** Returns the SHA512 hash of the receiver.
  @return The SHA512 hash of the receiver.
  */
-- (NSString *)SHA512Hash;
+- (NSString *)SHA512Hash_AG;
 
 @end

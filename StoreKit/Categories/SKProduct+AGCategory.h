@@ -33,6 +33,6 @@
 /** Returns the localized `SKProduct` price.
  @return The localized `SKProduct` price.
 */ 
-- (NSString *)localizedPrice;
+- (NSString *)localizedPrice_AG;
 
 @end

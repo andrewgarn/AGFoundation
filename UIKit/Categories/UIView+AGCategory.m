@@ -32,14 +32,13 @@
 
 #pragma mark - UIImage
 
-- (UIImage *)image
+- (UIImage *)imageRepresentation_AG
 {
     CGSize imageSize = [self bounds].size;
     if (NULL != UIGraphicsBeginImageContextWithOptions)
         UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
     else
         UIGraphicsBeginImageContext(imageSize);
-    
     
 	if([self.layer respondsToSelector:@selector(setShouldRasterize:)])
     {
@@ -59,7 +58,7 @@
 
 #pragma mark -
 
-- (void)setRoundedCornersWithRadius:(CGFloat)radius width:(CGFloat)width color:(UIColor *)color
+- (void)setRoundedCornersWithRadius_AG:(CGFloat)radius width:(CGFloat)width color:(UIColor *)color
 {
 	self.clipsToBounds = YES;
 	self.layer.cornerRadius = radius;
@@ -73,16 +72,16 @@
 
 #pragma mark - Logging
 
-- (void)logViewHierarchy
+- (void)logViewHierarchy_AG
 {
     NSLog(@"Log View Hierarchy: START");
     
-    [self logViewHierarchy:self depth:0];
+    [self logViewHierarchy_AG:self depth:0];
     
     NSLog(@"Log View Hierarchy: END");
 }
 
-- (void)logViewHierarchy:(UIView *)viewNode depth:(NSUInteger)depth
+- (void)logViewHierarchy_AG:(UIView *)viewNode depth:(NSUInteger)depth
 {
     for (UIView *v in viewNode.subviews)
     {
@@ -90,14 +89,14 @@
         
         if ([v.subviews count])
         {
-            [self logViewHierarchy:v depth:(depth + 2)];
+            [self logViewHierarchy_AG:v depth:(depth + 2)];
         }
     }
 }
 
 #pragma mark - Animation
 
-- (void)removeFromSuperviewAnimated 
+- (void)removeFromSuperviewAnimated_AG
 {
     __block float originalOpacity = self.layer.opacity;
     [UIView animateWithDuration:0.3 animations:^{
@@ -111,12 +110,12 @@
 
 #pragma mark -
 
-- (void)removeAllSubviews
+- (void)removeAllSubviews_AG
 {
     [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
-- (void)removeAllSubviewsAnimated
+- (void)removeAllSubviewsAnimated_AG
 {
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
@@ -126,12 +125,12 @@
 
 #pragma mark - Bounds
 
-- (CGRect)currentBounds 
+- (CGRect)currentBounds_AG 
 {
-	return [self boundsForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
+	return [self boundsForOrientation_AG:[[UIApplication sharedApplication] statusBarOrientation]];
 }
 
-- (CGRect)boundsForOrientation:(UIInterfaceOrientation)orientation
+- (CGRect)boundsForOrientation_AG:(UIInterfaceOrientation)orientation
 {
 	CGRect bounds = [self bounds];
     
@@ -146,36 +145,36 @@
 
 #pragma mark - Frame
 
-- (CGPoint)origin
+- (CGPoint)origin_AG
 {
     return self.frame.origin;
 }
 
-- (void)setOrigin:(CGPoint)newOrigin
+- (void)setOrigin_AG:(CGPoint)newOrigin
 {
     CGRect frame = self.frame;
     frame.origin = newOrigin;
     self.frame = frame;
 }
 
-- (CGFloat)x
+- (CGFloat)x_AG
 {
     return self.frame.origin.x;
 }
 
-- (void)setX:(CGFloat)newX
+- (void)setX_AG:(CGFloat)newX
 {
     CGRect frame = self.frame;
     frame.origin.x = newX;
     self.frame = frame;
 }
 
-- (CGFloat)y
+- (CGFloat)y_AG
 {
     return self.frame.origin.y; 
 }
 
-- (void)setY:(CGFloat)newY
+- (void)setY_AG:(CGFloat)newY
 {
     CGRect frame = self.frame;
     frame.origin.y = newY;
@@ -184,72 +183,72 @@
 
 #pragma mark -
 
-- (CGFloat)minX
+- (CGFloat)minX_AG
 {
     return CGRectGetMinX(self.frame);
 }
 
-- (void)setMinX:(CGFloat)minX
+- (void)setMinX_AG:(CGFloat)minX
 {
     CGRect frame = self.frame;
     frame.origin.x = minX;
     self.frame = frame;
 }
 
-- (CGFloat)midX
+- (CGFloat)midX_AG
 {
     return CGRectGetMidX(self.frame);
 }
 
-- (void)setMidX:(CGFloat)midX
+- (void)setMidX_AG:(CGFloat)midX
 {
     CGRect frame = self.frame;
     frame.origin.x = midX - (frame.size.width / 2);
     self.frame = frame;
 }
 
-- (CGFloat)maxX
+- (CGFloat)maxX_AG
 {
     return CGRectGetMaxX(self.frame);
 }
 
-- (void)setMaxX:(CGFloat)maxX
+- (void)setMaxX_AG:(CGFloat)maxX
 {
     CGRect frame = self.frame;
     frame.origin.x = maxX - frame.size.width;
     self.frame = frame;
 }
 
-- (CGFloat)minY
+- (CGFloat)minY_AG
 {
     return CGRectGetMinY(self.frame);
 }
 
-- (void)setMinY:(CGFloat)minY
+- (void)setMinY_AG:(CGFloat)minY
 {
     CGRect frame = self.frame;
     frame.origin.y = minY;
     self.frame = frame;
 }
 
-- (CGFloat)midY
+- (CGFloat)midY_AG
 {
     return CGRectGetMidY(self.frame);
 }
 
-- (void)setMidY:(CGFloat)midY
+- (void)setMidY_AG:(CGFloat)midY
 {
     CGRect frame = self.frame;
     frame.origin.y = midY - (frame.size.height / 2);
     self.frame = frame;
 }
 
-- (CGFloat)maxY
+- (CGFloat)maxY_AG
 {
     return CGRectGetMaxY(self.frame);
 }
 
-- (void)setMaxY:(CGFloat)maxY
+- (void)setMaxY_AG:(CGFloat)maxY
 {
     CGRect frame = self.frame;
     frame.origin.y = maxY - frame.size.height;
@@ -258,36 +257,36 @@
 
 #pragma mark -
 
-- (CGSize)size
+- (CGSize)size_AG
 {
     return self.frame.size;
 }
 
-- (void)setSize:(CGSize)newSize
+- (void)setSize_AG:(CGSize)newSize
 {
     CGRect frame = self.frame;
     frame.size = newSize;
     self.frame = frame;
 }
 
-- (float)width
+- (float)width_AG
 {
     return self.frame.size.width;
 }
 
-- (void)setWidth:(float)newWidth
+- (void)setWidth_AG:(float)newWidth
 {
     CGRect frame = self.frame;
     frame.size.width = newWidth;
     self.frame = frame;
 }
 
-- (float)height
+- (float)height_AG
 {
     return self.frame.size.height;
 }
 
-- (void)setHeight:(float)newHeight
+- (void)setHeight_AG:(float)newHeight
 {
     CGRect frame = self.frame;
     frame.size.height = newHeight;

@@ -28,20 +28,14 @@
 #import "UIScreen+AGCategory.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface UIScreen (AGCategory_Private)
-- (UIImage *)screenshot;
-@end
-
-#pragma mark -
-
 @implementation UIScreen (AGCategory)
 
-+ (UIImage *)screenshot
++ (UIImage *)imageRepresentation_AG
 {
-    return [[UIScreen mainScreen] screenshot]; 
+    return [[UIScreen mainScreen] imageRepresentation_AG]; 
 }
 
-- (UIImage *)screenshot
+- (UIImage *)imageRepresentation_AG
 {
     // Create a graphics context with the target size
     // On iOS 4 and later, use UIGraphicsBeginImageContextWithOptions to take the scale into consideration
@@ -89,17 +83,17 @@
 
 #pragma mark -
 
-+ (CGFloat)pixelWidth
++ (CGFloat)pixelWidth_AG
 {
-    return [UIScreen pixelBounds].size.width;
+    return [UIScreen pixelBounds_AG].size.width;
 }
 
-+ (CGFloat)pixelHeight
++ (CGFloat)pixelHeight_AG
 {
-    return [UIScreen pixelBounds].size.height;
+    return [UIScreen pixelBounds_AG].size.height;
 }
 
-+ (CGRect)pixelBounds
++ (CGRect)pixelBounds_AG
 {
     static dispatch_once_t token;
 	static CGRect pixelBounds;
@@ -116,24 +110,24 @@
 
 #pragma mark -
 
-+ (CGFloat)pointWidth
++ (CGFloat)pointWidth_AG
 {
     return [[UIScreen mainScreen] bounds].size.width;
 }
 
-+ (CGFloat)pointHeight
++ (CGFloat)pointHeight_AG
 {
     return [[UIScreen mainScreen] bounds].size.height;    
 }
 
 #pragma mark -
 
-- (CGRect)currentBounds 
+- (CGRect)currentBounds_AG
 {
-	return [self boundsForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
+	return [self boundsForOrientation_AG:[[UIApplication sharedApplication] statusBarOrientation]];
 }
 
-- (CGRect)boundsForOrientation:(UIInterfaceOrientation)orientation
+- (CGRect)boundsForOrientation_AG:(UIInterfaceOrientation)orientation
 {
 	CGRect bounds = [self bounds];
     

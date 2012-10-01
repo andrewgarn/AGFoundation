@@ -28,32 +28,11 @@
 #import "UIBarButtonItem+AGCategory.h"
 #import "NSObject+AGCategory.h"
 
-static char UIBarButtonItemAGCategoryBlockKey;
+static char AGCategoryBarButtonItemBlockKey;
 
 @implementation UIBarButtonItem (AGCategory)
 
-- (id)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem block:(UIBarButtonItemSenderBlock)block
-{
-    self = [self initWithBarButtonSystemItem:systemItem target:self action:@selector(AGCategoryBarButtonItemPressed:)];
-    [self associateCopyOfValue:block withKey:&UIBarButtonItemAGCategoryBlockKey];
-    return self;
-}
-
-- (id)initWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style block:(UIBarButtonItemSenderBlock)block
-{
-    self = [self initWithImage:image style:style target:self action:@selector(AGCategoryBarButtonItemPressed:)];
-	[self associateCopyOfValue:block withKey:&UIBarButtonItemAGCategoryBlockKey];
-	return self;
-}
-
-- (id)initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style block:(UIBarButtonItemSenderBlock)block;
-{
-    self = [self initWithTitle:title style:style target:self action:@selector(AGCategoryBarButtonItemPressed:)];
-	[self associateCopyOfValue:block withKey:&UIBarButtonItemAGCategoryBlockKey];
-	return self;
-}
-
-+ (UIBarButtonItem *)customButtonWithImage:(UIImage *)image highlightedImage:(UIImage *)highlightedImage block:(UIBarButtonItemSenderBlock)block
++ (UIBarButtonItem *)customButtonWithImage_AG:(UIImage *)image highlightedImage:(UIImage *)highlightedImage block:(AGCategoryBarButtonItemSenderBlock)block
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:image forState:UIControlStateNormal];
@@ -61,7 +40,7 @@ static char UIBarButtonItemAGCategoryBlockKey;
     [button addTarget:self action:@selector(AGCategoryBarButtonItemPressed:) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
-    [self associateCopyOfValue:block withKey:&UIBarButtonItemAGCategoryBlockKey];
+    [self associateCopyOfValue_AG:block withKey:&AGCategoryBarButtonItemBlockKey];
     return item;
 }
 
@@ -69,7 +48,7 @@ static char UIBarButtonItemAGCategoryBlockKey;
 
 - (void)AGCategoryBarButtonItemPressed:(UIBarButtonItem *)sender
 {
-    UIBarButtonItemSenderBlock block = [self associatedValueForKey:&UIBarButtonItemAGCategoryBlockKey];
+    AGCategoryBarButtonItemSenderBlock block = [self associatedValueForKey_AG:&AGCategoryBarButtonItemBlockKey];
     if (block) block (self);
 }
 

@@ -41,14 +41,14 @@
  @param identifier The iTunes identifier for the application
  @return The iTunes App Store URL for a given identifier
 */
-+ (NSURL *)appStoreURLForAppID:(NSString *)identifier;
++ (NSURL *)appStoreURLForAppID_AG:(NSString *)identifier;
 
 /**
  Returns the iTunes App Store Review URL for the given identifier
  @param identifier The iTunes identifier for the application
  @return The iTunes App Store Review URL for a given identifier
 */
-+ (NSURL *)appStoreReviewURLForAppID:(NSString *)identifier;
++ (NSURL *)appStoreReviewURLForAppID_AG:(NSString *)identifier;
 
 /**-------------------------------------------------------------------------------------
  @name Comparing URLs
@@ -60,7 +60,7 @@
  @param otherURL The URL with which to compare the receiver.
  @return `YES` if the receiver and otherURL are equal, otherwise `NO`.
 */
-- (BOOL)isEqualToURL:(NSURL *)otherURL;
+- (BOOL)isEqualToURL_AG:(NSURL *)otherURL;
 
 /**-------------------------------------------------------------------------------------
  @name File Backup Prevention
@@ -73,6 +73,6 @@
  This requirement was added by apple with the introduction of iCloud. Files stored in the documents directory that have not been created by the user, or do not contain user data, must not be backed up. For more information see the following: http://developer.apple.com/library/ios/#qa/qa1719/_index.html
  @return `YES` if the operation was successful, otherwise `NO`.
 */
-- (BOOL)addSkipBackupAttribute;
+- (BOOL)addSkipBackupAttribute_AG;
 
 @end

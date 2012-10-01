@@ -34,6 +34,6 @@
  @param imageName The name of the file. If this is the first time the image is being loaded, the method looks for an image with the specified name in the application’s main bundle.
  @return An image view initialized with the specified filename.
 */ 
-+ (UIImageView *)imageViewWithImageNamed:(NSString *)imageName;
++ (UIImageView *)imageViewWithImageNamed_AG:(NSString *)imageName;
 
 @end

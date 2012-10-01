@@ -33,6 +33,6 @@
 /** Creates and returns the main storyboard object for the application.
  @return A main storyboard object, or nil if no such object exists.
 */
-+ (UIStoryboard *)mainStoryboard;
++ (UIStoryboard *)mainStoryboard_AG;
 
 @end

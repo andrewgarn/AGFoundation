@@ -27,7 +27,7 @@
 
 #import "LocationManager.h"
 
-@interface LocationManager ()
+@interface LocationManager () <CLLocationManagerDelegate>
 @property (nonatomic, copy) AGLocationManagerDidUpdateToLocationBlock didUpdateToLocationBlock;
 @property (nonatomic, copy) AGLocationManagerDidFailWithErrorBlock didFailWithErrorBlock;
 @property (nonatomic, strong) CLLocationManager *locationManager;
@@ -37,8 +37,6 @@
 #pragma mark -
 
 @implementation LocationManager
-@synthesize didUpdateToLocationBlock = _didUpdateToLocationBlock, didFailWithErrorBlock = _didFailWithErrorBlock;
-@synthesize locationManager = _locationManager, latestLocation = _latestLocation;
 
 #pragma mark - Object Lifecycle
 
@@ -120,23 +118,21 @@
 {
     _latestLocation = newLocation;
     
-    if (_didUpdateToLocationBlock != nil)
-        _didUpdateToLocationBlock(manager, newLocation, oldLocation);
+    if (_didUpdateToLocationBlock != nil) _didUpdateToLocationBlock(manager, newLocation, oldLocation);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     _latestLocation = nil;
     
-    if (_didFailWithErrorBlock)
-        _didFailWithErrorBlock(manager, error);
+    if (_didFailWithErrorBlock) _didFailWithErrorBlock(manager, error);
 }
 
 #pragma mark - CLLocationManagerDelegate (Heading Events)
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
 {
-    
+    // TODO: Handle
 }
 
 - (BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager

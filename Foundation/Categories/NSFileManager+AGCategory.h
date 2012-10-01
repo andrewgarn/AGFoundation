@@ -41,58 +41,58 @@
  The return value is cached the first time the method is called.
  @return The path to the application's cache directory.
 */
-+ (NSString *)cachePath;
++ (NSString *)cachePath_AG;
 
 /** Returns the path to the application's document directory.
  
  The return value is cached the first time the method is called.
  @return The path to the application's document directory.
 */
-+ (NSString *)documentPath;
++ (NSString *)documentPath_AG;
 
 /** Returns the path to the application's library directory.
  
  The return value is cached the first time the method is called.
  @return The path to the application's library directory.
 */
-+ (NSString *)libraryPath;
++ (NSString *)libraryPath_AG;
 
 /** Returns the path to the application's temporary directory.
  
  The return value is cached the first time the method is called.
  @return The path to the application's temporary directory.
 */
-+ (NSString *)temporaryPath;
++ (NSString *)temporaryPath_AG;
 
 /** Returns the cache path for the specified filename.
  @param filename The name of the resource, including extension.
  @return The cache path for the specified filename.
 */
-+ (NSString *)cachePathForFile:(NSString *)filename;
++ (NSString *)cachePathForFile_AG:(NSString *)filename;
 
 /** Returns the document path for the specified filename.
  @param filename The name of the resource, including extension.
  @return The document path for the specified filename.
 */
-+ (NSString *)documentPathForFile:(NSString *)filename;
++ (NSString *)documentPathForFile_AG:(NSString *)filename;
 
 /** Returns the library path for the specified filename.
  @param filename The name of the resource, including extension.
  @return The library path for the specified filename.
 */
-+ (NSString *)libraryPathForFile:(NSString *)filename;
++ (NSString *)libraryPathForFile_AG:(NSString *)filename;
 
 /** Returns the temporary path for the specified filename.
  @param filename The name of the resource, including extension.
  @return The temporary path for the specified filename.
 */
-+ (NSString *)temporaryPathForFile:(NSString *)filename;
++ (NSString *)temporaryPathForFile_AG:(NSString *)filename;
 
 /** Returns the bundle path for the specified filename.
  @param filename The name of the resource, including extension.
  @return The bundle path for the specified filename.
  */
-+ (NSString *)bundlePathForFile:(NSString *)filename;
++ (NSString *)bundlePathForFile_AG:(NSString *)filename;
 
 /**-------------------------------------------------------------------------------------
  @name Getting Contents
@@ -103,34 +103,34 @@
  @param path The path to the directory whose contents you want to enumerate.
  @return An array of `NSString` objects, each of which identifies a file, directory, or symbolic link contained in path. Returns an empty array if the directory exists but has no contents. If an error occurs, this method returns nil.
 */
-+ (NSArray *)contentsOfDirectoryAtPath:(NSString *)path;
++ (NSArray *)contentsOfDirectoryAtPath_AG:(NSString *)path;
 
 /** Performs a shallow search of the specified directory and returns the paths of any contained items with the specified extension.
  @param path The path to the directory whose contents you want to enumerate.
  @param extension The file extension. If extension is an empty string or nil, all the paths found are returned.
  @return An array of `NSString` objects, each of which identifies a file, directory, or symbolic link contained in path. Returns an empty array if the directory exists but has no contents. If an error occurs, this method returns nil.
 */
-+ (NSArray *)contentsOfDirectoryAtPath:(NSString *)path withType:(NSString *)extension;
++ (NSArray *)contentsOfDirectoryAtPath_AG:(NSString *)path withType:(NSString *)extension;
 
 /** Performs a shallow search of the cache directory and returns the paths of any contained items.
  @return An array of `NSString` objects, each of which identifies a file, directory, or symbolic link contained in path. Returns an empty array if the directory has no contents. If an error occurs, this method returns nil.
 */
-+ (NSArray *)contentsOfCacheDirectory;
++ (NSArray *)contentsOfCacheDirectory_AG;
 
 /** Performs a shallow search of the document directory and returns the paths of any contained items.
  @return An array of `NSString` objects, each of which identifies a file, directory, or symbolic link contained in path. Returns an empty array if the directory has no contents. If an error occurs, this method returns nil.
 */
-+ (NSArray *)contentsOfDocumentDirectory;
++ (NSArray *)contentsOfDocumentDirectory_AG;
 
 /** Performs a shallow search of the library directory and returns the paths of any contained items.
  @return An array of `NSString` objects, each of which identifies a file, directory, or symbolic link contained in path. Returns an empty array if the directory has no contents. If an error occurs, this method returns nil.
 */
-+ (NSArray *)contentsOfLibraryDirectory;
++ (NSArray *)contentsOfLibraryDirectory_AG;
 
 /** Performs a shallow search of the temporary directory and returns the paths of any contained items.
  @return An array of `NSString` objects, each of which identifies a file, directory, or symbolic link contained in path. Returns an empty array if the directory has no contents. If an error occurs, this method returns nil.
  */
-+ (NSArray *)contentsOfTemporaryDirectory;
++ (NSArray *)contentsOfTemporaryDirectory_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Deleting Items
@@ -140,11 +140,11 @@
 /** Removes the file or directory at the specified path asynchronously.
  @param path A path string indicating the file or directory to remove. If the path specifies a directory, the contents of that directory are recursively removed. You may specify nil for this parameter.
 */
-+ (void)removeItemAtPath:(NSString *)path;
++ (void)removeItemAtPath_AG:(NSString *)path;
 
 /** Removes the file or directory at the specified URL asynchronously.
  @param URL A file URL specifying the file or directory to remove. If the URL specifies a directory, the contents of that directory are recursively removed. You may specify nil for this parameter.
 */
-+ (void)removeItemAtURL:(NSURL *)URL;
++ (void)removeItemAtURL_AG:(NSURL *)URL;
 
 @end

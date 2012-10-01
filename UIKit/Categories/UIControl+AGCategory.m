@@ -28,206 +28,206 @@
 #import "UIControl+AGCategory.h"
 #import "NSObject+AGCategory.h"
 
-static char kUIControlEventTouchDownBlockKey;
-static char kUIControlEventTouchDownRepeatBlockKey;
-static char kUIControlEventTouchDragInsideBlockKey;
-static char kUIControlEventTouchDragOutsideBlockKey;
-static char kUIControlEventTouchDragEnterBlockKey;
-static char kUIControlEventTouchDragExitBlockKey;
-static char kUIControlEventTouchUpInsideBlockKey;
-static char kUIControlEventTouchUpOutsideBlockKey;
-static char kUIControlEventTouchCancelBlockKey;
-static char kUIControlEventValueChangedBlockKey;
+static char AGCategoryControlEventTouchDownBlockKey;
+static char AGCategoryControlEventTouchDownRepeatBlockKey;
+static char AGCategoryControlEventTouchDragInsideBlockKey;
+static char AGCategoryControlEventTouchDragOutsideBlockKey;
+static char AGCategoryControlEventTouchDragEnterBlockKey;
+static char AGCategoryControlEventTouchDragExitBlockKey;
+static char AGCategoryControlEventTouchUpInsideBlockKey;
+static char AGCategoryControlEventTouchUpOutsideBlockKey;
+static char AGCategoryControlEventTouchCancelBlockKey;
+static char AGCategoryControlEventValueChangedBlockKey;
 
 @implementation UIControl (AGCategory)
 
 #pragma mark -
 
-- (void)addTargetBlock:(UIControlSenderBlock)block forControlEvents:(UIControlEvents)controlEvents
+- (void)addTargetBlock_AG:(AGCategoryControlSenderBlock)block forControlEvents:(UIControlEvents)controlEvents
 {    
     if (UIControlEventTouchDown & controlEvents)
     {
-        [self associateCopyOfValue:block withKey:&kUIControlEventTouchDownBlockKey];
-        [self addTarget:self action:@selector(_controlEventTouchDown:) forControlEvents:UIControlEventTouchDown];
+        [self associateCopyOfValue_AG:block withKey:&AGCategoryControlEventTouchDownBlockKey];
+        [self addTarget:self action:@selector(AGCategoryControlEventTouchDown:) forControlEvents:UIControlEventTouchDown];
     }
         
     if (UIControlEventTouchDownRepeat & controlEvents)
     {
-        [self associateCopyOfValue:block withKey:&kUIControlEventTouchDownRepeatBlockKey];
-        [self addTarget:self action:@selector(_controlEventTouchDownRepeat:) forControlEvents:UIControlEventTouchDownRepeat];
+        [self associateCopyOfValue_AG:block withKey:&AGCategoryControlEventTouchDownRepeatBlockKey];
+        [self addTarget:self action:@selector(AGCategoryControlEventTouchDownRepeat:) forControlEvents:UIControlEventTouchDownRepeat];
     }
         
     if (UIControlEventTouchDragInside & controlEvents)
     {
-        [self associateCopyOfValue:block withKey:&kUIControlEventTouchDragInsideBlockKey];
-        [self addTarget:self action:@selector(_controlEventTouchDragInside:) forControlEvents:UIControlEventTouchDragInside];
+        [self associateCopyOfValue_AG:block withKey:&AGCategoryControlEventTouchDragInsideBlockKey];
+        [self addTarget:self action:@selector(AGCategoryControlEventTouchDragInside:) forControlEvents:UIControlEventTouchDragInside];
     }
         
     if (UIControlEventTouchDragOutside & controlEvents)
     {
-        [self associateCopyOfValue:block withKey:&kUIControlEventTouchDragOutsideBlockKey];
-        [self addTarget:self action:@selector(_controlEventTouchDragOutside:) forControlEvents:UIControlEventTouchDragOutside];
+        [self associateCopyOfValue_AG:block withKey:&AGCategoryControlEventTouchDragOutsideBlockKey];
+        [self addTarget:self action:@selector(AGCategoryControlEventTouchDragOutside:) forControlEvents:UIControlEventTouchDragOutside];
     }
         
     if (UIControlEventTouchDragEnter & controlEvents)
     {
-        [self associateCopyOfValue:block withKey:&kUIControlEventTouchDragEnterBlockKey];
-        [self addTarget:self action:@selector(_controlEventTouchDragEnter:) forControlEvents:UIControlEventTouchDragEnter];
+        [self associateCopyOfValue_AG:block withKey:&AGCategoryControlEventTouchDragEnterBlockKey];
+        [self addTarget:self action:@selector(AGCategoryControlEventTouchDragEnter:) forControlEvents:UIControlEventTouchDragEnter];
     }
         
     if (UIControlEventTouchDragExit & controlEvents)
     {
-        [self associateCopyOfValue:block withKey:&kUIControlEventTouchDragExitBlockKey];
-        [self addTarget:self action:@selector(_controlEventTouchDragExit:) forControlEvents:UIControlEventTouchDragExit];
+        [self associateCopyOfValue_AG:block withKey:&AGCategoryControlEventTouchDragExitBlockKey];
+        [self addTarget:self action:@selector(AGCategoryControlEventTouchDragExit:) forControlEvents:UIControlEventTouchDragExit];
     }
     
     if (UIControlEventTouchUpInside & controlEvents)
     {
-        [self associateCopyOfValue:block withKey:&kUIControlEventTouchUpInsideBlockKey];
-        [self addTarget:self action:@selector(_controlEventTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
+        [self associateCopyOfValue_AG:block withKey:&AGCategoryControlEventTouchUpInsideBlockKey];
+        [self addTarget:self action:@selector(AGCategoryControlEventTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     if (UIControlEventTouchUpOutside & controlEvents)
     {
-        [self associateCopyOfValue:block withKey:&kUIControlEventTouchUpOutsideBlockKey];
-        [self addTarget:self action:@selector(_controlEventTouchUpOutside:) forControlEvents:UIControlEventTouchUpOutside];
+        [self associateCopyOfValue_AG:block withKey:&AGCategoryControlEventTouchUpOutsideBlockKey];
+        [self addTarget:self action:@selector(AGCategoryControlEventTouchUpOutside:) forControlEvents:UIControlEventTouchUpOutside];
     }
     
     if (UIControlEventTouchCancel & controlEvents)
     {
-        [self associateCopyOfValue:block withKey:&kUIControlEventTouchCancelBlockKey];
-        [self addTarget:self action:@selector(_controlEventTouchCancel:) forControlEvents:UIControlEventTouchCancel];
+        [self associateCopyOfValue_AG:block withKey:&AGCategoryControlEventTouchCancelBlockKey];
+        [self addTarget:self action:@selector(AGCategoryControlEventTouchCancel:) forControlEvents:UIControlEventTouchCancel];
     }
         
     if (UIControlEventValueChanged & controlEvents)
     {
-        [self associateCopyOfValue:block withKey:&kUIControlEventValueChangedBlockKey];
-        [self addTarget:self action:@selector(_controlEventValueChanged:) forControlEvents:UIControlEventValueChanged];
+        [self associateCopyOfValue_AG:block withKey:&AGCategoryControlEventValueChangedBlockKey];
+        [self addTarget:self action:@selector(AGCategoryControlEventValueChanged:) forControlEvents:UIControlEventValueChanged];
     }
 }
 
-- (void)removeTargetBlockForControlEvents:(UIControlEvents)controlEvents
+- (void)removeTargetBlockForControlEvents_AG:(UIControlEvents)controlEvents
 {
     if (UIControlEventTouchDown & controlEvents)
     {
-        [self associateCopyOfValue:nil withKey:&kUIControlEventTouchDownBlockKey];
-        [self removeTarget:self action:@selector(_controlEventTouchDown:) forControlEvents:UIControlEventTouchDown];
+        [self associateValue_AG:nil withKey:&AGCategoryControlEventTouchDownBlockKey];
+        [self removeTarget:self action:@selector(AGCategoryControlEventTouchDown:) forControlEvents:UIControlEventTouchDown];
     }
     
     if (UIControlEventTouchDownRepeat & controlEvents)
     {
-        [self associateCopyOfValue:nil withKey:&kUIControlEventTouchDownRepeatBlockKey];
-        [self removeTarget:self action:@selector(_controlEventTouchDownRepeat:) forControlEvents:UIControlEventTouchDownRepeat];
+        [self associateValue_AG:nil withKey:&AGCategoryControlEventTouchDownRepeatBlockKey];
+        [self removeTarget:self action:@selector(AGCategoryControlEventTouchDownRepeat:) forControlEvents:UIControlEventTouchDownRepeat];
     }
     
     if (UIControlEventTouchDragInside & controlEvents)
     {
-        [self associateCopyOfValue:nil withKey:&kUIControlEventTouchDragInsideBlockKey];
-        [self removeTarget:self action:@selector(_controlEventTouchDragInside:) forControlEvents:UIControlEventTouchDragInside];
+        [self associateValue_AG:nil withKey:&AGCategoryControlEventTouchDragInsideBlockKey];
+        [self removeTarget:self action:@selector(AGCategoryControlEventTouchDragInside:) forControlEvents:UIControlEventTouchDragInside];
     }
     
     if (UIControlEventTouchDragOutside & controlEvents)
     {
-        [self associateCopyOfValue:nil withKey:&kUIControlEventTouchDragOutsideBlockKey];
-        [self removeTarget:self action:@selector(_controlEventTouchDragOutside:) forControlEvents:UIControlEventTouchDragOutside];
+        [self associateValue_AG:nil withKey:&AGCategoryControlEventTouchDragOutsideBlockKey];
+        [self removeTarget:self action:@selector(AGCategoryControlEventTouchDragOutside:) forControlEvents:UIControlEventTouchDragOutside];
     }
     
     if (UIControlEventTouchDragEnter & controlEvents)
     {
-        [self associateCopyOfValue:nil withKey:&kUIControlEventTouchDragEnterBlockKey];
-        [self removeTarget:self action:@selector(_controlEventTouchDragEnter:) forControlEvents:UIControlEventTouchDragEnter];
+        [self associateValue_AG:nil withKey:&AGCategoryControlEventTouchDragEnterBlockKey];
+        [self removeTarget:self action:@selector(AGCategoryControlEventTouchDragEnter:) forControlEvents:UIControlEventTouchDragEnter];
     }
     
     if (UIControlEventTouchDragExit & controlEvents)
     {
-        [self associateCopyOfValue:nil withKey:&kUIControlEventTouchDragExitBlockKey];
-        [self removeTarget:self action:@selector(_controlEventTouchDragExit:) forControlEvents:UIControlEventTouchDragExit];
+        [self associateValue_AG:nil withKey:&AGCategoryControlEventTouchDragExitBlockKey];
+        [self removeTarget:self action:@selector(AGCategoryControlEventTouchDragExit:) forControlEvents:UIControlEventTouchDragExit];
     }
     
     if (UIControlEventTouchUpInside & controlEvents)
     {
-        [self associateCopyOfValue:nil withKey:&kUIControlEventTouchUpInsideBlockKey];
-        [self removeTarget:self action:@selector(_controlEventTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
+        [self associateValue_AG:nil withKey:&AGCategoryControlEventTouchUpInsideBlockKey];
+        [self removeTarget:self action:@selector(AGCategoryControlEventTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     if (UIControlEventTouchUpOutside & controlEvents)
     {
-        [self associateCopyOfValue:nil withKey:&kUIControlEventTouchUpOutsideBlockKey];
-        [self removeTarget:self action:@selector(_controlEventTouchUpOutside:) forControlEvents:UIControlEventTouchUpOutside];
+        [self associateValue_AG:nil withKey:&AGCategoryControlEventTouchUpOutsideBlockKey];
+        [self removeTarget:self action:@selector(AGCategoryControlEventTouchUpOutside:) forControlEvents:UIControlEventTouchUpOutside];
     }
     
     if (UIControlEventTouchCancel & controlEvents)
     {
-        [self associateCopyOfValue:nil withKey:&kUIControlEventTouchCancelBlockKey];
-        [self removeTarget:self action:@selector(_controlEventTouchCancel:) forControlEvents:UIControlEventTouchCancel];
+        [self associateValue_AG:nil withKey:&AGCategoryControlEventTouchCancelBlockKey];
+        [self removeTarget:self action:@selector(AGCategoryControlEventTouchCancel:) forControlEvents:UIControlEventTouchCancel];
     }
     
     if (UIControlEventValueChanged & controlEvents)
     {
-        [self associateCopyOfValue:nil withKey:&kUIControlEventValueChangedBlockKey];
-        [self removeTarget:self action:@selector(_controlEventValueChanged:) forControlEvents:UIControlEventValueChanged];
+        [self associateValue_AG:nil withKey:&AGCategoryControlEventValueChangedBlockKey];
+        [self removeTarget:self action:@selector(AGCategoryControlEventValueChanged:) forControlEvents:UIControlEventValueChanged];
     }
 }
 
 #pragma mark -
 
-- (void)_controlEventTouchDown:(UIButton *)sender
+- (void)AGCategoryControlEventTouchDown:(UIButton *)sender
 {
-    UIControlSenderBlock block = [self associatedValueForKey:&kUIControlEventTouchDownBlockKey];
+    AGCategoryControlSenderBlock block = [self associatedValueForKey_AG:&AGCategoryControlEventTouchDownBlockKey];
     if (block) block (self);
 }
 
-- (void)_controlEventTouchDownRepeat:(UIButton *)sender
+- (void)AGCategoryControlEventTouchDownRepeat:(UIButton *)sender
 {
-    UIControlSenderBlock block = [self associatedValueForKey:&kUIControlEventTouchDownRepeatBlockKey];
+    AGCategoryControlSenderBlock block = [self associatedValueForKey_AG:&AGCategoryControlEventTouchDownRepeatBlockKey];
     if (block) block (self); 
 }
 
-- (void)_controlEventTouchDragInside:(UIButton *)sender
+- (void)AGCategoryControlEventTouchDragInside:(UIButton *)sender
 {
-    UIControlSenderBlock block = [self associatedValueForKey:&kUIControlEventTouchDragInsideBlockKey];
+    AGCategoryControlSenderBlock block = [self associatedValueForKey_AG:&AGCategoryControlEventTouchDragInsideBlockKey];
     if (block) block (self); 
 }
 
-- (void)_controlEventTouchDragOutside:(UIButton *)sender
+- (void)AGCategoryControlEventTouchDragOutside:(UIButton *)sender
 {
-    UIControlSenderBlock block = [self associatedValueForKey:&kUIControlEventTouchDragOutsideBlockKey];
+    AGCategoryControlSenderBlock block = [self associatedValueForKey_AG:&AGCategoryControlEventTouchDragOutsideBlockKey];
     if (block) block (self); 
 }
 
-- (void)_controlEventTouchDragEnter:(UIButton *)sender
+- (void)AGCategoryControlEventTouchDragEnter:(UIButton *)sender
 {
-    UIControlSenderBlock block = [self associatedValueForKey:&kUIControlEventTouchDragEnterBlockKey];
+    AGCategoryControlSenderBlock block = [self associatedValueForKey_AG:&AGCategoryControlEventTouchDragEnterBlockKey];
     if (block) block (self); 
 }
 
-- (void)_controlEventTouchDragExit:(UIButton *)sender
+- (void)AGCategoryControlEventTouchDragExit:(UIButton *)sender
 {
-    UIControlSenderBlock block = [self associatedValueForKey:&kUIControlEventTouchDragExitBlockKey];
+    AGCategoryControlSenderBlock block = [self associatedValueForKey_AG:&AGCategoryControlEventTouchDragExitBlockKey];
     if (block) block (self); 
 }
 
-- (void)_controlEventTouchUpInside:(UIButton *)sender
+- (void)AGCategoryControlEventTouchUpInside:(UIButton *)sender
 {
-    UIControlSenderBlock block = [self associatedValueForKey:&kUIControlEventTouchUpInsideBlockKey];
+    AGCategoryControlSenderBlock block = [self associatedValueForKey_AG:&AGCategoryControlEventTouchUpInsideBlockKey];
     if (block) block (self);
 }
 
-- (void)_controlEventTouchUpOutside:(UIButton *)sender
+- (void)AGCategoryControlEventTouchUpOutside:(UIButton *)sender
 {
-    UIControlSenderBlock block = [self associatedValueForKey:&kUIControlEventTouchUpOutsideBlockKey];
+    AGCategoryControlSenderBlock block = [self associatedValueForKey_AG:&AGCategoryControlEventTouchUpOutsideBlockKey];
     if (block) block (self); 
 }
 
-- (void)_controlEventTouchCancel:(UIButton *)sender
+- (void)AGCategoryControlEventTouchCancel:(UIButton *)sender
 {
-    UIControlSenderBlock block = [self associatedValueForKey:&kUIControlEventTouchCancelBlockKey];
+    AGCategoryControlSenderBlock block = [self associatedValueForKey_AG:&AGCategoryControlEventTouchCancelBlockKey];
     if (block) block (self); 
 }
 
-- (void)_controlEventValueChanged:(UIButton *)sender
+- (void)AGCategoryControlEventValueChanged:(UIButton *)sender
 {
-    UIControlSenderBlock block = [self associatedValueForKey:&kUIControlEventValueChangedBlockKey];
+    AGCategoryControlSenderBlock block = [self associatedValueForKey_AG:&AGCategoryControlEventValueChangedBlockKey];
     if (block) block (self); 
 }
 

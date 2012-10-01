@@ -31,12 +31,12 @@
 
 #pragma mark -
 
-- (void)scrollToFirstRow
+- (void)scrollToFirstRow_AG
 {
-    [self scrollToFirstRowAnimated:YES];
+    [self scrollToFirstRowAnimated_AG:YES];
 }
 
-- (void)scrollToFirstRowAnimated:(BOOL)animated
+- (void)scrollToFirstRowAnimated_AG:(BOOL)animated
 {
     if ([self numberOfSections] > 0 && [self numberOfRowsInSection:0] > 0)
     {
@@ -45,12 +45,12 @@
     } 
 }
 
-- (void)scrollToLastRow
+- (void)scrollToLastRow_AG
 {
-    [self scrollToLastRowAnimated:YES];
+    [self scrollToLastRowAnimated_AG:YES];
 }
 
-- (void)scrollToLastRowAnimated:(BOOL)animated
+- (void)scrollToLastRowAnimated_AG:(BOOL)animated
 {
     if ([self numberOfSections] > 0)
     {
@@ -67,17 +67,17 @@
 
 #pragma mark -
 
-- (BOOL)scrollToRow:(NSInteger)row inSection:(NSInteger)section
+- (BOOL)scrollToRow_AG:(NSInteger)row inSection:(NSInteger)section
 {
-    return [self scrollToRow:row inSection:section animated:YES];
+    return [self scrollToRow_AG:row inSection:section animated:YES];
 }
 
-- (BOOL)scrollToRow:(NSInteger)row inSection:(NSInteger)section animated:(BOOL)animated
+- (BOOL)scrollToRow_AG:(NSInteger)row inSection:(NSInteger)section animated:(BOOL)animated
 {
-    return [self scrollToRow:row inSection:section atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    return [self scrollToRow_AG:row inSection:section atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
-- (BOOL)scrollToRow:(NSInteger)row inSection:(NSInteger)section atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated
+- (BOOL)scrollToRow_AG:(NSInteger)row inSection:(NSInteger)section atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated
 {
     if ([self numberOfSections] > section)
     {
@@ -93,12 +93,12 @@
 
 #pragma mark -
 
-- (void)deselectSelectedRow
+- (void)deselectSelectedRow_AG
 {
-    [self deselectSelectedRowAnimated:YES];
+    [self deselectSelectedRowAnimated_AG:YES];
 }
 
-- (void)deselectSelectedRowAnimated:(BOOL)animated
+- (void)deselectSelectedRowAnimated_AG:(BOOL)animated
 {
     NSIndexPath *indexPath = [self indexPathForSelectedRow];
     [self deselectRowAtIndexPath:indexPath animated:animated];

@@ -27,7 +27,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^UIControlSenderBlock)(id sender);
+typedef void (^AGCategoryControlSenderBlock)(id sender);
 
 /** A collection of category extensions for `UIControl` */
 @interface UIControl (AGCategory)
@@ -36,11 +36,11 @@ typedef void (^UIControlSenderBlock)(id sender);
  @param block The block object called when the bar button is pressed.
  @param controlEvents A bitmask specifying the control events for which the action message is sent.
 */ 
-- (void)addTargetBlock:(UIControlSenderBlock)block forControlEvents:(UIControlEvents)controlEvents;
+- (void)addTargetBlock_AG:(AGCategoryControlSenderBlock)block forControlEvents:(UIControlEvents)controlEvents;
  
 /** Removes the target block action for a particular event (or events) from the internal dispatch table.
  @param controlEvents A bitmask specifying the control events for which the action message is sent.
 */ 
-- (void)removeTargetBlockForControlEvents:(UIControlEvents)controlEvents;
+- (void)removeTargetBlockForControlEvents_AG:(UIControlEvents)controlEvents;
 
 @end

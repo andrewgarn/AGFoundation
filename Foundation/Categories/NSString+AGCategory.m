@@ -41,7 +41,7 @@
 
 @implementation NSString (AGCategory)
 
-- (BOOL)isNotEmpty
+- (BOOL)isNotEmpty_AG
 {
     if ([[self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""])
         return NO;
@@ -51,7 +51,7 @@
 
 #pragma mark -
 
-- (BOOL)containsString:(NSString *)aString 
+- (BOOL)containsString_AG:(NSString *)aString 
 {
     if ([self rangeOfString:aString].location != NSNotFound)
         return YES;
@@ -59,7 +59,7 @@
     return NO;
 }
 
-- (NSString *)stringBetweenString:(NSString *)firstString andString:(NSString *)secondString
+- (NSString *)stringBetweenString_AG:(NSString *)firstString andString:(NSString *)secondString
 {
     NSRange startRange = [self rangeOfString:firstString];
     if (startRange.location != NSNotFound)
@@ -77,7 +77,7 @@
     return nil;
 }
 
-- (NSArray *)rangesOfString:(NSString *)aString
+- (NSArray *)rangesOfString_AG:(NSString *)aString
 {
     NSMutableArray *rangeArray = [[NSMutableArray alloc] init];
     NSUInteger length = [self length];
@@ -97,7 +97,7 @@
 
 #pragma mark -
 
-- (NSString *)reversedString
+- (NSString *)reversedString_AG
 {
     NSUInteger stringLength = [self length];
     NSMutableString *reversedString = [NSMutableString stringWithCapacity:stringLength];     
@@ -111,12 +111,12 @@
 
 #pragma mark -
 
-- (NSString *)stringByTrimmingWhitespaceAndNewlineCharacters
+- (NSString *)stringByTrimmingWhitespaceAndNewlineCharacters_AG
 {
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]; 
 }
 
-- (NSString *)stringByTrimmingLeadingCharactersInSet:(NSCharacterSet *)characterSet
+- (NSString *)stringByTrimmingLeadingCharactersInSet_AG:(NSCharacterSet *)characterSet
 {
     NSRange rangeOfFirstWantedCharacter = [self rangeOfCharacterFromSet:[characterSet invertedSet]];
     if (rangeOfFirstWantedCharacter.location != NSNotFound) 
@@ -125,12 +125,12 @@
     return self;
 }
 
-- (NSString *)stringByTrimmingLeadingWhitespaceAndNewlineCharacters
+- (NSString *)stringByTrimmingLeadingWhitespaceAndNewlineCharacters_AG
 {
-    return [self stringByTrimmingLeadingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return [self stringByTrimmingLeadingCharactersInSet_AG:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
-- (NSString *)stringByTrimmingTrailingCharactersInSet:(NSCharacterSet *)characterSet 
+- (NSString *)stringByTrimmingTrailingCharactersInSet_AG:(NSCharacterSet *)characterSet
 {
     NSRange rangeOfLastWantedCharacter = [self rangeOfCharacterFromSet:[characterSet invertedSet] options:NSBackwardsSearch];
     if (rangeOfLastWantedCharacter.location != NSNotFound)
@@ -139,14 +139,14 @@
     return self;
 }
 
-- (NSString *)stringByTrimmingTrailingWhitespaceAndNewlineCharacters
+- (NSString *)stringByTrimmingTrailingWhitespaceAndNewlineCharacters_AG
 {
-    return [self stringByTrimmingTrailingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return [self stringByTrimmingTrailingCharactersInSet_AG:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 #pragma mark -
 
-- (NSString *)urlEncodedString
+- (NSString *)URLEncodedString_AG
 {
     CFStringRef encoded = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
                                                                   (__bridge CFStringRef)self,
@@ -156,7 +156,7 @@
     return [NSString stringWithString:(__bridge_transfer NSString *)encoded];
 }
 
-- (NSString *)urlDecodedString
+- (NSString *)URLDecodedString_AG
 {
     CFStringRef decoded = CFURLCreateStringByReplacingPercentEscapes( kCFAllocatorDefault,
                                                                      (__bridge CFStringRef)self,
@@ -166,33 +166,33 @@
 
 #pragma mark -
 
-- (CGFloat)heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width
+- (CGFloat)heightWithFont_AG:(UIFont *)font constrainedToWidth:(CGFloat)width
 {
-    return [self heightWithFont:font constrainedToWidth:width min:0];
+    return [self heightWithFont_AG:font constrainedToWidth:width min:0];
 }
 
-- (CGFloat)heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width min:(CGFloat)minHeight
+- (CGFloat)heightWithFont_AG:(UIFont *)font constrainedToWidth:(CGFloat)width min:(CGFloat)minHeight
 {
-    return [self heightWithFont:font constrainedToWidth:width lineBreakMode:UILineBreakModeWordWrap min:minHeight];
+    return [self heightWithFont_AG:font constrainedToWidth:width lineBreakMode:UILineBreakModeWordWrap min:minHeight];
 }
 
-- (CGFloat)heightWithFont:(UIFont *)font constrainedToSize:(CGSize)size min:(CGFloat)minHeight
+- (CGFloat)heightWithFont_AG:(UIFont *)font constrainedToSize:(CGSize)size min:(CGFloat)minHeight
 {
-    return [self heightWithFont:font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap min:minHeight];
+    return [self heightWithFont_AG:font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap min:minHeight];
 }
 
-- (CGFloat)heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width lineBreakMode:(UILineBreakMode)lineBreakMode
+- (CGFloat)heightWithFont_AG:(UIFont *)font constrainedToWidth:(CGFloat)width lineBreakMode:(UILineBreakMode)lineBreakMode
 {
-    return [self heightWithFont:font constrainedToWidth:width lineBreakMode:lineBreakMode min:0];
+    return [self heightWithFont_AG:font constrainedToWidth:width lineBreakMode:lineBreakMode min:0];
 }
 
-- (CGFloat)heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width lineBreakMode:(UILineBreakMode)lineBreakMode min:(CGFloat)minHeight
+- (CGFloat)heightWithFont_AG:(UIFont *)font constrainedToWidth:(CGFloat)width lineBreakMode:(UILineBreakMode)lineBreakMode min:(CGFloat)minHeight
 {
     CGSize constraint = CGSizeMake(width, CGFLOAT_MAX);
-    return [self heightWithFont:font constrainedToSize:constraint lineBreakMode:lineBreakMode min:minHeight];
+    return [self heightWithFont_AG:font constrainedToSize:constraint lineBreakMode:lineBreakMode min:minHeight];
 }
 
-- (CGFloat)heightWithFont:(UIFont *)font constrainedToSize:(CGSize)size lineBreakMode:(UILineBreakMode)lineBreakMode min:(CGFloat)minHeight
+- (CGFloat)heightWithFont_AG:(UIFont *)font constrainedToSize:(CGSize)size lineBreakMode:(UILineBreakMode)lineBreakMode min:(CGFloat)minHeight
 {
     CGFloat height = [self sizeWithFont:font constrainedToSize:size lineBreakMode:lineBreakMode].height;
     return ((height < minHeight) ? minHeight : (height > size.height) ? size.height : height);
@@ -200,7 +200,7 @@
 
 #pragma mark -
 
-- (BOOL)isValidEmailAddress
+- (BOOL)isValidEmailAddress_AG
 {
     static dispatch_once_t onceToken;
 	static NSRegularExpression *regularExpression;
@@ -220,7 +220,7 @@
     return YES;
 }
 
-- (BOOL)isAlphaNumeric
+- (BOOL)isAlphaNumeric_AG
 {
     static dispatch_once_t onceToken;
 	static NSCharacterSet *unwantedCharacters;
@@ -234,7 +234,7 @@
 
 #pragma mark -
 
-+ (NSString *)UUIDStringCreate
++ (NSString *)UUIDStringCreate_AG
 {
     CFUUIDRef uuid = CFUUIDCreate(kCFAllocatorDefault);
     NSString *uuidStr = (__bridge_transfer NSString *)CFUUIDCreateString(kCFAllocatorDefault, uuid);
@@ -244,16 +244,16 @@
 
 #pragma mark -
 
-- (BOOL)addSkipBackupAttribute
+- (BOOL)addSkipBackupAttribute_AG
 {
     NSURL *fileURL = [NSURL fileURLWithPath:self];
-    if (fileURL) return [fileURL addSkipBackupAttribute];
+    if (fileURL) return [fileURL addSkipBackupAttribute_AG];
     return NO;
 }
 
 #pragma mark -
 
-- (NSString *)MD5Hash
+- (NSString *)MD5Hash_AG
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_MD5_DIGEST_LENGTH];
@@ -269,7 +269,7 @@
     return output;
 }
 
-- (NSString *)SHA1Hash
+- (NSString *)SHA1Hash_AG
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
@@ -285,7 +285,7 @@
     return output;
 }
 
-- (NSString *)SHA256Hash
+- (NSString *)SHA256Hash_AG
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_SHA256_DIGEST_LENGTH];
@@ -301,7 +301,7 @@
     return output;
 }
 
-- (NSString *)SHA512Hash
+- (NSString *)SHA512Hash_AG
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_SHA512_DIGEST_LENGTH];
@@ -317,7 +317,7 @@
     return output;
 }
 
-- (NSString *)HMACWithSecret:(NSString *)secret
+- (NSString *)HMACWithSecret_AG:(NSString *)secret
 {
     CCHmacContext    ctx;
     const char       *key = [secret UTF8String];

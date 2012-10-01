@@ -36,20 +36,20 @@
 */
 
 /** Scrolls the receiver to the first row in its first section with animation. */
-- (void)scrollToFirstRow;
+- (void)scrollToFirstRow_AG;
 
 /** Scrolls the receiver to the first row in its first section.
  @param animated `YES` if you want to animate the change in position, `NO` if it should be immediate.
 */
-- (void)scrollToFirstRowAnimated:(BOOL)animated;
+- (void)scrollToFirstRowAnimated_AG:(BOOL)animated;
 
 /** Scrolls the receiver to the last row in its last section with animation. */
-- (void)scrollToLastRow;
+- (void)scrollToLastRow_AG;
 
 /** Scrolls the receiver to the last row in its last section.
  @param animated `YES` if you want to animate the change in position, `NO` if it should be immediate.
 */
-- (void)scrollToLastRowAnimated:(BOOL)animated;
+- (void)scrollToLastRowAnimated_AG:(BOOL)animated;
 
 /** Scrolls the receiver to the specified row in the specified section.
  
@@ -58,7 +58,7 @@
  @param section An index number identifying a section of the table view.
  @return `YES` if the receiving table view will scroll, otherwise `NO`.
 */
-- (BOOL)scrollToRow:(NSInteger)row inSection:(NSInteger)section;
+- (BOOL)scrollToRow_AG:(NSInteger)row inSection:(NSInteger)section;
 
 /** Scrolls the receiver to the specified row in the specified section.
  
@@ -68,7 +68,7 @@
  @param animated `YES` if you want to animate the change in position, `NO` if it should be immediate.
  @return `YES` if the receiving table view will scroll, otherwise `NO`.
 */
-- (BOOL)scrollToRow:(NSInteger)row inSection:(NSInteger)section animated:(BOOL)animated;
+- (BOOL)scrollToRow_AG:(NSInteger)row inSection:(NSInteger)section animated:(BOOL)animated;
 
 /** Scrolls the receiver until the specified row in the specified section is at a particular location on the screen.
  
@@ -79,7 +79,7 @@
  @param animated `YES` if you want to animate the change in position, `NO` if it should be immediate.
  @return `YES` if the receiving table view will scroll, otherwise `NO`.
 */
-- (BOOL)scrollToRow:(NSInteger)row inSection:(NSInteger)section atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated;
+- (BOOL)scrollToRow_AG:(NSInteger)row inSection:(NSInteger)section atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated;
 
 /**-------------------------------------------------------------------------------------
  @name Managing Selections
@@ -87,11 +87,11 @@
 */
 
 /** Deselects the currently selected row */
-- (void)deselectSelectedRow;
+- (void)deselectSelectedRow_AG;
 
 /** Deselects the currently selected row, with an option to animate the deselection.
  @param animated `YES` if you want to animate the deselection and `NO` if the change should be immediate.
 */
-- (void)deselectSelectedRowAnimated:(BOOL)animated;
+- (void)deselectSelectedRowAnimated_AG:(BOOL)animated;
 
 @end

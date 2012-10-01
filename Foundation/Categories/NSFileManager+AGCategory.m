@@ -30,7 +30,7 @@
 
 @implementation NSFileManager (AGCategory)
 
-+ (NSString *)cachePath
++ (NSString *)cachePath_AG
 {
     static dispatch_once_t token;
 	static NSString *cachePath;
@@ -41,7 +41,7 @@
 	return cachePath;
 }
 
-+ (NSString *)documentPath
++ (NSString *)documentPath_AG
 {
     static dispatch_once_t token;
 	static NSString *documentPath;
@@ -52,7 +52,7 @@
 	return documentPath;
 }
 
-+ (NSString *)libraryPath
++ (NSString *)libraryPath_AG
 {
     static dispatch_once_t token;
 	static NSString *libraryPath;
@@ -63,7 +63,7 @@
 	return libraryPath;
 }
 
-+ (NSString *)temporaryPath
++ (NSString *)temporaryPath_AG
 {
     static dispatch_once_t token;
 	static NSString *tempPath;
@@ -76,39 +76,39 @@
 
 #pragma mark -
 
-+ (NSString *)cachePathForFile:(NSString *)filename
++ (NSString *)cachePathForFile_AG:(NSString *)filename
 {
-    return [[self cachePath] stringByAppendingPathComponent:filename];
+    return [[self cachePath_AG] stringByAppendingPathComponent:filename];
 }
 
-+ (NSString *)documentPathForFile:(NSString *)filename
++ (NSString *)documentPathForFile_AG:(NSString *)filename
 {
-    return [[self documentPath] stringByAppendingPathComponent:filename];
+    return [[self documentPath_AG] stringByAppendingPathComponent:filename];
 }
 
-+ (NSString *)libraryPathForFile:(NSString *)filename
++ (NSString *)libraryPathForFile_AG:(NSString *)filename
 {
-    return [[self libraryPath] stringByAppendingPathComponent:filename];
+    return [[self libraryPath_AG] stringByAppendingPathComponent:filename];
 }
 
-+ (NSString *)temporaryPathForFile:(NSString *)filename
++ (NSString *)temporaryPathForFile_AG:(NSString *)filename
 {
-    return [[self temporaryPath] stringByAppendingPathComponent:filename];
+    return [[self temporaryPath_AG] stringByAppendingPathComponent:filename];
 }
 
-+ (NSString *)bundlePathForFile:(NSString *)filename
++ (NSString *)bundlePathForFile_AG:(NSString *)filename
 {
     return [[NSBundle mainBundle] pathForResource:filename ofType:nil]; 
 }
 
 #pragma mark -
 
-+ (NSArray *)contentsOfDirectoryAtPath:(NSString *)path
++ (NSArray *)contentsOfDirectoryAtPath_AG:(NSString *)path
 {
-    return [NSFileManager contentsOfDirectoryAtPath:path withType:nil];
+    return [NSFileManager contentsOfDirectoryAtPath_AG:path withType:nil];
 }
                                   
-+ (NSArray *)contentsOfDirectoryAtPath:(NSString *)path withType:(NSString *)extension
++ (NSArray *)contentsOfDirectoryAtPath_AG:(NSString *)path withType:(NSString *)extension
 {
     NSError *error = nil;
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -131,31 +131,31 @@
 
 #pragma mark -
 
-+ (NSArray *)contentsOfCacheDirectory
++ (NSArray *)contentsOfCacheDirectory_AG
 {
-    return [self contentsOfDirectoryAtPath:[self cachePath]];
+    return [self contentsOfDirectoryAtPath_AG:[self cachePath_AG]];
 }
 
-+ (NSArray *)contentsOfDocumentDirectory
++ (NSArray *)contentsOfDocumentDirectory_AG
 {
-    return [self contentsOfDirectoryAtPath:[self documentPath]];
+    return [self contentsOfDirectoryAtPath_AG:[self documentPath_AG]];
 }
 
-+ (NSArray *)contentsOfLibraryDirectory
++ (NSArray *)contentsOfLibraryDirectory_AG
 {
-    return [self contentsOfDirectoryAtPath:[self libraryPath]];
+    return [self contentsOfDirectoryAtPath_AG:[self libraryPath_AG]];
 }
 
-+ (NSArray *)contentsOfTemporaryDirectory
++ (NSArray *)contentsOfTemporaryDirectory_AG
 {
-    return [self contentsOfDirectoryAtPath:[self temporaryPath]];
+    return [self contentsOfDirectoryAtPath_AG:[self temporaryPath_AG]];
 }
 
 #pragma mark -
 
-+ (void)removeItemAtPath:(NSString *)path
++ (void)removeItemAtPath_AG:(NSString *)path
 {
-	NSString *temporaryPath = [[self temporaryPath] stringByAppendingPathComponent:[NSString UUIDStringCreate]];
+	NSString *temporaryPath = [[self temporaryPath_AG] stringByAppendingPathComponent:[NSString UUIDStringCreate_AG]];
     if ([[NSFileManager defaultManager] moveItemAtPath:path toPath:temporaryPath error:NULL])
     {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
@@ -167,10 +167,10 @@
     }
 }
 
-+ (void)removeItemAtURL:(NSURL *)URL
++ (void)removeItemAtURL_AG:(NSURL *)URL
 {
     if ([URL isFileURL])
-        [NSFileManager removeItemAtPath:[URL path]];
+        [NSFileManager removeItemAtPath_AG:[URL path]];
     else
         NSLog(@"ERROR: Supplied URL is not a file URL: %@", URL);
 }

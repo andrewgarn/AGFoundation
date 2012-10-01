@@ -35,7 +35,6 @@ NSString * const AGUserDefaultsDidChangeExternallyNotification = @"AGUserDefault
 #pragma mark -
 
 @implementation UbiquitousUserDefaultsManager
-@synthesize ubiquitousKeys = _ubiquitousKeys;
 
 #pragma mark -
 

@@ -30,19 +30,19 @@
 
 @implementation NSURL (AGCategory)
 
-+ (NSURL *)appStoreURLForAppID:(NSString *)identifier
++ (NSURL *)appStoreURLForAppID_AG:(NSString *)identifier
 {
     NSString *link = [NSString stringWithFormat:@"itms://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=%@&mt=8", identifier];
 	return [NSURL URLWithString:link];
 }
 
-+ (NSURL *)appStoreReviewURLForAppID:(NSString *)identifier
++ (NSURL *)appStoreReviewURLForAppID_AG:(NSString *)identifier
 {
     NSString *link = [NSString stringWithFormat:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@", identifier];
 	return [NSURL URLWithString:link];
 }
 
-- (BOOL)isEqualToURL:(NSURL *)otherURL 
+- (BOOL)isEqualToURL_AG:(NSURL *)otherURL 
 {
     if ([[self absoluteURL] isEqual:[otherURL absoluteURL]])
         return YES;
@@ -53,7 +53,7 @@
     return NO;
 }
 
-- (BOOL)addSkipBackupAttribute
+- (BOOL)addSkipBackupAttribute_AG
 {
     NSString *systemVersion = [[UIDevice currentDevice] systemVersion];   
     

@@ -32,8 +32,11 @@
 @property (nonatomic, copy) AGTimerBlock timerBlock;
 @end
 
+#pragma mark -
+
 @implementation AGTimer
-@synthesize timerBlock = _timerBlock;
+
+#pragma mark -
 
 + (AGTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)seconds repeats:(BOOL)repeats targetBlock:(AGTimerBlock)block
 {
@@ -43,14 +46,14 @@
 + (AGTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)seconds userInfo:(id)userInfo repeats:(BOOL)repeats targetBlock:(AGTimerBlock)block
 {
     NSDate *fireDate = [NSDate dateWithTimeIntervalSinceNow:seconds];
-    AGTimer *timer = [[AGTimer alloc] initWithFireDate:fireDate interval:seconds target:self selector:@selector(_timerFired:) userInfo:userInfo repeats:repeats];
+    AGTimer *timer = [[AGTimer alloc] initWithFireDate:fireDate interval:seconds target:self selector:@selector(AGTimerFired:) userInfo:userInfo repeats:repeats];
     [timer setTimerBlock:block];
     return timer;
 }
 
 #pragma mark -
 
-- (void)_timerFired:(NSTimer *)timer
+- (void)AGTimerFired:(NSTimer *)timer
 {
     if (_timerBlock) _timerBlock(self);
 }

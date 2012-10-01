@@ -29,7 +29,7 @@
 
 @implementation UIStoryboard (AGCategory)
 
-+ (UIStoryboard *)mainStoryboard
++ (UIStoryboard *)mainStoryboard_AG
 {
     static dispatch_once_t onceToken;
 	static UIStoryboard *mainStoryboard = nil;

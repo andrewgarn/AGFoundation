@@ -27,7 +27,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^UIGestureRecognizerSenderBlock)(id sender);
+typedef void (^UIGestureRecognizerSenderBlock)(UIGestureRecognizer *sender);
 
 /** A collection of category extensions for `UIGestureRecognizer` */
 @interface UIGestureRecognizer (AGCategory)
@@ -41,9 +41,9 @@ typedef void (^UIGestureRecognizerSenderBlock)(id sender);
  @param block The block object called when the gesture is triggered.
  @warning This category currently only supports one block action at a time.
 */ 
-- (void)addTargetBlock:(UIGestureRecognizerSenderBlock)block;
+- (void)addTargetBlock_AG:(UIGestureRecognizerSenderBlock)block;
 
 /** Removes the target block actions from the internal dispatch table. */ 
-- (void)removeTargetBlock;
+- (void)removeTargetBlock_AG;
 
 @end

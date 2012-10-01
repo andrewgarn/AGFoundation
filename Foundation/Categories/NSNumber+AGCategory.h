@@ -39,13 +39,13 @@
  @param string An `NSString` object that is parsed to generate the returned number object.
  @return An `NSNumber` object created by parsing string using the `NSNumberFormatterDecimalStyle`.
 */
-+ (NSNumber *)numberFromString:(NSString *)string;
++ (NSNumber *)numberFromString_AG:(NSString *)string;
 
 /** Returns an NSNumber object created by parsing a given string using the supplied style
  @param style The NSNumberFormatterStyle the formatter should use when parsing the string
  @return An NSNumber object created by parsing string using the supplied style.
 */ 
-- (NSString *)stringWithNumberStyle:(NSNumberFormatterStyle)style;
+- (NSString *)stringWithNumberStyle_AG:(NSNumberFormatterStyle)style;
 
 /**-------------------------------------------------------------------------------------
  @name Byte Conversion
@@ -55,7 +55,6 @@
 /** Returns an `NSString` description of the byte value represented by the receiver.
  @return An `NSString` description of the byte value represented by the receiver.
 */
-- (NSString *)formattedBytes;
-
+- (NSString *)formattedBytes_AG;
 
 @end

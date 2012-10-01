@@ -31,8 +31,9 @@
 @property (nonatomic, copy) AGMailComposeCompletionBlock didFinishBlock;
 @end
 
+#pragma mark -
+
 @implementation AGMailComposeViewController
-@synthesize didFinishBlock = _didFinishBlock;
 
 #pragma mark -
 

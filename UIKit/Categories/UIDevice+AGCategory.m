@@ -46,7 +46,7 @@
 
 #pragma mark - Device Info
 
-+ (NSString *)deviceModel
++ (NSString *)deviceModel_AG
 {
     static dispatch_once_t token;
 	static NSString *deviceModel;
@@ -54,7 +54,7 @@
 	dispatch_once(&token, ^{
         
         /* Get Platform */
-        NSString *platform = [self platform];
+        NSString *platform = [self platform_AG];
         
         /* iPhone */
         if ([platform isEqualToString:@"iPhone1,1"])         deviceModel = @"iPhone";
@@ -84,18 +84,18 @@
         else if ([platform isEqualToString:@"iPad3,3"])      deviceModel = @"iPad 3 Wi-Fi + 4G (GSM+CDMA)";
         
         /* Simulator */
-        else if ([UIDevice isASimulator])
+        else if ([UIDevice isASimulator_AG])
         {
             if ([[UIScreen mainScreen] bounds].size.width < 768)
             {
-                if ([UIDevice hasRetinaDisplay])
+                if ([UIDevice hasRetinaDisplay_AG])
                     deviceModel = @"iPhone Simulator (Retina)";
                 else
                     deviceModel = @"iPhone Simulator";
             }
             else
             {
-                if ([UIDevice hasRetinaDisplay])
+                if ([UIDevice hasRetinaDisplay_AG])
                     deviceModel = @"iPad Simulator (Retina)";
                 else
                     deviceModel = @"iPad Simulator";
@@ -109,19 +109,19 @@
     return deviceModel;
 }
 
-+ (NSString *)deviceFamily
++ (NSString *)deviceFamily_AG
 {
     static dispatch_once_t token;
 	static NSString *deviceFamily;
     
 	dispatch_once(&token, ^{
-        if ([UIDevice isAniPhone])
+        if ([UIDevice isAniPhone_AG])
              deviceFamily = @"iPhone";
-        else if ([UIDevice isAniPodTouch])
+        else if ([UIDevice isAniPodTouch_AG])
             deviceFamily = @"iPod touch";
-        else if ([UIDevice isAniPad])
+        else if ([UIDevice isAniPad_AG])
             deviceFamily = @"iPad";
-        else if ([UIDevice isASimulator])
+        else if ([UIDevice isASimulator_AG])
             deviceFamily = @"Simulator";
         else
             deviceFamily = [[UIDevice currentDevice] model];
@@ -129,7 +129,7 @@
     return deviceFamily;
 }
 
-+ (NSString *)deviceCarrier
++ (NSString *)deviceCarrier_AG
 {
     NSString *carrierName = nil;
     Class telephonyNetworkInfoClass = NSClassFromString(@"CTTelephonyNetworkInfo");
@@ -153,7 +153,7 @@
 
 #pragma mark - System Info
 
-+ (NSString *)systemName
++ (NSString *)systemName_AG
 {
     static dispatch_once_t token;
 	static NSString *systemName;
@@ -164,7 +164,7 @@
     return systemName;
 }
 
-+ (NSString *)systemVersion
++ (NSString *)systemVersion_AG
 {
     static dispatch_once_t token;
 	static NSString *systemVersion;
@@ -177,53 +177,53 @@
 
 #pragma mark -
 
-+ (BOOL)isAniPhone
++ (BOOL)isAniPhone_AG
 {
     static dispatch_once_t token;
 	static BOOL isAniPhone = NO;
     
 	dispatch_once(&token, ^{
-        NSRange textRange = [[self platform] rangeOfString:@"iPhone"];
+        NSRange textRange = [[self platform_AG] rangeOfString:@"iPhone"];
         if(textRange.location != NSNotFound)
             isAniPhone = YES;
     });
 	return isAniPhone;
 }
 
-+ (BOOL)isAniPodTouch
++ (BOOL)isAniPodTouch_AG
 {
     static dispatch_once_t token;
 	static BOOL isAniPodTouch = NO;
     
 	dispatch_once(&token, ^{
-        NSRange textRange = [[self platform] rangeOfString:@"iPod"];
+        NSRange textRange = [[self platform_AG] rangeOfString:@"iPod"];
         if(textRange.location != NSNotFound)
             isAniPodTouch = YES;
     });
 	return isAniPodTouch;
 }
 
-+ (BOOL)isAniPad
++ (BOOL)isAniPad_AG
 {
     static dispatch_once_t token;
 	static BOOL isAniPad = NO;
     
 	dispatch_once(&token, ^{
-        NSRange textRange = [[self platform] rangeOfString:@"iPad"];
+        NSRange textRange = [[self platform_AG] rangeOfString:@"iPad"];
         if(textRange.location != NSNotFound)
             isAniPad = YES;
     });
 	return isAniPad;
 }
 
-+ (BOOL)isASimulator
++ (BOOL)isASimulator_AG
 {
     static dispatch_once_t token;
 	static BOOL isASimulator = NO;
     
 	dispatch_once(&token, ^{
-        NSRange textRange = [[self platform] rangeOfString:@"i386"];
-        NSRange textRange2 = [[self platform] rangeOfString:@"x86_64"];
+        NSRange textRange = [[self platform_AG] rangeOfString:@"i386"];
+        NSRange textRange2 = [[self platform_AG] rangeOfString:@"x86_64"];
         if (textRange.location != NSNotFound || textRange2.location != NSNotFound)
             isASimulator = YES;
     });
@@ -232,7 +232,7 @@
 
 #pragma mark -
 
-+ (BOOL)hasRetinaDisplay
++ (BOOL)hasRetinaDisplay_AG
 {
     static dispatch_once_t token;
 	static BOOL hasRetinaDisplay = NO;
@@ -245,7 +245,7 @@
     return hasRetinaDisplay;
 }
 
-+ (BOOL)hasCompass
++ (BOOL)hasCompass_AG
 {
     static dispatch_once_t token;
 	static BOOL headingAvailable = NO;
@@ -257,7 +257,7 @@
     return headingAvailable;
 }
 
-+ (BOOL)hasGyroscope
++ (BOOL)hasGyroscope_AG
 {
     static dispatch_once_t token;
 	static BOOL isGyroAvailable = NO;
@@ -269,7 +269,7 @@
     return isGyroAvailable;
 }
 
-+ (BOOL)hasCamera
++ (BOOL)hasCamera_AG
 {
     static dispatch_once_t token;
 	static BOOL hasCamera = NO;
@@ -280,7 +280,7 @@
     return hasCamera;
 }
 
-+ (BOOL)hasFrontCamera
++ (BOOL)hasFrontCamera_AG
 {
     static dispatch_once_t token;
 	static BOOL hasFrontCamera = NO;
@@ -291,7 +291,7 @@
     return hasFrontCamera;
 }
 
-+ (BOOL)hasRearCamera
++ (BOOL)hasRearCamera_AG
 {
     static dispatch_once_t token;
 	static BOOL hasRearCamera = NO;
@@ -302,7 +302,7 @@
     return hasRearCamera;
 }
 
-+ (BOOL)hasFrontFlash
++ (BOOL)hasFrontFlash_AG
 {
     static dispatch_once_t token;
 	static BOOL hasFrontFlash = NO;
@@ -313,7 +313,7 @@
     return hasFrontFlash;
 }
 
-+ (BOOL)hasRearFlash
++ (BOOL)hasRearFlash_AG
 {
     static dispatch_once_t token;
 	static BOOL hasRearFlash = NO;
@@ -324,7 +324,7 @@
     return hasRearFlash;
 }
 
-+ (BOOL)canRecordVideo
++ (BOOL)canRecordVideo_AG
 {
     static dispatch_once_t token;
 	static BOOL canRecordVideo = NO;
@@ -339,35 +339,35 @@
 
 #pragma mark -
 
-+ (BOOL)canSendMail
++ (BOOL)canSendMail_AG
 {
     Class class = NSClassFromString(@"MFMailComposeViewController");
-    if (class) return [(id)class canSendMail];
+    if (class) return (BOOL)[class performSelector:@selector(canSendMail)];
     return NO;
 }
 
-+ (BOOL)canSendText
++ (BOOL)canSendText_AG
 {
     Class class = NSClassFromString(@"MFMessageComposeViewController");
-    if (class) return [(id)class canSendText];
+    if (class) return (BOOL)[class performSelector:@selector(canSendText)];
     return NO;
 }
 
-+ (BOOL)canSendTweet
++ (BOOL)canSendTweet_AG
 {
     Class class = NSClassFromString(@"TWTweetComposeViewController");
-    if (class) return [(id)class canSendTweet];
+    if (class) return (BOOL)[class performSelector:@selector(canSendTweet)];
     return NO;
 }
 
-+ (BOOL)canMakePayments
++ (BOOL)canMakePayments_AG
 {
     Class class = NSClassFromString(@"SKPaymentQueue");
-    if (class) return [(id)class canMakePayments];
+    if (class) return (BOOL)[class performSelector:@selector(canMakePayments)];
     return NO;
 }
 
-+ (BOOL)supportsMultitasking
++ (BOOL)supportsMultitasking_AG
 {
     static dispatch_once_t token;
 	static BOOL isMultitaskingSupported = NO;
@@ -380,7 +380,7 @@
 
 #pragma mark -
 
-+ (UIUserInterfaceIdiom)userInterfaceIdiom
++ (UIUserInterfaceIdiom)userInterfaceIdiom_AG
 {
     static dispatch_once_t token;
 	static UIUserInterfaceIdiom userInterfaceIdiom;
@@ -391,25 +391,25 @@
     return userInterfaceIdiom;
 }
 
-+ (BOOL)userInterfaceIdiomIsPhone
++ (BOOL)userInterfaceIdiomIsPhone_AG
 {
     static dispatch_once_t token;
 	static BOOL userInterfaceIdiomIsPhone = NO;
     
 	dispatch_once(&token, ^{
-        if ([UIDevice userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+        if ([UIDevice userInterfaceIdiom_AG] == UIUserInterfaceIdiomPhone)
             userInterfaceIdiomIsPhone = YES;
 	});
     return userInterfaceIdiomIsPhone;
 }
 
-+ (BOOL)userInterfaceIdiomIsPad
++ (BOOL)userInterfaceIdiomIsPad_AG
 {
     static dispatch_once_t token;
 	static BOOL userInterfaceIdiomIsPad = NO;
     
 	dispatch_once(&token, ^{
-        if ([UIDevice userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+        if ([UIDevice userInterfaceIdiom_AG] == UIUserInterfaceIdiomPad)
             userInterfaceIdiomIsPad = YES;
 	});
     return userInterfaceIdiomIsPad;
@@ -417,33 +417,33 @@
 
 #pragma mark -
 
-+ (NSString *)uniqueDeviceIdentifier
++ (NSString *)uniqueDeviceIdentifier_AG
 {
     static dispatch_once_t token;
 	static NSString *uniqueDeviceIdentifier;
     
 	dispatch_once(&token, ^{
-        NSString *macAddress = [UIDevice macAddress];
+        NSString *macAddress = [UIDevice macAddress_AG];
         NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
-        uniqueDeviceIdentifier = [macAddress HMACWithSecret:bundleIdentifier];
+        uniqueDeviceIdentifier = [macAddress HMACWithSecret_AG:bundleIdentifier];
 	});
     return uniqueDeviceIdentifier;
 }
 
-+ (NSString *)uniqueGlobalDeviceIdentifier
++ (NSString *)uniqueGlobalDeviceIdentifier_AG
 {
     static dispatch_once_t token;
 	static NSString *uniqueGlobalDeviceIdentifier;
     
 	dispatch_once(&token, ^{
-        uniqueGlobalDeviceIdentifier = [[UIDevice macAddress] SHA1Hash];
+        uniqueGlobalDeviceIdentifier = [[UIDevice macAddress_AG] SHA1Hash_AG];
 	});
     return uniqueGlobalDeviceIdentifier;
 }
 
 #pragma mark -
 
-+ (CGFloat)batteryLevel
++ (CGFloat)batteryLevel_AG
 {
     [[UIDevice currentDevice] setBatteryMonitoringEnabled:YES];
     CGFloat currentBatteryLevel = [[UIDevice currentDevice] batteryLevel];
@@ -451,7 +451,7 @@
     return currentBatteryLevel;
 }
 
-+ (NSString *)batteryState
++ (NSString *)batteryState_AG
 {
     [[UIDevice currentDevice] setBatteryMonitoringEnabled:YES];
     
@@ -486,7 +486,7 @@
 
 #pragma mark -
 
-+ (BOOL)isJailbroken 
++ (BOOL)isJailbroken_AG
 {
     static dispatch_once_t token;
 	static BOOL isJailbroken = NO;
@@ -503,14 +503,14 @@
     return isJailbroken;
 }
 
-+ (NSString *)jailbrokenState
++ (NSString *)jailbrokenState_AG
 {
     static dispatch_once_t token;
 	static NSString *jailbrokenState;
     
 	dispatch_once(&token, ^{
         
-        if ([UIDevice isJailbroken])
+        if ([UIDevice isJailbroken_AG])
             jailbrokenState = @"Jailbroken";
         else
             jailbrokenState = @"Not Jailbroken";
@@ -525,49 +525,49 @@
  *	Reference: https://github.com/erica/uidevice-extension
  */
 
-+ (NSUInteger)cpuFrequency
++ (NSUInteger)cpuFrequency_AG
 {
-    return [UIDevice getSysInfo:HW_CPU_FREQ];
+    return [UIDevice getSysInfo_AG:HW_CPU_FREQ];
 }
 
-+ (NSUInteger)busFrequency
++ (NSUInteger)busFrequency_AG
 {
-    return [UIDevice getSysInfo:HW_BUS_FREQ];
+    return [UIDevice getSysInfo_AG:HW_BUS_FREQ];
 }
 
-+ (NSUInteger)totalMemory
++ (NSUInteger)totalMemory_AG
 {
-    return [UIDevice getSysInfo:HW_PHYSMEM];
+    return [UIDevice getSysInfo_AG:HW_PHYSMEM];
 }
 
-+ (NSUInteger)userMemory
++ (NSUInteger)userMemory_AG
 {
-    return [UIDevice getSysInfo:HW_USERMEM];
+    return [UIDevice getSysInfo_AG:HW_USERMEM];
 }
 
-+ (NSUInteger)maxSocketBufferSize
++ (NSUInteger)maxSocketBufferSize_AG
 {
-    return [UIDevice getSysInfo:KIPC_MAXSOCKBUF];
+    return [UIDevice getSysInfo_AG:KIPC_MAXSOCKBUF];
 }
 
-+ (NSUInteger)processorCount
++ (NSUInteger)processorCount_AG
 {
     return [[NSProcessInfo processInfo] processorCount];
 }
 
-+ (NSNumber *)totalDiskSpace
++ (NSNumber *)totalDiskSpace_AG
 {
     NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
     return [attributes objectForKey:NSFileSystemSize];
 }
 
-+ (NSNumber *)freeDiskSpace
++ (NSNumber *)freeDiskSpace_AG
 {
     NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
     return [attributes objectForKey:NSFileSystemFreeSize];
 }
 
-+ (NSNumber *)freeMemory
++ (NSNumber *)freeMemory_AG
 {
     mach_port_t host_port = mach_host_self();
     mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
@@ -580,7 +580,7 @@
     return [NSNumber numberWithLong:vmsize];
 }
 
-+ (NSString *)macAddress
++ (NSString *)macAddress_AG
 {
     int                 mib[6];
     size_t              len;
@@ -631,7 +631,7 @@
 
 #pragma mark - Private Methods
 
-+ (NSString *)getSysInfoByName:(char *)typeSpecifier
++ (NSString *)getSysInfoByName_AG:(char *)typeSpecifier
 {
     size_t size;
     sysctlbyname(typeSpecifier, NULL, &size, NULL, 0);
@@ -642,7 +642,7 @@
     return results;
 }
 
-+ (NSUInteger)getSysInfo:(uint)typeSpecifier
++ (NSUInteger)getSysInfo_AG:(uint)typeSpecifier
 {
     size_t size = sizeof(int);
     int results;
@@ -651,24 +651,24 @@
     return (NSUInteger) results;
 }
 
-+ (NSString *)platform
++ (NSString *)platform_AG
 {
     static dispatch_once_t token;
 	static NSString *platform;
     
 	dispatch_once(&token, ^{
-        platform = [UIDevice getSysInfoByName:"hw.machine"];
+        platform = [UIDevice getSysInfoByName_AG:"hw.machine"];
     });
     return platform;
 }
 
-+ (NSString *)model
++ (NSString *)model_AG
 {
     static dispatch_once_t token;
 	static NSString *model;
     
 	dispatch_once(&token, ^{
-        model = [UIDevice getSysInfoByName:"hw.model"];
+        model = [UIDevice getSysInfoByName_AG:"hw.model"];
     });
     return model;
 }

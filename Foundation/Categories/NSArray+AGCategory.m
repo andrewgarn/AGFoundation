@@ -29,7 +29,7 @@
 
 @implementation NSArray (AGCategory)
 
-- (id)firstObject
+- (id)firstObject_AG
 {
     if ([self respondsToSelector:@selector(count)] && [self count] > 0)
         return [self objectAtIndex:0];
@@ -37,7 +37,7 @@
     return nil;
 }
 
-- (id)randomObject
+- (id)randomObject_AG
 {
     if ([self respondsToSelector:@selector(count)] && [self count] > 0)
         return [self objectAtIndex:arc4random() % [self count]];
@@ -45,7 +45,7 @@
 	return nil;
 }
 
-- (id)objectOrNilAtIndex:(NSUInteger)index
+- (id)objectAtIndex_AG:(NSUInteger)index
 {
     if (index < [self count])
     {
@@ -56,7 +56,7 @@
 
 #pragma mark -
 
-- (BOOL)boolAtIndex:(NSUInteger)index
+- (BOOL)boolAtIndex_AG:(NSUInteger)index
 {
     if (index < [self count])
     {
@@ -68,7 +68,7 @@
     return NO;
 }
 
-- (int)intAtIndex:(NSUInteger)index
+- (int)intAtIndex_AG:(NSUInteger)index
 {
     if (index < [self count])
     {
@@ -80,7 +80,7 @@
     return 0;
 }
 
-- (NSInteger)integerAtIndex:(NSUInteger)index
+- (NSInteger)integerAtIndex_AG:(NSUInteger)index
 {
     if (index < [self count])
     {
@@ -92,7 +92,7 @@
     return 0;
 }
 
-- (float)floatAtIndex:(NSUInteger)index
+- (float)floatAtIndex_AG:(NSUInteger)index
 {
     if (index < [self count])
     {
@@ -104,7 +104,7 @@
     return 0.0f;
 }
 
-- (double)doubleAtIndex:(NSUInteger)index
+- (double)doubleAtIndex_AG:(NSUInteger)index
 {
     if (index < [self count])
     {
@@ -118,7 +118,7 @@
 
 #pragma mark -
 
-- (NSArray *)sortedArrayUsingSortDescriptorKey:(NSString *)key ascending:(BOOL)ascending
+- (NSArray *)sortedArrayUsingSortDescriptorKey_AG:(NSString *)key ascending:(BOOL)ascending
 {
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:key ascending:ascending];
     return [self sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
@@ -126,7 +126,7 @@
 
 #pragma mark -
 
-- (NSArray *)reversedArray 
+- (NSArray *)reversedArray_AG
 {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
     NSEnumerator *enumerator = [self reverseObjectEnumerator];
@@ -137,7 +137,7 @@
     return array;
 }
 
-- (NSArray *)shuffledArray
+- (NSArray *)shuffledArray_AG
 {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
     NSMutableArray *mutableCopy = [self mutableCopy];

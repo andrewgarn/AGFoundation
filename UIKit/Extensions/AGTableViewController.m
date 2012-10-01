@@ -41,7 +41,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return [UIApplication interfaceOrientationIsSupported:interfaceOrientation];
+    return [UIApplication interfaceOrientationIsSupported_AG:interfaceOrientation];
 }
 
 @end

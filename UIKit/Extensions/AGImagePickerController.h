@@ -28,7 +28,7 @@
 #import <UIKit/UIKit.h>
 
 @class AGImagePickerController;
-typedef void (^AGImagePickerControllerCompletionBlock)(AGImagePickerController *, NSDictionary *, BOOL cancelled);
+typedef void (^AGImagePickerControllerCompletionBlock)(AGImagePickerController *picker, NSDictionary *info, BOOL cancelled);
 
 /** `UIImagePickerController` extended to support block completion */
 @interface AGImagePickerController : UIImagePickerController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>

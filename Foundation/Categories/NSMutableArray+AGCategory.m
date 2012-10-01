@@ -31,12 +31,12 @@
 
 #pragma mark - Queueing and Dequeuing
 
-- (void)enqueue:(id)anObject 
+- (void)enqueueObject_AG:(id)anObject 
 {
     [self addObject:anObject];
 }
 
-- (id)dequeue
+- (id)dequeueObject_AG
 {
      if ([self count] == 0) 
          return nil; 
@@ -50,12 +50,12 @@
 
 #pragma mark - Pushing and Popping
 
-- (void)push:(id)anObject
+- (void)pushObject_AG:(id)anObject
 {
 	[self addObject:anObject];
 }
 
-- (id)pop
+- (id)popObject_AG
 {
 	id result = [self lastObject];
 	[self removeLastObject];
@@ -64,7 +64,7 @@
 
 #pragma mark - Rearranging
 
-- (NSMutableArray *)reverse
+- (NSMutableArray *)reverse_AG
 {    
     int i = 0;
     int j = [self count] - 1;
@@ -78,7 +78,7 @@
     return self;
 }
 
-- (NSMutableArray *)shuffle
+- (NSMutableArray *)shuffle_AG
 {
     int i = 0;
     int j = [self count] - 1;
