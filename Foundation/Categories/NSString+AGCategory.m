@@ -166,6 +166,12 @@
 
 #pragma mark -
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 60000
+#define AGCategoryStringDefaultLineBreakMode NSLineBreakByWordWrapping
+#else
+#define AGCategoryStringDefaultLineBreakMode UILineBreakModeWordWrap
+#endif
+
 - (CGFloat)heightWithFont_AG:(UIFont *)font constrainedToWidth:(CGFloat)width
 {
     return [self heightWithFont_AG:font constrainedToWidth:width min:0];
@@ -173,12 +179,12 @@
 
 - (CGFloat)heightWithFont_AG:(UIFont *)font constrainedToWidth:(CGFloat)width min:(CGFloat)minHeight
 {
-    return [self heightWithFont_AG:font constrainedToWidth:width lineBreakMode:UILineBreakModeWordWrap min:minHeight];
+    return [self heightWithFont_AG:font constrainedToWidth:width lineBreakMode:AGCategoryStringDefaultLineBreakMode min:minHeight];
 }
 
 - (CGFloat)heightWithFont_AG:(UIFont *)font constrainedToSize:(CGSize)size min:(CGFloat)minHeight
 {
-    return [self heightWithFont_AG:font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap min:minHeight];
+    return [self heightWithFont_AG:font constrainedToSize:size lineBreakMode:AGCategoryStringDefaultLineBreakMode min:minHeight];
 }
 
 - (CGFloat)heightWithFont_AG:(UIFont *)font constrainedToWidth:(CGFloat)width lineBreakMode:(UILineBreakMode)lineBreakMode

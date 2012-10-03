@@ -57,10 +57,12 @@
         });
     }
     
-    dispatch_release(concurrentQueue);
+    #if __IPHONE_OS_VERSION_MIN_REQUIRED < 60000
+        dispatch_release(concurrentQueue);
+    #endif
 }
 
-+ (void)performBlockInBackground:(AGBasicBlock)block completion:(AGBasicBlock)completionBlock 
++ (void)performBlockInBackground:(AGBasicBlock)block completion:(AGBasicBlock)completionBlock
 {
     [self performBlockInBackground:block completion:completionBlock waitUntilDone:NO];
 }
