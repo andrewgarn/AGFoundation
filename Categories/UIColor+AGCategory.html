@@ -7,12 +7,12 @@
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.1 (build 840)" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
 	</head>
 	<body>
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">AGFoundation.atom </a></h1>
+				<h1><a id="libraryTitle" href="../index.html">AGFoundation </a></h1>
 				<a id="developerHome" href="../index.html">Andrew Garn</a>
 			</div>
 			
@@ -42,42 +42,46 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/amberColor">&nbsp;&nbsp;&nbsp;&nbsp;+ amberColor</option>
+	<option value="//api/name/amberColor_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ amberColor_AG</option>
 	
-	<option value="//api/name/darkAmberColor">&nbsp;&nbsp;&nbsp;&nbsp;+ darkAmberColor</option>
+	<option value="//api/name/colorWithHex_AG:">&nbsp;&nbsp;&nbsp;&nbsp;+ colorWithHex_AG:</option>
 	
-	<option value="//api/name/darkVioletColor">&nbsp;&nbsp;&nbsp;&nbsp;+ darkVioletColor</option>
+	<option value="//api/name/colorWithHex_AG:alpha:">&nbsp;&nbsp;&nbsp;&nbsp;+ colorWithHex_AG:alpha:</option>
 	
-	<option value="//api/name/fireEngineRed">&nbsp;&nbsp;&nbsp;&nbsp;+ fireEngineRed</option>
+	<option value="//api/name/darkAmberColor_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ darkAmberColor_AG</option>
 	
-	<option value="//api/name/indigoColor">&nbsp;&nbsp;&nbsp;&nbsp;+ indigoColor</option>
+	<option value="//api/name/darkVioletColor_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ darkVioletColor_AG</option>
 	
-	<option value="//api/name/lemonColor">&nbsp;&nbsp;&nbsp;&nbsp;+ lemonColor</option>
+	<option value="//api/name/fireEngineRed_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ fireEngineRed_AG</option>
 	
-	<option value="//api/name/randomColor">&nbsp;&nbsp;&nbsp;&nbsp;+ randomColor</option>
+	<option value="//api/name/indigoColor_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ indigoColor_AG</option>
 	
-	<option value="//api/name/roseColor">&nbsp;&nbsp;&nbsp;&nbsp;+ roseColor</option>
+	<option value="//api/name/lemonColor_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ lemonColor_AG</option>
 	
-	<option value="//api/name/rubyColor">&nbsp;&nbsp;&nbsp;&nbsp;+ rubyColor</option>
+	<option value="//api/name/randomColor_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ randomColor_AG</option>
 	
-	<option value="//api/name/tealColor">&nbsp;&nbsp;&nbsp;&nbsp;+ tealColor</option>
+	<option value="//api/name/roseColor_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ roseColor_AG</option>
 	
-	<option value="//api/name/violetColor">&nbsp;&nbsp;&nbsp;&nbsp;+ violetColor</option>
+	<option value="//api/name/rubyColor_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ rubyColor_AG</option>
 	
-	<option value="//api/name/vividVioletColor">&nbsp;&nbsp;&nbsp;&nbsp;+ vividVioletColor</option>
+	<option value="//api/name/tealColor_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ tealColor_AG</option>
+	
+	<option value="//api/name/violetColor_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ violetColor_AG</option>
+	
+	<option value="//api/name/vividVioletColor_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ vividVioletColor_AG</option>
 	
 	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/alpha">&nbsp;&nbsp;&nbsp;&nbsp;- alpha</option>
+	<option value="//api/name/alphaComponent_AG">&nbsp;&nbsp;&nbsp;&nbsp;- alphaComponent_AG</option>
 	
-	<option value="//api/name/blue">&nbsp;&nbsp;&nbsp;&nbsp;- blue</option>
+	<option value="//api/name/blueComponent_AG">&nbsp;&nbsp;&nbsp;&nbsp;- blueComponent_AG</option>
 	
-	<option value="//api/name/green">&nbsp;&nbsp;&nbsp;&nbsp;- green</option>
+	<option value="//api/name/greenComponent_AG">&nbsp;&nbsp;&nbsp;&nbsp;- greenComponent_AG</option>
 	
-	<option value="//api/name/red">&nbsp;&nbsp;&nbsp;&nbsp;- red</option>
+	<option value="//api/name/redComponent_AG">&nbsp;&nbsp;&nbsp;&nbsp;- redComponent_AG</option>
 	
 	
 	
@@ -97,9 +101,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating a Random UIColor">Creating a Random UIColor</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating a UIColor Object from Component Values">Creating a UIColor Object from Component Values</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating a UIColor with Preset Component Values">Creating a UIColor with Preset Component Values</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Color Components">Color Components</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Retrieving Color Information">Retrieving Color Information</a></span></li>
 	
 </ul></li>
 
@@ -111,29 +117,33 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/amberColor">amberColor</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/amberColor_AG">amberColor_AG</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/darkAmberColor">darkAmberColor</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/colorWithHex_AG:">colorWithHex_AG:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/darkVioletColor">darkVioletColor</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/colorWithHex_AG:alpha:">colorWithHex_AG:alpha:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fireEngineRed">fireEngineRed</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/darkAmberColor_AG">darkAmberColor_AG</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/indigoColor">indigoColor</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/darkVioletColor_AG">darkVioletColor_AG</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lemonColor">lemonColor</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fireEngineRed_AG">fireEngineRed_AG</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/randomColor">randomColor</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/indigoColor_AG">indigoColor_AG</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/roseColor">roseColor</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lemonColor_AG">lemonColor_AG</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rubyColor">rubyColor</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/randomColor_AG">randomColor_AG</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tealColor">tealColor</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/roseColor_AG">roseColor_AG</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/violetColor">violetColor</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rubyColor_AG">rubyColor_AG</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/vividVioletColor">vividVioletColor</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tealColor_AG">tealColor_AG</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/violetColor_AG">violetColor_AG</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/vividVioletColor_AG">vividVioletColor_AG</a></span></li>
 	
 </ul></li>
 
@@ -141,13 +151,13 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/alpha">alpha</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/alphaComponent_AG">alphaComponent_AG</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/blue">blue</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/blueComponent_AG">blueComponent_AG</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/green">green</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/greenComponent_AG">greenComponent_AG</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/red">red</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/redComponent_AG">redComponent_AG</a></span></li>
 	
 </ul></li>
 
@@ -201,8 +211,30 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/randomColor">+&nbsp;randomColor</a></code>
+		<code><a href="#//api/name/randomColor_AG">+&nbsp;randomColor_AG</a></code>
 		<span class="tooltip"><p>Returns a random UIColor.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating a UIColor Object from Component Values" name="task_Creating a UIColor Object from Component Values"></a>
+						<h3 class="subsubtitle task-title">Creating a UIColor Object from Component Values</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/colorWithHex_AG:">+&nbsp;colorWithHex_AG:</a></code>
+		<span class="tooltip"><p>Returns a a UIColor object using RGB values from the supplied hex value.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/colorWithHex_AG:alpha:">+&nbsp;colorWithHex_AG:alpha:</a></code>
+		<span class="tooltip"><p>Returns a a UIColor object using RGB values from the supplied hex value.</p></span>
 	</span>
 	
 	
@@ -216,78 +248,78 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/indigoColor">+&nbsp;indigoColor</a></code>
-		<span class="tooltip"><p>Returns a color object whose RGB values are 0.294, 0.0, and 0.509f and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p></span>
+		<code><a href="#//api/name/indigoColor_AG">+&nbsp;indigoColor_AG</a></code>
+		<span class="tooltip"><p>Returns a color object whose RGB values are 0.294, 0.0, and 0.509f and whose alpha value is 1.0.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/tealColor">+&nbsp;tealColor</a></code>
-		<span class="tooltip"><p>Returns a color object whose RGB values are 0.0, 0.5, and 0.5 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p></span>
+		<code><a href="#//api/name/tealColor_AG">+&nbsp;tealColor_AG</a></code>
+		<span class="tooltip"><p>Returns a color object whose RGB values are 0.0, 0.5, and 0.5 and whose alpha value is 1.0.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/violetColor">+&nbsp;violetColor</a></code>
-		<span class="tooltip"><p>Returns a color object whose RGB values are 0.498, 0.0, and 1.0 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p></span>
+		<code><a href="#//api/name/violetColor_AG">+&nbsp;violetColor_AG</a></code>
+		<span class="tooltip"><p>Returns a color object whose RGB values are 0.498, 0.0, and 1.0 and whose alpha value is 1.0.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/vividVioletColor">+&nbsp;vividVioletColor</a></code>
-		<span class="tooltip"><p>Returns a color object whose RGB values are 0.506, 0.0, and 1.0 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p></span>
+		<code><a href="#//api/name/vividVioletColor_AG">+&nbsp;vividVioletColor_AG</a></code>
+		<span class="tooltip"><p>Returns a color object whose RGB values are 0.506, 0.0, and 1.0 and whose alpha value is 1.0.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/darkVioletColor">+&nbsp;darkVioletColor</a></code>
-		<span class="tooltip"><p>Returns a color object whose RGB values are 0.58, 0.0, and 0.827 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p></span>
+		<code><a href="#//api/name/darkVioletColor_AG">+&nbsp;darkVioletColor_AG</a></code>
+		<span class="tooltip"><p>Returns a color object whose RGB values are 0.58, 0.0, and 0.827 and whose alpha value is 1.0.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/amberColor">+&nbsp;amberColor</a></code>
-		<span class="tooltip"><p>Returns a color object whose RGB values are 1.0, 0.75, and 0.0 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p></span>
+		<code><a href="#//api/name/amberColor_AG">+&nbsp;amberColor_AG</a></code>
+		<span class="tooltip"><p>Returns a color object whose RGB values are 1.0, 0.75, and 0.0 and whose alpha value is 1.0.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/darkAmberColor">+&nbsp;darkAmberColor</a></code>
-		<span class="tooltip"><p>Returns a color object whose RGB values are 1.0, 0.494, and 0.0 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p></span>
+		<code><a href="#//api/name/darkAmberColor_AG">+&nbsp;darkAmberColor_AG</a></code>
+		<span class="tooltip"><p>Returns a color object whose RGB values are 1.0, 0.494, and 0.0 and whose alpha value is 1.0.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/lemonColor">+&nbsp;lemonColor</a></code>
-		<span class="tooltip"><p>Returns a color object whose RGB values are 1.0, 0.914, and 0.0627 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p></span>
+		<code><a href="#//api/name/lemonColor_AG">+&nbsp;lemonColor_AG</a></code>
+		<span class="tooltip"><p>Returns a color object whose RGB values are 1.0, 0.914, and 0.0627 and whose alpha value is 1.0.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/roseColor">+&nbsp;roseColor</a></code>
-		<span class="tooltip"><p>Returns a color object whose RGB values are 1.0, 0.0, and 0.5 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p></span>
+		<code><a href="#//api/name/roseColor_AG">+&nbsp;roseColor_AG</a></code>
+		<span class="tooltip"><p>Returns a color object whose RGB values are 1.0, 0.0, and 0.5 and whose alpha value is 1.0.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/rubyColor">+&nbsp;rubyColor</a></code>
-		<span class="tooltip"><p>Returns a color object whose RGB values are 0.8784, 0.06667, and 0.3725 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p></span>
+		<code><a href="#//api/name/rubyColor_AG">+&nbsp;rubyColor_AG</a></code>
+		<span class="tooltip"><p>Returns a color object whose RGB values are 0.8784, 0.06667, and 0.3725 and whose alpha value is 1.0.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/fireEngineRed">+&nbsp;fireEngineRed</a></code>
-		<span class="tooltip"><p>Returns a color object whose RGB values are 0.8078, 0.0863, and 0.1255 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p></span>
+		<code><a href="#//api/name/fireEngineRed_AG">+&nbsp;fireEngineRed_AG</a></code>
+		<span class="tooltip"><p>Returns a color object whose RGB values are 0.8078, 0.0863, and 0.1255 and whose alpha value is 1.0.</p></span>
 	</span>
 	
 	
@@ -295,34 +327,34 @@
 						</ul>
 						
 						
-						<a title="Color Components" name="task_Color Components"></a>
-						<h3 class="subsubtitle task-title">Color Components</h3>
+						<a title="Retrieving Color Information" name="task_Retrieving Color Information"></a>
+						<h3 class="subsubtitle task-title">Retrieving Color Information</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/red">&ndash;&nbsp;red</a></code>
+		<code><a href="#//api/name/redComponent_AG">&ndash;&nbsp;redComponent_AG</a></code>
 		<span class="tooltip"><p>Returns the red component of the receiver</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/green">&ndash;&nbsp;green</a></code>
+		<code><a href="#//api/name/greenComponent_AG">&ndash;&nbsp;greenComponent_AG</a></code>
 		<span class="tooltip"><p>Returns the green component of the receiver</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/blue">&ndash;&nbsp;blue</a></code>
+		<code><a href="#//api/name/blueComponent_AG">&ndash;&nbsp;blueComponent_AG</a></code>
 		<span class="tooltip"><p>Returns the blue component of the receiver</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/alpha">&ndash;&nbsp;alpha</a></code>
+		<code><a href="#//api/name/alphaComponent_AG">&ndash;&nbsp;alphaComponent_AG</a></code>
 		<span class="tooltip"><p>Returns the alpha component of the receiver</p></span>
 	</span>
 	
@@ -343,18 +375,18 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/amberColor" title="amberColor"></a>
-	<h3 class="subsubtitle method-title">amberColor</h3>
+	<a name="//api/name/amberColor_AG" title="amberColor_AG"></a>
+	<h3 class="subsubtitle method-title">amberColor_AG</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a color object whose RGB values are 1.0, 0.75, and 0.0 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p>
+		<p>Returns a color object whose RGB values are 1.0, 0.75, and 0.0 and whose alpha value is 1.0.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (UIColor *)amberColor</code></div>
+	<div class="method-subsection method-declaration"><code>+ (UIColor *)amberColor_AG</code></div>
 
     
 	
@@ -384,18 +416,125 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/darkAmberColor" title="darkAmberColor"></a>
-	<h3 class="subsubtitle method-title">darkAmberColor</h3>
+	<a name="//api/name/colorWithHex_AG:" title="colorWithHex_AG:"></a>
+	<h3 class="subsubtitle method-title">colorWithHex_AG:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a color object whose RGB values are 1.0, 0.494, and 0.0 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p>
+		<p>Returns a a UIColor object using RGB values from the supplied hex value.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (UIColor *)darkAmberColor</code></div>
+	<div class="method-subsection method-declaration"><code>+ (UIColor *)colorWithHex_AG:(int)<em>hexValue</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>hexValue</em></dt>
+			<dd><p>The hex value of the required UIColor object.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The UIColor object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIColor+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/colorWithHex_AG:alpha:" title="colorWithHex_AG:alpha:"></a>
+	<h3 class="subsubtitle method-title">colorWithHex_AG:alpha:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a a UIColor object using RGB values from the supplied hex value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (UIColor *)colorWithHex_AG:(int)<em>hexValue</em> alpha:(CGFloat)<em>alpha</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>hexValue</em></dt>
+			<dd><p>The hex value of the required UIColor object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>alpha</em></dt>
+			<dd><p>The opacity value of the color object, specified as a value from 0.0 to 1.0.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The UIColor object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIColor+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/darkAmberColor_AG" title="darkAmberColor_AG"></a>
+	<h3 class="subsubtitle method-title">darkAmberColor_AG</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a color object whose RGB values are 1.0, 0.494, and 0.0 and whose alpha value is 1.0.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (UIColor *)darkAmberColor_AG</code></div>
 
     
 	
@@ -425,18 +564,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/darkVioletColor" title="darkVioletColor"></a>
-	<h3 class="subsubtitle method-title">darkVioletColor</h3>
+	<a name="//api/name/darkVioletColor_AG" title="darkVioletColor_AG"></a>
+	<h3 class="subsubtitle method-title">darkVioletColor_AG</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a color object whose RGB values are 0.58, 0.0, and 0.827 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p>
+		<p>Returns a color object whose RGB values are 0.58, 0.0, and 0.827 and whose alpha value is 1.0.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (UIColor *)darkVioletColor</code></div>
+	<div class="method-subsection method-declaration"><code>+ (UIColor *)darkVioletColor_AG</code></div>
 
     
 	
@@ -466,18 +605,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/fireEngineRed" title="fireEngineRed"></a>
-	<h3 class="subsubtitle method-title">fireEngineRed</h3>
+	<a name="//api/name/fireEngineRed_AG" title="fireEngineRed_AG"></a>
+	<h3 class="subsubtitle method-title">fireEngineRed_AG</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a color object whose RGB values are 0.8078, 0.0863, and 0.1255 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p>
+		<p>Returns a color object whose RGB values are 0.8078, 0.0863, and 0.1255 and whose alpha value is 1.0.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (UIColor *)fireEngineRed</code></div>
+	<div class="method-subsection method-declaration"><code>+ (UIColor *)fireEngineRed_AG</code></div>
 
     
 	
@@ -507,18 +646,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/indigoColor" title="indigoColor"></a>
-	<h3 class="subsubtitle method-title">indigoColor</h3>
+	<a name="//api/name/indigoColor_AG" title="indigoColor_AG"></a>
+	<h3 class="subsubtitle method-title">indigoColor_AG</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a color object whose RGB values are 0.294, 0.0, and 0.509f and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p>
+		<p>Returns a color object whose RGB values are 0.294, 0.0, and 0.509f and whose alpha value is 1.0.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (UIColor *)indigoColor</code></div>
+	<div class="method-subsection method-declaration"><code>+ (UIColor *)indigoColor_AG</code></div>
 
     
 	
@@ -548,18 +687,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/lemonColor" title="lemonColor"></a>
-	<h3 class="subsubtitle method-title">lemonColor</h3>
+	<a name="//api/name/lemonColor_AG" title="lemonColor_AG"></a>
+	<h3 class="subsubtitle method-title">lemonColor_AG</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a color object whose RGB values are 1.0, 0.914, and 0.0627 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p>
+		<p>Returns a color object whose RGB values are 1.0, 0.914, and 0.0627 and whose alpha value is 1.0.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (UIColor *)lemonColor</code></div>
+	<div class="method-subsection method-declaration"><code>+ (UIColor *)lemonColor_AG</code></div>
 
     
 	
@@ -589,8 +728,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/randomColor" title="randomColor"></a>
-	<h3 class="subsubtitle method-title">randomColor</h3>
+	<a name="//api/name/randomColor_AG" title="randomColor_AG"></a>
+	<h3 class="subsubtitle method-title">randomColor_AG</h3>
 	
 	
 	
@@ -600,7 +739,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (UIColor *)randomColor</code></div>
+	<div class="method-subsection method-declaration"><code>+ (UIColor *)randomColor_AG</code></div>
 
     
 	
@@ -630,18 +769,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/roseColor" title="roseColor"></a>
-	<h3 class="subsubtitle method-title">roseColor</h3>
+	<a name="//api/name/roseColor_AG" title="roseColor_AG"></a>
+	<h3 class="subsubtitle method-title">roseColor_AG</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a color object whose RGB values are 1.0, 0.0, and 0.5 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p>
+		<p>Returns a color object whose RGB values are 1.0, 0.0, and 0.5 and whose alpha value is 1.0.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (UIColor *)roseColor</code></div>
+	<div class="method-subsection method-declaration"><code>+ (UIColor *)roseColor_AG</code></div>
 
     
 	
@@ -671,18 +810,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/rubyColor" title="rubyColor"></a>
-	<h3 class="subsubtitle method-title">rubyColor</h3>
+	<a name="//api/name/rubyColor_AG" title="rubyColor_AG"></a>
+	<h3 class="subsubtitle method-title">rubyColor_AG</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a color object whose RGB values are 0.8784, 0.06667, and 0.3725 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p>
+		<p>Returns a color object whose RGB values are 0.8784, 0.06667, and 0.3725 and whose alpha value is 1.0.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (UIColor *)rubyColor</code></div>
+	<div class="method-subsection method-declaration"><code>+ (UIColor *)rubyColor_AG</code></div>
 
     
 	
@@ -712,18 +851,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/tealColor" title="tealColor"></a>
-	<h3 class="subsubtitle method-title">tealColor</h3>
+	<a name="//api/name/tealColor_AG" title="tealColor_AG"></a>
+	<h3 class="subsubtitle method-title">tealColor_AG</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a color object whose RGB values are 0.0, 0.5, and 0.5 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p>
+		<p>Returns a color object whose RGB values are 0.0, 0.5, and 0.5 and whose alpha value is 1.0.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (UIColor *)tealColor</code></div>
+	<div class="method-subsection method-declaration"><code>+ (UIColor *)tealColor_AG</code></div>
 
     
 	
@@ -753,18 +892,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/violetColor" title="violetColor"></a>
-	<h3 class="subsubtitle method-title">violetColor</h3>
+	<a name="//api/name/violetColor_AG" title="violetColor_AG"></a>
+	<h3 class="subsubtitle method-title">violetColor_AG</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a color object whose RGB values are 0.498, 0.0, and 1.0 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p>
+		<p>Returns a color object whose RGB values are 0.498, 0.0, and 1.0 and whose alpha value is 1.0.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (UIColor *)violetColor</code></div>
+	<div class="method-subsection method-declaration"><code>+ (UIColor *)violetColor_AG</code></div>
 
     
 	
@@ -794,18 +933,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/vividVioletColor" title="vividVioletColor"></a>
-	<h3 class="subsubtitle method-title">vividVioletColor</h3>
+	<a name="//api/name/vividVioletColor_AG" title="vividVioletColor_AG"></a>
+	<h3 class="subsubtitle method-title">vividVioletColor_AG</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a color object whose RGB values are 0.506, 0.0, and 1.0 and whose <a href="#//api/name/alpha">alpha</a> value is 1.0.</p>
+		<p>Returns a color object whose RGB values are 0.506, 0.0, and 1.0 and whose alpha value is 1.0.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (UIColor *)vividVioletColor</code></div>
+	<div class="method-subsection method-declaration"><code>+ (UIColor *)vividVioletColor_AG</code></div>
 
     
 	
@@ -843,8 +982,8 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/alpha" title="alpha"></a>
-	<h3 class="subsubtitle method-title">alpha</h3>
+	<a name="//api/name/alphaComponent_AG" title="alphaComponent_AG"></a>
+	<h3 class="subsubtitle method-title">alphaComponent_AG</h3>
 	
 	
 	
@@ -854,7 +993,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (CGFloat)alpha</code></div>
+	<div class="method-subsection method-declaration"><code>- (CGFloat)alphaComponent_AG</code></div>
 
     
 	
@@ -879,8 +1018,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/blue" title="blue"></a>
-	<h3 class="subsubtitle method-title">blue</h3>
+	<a name="//api/name/blueComponent_AG" title="blueComponent_AG"></a>
+	<h3 class="subsubtitle method-title">blueComponent_AG</h3>
 	
 	
 	
@@ -890,7 +1029,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (CGFloat)blue</code></div>
+	<div class="method-subsection method-declaration"><code>- (CGFloat)blueComponent_AG</code></div>
 
     
 	
@@ -915,8 +1054,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/green" title="green"></a>
-	<h3 class="subsubtitle method-title">green</h3>
+	<a name="//api/name/greenComponent_AG" title="greenComponent_AG"></a>
+	<h3 class="subsubtitle method-title">greenComponent_AG</h3>
 	
 	
 	
@@ -926,7 +1065,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (CGFloat)green</code></div>
+	<div class="method-subsection method-declaration"><code>- (CGFloat)greenComponent_AG</code></div>
 
     
 	
@@ -951,8 +1090,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/red" title="red"></a>
-	<h3 class="subsubtitle method-title">red</h3>
+	<a name="//api/name/redComponent_AG" title="redComponent_AG"></a>
+	<h3 class="subsubtitle method-title">redComponent_AG</h3>
 	
 	
 	
@@ -962,7 +1101,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (CGFloat)red</code></div>
+	<div class="method-subsection method-declaration"><code>- (CGFloat)redComponent_AG</code></div>
 
     
 	
@@ -999,9 +1138,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-09-26)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-10-18)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
 					</div>
 				</div>

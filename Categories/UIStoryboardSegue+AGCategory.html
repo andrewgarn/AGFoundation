@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>UIAlertView(AGCategory) Category Reference</title>
+		<title>UIStoryboardSegue(AGCategory) Category Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">UIAlertView(AGCategory) Category Reference</h1>
+				<h1 class="hideInXcode">UIStoryboardSegue(AGCategory) Category Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -40,15 +40,11 @@
 	
 	
 	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/showWithError_AG:">&nbsp;&nbsp;&nbsp;&nbsp;+ showWithError_AG:</option>
-	
-	<option value="//api/name/showWithMessage_AG:">&nbsp;&nbsp;&nbsp;&nbsp;+ showWithMessage_AG:</option>
-	
-	<option value="//api/name/showWithTitle_AG:message:">&nbsp;&nbsp;&nbsp;&nbsp;+ showWithTitle_AG:message:</option>
 	
 	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/destinationViewController_AG">&nbsp;&nbsp;&nbsp;&nbsp;- destinationViewController_AG</option>
 	
 	
 	
@@ -74,24 +70,20 @@
 
 
 
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showWithError_AG:">showWithError_AG:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showWithMessage_AG:">showWithMessage_AG:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showWithTitle_AG:message:">showWithTitle_AG:message:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/destinationViewController_AG">destinationViewController_AG</a></span></li>
 	
 </ul></li>
-
-
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="UIAlertView(AGCategory) Category Reference" name="top"></a>
+				<a title="UIStoryboardSegue(AGCategory) Category Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -100,7 +92,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">UIAlertView(AGCategory) Category Reference</h1>
+						<h1 class="title title-header">UIStoryboardSegue(AGCategory) Category Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -108,7 +100,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">UIAlertView+AGCategory.h</td>
+	<td class="specification-value">UIStoryboardSegue+AGCategory.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -118,7 +110,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A collection of category extensions for <code>UIAlertView</code></p>
+						<p>A collection of category extensions for <code>UIStoryboard</code></p>
 					</div>
 					
 					
@@ -136,22 +128,8 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/showWithTitle_AG:message:">+&nbsp;showWithTitle_AG:message:</a></code>
-		<span class="tooltip"><p>Convenience method for displaying an alert view.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/showWithMessage_AG:">+&nbsp;showWithMessage_AG:</a></code>
-		<span class="tooltip"><p>Convenience method for displaying an alert view.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/showWithError_AG:">+&nbsp;showWithError_AG:</a></code>
-		<span class="tooltip"><p>Convenience method for displaying an error alert view.</p></span>
+		<code><a href="#//api/name/destinationViewController_AG">&ndash;&nbsp;destinationViewController_AG</a></code>
+		<span class="tooltip"><p>Returns the destination view controller for the segue, or the top view controller if the destination is a navigation controller.</p></span>
 	</span>
 	
 	
@@ -166,37 +144,34 @@
 					
 					
 					
+					
+					
 					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/showWithError_AG:" title="showWithError_AG:"></a>
-	<h3 class="subsubtitle method-title">showWithError_AG:</h3>
+	<a name="//api/name/destinationViewController_AG" title="destinationViewController_AG"></a>
+	<h3 class="subsubtitle method-title">destinationViewController_AG</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Convenience method for displaying an error alert view.</p>
+		<p>Returns the destination view controller for the segue, or the top view controller if the destination is a navigation controller.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)showWithError_AG:(NSError *)<em>error</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (UIViewController *)destinationViewController_AG</code></div>
 
     
 	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>error</em></dt>
-			<dd><p>An error object.</p></dd>
-		</dl>
-		
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The destination view controller for the segue.</p>
 	</div>
-	
-	
 	
 	
 	
@@ -210,112 +185,13 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">UIAlertView+AGCategory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/showWithMessage_AG:" title="showWithMessage_AG:"></a>
-	<h3 class="subsubtitle method-title">showWithMessage_AG:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Convenience method for displaying an alert view.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (void)showWithMessage_AG:(NSString *)<em>message</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>message</em></dt>
-			<dd><p>Descriptive text that provides more details than the title.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">UIAlertView+AGCategory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/showWithTitle_AG:message:" title="showWithTitle_AG:message:"></a>
-	<h3 class="subsubtitle method-title">showWithTitle_AG:message:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Convenience method for displaying an alert view.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (void)showWithTitle_AG:(NSString *)<em>title</em> message:(NSString *)<em>message</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>title</em></dt>
-			<dd><p>The string that appears in the receiver’s title bar.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>message</em></dt>
-			<dd><p>Descriptive text that provides more details than the title.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">UIAlertView+AGCategory.h</code><br />
+		<code class="declared-in-ref">UIStoryboardSegue+AGCategory.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 					</div>
-					
-					
 					
 					
 				</div>

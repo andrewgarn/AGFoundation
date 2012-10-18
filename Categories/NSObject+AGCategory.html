@@ -7,12 +7,12 @@
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.1 (build 840)" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
 	</head>
 	<body>
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">AGFoundation.atom </a></h1>
+				<h1><a id="libraryTitle" href="../index.html">AGFoundation </a></h1>
 				<a id="developerHome" href="../index.html">Andrew Garn</a>
 			</div>
 			
@@ -42,46 +42,42 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/associateCopyOfValue:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;+ associateCopyOfValue:withKey:</option>
+	<option value="//api/name/associateCopyOfValue_AG:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;+ associateCopyOfValue_AG:withKey:</option>
 	
-	<option value="//api/name/associateValue:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;+ associateValue:withKey:</option>
+	<option value="//api/name/associateValue_AG:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;+ associateValue_AG:withKey:</option>
 	
-	<option value="//api/name/associatedValueForKey:">&nbsp;&nbsp;&nbsp;&nbsp;+ associatedValueForKey:</option>
+	<option value="//api/name/associatedValueForKey_AG:">&nbsp;&nbsp;&nbsp;&nbsp;+ associatedValueForKey_AG:</option>
 	
-	<option value="//api/name/autoDescribe:">&nbsp;&nbsp;&nbsp;&nbsp;+ autoDescribe:</option>
+	<option value="//api/name/forceArrayOrNil_AG:">&nbsp;&nbsp;&nbsp;&nbsp;+ forceArrayOrNil_AG:</option>
 	
-	<option value="//api/name/autoDescribe:classType:">&nbsp;&nbsp;&nbsp;&nbsp;+ autoDescribe:classType:</option>
+	<option value="//api/name/forceDateOrNil_AG:">&nbsp;&nbsp;&nbsp;&nbsp;+ forceDateOrNil_AG:</option>
 	
-	<option value="//api/name/forceDateOrNil:">&nbsp;&nbsp;&nbsp;&nbsp;+ forceDateOrNil:</option>
+	<option value="//api/name/forceNumberOrNil_AG:">&nbsp;&nbsp;&nbsp;&nbsp;+ forceNumberOrNil_AG:</option>
 	
-	<option value="//api/name/forceNumberOrNil:">&nbsp;&nbsp;&nbsp;&nbsp;+ forceNumberOrNil:</option>
+	<option value="//api/name/forceStringOrNil_AG:">&nbsp;&nbsp;&nbsp;&nbsp;+ forceStringOrNil_AG:</option>
 	
-	<option value="//api/name/forceStringOrNil:">&nbsp;&nbsp;&nbsp;&nbsp;+ forceStringOrNil:</option>
+	<option value="//api/name/removeAllAssociatedObjects_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ removeAllAssociatedObjects_AG</option>
 	
-	<option value="//api/name/removeAllAssociatedObjects">&nbsp;&nbsp;&nbsp;&nbsp;+ removeAllAssociatedObjects</option>
-	
-	<option value="//api/name/weaklyAssociateValue:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;+ weaklyAssociateValue:withKey:</option>
+	<option value="//api/name/weaklyAssociateValue_AG:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;+ weaklyAssociateValue_AG:withKey:</option>
 	
 	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/associateCopyOfValue:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;- associateCopyOfValue:withKey:</option>
+	<option value="//api/name/associateCopyOfValue_AG:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;- associateCopyOfValue_AG:withKey:</option>
 	
-	<option value="//api/name/associateValue:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;- associateValue:withKey:</option>
+	<option value="//api/name/associateValue_AG:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;- associateValue_AG:withKey:</option>
 	
-	<option value="//api/name/associatedValueForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- associatedValueForKey:</option>
+	<option value="//api/name/associatedValueForKey_AG:">&nbsp;&nbsp;&nbsp;&nbsp;- associatedValueForKey_AG:</option>
 	
-	<option value="//api/name/automaticDescription">&nbsp;&nbsp;&nbsp;&nbsp;- automaticDescription</option>
+	<option value="//api/name/isNotEmpty_AG">&nbsp;&nbsp;&nbsp;&nbsp;- isNotEmpty_AG</option>
 	
-	<option value="//api/name/isNotEmpty">&nbsp;&nbsp;&nbsp;&nbsp;- isNotEmpty</option>
+	<option value="//api/name/performSelector_AG:afterDelay:">&nbsp;&nbsp;&nbsp;&nbsp;- performSelector_AG:afterDelay:</option>
 	
-	<option value="//api/name/performSelector:afterDelay:">&nbsp;&nbsp;&nbsp;&nbsp;- performSelector:afterDelay:</option>
+	<option value="//api/name/removeAllAssociatedObjects_AG">&nbsp;&nbsp;&nbsp;&nbsp;- removeAllAssociatedObjects_AG</option>
 	
-	<option value="//api/name/removeAllAssociatedObjects">&nbsp;&nbsp;&nbsp;&nbsp;- removeAllAssociatedObjects</option>
-	
-	<option value="//api/name/weaklyAssociateValue:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;- weaklyAssociateValue:withKey:</option>
+	<option value="//api/name/weaklyAssociateValue_AG:withKey:">&nbsp;&nbsp;&nbsp;&nbsp;- weaklyAssociateValue_AG:withKey:</option>
 	
 	
 	
@@ -105,8 +101,6 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Perform Selector">Perform Selector</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Description">Description</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Associated Objects">Associated Objects</a></span></li>
 	
 </ul></li>
@@ -119,25 +113,23 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associateCopyOfValue:withKey:">associateCopyOfValue:withKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associateCopyOfValue_AG:withKey:">associateCopyOfValue_AG:withKey:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associateValue:withKey:">associateValue:withKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associateValue_AG:withKey:">associateValue_AG:withKey:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associatedValueForKey:">associatedValueForKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associatedValueForKey_AG:">associatedValueForKey_AG:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/autoDescribe:">autoDescribe:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/forceArrayOrNil_AG:">forceArrayOrNil_AG:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/autoDescribe:classType:">autoDescribe:classType:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/forceDateOrNil_AG:">forceDateOrNil_AG:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/forceDateOrNil:">forceDateOrNil:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/forceNumberOrNil_AG:">forceNumberOrNil_AG:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/forceNumberOrNil:">forceNumberOrNil:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/forceStringOrNil_AG:">forceStringOrNil_AG:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/forceStringOrNil:">forceStringOrNil:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAllAssociatedObjects_AG">removeAllAssociatedObjects_AG</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAllAssociatedObjects">removeAllAssociatedObjects</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/weaklyAssociateValue:withKey:">weaklyAssociateValue:withKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/weaklyAssociateValue_AG:withKey:">weaklyAssociateValue_AG:withKey:</a></span></li>
 	
 </ul></li>
 
@@ -145,21 +137,19 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associateCopyOfValue:withKey:">associateCopyOfValue:withKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associateCopyOfValue_AG:withKey:">associateCopyOfValue_AG:withKey:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associateValue:withKey:">associateValue:withKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associateValue_AG:withKey:">associateValue_AG:withKey:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associatedValueForKey:">associatedValueForKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associatedValueForKey_AG:">associatedValueForKey_AG:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/automaticDescription">automaticDescription</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNotEmpty_AG">isNotEmpty_AG</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNotEmpty">isNotEmpty</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performSelector_AG:afterDelay:">performSelector_AG:afterDelay:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performSelector:afterDelay:">performSelector:afterDelay:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAllAssociatedObjects_AG">removeAllAssociatedObjects_AG</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAllAssociatedObjects">removeAllAssociatedObjects</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/weaklyAssociateValue:withKey:">weaklyAssociateValue:withKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/weaklyAssociateValue_AG:withKey:">weaklyAssociateValue_AG:withKey:</a></span></li>
 	
 </ul></li>
 
@@ -213,22 +203,29 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/forceDateOrNil:">+&nbsp;forceDateOrNil:</a></code>
+		<code><a href="#//api/name/forceDateOrNil_AG:">+&nbsp;forceDateOrNil_AG:</a></code>
 		<span class="tooltip"><p>Forces a given object to the <code>NSDate</code> class or nil.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/forceStringOrNil:">+&nbsp;forceStringOrNil:</a></code>
+		<code><a href="#//api/name/forceStringOrNil_AG:">+&nbsp;forceStringOrNil_AG:</a></code>
 		<span class="tooltip"><p>Forces a given object to the <code>NSString</code> class or nil.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/forceNumberOrNil:">+&nbsp;forceNumberOrNil:</a></code>
+		<code><a href="#//api/name/forceNumberOrNil_AG:">+&nbsp;forceNumberOrNil_AG:</a></code>
 		<span class="tooltip"><p>Forces a given object to the <code>NSNumber</code> class or nil.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/forceArrayOrNil_AG:">+&nbsp;forceArrayOrNil_AG:</a></code>
+		<span class="tooltip"><p>Forces a given object to the <code>NSArray</code> class or nil.</p></span>
 	</span>
 	
 	
@@ -242,7 +239,7 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/isNotEmpty">&ndash;&nbsp;isNotEmpty</a></code>
+		<code><a href="#//api/name/isNotEmpty_AG">&ndash;&nbsp;isNotEmpty_AG</a></code>
 		<span class="tooltip"><p>Returns a Boolean value that indicates whether the receiver is not empty.</p></span>
 	</span>
 	
@@ -257,37 +254,8 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/performSelector:afterDelay:">&ndash;&nbsp;performSelector:afterDelay:</a></code>
+		<code><a href="#//api/name/performSelector_AG:afterDelay:">&ndash;&nbsp;performSelector_AG:afterDelay:</a></code>
 		<span class="tooltip"><p>Invokes a method of the receiver on the current thread using the default mode after a delay.</p></span>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Description" name="task_Description"></a>
-						<h3 class="subsubtitle task-title">Description</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/automaticDescription">&ndash;&nbsp;automaticDescription</a></code>
-		<span class="tooltip"><p>Returns an automatic description of the receiver.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/autoDescribe:classType:">+&nbsp;autoDescribe:classType:</a></code>
-		<span class="tooltip"><p>Returns an automatic description of the given object.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/autoDescribe:">+&nbsp;autoDescribe:</a></code>
-		<span class="tooltip"><p>Returns an automatic description of the given object.</p></span>
 	</span>
 	
 	
@@ -301,63 +269,63 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/associateValue:withKey:">&ndash;&nbsp;associateValue:withKey:</a></code>
+		<code><a href="#//api/name/associateValue_AG:withKey:">&ndash;&nbsp;associateValue_AG:withKey:</a></code>
 		<span class="tooltip"><p>Strongly associates an object with the reciever.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/associateValue:withKey:">+&nbsp;associateValue:withKey:</a></code>
+		<code><a href="#//api/name/associateValue_AG:withKey:">+&nbsp;associateValue_AG:withKey:</a></code>
 		<span class="tooltip"><p>Strongly associates an object with the receiving class.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/associateCopyOfValue:withKey:">&ndash;&nbsp;associateCopyOfValue:withKey:</a></code>
+		<code><a href="#//api/name/associateCopyOfValue_AG:withKey:">&ndash;&nbsp;associateCopyOfValue_AG:withKey:</a></code>
 		<span class="tooltip"><p>Associates a copy of an object with the reciever.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/associateCopyOfValue:withKey:">+&nbsp;associateCopyOfValue:withKey:</a></code>
+		<code><a href="#//api/name/associateCopyOfValue_AG:withKey:">+&nbsp;associateCopyOfValue_AG:withKey:</a></code>
 		<span class="tooltip"><p>Associates a copy of an object with the receiving class.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/weaklyAssociateValue:withKey:">&ndash;&nbsp;weaklyAssociateValue:withKey:</a></code>
+		<code><a href="#//api/name/weaklyAssociateValue_AG:withKey:">&ndash;&nbsp;weaklyAssociateValue_AG:withKey:</a></code>
 		<span class="tooltip"><p>Weakly associates an object with the reciever.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/weaklyAssociateValue:withKey:">+&nbsp;weaklyAssociateValue:withKey:</a></code>
+		<code><a href="#//api/name/weaklyAssociateValue_AG:withKey:">+&nbsp;weaklyAssociateValue_AG:withKey:</a></code>
 		<span class="tooltip"><p>Weakly associates an object with the receiving class.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/associatedValueForKey:">&ndash;&nbsp;associatedValueForKey:</a></code>
+		<code><a href="#//api/name/associatedValueForKey_AG:">&ndash;&nbsp;associatedValueForKey_AG:</a></code>
 		<span class="tooltip"><p>Returns the associated value for a key on the reciever.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/associatedValueForKey:">+&nbsp;associatedValueForKey:</a></code>
+		<code><a href="#//api/name/associatedValueForKey_AG:">+&nbsp;associatedValueForKey_AG:</a></code>
 		<span class="tooltip"><p>Returns the associated value for a key on the receiving class.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/removeAllAssociatedObjects">&ndash;&nbsp;removeAllAssociatedObjects</a></code>
+		<code><a href="#//api/name/removeAllAssociatedObjects_AG">&ndash;&nbsp;removeAllAssociatedObjects_AG</a></code>
 		<span class="tooltip"><p>Returns the reciever to a clean state by removing all
 associated objects, releasing them if necessary.</p></span>
 	</span>
@@ -365,7 +333,7 @@ associated objects, releasing them if necessary.</p></span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/removeAllAssociatedObjects">+&nbsp;removeAllAssociatedObjects</a></code>
+		<code><a href="#//api/name/removeAllAssociatedObjects_AG">+&nbsp;removeAllAssociatedObjects_AG</a></code>
 		<span class="tooltip"><p>Returns the recieving class to a clean state by removing
 all associated objects, releasing them if necessary.</p></span>
 	</span>
@@ -387,8 +355,8 @@ all associated objects, releasing them if necessary.</p></span>
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/associateCopyOfValue:withKey:" title="associateCopyOfValue:withKey:"></a>
-	<h3 class="subsubtitle method-title">associateCopyOfValue:withKey:</h3>
+	<a name="//api/name/associateCopyOfValue_AG:withKey:" title="associateCopyOfValue_AG:withKey:"></a>
+	<h3 class="subsubtitle method-title">associateCopyOfValue_AG:withKey:</h3>
 	
 	
 	
@@ -398,7 +366,7 @@ all associated objects, releasing them if necessary.</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)associateCopyOfValue:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)associateCopyOfValue_AG:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
 
     
 	
@@ -436,7 +404,7 @@ all associated objects, releasing them if necessary.</p></span>
 		<h4 class="method-subtitle">See Also</h4>
 		<ul>
 			
-			<li><code><p><a href="#//api/name/associateCopyOfValue:withKey:">&ndash; associateCopyOfValue:withKey:</a></p></code></li>
+			<li><code><p><a href="#//api/name/associateCopyOfValue_AG:withKey:">&ndash; associateCopyOfValue_AG:withKey:</a></p></code></li>
 			
 		</ul>
 	</div>
@@ -452,8 +420,8 @@ all associated objects, releasing them if necessary.</p></span>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/associateValue:withKey:" title="associateValue:withKey:"></a>
-	<h3 class="subsubtitle method-title">associateValue:withKey:</h3>
+	<a name="//api/name/associateValue_AG:withKey:" title="associateValue_AG:withKey:"></a>
+	<h3 class="subsubtitle method-title">associateValue_AG:withKey:</h3>
 	
 	
 	
@@ -463,7 +431,7 @@ all associated objects, releasing them if necessary.</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)associateValue:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)associateValue_AG:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
 
     
 	
@@ -501,7 +469,7 @@ all associated objects, releasing them if necessary.</p></span>
 		<h4 class="method-subtitle">See Also</h4>
 		<ul>
 			
-			<li><code><p><a href="#//api/name/associateValue:withKey:">&ndash; associateValue:withKey:</a></p></code></li>
+			<li><code><p><a href="#//api/name/associateValue_AG:withKey:">&ndash; associateValue_AG:withKey:</a></p></code></li>
 			
 		</ul>
 	</div>
@@ -517,8 +485,8 @@ all associated objects, releasing them if necessary.</p></span>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/associatedValueForKey:" title="associatedValueForKey:"></a>
-	<h3 class="subsubtitle method-title">associatedValueForKey:</h3>
+	<a name="//api/name/associatedValueForKey_AG:" title="associatedValueForKey_AG:"></a>
+	<h3 class="subsubtitle method-title">associatedValueForKey_AG:</h3>
 	
 	
 	
@@ -528,7 +496,7 @@ all associated objects, releasing them if necessary.</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)associatedValueForKey:(const char *)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)associatedValueForKey_AG:(const char *)<em>key</em></code></div>
 
     
 	
@@ -566,7 +534,7 @@ all associated objects, releasing them if necessary.</p></span>
 		<h4 class="method-subtitle">See Also</h4>
 		<ul>
 			
-			<li><code><p><a href="#//api/name/associatedValueForKey:">&ndash; associatedValueForKey:</a></p></code></li>
+			<li><code><p><a href="#//api/name/associatedValueForKey_AG:">&ndash; associatedValueForKey_AG:</a></p></code></li>
 			
 		</ul>
 	</div>
@@ -582,18 +550,18 @@ all associated objects, releasing them if necessary.</p></span>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/autoDescribe:" title="autoDescribe:"></a>
-	<h3 class="subsubtitle method-title">autoDescribe:</h3>
+	<a name="//api/name/forceArrayOrNil_AG:" title="forceArrayOrNil_AG:"></a>
+	<h3 class="subsubtitle method-title">forceArrayOrNil_AG:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns an automatic description of the given object.</p>
+		<p>Forces a given object to the <code>NSArray</code> class or nil.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSString *)autoDescribe:(id)<em>instance</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)forceArrayOrNil_AG:(id)<em>anObject</em></code></div>
 
     
 	
@@ -601,8 +569,8 @@ all associated objects, releasing them if necessary.</p></span>
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>instance</em></dt>
-			<dd><p>An instance of a class</p></dd>
+			<dt><em>anObject</em></dt>
+			<dd><p>The object to be checked.</p></dd>
 		</dl>
 		
 	</div>
@@ -611,17 +579,12 @@ all associated objects, releasing them if necessary.</p></span>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An automatic description of the instance object provided.</p>
+		<p>Returns the given object if its an <code>NSArray</code>, otherwise nil.</p>
 	</div>
 	
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Code from StackOverflow answer by Kendall Helmstetter Geln: <a href="http://stackoverflow.com/questions/2299841/objective-c-introspection-reflection">http://stackoverflow.com/questions/2299841/objective-c-introspection-reflection</a></p>
-	</div>
 	
 	
 	
@@ -638,69 +601,8 @@ all associated objects, releasing them if necessary.</p></span>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/autoDescribe:classType:" title="autoDescribe:classType:"></a>
-	<h3 class="subsubtitle method-title">autoDescribe:classType:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns an automatic description of the given object.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (NSString *)autoDescribe:(id)<em>instance</em> classType:(Class)<em>classType</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>instance</em></dt>
-			<dd><p>An instance of a class</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>classType</em></dt>
-			<dd><p>A class type</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An automatic description of the instance object provided.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Code from StackOverflow answer by Kendall Helmstetter Geln: <a href="http://stackoverflow.com/questions/2299841/objective-c-introspection-reflection">http://stackoverflow.com/questions/2299841/objective-c-introspection-reflection</a></p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/forceDateOrNil:" title="forceDateOrNil:"></a>
-	<h3 class="subsubtitle method-title">forceDateOrNil:</h3>
+	<a name="//api/name/forceDateOrNil_AG:" title="forceDateOrNil_AG:"></a>
+	<h3 class="subsubtitle method-title">forceDateOrNil_AG:</h3>
 	
 	
 	
@@ -710,7 +612,7 @@ all associated objects, releasing them if necessary.</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSDate *)forceDateOrNil:(id)<em>anObject</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSDate *)forceDateOrNil_AG:(id)<em>anObject</em></code></div>
 
     
 	
@@ -750,8 +652,8 @@ all associated objects, releasing them if necessary.</p></span>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/forceNumberOrNil:" title="forceNumberOrNil:"></a>
-	<h3 class="subsubtitle method-title">forceNumberOrNil:</h3>
+	<a name="//api/name/forceNumberOrNil_AG:" title="forceNumberOrNil_AG:"></a>
+	<h3 class="subsubtitle method-title">forceNumberOrNil_AG:</h3>
 	
 	
 	
@@ -761,7 +663,7 @@ all associated objects, releasing them if necessary.</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSNumber *)forceNumberOrNil:(id)<em>anObject</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSNumber *)forceNumberOrNil_AG:(id)<em>anObject</em></code></div>
 
     
 	
@@ -801,8 +703,8 @@ all associated objects, releasing them if necessary.</p></span>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/forceStringOrNil:" title="forceStringOrNil:"></a>
-	<h3 class="subsubtitle method-title">forceStringOrNil:</h3>
+	<a name="//api/name/forceStringOrNil_AG:" title="forceStringOrNil_AG:"></a>
+	<h3 class="subsubtitle method-title">forceStringOrNil_AG:</h3>
 	
 	
 	
@@ -812,7 +714,7 @@ all associated objects, releasing them if necessary.</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSString *)forceStringOrNil:(id)<em>anObject</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSString *)forceStringOrNil_AG:(id)<em>anObject</em></code></div>
 
     
 	
@@ -852,8 +754,8 @@ all associated objects, releasing them if necessary.</p></span>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/removeAllAssociatedObjects" title="removeAllAssociatedObjects"></a>
-	<h3 class="subsubtitle method-title">removeAllAssociatedObjects</h3>
+	<a name="//api/name/removeAllAssociatedObjects_AG" title="removeAllAssociatedObjects_AG"></a>
+	<h3 class="subsubtitle method-title">removeAllAssociatedObjects_AG</h3>
 	
 	
 	
@@ -864,7 +766,7 @@ all associated objects, releasing them if necessary.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)removeAllAssociatedObjects</code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)removeAllAssociatedObjects_AG</code></div>
 
     
 	
@@ -894,8 +796,8 @@ all associated objects, releasing them if necessary.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/weaklyAssociateValue:withKey:" title="weaklyAssociateValue:withKey:"></a>
-	<h3 class="subsubtitle method-title">weaklyAssociateValue:withKey:</h3>
+	<a name="//api/name/weaklyAssociateValue_AG:withKey:" title="weaklyAssociateValue_AG:withKey:"></a>
+	<h3 class="subsubtitle method-title">weaklyAssociateValue_AG:withKey:</h3>
 	
 	
 	
@@ -905,7 +807,7 @@ all associated objects, releasing them if necessary.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)weaklyAssociateValue:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)weaklyAssociateValue_AG:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
 
     
 	
@@ -943,7 +845,7 @@ all associated objects, releasing them if necessary.</p>
 		<h4 class="method-subtitle">See Also</h4>
 		<ul>
 			
-			<li><code><p><a href="#//api/name/weaklyAssociateValue:withKey:">&ndash; weaklyAssociateValue:withKey:</a></p></code></li>
+			<li><code><p><a href="#//api/name/weaklyAssociateValue_AG:withKey:">&ndash; weaklyAssociateValue_AG:withKey:</a></p></code></li>
 			
 		</ul>
 	</div>
@@ -967,8 +869,8 @@ all associated objects, releasing them if necessary.</p>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/associateCopyOfValue:withKey:" title="associateCopyOfValue:withKey:"></a>
-	<h3 class="subsubtitle method-title">associateCopyOfValue:withKey:</h3>
+	<a name="//api/name/associateCopyOfValue_AG:withKey:" title="associateCopyOfValue_AG:withKey:"></a>
+	<h3 class="subsubtitle method-title">associateCopyOfValue_AG:withKey:</h3>
 	
 	
 	
@@ -978,7 +880,7 @@ all associated objects, releasing them if necessary.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)associateCopyOfValue:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)associateCopyOfValue_AG:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
 
     
 	
@@ -1029,8 +931,8 @@ otherwise <code>NSCopying</code>-compliant instances like NSString.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/associateValue:withKey:" title="associateValue:withKey:"></a>
-	<h3 class="subsubtitle method-title">associateValue:withKey:</h3>
+	<a name="//api/name/associateValue_AG:withKey:" title="associateValue_AG:withKey:"></a>
+	<h3 class="subsubtitle method-title">associateValue_AG:withKey:</h3>
 	
 	
 	
@@ -1040,7 +942,7 @@ otherwise <code>NSCopying</code>-compliant instances like NSString.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)associateValue:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)associateValue_AG:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
 
     
 	
@@ -1093,8 +995,8 @@ when it is subject to being externally released or is in an
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/associatedValueForKey:" title="associatedValueForKey:"></a>
-	<h3 class="subsubtitle method-title">associatedValueForKey:</h3>
+	<a name="//api/name/associatedValueForKey_AG:" title="associatedValueForKey_AG:"></a>
+	<h3 class="subsubtitle method-title">associatedValueForKey_AG:</h3>
 	
 	
 	
@@ -1104,7 +1006,7 @@ when it is subject to being externally released or is in an
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)associatedValueForKey:(const char *)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id)associatedValueForKey_AG:(const char *)<em>key</em></code></div>
 
     
 	
@@ -1149,49 +1051,8 @@ when it is subject to being externally released or is in an
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/automaticDescription" title="automaticDescription"></a>
-	<h3 class="subsubtitle method-title">automaticDescription</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns an automatic description of the receiver.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (NSString *)automaticDescription</code></div>
-
-    
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An automatic description of the receiver.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSObject+AGCategory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/isNotEmpty" title="isNotEmpty"></a>
-	<h3 class="subsubtitle method-title">isNotEmpty</h3>
+	<a name="//api/name/isNotEmpty_AG" title="isNotEmpty_AG"></a>
+	<h3 class="subsubtitle method-title">isNotEmpty_AG</h3>
 	
 	
 	
@@ -1201,7 +1062,7 @@ when it is subject to being externally released or is in an
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (BOOL)isNotEmpty</code></div>
+	<div class="method-subsection method-declaration"><code>- (BOOL)isNotEmpty_AG</code></div>
 
     
 	
@@ -1236,8 +1097,8 @@ when it is subject to being externally released or is in an
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/performSelector:afterDelay:" title="performSelector:afterDelay:"></a>
-	<h3 class="subsubtitle method-title">performSelector:afterDelay:</h3>
+	<a name="//api/name/performSelector_AG:afterDelay:" title="performSelector_AG:afterDelay:"></a>
+	<h3 class="subsubtitle method-title">performSelector_AG:afterDelay:</h3>
 	
 	
 	
@@ -1247,7 +1108,7 @@ when it is subject to being externally released or is in an
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)performSelector:(SEL)<em>aSelector</em> afterDelay:(NSTimeInterval)<em>delay</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)performSelector_AG:(SEL)<em>aSelector</em> afterDelay:(NSTimeInterval)<em>delay</em></code></div>
 
     
 	
@@ -1287,8 +1148,8 @@ when it is subject to being externally released or is in an
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/removeAllAssociatedObjects" title="removeAllAssociatedObjects"></a>
-	<h3 class="subsubtitle method-title">removeAllAssociatedObjects</h3>
+	<a name="//api/name/removeAllAssociatedObjects_AG" title="removeAllAssociatedObjects_AG"></a>
+	<h3 class="subsubtitle method-title">removeAllAssociatedObjects_AG</h3>
 	
 	
 	
@@ -1299,7 +1160,7 @@ associated objects, releasing them if necessary.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)removeAllAssociatedObjects</code></div>
+	<div class="method-subsection method-declaration"><code>- (void)removeAllAssociatedObjects_AG</code></div>
 
     
 	
@@ -1329,8 +1190,8 @@ associated objects, releasing them if necessary.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/weaklyAssociateValue:withKey:" title="weaklyAssociateValue:withKey:"></a>
-	<h3 class="subsubtitle method-title">weaklyAssociateValue:withKey:</h3>
+	<a name="//api/name/weaklyAssociateValue_AG:withKey:" title="weaklyAssociateValue_AG:withKey:"></a>
+	<h3 class="subsubtitle method-title">weaklyAssociateValue_AG:withKey:</h3>
 	
 	
 	
@@ -1340,7 +1201,7 @@ associated objects, releasing them if necessary.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)weaklyAssociateValue:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)weaklyAssociateValue_AG:(id)<em>value</em> withKey:(const char *)<em>key</em></code></div>
 
     
 	
@@ -1401,9 +1262,9 @@ in other words, the associated object is not kept alive.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-09-26)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-10-18)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
 					</div>
 				</div>

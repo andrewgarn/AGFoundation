@@ -1,19 +1,19 @@
 <?xml version="1.0" standalone="no"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:docset="http://developer.apple.com/rss/docset_extensions" xml:lang="en">
-    <id>http://github.com/andrewgarn/AGFoundation.atom/AGFoundation.atom/20120926205520</id>
-    <title type="text">AGFoundation.atom Documentation</title>
+    <id>http://github.com/andrewgarn/AGFoundation.atom/AGFoundation.atom/20121018154444</id>
+    <title type="text">AGFoundation Documentation</title>
     <rights>Copyright © 2012 Andrew Garn. All rights reserved.</rights>
     <link rel="self" href="http://github.com/andrewgarn/AGFoundation.atom/AGFoundation.atom"></link>
     <docset:publisherName>Andrew Garn</docset:publisherName>
     <docset:publisherID>com.agnomical.documentation</docset:publisherID>
-    <updated>2012-09-26T20:55:20+01:00</updated>
+    <updated>2012-10-18T15:44:44+01:00</updated>
     <entry>
-        <id>tag:github.com,2012-09-26:com.agnomical.AGFoundation.atom/1.0.0</id>
-        <title type="text">AGFoundation.atom Documentation</title>
-        <updated>2012-09-26T20:55:20+01:00</updated>
-        <content type="text">AGFoundation.atom Documentation (v1.0.0)</content>
-        <link rel="enclosure" type="application/octet-stream" href="http://github.com/andrewgarn/AGFoundation.atom/com.agnomical.AGFoundation.atom-1.0.xar" length="328992"></link>
-        <docset:identifier>com.agnomical.AGFoundation.atom</docset:identifier>
+        <id>tag:github.com,2012-10-18:com.agnomical.AGFoundation/1.0.0</id>
+        <title type="text">AGFoundation Documentation</title>
+        <updated>2012-10-18T15:44:44+01:00</updated>
+        <content type="text">AGFoundation Documentation (v1.0.0)</content>
+        <link rel="enclosure" type="application/octet-stream" href="http://github.com/andrewgarn/AGFoundation.atom/com.agnomical.AGFoundation-1.0.xar" length="331619"></link>
+        <docset:identifier>com.agnomical.AGFoundation</docset:identifier>
         <docset:version>1.0.0</docset:version>
         <docset:minimumXcodeVersion>3.0.0</docset:minimumXcodeVersion>
     </entry>

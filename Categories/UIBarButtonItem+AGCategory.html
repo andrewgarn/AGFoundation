@@ -7,12 +7,12 @@
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.1 (build 840)" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
 	</head>
 	<body>
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">AGFoundation.atom </a></h1>
+				<h1><a id="libraryTitle" href="../index.html">AGFoundation </a></h1>
 				<a id="developerHome" href="../index.html">Andrew Garn</a>
 			</div>
 			
@@ -42,18 +42,16 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/customButtonWithImage:highlightedImage:block:">&nbsp;&nbsp;&nbsp;&nbsp;+ customButtonWithImage:highlightedImage:block:</option>
+	<option value="//api/name/customButtonWithImage_AG:highlightedImage:block:">&nbsp;&nbsp;&nbsp;&nbsp;+ customButtonWithImage_AG:highlightedImage:block:</option>
 	
 	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/initWithBarButtonSystemItem:block:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithBarButtonSystemItem:block:</option>
+	<option value="//api/name/addTargetBlock_AG:">&nbsp;&nbsp;&nbsp;&nbsp;- addTargetBlock_AG:</option>
 	
-	<option value="//api/name/initWithImage:style:block:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithImage:style:block:</option>
-	
-	<option value="//api/name/initWithTitle:style:block:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithTitle:style:block:</option>
+	<option value="//api/name/removeTargetBlock_AG">&nbsp;&nbsp;&nbsp;&nbsp;- removeTargetBlock_AG</option>
 	
 	
 	
@@ -73,6 +71,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating Bar Buttons">Creating Bar Buttons</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Adding and Removing Block Actions">Adding and Removing Block Actions</a></span></li>
+	
 </ul></li>
 
 
@@ -83,7 +83,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/customButtonWithImage:highlightedImage:block:">customButtonWithImage:highlightedImage:block:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/customButtonWithImage_AG:highlightedImage:block:">customButtonWithImage_AG:highlightedImage:block:</a></span></li>
 	
 </ul></li>
 
@@ -91,11 +91,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithBarButtonSystemItem:block:">initWithBarButtonSystemItem:block:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addTargetBlock_AG:">addTargetBlock_AG:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithImage:style:block:">initWithImage:style:block:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithTitle:style:block:">initWithTitle:style:block:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeTargetBlock_AG">removeTargetBlock_AG</a></span></li>
 	
 </ul></li>
 
@@ -144,34 +142,35 @@
 						
 						
 						<a title="Creating Bar Buttons" name="task_Creating Bar Buttons"></a>
-						
-<h3 class="subsubtitle task-title">Creating Bar Buttons</h3>
+						<h3 class="subsubtitle task-title">Creating Bar Buttons</h3>
+
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithBarButtonSystemItem:block:">&ndash;&nbsp;initWithBarButtonSystemItem:block:</a></code>
-		<span class="tooltip"><p>Creates and returns a new bar button using specified system item.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/initWithImage:style:block:">&ndash;&nbsp;initWithImage:style:block:</a></code>
-		<span class="tooltip"><p>Creates and returns a new bar button using the specified image.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/initWithTitle:style:block:">&ndash;&nbsp;initWithTitle:style:block:</a></code>
-		<span class="tooltip"><p>Creates and returns a new bar button using the specified title and other properties.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/customButtonWithImage:highlightedImage:block:">+&nbsp;customButtonWithImage:highlightedImage:block:</a></code>
+		<code><a href="#//api/name/customButtonWithImage_AG:highlightedImage:block:">+&nbsp;customButtonWithImage_AG:highlightedImage:block:</a></code>
 		<span class="tooltip"><p>Creates and returns a new bar button using a custom view containing a standard button object.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Adding and Removing Block Actions" name="task_Adding and Removing Block Actions"></a>
+						<h3 class="subsubtitle task-title">Adding and Removing Block Actions</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addTargetBlock_AG:">&ndash;&nbsp;addTargetBlock_AG:</a></code>
+		<span class="tooltip"><p>Adds a target block action to the internal dispatch table.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeTargetBlock_AG">&ndash;&nbsp;removeTargetBlock_AG</a></code>
+		<span class="tooltip"><p>Removes the target block actions from the internal dispatch table.</p></span>
 	</span>
 	
 	
@@ -191,8 +190,8 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/customButtonWithImage:highlightedImage:block:" title="customButtonWithImage:highlightedImage:block:"></a>
-	<h3 class="subsubtitle method-title">customButtonWithImage:highlightedImage:block:</h3>
+	<a name="//api/name/customButtonWithImage_AG:highlightedImage:block:" title="customButtonWithImage_AG:highlightedImage:block:"></a>
+	<h3 class="subsubtitle method-title">customButtonWithImage_AG:highlightedImage:block:</h3>
 	
 	
 	
@@ -202,7 +201,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (UIBarButtonItem *)customButtonWithImage:(UIImage *)<em>image</em> highlightedImage:(UIImage *)<em>highlightedImage</em> block:(UIBarButtonItemSenderBlock)<em>block</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (UIBarButtonItem *)customButtonWithImage_AG:(UIImage *)<em>image</em> highlightedImage:(UIImage *)<em>highlightedImage</em> block:(AGCategoryBarButtonItemSenderBlock)<em>block</em></code></div>
 
     
 	
@@ -260,18 +259,18 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithBarButtonSystemItem:block:" title="initWithBarButtonSystemItem:block:"></a>
-	<h3 class="subsubtitle method-title">initWithBarButtonSystemItem:block:</h3>
+	<a name="//api/name/addTargetBlock_AG:" title="addTargetBlock_AG:"></a>
+	<h3 class="subsubtitle method-title">addTargetBlock_AG:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Creates and returns a new bar button using specified system item.</p>
+		<p>Adds a target block action to the internal dispatch table.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)initWithBarButtonSystemItem:(UIBarButtonSystemItem)<em>systemItem</em> block:(UIBarButtonItemSenderBlock)<em>block</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)addTargetBlock_AG:(AGCategoryBarButtonItemSenderBlock)<em>block</em></code></div>
 
     
 	
@@ -279,23 +278,13 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>systemItem</em></dt>
-			<dd><p>The system item to use as the bar button image.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
 			<dt><em>block</em></dt>
-			<dd><p>The block object called when the bar button is pressed.</p></dd>
+			<dd><p>The block object called when the gesture is triggered.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Newly initialized bar button item with the specified properties.</p>
-	</div>
 	
 	
 	
@@ -316,108 +305,22 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithImage:style:block:" title="initWithImage:style:block:"></a>
-	<h3 class="subsubtitle method-title">initWithImage:style:block:</h3>
+	<a name="//api/name/removeTargetBlock_AG" title="removeTargetBlock_AG"></a>
+	<h3 class="subsubtitle method-title">removeTargetBlock_AG</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Creates and returns a new bar button using the specified image.</p>
+		<p>Removes the target block actions from the internal dispatch table.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)initWithImage:(UIImage *)<em>image</em> style:(UIBarButtonItemStyle)<em>style</em> block:(UIBarButtonItemSenderBlock)<em>block</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)removeTargetBlock_AG</code></div>
 
     
 	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>image</em></dt>
-			<dd><p>The item’s image. If nil an image is not displayed.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>style</em></dt>
-			<dd><p>The style of the item.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>block</em></dt>
-			<dd><p>The block object called when the bar button is pressed.</p></dd>
-		</dl>
-		
-	</div>
 	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Newly initialized bar button item with the specified properties.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">UIBarButtonItem+AGCategory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/initWithTitle:style:block:" title="initWithTitle:style:block:"></a>
-	<h3 class="subsubtitle method-title">initWithTitle:style:block:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Creates and returns a new bar button using the specified title and other properties.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (id)initWithTitle:(NSString *)<em>title</em> style:(UIBarButtonItemStyle)<em>style</em> block:(UIBarButtonItemSenderBlock)<em>block</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>title</em></dt>
-			<dd><p>The item’s title. If nil a title is not displayed.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>style</em></dt>
-			<dd><p>The style of the item.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>block</em></dt>
-			<dd><p>The block object called when the bar button is pressed.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Newly initialized bar button item with the specified properties.</p>
-	</div>
 	
 	
 	
@@ -450,9 +353,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-09-26)</span><br />
+						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-10-18)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
 					</div>
 				</div>
