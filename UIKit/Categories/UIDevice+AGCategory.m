@@ -88,17 +88,71 @@
         {
             if ([[UIScreen mainScreen] bounds].size.width < 768)
             {
-                if ([UIDevice hasRetinaDisplay_AG])
-                    deviceModel = @"iPhone Simulator (Retina)";
-                else
+                if ([UIDevice hasRetinaDisplay_AG]) {
+                    if ([[UIScreen mainScreen] bounds].size.height == 568) {
+                        deviceModel = @"iPhone Simulator (Retina 4-inch)";
+                    } else if ([[UIScreen mainScreen] bounds].size.height == 480) {
+                        deviceModel = @"iPhone Simulator (Retina 3.5-inch)";
+                    } else {
+                        deviceModel = @"iPhone Simulator (Retina)";
+                    }
+                } else {
                     deviceModel = @"iPhone Simulator";
+                }
             }
             else
             {
-                if ([UIDevice hasRetinaDisplay_AG])
+                if ([UIDevice hasRetinaDisplay_AG]) {
                     deviceModel = @"iPad Simulator (Retina)";
-                else
+                } else {
                     deviceModel = @"iPad Simulator";
+                }
+            }
+        }
+        
+        /* Unknown */
+        else deviceModel = platform;
+        
+	});
+    return deviceModel;
+}
+
++ (NSString *)deviceModelGeneric_AG
+{
+    static dispatch_once_t token;
+	static NSString *deviceModel;
+    
+	dispatch_once(&token, ^{
+        
+        /* Get Platform */
+        NSString *platform = [self platform_AG];
+        
+        /* iPhone */
+        if ([platform isEqualToString:@"iPhone1,1"])         deviceModel = @"iPhone";
+        else if ([platform isEqualToString:@"iPhone1,2"])    deviceModel = @"iPhone 3G";
+        else if ([platform hasPrefix:@"iPhone2"])            deviceModel = @"iPhone 3GS";
+        else if ([platform hasPrefix:@"iPhone3"])            deviceModel = @"iPhone 4";
+        else if ([platform hasPrefix:@"iPhone4"])            deviceModel = @"iPhone 4S";
+        else if ([platform hasPrefix:@"iPhone5"])            deviceModel = @"iPhone 5";
+        
+        /* iPod Touch */
+        else if ([platform hasPrefix:@"iPod1"])              deviceModel = @"iPod touch";
+        else if ([platform hasPrefix:@"iPod2"])              deviceModel = @"iPod touch 2G";
+        else if ([platform hasPrefix:@"iPod3"])              deviceModel = @"iPod touch 3G";
+        else if ([platform hasPrefix:@"iPod4"])              deviceModel = @"iPod touch 4G";
+        else if ([platform hasPrefix:@"iPod5"])              deviceModel = @"iPod touch 5G";
+        
+        /* iPad */
+        else if ([platform hasPrefix:@"iPad1"])              deviceModel = @"iPad";
+        else if ([platform hasPrefix:@"iPad2"])              deviceModel = @"iPad 2";
+        else if ([platform hasPrefix:@"iPad3"])              deviceModel = @"iPad 3";
+        
+        /* Simulator */
+        else if ([UIDevice isASimulator_AG]) {
+            if ([[UIScreen mainScreen] bounds].size.width < 768) {
+                deviceModel = @"iPhone Simulator";
+            } else {
+                deviceModel = @"iPad Simulator";
             }
         }
         
@@ -115,16 +169,17 @@
 	static NSString *deviceFamily;
     
 	dispatch_once(&token, ^{
-        if ([UIDevice isAniPhone_AG])
+        if ([UIDevice isAniPhone_AG]) {
              deviceFamily = @"iPhone";
-        else if ([UIDevice isAniPodTouch_AG])
+        } else if ([UIDevice isAniPodTouch_AG]) {
             deviceFamily = @"iPod touch";
-        else if ([UIDevice isAniPad_AG])
+        } else if ([UIDevice isAniPad_AG]) {
             deviceFamily = @"iPad";
-        else if ([UIDevice isASimulator_AG])
+        } else if ([UIDevice isASimulator_AG]) {
             deviceFamily = @"Simulator";
-        else
+        } else {
             deviceFamily = [[UIDevice currentDevice] model];
+        }
 	});
     return deviceFamily;
 }

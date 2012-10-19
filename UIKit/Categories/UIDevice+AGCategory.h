@@ -37,10 +37,17 @@
 
 /** Returns the model of the device.
  
- Possible examples of model strings are @”iPhone 4S” and @”iPad 2 WiFi”.
+ Possible examples of model strings are `iPhone 4 (GSM)` and `iPad 2 WiFi`.
  @return The model name identifying the device.
 */ 
 + (NSString *)deviceModel_AG;
+
+/** Returns the model of the device.
+ 
+ Possible examples of model strings are `iPhone 4` and `iPad 2`.
+ @return The generic model name identifying the device.
+*/
++ (NSString *)deviceModelGeneric_AG;
 
 /** Returns the family of the device.
  
