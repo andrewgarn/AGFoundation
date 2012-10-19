@@ -62,6 +62,14 @@
     return nil;
 }
 
++ (NSArray *)forceArrayOrNil_AG:(id)anObject
+{
+    if ([anObject isKindOfClass:[NSArray class]])
+        return (NSArray *)anObject;
+    
+    return nil;
+}
+
 #pragma mark -
 
 - (BOOL)isNotEmpty_AG

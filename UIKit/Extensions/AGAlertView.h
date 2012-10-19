@@ -31,9 +31,6 @@ typedef void (^AGAlertViewBlock)(void);
 
 /** `UIAlertView` extended to support block actions */
 @interface AGAlertView : UIAlertView
-{
-    
-}
 
 /**-------------------------------------------------------------------------------------
  @name Creating Alert Views

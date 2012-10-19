@@ -55,6 +55,12 @@ typedef void (^AGVoidBlock)(void);
 */
 + (NSNumber *)forceNumberOrNil_AG:(id)anObject;
 
+/** Forces a given object to the `NSArray` class or nil.
+ @param anObject The object to be checked.
+ @return Returns the given object if its an `NSArray`, otherwise nil.
+*/
++ (NSArray *)forceArrayOrNil_AG:(id)anObject;
+
 /**-------------------------------------------------------------------------------------
  @name Comparison
  ---------------------------------------------------------------------------------------
