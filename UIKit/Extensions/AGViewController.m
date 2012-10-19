@@ -39,6 +39,16 @@
 
 #pragma mark - Rotation
 
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return [UIApplication supportedInterfaceOrientationMask];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return [UIApplication interfaceOrientationIsSupported_AG:interfaceOrientation];

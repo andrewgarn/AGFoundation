@@ -110,6 +110,11 @@
 */ 
 + (BOOL)interfaceOrientationIsSupported_AG:(UIInterfaceOrientation)interfaceOrientation;
 
+/** Returns all of the interface orientations that the application's property list supports.
+ @return A bit mask specifying which orientations are supported in the application's information property list.
+*/
++ (NSUInteger)supportedInterfaceOrientationMask;
+
 /**-------------------------------------------------------------------------------------
  @name Local Notifications
  ---------------------------------------------------------------------------------------

@@ -232,6 +232,21 @@ static NSDate *AGApplicationDidEnterBackgroundDate;
     return NO;
 }
 
++ (NSUInteger)supportedInterfaceOrientationMask
+{
+    static dispatch_once_t onceToken;
+	static NSUInteger orientationMask;
+    
+    dispatch_once(&onceToken, ^{
+        if ([UIApplication interfaceOrientationIsSupported_AG:UIInterfaceOrientationPortrait]) orientationMask = orientationMask | UIInterfaceOrientationMaskPortrait;
+        if ([UIApplication interfaceOrientationIsSupported_AG:UIInterfaceOrientationLandscapeLeft]) orientationMask = orientationMask | UIInterfaceOrientationMaskLandscapeLeft;
+        if ([UIApplication interfaceOrientationIsSupported_AG:UIInterfaceOrientationLandscapeRight]) orientationMask = orientationMask | UIInterfaceOrientationMaskLandscapeRight;
+        if ([UIApplication interfaceOrientationIsSupported_AG:UIInterfaceOrientationPortraitUpsideDown]) orientationMask = orientationMask | UIInterfaceOrientationMaskPortraitUpsideDown;
+	});
+    
+    return orientationMask;
+}
+
 #pragma mark -
 
 + (NSArray *)scheduledLocalNotifications_AG
