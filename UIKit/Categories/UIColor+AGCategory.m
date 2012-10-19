@@ -29,7 +29,7 @@
 
 @implementation UIColor (AGCategory)
 
-#pragma mark -
+#pragma mark - Creating a Random UIColor
 
 + (UIColor *)randomColor_AG 
 {
@@ -40,7 +40,21 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
 }
 
-#pragma mark - 
+#pragma mark - Creating a UIColor Object from Component Values
+
++ (UIColor *)colorWithHex_AG:(int)hexValue
+{
+    return [UIColor colorWithHex_AG:hexValue alpha:1.0];
+}
+
++ (UIColor *)colorWithHex_AG:(int)hexValue alpha:(CGFloat)alpha
+{
+    return [UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0
+                           green:((float)((hexValue & 0xFF00) >> 8))/255.0
+                            blue:((float)(hexValue & 0xFF))/255.0 alpha:alpha];
+}
+
+#pragma mark - Creating a UIColor with Preset Component Values
 
 /**
  *  Additional UIColor shades
@@ -102,7 +116,7 @@
     return [UIColor colorWithRed:0.8078f green:0.0863f blue:0.1255f alpha:1.0];
 }
 
-#pragma mark - Colour Components
+#pragma mark - Retrieving Color Information
 
 - (CGFloat)redComponent_AG 
 {

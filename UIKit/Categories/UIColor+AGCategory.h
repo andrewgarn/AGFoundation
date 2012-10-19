@@ -33,12 +33,30 @@
 /**-------------------------------------------------------------------------------------
  @name Creating a Random UIColor
  ---------------------------------------------------------------------------------------
- */
+*/
 
 /** Returns a random UIColor.
 @return The random UIColor color object.
 */ 
 + (UIColor *)randomColor_AG;
+
+/**-------------------------------------------------------------------------------------
+ @name Creating a UIColor Object from Component Values
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Returns a a UIColor object using RGB values from the supplied hex value.
+ @param hexValue The hex value of the required UIColor object.
+ @return The UIColor object.
+*/
++ (UIColor *)colorWithHex_AG:(int)hexValue;
+
+/** Returns a a UIColor object using RGB values from the supplied hex value.
+ @param hexValue The hex value of the required UIColor object.
+ @param alpha The opacity value of the color object, specified as a value from 0.0 to 1.0.
+ @return The UIColor object.
+*/
++ (UIColor *)colorWithHex_AG:(int)hexValue alpha:(CGFloat)alpha;
 
 /**-------------------------------------------------------------------------------------
  @name Creating a UIColor with Preset Component Values
@@ -101,7 +119,7 @@
 + (UIColor *)fireEngineRed_AG;
 
 /**-------------------------------------------------------------------------------------
- @name Color Components
+ @name Retrieving Color Information
  ---------------------------------------------------------------------------------------
 */ 
 
