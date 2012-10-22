@@ -36,6 +36,8 @@
 /* Begin PBXBuildFile section */
 		497B1A591619BB8700D7D273 /* LocationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 497B1A571619BB8700D7D273 /* LocationManager.h */; };
 		497B1A5A1619BB8700D7D273 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B1A581619BB8700D7D273 /* LocationManager.m */; };
+		49959D441635E36500EEC5CF /* AGHungQueueDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 49959D421635E36500EEC5CF /* AGHungQueueDetector.h */; };
+		49959D451635E36500EEC5CF /* AGHungQueueDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 49959D431635E36500EEC5CF /* AGHungQueueDetector.m */; };
 		4998C236162D512E00C88CB6 /* AGNavigationViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4998C234162D512E00C88CB6 /* AGNavigationViewController.h */; };
 		4998C237162D512E00C88CB6 /* AGNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4998C235162D512E00C88CB6 /* AGNavigationViewController.m */; };
 		49A996DD15F6CD4000DBD6E4 /* AGTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 49A996DB15F6CD4000DBD6E4 /* AGTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -179,6 +181,8 @@
 		496C19A215C2F4D400A0ADF8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		497B1A571619BB8700D7D273 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		497B1A581619BB8700D7D273 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		49959D421635E36500EEC5CF /* AGHungQueueDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGHungQueueDetector.h; sourceTree = "<group>"; };
+		49959D431635E36500EEC5CF /* AGHungQueueDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGHungQueueDetector.m; sourceTree = "<group>"; };
 		4998C234162D512E00C88CB6 /* AGNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGNavigationViewController.h; sourceTree = "<group>"; };
 		4998C235162D512E00C88CB6 /* AGNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGNavigationViewController.m; sourceTree = "<group>"; };
 		49A996DB15F6CD4000DBD6E4 /* AGTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTableViewController.h; sourceTree = "<group>"; };
@@ -504,6 +508,8 @@
 			children = (
 				784856871589DAB200013DD9 /* AGBlockOperation.h */,
 				784856881589DAB200013DD9 /* AGBlockOperation.m */,
+				49959D421635E36500EEC5CF /* AGHungQueueDetector.h */,
+				49959D431635E36500EEC5CF /* AGHungQueueDetector.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -856,6 +862,7 @@
 				49EA833C1615CE7100A98089 /* UIStoryboardSegue+AGCategory.h in Headers */,
 				497B1A591619BB8700D7D273 /* LocationManager.h in Headers */,
 				4998C236162D512E00C88CB6 /* AGNavigationViewController.h in Headers */,
+				49959D441635E36500EEC5CF /* AGHungQueueDetector.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1008,6 +1015,7 @@
 				49EA833D1615CE7100A98089 /* UIStoryboardSegue+AGCategory.m in Sources */,
 				497B1A5A1619BB8700D7D273 /* LocationManager.m in Sources */,
 				4998C237162D512E00C88CB6 /* AGNavigationViewController.m in Sources */,
+				49959D451635E36500EEC5CF /* AGHungQueueDetector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

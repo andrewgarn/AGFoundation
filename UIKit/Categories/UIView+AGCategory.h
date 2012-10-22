@@ -104,23 +104,23 @@
 @property (nonatomic) CGPoint origin_AG;
 
 /** Shortcut for the receiver's frame.origin.x property. */
-@property (nonatomic) CGFloat x_AG;
+@property (nonatomic) CGFloat originX_AG;
 
 /** Shortcut for the receiver's frame.origin.y property. */
-@property (nonatomic) CGFloat y_AG;
+@property (nonatomic) CGFloat originY_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Configuring Size
  ---------------------------------------------------------------------------------------
 */
 
-/** Shortcut for the receiver's frame.size property. */ 
+/** Shortcut for the receiver's bounds.size property. */ 
 @property (nonatomic) CGSize size_AG;
 
-/** Shortcut for the receiver's frame.size.width property. */
+/** Shortcut for the receiver's bounds.size.width property. */
 @property (nonatomic) CGFloat width_AG;
 
-/** Shortcut for the receiver's frame.size.height property. */
+/** Shortcut for the receiver's bounds.size.height property. */
 @property (nonatomic) CGFloat height_AG;
 
 /**-------------------------------------------------------------------------------------

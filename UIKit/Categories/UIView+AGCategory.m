@@ -35,17 +35,15 @@
 - (UIImage *)imageRepresentation_AG
 {
     CGSize imageSize = [self bounds].size;
-    if (NULL != UIGraphicsBeginImageContextWithOptions)
+    if (NULL != UIGraphicsBeginImageContextWithOptions) {
         UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
-    else
+    } else {
         UIGraphicsBeginImageContext(imageSize);
-    
-	if([self.layer respondsToSelector:@selector(setShouldRasterize:)])
-    {
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, self.contentScaleFactor);
     }
-	else
-	{
+    
+	if([self.layer respondsToSelector:@selector(setShouldRasterize:)]) {
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, self.contentScaleFactor);
+    } else {
 		UIGraphicsBeginImageContext(self.bounds.size);
 	}
 	[self.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -64,8 +62,7 @@
 	self.layer.cornerRadius = radius;
 	self.layer.borderWidth = width;
     
-	if (color)
-	{
+	if (color) {
 		self.layer.borderColor = color.CGColor;
 	}
 }
@@ -74,21 +71,19 @@
 
 - (void)logViewHierarchy_AG
 {
-    NSLog(@"Log View Hierarchy: START");
+    NSLog(@"**** Log View Hierarchy: START ****");
     
     [self logViewHierarchy_AG:self depth:0];
     
-    NSLog(@"Log View Hierarchy: END");
+    NSLog(@"**** Log View Hierarchy: END ****");
 }
 
 - (void)logViewHierarchy_AG:(UIView *)viewNode depth:(NSUInteger)depth
 {
-    for (UIView *v in viewNode.subviews)
-    {
+    for (UIView *v in viewNode.subviews) {
         NSLog(@"%@%@", [@"" stringByPaddingToLength:depth withString:@"|-" startingAtIndex:0], [v description]);
         
-        if ([v.subviews count])
-        {
+        if ([v.subviews count]) {
             [self logViewHierarchy_AG:v depth:(depth + 2)];
         }
     }
@@ -101,8 +96,7 @@
     __block float originalOpacity = self.layer.opacity;
     [UIView animateWithDuration:0.3 animations:^{
         [self.layer setOpacity:0];
-    }
-    completion:^ (BOOL finished) {
+    } completion:^ (BOOL finished) {
         self.layer.opacity = originalOpacity;
         [self removeFromSuperview];
     }];
@@ -117,10 +111,9 @@
 
 - (void)removeAllSubviewsAnimated_AG
 {
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.3];
-    [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [UIView commitAnimations];
+    [UIView animateWithDuration:0.3 animations:^{
+        [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    }];
 }
 
 #pragma mark - Bounds
@@ -157,24 +150,24 @@
     self.frame = frame;
 }
 
-- (CGFloat)x_AG
+- (CGFloat)originX_AG
 {
     return self.frame.origin.x;
 }
 
-- (void)setX_AG:(CGFloat)newX
+- (void)setOriginX_AG:(CGFloat)newX
 {
     CGRect frame = self.frame;
     frame.origin.x = newX;
     self.frame = frame;
 }
 
-- (CGFloat)y_AG
+- (CGFloat)originY_AG
 {
     return self.frame.origin.y; 
 }
 
-- (void)setY_AG:(CGFloat)newY
+- (void)setOriginY_AG:(CGFloat)newY
 {
     CGRect frame = self.frame;
     frame.origin.y = newY;
@@ -259,38 +252,38 @@
 
 - (CGSize)size_AG
 {
-    return self.frame.size;
+    return self.bounds.size;
 }
 
 - (void)setSize_AG:(CGSize)newSize
 {
-    CGRect frame = self.frame;
-    frame.size = newSize;
-    self.frame = frame;
+    CGRect bounds = self.bounds;
+    bounds.size = newSize;
+    self.bounds = bounds;
 }
 
 - (float)width_AG
 {
-    return self.frame.size.width;
+    return self.bounds.size.width;
 }
 
 - (void)setWidth_AG:(float)newWidth
 {
-    CGRect frame = self.frame;
-    frame.size.width = newWidth;
-    self.frame = frame;
+    CGRect bounds = self.bounds;
+    bounds.size.width = newWidth;
+    self.bounds = bounds;
 }
 
 - (float)height_AG
 {
-    return self.frame.size.height;
+    return self.bounds.size.height;
 }
 
 - (void)setHeight_AG:(float)newHeight
 {
-    CGRect frame = self.frame;
-    frame.size.height = newHeight;
-    self.frame = frame;
+    CGRect bounds = self.bounds;
+    bounds.size.height = newHeight;
+    self.bounds = bounds;
 }
 
 @end

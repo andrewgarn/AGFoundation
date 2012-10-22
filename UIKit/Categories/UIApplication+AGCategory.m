@@ -142,7 +142,7 @@ static NSDate *AGApplicationDidEnterBackgroundDate;
 
 + (void)logApplicationDidEnterBackground_AG
 {
-    NSLog(@"\n\n**** application: '%@ %@ (%@)' applicationDidEnterBackground: ****\n\n",
+    NSLog(@"\n\n**** application: '%@ %@ (%@)' didEnterBackground: ****\n\n",
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"],
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]);

@@ -33,27 +33,27 @@
 
 - (void)setBool_AG:(BOOL)value forKey:(id)key
 {
-    [self setObject:[NSNumber numberWithBool:value] forKey:key];
+    [self setObject_AG:[NSNumber numberWithBool:value] forKey:key];
 }
 
 - (void)setInt_AG:(BOOL)value forKey:(id)key
 {
-    [self setObject:[NSNumber numberWithInt:value] forKey:key];
+    [self setObject_AG:[NSNumber numberWithInt:value] forKey:key];
 }
 
 - (void)setFloat_AG:(BOOL)value forKey:(id)key
 {
-    [self setObject:[NSNumber numberWithFloat:value] forKey:key];
+    [self setObject_AG:[NSNumber numberWithFloat:value] forKey:key];
 }
 
 - (void)setDouble_AG:(BOOL)value forKey:(id)key
 {
-    [self setObject:[NSNumber numberWithDouble:value] forKey:key];
+    [self setObject_AG:[NSNumber numberWithDouble:value] forKey:key];
 }
 
 - (void)setInteger_AG:(BOOL)value forKey:(id)key
 {
-    [self setObject:[NSNumber numberWithInteger:value] forKey:key];
+    [self setObject_AG:[NSNumber numberWithInteger:value] forKey:key];
 }
 
 #pragma mark -

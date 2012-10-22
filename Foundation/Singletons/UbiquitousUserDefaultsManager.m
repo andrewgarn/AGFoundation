@@ -109,14 +109,14 @@ NSString * const AGUserDefaultsDidChangeExternallyNotification = @"AGUserDefault
 
 #pragma mark - Singleton
 
-__strong static UbiquitousUserDefaultsManager *__sharedManager = nil;
-- (UbiquitousUserDefaultsManager *)sharedManager
++ (UbiquitousUserDefaultsManager *)sharedManager
 {
+    static UbiquitousUserDefaultsManager *sharedManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        __sharedManager = [[UbiquitousUserDefaultsManager alloc] init];
+        sharedManager = [[UbiquitousUserDefaultsManager alloc] init];
     });
-    return __sharedManager; 
+    return sharedManager; 
 }
 
 @end

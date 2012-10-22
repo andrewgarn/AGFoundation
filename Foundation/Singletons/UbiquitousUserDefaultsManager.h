@@ -45,6 +45,6 @@ extern NSString * const AGUserDefaultsDidChangeExternallyNotification;
 - (BOOL)start;
 
 /** Returns the shared UbiquitousUserDefaultsManager instance. */
-- (UbiquitousUserDefaultsManager *)sharedManager;
++ (UbiquitousUserDefaultsManager *)sharedManager;
 
 @end
