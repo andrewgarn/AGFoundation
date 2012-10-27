@@ -15,6 +15,11 @@
 */
 @interface AGHungQueueDetector : NSObject
 
+/**-------------------------------------------------------------------------------------
+ @name Initializing an AGHungQueueDetector Object
+ ---------------------------------------------------------------------------------------
+*/
+
 /** Initializes a new hung queue detector targeted at the main queue.
  @return The receiver, initialized to observe the main queue.
 */
@@ -26,14 +31,36 @@
 */
 - (id)initWithTargetQueue:(dispatch_queue_t)targetQueue;
 
-/** Initializes a new hung queue detector targeted at the given dispatch queue.
- @param targetQueue The dispatch queue to observe.
- @param detectionInterval The interval that the given queue must be blocked for the detector to raise an exception.
- @return The receiver, initialized to observe the given queue.
+/**-------------------------------------------------------------------------------------
+ @name Starting and Stopping Detection
+ ---------------------------------------------------------------------------------------
 */
-- (id)initWithTargetQueue:(dispatch_queue_t)targetQueue interval:(CGFloat)detectionInterval;
 
-/** Ends the hung queue detector's observation of the targeted dispatch queue */ 
+/** Starts the hung queue detector's observation of the targeted dispatch queue */
+- (void)startObservingTargetedQueue;
+
+/** Stops the hung queue detector's observation of the targeted dispatch queue */ 
 - (void)stopObservingTargetedQueue;
+
+/**-------------------------------------------------------------------------------------
+ @name Working with Thread Properties
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Returns the name of the receiver. */
+- (NSString *)name;
+
+/** Sets the name of the receiver.
+ @param name The name for the receiver.
+*/
+- (void)setName:(NSString *)name;
+
+/** Returns the detection interval in use by the receiver. */
+- (CGFloat)detectionInterval;
+
+/** Sets the receiver's detection interval
+ @param detectionInterval The detection interval for the receiver to use.
+*/
+- (void)setDetectionInterval:(CGFloat)detectionInterval;
 
 @end
