@@ -30,11 +30,9 @@
 
 @interface LocalNotificationManager : NSObject
 
-#pragma mark -
 
 
-
-#pragma mark - Singleton
-SYNTHESIZE_SINGLETON_FOR_INTERFACE(LocalNotificationManager, sharedManager);
+/** Returns the shared PurchaseManager instance. */
++ (LocalNotificationManager *)sharedManager;
 
 @end

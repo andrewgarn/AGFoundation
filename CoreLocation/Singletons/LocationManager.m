@@ -148,6 +148,15 @@
 }
 
 #pragma mark - Singleton
-SYNTHESIZE_SINGLETON_FOR_IMPLEMENTATION(LocationManager, sharedManager);
+
++ (LocationManager *)sharedManager
+{
+    static LocationManager *sharedManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedManager = [[LocationManager alloc] init];
+    });
+    return sharedManager;
+}
 
 @end

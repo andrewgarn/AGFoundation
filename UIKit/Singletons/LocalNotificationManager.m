@@ -34,6 +34,15 @@
 
 
 #pragma mark - Singleton
-SYNTHESIZE_SINGLETON_FOR_IMPLEMENTATION(LocalNotificationManager, sharedManager);
+
++ (LocalNotificationManager *)sharedManager
+{
+    static LocalNotificationManager *sharedManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedManager = [[LocalNotificationManager alloc] init];
+    });
+    return sharedManager;
+}
 
 @end

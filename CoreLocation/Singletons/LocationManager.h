@@ -27,7 +27,6 @@
 
 #import <CoreLocation/CoreLocation.h>
 #import <Foundation/Foundation.h>
-#import "AGSynthesizeSingleton.h"
 
 typedef void (^AGLocationManagerDidUpdateToLocationBlock)(CLLocationManager *manager, CLLocation *newLocation, CLLocation *oldLocation);
 typedef void (^AGLocationManagerDidFailWithErrorBlock)(CLLocationManager *manager, NSError *error);
@@ -54,7 +53,7 @@ typedef void (^AGLocationManagerDidFailWithErrorBlock)(CLLocationManager *manage
 + (void)setDidUpdateLocationBlock:(AGLocationManagerDidUpdateToLocationBlock)block;
 + (void)setDidFailBlock:(AGLocationManagerDidFailWithErrorBlock)block;
 
-#pragma mark - Singleton
-SYNTHESIZE_SINGLETON_FOR_INTERFACE(LocationManager, sharedManager);
+/** Returns the shared LocationManager instance. */
++ (LocationManager *)sharedManager;
 
 @end

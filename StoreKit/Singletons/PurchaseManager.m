@@ -81,6 +81,15 @@
 }
             
 #pragma mark - Singleton
-SYNTHESIZE_SINGLETON_FOR_IMPLEMENTATION(PurchaseManager, sharedManager);
+
++ (PurchaseManager *)sharedManager
+{
+    static PurchaseManager *sharedManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedManager = [[PurchaseManager alloc] init];
+    });
+    return sharedManager;
+}
 
 @end

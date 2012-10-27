@@ -39,7 +39,7 @@ typedef void (^AGPurchaseManagerProductRequestResponseBlock)(NSArray *products, 
 + (void)requestProductsWithIdentifiers:(NSSet *)identifiers responseBlock:(AGPurchaseManagerProductRequestResponseBlock)block;
 + (BOOL)canMakePayments;
 
-#pragma mark - Singleton
-SYNTHESIZE_SINGLETON_FOR_INTERFACE(PurchaseManager, sharedManager);
+/** Returns the shared PurchaseManager instance. */
++ (PurchaseManager *)sharedManager;
 
 @end
