@@ -1,14 +1,14 @@
 //
-//  AGNavigationViewController.m
+//  AGNavigationController.m
 //  AGFoundation
 //
 //  Created by Andrew Garn on 16/10/2012.
 //  Copyright (c) 2012 Andrew Garn. All rights reserved.
 //
 
-#import "AGNavigationViewController.h"
+#import "AGNavigationController.h"
 
-@implementation AGNavigationViewController
+@implementation AGNavigationController
 
 - (BOOL)shouldAutorotate
 {

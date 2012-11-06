@@ -131,7 +131,7 @@ static NSDate *AGApplicationDidEnterBackgroundDate;
 
 + (void)logApplicationDidFinishLaunchingWithOptions_AG:(NSDictionary *)launchOptions
 {
-    NSLog(@"\n\n**** application:didFinishLaunching: '%@ %@ (%@)' withOptions: ****\n**** applicationLaunchDevice: %@ withSystemVersion: %@ ****\n\n", 
+    NSLog(@"\n\n**** application:didFinishLaunching: '%@ %@ (%@)' ****\n**** applicationLaunchDevice: '%@' withSystemVersion: '%@' ****\n\n",
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"], 
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"], 
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"],
@@ -152,7 +152,7 @@ static NSDate *AGApplicationDidEnterBackgroundDate;
 
 + (void)logApplicationWillEnterForeground_AG
 {
-    NSLog(@"\n\n**** application: '%@ %@ (%@)' willEnterForeground: ****\n**** applicationDidFinishLaunching: %@ applicationDidEnterBackground: %@ ****\n\n",
+    NSLog(@"\n\n**** application: '%@ %@ (%@)' willEnterForeground: ****\n**** applicationDidFinishLaunching: '%@' didEnterBackground: '%@' ****\n\n",
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"],
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"],

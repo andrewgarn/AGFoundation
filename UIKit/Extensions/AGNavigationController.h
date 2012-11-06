@@ -1,5 +1,5 @@
 //
-//  AGNavigationViewController.h
+//  AGNavigationController.h
 //  AGFoundation
 //
 //  Created by Andrew Garn on 16/10/2012.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-/** A `UINavigationViewController` subclass */
-@interface AGNavigationViewController : UINavigationController
+/** A `UINavigationController` subclass */
+@interface AGNavigationController : UINavigationController
 
 @end
