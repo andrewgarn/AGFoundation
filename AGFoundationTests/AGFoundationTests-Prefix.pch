@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'AGFoundationTests' target in the 'AGFoundationTests' project
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
