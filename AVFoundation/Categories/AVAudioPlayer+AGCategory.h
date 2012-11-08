@@ -26,8 +26,66 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <AVFoundation/AVFoundation.h>
+typedef void (^AGCategoryAudioPlayerBlock)(void);
 
 /** A collection of category extensions for `AVAudioPlayer` */
 @interface AVAudioPlayer (AGCategory)
+
+/**-------------------------------------------------------------------------------------
+ @name Controlling Playback with Fade
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Plays a sound asynchronously while fading in audio volume with a default duration. */
+- (void)playWithFadeIn_AG;
+
+/** Plays a sound asynchronously while fading in audio volume with the specified duration.
+ @param duration The duration of the audio fade in.
+*/
+- (void)playWithFadeInDuration_AG:(NSTimeInterval)duration;
+
+/** Plays a sound asynchronously while fading in audio volume with the specified duration and completion block.
+ @param duration The duration of the audio fade in.
+ @param completionBlock A block object called when the audio fade in is complete.
+*/
+- (void)playWithFadeInDuration_AG:(NSTimeInterval)duration completion:(AGCategoryAudioPlayerBlock)completionBlock;
+
+/**-------------------------------------------------------------------------------------
+ @name Pausing Playback with Fade
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Pauses playback while fading out audio volume with a default duration. */
+- (void)pauseWithFadeOut_AG;
+
+/** Pauses playback while fading out audio volume with the specified duration.
+ @param duration The duration of the audio fade out.
+*/
+- (void)pauseWithFadeOutDuration_AG:(NSTimeInterval)duration;
+
+/** Pauses playback while fading out audio volume with the specified duration and completion block.
+ @param duration The duration of the audio fade out.
+ @param completionBlock A block object called when the audio fade out is complete.
+*/
+- (void)pauseWithFadeOutDuration_AG:(NSTimeInterval)duration completion:(AGCategoryAudioPlayerBlock)completionBlock;
+
+/**-------------------------------------------------------------------------------------
+ @name Stopping Playback with Fade
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Stops playback and undoes the setup needed for playback while fading out audio volume with a default duration. */
+- (void)stopWithFadeOut_AG;
+
+/** Stops playback and undoes the setup needed for playback while fading out audio volume with the specified duration.
+ @param duration The duration of the audio fade out.
+*/
+- (void)stopWithFadeOutDuration_AG:(NSTimeInterval)duration;
+
+/** Stops playback and undoes the setup needed for playback while fading out audio volume with the specified duration and completion block.
+ @param duration The duration of the audio fade out.
+ @param completionBlock A block object called when the audio fade out is complete.
+*/
+- (void)stopWithFadeOutDuration_AG:(NSTimeInterval)duration completion:(AGCategoryAudioPlayerBlock)completionBlock;
 
 @end
