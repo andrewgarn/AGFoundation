@@ -111,8 +111,15 @@
 
 - (void)removeAllSubviewsAnimated_AG
 {
+    [self removeAllSubviewsAnimatedWithCompletion_AG:nil];
+}
+
+- (void)removeAllSubviewsAnimatedWithCompletion_AG:(void (^)(BOOL finished))completion
+{
     [UIView animateWithDuration:0.3 animations:^{
         [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    } completion:^(BOOL finished) {
+        if (completion) completion(finished);
     }];
 }
 

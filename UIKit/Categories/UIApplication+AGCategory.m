@@ -232,10 +232,10 @@ static NSDate *AGApplicationDidEnterBackgroundDate;
     return NO;
 }
 
-+ (NSUInteger)supportedInterfaceOrientationMask
++ (NSUInteger)supportedInterfaceOrientationMask_AG
 {
     static dispatch_once_t onceToken;
-	static NSUInteger orientationMask;
+	static NSUInteger orientationMask = 0;
     
     dispatch_once(&onceToken, ^{
         if ([UIApplication interfaceOrientationIsSupported_AG:UIInterfaceOrientationPortrait]) orientationMask = orientationMask | UIInterfaceOrientationMaskPortrait;

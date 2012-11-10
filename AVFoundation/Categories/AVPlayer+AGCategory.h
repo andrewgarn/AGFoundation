@@ -1,8 +1,8 @@
 //
-//  UIStoryboardSegue+AGCategory.m
+//  AVPlayer+AGCategory.h
 //  AGFoundation
 //
-//  Created by Andrew Garn on 28/09/2012.
+//  Created by Andrew Garn on 10/11/2012.
 //  Copyright (c) 2012 Andrew Garn. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -25,19 +25,21 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "UIStoryboardSegue+AGCategory.h"
+#import <AVFoundation/AVFoundation.h>
+#import <UIKit/UIKit.h>
 
-@implementation UIStoryboardSegue (AGCategory)
+/** A collection of category extensions for `AVPlayer` */
+@interface AVPlayer (AGCategory)
 
-- (UIViewController *)destinationViewController_AG
-{
-    id destinationViewController = self.destinationViewController;
-    if ([destinationViewController isKindOfClass:[UINavigationController class]])
-    {
-        UINavigationController *navigationController = destinationViewController;
-        return navigationController.topViewController;
-    }
-    return destinationViewController;
-}
+/** Captures and returns a thumbnail image from the current asset.
+ @return An image object containing the image from the asset or nil if the thumbnail could not be captured. 
+*/
+- (UIImage *)thumbnailImage_AG;
+
+/** Captures and returns a thumbnail image from the current asset at the specified time.
+ @param playbackTime The time at which to capture the thumbnail image. The time value represents the number of seconds from the beginning of the current movie.
+ @return An image object containing the image from the asset or nil if the thumbnail could not be captured.
+*/
+- (UIImage *)thumbnailImageAtTime_AG:(NSTimeInterval)playbackTime;
 
 @end

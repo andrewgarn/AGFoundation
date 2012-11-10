@@ -38,6 +38,10 @@
 		497B1A5A1619BB8700D7D273 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B1A581619BB8700D7D273 /* LocationManager.m */; };
 		49959D441635E36500EEC5CF /* AGHungQueueDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 49959D421635E36500EEC5CF /* AGHungQueueDetector.h */; };
 		49959D451635E36500EEC5CF /* AGHungQueueDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 49959D431635E36500EEC5CF /* AGHungQueueDetector.m */; };
+		4997E373164EF6EA008C4088 /* AVPlayer+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 4997E371164EF6EA008C4088 /* AVPlayer+AGCategory.h */; };
+		4997E374164EF6EA008C4088 /* AVPlayer+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4997E372164EF6EA008C4088 /* AVPlayer+AGCategory.m */; };
+		4997E37C164F05BC008C4088 /* AGTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4997E37A164F05BC008C4088 /* AGTabBarController.h */; };
+		4997E37D164F05BC008C4088 /* AGTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4997E37B164F05BC008C4088 /* AGTabBarController.m */; };
 		4998C236162D512E00C88CB6 /* AGNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4998C234162D512E00C88CB6 /* AGNavigationController.h */; };
 		4998C237162D512E00C88CB6 /* AGNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4998C235162D512E00C88CB6 /* AGNavigationController.m */; };
 		4999D520164B0DA5003CBC19 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496C19A215C2F4D400A0ADF8 /* SenTestingKit.framework */; };
@@ -187,6 +191,10 @@
 		497B1A581619BB8700D7D273 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		49959D421635E36500EEC5CF /* AGHungQueueDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGHungQueueDetector.h; sourceTree = "<group>"; };
 		49959D431635E36500EEC5CF /* AGHungQueueDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGHungQueueDetector.m; sourceTree = "<group>"; };
+		4997E371164EF6EA008C4088 /* AVPlayer+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVPlayer+AGCategory.h"; sourceTree = "<group>"; };
+		4997E372164EF6EA008C4088 /* AVPlayer+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVPlayer+AGCategory.m"; sourceTree = "<group>"; };
+		4997E37A164F05BC008C4088 /* AGTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTabBarController.h; sourceTree = "<group>"; };
+		4997E37B164F05BC008C4088 /* AGTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTabBarController.m; sourceTree = "<group>"; };
 		4998C234162D512E00C88CB6 /* AGNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGNavigationController.h; sourceTree = "<group>"; };
 		4998C235162D512E00C88CB6 /* AGNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGNavigationController.m; sourceTree = "<group>"; };
 		4999D51F164B0DA5003CBC19 /* AGFoundationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AGFoundationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -777,6 +785,8 @@
 				784856D81589DAB200013DD9 /* AGViewController.m */,
 				4998C234162D512E00C88CB6 /* AGNavigationController.h */,
 				4998C235162D512E00C88CB6 /* AGNavigationController.m */,
+				4997E37A164F05BC008C4088 /* AGTabBarController.h */,
+				4997E37B164F05BC008C4088 /* AGTabBarController.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -807,6 +817,8 @@
 			children = (
 				78485798158B330500013DD9 /* AVAudioPlayer+AGCategory.h */,
 				78485799158B330500013DD9 /* AVAudioPlayer+AGCategory.m */,
+				4997E371164EF6EA008C4088 /* AVPlayer+AGCategory.h */,
+				4997E372164EF6EA008C4088 /* AVPlayer+AGCategory.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -901,6 +913,8 @@
 				497B1A591619BB8700D7D273 /* LocationManager.h in Headers */,
 				4998C236162D512E00C88CB6 /* AGNavigationController.h in Headers */,
 				49959D441635E36500EEC5CF /* AGHungQueueDetector.h in Headers */,
+				4997E373164EF6EA008C4088 /* AVPlayer+AGCategory.h in Headers */,
+				4997E37C164F05BC008C4088 /* AGTabBarController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1104,6 +1118,8 @@
 				497B1A5A1619BB8700D7D273 /* LocationManager.m in Sources */,
 				4998C237162D512E00C88CB6 /* AGNavigationController.m in Sources */,
 				49959D451635E36500EEC5CF /* AGHungQueueDetector.m in Sources */,
+				4997E374164EF6EA008C4088 /* AVPlayer+AGCategory.m in Sources */,
+				4997E37D164F05BC008C4088 /* AGTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

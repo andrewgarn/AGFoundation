@@ -1,8 +1,8 @@
 //
-//  UIStoryboardSegue+AGCategory.m
+//  AVPlayer+AGCategory.m
 //  AGFoundation
 //
-//  Created by Andrew Garn on 28/09/2012.
+//  Created by Andrew Garn on 10/11/2012.
 //  Copyright (c) 2012 Andrew Garn. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -25,19 +25,31 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "UIStoryboardSegue+AGCategory.h"
+#import "AVPlayer+AGCategory.h"
 
-@implementation UIStoryboardSegue (AGCategory)
+@implementation AVPlayer (AGCategory)
 
-- (UIViewController *)destinationViewController_AG
+- (UIImage *)thumbnailImage_AG
 {
-    id destinationViewController = self.destinationViewController;
-    if ([destinationViewController isKindOfClass:[UINavigationController class]])
-    {
-        UINavigationController *navigationController = destinationViewController;
-        return navigationController.topViewController;
-    }
-    return destinationViewController;
+    return [self thumbnailImageAtCMTime_AG:[self currentTime]];
+}
+
+- (UIImage *)thumbnailImageAtTime_AG:(NSTimeInterval)playbackTime
+{
+    CMTime requestedTime = CMTimeMakeWithSeconds(playbackTime, 1);
+    return [self thumbnailImageAtCMTime_AG:requestedTime];
+}
+
+- (UIImage *)thumbnailImageAtCMTime_AG:(CMTime)requestedTime
+{
+    AVURLAsset *asset = (AVURLAsset *)[self currentItem].asset;
+    AVAssetImageGenerator *imageGenerator = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+    CGImageRef imageRef = [imageGenerator copyCGImageAtTime:requestedTime
+                                                 actualTime:NULL
+                                                      error:NULL];
+    UIImage *image = [UIImage imageWithCGImage:imageRef];
+    CGImageRelease(imageRef);
+    return image;
 }
 
 @end

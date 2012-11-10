@@ -30,6 +30,11 @@
 /** A collection of category extensions for `UIScrollView` */
 @interface UIScrollView (AGCategory)
 
+/**-------------------------------------------------------------------------------------
+ @name Managing Scrolling
+ ---------------------------------------------------------------------------------------
+*/
+
 /** Scroll to the top of the receiver's content view with animation.
 */
 - (void)scrollToTop_AG;

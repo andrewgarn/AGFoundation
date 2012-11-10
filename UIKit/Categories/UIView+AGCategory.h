@@ -79,6 +79,11 @@
 /** Removes all the receiver's subviews from their superview and window with animation */
 - (void)removeAllSubviewsAnimated_AG;
 
+/** Removes all the receiver's subviews from their superview and window with animation and then executes the completion block.
+ @param completion A block object to be executed when the animation sequence ends.
+*/ 
+- (void)removeAllSubviewsAnimatedWithCompletion_AG:(void (^)(BOOL finished))completion;
+
 /**-------------------------------------------------------------------------------------
  @name Bounds for Orientation
  ---------------------------------------------------------------------------------------
