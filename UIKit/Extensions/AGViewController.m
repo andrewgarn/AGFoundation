@@ -46,7 +46,7 @@
 
 - (NSUInteger)supportedInterfaceOrientations
 {
-    return [UIApplication supportedInterfaceOrientationMask];
+    return [UIApplication supportedInterfaceOrientationMask_AG];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

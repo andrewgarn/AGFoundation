@@ -10,6 +10,18 @@
 
 @implementation AGNavigationController
 
+#pragma mark - iOS 5
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    if (self.topViewController)
+        return [self.topViewController shouldAutorotateToInterfaceOrientation:interfaceOrientation];
+    
+    return [super shouldAutorotateToInterfaceOrientation:interfaceOrientation];
+}
+
+#pragma mark - iOS 6
+
 - (BOOL)shouldAutorotate
 {
     if (self.topViewController != nil)
