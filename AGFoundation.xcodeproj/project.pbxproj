@@ -42,6 +42,8 @@
 		4997E374164EF6EA008C4088 /* AVPlayer+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4997E372164EF6EA008C4088 /* AVPlayer+AGCategory.m */; };
 		4997E37C164F05BC008C4088 /* AGTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4997E37A164F05BC008C4088 /* AGTabBarController.h */; };
 		4997E37D164F05BC008C4088 /* AGTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4997E37B164F05BC008C4088 /* AGTabBarController.m */; };
+		4997E380164F30AD008C4088 /* UIWebView+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 4997E37E164F30A1008C4088 /* UIWebView+AGCategory.h */; };
+		4997E381164F30AD008C4088 /* UIWebView+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4997E37F164F30A7008C4088 /* UIWebView+AGCategory.m */; };
 		4998C236162D512E00C88CB6 /* AGNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4998C234162D512E00C88CB6 /* AGNavigationController.h */; };
 		4998C237162D512E00C88CB6 /* AGNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4998C235162D512E00C88CB6 /* AGNavigationController.m */; };
 		4999D520164B0DA5003CBC19 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496C19A215C2F4D400A0ADF8 /* SenTestingKit.framework */; };
@@ -195,6 +197,8 @@
 		4997E372164EF6EA008C4088 /* AVPlayer+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVPlayer+AGCategory.m"; sourceTree = "<group>"; };
 		4997E37A164F05BC008C4088 /* AGTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTabBarController.h; sourceTree = "<group>"; };
 		4997E37B164F05BC008C4088 /* AGTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTabBarController.m; sourceTree = "<group>"; };
+		4997E37E164F30A1008C4088 /* UIWebView+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AGCategory.h"; sourceTree = "<group>"; };
+		4997E37F164F30A7008C4088 /* UIWebView+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AGCategory.m"; sourceTree = "<group>"; };
 		4998C234162D512E00C88CB6 /* AGNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGNavigationController.h; sourceTree = "<group>"; };
 		4998C235162D512E00C88CB6 /* AGNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGNavigationController.m; sourceTree = "<group>"; };
 		4999D51F164B0DA5003CBC19 /* AGFoundationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AGFoundationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -764,6 +768,8 @@
 				49FF6BB716020F690052D7AD /* UIStoryboard+AGCategory.m */,
 				49EA833A1615CE7100A98089 /* UIStoryboardSegue+AGCategory.h */,
 				49EA833B1615CE7100A98089 /* UIStoryboardSegue+AGCategory.m */,
+				4997E37E164F30A1008C4088 /* UIWebView+AGCategory.h */,
+				4997E37F164F30A7008C4088 /* UIWebView+AGCategory.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -915,6 +921,7 @@
 				49959D441635E36500EEC5CF /* AGHungQueueDetector.h in Headers */,
 				4997E373164EF6EA008C4088 /* AVPlayer+AGCategory.h in Headers */,
 				4997E37C164F05BC008C4088 /* AGTabBarController.h in Headers */,
+				4997E380164F30AD008C4088 /* UIWebView+AGCategory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1120,6 +1127,7 @@
 				49959D451635E36500EEC5CF /* AGHungQueueDetector.m in Sources */,
 				4997E374164EF6EA008C4088 /* AVPlayer+AGCategory.m in Sources */,
 				4997E37D164F05BC008C4088 /* AGTabBarController.m in Sources */,
+				4997E381164F30AD008C4088 /* UIWebView+AGCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
