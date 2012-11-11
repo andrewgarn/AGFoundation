@@ -80,10 +80,14 @@
         else if ([platform isEqualToString:@"iPad2,3"])      deviceModel = @"iPad 2 Wi-Fi + 3G (CDMA)";
         else if ([platform isEqualToString:@"iPad2,4"])      deviceModel = @"iPad 2 Wi-Fi (Rev A)";
         else if ([platform isEqualToString:@"iPad2,5"])      deviceModel = @"iPad mini Wi-Fi";
+        else if ([platform isEqualToString:@"iPad2,6"])      deviceModel = @"iPad mini Wi-Fi + 4G (GSM)";
+        else if ([platform isEqualToString:@"iPad2,7"])      deviceModel = @"iPad mini Wi-Fi + 4G (GSM+CDMA)";
         else if ([platform isEqualToString:@"iPad3,1"])      deviceModel = @"iPad 3 Wi-Fi";
-        else if ([platform isEqualToString:@"iPad3,2"])      deviceModel = @"iPad 3 Wi-Fi + 4G (CDMA)";
-        else if ([platform isEqualToString:@"iPad3,3"])      deviceModel = @"iPad 3 Wi-Fi + 4G (GSM+CDMA)";
+        else if ([platform isEqualToString:@"iPad3,2"])      deviceModel = @"iPad 3 Wi-Fi + 4G (GSM+CDMA)";
+        else if ([platform isEqualToString:@"iPad3,3"])      deviceModel = @"iPad 3 Wi-Fi + 4G (GSM)";
         else if ([platform isEqualToString:@"iPad3,4"])      deviceModel = @"iPad 4 Wi-Fi";
+        else if ([platform isEqualToString:@"iPad3,5"])      deviceModel = @"iPad 4 Wi-Fi + 4G (GSM)";
+        else if ([platform isEqualToString:@"iPad3,6"])      deviceModel = @"iPad 4 Wi-Fi + 4G (GSM+CDMA)";
         
         /* Simulator */
         else if ([UIDevice isASimulator_AG])
@@ -151,10 +155,14 @@
         else if ([platform isEqualToString:@"iPad2,3"])      deviceModel = @"iPad 2";
         else if ([platform isEqualToString:@"iPad2,4"])      deviceModel = @"iPad 2";
         else if ([platform isEqualToString:@"iPad2,5"])      deviceModel = @"iPad mini";
+        else if ([platform isEqualToString:@"iPad2,6"])      deviceModel = @"iPad mini";
+        else if ([platform isEqualToString:@"iPad2,7"])      deviceModel = @"iPad mini";
         else if ([platform isEqualToString:@"iPad3,1"])      deviceModel = @"iPad 3";
         else if ([platform isEqualToString:@"iPad3,2"])      deviceModel = @"iPad 3";
         else if ([platform isEqualToString:@"iPad3,3"])      deviceModel = @"iPad 3";
         else if ([platform isEqualToString:@"iPad3,4"])      deviceModel = @"iPad 4";
+        else if ([platform isEqualToString:@"iPad3,5"])      deviceModel = @"iPad 4";
+        else if ([platform isEqualToString:@"iPad3,6"])      deviceModel = @"iPad 4";
         
         /* Simulator */
         else if ([UIDevice isASimulator_AG]) {
