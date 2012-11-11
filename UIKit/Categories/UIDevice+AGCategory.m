@@ -190,6 +190,8 @@
              deviceFamily = @"iPhone";
         } else if ([UIDevice isAniPodTouch_AG]) {
             deviceFamily = @"iPod touch";
+        } else if ([UIDevice isAniPadMini_AG]) {
+            deviceFamily = @"iPad mini";
         } else if ([UIDevice isAniPad_AG]) {
             deviceFamily = @"iPad";
         } else if ([UIDevice isASimulator_AG]) {
@@ -273,6 +275,19 @@
             isAniPodTouch = YES;
     });
 	return isAniPodTouch;
+}
+
++ (BOOL)isAniPadMini_AG
+{
+    static dispatch_once_t token;
+	static BOOL isAniPadMini = NO;
+    
+	dispatch_once(&token, ^{
+        NSRange textRange = [[self deviceModelGeneric_AG] rangeOfString:@"iPad mini"];
+        if(textRange.location != NSNotFound)
+            isAniPadMini = YES;
+    });
+	return isAniPadMini;
 }
 
 + (BOOL)isAniPad_AG

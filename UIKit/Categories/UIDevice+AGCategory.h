@@ -92,6 +92,11 @@
 */ 
 + (BOOL)isAniPodTouch_AG;
 
+/** Returns a boolean value that indicates whether the device is an iPad mini.
+ @return YES if the device is an iPad mini, otherwise NO.
+*/
++ (BOOL)isAniPadMini_AG;
+
 /** Returns a boolean value that indicates whether the device is an iPad.
  @return YES if the device is an iPad, otherwise NO.
 */ 
