@@ -28,6 +28,10 @@
 #import "UIView+AGCategory.h"
 #import <QuartzCore/QuartzCore.h>
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(UIView_AGCategory);
+#endif
+
 @implementation UIView (AGCategory)
 
 #pragma mark - UIImage

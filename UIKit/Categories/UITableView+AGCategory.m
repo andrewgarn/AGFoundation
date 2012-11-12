@@ -27,6 +27,10 @@
 
 #import "UITableView+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(UITableView_AGCategory);
+#endif
+
 @implementation UITableView (AGCategory)
 
 #pragma mark -

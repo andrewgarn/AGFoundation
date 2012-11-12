@@ -27,6 +27,10 @@
 
 #import "NSUserDefaults+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSUserDefaults_AGCategory);
+#endif
+
 @implementation NSUserDefaults (AGCategory)
 
 #pragma mark -

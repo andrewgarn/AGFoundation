@@ -34,6 +34,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		496B23B4165108F400C41783 /* UINavigationController+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 496B23B2165108F400C41783 /* UINavigationController+AGCategory.h */; };
+		496B23B5165108F400C41783 /* UINavigationController+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 496B23B3165108F400C41783 /* UINavigationController+AGCategory.m */; };
 		497B1A591619BB8700D7D273 /* LocationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 497B1A571619BB8700D7D273 /* LocationManager.h */; };
 		497B1A5A1619BB8700D7D273 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B1A581619BB8700D7D273 /* LocationManager.m */; };
 		49959D441635E36500EEC5CF /* AGHungQueueDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 49959D421635E36500EEC5CF /* AGHungQueueDetector.h */; };
@@ -188,6 +190,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		496B23B2165108F400C41783 /* UINavigationController+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+AGCategory.h"; sourceTree = "<group>"; };
+		496B23B3165108F400C41783 /* UINavigationController+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+AGCategory.m"; sourceTree = "<group>"; };
 		496C19A215C2F4D400A0ADF8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		497B1A571619BB8700D7D273 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		497B1A581619BB8700D7D273 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
@@ -770,6 +774,8 @@
 				49EA833B1615CE7100A98089 /* UIStoryboardSegue+AGCategory.m */,
 				4997E37E164F30A1008C4088 /* UIWebView+AGCategory.h */,
 				4997E37F164F30A7008C4088 /* UIWebView+AGCategory.m */,
+				496B23B2165108F400C41783 /* UINavigationController+AGCategory.h */,
+				496B23B3165108F400C41783 /* UINavigationController+AGCategory.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -922,6 +928,7 @@
 				4997E373164EF6EA008C4088 /* AVPlayer+AGCategory.h in Headers */,
 				4997E37C164F05BC008C4088 /* AGTabBarController.h in Headers */,
 				4997E380164F30AD008C4088 /* UIWebView+AGCategory.h in Headers */,
+				496B23B4165108F400C41783 /* UINavigationController+AGCategory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1128,6 +1135,7 @@
 				4997E374164EF6EA008C4088 /* AVPlayer+AGCategory.m in Sources */,
 				4997E37D164F05BC008C4088 /* AGTabBarController.m in Sources */,
 				4997E381164F30AD008C4088 /* UIWebView+AGCategory.m in Sources */,
+				496B23B5165108F400C41783 /* UINavigationController+AGCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1158,6 +1166,95 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4997E38F1651B5B2008C4088 /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Adhoc;
+		};
+		4997E3901651B5B2008C4088 /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/AGFoundation.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					ADHOC,
+					AGFOUNDATION_FRAMEWORK,
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = Headers;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
+			};
+			name = Adhoc;
+		};
+		4997E3911651B5B2008C4088 /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AGFoundationTests/AGFoundationTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					ADHOC,
+					AGFOUNDATION_TESTS,
+				);
+				INFOPLIST_FILE = "AGFoundationTests/AGFoundationTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Adhoc;
+		};
+		4997E3921651B5B2008C4088 /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					ADHOC,
+					AGFOUNDATION_DOCUMENTATION,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7, armv7s";
+			};
+			name = Adhoc;
+		};
+		4997E3931651B5B2008C4088 /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					i386,
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = ADHOC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7, armv7s, i386";
+			};
+			name = Adhoc;
+		};
 		4999D52D164B0DA5003CBC19 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1171,6 +1268,10 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AGFoundationTests/AGFoundationTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					DEBUG,
+					AGFOUNDATION_TESTS,
+				);
 				INFOPLIST_FILE = "AGFoundationTests/AGFoundationTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1192,6 +1293,10 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AGFoundationTests/AGFoundationTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					RELEASE,
+					AGFOUNDATION_TESTS,
+				);
 				INFOPLIST_FILE = "AGFoundationTests/AGFoundationTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1218,7 +1323,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1235,7 +1340,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1250,6 +1355,10 @@
 				DSTROOT = /tmp/AGFoundation.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					DEBUG,
+					AGFOUNDATION_FRAMEWORK,
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = Headers;
@@ -1268,6 +1377,10 @@
 				DSTROOT = /tmp/AGFoundation.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					RELEASE,
+					AGFOUNDATION_FRAMEWORK,
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = Headers;
@@ -1284,6 +1397,7 @@
 					"$(ARCHS_STANDARD_32_BIT)",
 					i386,
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "armv7, armv7s, i386";
 			};
@@ -1296,6 +1410,7 @@
 					"$(ARCHS_STANDARD_32_BIT)",
 					i386,
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = RELEASE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "armv7, armv7s, i386";
 			};
@@ -1304,6 +1419,10 @@
 		7848575D1589E32500013DD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					DEBUG,
+					AGFOUNDATION_DOCUMENTATION,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "armv7, armv7s";
 			};
@@ -1312,6 +1431,10 @@
 		7848575E1589E32500013DD9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					RELEASE,
+					AGFOUNDATION_DOCUMENTATION,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "armv7, armv7s";
 			};
@@ -1325,45 +1448,50 @@
 			buildConfigurations = (
 				4999D52D164B0DA5003CBC19 /* Debug */,
 				4999D52E164B0DA5003CBC19 /* Release */,
+				4997E3911651B5B2008C4088 /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		7848563D1589D50900013DD9 /* Build configuration list for PBXProject "AGFoundation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7848564E1589D50A00013DD9 /* Debug */,
 				7848564F1589D50A00013DD9 /* Release */,
+				4997E38F1651B5B2008C4088 /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		784856501589D50A00013DD9 /* Build configuration list for PBXNativeTarget "AGFoundation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				784856511589D50A00013DD9 /* Debug */,
 				784856521589D50A00013DD9 /* Release */,
+				4997E3901651B5B2008C4088 /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		784857581589E31E00013DD9 /* Build configuration list for PBXAggregateTarget "Framework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				784857591589E31E00013DD9 /* Debug */,
 				7848575A1589E31E00013DD9 /* Release */,
+				4997E3931651B5B2008C4088 /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		7848575C1589E32500013DD9 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7848575D1589E32500013DD9 /* Debug */,
 				7848575E1589E32500013DD9 /* Release */,
+				4997E3921651B5B2008C4088 /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

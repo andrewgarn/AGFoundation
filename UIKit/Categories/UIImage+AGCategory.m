@@ -27,6 +27,10 @@
 
 #import "UIImage+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(UIImage_AGCategory);
+#endif
+
 @implementation UIImage (AGCategory)
 
 - (UIImage *)scaledToSize_AG:(CGSize)newSize

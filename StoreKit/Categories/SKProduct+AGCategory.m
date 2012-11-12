@@ -27,6 +27,10 @@
 
 #import "SKProduct+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(SKProduct_AGCategory);
+#endif
+
 @implementation SKProduct (AGCategory)
 
 #pragma mark -

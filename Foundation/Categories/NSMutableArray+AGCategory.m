@@ -27,6 +27,10 @@
 
 #import "NSMutableArray+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSMutableArray_AGCategory);
+#endif
+
 @implementation NSMutableArray (AGCategory)
 
 #pragma mark - Queueing and Dequeuing

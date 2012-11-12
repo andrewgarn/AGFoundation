@@ -27,6 +27,10 @@
 
 #import "UINavigationBar+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(UINavigationBar_AGCategory);
+#endif
+
 @implementation UINavigationBar (AGCategory)
 
 - (void)addDropShadow_AG

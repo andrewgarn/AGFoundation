@@ -27,6 +27,10 @@
 
 #import "AVPlayer+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(AVPlayer_AGCategory);
+#endif
+
 @implementation AVPlayer (AGCategory)
 
 - (UIImage *)thumbnailImage_AG

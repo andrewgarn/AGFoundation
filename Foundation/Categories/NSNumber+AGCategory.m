@@ -27,7 +27,9 @@
 
 #import "NSNumber+AGCategory.h"
 
-#pragma mark -
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSNumber_AGCategory);
+#endif
 
 @implementation NSNumber (AGCategory)
 

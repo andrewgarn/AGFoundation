@@ -28,6 +28,10 @@
 #import "NSObject+AGCategory.h"
 #import <objc/runtime.h>
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSObject_AGCategory);
+#endif
+
 @implementation NSObject (AGCategory)
 
 #pragma mark -

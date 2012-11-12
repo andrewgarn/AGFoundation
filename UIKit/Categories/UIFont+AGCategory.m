@@ -27,6 +27,10 @@
 
 #import "UIFont+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(UIFont_AGCategory);
+#endif
+
 @implementation UIFont (AGCategory)
 
 + (NSDictionary *)fontsByFamilyName_AG

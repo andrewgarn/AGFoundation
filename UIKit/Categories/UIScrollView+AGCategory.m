@@ -27,6 +27,10 @@
 
 #import "UIScrollView+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(UIScrollView_AGCategory);
+#endif
+
 @implementation UIScrollView (AGCategory)
 
 #pragma mark -

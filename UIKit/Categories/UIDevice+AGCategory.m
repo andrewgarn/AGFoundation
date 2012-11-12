@@ -36,6 +36,10 @@
 #include <net/if_dl.h>
 #include <mach/mach.h>
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(UIDevice_AGCategory);
+#endif
+
 #ifndef kUTTypeMovie
 #define kUTTypeMovie @"public.movie"
 #endif

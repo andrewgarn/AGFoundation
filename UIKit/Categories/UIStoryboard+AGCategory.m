@@ -27,6 +27,10 @@
 
 #import "UIStoryboard+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(UIStoryboard_AGCategory);
+#endif
+
 @implementation UIStoryboard (AGCategory)
 
 + (UIStoryboard *)mainStoryboard_AG

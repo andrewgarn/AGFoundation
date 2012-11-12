@@ -30,6 +30,10 @@
 #include <CommonCrypto/CommonDigest.h>
 #include <CommonCrypto/CommonHMAC.h>
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSData_AGCategory);
+#endif
+
 @implementation NSData (AGCategory)
 
 - (NSString *)MD5Hash_AG

@@ -27,6 +27,10 @@
 
 #import "NSBundle+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSBundle_AGCategory);
+#endif
+
 @implementation NSBundle (AGCategory)
 
 + (NSString *)bundleName_AG

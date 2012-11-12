@@ -27,6 +27,10 @@
 
 #import "UIButton+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(UIButton_AGCategory);
+#endif
+
 @implementation UIButton (AGCategory)
 
 @end

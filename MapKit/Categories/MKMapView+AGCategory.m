@@ -27,6 +27,10 @@
 
 #import "MKMapView+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(MKMapView_AGCategory);
+#endif
+
 #define MERCATOR_OFFSET 268435456
 #define MERCATOR_RADIUS 85445659.44705395
 

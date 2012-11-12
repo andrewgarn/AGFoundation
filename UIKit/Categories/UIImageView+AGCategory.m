@@ -27,6 +27,10 @@
 
 #import "UIImageView+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(UIImageView_AGCategory);
+#endif
+
 @implementation UIImageView (AGCategory)
 
 + (UIImageView *)imageViewWithImageNamed_AG:(NSString *)imageName

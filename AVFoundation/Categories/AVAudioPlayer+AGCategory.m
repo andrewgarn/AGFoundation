@@ -28,6 +28,10 @@
 #import "AVAudioPlayer+AGCategory.h"
 #import <objc/runtime.h>
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(AVAudioPlayer_AGCategory);
+#endif
+
 static char AGCategoryAudioPlayerFadingKey;
 static char AGCategoryAudioPlayerFadeOriginalVolumeKey;
 static char AGCategoryAudioPlayerFadeTargetVolumeKey;

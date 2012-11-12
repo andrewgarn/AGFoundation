@@ -42,6 +42,10 @@
 #include <unistd.h>
 #include <assert.h>
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(UIApplication_AGCategory);
+#endif
+
 @implementation UIApplication (AGCategory)
 
 #pragma mark -

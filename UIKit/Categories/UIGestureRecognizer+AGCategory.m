@@ -28,6 +28,10 @@
 #import "UIGestureRecognizer+AGCategory.h"
 #import "NSObject+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(UIGestureRecognizer_AGCategory);
+#endif
+
 static char AGCategoryGestureRecognizerBlockKey;
 
 @implementation UIGestureRecognizer (AGCategory)

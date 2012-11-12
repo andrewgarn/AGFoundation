@@ -27,6 +27,10 @@
 
 #import "NSDictionary+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSDictionary_AGCategory);
+#endif
+
 @implementation NSDictionary (AGCategory)
 
 - (BOOL)boolForKey_AG:(id)aKey

@@ -28,6 +28,10 @@
 #import "NSURL+AGCategory.h"
 #include <sys/xattr.h>
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSURL_AGCategory);
+#endif
+
 @implementation NSURL (AGCategory)
 
 + (NSURL *)appStoreURLForAppID_AG:(NSString *)identifier

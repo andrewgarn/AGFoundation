@@ -27,7 +27,9 @@
 
 #import "NSDate+AGCategory.h"
 
-#pragma mark -
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSDate_AGCategory);
+#endif
 
 @implementation NSDate (AGCategory)
 

@@ -27,6 +27,10 @@
 
 #import "UIColor+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(UIColor_AGCategory);
+#endif
+
 @implementation UIColor (AGCategory)
 
 #pragma mark - Creating a Random UIColor

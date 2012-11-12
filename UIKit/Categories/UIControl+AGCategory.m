@@ -28,6 +28,10 @@
 #import "UIControl+AGCategory.h"
 #import "NSObject+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(UIControl_AGCategory);
+#endif
+
 static char AGCategoryControlEventTouchDownBlockKey;
 static char AGCategoryControlEventTouchDownRepeatBlockKey;
 static char AGCategoryControlEventTouchDragInsideBlockKey;

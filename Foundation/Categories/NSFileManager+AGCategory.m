@@ -28,6 +28,10 @@
 #import "NSFileManager+AGCategory.h"
 #import "NSString+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSFileManager_AGCategory);
+#endif
+
 @implementation NSFileManager (AGCategory)
 
 + (NSString *)cachePath_AG

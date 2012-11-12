@@ -27,6 +27,10 @@
 
 #import "UIStoryboardSegue+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(UIStoryboardSegue_AGCategory);
+#endif
+
 @implementation UIStoryboardSegue (AGCategory)
 
 - (UIViewController *)destinationViewController_AG

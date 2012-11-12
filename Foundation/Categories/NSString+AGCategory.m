@@ -39,6 +39,10 @@
 #include <sys/types.h>
 #include <unistd.h>
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSString_AGCategory);
+#endif
+
 @implementation NSString (AGCategory)
 
 - (BOOL)isNotEmpty_AG

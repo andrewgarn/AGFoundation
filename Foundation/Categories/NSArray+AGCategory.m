@@ -27,6 +27,10 @@
 
 #import "NSArray+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSArray_AGCategory);
+#endif
+
 @implementation NSArray (AGCategory)
 
 - (id)firstObject_AG

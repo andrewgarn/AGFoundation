@@ -28,6 +28,10 @@
 #import "UIScreen+AGCategory.h"
 #import <QuartzCore/QuartzCore.h>
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(UIScreen_AGCategory);
+#endif
+
 @implementation UIScreen (AGCategory)
 
 + (UIImage *)imageRepresentation_AG

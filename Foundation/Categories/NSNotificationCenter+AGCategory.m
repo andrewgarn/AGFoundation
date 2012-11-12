@@ -27,6 +27,10 @@
 
 #import "NSNotificationCenter+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSNotificationCenter_AGCategory);
+#endif
+
 @implementation NSNotificationCenter (AGCategory)
 
 + (void)addUniqueObserver_AG:(id)observer selector:(SEL)selector name:(NSString *)notificationName object:(id)sender

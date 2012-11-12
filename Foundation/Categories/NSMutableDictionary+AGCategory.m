@@ -27,6 +27,10 @@
 
 #import "NSMutableDictionary+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSMutableDictionary_AGCategory);
+#endif
+
 @implementation NSMutableDictionary (AGCategory)
 
 #pragma mark -

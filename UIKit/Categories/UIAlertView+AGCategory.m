@@ -27,6 +27,10 @@
 
 #import "UIAlertView+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(UIAlertView_AGCategory);
+#endif
+
 @implementation UIAlertView (AGCategory)
 
 + (void)showWithTitle_AG:(NSString *)title message:(NSString *)message
