@@ -46,6 +46,8 @@
 		497D6CE416602F9C00A6439D /* UIDevice+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856BD1589DAB200013DD9 /* UIDevice+AGCategory.m */; };
 		497D6CEA1660332B00A6439D /* NSString+AGCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 497D6CE91660332B00A6439D /* NSString+AGCategoryTests.m */; };
 		497D6CEB166033A500A6439D /* NSString+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7848567F1589DAB200013DD9 /* NSString+AGCategory.m */; };
+		497D6CF016603B4000A6439D /* NSArray+AGCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 497D6CEF16603B3F00A6439D /* NSArray+AGCategoryTests.m */; };
+		497D6CF116603C4200A6439D /* NSArray+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7848566B1589DAB200013DD9 /* NSArray+AGCategory.m */; };
 		49959D441635E36500EEC5CF /* AGHungQueueDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 49959D421635E36500EEC5CF /* AGHungQueueDetector.h */; };
 		49959D451635E36500EEC5CF /* AGHungQueueDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 49959D431635E36500EEC5CF /* AGHungQueueDetector.m */; };
 		4997E373164EF6EA008C4088 /* AVPlayer+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 4997E371164EF6EA008C4088 /* AVPlayer+AGCategory.h */; };
@@ -215,6 +217,8 @@
 		497D6CD91660286A00A6439D /* NSNumber+AGCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+AGCategoryTests.m"; sourceTree = "<group>"; };
 		497D6CE81660332B00A6439D /* NSString+AGCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AGCategoryTests.h"; sourceTree = "<group>"; };
 		497D6CE91660332B00A6439D /* NSString+AGCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AGCategoryTests.m"; sourceTree = "<group>"; };
+		497D6CEE16603B3F00A6439D /* NSArray+AGCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AGCategoryTests.h"; sourceTree = "<group>"; };
+		497D6CEF16603B3F00A6439D /* NSArray+AGCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AGCategoryTests.m"; sourceTree = "<group>"; };
 		49959D421635E36500EEC5CF /* AGHungQueueDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGHungQueueDetector.h; sourceTree = "<group>"; };
 		49959D431635E36500EEC5CF /* AGHungQueueDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGHungQueueDetector.m; sourceTree = "<group>"; };
 		4997E371164EF6EA008C4088 /* AVPlayer+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVPlayer+AGCategory.h"; sourceTree = "<group>"; };
@@ -413,6 +417,8 @@
 				497D6CD91660286A00A6439D /* NSNumber+AGCategoryTests.m */,
 				497D6CE81660332B00A6439D /* NSString+AGCategoryTests.h */,
 				497D6CE91660332B00A6439D /* NSString+AGCategoryTests.m */,
+				497D6CEE16603B3F00A6439D /* NSArray+AGCategoryTests.h */,
+				497D6CEF16603B3F00A6439D /* NSArray+AGCategoryTests.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1114,6 +1120,8 @@
 				497D6CE416602F9C00A6439D /* UIDevice+AGCategory.m in Sources */,
 				497D6CEA1660332B00A6439D /* NSString+AGCategoryTests.m in Sources */,
 				497D6CEB166033A500A6439D /* NSString+AGCategory.m in Sources */,
+				497D6CF016603B4000A6439D /* NSArray+AGCategoryTests.m in Sources */,
+				497D6CF116603C4200A6439D /* NSArray+AGCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
