@@ -41,7 +41,11 @@
 		497D6CBC1660244700A6439D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496C19A215C2F4D400A0ADF8 /* SenTestingKit.framework */; };
 		497D6CBD1660244700A6439D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784857491589DB2200013DD9 /* UIKit.framework */; };
 		497D6CBE1660244700A6439D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784856461589D50A00013DD9 /* Foundation.framework */; };
-		497D6CC71660244700A6439D /* AGFoundationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 497D6CC61660244700A6439D /* AGFoundationTests.m */; };
+		497D6CDA1660286A00A6439D /* NSNumber+AGCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 497D6CD91660286A00A6439D /* NSNumber+AGCategoryTests.m */; };
+		497D6CE316602CCA00A6439D /* NSNumber+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7848567B1589DAB200013DD9 /* NSNumber+AGCategory.m */; };
+		497D6CE416602F9C00A6439D /* UIDevice+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 784856BD1589DAB200013DD9 /* UIDevice+AGCategory.m */; };
+		497D6CEA1660332B00A6439D /* NSString+AGCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 497D6CE91660332B00A6439D /* NSString+AGCategoryTests.m */; };
+		497D6CEB166033A500A6439D /* NSString+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7848567F1589DAB200013DD9 /* NSString+AGCategory.m */; };
 		49959D441635E36500EEC5CF /* AGHungQueueDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 49959D421635E36500EEC5CF /* AGHungQueueDetector.h */; };
 		49959D451635E36500EEC5CF /* AGHungQueueDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 49959D431635E36500EEC5CF /* AGHungQueueDetector.m */; };
 		4997E373164EF6EA008C4088 /* AVPlayer+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 4997E371164EF6EA008C4088 /* AVPlayer+AGCategory.h */; };
@@ -173,6 +177,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		497D6CEC1660351F00A6439D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7848563A1589D50900013DD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 497D6CBA1660244700A6439D;
+			remoteInfo = AGFoundationTests;
+		};
 		49A996F315F7D40800DBD6E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7848563A1589D50900013DD9 /* Project object */;
@@ -198,8 +209,12 @@
 		497D6CBB1660244700A6439D /* AGFoundationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AGFoundationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		497D6CC51660244700A6439D /* AGFoundationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGFoundationTests.h; sourceTree = "<group>"; };
 		497D6CC61660244700A6439D /* AGFoundationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGFoundationTests.m; sourceTree = "<group>"; };
-		497D6CCE166024A100A6439D /* AGFoundationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AGFoundationTests-Info.plist"; sourceTree = "<group>"; };
-		497D6CCF166024A100A6439D /* AGFoundationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AGFoundationTests-Prefix.pch"; sourceTree = "<group>"; };
+		497D6CD41660281C00A6439D /* AGFoundationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AGFoundationTests-Info.plist"; path = "AGFoundationTests/AGFoundationTests-Info.plist"; sourceTree = SOURCE_ROOT; };
+		497D6CD51660281C00A6439D /* AGFoundationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AGFoundationTests-Prefix.pch"; path = "AGFoundationTests/AGFoundationTests-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		497D6CD81660286A00A6439D /* NSNumber+AGCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+AGCategoryTests.h"; sourceTree = "<group>"; };
+		497D6CD91660286A00A6439D /* NSNumber+AGCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+AGCategoryTests.m"; sourceTree = "<group>"; };
+		497D6CE81660332B00A6439D /* NSString+AGCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AGCategoryTests.h"; sourceTree = "<group>"; };
+		497D6CE91660332B00A6439D /* NSString+AGCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AGCategoryTests.m"; sourceTree = "<group>"; };
 		49959D421635E36500EEC5CF /* AGHungQueueDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGHungQueueDetector.h; sourceTree = "<group>"; };
 		49959D431635E36500EEC5CF /* AGHungQueueDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGHungQueueDetector.m; sourceTree = "<group>"; };
 		4997E371164EF6EA008C4088 /* AVPlayer+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVPlayer+AGCategory.h"; sourceTree = "<group>"; };
@@ -368,6 +383,7 @@
 			children = (
 				497D6CC51660244700A6439D /* AGFoundationTests.h */,
 				497D6CC61660244700A6439D /* AGFoundationTests.m */,
+				497D6CD61660285900A6439D /* Foundation */,
 				497D6CCD166024A100A6439D /* Supporting Files */,
 			);
 			path = AGFoundationTests;
@@ -376,10 +392,29 @@
 		497D6CCD166024A100A6439D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				497D6CCE166024A100A6439D /* AGFoundationTests-Info.plist */,
-				497D6CCF166024A100A6439D /* AGFoundationTests-Prefix.pch */,
+				497D6CD41660281C00A6439D /* AGFoundationTests-Info.plist */,
+				497D6CD51660281C00A6439D /* AGFoundationTests-Prefix.pch */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		497D6CD61660285900A6439D /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				497D6CD71660285900A6439D /* Categories */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		497D6CD71660285900A6439D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				497D6CD81660286A00A6439D /* NSNumber+AGCategoryTests.h */,
+				497D6CD91660286A00A6439D /* NSNumber+AGCategoryTests.m */,
+				497D6CE81660332B00A6439D /* NSString+AGCategoryTests.h */,
+				497D6CE91660332B00A6439D /* NSString+AGCategoryTests.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		784856381589D50900013DD9 = {
@@ -967,6 +1002,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				497D6CED1660351F00A6439D /* PBXTargetDependency */,
 			);
 			name = AGFoundation;
 			productName = AGFoundation;
@@ -1073,7 +1109,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				497D6CC71660244700A6439D /* AGFoundationTests.m in Sources */,
+				497D6CDA1660286A00A6439D /* NSNumber+AGCategoryTests.m in Sources */,
+				497D6CE316602CCA00A6439D /* NSNumber+AGCategory.m in Sources */,
+				497D6CE416602F9C00A6439D /* UIDevice+AGCategory.m in Sources */,
+				497D6CEA1660332B00A6439D /* NSString+AGCategoryTests.m in Sources */,
+				497D6CEB166033A500A6439D /* NSString+AGCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1144,6 +1184,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		497D6CED1660351F00A6439D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 497D6CBA1660244700A6439D /* AGFoundationTests */;
+			targetProxy = 497D6CEC1660351F00A6439D /* PBXContainerItemProxy */;
+		};
 		49A996F415F7D40800DBD6E4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 784856421589D50A00013DD9 /* AGFoundation */;
@@ -1169,8 +1214,9 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AGFoundationTests/Supporting Files/AGFoundationTests-Prefix.pch";
-				INFOPLIST_FILE = "AGFoundationTests/Supporting Files/AGFoundationTests-Info.plist";
+				GCC_PREFIX_HEADER = "AGFoundationTests/AGFoundationTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				INFOPLIST_FILE = "AGFoundationTests/AGFoundationTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1190,8 +1236,9 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AGFoundationTests/Supporting Files/AGFoundationTests-Prefix.pch";
-				INFOPLIST_FILE = "AGFoundationTests/Supporting Files/AGFoundationTests-Info.plist";
+				GCC_PREFIX_HEADER = "AGFoundationTests/AGFoundationTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = RELEASE;
+				INFOPLIST_FILE = "AGFoundationTests/AGFoundationTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
@@ -1210,8 +1257,9 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AGFoundationTests/Supporting Files/AGFoundationTests-Prefix.pch";
-				INFOPLIST_FILE = "AGFoundationTests/Supporting Files/AGFoundationTests-Info.plist";
+				GCC_PREFIX_HEADER = "AGFoundationTests/AGFoundationTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = ADHOC;
+				INFOPLIST_FILE = "AGFoundationTests/AGFoundationTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;

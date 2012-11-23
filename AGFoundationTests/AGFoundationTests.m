@@ -10,12 +10,16 @@
 
 @implementation AGFoundationTests
 
+#pragma mark - Setup
+
 - (void)setUp
 {
     [super setUp];
     
     // Set-up code here.
 }
+
+#pragma mark - Teardown
 
 - (void)tearDown
 {
@@ -24,9 +28,11 @@
     [super tearDown];
 }
 
+#pragma mark - Tests
+
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in AGFoundationTests");
+    //STFail(@"Unit tests are not implemented yet in AGFoundationTests");
 }
 
 @end

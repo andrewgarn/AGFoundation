@@ -47,25 +47,22 @@ FIX_CATEGORY_BUG(NSNumber_AGCategory);
 
 - (NSString *)formattedBytes_AG
 {
-    static dispatch_once_t token;
+    static dispatch_once_t onceToken;
 	static NSArray *unitArray;
     
-	dispatch_once(&token, ^{
+	dispatch_once(&onceToken, ^{
 		unitArray = [NSArray arrayWithObjects:@"Bytes", @"KB", @"MB", @"GB", @"TB", @"PB", @"EB", @"ZB", @"YB", @"BB", nil];
 	});
     
-    float bytes = [self longLongValue];
+    unsigned long long bytes = [self unsignedLongLongValue];
 	NSUInteger unit = 0;
 
-    while(bytes > 1024 && unit < [unitArray count]) {
+    while(bytes >= 1024 && unit < [unitArray count]) {
 		bytes = bytes / 1024.0;
 		unit++;
 	}
-            
-	if(unit == 0)
-		return [NSString stringWithFormat:@"%d %@", (int)bytes, [unitArray objectAtIndex:unit]];
-    else
-		return [NSString stringWithFormat:@"%.2f %@", (float)bytes, [unitArray objectAtIndex:unit]];
+    
+    return [NSString stringWithFormat:@"%lld %@", bytes, [unitArray objectAtIndex:unit]];
 }
 
 #pragma mark - Private
