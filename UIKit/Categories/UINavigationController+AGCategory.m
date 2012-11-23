@@ -54,6 +54,14 @@ FIX_CATEGORY_BUG(UINavigationController_AGCategory);
 
 #pragma mark -
 
+- (void)popViewControllerWithTransition:(UIViewAnimationTransition)transition
+{
+    UIViewController *viewController = [self topViewController];
+    if (viewController != nil) {
+        [self popViewController:viewController withTransition:transition];
+    }
+}
+
 - (void)popViewController:(UIViewController *)viewController withTransition:(UIViewAnimationTransition)transition
 {
     [self popViewController:viewController withTransition:transition withDuration:0.5f];
@@ -64,7 +72,7 @@ FIX_CATEGORY_BUG(UINavigationController_AGCategory);
              withDuration:(NSTimeInterval)duration
 {
     [UIView beginAnimations:nil context:NULL];
-    [self popToRootViewControllerAnimated:NO];
+    [self popToViewController:viewController animated:NO];
     [UIView setAnimationDuration:duration];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationTransition:transition forView:self.view cache:YES];

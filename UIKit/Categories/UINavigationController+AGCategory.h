@@ -58,9 +58,16 @@
 /** Pops the top view controller from the navigation stack with the specified transition and updates the display.
  @param transition The transition to apply to the view controller during the pop animation.
 */
+- (void)popViewControllerWithTransition:(UIViewAnimationTransition)transition;
+
+/** Pops the specified view controller from the navigation stack with the specified transition and updates the display.
+ @param viewController The view controller to be popped from the stack.
+ @param transition The transition to apply to the view controller during the pop animation.
+*/
 - (void)popViewController:(UIViewController *)viewController withTransition:(UIViewAnimationTransition)transition;
 
-/** Pops the top view controller from the navigation stack with the specified transition and updates the display.
+/** Pops the specified view controller from the navigation stack with the specified transition and updates the display.
+ @param viewController The view controller to be popped from the stack.
  @param transition The transition to apply to the view controller during the pop animation.
  @param duration The interval of time to be used as the duration of the animation.
 */
