@@ -31,7 +31,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4999D51E164B0DA5003CBC19"
+               BlueprintIdentifier = "497D6CBA1660244700A6439D"
                BuildableName = "AGFoundationTests.octest"
                BlueprintName = "AGFoundationTests"
                ReferencedContainer = "container:AGFoundation.xcodeproj">

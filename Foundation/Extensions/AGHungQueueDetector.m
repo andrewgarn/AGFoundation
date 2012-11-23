@@ -53,15 +53,14 @@ static NSString *AGHungQueueDetectorDefaultName = @"AGHungQueueDetectorThread";
 
 - (id)initWithTargetQueue:(dispatch_queue_t)targetQueue
 {
-    if ((self = [super init]))
+    self = [super init];
+    if (self)
     {
-#ifdef DEBUG
         NSAssert(targetQueue != nil, @"targetQueue must not be nil");
         
         _detectionInterval = AGHungQueueDetectorDefaultDetectionInterval;
         _name = AGHungQueueDetectorDefaultName;
         _targetQueue = targetQueue;
-#endif
     }
     return self;
 }
@@ -70,11 +69,13 @@ static NSString *AGHungQueueDetectorDefaultName = @"AGHungQueueDetectorThread";
 
 - (void)startObservingTargetedQueue
 {
+#ifdef DEBUG
     if (self.detectionThread == nil) {
         self.detectionThread = [[NSThread alloc] initWithTarget:self selector:@selector(hungQueueDetectorMain) object:nil];
         [self.detectionThread setName:self.name];
         [self.detectionThread start];
     }
+#endif
 }
 
 - (void)stopObservingTargetedQueue

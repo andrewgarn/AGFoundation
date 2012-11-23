@@ -28,9 +28,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-/** An `NSObject` subclass that will raise an exception when the targeted dispatch queue is blocked for longer than a specified amount of time.
+/** An `NSObject` subclass that will raise an exception when the targeted dispatch queue is blocked for longer than a specified time interval.
 
- Adapted from a GitHub Gist by Peter Steinberger: https://gist.github.com/3933090
+ Adapted from a GitHub Gist by Peter Steinberger: https://gist.github.com/3933090.
 */
 @interface AGHungQueueDetector : NSObject
 
