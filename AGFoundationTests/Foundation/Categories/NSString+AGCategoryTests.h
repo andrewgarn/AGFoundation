@@ -10,7 +10,12 @@
 
 @interface NSString_AGCategoryTests : SenTestCase
 
+- (void)testContainsString;
+- (void)testStringBetweenStringAndString;
+
 - (void)testReversedString;
+
+- (void)testIsValidEmailAddress;
 
 - (void)testMD5Hash;
 - (void)testSHA1Hash;

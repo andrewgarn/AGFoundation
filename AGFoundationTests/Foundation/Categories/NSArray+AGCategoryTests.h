@@ -11,5 +11,8 @@
 @interface NSArray_AGCategoryTests : SenTestCase
 
 - (void)testFirstObject;
+- (void)testObjectAtIndex;
+
+- (void)testReversedArray;
 
 @end

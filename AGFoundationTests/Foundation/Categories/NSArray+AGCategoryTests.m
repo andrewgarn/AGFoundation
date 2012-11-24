@@ -22,7 +22,7 @@
     [super setUp];
     
     // Set-up code here.
-    self.testArray = [[NSArray alloc] initWithObjects:@"one", @"two", @"three", nil];
+    self.testArray = [[NSArray alloc] initWithObjects:@"one", @"two", @"three", @"four", nil];
 }
 
 #pragma mark - Teardown
@@ -47,6 +47,12 @@
 {
     STAssertNotNil([self.testArray objectAtIndex_AG:1], @"Second object should not be nil");
     STAssertNil([self.testArray objectAtIndex_AG:4], @"Fifth object should be nil");
+}
+
+- (void)testReversedArray
+{
+    NSArray *array = [self.testArray reversedArray_AG];
+    STAssertTrue([[array objectAtIndex:0] isEqualToString:@"four"], @"Reversed array test failed");
 }
 
 @end

@@ -216,7 +216,7 @@ FIX_CATEGORY_BUG(NSString_AGCategory);
 	static NSRegularExpression *regularExpression;
     
 	dispatch_once(&onceToken, ^{
-		NSString *regexPattern = @"^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$";
+		NSString *regexPattern = @"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$";
         NSRegularExpressionOptions options = NSRegularExpressionCaseInsensitive;
         regularExpression = [[NSRegularExpression alloc] initWithPattern:regexPattern options:options error:nil];
 	});
