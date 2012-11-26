@@ -11,6 +11,8 @@
 
 @interface NSString_AGCategoryTests ()
 @property (nonatomic, strong) NSString *testString;
+@property (nonatomic, strong) NSArray *validEmailArray;
+@property (nonatomic, strong) NSArray *invalidEmailArray;
 @end
 
 @implementation NSString_AGCategoryTests
@@ -23,6 +25,16 @@
     
     // Set-up code here.
     self.testString = @"The quick brown fox jumps over the lazy dog";
+    
+    self.validEmailArray = @[@"username@example.com", @"username+tag@example.com",
+                            @"user.name@example.com", @"user.name+tag@example.com",
+                            @"user_name@example.com", @"user_name+tag@example.com",
+                            @"user.middle_name@example.com", @"user.middle_name+tag@example.com",
+                            @"a@bc.uk", @"a+tag@bc.uk"];
+
+    self.invalidEmailArray = @[@"username", @"username@",
+                              @"username@example", @"username@example.",
+                              @"example.com", @"@example.com"];
 }
 
 #pragma mark - Teardown
@@ -31,6 +43,8 @@
 {
     // Tear-down code here.
     self.testString = nil;
+    self.validEmailArray = nil;
+    self.invalidEmailArray = nil;
     
     [super tearDown];
 }
@@ -63,18 +77,13 @@
 
 - (void)testIsValidEmailAddress
 {
-    STAssertTrue([@"username@example.com" isValidEmailAddress_AG], @"Email validation test failed");
-    STAssertTrue([@"username+test@example.com" isValidEmailAddress_AG], @"Email validation test failed");
-    STAssertTrue([@"user.name+test@example.com" isValidEmailAddress_AG], @"Email validation test failed");
-    STAssertTrue([@"user_name+test@example.com" isValidEmailAddress_AG], @"Email validation test failed");
-    STAssertTrue([@"a@bc.uk" isValidEmailAddress_AG], @"Email validation test failed");
+    [self.validEmailArray enumerateObjectsUsingBlock:^(NSString *string, NSUInteger idx, BOOL *stop) {
+        STAssertTrue([string isValidEmailAddress_AG], [NSString stringWithFormat:@"Email validation test failed for %@", string]);
+    }];
     
-    STAssertFalse([@"username@example" isValidEmailAddress_AG], @"Email validation test failed");
-    STAssertFalse([@"username@example." isValidEmailAddress_AG], @"Email validation test failed");
-    STAssertFalse([@"username@" isValidEmailAddress_AG], @"Email validation test failed");
-    STAssertFalse([@"username" isValidEmailAddress_AG], @"Email validation test failed");
-    STAssertFalse([@"@example.com" isValidEmailAddress_AG], @"Email validation test failed");
-    STAssertFalse([@"example.com" isValidEmailAddress_AG], @"Email validation test failed");
+    [self.invalidEmailArray enumerateObjectsUsingBlock:^(NSString *string, NSUInteger idx, BOOL *stop) {
+        STAssertFalse([string isValidEmailAddress_AG], [NSString stringWithFormat:@"Email validation test failed for %@", string]);
+    }];
 }
 
 - (void)testMD5Hash
