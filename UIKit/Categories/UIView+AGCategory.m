@@ -97,12 +97,18 @@ FIX_CATEGORY_BUG(UIView_AGCategory);
 
 - (void)removeFromSuperviewAnimated_AG
 {
-    __block float originalOpacity = self.layer.opacity;
-    [UIView animateWithDuration:0.3 animations:^{
-        [self.layer setOpacity:0];
+    [self removeFromSuperviewAnimatedWithCompletion_AG:nil];
+}
+
+- (void)removeFromSuperviewAnimatedWithCompletion_AG:(void (^)(BOOL finished))completion
+{
+    __block CGFloat originalAlpha = self.alpha;
+    [UIView animateWithDuration:0.3f animations:^{
+        [self setAlpha:0];
     } completion:^ (BOOL finished) {
-        self.layer.opacity = originalOpacity;
         [self removeFromSuperview];
+        [self setAlpha:originalAlpha];
+        if (completion) completion(finished);
     }];
 }
 
@@ -120,7 +126,7 @@ FIX_CATEGORY_BUG(UIView_AGCategory);
 
 - (void)removeAllSubviewsAnimatedWithCompletion_AG:(void (^)(BOOL finished))completion
 {
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:0.3f animations:^{
         [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     } completion:^(BOOL finished) {
         if (completion) completion(finished);

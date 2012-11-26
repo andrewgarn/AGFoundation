@@ -68,6 +68,11 @@
 /** Unlinks the receiver from its superview and its window, and removes it from the responder chain with animation. */ 
 - (void)removeFromSuperviewAnimated_AG;
 
+/** Unlinks the receiver from its superview and its window, and removes it from the responder chain with animation.
+ @param completion A block object to be executed when the animation sequence ends.
+*/
+- (void)removeFromSuperviewAnimatedWithCompletion_AG:(void (^)(BOOL finished))completion;
+
 /**-------------------------------------------------------------------------------------
  @name Removing Subviews
  ---------------------------------------------------------------------------------------
