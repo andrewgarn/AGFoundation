@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>AGSoundEffect Class Reference</title>
+		<title>UIWebView(AGCategory) Category Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">AGSoundEffect Class Reference</h1>
+				<h1 class="hideInXcode">UIWebView(AGCategory) Category Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -44,9 +44,11 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/initWithSoundNamed:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithSoundNamed:</option>
+	<option value="//api/name/documentTitle_AG">&nbsp;&nbsp;&nbsp;&nbsp;- documentTitle_AG</option>
 	
-	<option value="//api/name/play">&nbsp;&nbsp;&nbsp;&nbsp;- play</option>
+	<option value="//api/name/loadRequestWithFilePath_AG:">&nbsp;&nbsp;&nbsp;&nbsp;- loadRequestWithFilePath_AG:</option>
+	
+	<option value="//api/name/loadRequestWithURL_AG:">&nbsp;&nbsp;&nbsp;&nbsp;- loadRequestWithURL_AG:</option>
 	
 	
 	
@@ -64,6 +66,10 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Loading Content">Loading Content</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessing Web Content Properties">Accessing Web Content Properties</a></span></li>
+	
 </ul></li>
 
 
@@ -76,9 +82,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithSoundNamed:">initWithSoundNamed:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentTitle_AG">documentTitle_AG</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/play">play</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadRequestWithFilePath_AG:">loadRequestWithFilePath_AG:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadRequestWithURL_AG:">loadRequestWithURL_AG:</a></span></li>
 	
 </ul></li>
 
@@ -87,7 +95,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="AGSoundEffect Class Reference" name="top"></a>
+				<a title="UIWebView(AGCategory) Category Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -96,18 +104,15 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">AGSoundEffect Class Reference</h1>
+						<h1 class="title title-header">UIWebView(AGCategory) Category Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSObject</td>
-</tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">AGSoundEffect.h</td>
+	<td class="specification-value">UIWebView+AGCategory.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -117,7 +122,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>An <code>NSObject</code> subclass to aid in playing a short sound effect</p>
+						<p>A collection of category extensions for <code>UIWebView</code></p>
 					</div>
 					
 					
@@ -129,21 +134,36 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						
-						
+						<a title="Loading Content" name="task_Loading Content"></a>
+						<h3 class="subsubtitle task-title">Loading Content</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithSoundNamed:">&ndash;&nbsp;initWithSoundNamed:</a></code>
-		<span class="tooltip"><p>Returns a <code>AGSoundEffect</code> object initialized with the supplied sound file.</p></span>
+		<code><a href="#//api/name/loadRequestWithURL_AG:">&ndash;&nbsp;loadRequestWithURL_AG:</a></code>
+		<span class="tooltip"><p>Connects to the given URL by initiating an asynchronous client request.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/play">&ndash;&nbsp;play</a></code>
-		<span class="tooltip"><p>Plays the sound effect</p></span>
+		<code><a href="#//api/name/loadRequestWithFilePath_AG:">&ndash;&nbsp;loadRequestWithFilePath_AG:</a></code>
+		<span class="tooltip"><p>Initiates an asynchronous client request to load the specified URL from the main bundle.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Accessing Web Content Properties" name="task_Accessing Web Content Properties"></a>
+						<h3 class="subsubtitle task-title">Accessing Web Content Properties</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentTitle_AG">&ndash;&nbsp;documentTitle_AG</a></code>
+		<span class="tooltip"><p>Returns the title of the HTML page currently displayed.</p></span>
 	</span>
 	
 	
@@ -165,18 +185,59 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithSoundNamed:" title="initWithSoundNamed:"></a>
-	<h3 class="subsubtitle method-title">initWithSoundNamed:</h3>
+	<a name="//api/name/documentTitle_AG" title="documentTitle_AG"></a>
+	<h3 class="subsubtitle method-title">documentTitle_AG</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a <code>AGSoundEffect</code> object initialized with the supplied sound file.</p>
+		<p>Returns the title of the HTML page currently displayed.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (AGSoundEffect *)initWithSoundNamed:(NSString *)<em>filename</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSString *)documentTitle_AG</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The title of the HTML page currently displayed.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIWebView+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loadRequestWithFilePath_AG:" title="loadRequestWithFilePath_AG:"></a>
+	<h3 class="subsubtitle method-title">loadRequestWithFilePath_AG:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initiates an asynchronous client request to load the specified URL from the main bundle.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loadRequestWithFilePath_AG:(NSString *)<em>filePath</em></code></div>
 
     
 	
@@ -184,17 +245,56 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>filename</em></dt>
-			<dd><p>The filename of the sound resource, including extension.</p></dd>
+			<dt><em>filePath</em></dt>
+			<dd><p>The bundle path to the resource that the request should load.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
 	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A <code>AGSoundEffect</code> object initialized with the specified sound.</p>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIWebView+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loadRequestWithURL_AG:" title="loadRequestWithURL_AG:"></a>
+	<h3 class="subsubtitle method-title">loadRequestWithURL_AG:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Connects to the given URL by initiating an asynchronous client request.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loadRequestWithURL_AG:(NSURL *)<em>URL</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>URL</em></dt>
+			<dd><p>The URL for the new request.</p></dd>
+		</dl>
+		
 	</div>
 	
 	
@@ -207,45 +307,11 @@
 	
 	
 	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">AGSoundEffect.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/play" title="play"></a>
-	<h3 class="subsubtitle method-title">play</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Plays the sound effect</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)play</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">AGSoundEffect.h</code><br />
+		<code class="declared-in-ref">UIWebView+AGCategory.h</code><br />
 	</div>				
 	
 	

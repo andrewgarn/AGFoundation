@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>NSMutableDictionary(AGCategory) Category Reference</title>
+		<title>UINavigationController(AGCategory) Category Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">NSMutableDictionary(AGCategory) Category Reference</h1>
+				<h1 class="hideInXcode">UINavigationController(AGCategory) Category Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -44,17 +44,15 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/setBool_AG:forKey:">&nbsp;&nbsp;&nbsp;&nbsp;- setBool_AG:forKey:</option>
+	<option value="//api/name/popViewController:withTransition:">&nbsp;&nbsp;&nbsp;&nbsp;- popViewController:withTransition:</option>
 	
-	<option value="//api/name/setDouble_AG:forKey:">&nbsp;&nbsp;&nbsp;&nbsp;- setDouble_AG:forKey:</option>
+	<option value="//api/name/popViewController:withTransition:withDuration:">&nbsp;&nbsp;&nbsp;&nbsp;- popViewController:withTransition:withDuration:</option>
 	
-	<option value="//api/name/setFloat_AG:forKey:">&nbsp;&nbsp;&nbsp;&nbsp;- setFloat_AG:forKey:</option>
+	<option value="//api/name/popViewControllerWithTransition:">&nbsp;&nbsp;&nbsp;&nbsp;- popViewControllerWithTransition:</option>
 	
-	<option value="//api/name/setInt_AG:forKey:">&nbsp;&nbsp;&nbsp;&nbsp;- setInt_AG:forKey:</option>
+	<option value="//api/name/pushViewController:withTransition:">&nbsp;&nbsp;&nbsp;&nbsp;- pushViewController:withTransition:</option>
 	
-	<option value="//api/name/setInteger_AG:forKey:">&nbsp;&nbsp;&nbsp;&nbsp;- setInteger_AG:forKey:</option>
-	
-	<option value="//api/name/setObject_AG:forKey:">&nbsp;&nbsp;&nbsp;&nbsp;- setObject_AG:forKey:</option>
+	<option value="//api/name/pushViewController:withTransition:withDuration:">&nbsp;&nbsp;&nbsp;&nbsp;- pushViewController:withTransition:withDuration:</option>
 	
 	
 	
@@ -72,7 +70,9 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Setting Dictionary Key-Value Pairs">Setting Dictionary Key-Value Pairs</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Pushing Stack Items">Pushing Stack Items</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Popping Stack Items">Popping Stack Items</a></span></li>
 	
 </ul></li>
 
@@ -86,17 +86,15 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setBool_AG:forKey:">setBool_AG:forKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/popViewController:withTransition:">popViewController:withTransition:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDouble_AG:forKey:">setDouble_AG:forKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/popViewController:withTransition:withDuration:">popViewController:withTransition:withDuration:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setFloat_AG:forKey:">setFloat_AG:forKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/popViewControllerWithTransition:">popViewControllerWithTransition:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setInt_AG:forKey:">setInt_AG:forKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pushViewController:withTransition:">pushViewController:withTransition:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setInteger_AG:forKey:">setInteger_AG:forKey:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setObject_AG:forKey:">setObject_AG:forKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pushViewController:withTransition:withDuration:">pushViewController:withTransition:withDuration:</a></span></li>
 	
 </ul></li>
 
@@ -105,7 +103,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="NSMutableDictionary(AGCategory) Category Reference" name="top"></a>
+				<a title="UINavigationController(AGCategory) Category Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -114,7 +112,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">NSMutableDictionary(AGCategory) Category Reference</h1>
+						<h1 class="title title-header">UINavigationController(AGCategory) Category Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -122,7 +120,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">NSMutableDictionary+AGCategory.h</td>
+	<td class="specification-value">UINavigationController+AGCategory.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -132,7 +130,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A collection of category extensions for <code>NSMutableDictionary</code></p>
+						<p>A collection of category extensions for <code>UINavigationController</code></p>
 					</div>
 					
 					
@@ -144,49 +142,50 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						<a title="Setting Dictionary Key-Value Pairs" name="task_Setting Dictionary Key-Value Pairs"></a>
-						
-<h3 class="subsubtitle task-title">Setting Dictionary Key-Value Pairs</h3>
+						<a title="Pushing Stack Items" name="task_Pushing Stack Items"></a>
+						<h3 class="subsubtitle task-title">Pushing Stack Items</h3>
+
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/setBool_AG:forKey:">&ndash;&nbsp;setBool_AG:forKey:</a></code>
-		<span class="tooltip"><p>Adds a given key-value pair to the dictionary.</p></span>
+		<code><a href="#//api/name/pushViewController:withTransition:">&ndash;&nbsp;pushViewController:withTransition:</a></code>
+		<span class="tooltip"><p>Pushes a view controller onto the receiver’s stack with the specified transition and updates the display.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/setInt_AG:forKey:">&ndash;&nbsp;setInt_AG:forKey:</a></code>
-		<span class="tooltip"><p>Adds a given key-value pair to the dictionary.</p></span>
+		<code><a href="#//api/name/pushViewController:withTransition:withDuration:">&ndash;&nbsp;pushViewController:withTransition:withDuration:</a></code>
+		<span class="tooltip"><p>Pushes a view controller onto the receiver’s stack with the specified transition and updates the display.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Popping Stack Items" name="task_Popping Stack Items"></a>
+						<h3 class="subsubtitle task-title">Popping Stack Items</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/popViewControllerWithTransition:">&ndash;&nbsp;popViewControllerWithTransition:</a></code>
+		<span class="tooltip"><p>Pops the top view controller from the navigation stack with the specified transition and updates the display.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/setFloat_AG:forKey:">&ndash;&nbsp;setFloat_AG:forKey:</a></code>
-		<span class="tooltip"><p>Adds a given key-value pair to the dictionary.</p></span>
+		<code><a href="#//api/name/popViewController:withTransition:">&ndash;&nbsp;popViewController:withTransition:</a></code>
+		<span class="tooltip"><p>Pops the specified view controller from the navigation stack with the specified transition and updates the display.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/setDouble_AG:forKey:">&ndash;&nbsp;setDouble_AG:forKey:</a></code>
-		<span class="tooltip"><p>Adds a given key-value pair to the dictionary.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/setInteger_AG:forKey:">&ndash;&nbsp;setInteger_AG:forKey:</a></code>
-		<span class="tooltip"><p>Adds a given key-value pair to the dictionary.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/setObject_AG:forKey:">&ndash;&nbsp;setObject_AG:forKey:</a></code>
-		<span class="tooltip"><p>Safely adds a given key-value pair to the dictionary.</p></span>
+		<code><a href="#//api/name/popViewController:withTransition:withDuration:">&ndash;&nbsp;popViewController:withTransition:withDuration:</a></code>
+		<span class="tooltip"><p>Pops the specified view controller from the navigation stack with the specified transition and updates the display.</p></span>
 	</span>
 	
 	
@@ -208,18 +207,18 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/setBool_AG:forKey:" title="setBool_AG:forKey:"></a>
-	<h3 class="subsubtitle method-title">setBool_AG:forKey:</h3>
+	<a name="//api/name/popViewController:withTransition:" title="popViewController:withTransition:"></a>
+	<h3 class="subsubtitle method-title">popViewController:withTransition:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Adds a given key-value pair to the dictionary.</p>
+		<p>Pops the specified view controller from the navigation stack with the specified transition and updates the display.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)setBool_AG:(BOOL)<em>value</em> forKey:(id)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)popViewController:(UIViewController *)<em>viewController</em> withTransition:(UIViewAnimationTransition)<em>transition</em></code></div>
 
     
 	
@@ -227,13 +226,13 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>value</em></dt>
-			<dd><p>The boolean you wish to add to the dictionary</p></dd>
+			<dt><em>viewController</em></dt>
+			<dd><p>The view controller to be popped from the stack.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>key</em></dt>
-			<dd><p>The key for value. The key must not be nil.</p></dd>
+			<dt><em>transition</em></dt>
+			<dd><p>The transition to apply to the view controller during the pop animation.</p></dd>
 		</dl>
 		
 	</div>
@@ -247,39 +246,30 @@
 	
 	
 	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="../Categories/NSDictionary+AGCategory.html#//api/name/boolForKey_AG:">[NSDictionary(AGCategory) boolForKey_AG:]</a></p></code></li>
-			
-		</ul>
-	</div>
 	
 	
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSMutableDictionary+AGCategory.h</code><br />
+		<code class="declared-in-ref">UINavigationController+AGCategory.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/setDouble_AG:forKey:" title="setDouble_AG:forKey:"></a>
-	<h3 class="subsubtitle method-title">setDouble_AG:forKey:</h3>
+	<a name="//api/name/popViewController:withTransition:withDuration:" title="popViewController:withTransition:withDuration:"></a>
+	<h3 class="subsubtitle method-title">popViewController:withTransition:withDuration:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Adds a given key-value pair to the dictionary.</p>
+		<p>Pops the specified view controller from the navigation stack with the specified transition and updates the display.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)setDouble_AG:(BOOL)<em>value</em> forKey:(id)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)popViewController:(UIViewController *)<em>viewController</em> withTransition:(UIViewAnimationTransition)<em>transition</em> withDuration:(NSTimeInterval)<em>duration</em></code></div>
 
     
 	
@@ -287,13 +277,18 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>value</em></dt>
-			<dd><p>The double you wish to add to the dictionary</p></dd>
+			<dt><em>viewController</em></dt>
+			<dd><p>The view controller to be popped from the stack.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>key</em></dt>
-			<dd><p>The key for value. The key must not be nil.</p></dd>
+			<dt><em>transition</em></dt>
+			<dd><p>The transition to apply to the view controller during the pop animation.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>duration</em></dt>
+			<dd><p>The interval of time to be used as the duration of the animation.</p></dd>
 		</dl>
 		
 	</div>
@@ -307,39 +302,30 @@
 	
 	
 	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="../Categories/NSDictionary+AGCategory.html#//api/name/doubleForKey_AG:">[NSDictionary(AGCategory) doubleForKey_AG:]</a></p></code></li>
-			
-		</ul>
-	</div>
 	
 	
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSMutableDictionary+AGCategory.h</code><br />
+		<code class="declared-in-ref">UINavigationController+AGCategory.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/setFloat_AG:forKey:" title="setFloat_AG:forKey:"></a>
-	<h3 class="subsubtitle method-title">setFloat_AG:forKey:</h3>
+	<a name="//api/name/popViewControllerWithTransition:" title="popViewControllerWithTransition:"></a>
+	<h3 class="subsubtitle method-title">popViewControllerWithTransition:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Adds a given key-value pair to the dictionary.</p>
+		<p>Pops the top view controller from the navigation stack with the specified transition and updates the display.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)setFloat_AG:(BOOL)<em>value</em> forKey:(id)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)popViewControllerWithTransition:(UIViewAnimationTransition)<em>transition</em></code></div>
 
     
 	
@@ -347,13 +333,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>value</em></dt>
-			<dd><p>The float you wish to add to the dictionary</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>key</em></dt>
-			<dd><p>The key for value. The key must not be nil.</p></dd>
+			<dt><em>transition</em></dt>
+			<dd><p>The transition to apply to the view controller during the pop animation.</p></dd>
 		</dl>
 		
 	</div>
@@ -367,39 +348,30 @@
 	
 	
 	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="../Categories/NSDictionary+AGCategory.html#//api/name/floatForKey_AG:">[NSDictionary(AGCategory) floatForKey_AG:]</a></p></code></li>
-			
-		</ul>
-	</div>
 	
 	
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSMutableDictionary+AGCategory.h</code><br />
+		<code class="declared-in-ref">UINavigationController+AGCategory.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/setInt_AG:forKey:" title="setInt_AG:forKey:"></a>
-	<h3 class="subsubtitle method-title">setInt_AG:forKey:</h3>
+	<a name="//api/name/pushViewController:withTransition:" title="pushViewController:withTransition:"></a>
+	<h3 class="subsubtitle method-title">pushViewController:withTransition:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Adds a given key-value pair to the dictionary.</p>
+		<p>Pushes a view controller onto the receiver’s stack with the specified transition and updates the display.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)setInt_AG:(BOOL)<em>value</em> forKey:(id)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)pushViewController:(UIViewController *)<em>viewController</em> withTransition:(UIViewAnimationTransition)<em>transition</em></code></div>
 
     
 	
@@ -407,13 +379,13 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>value</em></dt>
-			<dd><p>The int you wish to add to the dictionary</p></dd>
+			<dt><em>viewController</em></dt>
+			<dd><p>The view controller that is pushed onto the stack.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>key</em></dt>
-			<dd><p>The key for value. The key must not be nil.</p></dd>
+			<dt><em>transition</em></dt>
+			<dd><p>The transition to apply to the view controller during the push animation.</p></dd>
 		</dl>
 		
 	</div>
@@ -427,39 +399,30 @@
 	
 	
 	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="../Categories/NSDictionary+AGCategory.html#//api/name/intForKey_AG:">[NSDictionary(AGCategory) intForKey_AG:]</a></p></code></li>
-			
-		</ul>
-	</div>
 	
 	
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSMutableDictionary+AGCategory.h</code><br />
+		<code class="declared-in-ref">UINavigationController+AGCategory.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/setInteger_AG:forKey:" title="setInteger_AG:forKey:"></a>
-	<h3 class="subsubtitle method-title">setInteger_AG:forKey:</h3>
+	<a name="//api/name/pushViewController:withTransition:withDuration:" title="pushViewController:withTransition:withDuration:"></a>
+	<h3 class="subsubtitle method-title">pushViewController:withTransition:withDuration:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Adds a given key-value pair to the dictionary.</p>
+		<p>Pushes a view controller onto the receiver’s stack with the specified transition and updates the display.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)setInteger_AG:(BOOL)<em>value</em> forKey:(id)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)pushViewController:(UIViewController *)<em>viewController</em> withTransition:(UIViewAnimationTransition)<em>transition</em> withDuration:(NSTimeInterval)<em>duration</em></code></div>
 
     
 	
@@ -467,73 +430,18 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>value</em></dt>
-			<dd><p>The integer you wish to add to the dictionary</p></dd>
+			<dt><em>viewController</em></dt>
+			<dd><p>The view controller that is pushed onto the stack.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>key</em></dt>
-			<dd><p>The key for value. The key must not be nil.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="../Categories/NSDictionary+AGCategory.html#//api/name/integerForKey_AG:">[NSDictionary(AGCategory) integerForKey_AG:]</a></p></code></li>
-			
-		</ul>
-	</div>
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSMutableDictionary+AGCategory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/setObject_AG:forKey:" title="setObject_AG:forKey:"></a>
-	<h3 class="subsubtitle method-title">setObject_AG:forKey:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Safely adds a given key-value pair to the dictionary.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)setObject_AG:(id)<em>anObject</em> forKey:(id)<em>aKey</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>anObject</em></dt>
-			<dd><p>The value for key.</p></dd>
+			<dt><em>transition</em></dt>
+			<dd><p>The transition to apply to the view controller during the push animation.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>aKey</em></dt>
-			<dd><p>The key for value.</p></dd>
+			<dt><em>duration</em></dt>
+			<dd><p>The interval of time to be used as the duration of the animation.</p></dd>
 		</dl>
 		
 	</div>
@@ -552,7 +460,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSMutableDictionary+AGCategory.h</code><br />
+		<code class="declared-in-ref">UINavigationController+AGCategory.h</code><br />
 	</div>				
 	
 	
