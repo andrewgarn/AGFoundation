@@ -45,24 +45,48 @@ FIX_CATEGORY_BUG(NSNumber_AGCategory);
     return [numberFormatter stringFromNumber:self];
 }
 
-- (NSString *)formattedBytes_AG
+- (NSString *)humanReadableBytes_AG
+{
+    return [self humanReadableBytesWithDecimalPlaceAccuracy_AG:NSIntegerMax];
+}
+
+- (NSString *)humanReadableBytesWithDecimalPlaceAccuracy_AG:(NSUInteger)decimalPlaces
 {
     static dispatch_once_t onceToken;
+    static NSDecimalNumber *unitDecimalNumber;
 	static NSArray *unitArray;
     
 	dispatch_once(&onceToken, ^{
+        unitDecimalNumber = [[NSDecimalNumber alloc] initWithDouble:1024.0f];
 		unitArray = [NSArray arrayWithObjects:@"Bytes", @"KB", @"MB", @"GB", @"TB", @"PB", @"EB", @"ZB", @"YB", @"BB", nil];
 	});
     
-    unsigned long long bytes = [self unsignedLongLongValue];
+    NSDecimalNumber *decimalNumber = [[NSDecimalNumber alloc] initWithLongLong:[self longLongValue]];
 	NSUInteger unit = 0;
-
-    while(bytes >= 1024 && unit < [unitArray count]) {
-		bytes = bytes / 1024.0;
-		unit++;
-	}
     
-    return [NSString stringWithFormat:@"%lld %@", bytes, [unitArray objectAtIndex:unit]];
+    while (([decimalNumber compare:unitDecimalNumber] ==  NSOrderedDescending || [decimalNumber compare:unitDecimalNumber] ==  NSOrderedSame) && unit < [unitArray count]) {
+        decimalNumber = [decimalNumber decimalNumberByDividingBy:unitDecimalNumber];
+		unit++;
+    }
+    
+    NSUInteger scale = 0;
+    if (decimalPlaces == NSIntegerMax) {
+        if (unit < 2) {
+            scale = 0;
+        } else if (unit == 2) {
+            scale = 1;
+        } else {
+            scale = 2;
+        }
+    } else {
+        scale = decimalPlaces;
+    }
+    
+    NSDecimalNumberHandler *decimalNumberHandler = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundPlain scale:scale
+                                                                                               raiseOnExactness:NO raiseOnOverflow:NO
+                                                                                               raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+    decimalNumber = [decimalNumber decimalNumberByRoundingAccordingToBehavior:decimalNumberHandler];
+    return [NSString stringWithFormat:@"%@ %@", [decimalNumber stringValue], [unitArray objectAtIndex:unit]];
 }
 
 #pragma mark - Private

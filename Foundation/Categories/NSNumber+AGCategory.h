@@ -55,6 +55,12 @@
 /** Returns an `NSString` description of the byte value represented by the receiver.
  @return An `NSString` description of the byte value represented by the receiver.
 */
-- (NSString *)formattedBytes_AG;
+- (NSString *)humanReadableBytes_AG;
+
+/** Returns an `NSString` description of the byte value represented by the receiver.
+ @param decimalPlaces The decimal place accuracy of the byte description to be returned.
+ @return An `NSString` description of the byte value represented by the receiver.
+*/
+- (NSString *)humanReadableBytesWithDecimalPlaceAccuracy_AG:(NSUInteger)decimalPlaces;
 
 @end

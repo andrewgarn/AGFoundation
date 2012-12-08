@@ -116,9 +116,9 @@ FIX_CATEGORY_BUG(UIApplication_AGCategory);
     
     if (memoryUsageDifference > 1024 || memoryUsageDifference < -1024)
     {
-        NSString *currentMemoryUsageString = [[NSNumber numberWithLong:currentMemoryUsage] formattedBytes_AG];
-        NSString *memoryUsageDifferenceString = [[NSNumber numberWithLong:memoryUsageDifference] formattedBytes_AG];
-        NSString *freeMemoryString = [[UIDevice freeMemory_AG] formattedBytes_AG];
+        NSString *currentMemoryUsageString = [[NSNumber numberWithLong:currentMemoryUsage] humanReadableBytes_AG];
+        NSString *memoryUsageDifferenceString = [[NSNumber numberWithLong:memoryUsageDifference] humanReadableBytes_AG];
+        NSString *freeMemoryString = [[UIDevice freeMemory_AG] humanReadableBytes_AG];
         if (previousMemoryUsage == 0)
             NSLog(@"Memory used %@, free %@", currentMemoryUsageString, freeMemoryString);
         else

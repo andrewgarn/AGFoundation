@@ -13,15 +13,15 @@
 
 #pragma mark - Tests
 
-- (void)testFormattedBytes
+- (void)testHumanReadableBytes
 {
     NSNumber *bytes = [NSNumber numberWithUnsignedLongLong:1073741824];
-    NSString *formattedBytes = [bytes formattedBytes_AG];
-    STAssertTrue([formattedBytes isEqualToString:@"1 GB"], @"Formatted byte description incorrect");
+    NSString *humanReadableBytes = [bytes humanReadableBytes_AG];
+    STAssertTrue([humanReadableBytes isEqualToString:@"1 GB"], @"Byte description incorrect");
     
     bytes = [NSNumber numberWithUnsignedLongLong:1099511627776];
-    formattedBytes = [bytes formattedBytes_AG];
-    STAssertTrue([formattedBytes isEqualToString:@"1 TB"], @"Formatted byte description incorrect");
+    humanReadableBytes = [bytes humanReadableBytes_AG];
+    STAssertTrue([humanReadableBytes isEqualToString:@"1 TB"], @"Byte description incorrect");
 }
 
 @end

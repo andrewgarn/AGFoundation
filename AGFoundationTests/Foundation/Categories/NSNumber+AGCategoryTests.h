@@ -10,6 +10,6 @@
 
 @interface NSNumber_AGCategoryTests : SenTestCase
 
-- (void)testFormattedBytes;
+- (void)testHumanReadableBytes;
 
 @end
