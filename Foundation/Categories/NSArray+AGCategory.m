@@ -33,6 +33,8 @@ FIX_CATEGORY_BUG(NSArray_AGCategory);
 
 @implementation NSArray (AGCategory)
 
+#pragma mark -
+
 - (id)firstObject_AG
 {
     if ([self respondsToSelector:@selector(count)] && [self count] > 0)
@@ -49,6 +51,33 @@ FIX_CATEGORY_BUG(NSArray_AGCategory);
 	return nil;
 }
 
+#pragma mark -
+
+- (BOOL)containsObjectOfClass_AG:(Class)aClass
+{
+    __block BOOL classFound = NO;
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:aClass]) {
+            classFound = YES;
+            *stop = YES;
+        }
+    }];
+    return classFound;
+}
+
+- (NSArray *)subarrayWithObjectsOfClass:(Class)aClass
+{
+    NSMutableArray *subarray = [[NSMutableArray alloc] init];
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:aClass]) {
+            [subarray addObject:obj];
+        }
+    }];
+	return subarray;
+}
+
+#pragma mark -
+
 - (id)objectAtIndex_AG:(NSUInteger)index
 {
     if (index < [self count])
@@ -57,8 +86,6 @@ FIX_CATEGORY_BUG(NSArray_AGCategory);
     }
     return nil;
 }
-
-#pragma mark -
 
 - (BOOL)boolAtIndex_AG:(NSUInteger)index
 {

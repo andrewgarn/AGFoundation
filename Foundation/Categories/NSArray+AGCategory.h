@@ -45,6 +45,18 @@
 */
 - (id)randomObject_AG;
 
+/** Returns a Boolean value that indicates whether an object of the given class is present in the array.
+ @param aClass A class object.
+ @return `YES` if an object of the given class is present, otherwise `NO`.
+*/
+- (BOOL)containsObjectOfClass_AG:(Class)aClass;
+
+/** Returns a new array containing the receiving array’s elements which are the kind of the given class.
+ @param aClass A class object.
+ @return A subarray containing the receiving array’s elements which are the kind of the given class.
+*/
+- (NSArray *)subarrayWithObjectsOfClass:(Class)aClass;
+
 /** Returns the object located at index, or nil if the index is beyond the end of the array
  @param index An index within the bounds of the array.
  @return The object located at index, or nil.
