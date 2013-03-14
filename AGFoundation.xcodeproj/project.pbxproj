@@ -34,6 +34,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		4911B61916F26FA700806045 /* UITableViewCell+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 4911B61716F26FA700806045 /* UITableViewCell+AGCategory.h */; };
+		4911B61A16F26FA700806045 /* UITableViewCell+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4911B61816F26FA700806045 /* UITableViewCell+AGCategory.m */; };
+		4911B61D16F273F800806045 /* NSJSONSerialization+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 4911B61B16F273F800806045 /* NSJSONSerialization+AGCategory.h */; };
+		4911B61E16F273F800806045 /* NSJSONSerialization+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4911B61C16F273F800806045 /* NSJSONSerialization+AGCategory.m */; };
 		496B23B4165108F400C41783 /* UINavigationController+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 496B23B2165108F400C41783 /* UINavigationController+AGCategory.h */; };
 		496B23B5165108F400C41783 /* UINavigationController+AGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 496B23B3165108F400C41783 /* UINavigationController+AGCategory.m */; };
 		497B1A591619BB8700D7D273 /* LocationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 497B1A571619BB8700D7D273 /* LocationManager.h */; };
@@ -218,6 +222,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4911B61716F26FA700806045 /* UITableViewCell+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+AGCategory.h"; sourceTree = "<group>"; };
+		4911B61816F26FA700806045 /* UITableViewCell+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+AGCategory.m"; sourceTree = "<group>"; };
+		4911B61B16F273F800806045 /* NSJSONSerialization+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSJSONSerialization+AGCategory.h"; sourceTree = "<group>"; };
+		4911B61C16F273F800806045 /* NSJSONSerialization+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSJSONSerialization+AGCategory.m"; sourceTree = "<group>"; };
 		496B23B2165108F400C41783 /* UINavigationController+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+AGCategory.h"; sourceTree = "<group>"; };
 		496B23B3165108F400C41783 /* UINavigationController+AGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+AGCategory.m"; sourceTree = "<group>"; };
 		496C19A215C2F4D400A0ADF8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -635,6 +643,8 @@
 				784856711589DAB200013DD9 /* NSDictionary+AGCategory.m */,
 				784856721589DAB200013DD9 /* NSFileManager+AGCategory.h */,
 				784856731589DAB200013DD9 /* NSFileManager+AGCategory.m */,
+				4911B61B16F273F800806045 /* NSJSONSerialization+AGCategory.h */,
+				4911B61C16F273F800806045 /* NSJSONSerialization+AGCategory.m */,
 				784856741589DAB200013DD9 /* NSMutableArray+AGCategory.h */,
 				784856751589DAB200013DD9 /* NSMutableArray+AGCategory.m */,
 				784856761589DAB200013DD9 /* NSMutableDictionary+AGCategory.h */,
@@ -878,6 +888,8 @@
 				4997E37F164F30A7008C4088 /* UIWebView+AGCategory.m */,
 				496B23B2165108F400C41783 /* UINavigationController+AGCategory.h */,
 				496B23B3165108F400C41783 /* UINavigationController+AGCategory.m */,
+				4911B61716F26FA700806045 /* UITableViewCell+AGCategory.h */,
+				4911B61816F26FA700806045 /* UITableViewCell+AGCategory.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1033,6 +1045,8 @@
 				496B23B4165108F400C41783 /* UINavigationController+AGCategory.h in Headers */,
 				49AE17511673B20A00E5C4F2 /* AGStack.h in Headers */,
 				49AE17561673B22F00E5C4F2 /* AGQueue.h in Headers */,
+				4911B61916F26FA700806045 /* UITableViewCell+AGCategory.h in Headers */,
+				4911B61D16F273F800806045 /* NSJSONSerialization+AGCategory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1256,6 +1270,8 @@
 				496B23B5165108F400C41783 /* UINavigationController+AGCategory.m in Sources */,
 				49AE17521673B20A00E5C4F2 /* AGStack.m in Sources */,
 				49AE17571673B22F00E5C4F2 /* AGQueue.m in Sources */,
+				4911B61A16F26FA700806045 /* UITableViewCell+AGCategory.m in Sources */,
+				4911B61E16F273F800806045 /* NSJSONSerialization+AGCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
