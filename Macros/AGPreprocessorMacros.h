@@ -36,7 +36,7 @@
  * categories and no classes.
  * See http://developer.apple.com/library/mac/#qa/qa2006/qa1490.html for more info.
 */
-#define FIX_CATEGORY_BUG(name) @interface FIX_CATEGORY_BUG_##name @end \
+#define FIX_CATEGORY_BUG(name) @interface FIX_CATEGORY_BUG_##name : NSObject @end \
 @implementation FIX_CATEGORY_BUG_##name @end
 
 /** Macro to release an object and set the pointer to nil. */ 

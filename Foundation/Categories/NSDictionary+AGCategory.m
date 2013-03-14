@@ -38,7 +38,7 @@ FIX_CATEGORY_BUG(NSDictionary_AGCategory);
     id object = [self objectForKey:aKey];
     
     if ([object respondsToSelector:@selector(boolValue)])
-        return [object intValue];
+        return [object boolValue];
     
     return NO;
 }

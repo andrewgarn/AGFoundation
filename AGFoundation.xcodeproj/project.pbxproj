@@ -1406,7 +1406,7 @@
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = ADHOC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "armv7, armv7s, i386";
+				VALID_ARCHS = "armv7 armv7s i386";
 			};
 			name = Adhoc;
 		};
@@ -1507,7 +1507,7 @@
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "armv7, armv7s, i386";
+				VALID_ARCHS = "armv7 armv7s i386";
 			};
 			name = Debug;
 		};
@@ -1520,7 +1520,7 @@
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = RELEASE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "armv7, armv7s, i386";
+				VALID_ARCHS = "armv7 armv7s i386";
 			};
 			name = Release;
 		};
