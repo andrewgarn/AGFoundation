@@ -56,7 +56,11 @@
 	
 	<option value="//api/name/isNotPirated_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ isNotPirated_AG</option>
 	
+	<option value="//api/name/isNotRunningUnitTests_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ isNotRunningUnitTests_AG</option>
+	
 	<option value="//api/name/isPirated_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ isPirated_AG</option>
+	
+	<option value="//api/name/isRunningUnitTests_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ isRunningUnitTests_AG</option>
 	
 	<option value="//api/name/logApplicationDidBecomeActive_AG">&nbsp;&nbsp;&nbsp;&nbsp;+ logApplicationDidBecomeActive_AG</option>
 	
@@ -114,6 +118,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Detecting Piracy">Detecting Piracy</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Detecting Unit Testing">Detecting Unit Testing</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Console Logging">Console Logging</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Interface Orientation">Interface Orientation</a></span></li>
@@ -150,7 +156,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNotPirated_AG">isNotPirated_AG</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNotRunningUnitTests_AG">isNotRunningUnitTests_AG</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isPirated_AG">isPirated_AG</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isRunningUnitTests_AG">isRunningUnitTests_AG</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logApplicationDidBecomeActive_AG">logApplicationDidBecomeActive_AG</a></span></li>
 	
@@ -271,6 +281,28 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/isNotPirated_AG">+&nbsp;isNotPirated_AG</a></code>
 		<span class="tooltip"><p>Indicates whether the application has not been pirated.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Detecting Unit Testing" name="task_Detecting Unit Testing"></a>
+						<h3 class="subsubtitle task-title">Detecting Unit Testing</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isRunningUnitTests_AG">+&nbsp;isRunningUnitTests_AG</a></code>
+		<span class="tooltip"><p>Indicates whether the application is currently running unit tests.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isNotRunningUnitTests_AG">+&nbsp;isNotRunningUnitTests_AG</a></code>
+		<span class="tooltip"><p>Indicates whether the application is currently not running unit tests.</p></span>
 	</span>
 	
 	
@@ -772,6 +804,47 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/isNotRunningUnitTests_AG" title="isNotRunningUnitTests_AG"></a>
+	<h3 class="subsubtitle method-title">isNotRunningUnitTests_AG</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates whether the application is currently not running unit tests.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isNotRunningUnitTests_AG</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the application is currently not running unit tests, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/isPirated_AG" title="isPirated_AG"></a>
 	<h3 class="subsubtitle method-title">isPirated_AG</h3>
 	
@@ -792,6 +865,47 @@
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p><code>YES</code> if the application has been pirated, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIApplication+AGCategory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isRunningUnitTests_AG" title="isRunningUnitTests_AG"></a>
+	<h3 class="subsubtitle method-title">isRunningUnitTests_AG</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates whether the application is currently running unit tests.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isRunningUnitTests_AG</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the application is currently running unit tests, otherwise <code>NO</code>.</p>
 	</div>
 	
 	
@@ -1539,7 +1653,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Andrew Garn. All rights reserved. (Last updated: 2012-12-08)</span><br />
+						<p><span class="copyright">&copy; 2013 Andrew Garn. All rights reserved. (Last updated: 2013-03-14)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
