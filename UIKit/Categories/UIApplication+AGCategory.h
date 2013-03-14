@@ -61,6 +61,21 @@
 + (BOOL)isNotPirated_AG;
 
 /**-------------------------------------------------------------------------------------
+ @name Detecting Unit Testing
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Indicates whether the application is currently running unit tests.
+ @return `YES` if the application is currently running unit tests, otherwise `NO`.
+*/
++ (BOOL)isRunningUnitTests_AG;
+
+/** Indicates whether the application is currently not running unit tests.
+ @return `YES` if the application is currently not running unit tests, otherwise `NO`.
+*/
++ (BOOL)isNotRunningUnitTests_AG;
+
+/**-------------------------------------------------------------------------------------
  @name Console Logging
  ---------------------------------------------------------------------------------------
 */

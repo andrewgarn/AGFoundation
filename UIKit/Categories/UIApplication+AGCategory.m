@@ -97,6 +97,27 @@ FIX_CATEGORY_BUG(UIApplication_AGCategory);
     return ![UIApplication isPirated_AG];
 }
 
++ (BOOL)isRunningUnitTests_AG
+{
+    static dispatch_once_t token;
+	static BOOL isRunningUnitTests = NO;
+    
+	dispatch_once(&token, ^{
+        [[[NSProcessInfo processInfo] arguments] enumerateObjectsUsingBlock:^(NSString *arg, NSUInteger idx, BOOL *stop) {
+            if ([[arg lowercaseString] isEqualToString:@"-sentest"] || [arg hasSuffix:@".octests"]) {
+                isRunningUnitTests = YES;
+            }
+        }];
+	});
+    
+    return isRunningUnitTests;
+}
+
++ (BOOL)isNotRunningUnitTests_AG
+{
+    return ![UIApplication isRunningUnitTests_AG];
+}
+
 #pragma mark -
 
 + (NSNumber *)usedMemory_AG
