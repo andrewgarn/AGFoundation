@@ -39,8 +39,8 @@
 
 - (AGActionSheet *)init
 {
-    if ((self = [super init]))
-    {
+    self = [super init];
+    if (self) {
         _blockArray = [[NSMutableArray alloc] init];
     }
     return self;
@@ -50,10 +50,11 @@
 
 - (NSInteger)addButtonWithTitle:(NSString *)title block:(AGActionSheetBlock)block;
 {
-    if (block)
+    if (block) {
         [self.blockArray addObject:[block copy]];
-    else
+    } else {
         [self.blockArray addObject:[NSNull null]];
+    }
     
     return [self addButtonWithTitle:title];
 }
@@ -70,8 +71,9 @@
 {
     NSInteger buttonIndex = [self addButtonWithTitle:title block:nil];
     
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         [self setCancelButtonIndex:buttonIndex];
+    }
     
     return buttonIndex;
 }
@@ -117,8 +119,7 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex >= 0 && buttonIndex < [self.blockArray count])
-    {
+    if (buttonIndex >= 0 && buttonIndex < [self.blockArray count]) {
         AGActionSheetBlock block = [self.blockArray objectAtIndex:buttonIndex];
         if (![block isEqual:[NSNull null]]) block();
     }

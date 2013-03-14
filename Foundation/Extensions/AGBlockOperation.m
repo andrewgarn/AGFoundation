@@ -37,11 +37,13 @@
     AGBasicBlock operation = [block copy];
     AGBasicBlock completion = [completionBlock copy];
     
-    if (completion == nil)
+    if (completion == nil) {
         completion = ^{};
+    }
     
-    if (operation == nil)
+    if (operation == nil) {
         operation = ^{};
+    }
     
     if (waitUntilDone) {
         dispatch_sync(concurrentQueue, operation);

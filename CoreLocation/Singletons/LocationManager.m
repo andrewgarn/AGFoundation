@@ -42,8 +42,8 @@
 
 - (id)init 
 {
-    if ((self = [super init]))
-    {
+    self = [super init];
+    if (self) {
         _locationManager = [[CLLocationManager alloc] init];
         [_locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
         [_locationManager setDelegate:self];
@@ -82,8 +82,7 @@
 + (double)distanceTo:(CLLocation *)location
 {
     CLLocation *latestLocation = [[LocationManager sharedManager] latestLocation];
-    if (latestLocation)
-    {
+    if (latestLocation) {
         return [latestLocation distanceFromLocation:location];
     }
     return (double)NSIntegerMax;
@@ -92,8 +91,7 @@
 + (double)distanceTo:(double)latitude longitude:(double)longitude
 {
     CLLocation *latestLocation = [[LocationManager sharedManager] latestLocation];
-    if (latestLocation)
-    {
+    if (latestLocation) {
         CLLocation *location = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
         return [latestLocation distanceFromLocation:location];
     }

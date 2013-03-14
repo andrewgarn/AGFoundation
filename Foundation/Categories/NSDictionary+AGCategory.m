@@ -37,8 +37,9 @@ FIX_CATEGORY_BUG(NSDictionary_AGCategory);
 {
     id object = [self objectForKey:aKey];
     
-    if ([object respondsToSelector:@selector(boolValue)])
+    if ([object respondsToSelector:@selector(boolValue)]) {
         return [object boolValue];
+    }
     
     return NO;
 }
@@ -47,8 +48,9 @@ FIX_CATEGORY_BUG(NSDictionary_AGCategory);
 {
     id object = [self objectForKey:aKey];
     
-    if ([object respondsToSelector:@selector(intValue)])
+    if ([object respondsToSelector:@selector(intValue)]) {
         return [object intValue];
+    }
     
     return 0;
 }
@@ -57,8 +59,9 @@ FIX_CATEGORY_BUG(NSDictionary_AGCategory);
 {
     id object = [self objectForKey:aKey];
     
-    if ([object respondsToSelector:@selector(floatValue)])
+    if ([object respondsToSelector:@selector(floatValue)]) {
         return [object floatValue];
+    }
     
     return 0;
 }
@@ -67,8 +70,9 @@ FIX_CATEGORY_BUG(NSDictionary_AGCategory);
 {
     id object = [self objectForKey:aKey];
     
-    if ([object respondsToSelector:@selector(doubleValue)])
+    if ([object respondsToSelector:@selector(doubleValue)]) {
         return [object doubleValue];
+    }
     
     return 0;
 }
@@ -77,8 +81,20 @@ FIX_CATEGORY_BUG(NSDictionary_AGCategory);
 {
     id object = [self objectForKey:aKey];
     
-    if ([object respondsToSelector:@selector(integerValue)])
+    if ([object respondsToSelector:@selector(integerValue)]) {
         return [object integerValue];
+    }
+    
+    return 0;
+}
+
+- (NSUInteger)unsignedIntegerForKey_AG:(id)aKey
+{
+    id object = [self objectForKey:aKey];
+    
+    if ([object respondsToSelector:@selector(unsignedIntegerValue)]) {
+        return [object unsignedIntegerValue];
+    }
     
     return 0;
 }
@@ -89,8 +105,9 @@ FIX_CATEGORY_BUG(NSDictionary_AGCategory);
 {
     id object = [self objectForKey:aKey];
     
-    if ([object isKindOfClass:[NSDate class]])
+    if ([object isKindOfClass:[NSDate class]]) {
         return object;
+    }
     
     return nil;
 }
@@ -99,11 +116,13 @@ FIX_CATEGORY_BUG(NSDictionary_AGCategory);
 {
     id object = [self objectForKey:aKey];
     
-    if ([object isKindOfClass:[NSString class]])
+    if ([object isKindOfClass:[NSString class]]) {
         return object;
+    }
     
-    if ([object respondsToSelector:@selector(stringValue)])
+    if ([object respondsToSelector:@selector(stringValue)]) {
         return [object stringValue];
+    }
     
     return nil;
 }
@@ -112,11 +131,13 @@ FIX_CATEGORY_BUG(NSDictionary_AGCategory);
 {
     id object = [self objectForKey:aKey];
     
-    if ([object isKindOfClass:[NSNumber class]])
+    if ([object isKindOfClass:[NSNumber class]]) {
         return object;
+    }
     
-    if ([object respondsToSelector:@selector(doubleValue)])
+    if ([object respondsToSelector:@selector(doubleValue)]) {
         return [NSNumber numberWithDouble:[object doubleValue]];
+    }
     
     return nil;
 }
@@ -125,8 +146,9 @@ FIX_CATEGORY_BUG(NSDictionary_AGCategory);
 {
     id object = [self objectForKey:aKey];
     
-    if ([object isKindOfClass:[NSArray class]])
+    if ([object isKindOfClass:[NSArray class]]) {
         return object;
+    }
     
     return nil;
 }
@@ -135,8 +157,9 @@ FIX_CATEGORY_BUG(NSDictionary_AGCategory);
 {
     id object = [self objectForKey:aKey];
     
-    if ([object isKindOfClass:[NSDictionary class]])
+    if ([object isKindOfClass:[NSDictionary class]]) {
         return object;
+    }
     
     return nil;
 }

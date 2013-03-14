@@ -36,8 +36,7 @@ FIX_CATEGORY_BUG(UIStoryboardSegue_AGCategory);
 - (UIViewController *)destinationViewController_AG
 {
     id destinationViewController = self.destinationViewController;
-    if ([destinationViewController isKindOfClass:[UINavigationController class]])
-    {
+    if ([destinationViewController isKindOfClass:[UINavigationController class]]) {
         UINavigationController *navigationController = destinationViewController;
         return navigationController.topViewController;
     }

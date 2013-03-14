@@ -144,8 +144,7 @@ FIX_CATEGORY_BUG(UIView_AGCategory);
 {
 	CGRect bounds = [self bounds];
     
-	if (UIInterfaceOrientationIsLandscape(orientation)) 
-    {
+	if (UIInterfaceOrientationIsLandscape(orientation)) {
 		CGFloat buffer = bounds.size.width;
 		bounds.size.width = bounds.size.height;
 		bounds.size.height = buffer;

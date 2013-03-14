@@ -85,13 +85,13 @@
 + (BOOL)openGoogleChromeWithURL:(NSURL *)url
 {
     NSString *chromeScheme = nil;
-    if ([url.scheme isEqualToString:@"http"])
+    if ([url.scheme isEqualToString:@"http"]) {
         chromeScheme = AGFoundationApplicationSchemeGoogleChrome;
-    else if ([url.scheme isEqualToString:@"https"])
+    } else if ([url.scheme isEqualToString:@"https"]) {
         chromeScheme = AGFoundationApplicationSchemeGoogleChromes;
+    }
     
-    if (chromeScheme)
-    {
+    if (chromeScheme) {
         NSRange rangeForScheme = [[url absoluteString] rangeOfString:@":"];
         NSString *urlNoScheme =  [[url absoluteString] substringFromIndex:rangeForScheme.location + 1];
         NSString *chromeUrlString = [chromeScheme stringByAppendingString:urlNoScheme];
@@ -112,8 +112,7 @@
 + (BOOL)openTomTom
 {
     BOOL didOpen = [[UIApplication sharedApplication] openURL:[NSURL URLWithString:AGFoundationApplicationSchemeTomTom]];
-    if (!didOpen)
-    {
+    if (!didOpen) {
         NSString *stringURL = [NSString stringWithFormat:@"http://phobos.apple.com/WebObjects/MZSearch.woa/wa/search?WOURLEncoding=ISO8859_1&lang=1&output=lm&country=US&term=%@&media=software", [@"Tom Tom" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         didOpen = [[UIApplication sharedApplication] openURL:[NSURL URLWithString:stringURL]];
     }
@@ -128,12 +127,12 @@
 + (BOOL)openTweetbot
 {
     BOOL didOpen = [[UIApplication sharedApplication] openURL:[NSURL URLWithString:AGFoundationApplicationSchemeTweetbot]];
-    if (!didOpen)
-    {
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    if (!didOpen) {
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             didOpen = [self openAppStoreWithAppId:AGFoundationApplicationIdTweetbotPad];
-        else
+        } else {
             didOpen = [self openAppStoreWithAppId:AGFoundationApplicationIdTweetbotPhone];
+        }
     }
     return didOpen;
 }

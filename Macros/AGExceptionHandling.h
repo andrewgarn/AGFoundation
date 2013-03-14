@@ -48,21 +48,17 @@ void uncaughtExceptionHandler_AG(NSException *exception)
 #endif
 #endif
     
-    @try 
-    {
+    @try {
         NSMutableString *backtrace = [NSMutableString stringWithUTF8String:""];
         NSArray *backtraceArray = [exception callStackSymbols];
 
-        for (id entry in backtraceArray) 
-        {
+        for (id entry in backtraceArray) {
             NSRange testRange = [entry rangeOfString:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"]];
-            if (testRange.length)
-            {
+            if (testRange.length) {
                 NSRange startRange = [entry rangeOfString:@"["];
                 NSRange endRange = [entry rangeOfString:@"]"];
                 NSRange finalRange = NSMakeRange((startRange.location), ((endRange.location-startRange.location)+1));
-                if (finalRange.location != NSNotFound)
-                {
+                if (finalRange.location != NSNotFound) {
                     NSString *stringToAppend = [NSString stringWithFormat:@" %@", [entry substringWithRange:finalRange]];
                     [backtrace appendString:stringToAppend];
                 }
@@ -75,8 +71,7 @@ void uncaughtExceptionHandler_AG(NSException *exception)
         NSString *message = [NSString stringWithFormat:@"Device: %@. OS: %@. Backtrace:%@", deviceModel, systemVersion, backtrace];
         [FlurryAnalytics logError:errorName message:message exception:exception];
     }
-    @catch (NSException *newException) 
-    {
+    @catch (NSException *newException) {
         NSString *deviceModel = [UIDevice deviceModel_AG];
         NSString *systemVersion = [UIDevice systemVersion_AG];
         NSString *message = [NSString stringWithFormat:@"Device: %@. OS: %@. [Backtrace Failed]", deviceModel, systemVersion];

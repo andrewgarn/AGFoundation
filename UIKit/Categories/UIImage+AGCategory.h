@@ -32,6 +32,26 @@
 @interface UIImage (AGCategory)
 
 /**-------------------------------------------------------------------------------------
+ @name Attributes
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Returns the pixel width of the image.
+ @return The pixel width of the image.
+*/
+- (CGFloat)pixelWidth_AG;
+
+/** Returns the pixel height of the image.
+ @return The pixel height of the image.
+*/
+- (CGFloat)pixelHeight_AG;
+
+/** Returns the pixel size of the image.
+ @return The pixel size of the image.
+*/
+- (CGSize)pixelSize_AG;
+
+/**-------------------------------------------------------------------------------------
  @name Scaling
  ---------------------------------------------------------------------------------------
 */

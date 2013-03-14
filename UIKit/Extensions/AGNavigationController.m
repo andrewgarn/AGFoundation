@@ -33,8 +33,9 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    if (self.topViewController)
+    if (self.topViewController) {
         return [self.topViewController shouldAutorotateToInterfaceOrientation:interfaceOrientation];
+    }
     
     return [super shouldAutorotateToInterfaceOrientation:interfaceOrientation];
 }
@@ -43,26 +44,29 @@
 
 - (BOOL)shouldAutorotate
 {
-    if (self.topViewController != nil)
+    if (self.topViewController != nil) {
         return [self.topViewController shouldAutorotate];
-
+    }
+    
     return [super shouldAutorotate];
 }
 
 - (NSUInteger)supportedInterfaceOrientations
 {
-    if (self.topViewController != nil)
+    if (self.topViewController != nil) {
         return [self.topViewController supportedInterfaceOrientations];
+    }
     
     return [super supportedInterfaceOrientations];
 }
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
 {
-    if (self.topViewController != nil)
+    if (self.topViewController != nil) {
         return [self.topViewController preferredInterfaceOrientationForPresentation];
-        
-        return [super preferredInterfaceOrientationForPresentation];
+    }
+    
+    return [super preferredInterfaceOrientationForPresentation];
 }
 
 @end

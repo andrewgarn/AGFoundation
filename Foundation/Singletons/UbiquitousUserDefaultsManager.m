@@ -42,19 +42,13 @@ NSString * const AGUserDefaultsDidChangeExternallyNotification = @"AGUserDefault
 {
     NSAssert(_ubiquitousKeys != nil, @"Missing ubiquitousKeys");
     
-    if(NSClassFromString(@"NSUbiquitousKeyValueStore"))
-    {
-        if([NSUbiquitousKeyValueStore defaultStore])
-        {
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(keyValueStoreDidChangeExternally:)
-                                                         name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification
-                                                       object:nil];
+    if(NSClassFromString(@"NSUbiquitousKeyValueStore")) {
+        if([NSUbiquitousKeyValueStore defaultStore]) {
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyValueStoreDidChangeExternally:)
+                                                         name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification object:nil];
             
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(userDefaultsDidChange:)
-                                                         name:NSUserDefaultsDidChangeNotification
-                                                       object:nil];
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDefaultsDidChange:)
+                                                         name:NSUserDefaultsDidChangeNotification object:nil];
             return YES;
         }
     }
@@ -73,10 +67,10 @@ NSString * const AGUserDefaultsDidChangeExternallyNotification = @"AGUserDefault
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NSUserDefaultsDidChangeNotification object:nil];
     
     // Update the local NSUserDefaults using the iCloud data.
-    [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
-    {
-        if ([_ubiquitousKeys containsObject:key])
+    [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if ([_ubiquitousKeys containsObject:key]) {
             [[NSUserDefaults standardUserDefaults] setObject:obj forKey:key];
+        }
     }];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
@@ -94,14 +88,13 @@ NSString * const AGUserDefaultsDidChangeExternallyNotification = @"AGUserDefault
 
 - (void)userDefaultsDidChange:(NSNotification *)notification
 {
-    if([NSUbiquitousKeyValueStore defaultStore])
-    {
+    if([NSUbiquitousKeyValueStore defaultStore]) {
         // Update the iCloud key value store using NSUserDefault data
         NSDictionary *dictionary = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
-        [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
-        {
-            if ([_ubiquitousKeys containsObject:key])
+        [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            if ([_ubiquitousKeys containsObject:key]) {
                 [[NSUbiquitousKeyValueStore defaultStore] setObject:obj forKey:key];
+            }
         }];
         [[NSUbiquitousKeyValueStore defaultStore] synchronize];
     }

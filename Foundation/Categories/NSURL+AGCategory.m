@@ -48,12 +48,14 @@ FIX_CATEGORY_BUG(NSURL_AGCategory);
 
 - (BOOL)isEqualToURL_AG:(NSURL *)otherURL 
 {
-    if ([[self absoluteURL] isEqual:[otherURL absoluteURL]])
+    if ([[self absoluteURL] isEqual:[otherURL absoluteURL]]) {
         return YES;
+    }
     
-    if ([self isFileURL] && [otherURL isFileURL] && [[self path] isEqual:[otherURL path]])
+    if ([self isFileURL] && [otherURL isFileURL] && [[self path] isEqual:[otherURL path]]) {
         return YES;
-        
+    }
+    
     return NO;
 }
 
@@ -61,25 +63,26 @@ FIX_CATEGORY_BUG(NSURL_AGCategory);
 {
     NSString *systemVersion = [[UIDevice currentDevice] systemVersion];   
     
-    if ([systemVersion floatValue] < 5.0 || [systemVersion isEqualToString:@"5.0.0"])
+    if ([systemVersion floatValue] < 5.0 || [systemVersion isEqualToString:@"5.0.0"]) {
         return YES; // "do not backup" is not yet supported or required
+    }
     
-    if ([systemVersion isEqualToString:@"5.0.1"])
-    {
+    if ([systemVersion isEqualToString:@"5.0.1"]) {
         const char *filePath = [[self path] fileSystemRepresentation];
         const char *attrName = "com.apple.MobileBackup";
         u_int8_t attrValue = 1;
         
         int result = setxattr(filePath, attrName, &attrValue, sizeof(attrValue), 0, 0);
         return result == 0;
-    }
-    else 
-    {
+        
+    } else {
+        
         NSError *error = nil;
         BOOL success = [self setResourceValue:[NSNumber numberWithBool:YES]
                                       forKey:NSURLIsExcludedFromBackupKey error:&error];
-        if(!success)
+        if(!success) {
             NSLog(@"Error excluding %@ from backup %@", [self lastPathComponent], error);
+        }
         
         return success;
     }

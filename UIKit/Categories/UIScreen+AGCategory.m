@@ -45,18 +45,17 @@ FIX_CATEGORY_BUG(UIScreen_AGCategory);
     // On iOS 4 and later, use UIGraphicsBeginImageContextWithOptions to take the scale into consideration
     // On iOS prior to 4, fall back to use UIGraphicsBeginImageContext
     CGSize imageSize = [[UIScreen mainScreen] bounds].size;
-    if (NULL != UIGraphicsBeginImageContextWithOptions)
+    if (NULL != UIGraphicsBeginImageContextWithOptions) {
         UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
-    else
+    } else {
         UIGraphicsBeginImageContext(imageSize);
+    }
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     // Iterate over every window from back to front
-    for (UIWindow *window in [[UIApplication sharedApplication] windows]) 
-    {
-        if (![window respondsToSelector:@selector(screen)] || [window screen] == [UIScreen mainScreen])
-        {
+    for (UIWindow *window in [[UIApplication sharedApplication] windows]) {
+        if (![window respondsToSelector:@selector(screen)] || [window screen] == [UIScreen mainScreen]) {
             // -renderInContext: renders in the coordinate space of the layer,
             // so we must first apply the layer's geometry to the graphics context
             CGContextSaveGState(context);
@@ -135,8 +134,7 @@ FIX_CATEGORY_BUG(UIScreen_AGCategory);
 {
 	CGRect bounds = [self bounds];
     
-	if (UIInterfaceOrientationIsLandscape(orientation)) 
-    {
+	if (UIInterfaceOrientationIsLandscape(orientation)) {
 		CGFloat buffer = bounds.size.width;
 		bounds.size.width = bounds.size.height;
 		bounds.size.height = buffer;

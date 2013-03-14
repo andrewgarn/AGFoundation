@@ -94,10 +94,8 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
         else if ([platform isEqualToString:@"iPad3,6"])      deviceModel = @"iPad 4 Wi-Fi + 4G (GSM+CDMA)";
         
         /* Simulator */
-        else if ([UIDevice isASimulator_AG])
-        {
-            if ([[UIScreen mainScreen] bounds].size.width < 768)
-            {
+        else if ([UIDevice isASimulator_AG]) {
+            if ([[UIScreen mainScreen] bounds].size.width < 768) {
                 if ([UIDevice hasRetinaDisplay_AG]) {
                     if ([[UIScreen mainScreen] bounds].size.height == 568) {
                         deviceModel = @"iPhone Simulator (Retina 4-inch)";
@@ -109,9 +107,7 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
                 } else {
                     deviceModel = @"iPhone Simulator";
                 }
-            }
-            else
-            {
+            } else {
                 if ([UIDevice hasRetinaDisplay_AG]) {
                     deviceModel = @"iPad Simulator (Retina)";
                 } else {
@@ -213,14 +209,15 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
     Class telephonyNetworkInfoClass = NSClassFromString(@"CTTelephonyNetworkInfo");
     Class carrierClass = NSClassFromString(@"CTCarrier");
     
-    if (!telephonyNetworkInfoClass)
+    if (!telephonyNetworkInfoClass) {
         NSLog(@"[UIDevice deviceCarrier] - You must #import <CoreTelephony/CTTelephonyNetworkInfo.h>!");
+    }
     
-    if (!carrierClass)
+    if (!carrierClass) {
         NSLog(@"[UIDevice deviceCarrier] - You must #import <CoreTelephony/CTCarrier.h>!");
+    }
     
-    if (telephonyNetworkInfoClass && carrierClass)
-    {
+    if (telephonyNetworkInfoClass && carrierClass) {
         id networkInfo = [[telephonyNetworkInfoClass alloc] init];
         id cellularProvider = [networkInfo performSelector:@selector(subscriberCellularProvider)];
         carrierName = [cellularProvider performSelector:@selector(carrierName)];
@@ -262,8 +259,9 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
     
 	dispatch_once(&token, ^{
         NSRange textRange = [[self platform_AG] rangeOfString:@"iPhone"];
-        if(textRange.location != NSNotFound)
+        if(textRange.location != NSNotFound) {
             isAniPhone = YES;
+        }
     });
 	return isAniPhone;
 }
@@ -275,8 +273,9 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
     
 	dispatch_once(&token, ^{
         NSRange textRange = [[self platform_AG] rangeOfString:@"iPod"];
-        if(textRange.location != NSNotFound)
+        if(textRange.location != NSNotFound) {
             isAniPodTouch = YES;
+        }
     });
 	return isAniPodTouch;
 }
@@ -288,8 +287,9 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
     
 	dispatch_once(&token, ^{
         NSRange textRange = [[self deviceModelGeneric_AG] rangeOfString:@"iPad mini"];
-        if(textRange.location != NSNotFound)
+        if(textRange.location != NSNotFound) {
             isAniPadMini = YES;
+        }
     });
 	return isAniPadMini;
 }
@@ -301,8 +301,9 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
     
 	dispatch_once(&token, ^{
         NSRange textRange = [[self platform_AG] rangeOfString:@"iPad"];
-        if(textRange.location != NSNotFound)
+        if(textRange.location != NSNotFound) {
             isAniPad = YES;
+        }
     });
 	return isAniPad;
 }
@@ -315,8 +316,9 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
 	dispatch_once(&token, ^{
         NSRange textRange = [[self platform_AG] rangeOfString:@"i386"];
         NSRange textRange2 = [[self platform_AG] rangeOfString:@"x86_64"];
-        if (textRange.location != NSNotFound || textRange2.location != NSNotFound)
+        if (textRange.location != NSNotFound || textRange2.location != NSNotFound) {
             isASimulator = YES;
+        }
     });
     return isASimulator;
 }
@@ -329,9 +331,11 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
 	static BOOL hasRetinaDisplay = NO;
     
 	dispatch_once(&token, ^{
-        if ([UIScreen instancesRespondToSelector:@selector(scale)])
-            if ([[UIScreen mainScreen] scale] == 2.0)
+        if ([UIScreen instancesRespondToSelector:@selector(scale)]) {
+            if ([[UIScreen mainScreen] scale] == 2.0) {
                 hasRetinaDisplay = YES;
+            }
+        }
     });
     return hasRetinaDisplay;
 }
@@ -422,8 +426,9 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
     
 	dispatch_once(&token, ^{
         NSArray *mediaType = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
-        if ([mediaType containsObject:(NSString *)kUTTypeMovie])
+        if ([mediaType containsObject:(NSString *)kUTTypeMovie]) {
             canRecordVideo = YES;
+        }
 	});
     return canRecordVideo;
 }
@@ -488,8 +493,9 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
 	static BOOL userInterfaceIdiomIsPhone = NO;
     
 	dispatch_once(&token, ^{
-        if ([UIDevice userInterfaceIdiom_AG] == UIUserInterfaceIdiomPhone)
+        if ([UIDevice userInterfaceIdiom_AG] == UIUserInterfaceIdiomPhone) {
             userInterfaceIdiomIsPhone = YES;
+        }
 	});
     return userInterfaceIdiomIsPhone;
 }
@@ -500,8 +506,9 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
 	static BOOL userInterfaceIdiomIsPad = NO;
     
 	dispatch_once(&token, ^{
-        if ([UIDevice userInterfaceIdiom_AG] == UIUserInterfaceIdiomPad)
+        if ([UIDevice userInterfaceIdiom_AG] == UIUserInterfaceIdiomPad) {
             userInterfaceIdiomIsPad = YES;
+        }
 	});
     return userInterfaceIdiomIsPad;
 }
@@ -586,10 +593,11 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
         NSString *cydiaPath = @"/Applications/Cydia.app";
         NSString *aptPath = @"/private/var/lib/apt/";
         
-        if ([[NSFileManager defaultManager] fileExistsAtPath:cydiaPath])
+        if ([[NSFileManager defaultManager] fileExistsAtPath:cydiaPath]) {
             isJailbroken = YES;
-        else if ([[NSFileManager defaultManager] fileExistsAtPath:aptPath])
+        } else if ([[NSFileManager defaultManager] fileExistsAtPath:aptPath]) {
             isJailbroken = YES;
+        }
     });
     return isJailbroken;
 }
@@ -600,12 +608,11 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
 	static NSString *jailbrokenState;
     
 	dispatch_once(&token, ^{
-        
-        if ([UIDevice isJailbroken_AG])
+        if ([UIDevice isJailbroken_AG]) {
             jailbrokenState = @"Jailbroken";
-        else
+        } else {
             jailbrokenState = @"Not Jailbroken";
-        
+        }
     });
     return jailbrokenState;
 }
@@ -686,26 +693,22 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
     mib[3] = AF_LINK;
     mib[4] = NET_RT_IFLIST;
     
-    if ((mib[5] = if_nametoindex("en0")) == 0) 
-    {
+    if ((mib[5] = if_nametoindex("en0")) == 0) {
         printf("Error: if_nametoindex error\n");
         return NULL;
     }
     
-    if (sysctl(mib, 6, NULL, &len, NULL, 0) < 0) 
-    {
+    if (sysctl(mib, 6, NULL, &len, NULL, 0) < 0) {
         printf("Error: sysctl, take 1\n");
         return NULL;
     }
     
-    if ((buf = malloc(len)) == NULL) 
-    {
+    if ((buf = malloc(len)) == NULL) {
         printf("Could not allocate memory. error!\n");
         return NULL;
     }
     
-    if (sysctl(mib, 6, buf, &len, NULL, 0) < 0) 
-    {
+    if (sysctl(mib, 6, buf, &len, NULL, 0) < 0) {
         printf("Error: sysctl, take 2");
         free(buf);
         return NULL;

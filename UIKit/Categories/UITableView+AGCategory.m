@@ -35,6 +35,30 @@ FIX_CATEGORY_BUG(UITableView_AGCategory);
 
 #pragma mark -
 
+- (NSIndexPath *)indexPathForLastCell_AG
+{
+    NSInteger numberOfSections = [self numberOfSections];
+    if (numberOfSections <= 0) {
+        return nil;
+    }
+    
+	NSInteger section = numberOfSections - 1;    
+	return [self indexPathForLastCellInSection_AG:section];
+}
+
+- (NSIndexPath *)indexPathForLastCellInSection_AG:(NSInteger)section
+{
+    NSInteger numberOfRowsInSection = [self numberOfRowsInSection:section];
+    if (numberOfRowsInSection <= 0) {
+        return nil;
+    }
+    
+	NSInteger row = numberOfRowsInSection - 1;
+	return [NSIndexPath indexPathForRow:row inSection:section];
+}
+
+#pragma mark -
+
 - (void)scrollToFirstRow_AG
 {
     [self scrollToFirstRowAnimated_AG:YES];
@@ -42,8 +66,7 @@ FIX_CATEGORY_BUG(UITableView_AGCategory);
 
 - (void)scrollToFirstRowAnimated_AG:(BOOL)animated
 {
-    if ([self numberOfSections] > 0 && [self numberOfRowsInSection:0] > 0)
-    {
+    if ([self numberOfSections] > 0 && [self numberOfRowsInSection:0] > 0) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [self scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:animated];
     } 
@@ -56,13 +79,11 @@ FIX_CATEGORY_BUG(UITableView_AGCategory);
 
 - (void)scrollToLastRowAnimated_AG:(BOOL)animated
 {
-    if ([self numberOfSections] > 0)
-    {
+    if ([self numberOfSections] > 0) {
         NSInteger section = [self numberOfSections] - 1;
         NSInteger rowCount = [self numberOfRowsInSection:section];
         
-        if (rowCount > 0)
-        {
+        if (rowCount > 0) {
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(rowCount - 1) inSection:section];
             [self scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:animated];
         }
@@ -83,10 +104,8 @@ FIX_CATEGORY_BUG(UITableView_AGCategory);
 
 - (BOOL)scrollToRow_AG:(NSInteger)row inSection:(NSInteger)section atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated
 {
-    if ([self numberOfSections] > section)
-    {
-        if ([self numberOfRowsInSection:section] > row)
-        {
+    if ([self numberOfSections] > section) {
+        if ([self numberOfRowsInSection:section] > row) {
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
             [self scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:animated];
             return YES;

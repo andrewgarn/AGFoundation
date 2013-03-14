@@ -37,16 +37,18 @@ FIX_CATEGORY_BUG(NSArray_AGCategory);
 
 - (id)firstObject_AG
 {
-    if ([self respondsToSelector:@selector(count)] && [self count] > 0)
+    if ([self respondsToSelector:@selector(count)] && [self count] > 0) {
         return [self objectAtIndex:0];
+    }
 
     return nil;
 }
 
 - (id)randomObject_AG
 {
-    if ([self respondsToSelector:@selector(count)] && [self count] > 0)
+    if ([self respondsToSelector:@selector(count)] && [self count] > 0) {
         return [self objectAtIndex:arc4random() % [self count]];
+    }
 
 	return nil;
 }
@@ -80,8 +82,7 @@ FIX_CATEGORY_BUG(NSArray_AGCategory);
 
 - (id)objectAtIndex_AG:(NSUInteger)index
 {
-    if (index < [self count])
-    {
+    if (index < [self count]) {
         return [self objectAtIndex:index];
     }
     return nil;
@@ -89,60 +90,60 @@ FIX_CATEGORY_BUG(NSArray_AGCategory);
 
 - (BOOL)boolAtIndex_AG:(NSUInteger)index
 {
-    if (index < [self count])
-    {
+    if (index < [self count]) {
         id object = [self objectAtIndex:index];
         
-        if ([object respondsToSelector:@selector(boolValue)])
-            return [object boolValue];        
+        if ([object respondsToSelector:@selector(boolValue)]) {
+            return [object boolValue];
+        }
     }
     return NO;
 }
 
 - (int)intAtIndex_AG:(NSUInteger)index
 {
-    if (index < [self count])
-    {
+    if (index < [self count]) {
         id object = [self objectAtIndex:index];
         
-        if ([object respondsToSelector:@selector(intValue)])
+        if ([object respondsToSelector:@selector(intValue)]) {
             return [object intValue];
+        }
     }
     return 0;
 }
 
 - (NSInteger)integerAtIndex_AG:(NSUInteger)index
 {
-    if (index < [self count])
-    {
+    if (index < [self count]) {
         id object = [self objectAtIndex:index];
         
-        if ([object respondsToSelector:@selector(integerValue)])
+        if ([object respondsToSelector:@selector(integerValue)]) {
             return [object integerValue];
+        }
     }
     return 0;
 }
 
 - (float)floatAtIndex_AG:(NSUInteger)index
 {
-    if (index < [self count])
-    {
+    if (index < [self count]) {
         id object = [self objectAtIndex:index];
         
-        if ([object respondsToSelector:@selector(floatValue)])
+        if ([object respondsToSelector:@selector(floatValue)]) {
             return [object floatValue];
+        }
     }
     return 0.0f;
 }
 
 - (double)doubleAtIndex_AG:(NSUInteger)index
 {
-    if (index < [self count])
-    {
+    if (index < [self count]) {
         id object = [self objectAtIndex:index];
         
-        if ([object respondsToSelector:@selector(doubleValue)])
+        if ([object respondsToSelector:@selector(doubleValue)]) {
             return [object doubleValue];
+        }
     }
     return 0.0f;
 }
@@ -161,8 +162,7 @@ FIX_CATEGORY_BUG(NSArray_AGCategory);
 {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
     NSEnumerator *enumerator = [self reverseObjectEnumerator];
-    for (id element in enumerator) 
-    {
+    for (id element in enumerator) {
         [array addObject:element];
     }
     return array;
@@ -172,8 +172,7 @@ FIX_CATEGORY_BUG(NSArray_AGCategory);
 {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
     NSMutableArray *mutableCopy = [self mutableCopy];
-    while ([self count] > 0)
-    {
+    while ([self count] > 0) {
         NSUInteger index = arc4random() % [mutableCopy count];
         id objectToMove = [mutableCopy objectAtIndex:index];
         

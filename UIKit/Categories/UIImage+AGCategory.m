@@ -33,6 +33,28 @@ FIX_CATEGORY_BUG(UIImage_AGCategory);
 
 @implementation UIImage (AGCategory)
 
+#pragma mark -
+
+- (CGFloat)pixelWidth_AG
+{
+    return [self pixelSize_AG].width;
+}
+
+- (CGFloat)pixelHeight_AG
+{
+    return [self pixelSize_AG].height;
+}
+
+- (CGSize)pixelSize_AG
+{
+    CGSize pixelSize = CGSizeZero;
+    pixelSize.width = self.size.width * self.scale;
+    pixelSize.height = self.size.height * self.scale;
+    return pixelSize;
+}
+
+#pragma mark -
+
 - (UIImage *)scaledToSize_AG:(CGSize)newSize
 {
     UIGraphicsBeginImageContextWithOptions(newSize, 1.0f, 0.0f);
@@ -57,8 +79,7 @@ FIX_CATEGORY_BUG(UIImage_AGCategory);
     CGFloat scaleFactor, scaledWidth = newSize.width, scaledHeight = newSize.height;
     CGPoint thumbnailPoint = CGPointMake(0.0, 0.0);
     
-    if (CGSizeEqualToSize(self.size, newSize) == NO) 
-    {
+    if (CGSizeEqualToSize(self.size, newSize) == NO) {
         CGFloat widthFactor = newSize.width / self.size.width;
         CGFloat heightFactor = newSize.height / self.size.height;
         
@@ -71,12 +92,14 @@ FIX_CATEGORY_BUG(UIImage_AGCategory);
         scaledHeight = self.size.height * scaleFactor;
         
         // center the image
-        if (widthFactor > heightFactor)
+        if (widthFactor > heightFactor) {
             thumbnailPoint.y = (newSize.height - scaledHeight) * 0.5; 
-        else 
-            if (widthFactor < heightFactor)
+        } else {
+            if (widthFactor < heightFactor) {
                 thumbnailPoint.x = (newSize.width - scaledWidth) * 0.5;
-    }       
+            }
+        }
+    }
     
     UIGraphicsBeginImageContextWithOptions(newSize, YES, scale);
     [self drawInRect:CGRectMake(thumbnailPoint.x, thumbnailPoint.y, scaledWidth, scaledHeight)];

@@ -199,8 +199,9 @@ FIX_CATEGORY_BUG(NSUserDefaults_AGCategory);
 - (NSRange)rangeForKey_AG:(NSString *)defaultName
 {
     NSString *string = [self objectForKey:defaultName];
-    if ([string isKindOfClass:[NSString class]])
+    if ([string isKindOfClass:[NSString class]]) {
         return NSRangeFromString(string);
+    }
     
     return NSMakeRange(0, 0);
 }
@@ -226,9 +227,9 @@ FIX_CATEGORY_BUG(NSUserDefaults_AGCategory);
 - (CGPoint)pointForKey_AG:(NSString *)defaultName
 {
     NSString *string = [self objectForKey:defaultName];
-    if ([string isKindOfClass:[NSString class]])
+    if ([string isKindOfClass:[NSString class]]) {
         return CGPointFromString(string);
-
+    }
     return CGPointZero;
 }
 
@@ -253,9 +254,9 @@ FIX_CATEGORY_BUG(NSUserDefaults_AGCategory);
 - (CGSize)sizeForKey_AG:(NSString *)defaultName
 {
     NSString *string = [self objectForKey:defaultName];
-    if ([string isKindOfClass:[NSString class]])
+    if ([string isKindOfClass:[NSString class]]) {
         return CGSizeFromString(string);
-    
+    }
     return CGSizeZero;
 }
 
@@ -280,9 +281,9 @@ FIX_CATEGORY_BUG(NSUserDefaults_AGCategory);
 - (CGRect)rectForKey_AG:(NSString *)defaultName
 {
     NSString *string = [self objectForKey:defaultName];
-    if ([string isKindOfClass:[NSString class]])
+    if ([string isKindOfClass:[NSString class]]) {
         return CGRectFromString(string);
-    
+    }
     return CGRectZero;
 }
 

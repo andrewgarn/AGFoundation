@@ -75,6 +75,14 @@
 */
 - (void)setInteger_AG:(BOOL)value forKey:(id)key;
 
+/**
+ Adds a given key-value pair to the dictionary.
+ @param value The unsigned integer you wish to add to the dictionary
+ @param key The key for value. The key must not be nil.
+ @see [NSDictionary(AGCategory) unsignedIntegerForKey_AG:]
+*/
+- (void)setUnsignedInteger_AG:(BOOL)value forKey:(id)key;
+
 /** 
  Safely adds a given key-value pair to the dictionary.
  @param anObject The value for key.

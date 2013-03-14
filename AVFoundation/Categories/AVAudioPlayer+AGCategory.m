@@ -147,13 +147,10 @@ static const NSTimeInterval AGCategoryAudioPlayerFadeInterval = 0.05f;
     CGFloat volumeChangeRemaining = [self fadeTargetVolume_AG] - self.volume;
     CGFloat changePerStep = [self fadeVolumeDelta_AG];
 
-    if (fabs(volumeChangeRemaining) > fabs(changePerStep))
-    {
+    if (fabs(volumeChangeRemaining) > fabs(changePerStep)) {
         self.volume += changePerStep;
         [self performSelector:@selector(fadeFunction_AG) withObject:nil afterDelay:AGCategoryAudioPlayerFadeInterval];
-    }
-    else
-    {
+    } else {
         self.volume = [self fadeTargetVolume_AG];
         [self setFading_AG:NO];
         

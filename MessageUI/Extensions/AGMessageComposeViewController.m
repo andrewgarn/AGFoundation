@@ -39,13 +39,10 @@
 
 - (void)setCompletionBlock:(AGMessageComposerCompletionBlock)completionBlock
 {
-    if (completionBlock)
-    {
+    if (completionBlock) {
         [self setDidFinishBlock:completionBlock];
         [self setMessageComposeDelegate:self]; 
-    }
-    else 
-    {
+    } else {
         [self setDidFinishBlock:nil];
         [self setMessageComposeDelegate:nil]; 
     }

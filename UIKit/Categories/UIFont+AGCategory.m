@@ -41,14 +41,13 @@ FIX_CATEGORY_BUG(UIFont_AGCategory);
     NSArray *sortDescriptors = [NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"self" ascending:YES]];
 
     NSArray *familyNames = [[UIFont familyNames] sortedArrayUsingDescriptors:sortDescriptors];
-    for (NSString *aFamilyName in familyNames)
-    {
+    for (NSString *aFamilyName in familyNames) {
+        
         NSArray *fontNames = [[UIFont fontNamesForFamilyName:aFamilyName] sortedArrayUsingDescriptors:sortDescriptors];
         [fontsByFamilyName setObject:fontNames forKey:aFamilyName];
-        
         [fontsString appendFormat:@"%@\n", aFamilyName];
-        for (NSString *aFontName in fontNames) 
-        {
+        
+        for (NSString *aFontName in fontNames) {
             [fontsString appendFormat:@"\t%@\n", aFontName];
         }
         [fontsString appendString:@"\n"];

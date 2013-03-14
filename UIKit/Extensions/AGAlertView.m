@@ -40,10 +40,10 @@
 
 - (AGAlertView *)initWithTitle:(NSString *)title message:(NSString *)message
 {
-    if ((self = [super init]))
-    {
-        [self setTitle:title];
-        [self setMessage:message];
+    self = [super init];
+    if (self) {
+        self.title = title;
+        self.message = message;
     }
     return self;
 }
@@ -58,11 +58,12 @@
 
 - (NSInteger)addButtonWithTitle:(NSString *)title block:(AGAlertViewBlock)block
 {
-    if (block)
+    if (block) {
         [self.blockArray addObject:[block copy]];
-    else 
+    } else {
         [self.blockArray addObject:[NSNull null]];
-        
+    }
+    
     return [self addButtonWithTitle:title];
 }
 
@@ -83,8 +84,7 @@
 
 - (NSMutableArray *)blockArray
 {
-    if (!_blockArray)
-    {
+    if (!_blockArray) {
         _blockArray = [[NSMutableArray alloc] init];
     }
     return _blockArray;
@@ -106,11 +106,9 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex >= 0 && buttonIndex < [_blockArray count]) 
-    {
+    if (buttonIndex >= 0 && buttonIndex < [_blockArray count]) {
         id object = [_blockArray objectAtIndex:buttonIndex];
-        if (![object isEqual:[NSNull null]]) 
-        {
+        if (![object isEqual:[NSNull null]]) {
             ((void (^)())object)();
         }
     }

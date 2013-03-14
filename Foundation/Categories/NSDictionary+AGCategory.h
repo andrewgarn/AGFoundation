@@ -76,6 +76,14 @@
 - (NSInteger)integerForKey_AG:(id)aKey;
 
 /**
+ Returns the unsigned integer associated with the specified key.
+ @param aKey The key for which to return the corresponding value.
+ @return The unsigned integer value associated with the specified key, or zero if the key was not found.
+ @see [NSMutableDictionary(AGCategory) setUnsignedInteger_AG:forKey:]
+ */
+- (NSUInteger)unsignedIntegerForKey_AG:(id)aKey;
+
+/**
  Returns the date object associated with the specified key.
  @param aKey The key for which to return the corresponding value.
  @return The date object associated with the specified key, or nil if the key does not exist or its value is not an `NSDate` object.

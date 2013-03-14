@@ -33,16 +33,16 @@
 
 - (AGSoundEffect *)initWithSoundNamed:(NSString *)filename
 {
-    if ((self = [super init]))
-    {
+    self = [super init];
+    if (self) {
         NSURL *fileURL = [[NSBundle mainBundle] URLForResource:filename withExtension:nil];
-        if (fileURL != nil)
-        {
+        if (fileURL != nil) {
             SystemSoundID systemSoundID;
             OSStatus error = AudioServicesCreateSystemSoundID((__bridge CFURLRef)fileURL, &systemSoundID);
             
-            if (error == kAudioServicesNoError)
+            if (error == kAudioServicesNoError) {
                 _systemSoundID = systemSoundID;
+            }
         }
     }
     return self;

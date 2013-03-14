@@ -31,6 +31,22 @@
 @interface UITableView (AGCategory)
 
 /**-------------------------------------------------------------------------------------
+ @name Accessing Cells and Sections
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Returns an index path representing the last row in the last section of the table view.
+ @return An index path representing the last row in the last section or nil if the table view has no sections.
+*/
+- (NSIndexPath *)indexPathForLastCell_AG;
+
+/** Returns an index path representing the last row in the given section of the table view.
+ @param section An index number that identifies a section of the table.
+ @return An index path representing the last row in the given section or nil if the section is invalid.
+*/
+- (NSIndexPath *)indexPathForLastCellInSection_AG:(NSInteger)section;
+
+/**-------------------------------------------------------------------------------------
  @name Scrolling the Table View
  ---------------------------------------------------------------------------------------
 */

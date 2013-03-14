@@ -54,8 +54,7 @@ static NSString *AGHungQueueDetectorDefaultName = @"AGHungQueueDetectorThread";
 - (id)initWithTargetQueue:(dispatch_queue_t)targetQueue
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         NSAssert(targetQueue != nil, @"targetQueue must not be nil");
         
         _detectionInterval = AGHungQueueDetectorDefaultDetectionInterval;

@@ -97,14 +97,14 @@ FIX_CATEGORY_BUG(NSNumber_AGCategory);
     NSString *threadDictionaryKey = [NSString stringWithFormat:@"NSNumberAGCategoryNumberFormatter-%i", style];
     
 	NSNumberFormatter *numberFormatter = [threadDictionary objectForKey:threadDictionaryKey];
-	if (numberFormatter == nil)
-	{
+	if (numberFormatter == nil) {
 		numberFormatter = [[NSNumberFormatter alloc] init];
 		[threadDictionary setObject:numberFormatter forKey:threadDictionaryKey];
 	}
 	
-    if (numberFormatter.numberStyle != style)
+    if (numberFormatter.numberStyle != style) {
         numberFormatter.numberStyle = style;
+    }
     
 	return numberFormatter;
 }

@@ -60,12 +60,18 @@ FIX_CATEGORY_BUG(NSMutableDictionary_AGCategory);
     [self setObject_AG:[NSNumber numberWithInteger:value] forKey:key];
 }
 
+- (void)setUnsignedInteger_AG:(BOOL)value forKey:(id)key
+{
+    [self setObject_AG:[NSNumber numberWithUnsignedInteger:value] forKey:key];
+}
+
 #pragma mark -
 
 - (void)setObject_AG:(id)anObject forKey:(id)aKey
 {
-    if (anObject && aKey)
+    if (anObject && aKey) {
         [self setObject:anObject forKey:aKey];
+    }
 }
 
 @end

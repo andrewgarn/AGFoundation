@@ -118,14 +118,12 @@ FIX_CATEGORY_BUG(NSFileManager_AGCategory);
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *directoryContents = [fileManager contentsOfDirectoryAtPath:path error:&error];
     
-    if (directoryContents == nil)
-    {
+    if (directoryContents == nil) {
         NSLog(@"Error occured searching for the contentsOfDirectoryAtPath: %@\nERROR: %@", path, error);
         return nil;
     }
     
-    if ([extension length] > 0)
-    {
+    if ([extension length] > 0) {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self ENDSWITH '.%@'", extension];
         NSArray *filteredArray = [directoryContents filteredArrayUsingPredicate:predicate];
         return filteredArray;
@@ -160,23 +158,24 @@ FIX_CATEGORY_BUG(NSFileManager_AGCategory);
 + (void)removeItemAtPath_AG:(NSString *)path
 {
 	NSString *temporaryPath = [[self temporaryPath_AG] stringByAppendingPathComponent:[NSString UUIDStringCreate_AG]];
-    if ([[NSFileManager defaultManager] moveItemAtPath:path toPath:temporaryPath error:NULL])
-    {
+    if ([[NSFileManager defaultManager] moveItemAtPath:path toPath:temporaryPath error:NULL]) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
             NSError *error = nil;
             BOOL fileRemoved = [[NSFileManager defaultManager] removeItemAtPath:temporaryPath error:&error];
-            if (fileRemoved == NO)
+            if (fileRemoved == NO) {
                 NSLog(@"ERROR removing item at path: %@ [%@]", path, error);
+            }
         });
     }
 }
 
 + (void)removeItemAtURL_AG:(NSURL *)URL
 {
-    if ([URL isFileURL])
+    if ([URL isFileURL]) {
         [NSFileManager removeItemAtPath_AG:[URL path]];
-    else
+    } else {
         NSLog(@"ERROR: Supplied URL is not a file URL: %@", URL);
+    }
 }
 
 @end

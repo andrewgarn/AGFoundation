@@ -32,8 +32,9 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-    if ((self = [super initWithFrame:frame]))
-    {		
+    self = [super initWithFrame:frame];
+    if (self) {
+		
         // Set background colour
 		[self setBackgroundColor:[UIColor colorWithWhite:0.0f alpha:0.3f]];
 		

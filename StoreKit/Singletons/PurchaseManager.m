@@ -39,8 +39,8 @@
 
 - (id)init
 {
-    if ((self = [super init]))
-    {
+    self = [super init];
+    if (self) {
         [self performSelector:@selector(requestProducts) withObject:nil afterDelay:0.5];
     }
     return self;
@@ -65,8 +65,7 @@
 
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response 
 {
-    if (_productRequestResponseBlock)
-    {
+    if (_productRequestResponseBlock) {
         _productRequestResponseBlock(response.products, response.invalidProductIdentifiers);
     }
 }

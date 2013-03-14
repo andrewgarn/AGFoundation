@@ -47,8 +47,9 @@ FIX_CATEGORY_BUG(NSString_AGCategory);
 
 - (BOOL)isNotEmpty_AG
 {
-    if ([[self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""])
+    if ([[self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         return NO;
+    }
     
     return YES;
 }
@@ -57,8 +58,9 @@ FIX_CATEGORY_BUG(NSString_AGCategory);
 
 - (BOOL)containsString_AG:(NSString *)aString 
 {
-    if ([self rangeOfString:aString].location != NSNotFound)
+    if ([self rangeOfString:aString].location != NSNotFound) {
         return YES;
+    }
     
     return NO;
 }
@@ -66,14 +68,12 @@ FIX_CATEGORY_BUG(NSString_AGCategory);
 - (NSString *)stringBetweenString_AG:(NSString *)firstString andString:(NSString *)secondString
 {
     NSRange startRange = [self rangeOfString:firstString];
-    if (startRange.location != NSNotFound)
-    {
+    if (startRange.location != NSNotFound) {
         NSRange targetRange;
         targetRange.location = startRange.location + startRange.length;
         targetRange.length = [self length] - targetRange.location;
         NSRange endRange = [self rangeOfString:secondString options:0 range:targetRange];
-        if (endRange.location != NSNotFound)
-        {
+        if (endRange.location != NSNotFound) {
             targetRange.length = endRange.location - targetRange.location;
             return [self substringWithRange:targetRange];
         }
@@ -87,11 +87,9 @@ FIX_CATEGORY_BUG(NSString_AGCategory);
     NSUInteger length = [self length];
     NSRange range = NSMakeRange(0, length);
     
-    while(range.location != NSNotFound)
-    {
+    while(range.location != NSNotFound) {
         range = [self rangeOfString:aString options:0 range:range];
-        if(range.location != NSNotFound)
-        {
+        if(range.location != NSNotFound) {
             [rangeArray addObject:[NSValue valueWithRange:range]];
             range = NSMakeRange(range.location + range.length, length - (range.location + range.length));
         }
@@ -105,8 +103,7 @@ FIX_CATEGORY_BUG(NSString_AGCategory);
 {
     NSUInteger stringLength = [self length];
     NSMutableString *reversedString = [NSMutableString stringWithCapacity:stringLength];     
-    while (stringLength > 0)
-    {
+    while (stringLength > 0) {
         stringLength--;
         [reversedString appendString:[NSString stringWithFormat:@"%C", [self characterAtIndex:stringLength]]];
     }
@@ -123,8 +120,9 @@ FIX_CATEGORY_BUG(NSString_AGCategory);
 - (NSString *)stringByTrimmingLeadingCharactersInSet_AG:(NSCharacterSet *)characterSet
 {
     NSRange rangeOfFirstWantedCharacter = [self rangeOfCharacterFromSet:[characterSet invertedSet]];
-    if (rangeOfFirstWantedCharacter.location != NSNotFound) 
+    if (rangeOfFirstWantedCharacter.location != NSNotFound) {
         return [self substringFromIndex:rangeOfFirstWantedCharacter.location];
+    }
 
     return self;
 }
@@ -137,9 +135,10 @@ FIX_CATEGORY_BUG(NSString_AGCategory);
 - (NSString *)stringByTrimmingTrailingCharactersInSet_AG:(NSCharacterSet *)characterSet
 {
     NSRange rangeOfLastWantedCharacter = [self rangeOfCharacterFromSet:[characterSet invertedSet] options:NSBackwardsSearch];
-    if (rangeOfLastWantedCharacter.location != NSNotFound)
+    if (rangeOfLastWantedCharacter.location != NSNotFound) {
         return [self substringToIndex:rangeOfLastWantedCharacter.location + 1];
-
+    }
+    
     return self;
 }
 
@@ -224,8 +223,9 @@ FIX_CATEGORY_BUG(NSString_AGCategory);
     NSRange range = NSMakeRange(0, [self length]);
     NSUInteger regexMatches = [regularExpression numberOfMatchesInString:self options:0 range:range];
     
-    if (regexMatches == 0)
+    if (regexMatches == 0) {
         return NO;
+    }
     
     return YES;
 }
@@ -271,8 +271,7 @@ FIX_CATEGORY_BUG(NSString_AGCategory);
     CC_MD5(data.bytes, data.length, digest);
     
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
-    for (int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
-    {
+    for (int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
         [output appendFormat:@"%02x", digest[i]];
     }
     
@@ -287,8 +286,7 @@ FIX_CATEGORY_BUG(NSString_AGCategory);
     CC_SHA1(data.bytes, data.length, digest);
     
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
-    for (int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
-    {
+    for (int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++) {
         [output appendFormat:@"%02x", digest[i]];
     }
     
@@ -303,8 +301,7 @@ FIX_CATEGORY_BUG(NSString_AGCategory);
     CC_SHA256(data.bytes, data.length, digest);
     
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA256_DIGEST_LENGTH * 2];
-    for (int i = 0; i < CC_SHA256_DIGEST_LENGTH; i++)
-    {
+    for (int i = 0; i < CC_SHA256_DIGEST_LENGTH; i++) {
         [output appendFormat:@"%02x", digest[i]];
     }
     
@@ -319,8 +316,7 @@ FIX_CATEGORY_BUG(NSString_AGCategory);
     CC_SHA512(data.bytes, data.length, digest);
     
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA512_DIGEST_LENGTH * 2];
-    for (int i = 0; i < CC_SHA512_DIGEST_LENGTH; i++)
-    {
+    for (int i = 0; i < CC_SHA512_DIGEST_LENGTH; i++) {
         [output appendFormat:@"%02x", digest[i]];
     }
     

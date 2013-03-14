@@ -135,15 +135,13 @@ FIX_CATEGORY_BUG(UIApplication_AGCategory);
     long currentMemoryUsage = [[self usedMemory_AG] longValue];
     long memoryUsageDifference = currentMemoryUsage - previousMemoryUsage;
     
-    if (memoryUsageDifference > 1024 || memoryUsageDifference < -1024)
-    {
+    if (memoryUsageDifference > 1024 || memoryUsageDifference < -1024) {
         NSString *currentMemoryUsageString = [[NSNumber numberWithLong:currentMemoryUsage] humanReadableBytes_AG];
         NSString *memoryUsageDifferenceString = [[NSNumber numberWithLong:memoryUsageDifference] humanReadableBytes_AG];
         NSString *freeMemoryString = [[UIDevice freeMemory_AG] humanReadableBytes_AG];
-        if (previousMemoryUsage == 0)
+        if (previousMemoryUsage == 0) {
             NSLog(@"Memory used %@, free %@", currentMemoryUsageString, freeMemoryString);
-        else
-        {
+        } else {
             NSString *plusString = (memoryUsageDifference > 0) ? @"+" : @"";
             NSLog(@"Memory used %@ (%@%@), free %@", currentMemoryUsageString, plusString, memoryUsageDifferenceString, freeMemoryString);
         }
@@ -219,10 +217,11 @@ static NSDate *AGApplicationDidEnterBackgroundDate;
     NSDictionary *userInfo = [notification userInfo];
     UIViewController *fromViewController = [userInfo objectForKey:@"UINavigationControllerLastVisibleViewController"];
     UIViewController *toViewController = [userInfo objectForKey:@"UINavigationControllerNextVisibleViewController"];
-    if (!fromViewController && toViewController)
+    if (!fromViewController && toViewController) {
         NSLog(@"**** Displaying \"%@\" ****", [toViewController class]);
-    else if (fromViewController && toViewController)
+    } else if (fromViewController && toViewController) {
         NSLog(@"**** Switching from \"%@\" to \"%@\" ****", [fromViewController class], [toViewController class]);
+    }
 }
 
 #pragma mark -
@@ -250,8 +249,7 @@ static NSDate *AGApplicationDidEnterBackgroundDate;
 	});
     
     NSString *interfaceOrientationString = [UIApplication stringFromInterfaceOrientation_AG:interfaceOrientation];
-    if ([supportedOrientations indexOfObject:interfaceOrientationString] != NSNotFound)
-    {
+    if ([supportedOrientations indexOfObject:interfaceOrientationString] != NSNotFound) {
         return YES;
     }
     return NO;

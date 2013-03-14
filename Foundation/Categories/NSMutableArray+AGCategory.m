@@ -73,8 +73,7 @@ FIX_CATEGORY_BUG(NSMutableArray_AGCategory);
     int i = 0;
     int j = [self count] - 1;
     
-    while (i<j) 
-    {
+    while (i<j) {
         [self exchangeObjectAtIndex:i withObjectAtIndex:j];
         i++;
         j--;
@@ -87,8 +86,7 @@ FIX_CATEGORY_BUG(NSMutableArray_AGCategory);
     int i = 0;
     int j = [self count] - 1;
     
-    while (i<j)
-    {
+    while (i<j) {
         NSUInteger randomIndex = arc4random_uniform([self count] - 1);
         [self exchangeObjectAtIndex:randomIndex withObjectAtIndex:i];
         i++;

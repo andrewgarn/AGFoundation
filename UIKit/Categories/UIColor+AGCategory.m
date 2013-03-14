@@ -125,8 +125,7 @@ FIX_CATEGORY_BUG(UIColor_AGCategory);
 - (CGFloat)redComponent_AG 
 {
 	CGColorRef color = self.CGColor;
-	if (CGColorSpaceGetModel(CGColorGetColorSpace(color)) != kCGColorSpaceModelRGB)
-    {
+	if (CGColorSpaceGetModel(CGColorGetColorSpace(color)) != kCGColorSpaceModelRGB) {
 		return -1.0f;
 	}
 	CGFloat const *components = CGColorGetComponents(color);
@@ -136,8 +135,7 @@ FIX_CATEGORY_BUG(UIColor_AGCategory);
 - (CGFloat)greenComponent_AG 
 {
 	CGColorRef color = self.CGColor;
-	if (CGColorSpaceGetModel(CGColorGetColorSpace(color)) != kCGColorSpaceModelRGB) 
-    {
+	if (CGColorSpaceGetModel(CGColorGetColorSpace(color)) != kCGColorSpaceModelRGB) {
 		return -1.0f;
 	}
 	CGFloat const *components = CGColorGetComponents(color);
@@ -148,8 +146,7 @@ FIX_CATEGORY_BUG(UIColor_AGCategory);
 - (CGFloat)blueComponent_AG 
 {
 	CGColorRef color = self.CGColor;
-	if (CGColorSpaceGetModel(CGColorGetColorSpace(color)) != kCGColorSpaceModelRGB) 
-    {
+	if (CGColorSpaceGetModel(CGColorGetColorSpace(color)) != kCGColorSpaceModelRGB) {
 		return -1.0f;
 	}
 	CGFloat const *components = CGColorGetComponents(color);

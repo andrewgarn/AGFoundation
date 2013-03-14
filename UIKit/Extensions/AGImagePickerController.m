@@ -39,13 +39,10 @@
 
 - (void)setCompletionBlock:(AGImagePickerControllerCompletionBlock)completionBlock
 {
-    if (completionBlock)
-    {
+    if (completionBlock) {
         [self setDidFinishBlock:completionBlock];
         [self setDelegate:self];
-    }
-    else 
-    {
+    } else {
         [self setDidFinishBlock:nil];
         [self setDelegate:nil];
     }

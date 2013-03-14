@@ -38,38 +38,44 @@ FIX_CATEGORY_BUG(NSObject_AGCategory);
 
 + (NSDate *)forceDateOrNil_AG:(id)anObject
 {
-    if ([anObject isKindOfClass:[NSDate class]])
+    if ([anObject isKindOfClass:[NSDate class]]) {
         return (NSDate *)anObject;
+    }
     
     return nil;
 }
 
 + (NSString *)forceStringOrNil_AG:(id)anObject
 {
-    if ([anObject isKindOfClass:[NSString class]])
+    if ([anObject isKindOfClass:[NSString class]]) {
         return (NSString *)anObject;
+    }
     
-    if ([anObject respondsToSelector:@selector(stringValue)])
+    if ([anObject respondsToSelector:@selector(stringValue)]) {
         return [anObject stringValue];
+    }
     
     return nil;
 }
 
 + (NSNumber *)forceNumberOrNil_AG:(id)anObject
 {
-    if ([anObject isKindOfClass:[NSNumber class]])
+    if ([anObject isKindOfClass:[NSNumber class]]) {
         return (NSNumber *)anObject;
+    }
     
-    if ([anObject respondsToSelector:@selector(doubleValue)])
+    if ([anObject respondsToSelector:@selector(doubleValue)]) {
         return [NSNumber numberWithDouble:[anObject doubleValue]];
+    }
     
     return nil;
 }
 
 + (NSArray *)forceArrayOrNil_AG:(id)anObject
 {
-    if ([anObject isKindOfClass:[NSArray class]])
+    if ([anObject isKindOfClass:[NSArray class]]) {
         return (NSArray *)anObject;
+    }
     
     return nil;
 }
@@ -78,14 +84,17 @@ FIX_CATEGORY_BUG(NSObject_AGCategory);
 
 - (BOOL)isNotEmpty_AG
 {
-    if ([self isKindOfClass:[NSNull class]])
+    if ([self isKindOfClass:[NSNull class]]) {
         return NO;
+    }
     
-    if ([self respondsToSelector:@selector(length)] && [(id)self length] == 0)  // NSString
+    if ([self respondsToSelector:@selector(length)] && [(id)self length] == 0) {  // NSString
         return NO;
+    }
     
-    if ([self respondsToSelector:@selector(count)] && [(id)self count] == 0)    // NSArray, NSDictionary
+    if ([self respondsToSelector:@selector(count)] && [(id)self count] == 0) {    // NSArray, NSDictionary
         return NO;
+    }
     
     return YES;
 }
