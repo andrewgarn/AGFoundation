@@ -48,7 +48,7 @@
 
 #pragma mark - Configuring Buttons
 
-- (NSInteger)addButtonWithTitle:(NSString *)title block:(AGActionSheetBlock)block;
+- (NSInteger)addButtonWithTitle:(NSString *)title block:(AGActionSheetBlock)block
 {
     if (block) {
         [self.blockArray addObject:[block copy]];
@@ -59,7 +59,7 @@
     return [self addButtonWithTitle:title];
 }
 
-- (NSInteger)addDestructiveButtonWithTitle:(NSString *)title block:(AGActionSheetBlock)block;
+- (NSInteger)addDestructiveButtonWithTitle:(NSString *)title block:(AGActionSheetBlock)block
 {
     NSInteger buttonIndex = [self addButtonWithTitle:title block:block];
     [self setDestructiveButtonIndex:buttonIndex];
@@ -119,7 +119,7 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex >= 0 && buttonIndex < [self.blockArray count]) {
+    if (buttonIndex >= 0 && buttonIndex < (NSInteger)[self.blockArray count]) {
         AGActionSheetBlock block = [self.blockArray objectAtIndex:buttonIndex];
         if (![block isEqual:[NSNull null]]) block();
     }

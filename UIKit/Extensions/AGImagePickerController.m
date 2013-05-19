@@ -52,12 +52,12 @@
 
 - (void)imagePickerController:(AGImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    if (_didFinishBlock) _didFinishBlock(picker, info, NO);
+    if (self.didFinishBlock) self.didFinishBlock(picker, info, NO);
 }
 
 - (void)imagePickerControllerDidCancel:(AGImagePickerController *)picker
 {
-    if (_didFinishBlock) _didFinishBlock(picker, nil, YES);
+    if (self.didFinishBlock) self.didFinishBlock(picker, nil, YES);
 }
 
 @end

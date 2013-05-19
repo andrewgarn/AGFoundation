@@ -1417,6 +1417,14 @@
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
 				TEST_AFTER_BUILD = YES;
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Warc-repeated-use-of-weak",
+					"-Wno-unused-parameter",
+					"-Wdirect-ivar-access",
+					"-Wobjc-interface-ivars",
+				);
 			};
 			name = Adhoc;
 		};
@@ -1508,6 +1516,14 @@
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
 				TEST_AFTER_BUILD = YES;
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Warc-repeated-use-of-weak",
+					"-Wno-unused-parameter",
+					"-Wdirect-ivar-access",
+					"-Wobjc-interface-ivars",
+				);
 			};
 			name = Debug;
 		};
@@ -1532,6 +1548,14 @@
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
 				TEST_AFTER_BUILD = YES;
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Warc-repeated-use-of-weak",
+					"-Wno-unused-parameter",
+					"-Wdirect-ivar-access",
+					"-Wobjc-interface-ivars",
+				);
 			};
 			name = Release;
 		};

@@ -58,15 +58,16 @@
 
 - (void)requestProductsWithIdentifiers:(NSSet *)productIdentifiers
 {
-	_productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers];
-    [_productsRequest setDelegate:self];
-    [_productsRequest start];
+	self.productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers];
+    self.productsRequest.delegate = self;
+    
+    [self.productsRequest start];
 }
 
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response 
 {
-    if (_productRequestResponseBlock) {
-        _productRequestResponseBlock(response.products, response.invalidProductIdentifiers);
+    if (self.productRequestResponseBlock) {
+        self.productRequestResponseBlock(response.products, response.invalidProductIdentifiers);
     }
 }
 

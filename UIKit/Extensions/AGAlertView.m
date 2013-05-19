@@ -106,8 +106,8 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex >= 0 && buttonIndex < [_blockArray count]) {
-        id object = [_blockArray objectAtIndex:buttonIndex];
+    if (buttonIndex >= 0 && buttonIndex < (NSInteger)[self.blockArray count]) {
+        id object = [self.blockArray objectAtIndex:buttonIndex];
         if (![object isEqual:[NSNull null]]) {
             ((void (^)())object)();
         }

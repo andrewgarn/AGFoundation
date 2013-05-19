@@ -32,9 +32,6 @@ extern NSString * const AGUserDefaultsDidChangeExternallyNotification;
 
 /** A singleton class to synchronise values between NSUserDefaults and NSUbiquitousKeyValueStore */
 @interface UbiquitousUserDefaultsManager : NSObject
-{
-    
-}
 
 /** Sets the keys to sync between NSUserDefaults and NSUbiquitousKeyValueStore.
  @param ubiquitousKeys The set of keys to sync between NSUserDefaults and NSUbiquitousKeyValueStore.

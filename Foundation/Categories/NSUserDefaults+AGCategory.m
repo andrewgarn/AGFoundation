@@ -62,7 +62,7 @@ FIX_CATEGORY_BUG(NSUserDefaults_AGCategory);
     return [[NSUserDefaults standardUserDefaults_AG] objectForKey:defaultName];
 }
 
-+ (NSURL *)URLForKey_AG:(NSString *)defaultName;
++ (NSURL *)URLForKey_AG:(NSString *)defaultName
 {
     return [[NSUserDefaults standardUserDefaults_AG] URLForKey:defaultName];
 }
@@ -77,12 +77,12 @@ FIX_CATEGORY_BUG(NSUserDefaults_AGCategory);
 	return [[NSUserDefaults standardUserDefaults_AG] arrayForKey:defaultName];
 }
 
-+ (NSString *)stringForKey_AG:(NSString *)defaultName;
++ (NSString *)stringForKey_AG:(NSString *)defaultName
 {
     return [[NSUserDefaults standardUserDefaults_AG] stringForKey:defaultName];
 }
 
-+ (NSArray *)stringArrayForKey_AG:(NSString *)defaultName;
++ (NSArray *)stringArrayForKey_AG:(NSString *)defaultName
 {
     return [[NSUserDefaults standardUserDefaults_AG] stringArrayForKey:defaultName];
 }

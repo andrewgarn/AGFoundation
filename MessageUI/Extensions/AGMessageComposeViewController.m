@@ -52,7 +52,7 @@
 
 - (void)messageComposeViewController:(AGMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
-    if (_didFinishBlock) _didFinishBlock(controller, result);
+    if (self.didFinishBlock) self.didFinishBlock(controller, result);
 }
 
 @end

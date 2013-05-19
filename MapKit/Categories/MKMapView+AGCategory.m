@@ -99,7 +99,8 @@ FIX_CATEGORY_BUG(MKMapView_AGCategory);
 - (void)setCenterCoordinate_AG:(CLLocationCoordinate2D)centerCoordinate zoomLevel:(NSUInteger)zoomLevel animated:(BOOL)animated
 {
     // clamp large numbers to 28
-    zoomLevel = MIN(zoomLevel, 28);
+    static NSUInteger maxZoomLevel = 28;
+    zoomLevel = MIN(zoomLevel, maxZoomLevel);
     
     // use the zoom level to compute the region
     MKCoordinateSpan span = [self coordinateSpanWithMapView_AG:self centerCoordinate:centerCoordinate andZoomLevel:zoomLevel];

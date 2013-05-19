@@ -27,6 +27,10 @@
 
 #import "AGSoundEffect.h"
 
+@interface AGSoundEffect ()
+@property (assign, nonatomic) SystemSoundID systemSoundID;
+@end
+
 @implementation AGSoundEffect
 
 #pragma mark -
@@ -41,7 +45,7 @@
             OSStatus error = AudioServicesCreateSystemSoundID((__bridge CFURLRef)fileURL, &systemSoundID);
             
             if (error == kAudioServicesNoError) {
-                _systemSoundID = systemSoundID;
+                self.systemSoundID = systemSoundID;
             }
         }
     }
@@ -57,7 +61,7 @@
 
 - (void)play
 {
-    AudioServicesPlaySystemSound(_systemSoundID);
+    AudioServicesPlaySystemSound(self.systemSoundID);
 }
 
 @end

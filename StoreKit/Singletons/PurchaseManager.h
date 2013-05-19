@@ -32,9 +32,7 @@
 typedef void (^AGPurchaseManagerProductRequestResponseBlock)(NSArray *products, NSArray *invalidIdentifiers);
 
 @interface PurchaseManager : NSObject <SKProductsRequestDelegate>
-{
-    SKProductsRequest *_productsRequest;
-}
+@property (strong, nonatomic) SKProductsRequest *productsRequest;
 
 + (void)requestProductsWithIdentifiers:(NSSet *)identifiers responseBlock:(AGPurchaseManagerProductRequestResponseBlock)block;
 + (BOOL)canMakePayments;

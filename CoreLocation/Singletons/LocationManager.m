@@ -114,16 +114,16 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    _latestLocation = newLocation;
+    self.latestLocation = newLocation;
     
-    if (_didUpdateToLocationBlock != nil) _didUpdateToLocationBlock(manager, newLocation, oldLocation);
+    if (self.didUpdateToLocationBlock != nil) self.didUpdateToLocationBlock(manager, newLocation, oldLocation);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    _latestLocation = nil;
+    self.latestLocation = nil;
     
-    if (_didFailWithErrorBlock) _didFailWithErrorBlock(manager, error);
+    if (self.didFailWithErrorBlock) self.didFailWithErrorBlock(manager, error);
 }
 
 #pragma mark - CLLocationManagerDelegate (Heading Events)

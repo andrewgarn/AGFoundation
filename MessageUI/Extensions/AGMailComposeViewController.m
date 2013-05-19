@@ -52,7 +52,7 @@
 
 - (void)mailComposeController:(AGMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-    if (_didFinishBlock) _didFinishBlock(controller, result, error);
+    if (self.didFinishBlock) self.didFinishBlock(controller, result, error);
 }
 
 @end

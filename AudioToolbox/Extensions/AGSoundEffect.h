@@ -30,9 +30,6 @@
 
 /** An `NSObject` subclass to aid in playing a short sound effect */ 
 @interface AGSoundEffect : NSObject
-{
-    SystemSoundID _systemSoundID;
-}
 
 /** 
  Returns a `AGSoundEffect` object initialized with the supplied sound file.

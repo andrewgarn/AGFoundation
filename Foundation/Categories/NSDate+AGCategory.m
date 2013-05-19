@@ -238,7 +238,7 @@ FIX_CATEGORY_BUG(NSDate_AGCategory);
     }
 }
 
-+ (NSInteger)daysPassedSinceDate_AG:(NSDate *)anotherDate;
++ (NSInteger)daysPassedSinceDate_AG:(NSDate *)anotherDate
 {
     NSCalendar *gregorianCalendar = [NSDate gregorianCalendar_AG];
     NSUInteger unitFlags = NSDayCalendarUnit;
@@ -275,7 +275,7 @@ FIX_CATEGORY_BUG(NSDate_AGCategory);
 - (NSString *)suffixForDay_AG
 {
     NSDateFormatter *dateFormatter = [NSDate dateFormatterWithDateFormat_AG:@"d"];
-    int day = [[dateFormatter stringFromDate:self] intValue];   
+    NSUInteger day = [[dateFormatter stringFromDate:self] intValue];
     
     if ([[NSDate suffixArray_AG] count] > day) {
         return [[NSDate suffixArray_AG] objectAtIndex:day];
