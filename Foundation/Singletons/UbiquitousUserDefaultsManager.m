@@ -46,7 +46,7 @@ NSString * const AGUserDefaultsDidChangeExternallyNotification = @"AGUserDefault
         if([NSUbiquitousKeyValueStore defaultStore]) {
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyValueStoreDidChangeExternally:)
                                                          name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification object:nil];
-            
+
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDefaultsDidChange:)
                                                          name:NSUserDefaultsDidChangeNotification object:nil];
             return YES;

@@ -1424,6 +1424,18 @@
 					"-Wno-unused-parameter",
 					"-Wdirect-ivar-access",
 					"-Wobjc-interface-ivars",
+					"-Wcast-align",
+					"-Wfloat-equal",
+					"-Wconversion",
+					"-Wformat=2",
+					"-Wimplicit-atomic-properties",
+					"-Wmissing-declarations",
+					"-Wmissing-prototypes",
+					"-Woverlength-strings",
+					"-Wshadow",
+					"-Wstrict-selector-match",
+					"-Wundeclared-selector",
+					"-Wunreachable-code",
 				);
 			};
 			name = Adhoc;
@@ -1523,6 +1535,18 @@
 					"-Wno-unused-parameter",
 					"-Wdirect-ivar-access",
 					"-Wobjc-interface-ivars",
+					"-Wcast-align",
+					"-Wfloat-equal",
+					"-Wconversion",
+					"-Wformat=2",
+					"-Wimplicit-atomic-properties",
+					"-Wmissing-declarations",
+					"-Wmissing-prototypes",
+					"-Woverlength-strings",
+					"-Wshadow",
+					"-Wstrict-selector-match",
+					"-Wundeclared-selector",
+					"-Wunreachable-code",
 				);
 			};
 			name = Debug;
@@ -1555,6 +1579,18 @@
 					"-Wno-unused-parameter",
 					"-Wdirect-ivar-access",
 					"-Wobjc-interface-ivars",
+					"-Wcast-align",
+					"-Wfloat-equal",
+					"-Wconversion",
+					"-Wformat=2",
+					"-Wimplicit-atomic-properties",
+					"-Wmissing-declarations",
+					"-Wmissing-prototypes",
+					"-Woverlength-strings",
+					"-Wshadow",
+					"-Wstrict-selector-match",
+					"-Wundeclared-selector",
+					"-Wunreachable-code",
 				);
 			};
 			name = Release;

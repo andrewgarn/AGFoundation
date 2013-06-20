@@ -244,7 +244,7 @@ FIX_CATEGORY_BUG(NSString_AGCategory);
 
 #pragma mark -
 
-+ (NSString *)UUIDStringCreate_AG
++ (NSString *)stringWithUUID_AG
 {
     CFUUIDRef uuid = CFUUIDCreate(kCFAllocatorDefault);
     NSString *uuidStr = (__bridge_transfer NSString *)CFUUIDCreateString(kCFAllocatorDefault, uuid);

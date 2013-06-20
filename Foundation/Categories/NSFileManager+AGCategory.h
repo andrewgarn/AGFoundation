@@ -57,6 +57,13 @@
 */
 + (NSString *)libraryPath_AG;
 
+/** Returns the path to the application support directory contained within the application's library directory.
+ 
+ The return value is cached the first time the method is called.
+ @return The path to the application support directory within the application's library directory.
+ */
++ (NSString *)applicationSupportPath_AG;
+
 /** Returns the path to the application's temporary directory.
  
  The return value is cached the first time the method is called.
@@ -81,6 +88,12 @@
  @return The library path for the specified filename.
 */
 + (NSString *)libraryPathForFile_AG:(NSString *)filename;
+
+/** Returns the application support path for the specified filename.
+ @param filename The name of the resource, including extension.
+ @return The application support path for the specified filename.
+ */
++ (NSString *)applicationSupportPathForFile_AG:(NSString *)filename;
 
 /** Returns the temporary path for the specified filename.
  @param filename The name of the resource, including extension.
@@ -110,7 +123,7 @@
  @param extension The file extension. If extension is an empty string or nil, all the paths found are returned.
  @return An array of `NSString` objects, each of which identifies a file, directory, or symbolic link contained in path. Returns an empty array if the directory exists but has no contents. If an error occurs, this method returns nil.
 */
-+ (NSArray *)contentsOfDirectoryAtPath_AG:(NSString *)path withType:(NSString *)extension;
++ (NSArray *)contentsOfDirectoryAtPath_AG:(NSString *)path withExtension:(NSString *)extension;
 
 /** Performs a shallow search of the cache directory and returns the paths of any contained items.
  @return An array of `NSString` objects, each of which identifies a file, directory, or symbolic link contained in path. Returns an empty array if the directory has no contents. If an error occurs, this method returns nil.
@@ -127,10 +140,32 @@
 */
 + (NSArray *)contentsOfLibraryDirectory_AG;
 
+/** Performs a shallow search of the application support directory and returns the paths of any contained items.
+ @return An array of `NSString` objects, each of which identifies a file, directory, or symbolic link contained in path. Returns an empty array if the directory has no contents. If an error occurs, this method returns nil.
+ */
++ (NSArray *)contentsOfApplicationSupportDirectory_AG;
+
 /** Performs a shallow search of the temporary directory and returns the paths of any contained items.
  @return An array of `NSString` objects, each of which identifies a file, directory, or symbolic link contained in path. Returns an empty array if the directory has no contents. If an error occurs, this method returns nil.
  */
 + (NSArray *)contentsOfTemporaryDirectory_AG;
+
+/**-------------------------------------------------------------------------------------
+ @name Calculating File Sizes
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Returns a human readable string representing the file size of the directory at the supplied path.
+ @param path The path to the directory whose contents you want to calculate the size of.
+ @return A human readable string representing the file size of the directory at the supplied path.
+*/
++ (NSString *)humanReadableSizeOfDirectoryAtPath_AG:(NSString *)path;
+
+/** Returns a number representing the file size of the directory at the supplied path.
+ @param path The path to the directory whose contents you want to calculate the size of.
+ @return A number representing the file size of the directory at the supplied path.
+*/ 
++ (NSNumber *)sizeOfDirectoryAtPath_AG:(NSString *)path;
 
 /**-------------------------------------------------------------------------------------
  @name Deleting Items

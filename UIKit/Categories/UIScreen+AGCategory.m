@@ -67,10 +67,10 @@ FIX_CATEGORY_BUG(UIScreen_AGCategory);
             CGContextTranslateCTM(context,
                                   -[window bounds].size.width * [[window layer] anchorPoint].x,
                                   -[window bounds].size.height * [[window layer] anchorPoint].y);
-            
+
             // Render the layer hierarchy to the current context
             [[window layer] renderInContext:context];
-            
+
             // Restore the context
             CGContextRestoreGState(context);
         }

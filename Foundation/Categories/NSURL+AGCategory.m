@@ -63,7 +63,7 @@ FIX_CATEGORY_BUG(NSURL_AGCategory);
 {
     NSString *systemVersion = [[UIDevice currentDevice] systemVersion];   
     
-    if ([systemVersion floatValue] < 5.0 || [systemVersion isEqualToString:@"5.0.0"]) {
+    if ([systemVersion floatValue] < 5.0 || [systemVersion isEqualToString:@"5.0"]) {
         return YES; // "do not backup" is not yet supported or required
     }
     

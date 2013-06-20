@@ -42,12 +42,14 @@ FIX_CATEGORY_BUG(NSMutableArray_AGCategory);
 
 - (id)dequeueObject_AG
 {
-     if ([self count] == 0) 
-         return nil; 
+    if ([self count] == 0) {
+         return nil;
+    }
     
     id headObject = [self objectAtIndex:0];
-    if (headObject != nil) 
+    if (headObject != nil) {
         [self removeObjectAtIndex:0];
+    }
 
     return headObject;
 }

@@ -171,9 +171,9 @@ FIX_CATEGORY_BUG(NSUserDefaults_AGCategory);
 {
     NSData *data = [self dataForKey:defaultName];
     UIColor *color = (UIColor *)[NSKeyedUnarchiver unarchiveObjectWithData:data];
-    if ([color isKindOfClass:[UIColor class]]) 
+    if ([color isKindOfClass:[UIColor class]]) {
         return color;
-    
+    }
 	return nil;
 }
 

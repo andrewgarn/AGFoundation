@@ -83,10 +83,11 @@ FIX_CATEGORY_BUG(UIImage_AGCategory);
         CGFloat widthFactor = newSize.width / self.size.width;
         CGFloat heightFactor = newSize.height / self.size.height;
         
-        if (widthFactor > heightFactor) 
+        if (widthFactor > heightFactor) {
             scaleFactor = widthFactor;  // scale to fit height
-        else
+        } else {
             scaleFactor = heightFactor; // scale to fit width
+        }
         
         scaledWidth  = self.size.width * scaleFactor;
         scaledHeight = self.size.height * scaleFactor;

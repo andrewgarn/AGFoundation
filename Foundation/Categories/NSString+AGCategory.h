@@ -186,10 +186,10 @@
  ---------------------------------------------------------------------------------------
 */
 
-/** Returns a universally unique identifier string object.
- @return A universally unique identifier string object.
+/** Returns a new universally unique identifier string object.
+ @return A new universally unique identifier string object.
 */
-+ (NSString *)UUIDStringCreate_AG;
++ (NSString *)stringWithUUID_AG;
 
 /**-------------------------------------------------------------------------------------
  @name File Backup Prevention

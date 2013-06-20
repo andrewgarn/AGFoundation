@@ -26,13 +26,29 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "NSFileManager+AGCategory.h"
+#import "NSNumber+AGCategory.h"
 #import "NSString+AGCategory.h"
+
+#import <sys/types.h>	// for random type definition
+#import <sys/dirent.h>	// for struct dirent
+#import <dirent.h>	// for getdirentries()
+#import <stdlib.h>	// for EXIT_SUCCESS
+#import <stdio.h>	// for printf
+#import <errno.h>	// for errno
+#import <string.h>	// for strerror
+#import <fcntl.h>	// for O_RDONLY
+#import <sys/stat.h>	// for struct statbuf and stat()
+#import <sys/param.h>	// for MAXPATHLEN
+#import <sys/attr.h>	// for attrreference_t
+#import <unistd.h>	// for getdirentriesattr()
 
 #ifdef AGFOUNDATION_FRAMEWORK
 FIX_CATEGORY_BUG(NSFileManager_AGCategory);
 #endif
 
 @implementation NSFileManager (AGCategory)
+
+#pragma mark -
 
 + (NSString *)cachePath_AG
 {
@@ -67,6 +83,17 @@ FIX_CATEGORY_BUG(NSFileManager_AGCategory);
 	return libraryPath;
 }
 
++ (NSString *)applicationSupportPath_AG
+{
+    static dispatch_once_t token;
+	static NSString *applicationSupportPath;
+    
+	dispatch_once(&token, ^{
+		applicationSupportPath = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
+	});
+	return applicationSupportPath;
+}
+
 + (NSString *)temporaryPath_AG
 {
     static dispatch_once_t token;
@@ -95,6 +122,11 @@ FIX_CATEGORY_BUG(NSFileManager_AGCategory);
     return [[self libraryPath_AG] stringByAppendingPathComponent:filename];
 }
 
++ (NSString *)applicationSupportPathForFile_AG:(NSString *)filename
+{
+    return [[self applicationSupportPath_AG] stringByAppendingPathComponent:filename];
+}
+
 + (NSString *)temporaryPathForFile_AG:(NSString *)filename
 {
     return [[self temporaryPath_AG] stringByAppendingPathComponent:filename];
@@ -109,17 +141,22 @@ FIX_CATEGORY_BUG(NSFileManager_AGCategory);
 
 + (NSArray *)contentsOfDirectoryAtPath_AG:(NSString *)path
 {
-    return [NSFileManager contentsOfDirectoryAtPath_AG:path withType:nil];
+    return [NSFileManager contentsOfDirectoryAtPath_AG:path withExtension:nil];
 }
                                   
-+ (NSArray *)contentsOfDirectoryAtPath_AG:(NSString *)path withType:(NSString *)extension
++ (NSArray *)contentsOfDirectoryAtPath_AG:(NSString *)path withExtension:(NSString *)extension
 {
     NSError *error = nil;
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSArray *directoryContents = [fileManager contentsOfDirectoryAtPath:path error:&error];
+    NSURL *fileURL = [NSURL fileURLWithPath:path];
+    if (!fileURL) return nil;
     
+    NSArray *directoryContents = [fileManager contentsOfDirectoryAtURL:fileURL
+                                            includingPropertiesForKeys:[NSArray arrayWithObject:NSURLNameKey]
+                                                               options:NSDirectoryEnumerationSkipsHiddenFiles error:&error];
+        
     if (directoryContents == nil) {
-        NSLog(@"Error occured searching for the contentsOfDirectoryAtPath: %@\nERROR: %@", path, error);
+        NSLog(@"Error occurred searching for the contentsOfDirectoryAtPath: %@\nERROR: %@", path, error);
         return nil;
     }
     
@@ -128,6 +165,7 @@ FIX_CATEGORY_BUG(NSFileManager_AGCategory);
         NSArray *filteredArray = [directoryContents filteredArrayUsingPredicate:predicate];
         return filteredArray;
     }
+    
     return directoryContents;
 }
 
@@ -148,6 +186,11 @@ FIX_CATEGORY_BUG(NSFileManager_AGCategory);
     return [self contentsOfDirectoryAtPath_AG:[self libraryPath_AG]];
 }
 
++ (NSArray *)contentsOfApplicationSupportDirectory_AG
+{
+    return [self contentsOfDirectoryAtPath_AG:[self applicationSupportPath_AG]];
+}
+
 + (NSArray *)contentsOfTemporaryDirectory_AG
 {
     return [self contentsOfDirectoryAtPath_AG:[self temporaryPath_AG]];
@@ -155,9 +198,75 @@ FIX_CATEGORY_BUG(NSFileManager_AGCategory);
 
 #pragma mark -
 
++ (NSString *)humanReadableSizeOfDirectoryAtPath_AG:(NSString *)path
+{
+    NSNumber *directorySize = [NSFileManager sizeOfDirectoryAtPath_AG:path];
+    NSString *humanReadableDirectorySize = [directorySize humanReadableBytesWithDecimalPlaceAccuracy_AG:2];
+    return humanReadableDirectorySize;
+}
+
++ (NSNumber *)sizeOfDirectoryAtPath_AG:(NSString *)path
+{
+    off_t size = 0;
+    const char *charPath = [path UTF8String];
+    
+    DIR *directory = opendir(charPath);
+    if (directory == NULL) {
+        fprintf (stderr, "could not open directory '%s'\n", charPath);
+        fprintf (stderr, "error is %d/%s\n", errno, strerror(errno));
+        return [NSNumber numberWithLongLong:size];
+    }
+    
+    struct dirent *entry;
+    while ( (entry = readdir(directory)) != NULL) {
+        char filename[MAXPATHLEN];
+        
+        // don't mess with the metadirectories
+        if (strcmp(entry->d_name, ".") == 0
+            || strcmp(entry->d_name, "..") == 0) {
+            continue;
+        }
+        // rather than changing the cwd each time through the loop,
+        // construct the full path relative the given path.
+        // since the original path is either absolute, or relative to
+        // the current working directory, this should always give us
+        // a stat-able path
+        snprintf (filename, MAXPATHLEN, "%s/%s", charPath, entry->d_name);
+        struct stat statbuf;
+        int result;
+        
+        // use lstat so we don't multiply-coun the sizes of files that
+        // are pointed to by symlinks
+        result = lstat (filename, &statbuf);
+        if (result != 0) {
+            //fprintf (stderr, "could not stat '%s': %d/%s\n", entry->d_name, errno, strerror(errno));
+            continue;
+        }
+        
+        if (S_ISDIR(statbuf.st_mode)) {
+            NSString *filenamePath = [NSString stringWithUTF8String:filename];
+            size += [[NSFileManager sizeOfDirectoryAtPath_AG:filenamePath] longLongValue];
+        } else {
+            size += statbuf.st_size;
+        }
+    }
+    closedir (directory);
+    
+    NSNumber *sizeNumber = [NSNumber numberWithLongLong:size];
+    return sizeNumber;
+}
+
+#pragma mark -
+
++ (void)removeItemAtFileURL_AG:(NSURL *)fileURL
+{
+    NSString *filePath = [fileURL path];
+    [NSFileManager removeItemAtPath_AG:filePath];
+}
+
 + (void)removeItemAtPath_AG:(NSString *)path
 {
-	NSString *temporaryPath = [[self temporaryPath_AG] stringByAppendingPathComponent:[NSString UUIDStringCreate_AG]];
+	NSString *temporaryPath = [[self temporaryPath_AG] stringByAppendingPathComponent:[NSString stringWithUUID_AG]];
     if ([[NSFileManager defaultManager] moveItemAtPath:path toPath:temporaryPath error:NULL]) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
             NSError *error = nil;

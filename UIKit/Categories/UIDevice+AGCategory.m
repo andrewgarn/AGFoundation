@@ -560,19 +560,19 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
         case UIDeviceBatteryStateUnknown:
             batteryStateString = NSLocalizedString(@"Unknown", @"");
             break;
-            
+
         case UIDeviceBatteryStateUnplugged:
             batteryStateString = NSLocalizedString(@"Unplugged", @"");
             break;
-            
+
         case UIDeviceBatteryStateCharging:
             batteryStateString = NSLocalizedString(@"Charging", @"");
             break;
-            
+
         case UIDeviceBatteryStateFull:
             batteryStateString = NSLocalizedString(@"Full", @"");
             break;
-            
+
         default:
             batteryStateString = NSLocalizedString(@"Unknown", @"");
             break;
