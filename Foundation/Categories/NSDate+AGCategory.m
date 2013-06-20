@@ -357,7 +357,7 @@ FIX_CATEGORY_BUG(NSDate_AGCategory);
 + (NSDateFormatter *)dateFormatterWithDateFormat_AG:(NSString *)dateFormat locale:(NSLocale *)locale
 {
     NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
-    NSMutableString *threadDictionaryKey = [NSString stringWithFormat:@"NSDateAGCategoryDateFormatter_%@_%@", dateFormat, locale.localeIdentifier];
+    NSString *threadDictionaryKey = [NSString stringWithFormat:@"NSDateAGCategoryDateFormatter_%@_%@", dateFormat, locale.localeIdentifier];
     
 	NSDateFormatter *dateFormatter = [threadDictionary objectForKey:threadDictionaryKey];
 	if (dateFormatter == nil) {

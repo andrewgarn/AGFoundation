@@ -27,7 +27,6 @@
 
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
-#import "AGSynthesizeSingleton.h"
 
 typedef void (^AGPurchaseManagerProductRequestResponseBlock)(NSArray *products, NSArray *invalidIdentifiers);
 

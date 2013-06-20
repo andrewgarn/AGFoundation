@@ -203,28 +203,19 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
     return deviceFamily;
 }
 
+#ifdef __CORETELEPHONY_DEFINES_H__
+
+//#import <CoreTelephony/CTTelephonyNetworkInfo.h>
+//#import <CoreTelephony/CTCarrier.h>
+
 + (NSString *)deviceCarrier_AG
 {
-    NSString *carrierName = nil;
-    Class telephonyNetworkInfoClass = NSClassFromString(@"CTTelephonyNetworkInfo");
-    Class carrierClass = NSClassFromString(@"CTCarrier");
-    
-    if (!telephonyNetworkInfoClass) {
-        NSLog(@"[UIDevice deviceCarrier] - You must #import <CoreTelephony/CTTelephonyNetworkInfo.h>!");
-    }
-    
-    if (!carrierClass) {
-        NSLog(@"[UIDevice deviceCarrier] - You must #import <CoreTelephony/CTCarrier.h>!");
-    }
-    
-    if (telephonyNetworkInfoClass && carrierClass) {
-        id networkInfo = [[telephonyNetworkInfoClass alloc] init];
-        id cellularProvider = [networkInfo performSelector:@selector(subscriberCellularProvider)];
-        carrierName = [cellularProvider performSelector:@selector(carrierName)];
-    }
-    
+    CTTelephonyNetworkInfo *networkInfo = [[CTTelephonyNetworkInfo alloc] init];
+    CTCarrier *cellularProvider = [networkInfo subscriberCellularProvider];
+    NSString *carrierName = [cellularProvider carrierName];
     return carrierName;
 }
+#endif
 
 #pragma mark - System Info
 
@@ -340,6 +331,8 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
     return hasRetinaDisplay;
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
 + (BOOL)hasCompass_AG
 {
     static dispatch_once_t token;
@@ -363,6 +356,7 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
 	});
     return isGyroAvailable;
 }
+#pragma clang diagnostic pop
 
 + (BOOL)hasCamera_AG
 {
@@ -435,6 +429,8 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
 
 #pragma mark -
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
 + (BOOL)canSendMail_AG
 {
     Class class = NSClassFromString(@"MFMailComposeViewController");
@@ -462,6 +458,7 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
     if (class) return (BOOL)[class performSelector:@selector(canMakePayments)];
     return NO;
 }
+#pragma clang diagnostic pop
 
 + (BOOL)supportsMultitasking_AG
 {

@@ -41,8 +41,6 @@ FIX_CATEGORY_BUG(UIView_AGCategory);
     CGSize imageSize = [self bounds].size;
     if (NULL != UIGraphicsBeginImageContextWithOptions) {
         UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
-    } else {
-        UIGraphicsBeginImageContext(imageSize);
     }
     
 	if([self.layer respondsToSelector:@selector(setShouldRasterize:)]) {

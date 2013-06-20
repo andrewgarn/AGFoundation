@@ -81,6 +81,7 @@
 		49AE17521673B20A00E5C4F2 /* AGStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AE17501673B20A00E5C4F2 /* AGStack.m */; };
 		49AE17561673B22F00E5C4F2 /* AGQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 49AE17541673B22F00E5C4F2 /* AGQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49AE17571673B22F00E5C4F2 /* AGQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AE17551673B22F00E5C4F2 /* AGQueue.m */; };
+		49B466231773A4F5007B171B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B466221773A4F5007B171B /* CoreTelephony.framework */; };
 		49BE15FE15C7C70500882C57 /* URLSchemeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 49BE15FC15C7C70500882C57 /* URLSchemeManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49BE15FF15C7C70500882C57 /* URLSchemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BE15FD15C7C70500882C57 /* URLSchemeManager.m */; };
 		49EA833C1615CE7100A98089 /* UIStoryboardSegue+AGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 49EA833A1615CE7100A98089 /* UIStoryboardSegue+AGCategory.h */; };
@@ -265,6 +266,7 @@
 		49AE17501673B20A00E5C4F2 /* AGStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGStack.m; sourceTree = "<group>"; };
 		49AE17541673B22F00E5C4F2 /* AGQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGQueue.h; sourceTree = "<group>"; };
 		49AE17551673B22F00E5C4F2 /* AGQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGQueue.m; sourceTree = "<group>"; };
+		49B466221773A4F5007B171B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		49BE15FC15C7C70500882C57 /* URLSchemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLSchemeManager.h; sourceTree = "<group>"; };
 		49BE15FD15C7C70500882C57 /* URLSchemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLSchemeManager.m; sourceTree = "<group>"; };
 		49EA833A1615CE7100A98089 /* UIStoryboardSegue+AGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboardSegue+AGCategory.h"; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B466231773A4F5007B171B /* CoreTelephony.framework in Frameworks */,
 				7848574F1589DBEE00013DD9 /* AudioToolbox.framework in Frameworks */,
 				7848579D158B333400013DD9 /* AVFoundation.framework in Frameworks */,
 				49F0EE9315F7458900E11468 /* CoreFoundation.framework in Frameworks */,
@@ -524,6 +527,7 @@
 		784856451589D50A00013DD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49B466221773A4F5007B171B /* CoreTelephony.framework */,
 				7848574E1589DBEE00013DD9 /* AudioToolbox.framework */,
 				7848579C158B333400013DD9 /* AVFoundation.framework */,
 				49F0EE9215F7458900E11468 /* CoreFoundation.framework */,
@@ -1420,15 +1424,9 @@
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Wextra",
-					"-Warc-repeated-use-of-weak",
-					"-Wno-unused-parameter",
 					"-Wdirect-ivar-access",
-					"-Wobjc-interface-ivars",
-					"-Wcast-align",
-					"-Wfloat-equal",
-					"-Wconversion",
-					"-Wformat=2",
-					"-Wimplicit-atomic-properties",
+					"-Wno-unused-parameter",
+					"-Wno-sign-compare",
 					"-Wmissing-declarations",
 					"-Wmissing-prototypes",
 					"-Woverlength-strings",
@@ -1531,15 +1529,9 @@
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Wextra",
-					"-Warc-repeated-use-of-weak",
-					"-Wno-unused-parameter",
 					"-Wdirect-ivar-access",
-					"-Wobjc-interface-ivars",
-					"-Wcast-align",
-					"-Wfloat-equal",
-					"-Wconversion",
-					"-Wformat=2",
-					"-Wimplicit-atomic-properties",
+					"-Wno-unused-parameter",
+					"-Wno-sign-compare",
 					"-Wmissing-declarations",
 					"-Wmissing-prototypes",
 					"-Woverlength-strings",
@@ -1575,15 +1567,9 @@
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Wextra",
-					"-Warc-repeated-use-of-weak",
-					"-Wno-unused-parameter",
 					"-Wdirect-ivar-access",
-					"-Wobjc-interface-ivars",
-					"-Wcast-align",
-					"-Wfloat-equal",
-					"-Wconversion",
-					"-Wformat=2",
-					"-Wimplicit-atomic-properties",
+					"-Wno-unused-parameter",
+					"-Wno-sign-compare",
 					"-Wmissing-declarations",
 					"-Wmissing-prototypes",
 					"-Woverlength-strings",

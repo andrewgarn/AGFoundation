@@ -41,7 +41,7 @@
 {
     self = [super init];
     if (self) {
-        [self performSelector:@selector(requestProducts) withObject:nil afterDelay:0.5];
+        //[self performSelector:@selector(requestProducts) withObject:nil afterDelay:0.5];
     }
     return self;
 }

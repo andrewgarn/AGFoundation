@@ -228,14 +228,28 @@ static NSDate *AGApplicationDidEnterBackgroundDate;
 
 + (NSString *)stringFromInterfaceOrientation_AG:(UIInterfaceOrientation)interfaceOrientation
 {
+    NSString *stringFromInterfaceOrientation = nil;
+    
     switch (interfaceOrientation)
     {
-		case UIInterfaceOrientationPortrait:           return @"UIInterfaceOrientationPortrait";
-		case UIInterfaceOrientationPortraitUpsideDown: return @"UIInterfaceOrientationPortraitUpsideDown";
-		case UIInterfaceOrientationLandscapeLeft:      return @"UIInterfaceOrientationLandscapeLeft";
-		case UIInterfaceOrientationLandscapeRight:     return @"UIInterfaceOrientationLandscapeRight";
+		case UIInterfaceOrientationPortrait:
+            stringFromInterfaceOrientation = @"UIInterfaceOrientationPortrait";
+            break;
+            
+		case UIInterfaceOrientationPortraitUpsideDown:
+            stringFromInterfaceOrientation = @"UIInterfaceOrientationPortraitUpsideDown";
+            break;
+            
+		case UIInterfaceOrientationLandscapeLeft:
+            stringFromInterfaceOrientation = @"UIInterfaceOrientationLandscapeLeft";
+            break;
+            
+		case UIInterfaceOrientationLandscapeRight:
+            stringFromInterfaceOrientation = @"UIInterfaceOrientationLandscapeRight";
+            break;
 	}
-	return [NSString stringWithFormat:@"Unhandled Orientation: %i", interfaceOrientation];
+    
+	return stringFromInterfaceOrientation;
 }
 
 + (BOOL)interfaceOrientationIsSupported_AG:(UIInterfaceOrientation)interfaceOrientation

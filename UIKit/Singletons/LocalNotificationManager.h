@@ -26,11 +26,8 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <Foundation/Foundation.h>
-#import "AGSynthesizeSingleton.h"
 
 @interface LocalNotificationManager : NSObject
-
-
 
 /** Returns the shared PurchaseManager instance. */
 + (LocalNotificationManager *)sharedManager;

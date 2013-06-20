@@ -56,12 +56,14 @@
 */ 
 + (NSString *)deviceFamily_AG;
 
+#ifdef __CORETELEPHONY_DEFINES_H__
 /** Returns the network carrier in use by the device.
  
  Possible examples of carrier strings are @”O2-UK” and @”AT&T”.
  @return The network carrier in use by the device.
 */ 
 + (NSString *)deviceCarrier_AG;
+#endif
 
 /** Returns the name of the operating system running on the device.
  
