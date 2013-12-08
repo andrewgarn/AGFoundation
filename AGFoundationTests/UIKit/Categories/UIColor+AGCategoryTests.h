@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Andrew Garn. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface UIColor_AGCategoryTests : SenTestCase
+@interface UIColor_AGCategoryTests : XCTestCase
 
 - (void)testRedComponent;
 - (void)testGreenComponent;

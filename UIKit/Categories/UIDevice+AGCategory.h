@@ -208,20 +208,10 @@
 */ 
 + (BOOL)userInterfaceIdiomIsPad_AG;
 
-/**-------------------------------------------------------------------------------------
- @name Generating a Unique Device Identifier
- ---------------------------------------------------------------------------------------
- */
-
-/** Returns an alphanumeric string unique to the current device and application.
- @return An alphanumeric string unique to the current device and application.
-*/ 
-+ (NSString *)uniqueDeviceIdentifier_AG;
-
-/** Returns an alphanumeric string unique to the current device.
- @return An alphanumeric string unique to the current device.
-*/  
-+ (NSString *)uniqueGlobalDeviceIdentifier_AG;
+/** Returns a boolean value that indicates whether the interface in use is designed for the iPad mini.
+ @return `YES` if the interface in use is designed for the iPad mini, otherwise `NO`.
+*/
++ (BOOL)userInterfaceIdiomIsPadMini_AG;
 
 /**-------------------------------------------------------------------------------------
  @name Determining Device State
@@ -249,6 +239,11 @@
  @return A string representation of the current jailbroken state.
 */  
 + (NSString *)jailbrokenState_AG;
+
+/** Returns a boolean value that indicates whether the device is antiquated.
+ @return YES if the device is antiquated, otherwise NO.
+*/
++ (BOOL)isAntiquated_AIV;
 
 /** Returns the current cpu frequency of the device.
  @return The current cpu frequency of the device.

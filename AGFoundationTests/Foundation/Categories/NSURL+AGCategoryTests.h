@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Andrew Garn. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface NSURL_AGCategoryTests : SenTestCase
+@interface NSURL_AGCategoryTests : XCTestCase
 
 - (void)testIsEqualToURL;
 

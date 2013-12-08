@@ -17,11 +17,11 @@
 {
     NSNumber *bytes = [NSNumber numberWithUnsignedLongLong:1073741824];
     NSString *humanReadableBytes = [bytes humanReadableBytes_AG];
-    STAssertTrue([humanReadableBytes isEqualToString:@"1 GB"], @"Byte description incorrect");
+    XCTAssertTrue([humanReadableBytes isEqualToString:@"1 GB"], @"Byte description incorrect");
     
     bytes = [NSNumber numberWithUnsignedLongLong:1099511627776];
     humanReadableBytes = [bytes humanReadableBytes_AG];
-    STAssertTrue([humanReadableBytes isEqualToString:@"1 TB"], @"Byte description incorrect");
+    XCTAssertTrue([humanReadableBytes isEqualToString:@"1 TB"], @"Byte description incorrect");
 }
 
 @end

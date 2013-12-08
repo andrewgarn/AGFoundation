@@ -1,8 +1,8 @@
 //
-//  NSJSONSerialization+AGCategory.h
+//  NSKeyedArchiver+AGCategory.m
 //  AGFoundation
 //
-//  Created by Andrew Garn on 14/03/2013.
+//  Created by Andrew Garn on 30/11/2013.
 //  Copyright (c) 2013 Andrew Garn. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -25,14 +25,45 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <Foundation/Foundation.h>
+#import "NSKeyedArchiver+AGCategory.h"
 
-/** A collection of category extensions for `NSJSONSerialization` */
-@interface NSJSONSerialization (AGCategory)
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSKeyedArchiver_AGCategory);
+#endif
 
-+ (id)JSONDictionaryWithData_AG:(NSData *)data options:(NSJSONReadingOptions)options error:(NSError **)error;
-+ (id)JSONObjectWithData_AG:(NSData *)data options:(NSJSONReadingOptions)options error:(NSError **)error;
+@implementation NSKeyedArchiver (AGCategory)
 
-+ (NSData *)dataWithJSONObject_AG:(id)obj options:(NSJSONWritingOptions)options error:(NSError **)error;
++ (BOOL)archiveRootObject_AG:(id)rootObject toFile:(NSString *)path
+{
+    @try {
+        BOOL success = [NSKeyedArchiver archiveRootObject:rootObject toFile:path];
+        if (success == NO) {
+            NSAssert(success, @"Failed to archive object: %@ to path: %@", rootObject, path);
+            NSLog(@"[NSKeyedArchiver] ERROR: Failed to archive object: %@ to path: %@", rootObject, path);
+        }
+        return success;
+    }
+    @catch (NSException *exception) {
+        NSLog(@"[NSKeyedArchiver] EXCEPTION archiving object: %@ to path: %@\nException was: %@", rootObject, path, exception);
+    }
+    return NO;
+}
+
++ (NSData *)archivedDataWithRootObject_AG:(id)rootObject
+{
+    if (rootObject == nil) return nil;
+    
+    NSData *encodedData = nil;
+    
+    @try {
+        encodedData = [NSKeyedArchiver archivedDataWithRootObject:rootObject];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"[NSKeyedArchiver] EXCEPTION archiving rootObject: %@\nException was: %@", rootObject, exception);
+        encodedData = nil;
+    }
+    
+    return encodedData;
+}
 
 @end

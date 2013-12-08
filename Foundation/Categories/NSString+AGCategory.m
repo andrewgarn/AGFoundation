@@ -169,46 +169,6 @@ FIX_CATEGORY_BUG(NSString_AGCategory);
 
 #pragma mark -
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 60000
-#define AGCategoryStringDefaultLineBreakMode NSLineBreakByWordWrapping
-#else
-#define AGCategoryStringDefaultLineBreakMode UILineBreakModeWordWrap
-#endif
-
-- (CGFloat)heightWithFont_AG:(UIFont *)font constrainedToWidth:(CGFloat)width
-{
-    return [self heightWithFont_AG:font constrainedToWidth:width min:0];
-}
-
-- (CGFloat)heightWithFont_AG:(UIFont *)font constrainedToWidth:(CGFloat)width min:(CGFloat)minHeight
-{
-    return [self heightWithFont_AG:font constrainedToWidth:width lineBreakMode:AGCategoryStringDefaultLineBreakMode min:minHeight];
-}
-
-- (CGFloat)heightWithFont_AG:(UIFont *)font constrainedToSize:(CGSize)size min:(CGFloat)minHeight
-{
-    return [self heightWithFont_AG:font constrainedToSize:size lineBreakMode:AGCategoryStringDefaultLineBreakMode min:minHeight];
-}
-
-- (CGFloat)heightWithFont_AG:(UIFont *)font constrainedToWidth:(CGFloat)width lineBreakMode:(UILineBreakMode)lineBreakMode
-{
-    return [self heightWithFont_AG:font constrainedToWidth:width lineBreakMode:lineBreakMode min:0];
-}
-
-- (CGFloat)heightWithFont_AG:(UIFont *)font constrainedToWidth:(CGFloat)width lineBreakMode:(UILineBreakMode)lineBreakMode min:(CGFloat)minHeight
-{
-    CGSize constraint = CGSizeMake(width, CGFLOAT_MAX);
-    return [self heightWithFont_AG:font constrainedToSize:constraint lineBreakMode:lineBreakMode min:minHeight];
-}
-
-- (CGFloat)heightWithFont_AG:(UIFont *)font constrainedToSize:(CGSize)size lineBreakMode:(UILineBreakMode)lineBreakMode min:(CGFloat)minHeight
-{
-    CGFloat height = [self sizeWithFont:font constrainedToSize:size lineBreakMode:lineBreakMode].height;
-    return ((height < minHeight) ? minHeight : (height > size.height) ? size.height : height);
-}
-
-#pragma mark -
-
 - (BOOL)isValidEmailAddress_AG
 {
     static dispatch_once_t onceToken;
@@ -246,10 +206,15 @@ FIX_CATEGORY_BUG(NSString_AGCategory);
 
 + (NSString *)stringWithUUID_AG
 {
-    CFUUIDRef uuid = CFUUIDCreate(kCFAllocatorDefault);
-    NSString *uuidStr = (__bridge_transfer NSString *)CFUUIDCreateString(kCFAllocatorDefault, uuid);
-    CFRelease(uuid);
-    return uuidStr;
+    if (NSClassFromString(@"NSUUID") == nil) {
+        CFUUIDRef UUIDRef = CFUUIDCreate(kCFAllocatorDefault);
+        NSString *UUIDString = (__bridge_transfer NSString *)CFUUIDCreateString(kCFAllocatorDefault, UUIDRef);
+        CFRelease(UUIDRef);
+        return UUIDString;
+    } else {
+        NSUUID *UUID = [[NSUUID alloc] init];
+        return [UUID UUIDString];
+    }
 }
 
 #pragma mark -

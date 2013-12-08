@@ -15,7 +15,7 @@
 
 @implementation NSDate_AGCategoryTests
 
-#pragma mark - Setup
+#pragma mark - Setup/Teardown
 
 - (void)setUp
 {
@@ -24,8 +24,6 @@
     // Set-up code here.
     self.testDate = [NSDate dateWithTimeIntervalSince1970:1355314332]; // 12th Dec 2012 12:12:12 GMT
 }
-
-#pragma mark - Teardown
 
 - (void)tearDown
 {
@@ -39,8 +37,8 @@
 
 - (void)testIsToday
 {
-    STAssertTrue([[NSDate date] isToday_AG], @"Date isToday test failed.");
-    STAssertFalse([self.testDate isToday_AG], @"Date isToday test failed.");
+    XCTAssertTrue([[NSDate date] isToday_AG], @"Date isToday test failed.");
+    XCTAssertFalse([self.testDate isToday_AG], @"Date isToday test failed.");
 }
 
 @end

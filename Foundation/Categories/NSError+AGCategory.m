@@ -1,9 +1,9 @@
 //
-//  AGActivityIndicator.h
+//  NSError+AGCategory.m
 //  AGFoundation
 //
-//  Created by Andrew Garn on 16/05/2012.
-//  Copyright (c) 2012 Andrew Garn. All rights reserved.
+//  Created by Andrew Garn on 30/11/2013.
+//  Copyright (c) 2013 Andrew Garn. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -25,9 +25,46 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <UIKit/UIKit.h>
+#import "NSError+AGCategory.h"
 
-/** `UIView` extended for use as a stylized activity indicator */
-@interface AGActivityIndicator : UIView
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSError_AGCategory);
+#endif
+
+@implementation NSError (AGCategory)
+
+- (BOOL)representsNotConnectedToInternet_AG
+{
+    BOOL notConnectedToInternet = NO;
+    
+    if ([self.domain isEqualToString:NSURLErrorDomain] && self.code == NSURLErrorNotConnectedToInternet) {
+        notConnectedToInternet = YES;
+    }
+    
+    return notConnectedToInternet;
+}
+
+- (BOOL)representsRequestTimedOut_AG
+{
+    BOOL connectionTimedOut = NO;
+    
+    if ([self.domain isEqualToString:NSURLErrorDomain] && self.code == NSURLErrorTimedOut) {
+        connectionTimedOut = YES;
+    }
+    
+    return connectionTimedOut;
+}
+
+- (BOOL)representsInternetConnectionFailure_AG
+{
+    BOOL notConnectedToInternet = [self representsNotConnectedToInternet_AG];
+    BOOL requestTimedOut = [self representsRequestTimedOut_AG];
+    
+    BOOL internetConnectionFailure = NO;
+    if (notConnectedToInternet || requestTimedOut) {
+        internetConnectionFailure = YES;
+    }
+    return internetConnectionFailure;
+}
 
 @end

@@ -1,9 +1,9 @@
 //
-//  AGActivityIndicator.h
+//  NSKeyedUnarchiver+AGCategory.m
 //  AGFoundation
 //
-//  Created by Andrew Garn on 16/05/2012.
-//  Copyright (c) 2012 Andrew Garn. All rights reserved.
+//  Created by Andrew Garn on 30/11/2013.
+//  Copyright (c) 2013 Andrew Garn. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -25,9 +25,28 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <UIKit/UIKit.h>
+#import "NSKeyedUnarchiver+AGCategory.h"
 
-/** `UIView` extended for use as a stylized activity indicator */
-@interface AGActivityIndicator : UIView
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSKeyedUnarchiver_AGCategory);
+#endif
+
+@implementation NSKeyedUnarchiver (AGCategory)
+
++ (id)unarchiveObjectWithFile_AG:(NSString *)path
+{
+    id object = nil;
+    
+    @try {
+        object = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"[NSKeyedUnarchiver] EXCEPTION unarchiving object with path: %@\nException was: %@", path, exception);
+        [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
+        object = nil;
+    }
+    
+    return object;
+}
 
 @end

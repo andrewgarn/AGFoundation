@@ -26,6 +26,7 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "UIDevice+AGCategory.h"
+#import "NSNumber+AGCategory.h"
 #import "NSString+AGCategory.h"
 
 #include <sys/utsname.h>
@@ -44,7 +45,11 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
 #define kUTTypeMovie @"public.movie"
 #endif
 
-#pragma mark -
+// http://theiphonewiki.com/wiki/iPhone
+// http://theiphonewiki.com/wiki/iPod_touch
+// http://theiphonewiki.com/wiki/iPad
+// http://theiphonewiki.com/wiki/iPad_mini
+// http://everymac.com/ultimate-mac-lookup
 
 @implementation UIDevice (AGCategory)
 
@@ -65,10 +70,15 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
         else if ([platform isEqualToString:@"iPhone1,2"])    deviceModel = @"iPhone 3G";
         else if ([platform hasPrefix:@"iPhone2"])            deviceModel = @"iPhone 3GS";
         else if ([platform isEqualToString:@"iPhone3,1"])    deviceModel = @"iPhone 4 (GSM)";
+        else if ([platform isEqualToString:@"iPhone3,2"])    deviceModel = @"iPhone 4 (GSM) (Rev A)";
         else if ([platform isEqualToString:@"iPhone3,3"])    deviceModel = @"iPhone 4 (CDMA)";
         else if ([platform hasPrefix:@"iPhone4"])            deviceModel = @"iPhone 4S";
         else if ([platform isEqualToString:@"iPhone5,1"])    deviceModel = @"iPhone 5 (GSM)";
         else if ([platform isEqualToString:@"iPhone5,2"])    deviceModel = @"iPhone 5 (GSM+CDMA)";
+        else if ([platform isEqualToString:@"iPhone5,3"])    deviceModel = @"iPhone 5c (GSM)";
+        else if ([platform isEqualToString:@"iPhone5,4"])    deviceModel = @"iPhone 5c (GSM+CDMA)";
+        else if ([platform isEqualToString:@"iPhone6,1"])    deviceModel = @"iPhone 5s (GSM)";
+        else if ([platform isEqualToString:@"iPhone6,2"])    deviceModel = @"iPhone 5s (GSM+CDMA)";
         
         /* iPod Touch */
         else if ([platform hasPrefix:@"iPod1"])              deviceModel = @"iPod touch 1G";
@@ -76,6 +86,7 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
         else if ([platform hasPrefix:@"iPod3"])              deviceModel = @"iPod touch 3G";
         else if ([platform hasPrefix:@"iPod4"])              deviceModel = @"iPod touch 4G";
         else if ([platform hasPrefix:@"iPod5"])              deviceModel = @"iPod touch 5G";
+        else if ([platform hasPrefix:@"iPod6"])              deviceModel = @"iPod touch 6G";
         
         /* iPad */
         else if ([platform isEqualToString:@"iPad1,1"])      deviceModel = @"iPad Wi-Fi";
@@ -92,6 +103,10 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
         else if ([platform isEqualToString:@"iPad3,4"])      deviceModel = @"iPad 4 Wi-Fi";
         else if ([platform isEqualToString:@"iPad3,5"])      deviceModel = @"iPad 4 Wi-Fi + 4G (GSM)";
         else if ([platform isEqualToString:@"iPad3,6"])      deviceModel = @"iPad 4 Wi-Fi + 4G (GSM+CDMA)";
+        else if ([platform isEqualToString:@"iPad4,1"])      deviceModel = @"iPad Air WiFi";
+        else if ([platform isEqualToString:@"iPad4,2"])      deviceModel = @"iPad Air WiFi + 4G";
+        else if ([platform isEqualToString:@"iPad4,4"])      deviceModel = @"iPad mini 2 WiFi";
+        else if ([platform isEqualToString:@"iPad4,5"])      deviceModel = @"iPad mini 2 WiFi + 4G";
         
         /* Simulator */
         else if ([UIDevice isASimulator_AG]) {
@@ -137,19 +152,27 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
         if ([platform isEqualToString:@"iPhone1,1"])         deviceModel = @"iPhone";
         else if ([platform isEqualToString:@"iPhone1,2"])    deviceModel = @"iPhone 3G";
         else if ([platform hasPrefix:@"iPhone2"])            deviceModel = @"iPhone 3GS";
-        else if ([platform hasPrefix:@"iPhone3"])            deviceModel = @"iPhone 4";
+        else if ([platform isEqualToString:@"iPhone3,1"])    deviceModel = @"iPhone 4";
+        else if ([platform isEqualToString:@"iPhone3,2"])    deviceModel = @"iPhone 4";
+        else if ([platform isEqualToString:@"iPhone3,3"])    deviceModel = @"iPhone 4";
         else if ([platform hasPrefix:@"iPhone4"])            deviceModel = @"iPhone 4S";
-        else if ([platform hasPrefix:@"iPhone5"])            deviceModel = @"iPhone 5";
+        else if ([platform isEqualToString:@"iPhone5,1"])    deviceModel = @"iPhone 5";
+        else if ([platform isEqualToString:@"iPhone5,2"])    deviceModel = @"iPhone 5";
+        else if ([platform isEqualToString:@"iPhone5,3"])    deviceModel = @"iPhone 5c";
+        else if ([platform isEqualToString:@"iPhone5,4"])    deviceModel = @"iPhone 5c";
+        else if ([platform isEqualToString:@"iPhone6,1"])    deviceModel = @"iPhone 5s";
+        else if ([platform isEqualToString:@"iPhone6,2"])    deviceModel = @"iPhone 5s";
         
         /* iPod Touch */
-        else if ([platform hasPrefix:@"iPod1"])              deviceModel = @"iPod touch";
+        else if ([platform hasPrefix:@"iPod1"])              deviceModel = @"iPod touch 1G";
         else if ([platform hasPrefix:@"iPod2"])              deviceModel = @"iPod touch 2G";
         else if ([platform hasPrefix:@"iPod3"])              deviceModel = @"iPod touch 3G";
         else if ([platform hasPrefix:@"iPod4"])              deviceModel = @"iPod touch 4G";
         else if ([platform hasPrefix:@"iPod5"])              deviceModel = @"iPod touch 5G";
+        else if ([platform hasPrefix:@"iPod6"])              deviceModel = @"iPod touch 6G";
         
         /* iPad */
-        else if ([platform hasPrefix:@"iPad1"])              deviceModel = @"iPad";
+        else if ([platform isEqualToString:@"iPad1,1"])      deviceModel = @"iPad";
         else if ([platform isEqualToString:@"iPad2,1"])      deviceModel = @"iPad 2";
         else if ([platform isEqualToString:@"iPad2,2"])      deviceModel = @"iPad 2";
         else if ([platform isEqualToString:@"iPad2,3"])      deviceModel = @"iPad 2";
@@ -163,6 +186,10 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
         else if ([platform isEqualToString:@"iPad3,4"])      deviceModel = @"iPad 4";
         else if ([platform isEqualToString:@"iPad3,5"])      deviceModel = @"iPad 4";
         else if ([platform isEqualToString:@"iPad3,6"])      deviceModel = @"iPad 4";
+        else if ([platform isEqualToString:@"iPad4,1"])      deviceModel = @"iPad Air";
+        else if ([platform isEqualToString:@"iPad4,2"])      deviceModel = @"iPad Air";
+        else if ([platform isEqualToString:@"iPad4,4"])      deviceModel = @"iPad mini 2";
+        else if ([platform isEqualToString:@"iPad4,5"])      deviceModel = @"iPad mini 2";
         
         /* Simulator */
         else if ([UIDevice isASimulator_AG]) {
@@ -178,6 +205,17 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
         
 	});
     return deviceModel;
+}
+
++ (BOOL)deviceModelIsRecognized_AIV
+{
+    NSString *platform = [self platform_AG];
+    NSString *deviceModel = [self deviceModel_AG];
+    if (![platform isEqualToString:deviceModel]) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 + (NSString *)deviceFamily_AG
@@ -510,30 +548,24 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
     return userInterfaceIdiomIsPad;
 }
 
-#pragma mark -
-
-+ (NSString *)uniqueDeviceIdentifier_AG
++ (BOOL)userInterfaceIdiomIsPadMini_AG
 {
     static dispatch_once_t token;
-	static NSString *uniqueDeviceIdentifier;
+	static BOOL userInterfaceIdiomIsPadMini = NO;
     
 	dispatch_once(&token, ^{
-        NSString *macAddress = [UIDevice macAddress_AG];
-        NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
-        uniqueDeviceIdentifier = [macAddress HMACWithSecret_AG:bundleIdentifier];
+        if ([UIDevice userInterfaceIdiomIsPad_AG]) {
+            NSString *platform = [self platform_AG];
+            if ([platform isEqualToString:@"iPad2,5"]           // iPad mini Wi-Fi
+                || [platform isEqualToString:@"iPad2,6"]        // iPad mini Wi-Fi + 4G (GSM)
+                || [platform isEqualToString:@"iPad2,7"]        // iPad mini Wi-Fi + 4G (GSM+CDMA)
+                || [platform isEqualToString:@"iPad4,4"]        // iPad mini 2 Wi-Fi
+                || [platform isEqualToString:@"iPad4,5"]) {     // iPad mini 2 Wi-Fi + 4G
+                userInterfaceIdiomIsPadMini = YES;
+            }
+        }
 	});
-    return uniqueDeviceIdentifier;
-}
-
-+ (NSString *)uniqueGlobalDeviceIdentifier_AG
-{
-    static dispatch_once_t token;
-	static NSString *uniqueGlobalDeviceIdentifier;
-    
-	dispatch_once(&token, ^{
-        uniqueGlobalDeviceIdentifier = [[UIDevice macAddress_AG] SHA1Hash_AG];
-	});
-    return uniqueGlobalDeviceIdentifier;
+    return userInterfaceIdiomIsPadMini;
 }
 
 #pragma mark -
@@ -583,10 +615,13 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
 
 + (BOOL)isJailbroken_AG
 {
-    static dispatch_once_t token;
+#if TARGET_IPHONE_SIMULATOR
+    return NO;
+#else
+    static dispatch_once_t onceToken;
 	static BOOL isJailbroken = NO;
     
-	dispatch_once(&token, ^{
+	dispatch_once(&onceToken, ^{
         NSString *cydiaPath = @"/Applications/Cydia.app";
         NSString *aptPath = @"/private/var/lib/apt/";
         
@@ -594,9 +629,16 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
             isJailbroken = YES;
         } else if ([[NSFileManager defaultManager] fileExistsAtPath:aptPath]) {
             isJailbroken = YES;
+        } else {
+            FILE *file = fopen("/bin/bash", "r");
+            if (file != NULL) {
+                isJailbroken = YES;
+            }
+            fclose(file);
         }
     });
     return isJailbroken;
+#endif
 }
 
 + (NSString *)jailbrokenState_AG
@@ -612,6 +654,27 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
         }
     });
     return jailbrokenState;
+}
+
+#pragma mark -
+
++ (BOOL)isAntiquated_AIV
+{
+    static dispatch_once_t token;
+	static BOOL isAntiquated = NO;
+    
+	dispatch_once(&token, ^{
+        
+        /* Get Platform */
+        NSString *platform = [self platform_AG];
+        
+        if ([platform hasPrefix:@"iPod3"]               // iPod 3G
+            || [platform hasPrefix:@"iPhone2"]          // iPhone 3GS
+            || [platform isEqualToString:@"iPad1,1"]) { // iPad 1
+            isAntiquated = YES;
+        }
+	});
+    return isAntiquated;
 }
 
 #pragma mark -
@@ -660,6 +723,18 @@ FIX_CATEGORY_BUG(UIDevice_AGCategory);
 {
     NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
     return [attributes objectForKey:NSFileSystemFreeSize];
+}
+
++ (NSString *)freeDiskSpaceHumanReadable_AIV
+{
+    NSNumber *freeDiskSpace = [UIDevice freeDiskSpace_AG];
+    return [freeDiskSpace humanReadableBytes_AG];
+}
+
++ (NSString *)totalDiskSpaceHumanReadable_AIV
+{
+    NSNumber *freeDiskSpace = [UIDevice totalDiskSpace_AG];
+    return [freeDiskSpace humanReadableBytes_AG];
 }
 
 + (NSNumber *)freeMemory_AG

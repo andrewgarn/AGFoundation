@@ -1,9 +1,9 @@
 //
-//  AGActivityIndicator.h
+//  CIImage+AGCategory.m
 //  AGFoundation
 //
-//  Created by Andrew Garn on 16/05/2012.
-//  Copyright (c) 2012 Andrew Garn. All rights reserved.
+//  Created by Andrew Garn on 30/11/2013.
+//  Copyright (c) 2013 Andrew Garn. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -25,9 +25,30 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <UIKit/UIKit.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+#import "CIImage+AGCategory.h"
 
-/** `UIView` extended for use as a stylized activity indicator */
-@interface AGActivityIndicator : UIView
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(CIImage_AGCategory);
+#endif
+
+@implementation CIImage (AGCategory)
+
+- (void)writeToSavedPhotosAlbum_AG
+{
+    [self writeToSavedPhotosAlbumWithCompletionHandler_AG:nil];
+}
+
+- (void)writeToSavedPhotosAlbumWithCompletionHandler_AG:(void (^)(NSURL *assetURL, NSError *error))completionHandler
+{
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef vignetteImageRef = [context createCGImage:self fromRect:self.extent];
+    
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    [library writeImageToSavedPhotosAlbum:vignetteImageRef metadata:self.properties completionBlock:^(NSURL *assetURL, NSError *error) {
+        if (completionHandler) completionHandler(assetURL, error);
+        CGImageRelease(vignetteImageRef);
+    }];
+}
 
 @end

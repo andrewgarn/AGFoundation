@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Andrew Garn. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface NSNumber_AGCategoryTests : SenTestCase
+@interface NSNumber_AGCategoryTests : XCTestCase
 
 - (void)testHumanReadableBytes;
 

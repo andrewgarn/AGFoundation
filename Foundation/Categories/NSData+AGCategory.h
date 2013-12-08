@@ -36,23 +36,87 @@
 */
 
 /** Returns the MD5 hash of the receiver.
- @return The MD5 hash of the receiver.
- */
-- (NSString *)MD5Hash_AG;
+@return The MD5 hash of the receiver.
+*/
+- (NSData *)MD5Hash_AG;
 
 /** Returns the SHA1 hash of the receiver.
  @return The SHA1 hash of the receiver.
- */
-- (NSString *)SHA1Hash_AG;
+*/
+- (NSData *)SHA1Hash_AG;
 
 /** Returns the SHA256 hash of the receiver.
  @return The SHA256 hash of the receiver.
- */
-- (NSString *)SHA256Hash_AG;
+*/
+- (NSData *)SHA256Hash_AG;
 
 /** Returns the SHA512 hash of the receiver.
  @return The SHA512 hash of the receiver.
+*/
+- (NSData *)SHA512Hash_AG;
+
+/** Returns a string representation of the MD5 hash of the receiver.
+ @return The MD5 hash of the receiver.
+*/
+- (NSString *)MD5HashString_AG;
+
+/** Returns a string representation of the SHA1 hash of the receiver.
+ @return The SHA1 hash of the receiver.
+*/
+- (NSString *)SHA1HashString_AG;
+
+/** Returns a string representation of the SHA256 hash of the receiver.
+ @return The SHA256 hash of the receiver.
+*/
+- (NSString *)SHA256HashString_AG;
+
+/** Returns a string representation of the SHA512 hash of the receiver.
+ @return The SHA512 hash of the receiver.
  */
-- (NSString *)SHA512Hash_AG;
+- (NSString *)SHA512HashString_AG;
+
+/**-------------------------------------------------------------------------------------
+ @name Cryptographic Keyed-Hashing
+ ---------------------------------------------------------------------------------------
+*/
+
+- (NSData *)HMACMD5WithKey_AG:(NSData *)key;
+- (NSData *)HMACSHA1WithKey_AG:(NSData *)key;
+- (NSData *)HMACSHA256WithKey_AG:(NSData *)key;
+- (NSData *)HMACSHA512WithKey_AG:(NSData *)key;
+
+/**-------------------------------------------------------------------------------------
+ @name Encryption and Decryption
+ ---------------------------------------------------------------------------------------
+*/
+
+- (NSData *)AES256EncryptWithKey_AG:(NSString *)key;
+- (NSData *)AES256DecryptWithKey_AG:(NSString *)key;
+
+/**-------------------------------------------------------------------------------------
+ @name Gzip Compression
+ ---------------------------------------------------------------------------------------
+*/
+
++ (NSData *)gzipCompressedDataWithData_AG:(NSData *)data;
++ (NSData *)gzipCompressedDataWithBytes_AG:(const void *)bytes length:(unsigned)length;
+
++ (NSData *)dataWithGzipCompressedData_AG:(NSData *)compressedData;
++ (NSData *)dataWithGzipCompressedBytes_AG:(const void *)bytes length:(unsigned)length;
+
+/**-------------------------------------------------------------------------------------
+ @name Random Data
+ ---------------------------------------------------------------------------------------
+*/
+
++ (NSData *)randomDataOfLength_AG:(size_t)length;
+
+/**-------------------------------------------------------------------------------------
+ @name Storing Data
+ ---------------------------------------------------------------------------------------
+*/
+
+- (BOOL)writeToFile_AG:(NSString *)path atomically:(BOOL)useAuxiliaryFile;
+- (BOOL)writeToFile_AG:(NSString *)path options:(NSDataWritingOptions)writeOptionsMask error:(NSError **)errorPtr;
 
 @end

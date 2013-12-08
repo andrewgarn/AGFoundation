@@ -39,22 +39,22 @@
 
 - (void)testRedComponent
 {
-    STAssertTrue([self.testColor redComponent_AG] == 0.1f, @"Red component test failed.");
+    XCTAssertTrue([self.testColor redComponent_AG] == 0.1f, @"Red component test failed.");
 }
 
 - (void)testGreenComponent
 {
-    STAssertTrue([self.testColor greenComponent_AG] == 0.2f, @"Green component test failed.");
+    XCTAssertTrue([self.testColor greenComponent_AG] == 0.2f, @"Green component test failed.");
 }
 
 - (void)testBlueComponent
 {
-    STAssertTrue([self.testColor blueComponent_AG] == 0.3f, @"Blue component test failed.");
+    XCTAssertTrue([self.testColor blueComponent_AG] == 0.3f, @"Blue component test failed.");
 }
 
 - (void)testAlphaComponent
 {
-    STAssertTrue([self.testColor alphaComponent_AG] == 0.4f, @"Alpha component test failed.");
+    XCTAssertTrue([self.testColor alphaComponent_AG] == 0.4f, @"Alpha component test failed.");
 }
 
 @end

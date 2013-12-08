@@ -1,9 +1,9 @@
 //
-//  AGActivityIndicator.h
+//  NSLocale+AGCategory.h
 //  AGFoundation
 //
-//  Created by Andrew Garn on 16/05/2012.
-//  Copyright (c) 2012 Andrew Garn. All rights reserved.
+//  Created by Andrew Garn on 30/11/2013.
+//  Copyright (c) 2013 Andrew Garn. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -25,9 +25,28 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-/** `UIView` extended for use as a stylized activity indicator */
-@interface AGActivityIndicator : UIView
+@interface NSLocale (AGCategory)
+
+/**-------------------------------------------------------------------------------------
+ @name Thread Safe NSLocale
+ ---------------------------------------------------------------------------------------
+*/
+
+/** Returns a thread safe locale with the given locale identifier.
+ 
+ The method returns a thread safe `NSLocale` by making use of thread dictionary storage to return a seperate cached instance for each thread.
+ @param string The identifier for the new locale.
+ @return A thread safe locale with the given locale identifier.
+*/
++ (NSLocale *)localeWithLocaleIdentifier_AG:(NSString *)string;
+
+/** Returns a thread safe autoupdating logical locale for the current user.
+ 
+ The method returns a thread safe `NSLocale` by making use of thread dictionary storage to return a seperate cached instance for each thread.
+ @return A thread safe autoupdating logical locale for the current user.
+*/
++ (NSLocale *)autoupdatingCurrentLocale_AG;
 
 @end

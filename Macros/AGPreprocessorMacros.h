@@ -41,3 +41,8 @@
 
 /** Macro to release an object and set the pointer to nil. */ 
 #define RELEASE_SAFELY(__POINTER) { [__POINTER release]; __POINTER = nil; }
+
+/** */
+#define AGClassAssert(obj, expectedClass) if (obj) { \
+    NSAssert([obj isKindOfClass:expectedClass], @"Expected class: %@. Got class: %@ (%@)", expectedClass, [obj class], obj); \
+}

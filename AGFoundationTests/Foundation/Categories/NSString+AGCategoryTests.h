@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Andrew Garn. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface NSString_AGCategoryTests : SenTestCase
+@interface NSString_AGCategoryTests : XCTestCase
 
 - (void)testContainsString;
 - (void)testStringBetweenStringAndString;

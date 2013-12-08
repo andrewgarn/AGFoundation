@@ -47,10 +47,10 @@ FIX_CATEGORY_BUG(NSNumber_AGCategory);
 
 - (NSString *)humanReadableBytes_AG
 {
-    return [self humanReadableBytesWithDecimalPlaceAccuracy_AG:NSIntegerMax];
+    return [self humanReadableBytesWithDecimalPlaceAccuracy_AG:-1];
 }
 
-- (NSString *)humanReadableBytesWithDecimalPlaceAccuracy_AG:(NSUInteger)decimalPlaces
+- (NSString *)humanReadableBytesWithDecimalPlaceAccuracy_AG:(NSInteger)decimalPlaces
 {
     static dispatch_once_t onceToken;
     static NSDecimalNumber *unitDecimalNumber;
@@ -70,7 +70,7 @@ FIX_CATEGORY_BUG(NSNumber_AGCategory);
     }
     
     NSUInteger scale = 0;
-    if (decimalPlaces == NSIntegerMax) {
+    if (decimalPlaces < 0) {
         if (unit < 2) {
             scale = 0;
         } else if (unit == 2) {

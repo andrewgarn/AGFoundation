@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Andrew Garn. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface NSArray_AGCategoryTests : SenTestCase
+@interface NSArray_AGCategoryTests : XCTestCase
 
 - (void)testFirstObject;
 - (void)testObjectAtIndex;

@@ -1,8 +1,8 @@
 //
-//  NSJSONSerialization+AGCategory.h
+//  NSDateFormatter+AGCategory.h
 //  AGFoundation
 //
-//  Created by Andrew Garn on 14/03/2013.
+//  Created by Andrew Garn on 30/11/2013.
 //  Copyright (c) 2013 Andrew Garn. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -27,12 +27,28 @@
 
 #import <Foundation/Foundation.h>
 
-/** A collection of category extensions for `NSJSONSerialization` */
-@interface NSJSONSerialization (AGCategory)
+@interface NSDateFormatter (AGCategory)
 
-+ (id)JSONDictionaryWithData_AG:(NSData *)data options:(NSJSONReadingOptions)options error:(NSError **)error;
-+ (id)JSONObjectWithData_AG:(NSData *)data options:(NSJSONReadingOptions)options error:(NSError **)error;
+/**-------------------------------------------------------------------------------------
+ @name Thread Safe NSDateFormatter
+ ---------------------------------------------------------------------------------------
+*/
 
-+ (NSData *)dataWithJSONObject_AG:(id)obj options:(NSJSONWritingOptions)options error:(NSError **)error;
+/** Returns a thread safe date formatter with the specified date format set.
+ 
+ The method returns a thread safe `NSDateFormatter` by making use of thread dictionary storage to return a seperate cached instance for each thread.
+ @param dateFormat The date format for the receiver.
+ @return A thread safe date formatter with the specified date format set.
+ */
++ (NSDateFormatter *)dateFormatterWithDateFormat_AG:(NSString *)dateFormat;
+
+/** Returns a thread safe date formatter with the specified date format set.
+ 
+ The method returns a thread safe `NSDateFormatter` by making use of thread dictionary storage to return a seperate cached instance for each thread.
+ @param dateFormat The date format for the receiver.
+ @param localeIdentifier The identifier for the new locale.
+ @return A thread safe date formatter with the specified date format and locale set.
+ */
++ (NSDateFormatter *)dateFormatterWithDateFormat_AG:(NSString *)dateFormat withLocaleIdentifier:(NSString *)localeIdentifier;
 
 @end

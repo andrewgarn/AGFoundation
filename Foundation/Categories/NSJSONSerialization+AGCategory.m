@@ -27,30 +27,58 @@
 
 #import "NSJSONSerialization+AGCategory.h"
 
+#ifdef AGFOUNDATION_FRAMEWORK
+FIX_CATEGORY_BUG(NSJSONSerialization_AGCategory);
+#endif
+
 @implementation NSJSONSerialization (AGCategory)
 
-+ (void)parseData_AG:(NSData *)data completionBlock:(void (^)(id JSONObject))completionBlock failureBlock:(void (^)(NSError *error))failureBlock
++ (id)JSONDictionaryWithData_AG:(NSData *)data options:(NSJSONReadingOptions)options error:(NSError **)error
 {
-    [NSJSONSerialization parseData_AG:data options:0 completionBlock:completionBlock failureBlock:failureBlock];
+    if (data == nil) return nil;
+    
+    NSDictionary *object = [self JSONObjectWithData_AG:data options:options error:error];
+    
+    if ([object isKindOfClass:[NSDictionary class]]) {
+        return object;
+    } else {
+        NSLog(@"[NSJSONSerialization] WARNING: unexpected class from JSON: %@", [object class]);
+        return nil;
+    }
 }
 
-+ (void)parseData_AG:(NSData *)data options:(NSJSONReadingOptions)options completionBlock:(void (^)(id JSONObject))completionBlock failureBlock:(void (^)(NSError *error))failureBlock
++ (id)JSONObjectWithData_AG:(NSData *)data options:(NSJSONReadingOptions)options error:(NSError **)error
 {
-	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-		NSError *error = nil;
-		id JSONObject = [NSJSONSerialization JSONObjectWithData:data options:options error:&error];
-		dispatch_async(dispatch_get_main_queue(), ^() {
-            if (JSONObject && completionBlock) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    completionBlock(JSONObject);
-                });
-            } else if (error && failureBlock) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    failureBlock(error);
-                });
-            }
-		});
-	});
+    id object = nil;
+    
+    @try {
+        object = [NSJSONSerialization JSONObjectWithData:data options:options error:error];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"[NSJSONSerialization] EXCEPTION deserializing JSON object: %@", exception);
+        object = nil;
+    }
+    
+    return object;
+}
+
++ (NSData *)dataWithJSONObject_AG:(id)obj options:(NSJSONWritingOptions)options error:(NSError **)error
+{
+    if (![NSJSONSerialization isValidJSONObject:obj]) {
+        NSLog(@"[NSJSONSerialization] Invalid object: %@", obj);
+    }
+    
+	NSData *data = nil;
+    
+    @try {
+		data = [NSJSONSerialization dataWithJSONObject:obj options:options error:error];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"[NSJSONSerialization] EXCEPTION serializing JSON object: %@", exception);
+        data = nil;
+    }
+    
+    return data;
 }
 
 @end

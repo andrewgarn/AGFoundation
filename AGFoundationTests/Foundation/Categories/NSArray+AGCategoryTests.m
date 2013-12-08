@@ -15,7 +15,7 @@
 
 @implementation NSArray_AGCategoryTests
 
-#pragma mark - Setup
+#pragma mark - Setup/Teardown
 
 - (void)setUp
 {
@@ -24,8 +24,6 @@
     // Set-up code here.
     self.testArray = [[NSArray alloc] initWithObjects:@"one", @"two", @"three", @"four", nil];
 }
-
-#pragma mark - Teardown
 
 - (void)tearDown
 {
@@ -39,20 +37,20 @@
 
 - (void)testFirstObject
 {
-    STAssertTrue([@"one" isEqualToString:[self.testArray firstObject_AG]], @"First object incorrect");
-    STAssertNil([[[NSArray alloc] init] firstObject_AG], @"First object should be nil");
+    XCTAssertTrue([@"one" isEqualToString:[self.testArray firstObject_AG]], @"First object incorrect");
+    XCTAssertNil([[[NSArray alloc] init] firstObject_AG], @"First object should be nil");
 }
 
 - (void)testObjectAtIndex
 {
-    STAssertNotNil([self.testArray objectAtIndex_AG:1], @"Second object should not be nil");
-    STAssertNil([self.testArray objectAtIndex_AG:4], @"Fifth object should be nil");
+    XCTAssertNotNil([self.testArray objectAtIndex_AG:1], @"Second object should not be nil");
+    XCTAssertNil([self.testArray objectAtIndex_AG:4], @"Fifth object should be nil");
 }
 
 - (void)testReversedArray
 {
     NSArray *array = [self.testArray reversedArray_AG];
-    STAssertTrue([[array objectAtIndex:0] isEqualToString:@"four"], @"Reversed array test failed");
+    XCTAssertTrue([[array objectAtIndex:0] isEqualToString:@"four"], @"Reversed array test failed");
 }
 
 @end

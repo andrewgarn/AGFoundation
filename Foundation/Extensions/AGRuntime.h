@@ -1,8 +1,8 @@
 //
-//  NSJSONSerialization+AGCategory.h
+//  AGRuntime.h
 //  AGFoundation
 //
-//  Created by Andrew Garn on 14/03/2013.
+//  Created by Andrew Garn on 30/11/2013.
 //  Copyright (c) 2013 Andrew Garn. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -27,12 +27,39 @@
 
 #import <Foundation/Foundation.h>
 
-/** A collection of category extensions for `NSJSONSerialization` */
-@interface NSJSONSerialization (AGCategory)
+@interface AGRuntime : NSObject
 
-+ (id)JSONDictionaryWithData_AG:(NSData *)data options:(NSJSONReadingOptions)options error:(NSError **)error;
-+ (id)JSONObjectWithData_AG:(NSData *)data options:(NSJSONReadingOptions)options error:(NSError **)error;
+/**-------------------------------------------------------------------------------------
+ @name Available Classes
+ ---------------------------------------------------------------------------------------
+*/
 
-+ (NSData *)dataWithJSONObject_AG:(id)obj options:(NSJSONWritingOptions)options error:(NSError **)error;
++ (NSArray *)availableClassList;
++ (NSArray *)availableClassesWithPrefix:(NSString *)prefix;
+
+/**-------------------------------------------------------------------------------------
+ @name Runtime Subclasses
+ ---------------------------------------------------------------------------------------
+*/
+
++ (NSSet *)subclassListForClass:(Class)aClass;
+
+/**-------------------------------------------------------------------------------------
+ @name Runtime Properties
+ ---------------------------------------------------------------------------------------
+*/
+
++ (NSArray *)propertyListForClass:(Class)aClass;
++ (NSArray *)propertyListForClass:(Class)aClass withPrefix:(NSString *)prefix;
+
++ (BOOL)propertyDefinedAsWeak:(NSString *)propertyName onClass:(Class)aClass;
+
+/**-------------------------------------------------------------------------------------
+ @name Runtime Methods
+ ---------------------------------------------------------------------------------------
+*/
+
++ (NSArray *)methodListForClassName:(NSString *)className;
++ (NSArray *)methodListForClass:(Class)aClass;
 
 @end

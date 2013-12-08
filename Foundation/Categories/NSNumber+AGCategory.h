@@ -61,6 +61,6 @@
  @param decimalPlaces The decimal place accuracy of the byte description to be returned.
  @return An `NSString` description of the byte value represented by the receiver.
 */
-- (NSString *)humanReadableBytesWithDecimalPlaceAccuracy_AG:(NSUInteger)decimalPlaces;
+- (NSString *)humanReadableBytesWithDecimalPlaceAccuracy_AG:(NSInteger)decimalPlaces;
 
 @end
