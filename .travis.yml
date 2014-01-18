@@ -1,0 +1,6 @@
+language: objective-c
+
+script: 
+ - xctool -project AGFoundation.xcodeproj -scheme "AGFoundation" build -sdk iphonesimulator -arch i386 ONLY_ACTIVE_ARCH=NO
+ - xctool -project AGFoundation.xcodeproj -scheme "AGFoundation" build test -sdk iphonesimulator6.1 -arch i386 ONLY_ACTIVE_ARCH=NO
+ - xctool -project AGFoundation.xcodeproj -scheme "AGFoundation" build test -sdk iphonesimulator7.0 -arch i386 ONLY_ACTIVE_ARCH=NO
