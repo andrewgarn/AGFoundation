@@ -44,28 +44,28 @@ FIX_CATEGORY_BUG(NSData_AGCategory);
 - (NSData *)MD5Hash_AG
 {
     NSMutableData *hashData = [[NSMutableData alloc] initWithLength:CC_MD5_DIGEST_LENGTH];
-	CC_MD5([self bytes], [self length], [hashData mutableBytes]);
+	CC_MD5([self bytes], (CC_LONG)[self length], [hashData mutableBytes]);
     return [hashData copy];
 }
 
 - (NSData *)SHA1Hash_AG
 {
     NSMutableData *hashData = [[NSMutableData alloc] initWithLength:CC_SHA1_DIGEST_LENGTH];
-    CC_SHA1([self bytes], [self length], [hashData mutableBytes]);
+    CC_SHA1([self bytes], (CC_LONG)[self length], [hashData mutableBytes]);
     return [hashData copy];
 }
 
 - (NSData *)SHA256Hash_AG
 {
     NSMutableData *hashData = [[NSMutableData alloc] initWithLength:CC_SHA256_DIGEST_LENGTH];
-    CC_SHA256([self bytes], [self length], [hashData mutableBytes]);
+    CC_SHA256([self bytes], (CC_LONG)[self length], [hashData mutableBytes]);
     return [hashData copy];
 }
 
 - (NSData *)SHA512Hash_AG
 {
     NSMutableData *hashData = [[NSMutableData alloc] initWithLength:CC_SHA512_DIGEST_LENGTH];
-    CC_SHA512([self bytes], [self length], [hashData mutableBytes]);
+    CC_SHA512([self bytes], (CC_LONG)[self length], [hashData mutableBytes]);
     return [hashData copy];
 }
 
@@ -194,7 +194,7 @@ FIX_CATEGORY_BUG(NSData_AGCategory);
 
 + (NSData *)gzipCompressedDataWithData_AG:(NSData *)data
 {
-    return [self gzipCompressedDataWithBytes_AG:[data bytes] length:[data length]];
+    return [self gzipCompressedDataWithBytes_AG:[data bytes] length:(unsigned)[data length]];
 }
 
 + (NSData *)gzipCompressedDataWithBytes_AG:(const void *)bytes length:(unsigned)length
@@ -217,7 +217,7 @@ FIX_CATEGORY_BUG(NSData_AGCategory);
 
 + (NSData *)dataWithGzipCompressedData_AG:(NSData *)compressedData
 {
-    return [self dataWithGzipCompressedBytes_AG:[compressedData bytes] length:[compressedData length]];
+    return [self dataWithGzipCompressedBytes_AG:[compressedData bytes] length:(unsigned)[compressedData length]];
 }
 
 + (NSData *)dataWithGzipCompressedBytes_AG:(const void *)bytes length:(unsigned)length

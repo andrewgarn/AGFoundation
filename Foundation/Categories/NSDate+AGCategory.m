@@ -190,53 +190,53 @@ FIX_CATEGORY_BUG(NSDate_AGCategory);
     NSInteger seconds = [[gregorianCalendar components:NSSecondCalendarUnit fromDate:startDate toDate:endDate options:0] second];
     if (seconds < 60) {
         if (seconds == 1) {
-            return [NSString stringWithFormat:@"%d second %@", seconds, tense];
+            return [NSString stringWithFormat:@"%ld second %@", (long)seconds, tense];
         } else {
-            return [NSString stringWithFormat:@"%d seconds %@", seconds, tense];
+            return [NSString stringWithFormat:@"%ld seconds %@", (long)seconds, tense];
         }
     }
     
     NSInteger minutes = [[gregorianCalendar components:NSMinuteCalendarUnit fromDate:startDate toDate:endDate options:0] minute];
     if (minutes < 120) {
         if (minutes == 1) {
-            return [NSString stringWithFormat:@"%d minute %@", minutes, tense];
+            return [NSString stringWithFormat:@"%ld minute %@", (long)minutes, tense];
         } else {
-            return [NSString stringWithFormat:@"%d minutes %@", minutes, tense];
+            return [NSString stringWithFormat:@"%ld minutes %@", (long)minutes, tense];
         }
     }
     
     NSInteger hours = [[gregorianCalendar components:NSHourCalendarUnit fromDate:startDate toDate:endDate options:0] hour];
     if (hours < 24) {
         if (hours == 1) {
-            return [NSString stringWithFormat:@"%d hour %@", hours, tense];
+            return [NSString stringWithFormat:@"%ld hour %@", (long)hours, tense];
         } else {
-            return [NSString stringWithFormat:@"%d hours %@", hours, tense];
+            return [NSString stringWithFormat:@"%ld hours %@", (long)hours, tense];
         }
     }
     
     NSInteger days = [[gregorianCalendar components:NSDayCalendarUnit fromDate:startDate toDate:endDate options:0] day];
     if (days < 30) {
         if (days == 1) {
-            return [NSString stringWithFormat:@"%d day %@", days, tense];
+            return [NSString stringWithFormat:@"%ld day %@", (long)days, tense];
         } else {
-            return [NSString stringWithFormat:@"%d days %@", days, tense];
+            return [NSString stringWithFormat:@"%ld days %@", (long)days, tense];
         }
     }
     
     NSInteger months = [[gregorianCalendar components:NSMonthCalendarUnit fromDate:startDate toDate:endDate options:0] month];
     if (months < 120) {
         if (months == 1) {
-            return [NSString stringWithFormat:@"%d month %@", months, tense];
+            return [NSString stringWithFormat:@"%ld month %@", (long)months, tense];
         } else {
-            return [NSString stringWithFormat:@"%d months %@", months, tense];
+            return [NSString stringWithFormat:@"%ld months %@", (long)months, tense];
         }
     }
     
     NSInteger years = [[gregorianCalendar components:NSYearCalendarUnit fromDate:startDate toDate:endDate options:0] year];
     if (years == 1) {
-        return [NSString stringWithFormat:@"%d year %@", years, tense];
+        return [NSString stringWithFormat:@"%ld year %@", (long)years, tense];
     } else {
-        return [NSString stringWithFormat:@"%d years %@", years, tense];
+        return [NSString stringWithFormat:@"%ld years %@", (long)years, tense];
     }
 }
 

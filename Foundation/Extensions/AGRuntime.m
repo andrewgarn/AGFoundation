@@ -126,7 +126,7 @@ static inline BOOL classIsSubclassOfClass(Class subclass, Class superclass)
 
 + (NSArray *)propertyListForClass:(Class)aClass withPrefix:(NSString *)prefix
 {
-    NSUInteger propertyCount = 0;
+    unsigned int propertyCount = 0;
     objc_property_t *propertyList = class_copyPropertyList(aClass, &propertyCount);
     
     NSMutableArray *allPropertyNames = [NSMutableArray arrayWithCapacity:propertyCount];

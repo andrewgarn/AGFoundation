@@ -276,24 +276,24 @@ FIX_CATEGORY_BUG(UIView_AGCategory);
     self.bounds = bounds;
 }
 
-- (float)width_AG
+- (CGFloat)width_AG
 {
     return self.bounds.size.width;
 }
 
-- (void)setWidth_AG:(float)newWidth
+- (void)setWidth_AG:(CGFloat)newWidth
 {
     CGRect bounds = self.bounds;
     bounds.size.width = newWidth;
     self.bounds = bounds;
 }
 
-- (float)height_AG
+- (CGFloat)height_AG
 {
     return self.bounds.size.height;
 }
 
-- (void)setHeight_AG:(float)newHeight
+- (void)setHeight_AG:(CGFloat)newHeight
 {
     CGRect bounds = self.bounds;
     bounds.size.height = newHeight;

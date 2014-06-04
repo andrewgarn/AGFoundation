@@ -72,8 +72,8 @@ FIX_CATEGORY_BUG(NSMutableArray_AGCategory);
 
 - (NSMutableArray *)reverse_AG
 {    
-    int i = 0;
-    int j = [self count] - 1;
+    NSUInteger i = 0;
+    NSUInteger j = [self count] - 1;
     
     while (i<j) {
         [self exchangeObjectAtIndex:i withObjectAtIndex:j];
@@ -85,11 +85,11 @@ FIX_CATEGORY_BUG(NSMutableArray_AGCategory);
 
 - (NSMutableArray *)shuffle_AG
 {
-    int i = 0;
-    int j = [self count] - 1;
+    NSUInteger i = 0;
+    NSUInteger j = [self count] - 1;
     
     while (i<j) {
-        NSUInteger randomIndex = arc4random_uniform([self count] - 1);
+        NSUInteger randomIndex = arc4random_uniform((uint32_t)([self count] - 1));
         [self exchangeObjectAtIndex:randomIndex withObjectAtIndex:i];
         i++;
         j--;

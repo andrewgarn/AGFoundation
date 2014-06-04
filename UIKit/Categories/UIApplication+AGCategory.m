@@ -247,6 +247,12 @@ static NSDate *AGApplicationDidEnterBackgroundDate;
 		case UIInterfaceOrientationLandscapeRight:
             stringFromInterfaceOrientation = @"UIInterfaceOrientationLandscapeRight";
             break;
+            
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+		case UIInterfaceOrientationUnknown:
+            stringFromInterfaceOrientation = @"UIInterfaceOrientationUnknown";
+            break;
+#endif
 	}
     
 	return stringFromInterfaceOrientation;
